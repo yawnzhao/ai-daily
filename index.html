@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 · 每日更新</title>
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #8a8a94;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+  .header { text-align: center; padding: 48px 0 36px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
+  .header .sub { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent); font-weight: 700; font-size: 18px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+  .episode { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin-bottom: 14px; display: flex; align-items: center; gap: 18px; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+  .episode:hover { background: var(--card-hover); border-color: var(--accent-dim); transform: translateY(-1px); }
+  .episode .vol { flex-shrink: 0; text-align: center; min-width: 58px; }
+  .episode .vol .num { font-size: 26px; font-weight: 800; color: var(--accent); line-height: 1.2; }
+  .episode .vol .label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+  .episode .info { flex: 1; min-width: 0; }
+  .episode .info .title { font-size: 16px; font-weight: 700; color: var(--text); text-decoration: none; }
+  .episode .info .title:hover { color: var(--accent); }
+  .episode .info .desc { font-size: 13px; color: var(--text-dim); margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .episode .info .meta { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .episode .info .chip { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .episode .go { flex-shrink: 0; font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; }
+  .episode .go:hover { text-decoration: underline; }
+  .about { background: linear-gradient(135deg, rgba(232,121,76,0.10) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-top: 40px; }
+  .about .label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .about .content { font-size: 14px; line-height: 1.9; color: var(--text-dim); }
+  .about .content strong { color: var(--text); }
+  .footer-note { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 48px; }
+  @media (max-width: 560px) {
+    .episode { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .episode .go { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">AI DAILY DIGEST</div>
+  <h1>AI 日报</h1>
+  <div class="sub">AI 领域每日资讯 · 新闻 / 洞见 / 论文 / 开源</div>
+  <div class="stats">
+    <div class="stat"><span class="num" id="volCount">2</span>期已发布</div>
+    <div class="stat"><span class="num">4</span>大板块</div>
+    <div class="stat"><span class="num">日更</span></div>
+  </div>
+</div>
+
+<div class="section-header">
+  <h2>往期日报</h2>
+  <span class="tag">最新在前</span>
+</div>
+
+<a class="episode" href="ai-daily-digest-2026-09-08.html">
+  <div class="vol"><div class="num">02</div><div class="label">VOL</div></div>
+  <div class="info">
+    <div class="title">AI 日报 · 2026年9月8日 星期二</div>
+    <div class="desc">Amazon 500亿美元联手 OpenAI；首席科学家公开踩刹车；泰国叫停全部数据中心</div>
+    <div class="meta">
+      <span class="chip">10 条精选</span><span class="chip">4 篇论文</span><span class="chip">5 个开源项目</span><span class="chip">语音播报</span>
+    </div>
+  </div>
+  <div class="go">阅读 →</div>
+</a>
+
+<a class="episode" href="ai-daily-digest-2026-09-07.html">
+  <div class="vol"><div class="num">01</div><div class="label">VOL</div></div>
+  <div class="info">
+    <div class="title">AI 日报 · 2026年9月7日 星期一</div>
+    <div class="desc">GPT-6 Astra 触及 Critical 阈值；英伟达 130 亿美元收购 Hugging Face；中国首部 AI 司法裁判规则</div>
+    <div class="meta">
+      <span class="chip">10 条精选</span><span class="chip">4 篇论文</span><span class="chip">5 个开源项目</span><span class="chip">语音播报</span>
+    </div>
+  </div>
+  <div class="go">阅读 →</div>
+</a>
+
+<div class="about">
+  <div class="label">关于本刊</div>
+  <div class="content">
+    参考<strong>李自然 AI Digest</strong>的栏目结构，每期包含<strong>每日精选</strong>（10 条核心资讯 + 今日焦点）、<strong>行业洞见</strong>（深度话题分析）、<strong>论文速递</strong>（arXiv 前沿论文解读）与<strong>开源解读</strong>（GitHub 热门项目盘点）四大板块，并附<strong>语音播报</strong>版本。
+  </div>
+</div>
+
+<div class="footer-note">AI 日报 · 每日更新 · 语音由 MiniMax speech-02-hd 生成</div>
+
+</body>
+</html>
