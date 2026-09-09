@@ -176,13 +176,20 @@
     <span class="duration-time" id="durationTime">--:--</span>
   </div>
   <audio id="audioPlayer" preload="metadata">
-    <source src="ai-daily-digest-2026-09-08.mp3" type="audio/mpeg">
     您的浏览器不支持音频播放。
   </audio>
 </div>
 
 <script>
+  /* 小宇宙音频直链：节目发布后从 RSS 提取并填入 */
+  var AUDIO_SRC = "";
   var audio = document.getElementById('audioPlayer');
+  if (AUDIO_SRC) {
+    audio.src = AUDIO_SRC;
+  } else {
+    var metaEl = document.querySelector('.play-meta');
+    if (metaEl) { metaEl.textContent = '语音版即将上线 · 小宇宙'; }
+  }
   var playBtn = document.getElementById('playBtn');
   var progressFill = document.getElementById('progressFill');
   var currentTimeEl = document.getElementById('currentTime');
@@ -191,6 +198,7 @@
   var isPlaying = false;
 
   function togglePlay() {
+    if (!audio.src) { return; }
     if (audio.paused) { audio.play(); playBtn.innerHTML = '&#10074;&#10074;'; isPlaying = true; }
     else { audio.pause(); playBtn.innerHTML = '&#9654;'; isPlaying = false; }
   }
