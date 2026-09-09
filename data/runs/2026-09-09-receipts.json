@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-09",
+  "notes": "config/ 信源清单尚未建立（AGENTS.md 第 0 节前提未定），本次按前两期既定实践采集：AI 新闻多轮搜索、arXiv 近期提交、GitHub Trending 周榜。",
+  "sources": [
+    {
+      "source_id": "web-search-ai-news",
+      "status": "ok",
+      "checked_at": "2026-09-09T13:15:00+02:00",
+      "checked_url": "多轮英文/中文 web 搜索（OpenAI/Anthropic/Meta/DeepMind/工信部/监管等关键词，覆盖 2026-09-08 至 09-09）",
+      "evidence": "经研究子代理多轮搜索并交叉验证，产出 13 条候选。打开核实的主要来源：openai.com/index/navier-stokes-solution/、cisa.gov 联合公告 AA26-251A、about.fb.com Muse 发布博客、deepmind.google AlphaGenome Atlas 博客、nature.com/d41586-026-02835-4、scmp.com 与 chinadaily.com.cn（工信部算力规划）、theneuron.ai（Anthropic 算力协议）、techcrunch.com / axios.com / scientificamerican.com（纳维-斯托克斯争议方报道）。未核实项见当日 daily/2026/2026-09-09.md 采集说明。",
+      "items": 13
+    },
+    {
+      "source_id": "arxiv-recent",
+      "status": "ok",
+      "checked_at": "2026-09-09T13:15:00+02:00",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent、https://arxiv.org/list/cs.CL/recent 及 arXiv 检索",
+      "evidence": "经研究子代理检索 2026-09-05 至 09-08 提交的论文，产出 8 篇候选，全部打开 arXiv 原文页面确认标题与提交日期：2609.09153（Procedural Graphs）、2609.09133（ExecCritic）、2609.09115（MeClear）、2609.09030（Answer-Distribution Trajectories）、2609.07821（A*-Thought-V2）、2609.09001（Deposon）、2609.07050（多跳检索）、2609.08273（MemForest）。",
+      "items": 8
+    },
+    {
+      "source_id": "github-trending-weekly",
+      "status": "ok",
+      "checked_at": "2026-09-09T13:15:00+02:00",
+      "checked_url": "https://github.com/trending?since=weekly、https://github.com/trending/python?since=weekly",
+      "evidence": "经研究子代理抓取 GitHub Trending 周榜并辅以 Awesome AI 200（2026-09-07 更新）交叉核对，产出 8 个候选项目，均验证 GitHub 链接有效：affaan-m/ECC、DietrichGebert/ponytail（昨日已收录，剔除）、NousResearch/hermes-agent、stablyai/orca、ChromeDevTools/chrome-devtools-mcp、upstash/context7、JustVugg/colibri（昨日已收录，剔除）、NVIDIA/SkillSpector。Star 数存在 GitHub Trending 周增量与 Awesome AI 200 两种口径，成稿中已区分标注。",
+      "items": 8
+    }
+  ]
+}
