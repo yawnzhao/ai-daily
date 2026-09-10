@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-10",
+  "notes": "config/ 信源清单尚未建立（AGENTS.md 第 0 节前提未定），沿用 2026-09-09 起的既定实践采集：AI 新闻多轮搜索、arXiv 近期提交、GitHub Trending 周榜。开工 git pull 首次 TLS 失败，重试成功。",
+  "sources": [
+    {
+      "source_id": "web-search-ai-news",
+      "status": "ok",
+      "checked_at": "2026-09-10T09:20:00+02:00",
+      "checked_url": "多轮英文/中文 web 搜索（OpenAI/Anthropic/Meta/DeepMind/DeepSeek/智谱/MiniMax/AMD/ASML/融资/监管等关键词，覆盖 2026-09-09 至 09-10）",
+      "evidence": "经研究子代理多轮搜索并交叉验证，产出 15 条候选。打开核实的主要来源：economictimes.com（Cognition E 轮）、anthropic.com/claude-fable-and-mythos-5-1（Claude 新模型，主线程二次复核）、news.cctv.cn（商务部答记者问，主线程二次复核全文）、newsroom.amd.com（复核发现发布于 07-23，非新讯，剔除）、lightfield.app（A 轮官方博客）、siliconangle.com（Antioch）、247wallst.com（AMD 预测）、excellentnewspaper.com（ASML High-NA）、resect.ai（出隐身）、toutiao 财经转载（DeepSeek IPO、智谱/MiniMax 股价）。剔除重复：Mistral 30 亿欧融资（9/8 已收录）、Qwen3.8-Max（9/7 已收录）；美团小美未能打开一手来源，弃用。",
+      "items": 15
+    },
+    {
+      "source_id": "arxiv-recent",
+      "status": "ok",
+      "checked_at": "2026-09-10T09:20:00+02:00",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent、https://arxiv.org/list/cs.CL/recent、https://arxiv.org/list/cs.LG/recent",
+      "evidence": "经研究子代理检索 2026-09-08 至 09-09 提交的论文，产出 8 篇候选，全部打开 arXiv 原文页面确认标题与提交日期：2609.10226（Φ-Bench）、2609.10439（FOM-UL）、2609.09899（Strangers to Themselves）、2609.09985（VLX-VR）、2609.09764（SocialRL）、2609.08418（Feyospace-v1）、2609.09883（WRP）、2609.10052（DDO）。",
+      "items": 8
+    },
+    {
+      "source_id": "github-trending-weekly",
+      "status": "ok",
+      "checked_at": "2026-09-10T09:20:00+02:00",
+      "checked_url": "https://github.com/trending?since=weekly、https://github.com/trending/python?since=weekly、https://github.com/trending?since=daily",
+      "evidence": "经研究子代理抓取 GitHub Trending 周/日榜，产出 8 个候选项目，均验证 GitHub 链接有效：anthropics/skills（+2.3k/周）、K-Dense-AI/scientific-agent-skills（+2.1k/周）、tt-a1i/archify（+12.5k/周）、google-research/timesfm（+2.8k/周）、jingyaogong/minimind（+2.6k/周）、TauricResearch/TradingAgents、debpalash/VoiceStudio（+7.5k/周）、freestylefly/awesome-gpt-image-2。排除清单（前几期已收录）全部跳过：ECC、ponytail、hermes-agent、orca、chrome-devtools-mcp、context7、colibri、SkillSpector。",
+      "items": 8
+    }
+  ]
+}
