@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 · 2026年9月11日</title>
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #8a8a94;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<div class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date">2026 年 9 月 11 日 · 周五 · 第 5 期</div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">11</span>条资讯</div>
+    <div class="stat"><span class="num">4</span>篇论文</div>
+    <div class="stat"><span class="num">5</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">48</span> 小时</div>
+  </div>
+</div>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player">
+  <button class="play-btn" id="playBtn" onclick="togglePlay()">&#9654;</button>
+  <div class="play-info">
+    <div class="play-label">语音简报</div>
+    <div class="play-title">AI 日报 · 2026年9月11日</div>
+    <div class="play-meta">语音版 · 小宇宙</div>
+  </div>
+  <div class="progress-row">
+    <span class="current-time" id="currentTime">00:00</span>
+    <div class="progress-bar" id="progressBar" onclick="seekTo(event)">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="duration-time" id="durationTime">--:--</span>
+  </div>
+  <audio id="audioPlayer" preload="metadata">
+    您的浏览器不支持音频播放。
+  </audio>
+</div>
+
+<script>
+  /* 小宇宙音频直链：节目发布后填入；为空时显示“语音版即将上线” */
+  var AUDIO_SRC = "";
+  var audio = document.getElementById('audioPlayer');
+  if (AUDIO_SRC) {
+    audio.src = AUDIO_SRC;
+  } else {
+    var metaEl = document.querySelector('.play-meta');
+    if (metaEl) { metaEl.textContent = '语音版即将上线 · 小宇宙'; }
+  }
+  var playBtn = document.getElementById('playBtn');
+  var progressFill = document.getElementById('progressFill');
+  var currentTimeEl = document.getElementById('currentTime');
+  var durationTimeEl = document.getElementById('durationTime');
+  var progressBar = document.getElementById('progressBar');
+  var isPlaying = false;
+
+  function togglePlay() {
+    if (!audio.src) { return; }
+    if (audio.paused) { audio.play(); playBtn.innerHTML = '&#10074;&#10074;'; isPlaying = true; }
+    else { audio.pause(); playBtn.innerHTML = '&#9654;'; isPlaying = false; }
+  }
+  function formatTime(s) {
+    if (isNaN(s)) return '--:--';
+    var m = Math.floor(s / 60); var sec = Math.floor(s % 60);
+    return (m < 10 ? '0' : '') + m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+  audio.addEventListener('loadedmetadata', function() { durationTimeEl.textContent = formatTime(audio.duration); });
+  audio.addEventListener('timeupdate', function() {
+    var pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  });
+  audio.addEventListener('ended', function() {
+    playBtn.innerHTML = '&#9654;'; isPlaying = false;
+    progressFill.style.width = '0%'; currentTimeEl.textContent = '00:00';
+  });
+  function seekTo(e) {
+    var rect = progressBar.getBoundingClientRect();
+    var x = (e.clientX || e.touches[0].clientX) - rect.left;
+    var pct = x / rect.width;
+    if (audio.duration) { audio.currentTime = pct * audio.duration; }
+  }
+</script>
+
+<!-- ===== 每日精选 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📰</span>
+    <h2>每日精选</h2>
+    <span class="tag">11 条核心资讯</span>
+  </div>
+
+  <div class="focus-box">
+    <div class="label">今日焦点</div>
+    <div class="content">
+      OpenAI 一天四连发，把自家 Agent 框架变成开放平台；Anthropic 的威胁情报报告展示了 AI 攻击链的自动化程度——恶意软件被检出后 AI 代理自主改造直到免杀；美国解除对 Claude Fable/Mythos 5 的出口管制。今日十一条的主线是<strong>"竞争重心迁移"——从模型能力转向 Agent 平台化与治理规则</strong>。
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-model">产品</span>
+      <h3>OpenAI 产品日四连发：Agents API 公测，GPT-Live-1 全双工语音进 API</h3>
+    </div>
+    <p>9 月 10 日 OpenAI 连发四款产品：<strong>Agents API</strong> 公开测试，将 Codex 与 ChatGPT for Work 同源的 Agent 框架开放给开发者，支持任务、模型、工具与运行环境配置；<strong>GPT-Live-1</strong> 进入 API，支持同步听说、对话打断与背景噪声处理的全双工语音；<strong>ChatGPT for Financial Services</strong> 面向金融行业；另有让数据「人人可用」的新产品。Agent 从 OpenAI 的产品变成了它的平台——把内部基础设施开放收费，是平台公司的标准打法。</p>
+    <div class="source">来源：<a href="https://openai.com/zh-Hans-CN/news/product-releases/">OpenAI 官方</a></div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-safety">安全</span>
+      <h3>Anthropic 威胁情报报告：8 个月阻断 7 类恶意使用，AI 已能自主重建免杀恶意软件</h3>
+    </div>
+    <p>Anthropic 发布 2026 年 9 月威胁情报报告，披露 2025 年 12 月至 2026 年 8 月间识别并阻断的 7 类恶意使用：网络攻击、影响力行动、监控、诈骗、生物滥用、常规武器与非法蒸馏。最触目的是代号 <strong>GTG-20006</strong> 的疑似俄罗斯间谍组织：用 AI 工作流自动化侦察、钓鱼、横向移动到数据外泄的全链条，其恶意软件被安全产品检出后，AI 代理会<strong>自主修改并重建工具直到免杀</strong>，20+ 组织被列入攻击规划。报告结论：「AI 把成本反转到了防御方头上」——复杂攻击不再需要复杂攻击者。</p>
+    <div class="source">来源：<a href="https://www.anthropic.com/threat-intelligence-report-september-2026">Anthropic 官方</a></div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-policy">政策</span>
+      <h3>美国商务部解除 Claude Fable 5 / Mythos 5 出口管制，全球访问恢复</h3>
+    </div>
+    <p>6 月中旬，Claude Fable 5 与 Mythos 5 因「越狱后可被用于发现并利用代码漏洞」的风险被施加出口管制；Anthropic 当时抗辩称「一个狭窄的潜在越狱不应叫停数百万人在用的模型」。9 月 10 日管制解除，公司随即宣布恢复全球访问。与昨日商务部回应蒸馏公告同读：出口管制正从「一刀切禁令」转向个案评估，安全与商业的平衡点在移动。</p>
+    <div class="source">来源：<a href="https://www.quanta.report/story/US_Removes_Export_Ban_on_Anthropic_s_Advanced_AI_Models_as_Security_Concerns_Resolve">Quanta Report（转载 BBC）</a></div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-hot">热点</span>
+      <h3>OpenAI 被曝考虑放缓前沿研发，并询问国会「行业协调降速是否合法」</h3>
+    </div>
+    <p>据多家媒体报道，OpenAI CEO Altman 在全员会上表示希望与其他实验室<strong>协调放缓</strong>前沿研发步伐，但承认未必所有同行愿意跟进；公司同时向国会询问行业协调降速是否合法，担心类似安排触犯反垄断法。从单方面冲刺到试探「集体降速」，前沿竞赛的博弈结构可能正在变化——注意这是媒体转述，未获官方确认。</p>
+    <div class="source">来源：<a href="http://m.toutiao.com/group/7684245489323213331/">财联社（转载）</a> · <a href="https://www.aichatdaily.com/ai-security/openai-asks-congress-if-industry-wide-ai-slowdown-legal">AI Chat Daily</a> · 未获官方确认</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-model">产品</span>
+      <h3>ChatGPT Pro 200 美元套餐暂停新增订阅</h3>
+    </div>
+    <p>OpenAI 宣布自 9 月 10 日起暂停 ChatGPT Pro 200 美元套餐（Pro 20X）的新用户注册与升级；存量 200 美元订阅与新增及存量 100 美元订阅不受影响。官方未说明原因——在 Agents API 开放的同一天收紧最贵的订阅入口，是产能约束还是产品线重排，值得观察。</p>
+    <div class="source">来源：<a href="https://36kr.com/newsflashes/3978274201975558">财联社（36kr 转载）</a></div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-policy">政策</span>
+      <h3>加州签署 13 项法案：全美最严儿童 AI 聊天机器人与社交媒体保护</h3>
+    </div>
+    <p>加州州长纽森签署 13 项法案，禁止针对未成年人的自动播放与基于历史/画像的成瘾性推荐，强化未成年人广告与隐私保护，并对儿童可访问的 AI 聊天机器人提出严格要求。未成年人保护正在成为 AI 立法最先落地的战场——继英国职场监控咨询之后，又一份可以直接抄的立法作业。</p>
+    <div class="source">来源：<a href="http://www.gov.ca.gov/2026/09/10/governor-newsom-signs-the-strongest-child-safety-chatbot-and-social-media-laws-in-the-nation/">加州州长办公室</a></div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-money">融资</span>
+      <h3>Positron AI 完成 8.75 亿美元 C 轮，估值 50 亿美元：推理芯片的另一种答案</h3>
+    </div>
+    <p>推理芯片公司 Positron AI 完成由 NEA、Atreides Management、Valor Equity Partners 等共同领投的 8.75 亿美元 C 轮融资，投后估值 50 亿美元。在 NVIDIA 用 Blackwell 定义训练侧的同一周，资本市场正在给「推理专用硅」下重注——Agent 时代海量 token 消耗让推理成本成为新的护城河战场。</p>
+    <div class="source">来源：<a href="https://www.prnewswire.com/news-releases/positron-ai-raises-875-million-at-a-5-billion-valuation-to-bring-its-next-generation-inference-silicon-to-market-302874601.html">PR Newswire（官方新闻稿）</a></div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-infra">算力</span>
+      <h3>黄仁勋：明年营收预计同比增长约 70%，Q3 指引 1080 亿美元</h3>
+    </div>
+    <p>在高盛 Communacopia+ 大会上，黄仁勋预测 NVIDIA 明年可实现约 70% 的营收同比增长，并称 Q3 约 1080 亿美元的营收指引<strong>不包含任何中国数据中心计算收入</strong>——出口管制的悲观假设下依然给出高增长，直接回应了市场对 AI 资本开支可持续性的疑虑。</p>
+    <div class="source">来源：<a href="https://finance.sina.com.cn/tech/digi/2026-09-11/doc-inirmvzx5430565.shtml">新浪科技（转载）</a> · 官方材料未核</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-model">模型</span>
+      <h3>IBM 与 NASA 开源月球基础模型，地表特征识别最高超现有方法 23%</h3>
+    </div>
+    <p>IBM 与 NASA 联合发布开源的月球基础模型及 SomBench 月球遥感数据集，在月球表面关键地理特征识别任务上超过现有方法最高 23 个百分点，为阿尔忒弥斯时代的月球探索提供 AI 基础设施。继 AlphaGenome Atlas 之后，「基础模型 + 行星科学」的开放路线又下一城。</p>
+    <div class="source">来源：<a href="https://newsroom.ibm.com/2026-09-10-ibm-and-nasa-release-open-source-ai-model-to-support-lunar-exploration">IBM Newsroom</a></div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-hot">产品</span>
+      <h3>DeepSeek V4 Pro API 将在 9/14 后继续提供，计费不变</h3>
+    </div>
+    <p>据媒体报道，DeepSeek 决定在 9 月 14 日之后继续提供 V4 Pro 的 API 调用服务，计费方式保持不变——此前该服务原计划于 9 月 14 日 12:00 下线，由 V4.1 Flash 接棒。在 V4.1 Flash 降价冲击市场之后保留 Pro 通道，给高端推理需求留了后路。</p>
+    <div class="source">来源：<a href="http://m.toutiao.com/group/7684237057148846644/">科创板日报（转载）</a> · 未获官方公告</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-model">模型</span>
+      <h3>GPT-6 Astra 面向工作场景发布（本期补录）</h3>
+    </div>
+    <p>OpenAI 于 9 月 9 日发布面向工作场景的 GPT-6 Astra（「下一代智能模型」），本期补录。加上 9 月 10 日的四连发，OpenAI 本周完成了从模型层（Astra）到应用层（金融版）再到平台层（Agents API）的全栈节奏——这也是为什么今天的主线是「平台化」。</p>
+    <div class="source">来源：<a href="https://openai.com/index/gpt-6-astra-next-generation-work/">OpenAI 官方</a> · 发布于 09-09</div>
+  </div>
+
+  <div class="oneliner">
+    一句话总结：OpenAI 把 Agent 做成了平台，Anthropic 把威胁做成了报告，监管把个案做成了规则——AI 行业今天的关键词是「平台化与治理」。
+  </div>
+</div>
+
+<!-- ===== 行业洞见 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">🔍</span>
+    <h2>行业洞见</h2>
+    <span class="tag">深度分析</span>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-banner">
+      <div class="meta">今日洞见 · Agent 平台化时刻</div>
+      <h3>当 OpenAI 开始卖铲子：Agents API 与应用层护城河的重估</h3>
+    </div>
+    <div class="insight-body">
+      <div class="focus-box" style="margin-bottom: 20px;">
+        <div class="label">今日焦点</div>
+        <div class="content">
+          昨天 Cognition 用 480 亿美元估值证明「应用层最赚钱」，今天 OpenAI 就把<strong>与 Codex 同源的 Agent 框架</strong>通过 Agents API 开放给所有开发者。这两件事放在一起，是一个经典的商业史问题：<strong>当平台方开始卖铲子，应用层的护城河还剩多宽？</strong>
+        </div>
+      </div>
+
+      <p>先看 OpenAI 卖的是什么。Agents API 不是新模型，而是<strong>经过 Codex 和 ChatGPT for Work 生产环境验证的 Agent 基础设施</strong>：任务编排、工具调用、运行环境、记忆管理。对开发者来说，这把「从零搭 Agent」的工程量压缩成几次 API 调用；对 OpenAI 来说，这是把内部能力变成外部收入——每多一个 Agent 应用，就多一份 token 消耗与平台费用。GPT-Live-1 全双工语音进 API 是同一逻辑：语音 Agent 的基础设施，也由它来供。</p>
+
+      <p>再看应用层的处境。Cognition 的应对其实早已写在明面上——它自研 SWE 系列模型（最新 SWE-1.7）、自建 Devin 云环境，把护城河押在<strong>领域数据与工程闭环</strong>而非通用框架上。今天的局面印证了这条路线的必要性：</p>
+
+      <ul class="key-points">
+        <li><strong>纯套壳应用最危险</strong>：如果价值只在「用模型完成任务」，平台方开放同款基建后几乎无险可守；</li>
+        <li><strong>领域纵深是护城河</strong>：编程、金融、医疗等场景的私有数据与工作流整合，平台通用件替代不了；</li>
+        <li><strong>定价权向平台集中</strong>：ChatGPT for Financial Services 的发布说明 OpenAI 同时在做「平台 + 垂直应用」的双线进攻。</li>
+      </ul>
+
+      <p>最后把镜头拉到治理侧：同一天，威胁情报报告披露攻击者用 AI 自动重建免杀恶意软件（安全成本反转）、出口管制解除（个案化评估）、OpenAI 试探行业协调降速（反垄断边界）。<strong>技术竞争的下半场，规则本身就是竞争的一部分</strong>——谁先把安全、合规、平台标准做出来，谁就定义下一层生态。</p>
+
+      <div class="oneliner">
+        一句话总结：平台化意味着「会做 Agent」不再是壁垒，「做好领域闭环」才是——应用层的估值逻辑该按这个标准重新过一遍。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 论文速递 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📄</span>
+    <h2>论文速递</h2>
+    <span class="tag">从 arXiv 筛选 · 9 月 10 日</span>
+  </div>
+
+  <div class="focus-box">
+    <div class="label">今日概览</div>
+    <div class="content">
+      今天四篇论文的共同母题是<strong>"Agent 的边界在哪里"</strong>：MindTopo 测出基础模型在拓扑推理上远低于人类；Mr.LHDR 显示多模态长程研究的最佳系统正确率不到一半；COBRA-Skills 把「技能优化」的成本砍掉一半以上；From Parameters to Answers 则打开黑箱，看模型如何从参数里取出知识。
+    </div>
+  </div>
+
+  <!-- Paper 01 -->
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">01</span>
+      <span class="paper-title">MindTopo：基础模型会做拓扑推理吗</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">基准评测</span>
+      <span class="paper-tag">拓扑推理</span>
+      <span class="paper-tag">空间智能</span>
+    </div>
+    <div class="paper-body">
+      MindTopo 构建了首个系统性的拓扑直觉基准：<strong>11,030 个实例、13 个任务类型、5 个拓扑属性</strong>，对 14 个多模态大模型进行评测。结论清晰：所有模型「推理」表现优于「规划」，但最佳模型仍<strong>远低于人类水平</strong>；在 Qwen3-VL-2B 上做 SFT+RL，推理提升明显大于规划。空间认知是具身智能的地基，这篇论文画出了地基还缺哪几块砖。
+    </div>
+    <ul class="paper-takeaways">
+      <li>首次把拓扑性质（连通性、同胚等）变成可评测的分层任务族</li>
+      <li>推理与规划能力的分离式测量：模型「想得出」但「排不好」</li>
+      <li>小模型 + 定向后训练即可显著提升，空间能力不必全靠规模</li>
+    </ul>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.11900">原文：MindTopo: Can Foundation Models Reason in Topological Space? →</a>
+  </div>
+
+  <!-- Paper 02 -->
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">02</span>
+      <span class="paper-title">Mr.LHDR：多模态长程深度研究，最好系统正确率不到一半</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">基准评测</span>
+      <span class="paper-tag">Deep Research</span>
+      <span class="paper-tag">多模态</span>
+    </div>
+    <div class="paper-body">
+      Mr.LHDR 把「真实世界的长程深度研究」做成基准：8 个类别，平均 <strong>12.1 个必要中间结论、依赖深度 10.4</strong>。结果给 Deep Research 热潮泼了盆冷水：最佳系统整体准确率仅 <strong>43.1%</strong>、子答案 34.3%；把图像去掉，指标再掉 12.6 分。多模态证据整合与长依赖一致性，仍是当前 Agent 的硬瓶颈。
+    </div>
+    <ul class="paper-takeaways">
+      <li>「必要中间结论」设计让长程任务的失败点可定位、可归因</li>
+      <li>视觉证据缺失导致 12.6 分下降，多模态不是加分项而是必选项</li>
+      <li>对 Deep Research 产品的能力宣传是一份清醒剂</li>
+    </ul>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.11318">原文：Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents →</a>
+  </div>
+
+  <!-- Paper 03 -->
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">03</span>
+      <span class="paper-title">COBRA-Skills：把 Agent 技能优化的成本砍半以上</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">Agent 技能</span>
+      <span class="paper-tag">老虎机算法</span>
+      <span class="paper-tag">成本优化</span>
+    </div>
+    <div class="paper-body">
+      把「Agent 技能优化」建模为预算约束下的序列优化问题，用上下文老虎机（contextual bandit）引导证据驱动的技能演化。在 6 个异构 Agent 基准和 3 个目标模型上平均性能最优，较 SkillOpt <strong>降低 55-58% 优化成本</strong>，每个基准只需 50 个优化样本。与本周 GitHub 上的 Skills 生态热潮互为印证：技能不是写出来就完了，还要能低成本地持续进化。
+    </div>
+    <ul class="paper-takeaways">
+      <li>技能优化从「暴力试错」变成有理论保证的样本高效过程</li>
+      <li>跨 3 个目标模型验证，技能演化结果具备可迁移性</li>
+      <li>为 Agent Skills 生态提供了「维护成本」这一关键答案</li>
+    </ul>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.11682">原文：COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization →</a>
+  </div>
+
+  <!-- Paper 04 -->
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">04</span>
+      <span class="paper-title">From Parameters to Answers：模型如何从参数里取出知识</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">可解释性</span>
+      <span class="paper-tag">知识检索</span>
+      <span class="paper-tag">机制分析</span>
+    </div>
+    <div class="paper-body">
+      通过对 Qwen、Llama、Gemma 三个模型族做层间干预，分离出「早期可读性」「自然强度」「因果引导」「后期内容依赖」四种效应，回答一个基础问题：<strong>LLM 回答事实问题时，知识在内部是怎么被取出来的</strong>。有趣的发现：Qwen 中 pair-conditioned 方向保留了 late effect，而 Llama 在相同门控下没有持续的 routing-effect 窗口——不同架构的「取件路径」并不通用。
+    </div>
+    <ul class="paper-takeaways">
+      <li>把「知识检索」拆解为可分别测量的层间机制，方法论贡献大于结论</li>
+      <li>跨模型族对比显示机制不通用，解释性结论难以简单迁移</li>
+      <li>为模型编辑（knowledge editing）与幻觉溯源提供了分析框架</li>
+    </ul>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.11859">原文：From Parameters to Answers: How LLMs Retrieve and Use Their Internal Knowledge →</a>
+  </div>
+
+  <!-- Also worth reading -->
+  <div class="paper-also">
+    <div class="paper-also-title">也值得关注</div>
+    <div class="paper-also-item">
+      <span class="paper-also-num">05</span>
+      <span><strong>Sci-MMR</strong> 科学多跳推理基准：235 个任务、每任务平均 9 个图表；前沿多模态模型答案准确率比证据恢复率高出 20%+——答案对但证据错的情况值得警惕。<a href="https://arxiv.org/abs/2609.11243">链接</a></span>
+    </div>
+    <div class="paper-also-item">
+      <span class="paper-also-num">06</span>
+      <span><strong>TASCO</strong> 稳定性感知的测试时自适应：把局部稳定性纳入置信度估计，提升推理准确率与 token 效率。<a href="https://arxiv.org/abs/2609.11393">链接</a></span>
+    </div>
+    <div class="paper-also-item">
+      <span class="paper-also-num">07</span>
+      <span><strong>SIRF</strong> 工业内容风控基础模型（EMNLP 2026 Industry Track）：8B 规模达 71.3% Black Recall@P95，比基线高 15.1 个百分点，仅用约 7000 万 CPT tokens。<a href="https://arxiv.org/abs/2609.11752">链接</a></span>
+    </div>
+    <div class="paper-also-item">
+      <span class="paper-also-num">08</span>
+      <span><strong>When Agents Disagree</strong>：用贝叶斯逆向推理构造无标签锚点，为多智能体集体决策提供一致性排序。<a href="https://arxiv.org/abs/2609.11709">链接</a></span>
+    </div>
+  </div>
+
+  <!-- Observation -->
+  <div class="paper-observation">
+    <div class="label">今日观察</div>
+    <div class="content">
+      四篇连读是一条「测边界、降成本、开黑箱」的路线：MindTopo 与 Mr.LHDR 分别在空间推理和长程研究上标出<strong>能力天花板</strong>，给过热的 Agent 叙事提供刻度；COBRA-Skills 把技能生态的<strong>维护成本</strong>砍半，让「人人写技能」在工程上可持续；From Parameters to Answers 则继续把模型内部机制拆给人看。<strong> benchmarks 越来越像行业的体检报告，而工程与可解释性是唯二能兑现承诺的科室。</strong>
+    </div>
+  </div>
+
+  <div class="oneliner">
+    一句话总结：当最好的 Deep Research 系统只有四成正确率，基准的价值不再是排名，而是告诉产品经理「别吹了」。
+  </div>
+</div>
+
+<!-- ===== 开源解读 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">⚡</span>
+    <h2>开源解读</h2>
+    <span class="tag">GitHub 热门</span>
+  </div>
+
+  <div class="focus-box">
+    <div class="label">今日焦点</div>
+    <div class="content">
+      本周榜单出现一个有趣的新层：<strong>「人味」工具层</strong>。在 Agent Skills 基建（上周主题）之上，增长最快的项目开始处理「AI 输出如何让人舒服」——ADHD 友好输出、消除 AI 文本痕迹、人类可读的图表。当生成能力过剩，体验与可信度成为新的稀缺品。
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank top">1</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/ayghri/i-have-adhd">ayghri / i-have-adhd</a></span>
+        <span class="oss-stars">★ 40.0k · 本周 +10.2k</span>
+        <span class="oss-license">Python</span>
+      </div>
+      <p>ADHD 友好型编码助手输出：核心主张「先行动、少废话」——把 LLM 的长篇解释压缩成即时可执行的下一步。一周 +10.2k 星说明戳中了真实痛点：对注意力有限的开发者，AI 的「话痨」本身就是生产力损耗。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank top">2</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery / diagram-design</a></span>
+        <span class="oss-stars">★ 38.3k · 本周 +7.3k</span>
+        <span class="oss-license">HTML</span>
+      </div>
+      <p>38 种编辑器级图表类型，为 Claude Code / Codex / Pi 生成自包含 HTML+SVG。与上周的 archify 同生态位但覆盖更全——「让 Agent 输出人一眼看懂的图」正在从单点项目长成一个品类。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank top">3</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/blader/humanizer">blader / humanizer</a></span>
+        <span class="oss-stars">★ 46.7k · 本周 +5.2k</span>
+        <span class="oss-license">Python</span>
+      </div>
+      <p>消除 AI 生成文本痕迹的 Agent 技能。争议与需求并存：一边是检测器越来越严，一边是「AI 腔」确实影响阅读。它与昨天的论文 Strangers to Themselves 形成对照——模型不了解自己，但人们已经很会修饰它。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank">4</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/heygen-com/hyperframes">heygen-com / hyperframes</a></span>
+        <span class="oss-stars">★ 48.9k · 本周 +4.9k</span>
+        <span class="oss-license">TypeScript</span>
+      </div>
+      <p>HeyGen 官方开源的「Agent 编写 HTML 渲染视频」框架——让 Agent 用写网页的方式生成视频内容。官方公司下场开源核心管线，说明「HTML 即视频」正在成为 AI 视频生成的一条正式技术路线。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank">5</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/THU-MAIC/OpenMAIC">THU-MAIC / OpenMAIC</a></span>
+        <span class="oss-stars">★ 35.7k · 本周 +4.2k</span>
+        <span class="oss-license">TypeScript</span>
+      </div>
+      <p>清华 MAIC 团队的开源多智能体交互课堂：一键生成沉浸式 AI 课程。多智能体系统（老师 Agent + 学生 Agent 互动演示）首次被系统性地用在教育场景，与 minimind 的「训练教学」路线一起，构成中文社区 AI 教育开源的两条腿。</p>
+    </div>
+  </div>
+
+  <div class="oneliner">
+    一句话总结：当基建都齐了，增长最快的项目开始回答同一个问题——AI 的输出，怎么才能让人用得下去。
+  </div>
+</div>
+
+</body>
+</html>

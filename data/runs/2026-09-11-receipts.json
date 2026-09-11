@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-11",
+  "notes": "config/ 信源清单尚未建立（AGENTS.md 第 0 节前提未定），沿用既定实践：AI 新闻多轮搜索、arXiv 近期提交、GitHub Trending。",
+  "sources": [
+    {
+      "source_id": "web-search-ai-news",
+      "status": "ok",
+      "checked_at": "2026-09-11T09:30:00+02:00",
+      "checked_url": "多轮英文/中文 web 搜索（OpenAI/Anthropic/NVIDIA/Positron/加州立法/IBM-NASA 等，覆盖 2026-09-10 至 09-11）",
+      "evidence": "子代理产出 15 条候选并逐条打开来源。主线程复核：openai.com/zh-Hans-CN/news/product-releases/（确认 9/10 四连发：Agents API、GPT-Live-1、ChatGPT for Financial Services、put-data-to-work；及 9/9 GPT-6 Astra 作补录）、anthropic.com/threat-intelligence-report-september-2026（通读全文，7 类危害、GTG-20006 案例）、quanta.report 出口管制解除报道（转载 BBC）、36kr ChatGPT Pro 暂停快讯（财联社）。弃用：Cognition SWE-2（官方博客复核不见）、Anthropic 研究员辞职（社交媒体转述层级过多）。排除清单（9/9、9/10 已收录共 24 项）全部核对跳过。",
+      "items": 15
+    },
+    {
+      "source_id": "arxiv-recent",
+      "status": "ok",
+      "checked_at": "2026-09-11T09:30:00+02:00",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent、https://arxiv.org/list/cs.CL/recent、https://arxiv.org/list/cs.LG/recent",
+      "evidence": "子代理检索 2026-09-10 提交的论文，产出 8 篇候选，全部打开 abs 页核实：2609.11900（MindTopo）、2609.11859（From Parameters to Answers）、2609.11682（COBRA-Skills）、2609.11393（TASCO）、2609.11318（Mr.LHDR）、2609.11243（Sci-MMR）、2609.11752（SIRF）、2609.11709（When Agents Disagree）。排除清单（前两期 16 篇）全部核对跳过。",
+      "items": 8
+    },
+    {
+      "source_id": "github-trending-weekly",
+      "status": "ok",
+      "checked_at": "2026-09-11T09:30:00+02:00",
+      "checked_url": "https://github.com/trending?since=weekly、https://github.com/trending?since=daily（Python 周榜抓取失败）",
+      "evidence": "子代理抓取周榜与日榜，产出 7 个候选项目，均点开仓库页核实：ruvnet/ruflo（+1.7k/周）、ayghri/i-have-adhd（+10.2k/周）、blader/humanizer（+5.2k/周）、cathrynlavery/diagram-design（+7.3k/周）、heygen-com/hyperframes（+4.9k/周）、THU-MAIC/OpenMAIC（+4.2k/周）、nashsu/llm_wiki（+142/日）。排除清单（前几期 16 项）全部核对跳过。Python 周榜页面未返回项目列表，属部分覆盖，由总榜周榜+日榜补足。",
+      "items": 7
+    }
+  ]
+}
