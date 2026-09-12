@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-12",
+  "notes": "config/ 信源清单尚未建立（AGENTS.md 第 0 节前提未定），沿用既定实践：AI 新闻多轮搜索 + 主线程复核、arXiv 近期批次、GitHub Trending。",
+  "sources": [
+    {
+      "source_id": "web-search-ai-news",
+      "status": "ok",
+      "checked_at": "2026-09-12T08:00:00+02:00",
+      "checked_url": "多轮英文/中文 web 搜索（Harvey 融资 / Grok 4.7 / Anthropic IPO / Hawley 调查 / Coxon-Hubinger / 斜跃智能 / 蒸馏报告细节等，覆盖 2026-09-11 至 09-12，兼收 09-09 晚发现补录）",
+      "evidence": "子代理产出 15 条候选并逐条打开来源。主线程复核：harvey.ai 官方博客（5.5 亿美元、155 亿估值、Diffusion+Lightspeed 领投、Sapphire/Whale Rock 新进、80% Am Law 100）、anthropic.com 威胁报告原文（确认 7 类危害含非法蒸馏、唯一涉及 Fable/Mythos 级模型的案例即蒸馏）、siliconrepublic 与 particle.news（Anthropic IPO 路透转述：1000 亿融资、2 万亿估值、英伟达 100 亿锚定、推迟至 10 月中旬路演）、coindesk.cc（Grok 4.7 延期，9/2 预告 2.1 万亿参数 +40%）、hawley.senate.gov（9/9 调查信函）。弃用并核对：Meta Muse（9/9 期已收录）、黄仁勋重申（9/11 期已收录）、Anthropic-METR 协议（08-04 旧闻）、Crusoe（09-04）、英国关停开关（09-01）、Sanders 法案（09-03）、Pachocki 文章（09-07 转述层级多）、NVIDIA-MediaTek（08-31，上次会话已剔除）。",
+      "items": 15
+    },
+    {
+      "source_id": "arxiv-recent",
+      "status": "ok",
+      "checked_at": "2026-09-12T08:00:00+02:00",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent、https://arxiv.org/list/cs.CL/recent、https://arxiv.org/list/cs.LG/recent",
+      "evidence": "子代理检索 2026-09-11 提交批次，产出 8 篇候选，全部打开 abs 页核实：2609.11917（MoE 重复数据过拟合，Leskovec/Liang/Zettlemoyer）、2609.11873（RSI 路线图，38 位作者）、2609.11532（WORLDVIEW T2I 文化偏见，EMNLP 2026）、2609.11897（CausalArena）、2609.11490（unlearning 数字审计）、2609.11058（EMMI 边缘 MLLM）、2609.11911（Artificial Id）、2609.11660（自主性与社会规范框架）。排除清单（前几期 19 篇）全部核对跳过。注意：部分 abs 页显示实际提交日为 09-10，批次日期为 09-11，为 arXiv 常规现象。",
+      "items": 8
+    },
+    {
+      "source_id": "github-trending-weekly",
+      "status": "ok",
+      "checked_at": "2026-09-12T08:00:00+02:00",
+      "checked_url": "https://github.com/trending?since=weekly、https://github.com/trending/python?since=weekly（日榜页面正文未完整返回）",
+      "evidence": "子代理抓取周榜与 Python 周榜，产出 8 个候选项目并打开仓库页核实。主线程复核修正：browser-use 的 star 总数被子代理误读为 10,216（实为 commits 数），经 shields.io 交叉核实 8 个仓库 star 总数：browser-use 114k（+13.2k/周）、ECC 257k（+8.7k）、ponytail 136k（+11.1k）、marketingskills 50k（+2.8k）、minimind 61k（+2.3k）、OmniVoice 12k（+2.4k）、SkillSpector 17k（+911）、context-mode 22k（+1.8k）；另打开 browser-use 仓库 README 核实 Odysseys 榜 87.4% 平均分第一。弃用：vastsa/PI-Desktop（不在本周榜单）。排除清单（前几期 16 项）全部核对跳过。",
+      "items": 8
+    }
+  ]
+}
