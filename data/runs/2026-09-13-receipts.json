@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-13",
+  "notes": "config/ 信源清单尚未建立（AGENTS.md 第 0 节前提未定），沿用既定实践：AI 新闻多轮搜索 + 主线程复核、arXiv 近期批次、GitHub Trending。周末批次说明：cs.AI/cs.LG 最新批次为 2026-09-11、cs.CL 为 2026-09-10，无 09-12/09-13 新批次，从 09-11 批次另行挑选昨日未选论文。",
+  "sources": [
+    {
+      "source_id": "web-search-ai-news",
+      "status": "ok",
+      "checked_at": "2026-09-13T21:30:00+02:00",
+      "checked_url": "多轮中英文 web 搜索（Amodei 配速 / 菲尔兹声明 / Bengio 智能体行为 / Microsoft Grok Copilot / 五角大楼 Anthropic / 智谱融资 / 参议院法案 / Meta Iris / 月之暗面 ARR / GemStuffer 等，覆盖 2026-09-11 至 09-13）",
+      "evidence": "子代理产出 15 条候选并逐条打开来源。主线程复核：darioamodei.com 原文全文（三步计划、OAI-HF 引用、RSI 限速/SALT 类比、反垄断豁免脚注）、mathandai.org 声明原文（25 位在世菲尔兹奖得主签名名单逐一核对）、yoshuabengio.org 文章全文（预训练/RL/工具性目标/奖励篡改/目标冲突机制）、Microsoft Tech Community 官方公告（SpaceXAI 子处理者、默认关闭、EU/EFTA/UK 限制）、DefenseScoop 五角大楼报道全文（Emil Michael 原话、约 90% 已迁移、两案法院进展、军方对 ChatGPT/Grok 反馈）、The Neuron 周末综述（AIRO 数字、月之暗面 ARR 3 亿→10 亿→目标 20 亿、GemStuffer 2000+ 恶意包、Joe Benton 加入 METR、Trump 拒绝灭绝警告、GSA 按需计费、Habitat Rust 重写数据）、aisocratic.org 对 Amodei 响应的整理（Musk/Altman/Hassabis/Karpathy/Delangue/Chamath/Calacanis/Sholto Douglas 表态及 X 原帖链接、40 英国议员信函、ARC-AGI-4 开源声明）、智谱融资多源交叉（新浪财经/券商中国 20:39 + 证券时报 + 证券日报：50 亿美元 = 20 亿配售 + 30 亿零息可转债、714 港元/股、折让 9.96%、占股本 4.50%）、Meta Iris 多源（路透 09-06 首报内部备忘录 + roboticsmedia/newanalytica 转述：Broadcom 设计、台积电代工、7GW→14GW）。弃用并核对：Nvidia-Anthropic IPO 锚定（09-12 期已收录）、OpenAI 问国会降速合法性（09-11 期已收录）、Grok 4.7 再延期（非官方账号传闻）、蒸馏中国实验室数字（09-12 期已收录）；版面不足未选用：GSA OneGov 2.0、Cursor Projects、Claude 18+、Figure 86k、Garry Tan 言论、Meta Instagram 事件、AIRO 仪表盘。",
+      "items": 23
+    },
+    {
+      "source_id": "arxiv-recent",
+      "status": "ok",
+      "checked_at": "2026-09-13T21:30:00+02:00",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent、https://arxiv.org/list/cs.CL/recent、https://arxiv.org/list/cs.LG/recent",
+      "evidence": "周末无新批次（cs.AI/cs.LG 最新为 09-11 批次、cs.CL 为 09-10）。子代理从 09-11 批次挑选 8 篇昨日未选论文并打开 abs 页核实：2609.11319（Magenta：数学推理×Lean 4 闭环，AIME 2025/2026 100%、IMO 2026 六题全解，入选快讯）、2609.11682（COBRA-Skills：上下文赌臂机技能优化，成本较 SkillOpt 降 55-58%）、2609.11243（Sci-MMR：235 个多跳多模态科学推理任务，证据恢复率低于准确率 20+ 点）、2609.11716（PTQ 理论：层间误差抵消 + LM-head 几何）、2609.11498（ActMap：生成时激活图不确定性量化，96KiB 表示匹配 67 倍大检测器）、2609.11709（贝叶斯反向推理多智能体决策）、2609.10410（ModerationBench 内容审核）、2609.11607（替代数据金融预测）。排除清单（前几期 19 篇）全部核对跳过。COBRA-Skills/Sci-MMR/PTQ/ActMap 等 4 篇因版面不足未选用（已在 abs 页核实）。",
+      "items": 8
+    },
+    {
+      "source_id": "github-trending-weekly",
+      "status": "ok",
+      "checked_at": "2026-09-13T21:30:00+02:00",
+      "checked_url": "https://github.com/trending?since=weekly、https://github.com/trending/python?since=weekly",
+      "evidence": "子代理抓取周榜与 Python 周榜，产出 8 个候选项目并打开仓库页核实。主线程经 shields.io 逐仓交叉核实 star 总数（8/8 通过）：i-have-adhd 44k（周 +15.9k，ADHD 友好输出规范 Skill）、archify 60k（+10.4k）、hyperframes 49k（HeyGen，HTML→视频）、markitdown 183k（+4.8k）、OpenMAIC 36k（+4.4k，清华多智能体课堂）、humanizer 48k（+4.1k）、superpowers 286k（+3.9k）、openai/skills 27k（+1.6k）。排除清单（前几期 16 项）全部核对跳过。选用 5 详（i-have-adhd/archify/hyperframes/markitdown/OpenMAIC）+ 3 略（superpowers/humanizer/openai-skills）。",
+      "items": 8
+    }
+  ]
+}
