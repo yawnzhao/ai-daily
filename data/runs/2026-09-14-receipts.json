@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-14",
+  "notes": "config/ 信源清单尚未建立（AGENTS.md 第 0 节前提未定），沿用既定实践：AI 新闻多轮搜索 + 主线程复核、arXiv 近期批次、GitHub Trending。周一说明：cs.AI/cs.LG 最新批次仍为 2026-09-11、cs.CL 为 2026-09-10（周末无新批次），继续从 09-11 批次挑选前几期未用论文。",
+  "sources": [
+    {
+      "source_id": "web-search-ai-news",
+      "status": "ok",
+      "checked_at": "2026-09-14T08:25:00+02:00",
+      "checked_url": "多轮中英文 web 搜索（Altman Fortune 专访 / 华盛顿 AI 监管政治 / Anthropic 盈利与纳斯达克 / 智谱港股 / 三实验室标准机构 / Nvidia 客户集中度 / Grok 4.8 / Flock 摄像头 / 月之暗面辟谣 / DeepSeek 扩招 等，覆盖 2026-09-12 至 09-14）",
+      "evidence": "子代理产出 14 条候选。主线程逐条去重后复核：fortune.com Altman 专访原文全文（2026 不 IPO 原话、'ill-advised moment'、'not 2026'、暗示行业减速协议接近、6 月 NYT 推迟 IPO 背景、SpaceX IPO 850 亿对比）、lite.cnn.com 华盛顿政治报道全文（Johnson 拒绝复会原话、奥巴马炉边谈话全文引语、Jeffries 声明、Trump 在 Amgen Irish Open 讲话、Hassett '恶意行为者' 论、白宫本周或开会）、api-docs.deepseek.com Change Log（V4.1 Flash 官方基准数字，确认 09-10 已收录弃用）、openai.com Agents API 官方公告全文（确认 09-10 期已收录弃用）、about.fb.com Muse 官方公告全文（确认 09-09 期已收录弃用）、anthropic.com MCP 捐赠 AAIF（确认为 2025-12-09 旧闻弃用）、Anthropic 盈利多源交叉（华尔街见闻/财联社/AAStocks 转 FT 09-13：连续两季调整后营业利润为正、Q2 营收超 115 亿美元、调整后营业利润 5.59 亿、毛利率超 80%、选定纳斯达克、估值或 2 万亿）、智谱港股多源（东方财富财富号/第一财经/中新经纬/金融界：盘中跌超 10%、MiniMax 跌超 6%、折价配售争议）、Nvidia 客户集中度（新浪财经/华尔街见闻转 The Information 09-13：FY2026 上半年三家客户合计 44%、单一客户 Q2 占 16%、上财年同期两家 36%、FY2023 无单一客户超 10%）、三家标准机构洽谈（cryptews/gurufocus/aoyii/dailycryptonews 转述 The Information：Anthropic/OpenAI/Google 自 7 月起讨论组建联合 AI 标准组织、Altman 支持政府缺位下自建）、Altman 周日发文支持放缓（金融界/hashtagtrending 转述：'任何美国竞争压力都不应成为鲁莽的理由'）、Grok 4.8（smzdm/aicrier 转述马斯克 09-14 X 帖：2.5 万亿参数、C++ 训练栈、本周完成训练进入 RL、跳过 4.7）、Flock 车牌摄像头滥用（hoodline/thenewscast/dissenter：累计 22 名警员被捕/解雇/停职/调查、佛州 Fort Pierce 警员 09-08 被捕 4 项重罪追踪前伴侣 382 次、佛州 FDOT 08-31 撤销全州 Flock 许可）、月之暗面辟谣报案（澎湃/中国基金报/新浪财经多源一致：09-12 官微声明网传创始人及员工信息纯属虚构、已报案）、DeepSeek 扩招 150 人（36kr：史上最大规模、Agent 弹性计算与服务端方向、北京杭州）。旧闻排除核实：OpenAI 暂停 RL 训练（2026-08-18 旧闻）、Pachocki 'Alien Mind'（09-06 发布、09-11 期已弃）、Meta Muse（09-09 期已收）、OpenAI Agents API（09-10 期已收）、DeepSeek V4.1 Flash（09-10 期已收）、iPhone Duo（AI 关联弱）、DeepMind RSI 传闻（证据不足）、月之暗面云分成谈判（08-26 旧）、中国大模型调用量 20 周领跑（仅头条号转述、可信度不足）。",
+      "items": 14
+    },
+    {
+      "source_id": "arxiv-recent",
+      "status": "ok",
+      "checked_at": "2026-09-14T08:25:00+02:00",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent、https://arxiv.org/list/cs.CL/recent、https://arxiv.org/list/cs.LG/recent",
+      "evidence": "周一仍无新批次（cs.AI/cs.LG 最新为 09-11 批次、cs.CL 为 09-10）。子代理从 09-11 批次挑选 8 篇前几期未用论文并逐篇打开 abs 页核实：2609.11318（Mr.LHDR：多模态长程深度研究智能体基准，隐藏 Node-Relation graph 构造、平均 12.1 个必要中间结论、最强系统 OA 仅 43.1%）、2609.11859（LLM 内部知识检索机制：逐层干预 Qwen/Llama/Gemma）、2609.11393（TASCO：稳定性感知测试时适应优化推理）、2609.11911（Artificial Id：智能体内驱力与持久对齐）、2609.11042（T1：122B MoE 终端智能体 RL，Terminal-Bench 2.1 从 43.8% 提至 64.0%、超 GPT-5.4 与 GLM-5.1，入选快讯）、2609.11842（fiberwise 最优传输改进生成调度）、2609.11163（LILA：免校准 LLM 结构化剪枝）、2609.10226（Φ-Bench：LLM 工程化 LLM 基础设施基准）。排除清单（前几期 12 篇 + 4 个主题）全部核对跳过。",
+      "items": 8
+    },
+    {
+      "source_id": "github-trending-weekly",
+      "status": "ok",
+      "checked_at": "2026-09-14T08:25:00+02:00",
+      "checked_url": "https://github.com/trending?since=daily、https://github.com/trending?since=weekly、https://github.com/trending/python?since=daily",
+      "evidence": "子代理抓取日榜与周榜，产出 8 个候选 + 3 个补充。主线程经 shields.io JSON 端点逐仓交叉核实 star 总数（9/11 通过、2 弃用）：affaan-m/ECC 258k（周 +7.3k，面向 Claude Code/Codex/Cursor 的编程智能体性能优化系统）、DietrichGebert/ponytail 138k（+8.4k，让智能体像资深工程师一样克制）、github/spec-kit 137k（+2.6k，GitHub 官方规格驱动开发工具包）、cathrynlavery/diagram-design 39k（+7.1k，38 种图表技能）、coreyhaines31/marketingskills 50k（+2.7k，营销技能集）、mksglu/context-mode 23k（+2.1k，智能体上下文优化、工具输出沙箱化降 98%）、Tencent/WeKnora 23k（+1.3k，LLM 知识平台：RAG+自主推理智能体+自维护 Wiki）、earthtojake/text-to-cad 16k（+1.1k，CAD/CAE/CAM 技能库）。弃用：brazil/VibeAudio 与 megagonlabs/inLab-M2M（shields.io 查无此仓）、QwenLM/Qwen3-Coder（trending 数字与 shields.io 17k 不一致）。排除清单（前几期 11 项）全部核对跳过。",
+      "items": 8
+    }
+  ]
+}
