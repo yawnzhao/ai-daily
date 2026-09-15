@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-15",
+  "notes": "config/ 信源清单尚未建立（AGENTS.md 第 0 节前提未定），沿用既定实践：AI 新闻多轮搜索 + 主线程复核、arXiv 近期批次、GitHub Trending。周二说明：周一晚新公示批次 cs.AI 2609.13（167 条）已可取，cs.CL 最新仍为 09-10、cs.LG 为 09-11。本期含 3 条晚发现补录（Nvidia 收购 Hugging Face 09-03 官宣、字节 296 亿美元银团贷款 09-03 披露、查尔斯国王峰会本周举行），均保留原发布时间。",
+  "sources": [
+    {
+      "source_id": "web-search-ai-news",
+      "status": "ok",
+      "checked_at": "2026-09-15T13:45:00+02:00",
+      "checked_url": "多轮中英文 web 搜索（Trump AI 监管言论 / 白宫 AI 会议 / 查尔斯国王苏格兰峰会 / Nvidia 收购 Hugging Face / DeepSeek V4.1-Flash / Claude Fable 5.1 / 字节跳动银团贷款 / 中国科技巨头 AI 融资 等，覆盖 2026-09-13 至 09-15）",
+      "evidence": "子代理产出 6 条线索核实 + 3 组额外搜索，主线程逐条去重后复核原文：apnews.com 全文（Trump 09-14/15 三连帖原话 'HOAX'/'SICK conspiracy'/'STRONG AND SMART (High IQ!) PRESIDENT'、自称 Hoax Buster、气候变化类比、称已阻止 Anthropic 做坏事、致电台录播客的黄仁勋后者设免提双方认同恐慌过度、Altman 上周达拉斯中期会议间隙与 Trump 会面（匿名信源）、Amodei '6-12 个月内蜂群或接管整个互联网'、Altman 'Pacing will be well worth this cost'、AI 股周一早盘下挫、Jeffries 'We need to act now'、Emanuel 湿滑弯道讽喻、Johnson 本周或下周初白宫会议）、politico.com Live Updates 09-14 全天多帖（Johnson 'It will be soon / either end of this week or early next week'、议程 'deliberate discussion about the responsibility of the companies'、hyper-regulation 警告；Kennedy 周三 unanimous consent 提 AI kill-switch 法案且不让联邦政府掌管开关否则总统会否决；Thune 首次表态 'light touch'、与 Klobuchar 修订版谈判 Cruz 参与 'hopefully soon'；Jeffries 'not a hoax' 敦促留守（众院周四离场 11/9 复会）、民主党 AI 委员会建议即将 rollout；Kim 'voluntary goodwill' 不可接受、嵌入式评估员 'not nearly enough'、'Mythos-proof our society'；Schumer 声明呼吁切断对华芯片流出 + 全体参议员闭门简报；Lehane 国会山会晤两党议员；Pallone 反对 AI 特别委员会；Ratepayer Protection Act 周二表决、5 名共和党前排议员 9 月联署、Jeffries 'a step forward'）、blogs.nvidia.cn 收购公告全文（黄仁勋署名 09-03、129.303 亿美元、1800 万开发者/300 万模型/50 万数据集/100 万应用/20 万企业、开放平台四承诺、Clem 主动找黄仁勋、NVIDIA 已贡献 500+ 模型 250+ 数据集、🤗 品牌保留）、cryptopolitan.com 峰会全文（Dumfries House in Ayrshire、Nvidia/DeepMind/OpenAI/Anthropic 四家+英国 AI 部长、Ditchley Foundation 起草 'shared set of principles' 章程锚定人类尊严、白金汉宫 convener 口径与 'How do we develop AI for the good of humanity'、The Independent 称黄仁勋/Hassabis/IonQ de Masi/教皇顾问 Benanti 出席、Reuters 转述讨论聚焦原则、签署不确定、Trump 09-13 拒刹车与 Global Times 冷战把戏论对照、英国中间路线与 AI Safety Institute 早期访问协议）、finance.sina.com.cn 第一财经原文（09-03 记者吕倩：296 亿美元银团贷款、原计划 200 亿认购踊跃扩至 296 亿、尚未正式签约、亚洲第二大美元银团贷款次于软银 3 月 400 亿、2026 资本支出或提至最高 700 亿美元约为去年两倍以上用于数据中心与 AI 基础设施、上次境外大额贷款 2024 年 108 亿）。弃用核实：DeepSeek V4.1-Flash（deepseek.com 官方页已开，09-10 期已收录）、Claude Fable 5.1（platform.claude.com 文档已开，发布日期页面未显示标未知、信息单一不采用）、Nvidia-OpenAI 俄亥俄 1050 亿美元担保（08-19 旧闻）、阿里 800 亿港元配售/腾讯发债（仅微博汇总口径无一手）、Anthropic 滥用披露（09-11/12 期威胁报告已收录）、五角大楼迁移 Anthropic（09-13 期已收，AP 提及仅作背景）。",
+      "items": 14
+    },
+    {
+      "source_id": "arxiv-recent",
+      "status": "ok",
+      "checked_at": "2026-09-15T13:45:00+02:00",
+      "checked_url": "https://arxiv.org/list/cs.AI/2609.13、https://arxiv.org/list/cs.CL/recent、https://arxiv.org/list/cs.LG/recent",
+      "evidence": "周一晚新批次 cs.AI 2609.13 已公示（167 条，首条 2609.13134）；cs.CL 最新仍为 09-10 批次（94 条）、cs.LG 为 09-11 批次（171 条）。子代理逐篇打开 abs 页核实 10 篇：2609.13134（SQD：按二次/次二次注意力类型做异构系统分离，8xB200 代理最高 +56% tokens/J，入选快讯）、2609.13009（物理基准专家重判：六个基准大量'模型错误'实为题目/参考答案问题，GPT-5.6-Sol 在 HLE-Physics mean@4 从 47.3% 升至 78.7%，入选快讯）、2609.12459（EvoRS：奖励 DAG 表示的奖励系统 on-policy 自进化）、2609.11504（DeFiFlowBench：自然语言 DeFi 工作流安全可执行性基准，直接/约束/few-shot 提示仍产生 14-19 次 unsafe held-out executions）、2609.12413（SoK：智能体时代越狱攻击防御映射到交互/规划/记忆/工具/智能体间通信管线）、2609.09989（自共识不是安全早退信号：3520 条共识规则在三个安全门全部未通过）、2609.12808（K-Bench：ReAct 智能体部署下 LLM 遗忘评估，CoT/工具调用/工具观测/摘要六通道）、2609.09778（ROAM：语义关系组织原子记忆，Primary/Evidence 双角色）、2609.11042（T1：09-14 期已收录，去重弃用）、2609.09764（SocialRL：多轮 PPO+六维过程奖励，Goal Achievement 平均 +9.2pp）。",
+      "items": 10
+    },
+    {
+      "source_id": "github-trending-daily",
+      "status": "ok",
+      "checked_at": "2026-09-15T13:45:00+02:00",
+      "checked_url": "https://github.com/trending?since=daily、https://github.com/trending/python?since=daily",
+      "evidence": "子代理抓取日榜与 Python 日榜，产出 15 个 AI 相关候选并经 api.github.com JSON 端点逐仓核实 star 总数（Agent-Reach 因 API rate limit 采用页面快照口径并标注）：TauricResearch/TradingAgents 104,843（Python，多智能体 LLM 金融交易框架，今日 +745）、Panniantong/Agent-Reach 81,607 页面口径（Python，让智能体读写 Twitter/Reddit/YouTube/GitHub/B站/小红书，+651）、666ghj/MiroFish 73,418（Python，群体智能引擎，描述含糊弃用）、asgeirtj/system_prompts_leaks 65,248（JavaScript，各家系统提示词整理，+764）、ruvnet/RuView 93,150（Rust，WiFi 信号空间感知，AI 关联弱弃用）、MadsLorentzen/ai-job-search 41,594（Python，Claude Code 求职框架，+443，版面不足弃用）、OpenBMB/VoxCPM 37,356（Python，免 Tokenizer 多语言语音生成 VoxCPM2）、JustVugg/colibri 31,973（C，纯 C 实现的 MoE 推理引擎零依赖，今日 +2,173）、alibaba/open-code-review 23,461 API/26,452 页面（Go，阿里混合架构代码审查：确定性规则+LLM Agent，+1,571）、debpalash/VoiceStudio 26,698（Python，全本地开源 ElevenLabs 替代，+2,776）、petergyang/no-ai-slop 8,691（Python，移除写作中 20+ 类 AI 水痕）、multimodal-art-projection/YuE 8,297（音乐生成，版面不足弃用）、SnailSploit/Claude-Red 3,602（红队技能库，弃用）、rlaope/oh-my-hermes 2,228（弃用）、huggingface/transformers 114,104（传统 ML 库非 Agent 方向弃用）。指定线索 bilawalsiddu/gods-eye-view API 404 不存在，弃用。排除清单（前几期 19 项）全部核对跳过。",
+      "items": 15
+    }
+  ]
+}
