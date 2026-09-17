@@ -57,8 +57,8 @@
 
 ## 3. 边界
 
-论文在 `Paper-Radar`。访谈 / 演讲素材在 `ai-concourse-library`。口播稿与成片在 `reusable_ai_digest_video_workflow` 那条线。
-本库只管日报本身，不往那几处写东西。
+论文在 `Paper-Radar`。访谈 / 演讲素材在 `ai-concourse-library`。周报的口播稿与成片在 `reusable_ai_digest_video_workflow` 那条线。
+本库只管日报本身，不往那几处写东西——日报自己的口播稿留在本库 `daily/scripts/`，见第 5 节。
 
 ## 4. 网页版
 
