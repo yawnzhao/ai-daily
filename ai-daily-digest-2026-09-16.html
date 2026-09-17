@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年9月16日</title>
+<title>AI 日报 2026-09-16：OpenAI 洽谈 1.2 万亿美元估值新融资；OpenAI 背书《FRONTIER Act》第三方嵌入评估条款</title>
+<meta name="description" content="OpenAI 洽谈 1.2 万亿美元估值新融资；OpenAI 背书《FRONTIER Act》第三方嵌入评估条款；字节上半年净利下滑；黄仁勋 Dreamforce 反监管">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-16.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-09-16：OpenAI 洽谈 1.2 万亿美元估值新融资；OpenAI 背书《FRONTIER Act》第三方嵌入评估条款">
+<meta property="og:description" content="OpenAI 洽谈 1.2 万亿美元估值新融资；OpenAI 背书《FRONTIER Act》第三方嵌入评估条款；字节上半年净利下滑；黄仁勋 Dreamforce 反监管">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-16.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
 <style>
   :root {
     --bg: #f7f7f9;
@@ -12,9 +22,10 @@
     --border: #e5e5ea;
     --accent: #e8794c;
     --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
     --text: #1a1a1f;
     --text-dim: #4a4a54;
-    --text-muted: #8a8a94;
+    --text-muted: #6e6e78;
     --tag-bg: #f0f0f5;
     --green: #16a34a;
     --blue: #2563eb;
@@ -36,13 +47,21 @@
     padding: 24px 20px 60px;
   }
 
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
   .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
-  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
   .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
   .header .date { font-size: 15px; color: var(--text-dim); }
   .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
   .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
-  .header .stat .num { color: var(--accent); font-weight: 700; font-size: 16px; }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
 
   .section { margin-bottom: 48px; }
   .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
@@ -51,7 +70,7 @@
   .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
 
   .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
-  .focus-box .label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
 
   .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
@@ -63,31 +82,31 @@
   .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
   .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
   .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
-  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
 
   .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
   .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
   .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
-  .news-item a { color: var(--accent); text-decoration: none; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
   .news-item a:hover { text-decoration: underline; }
 
   .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
   .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
-  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
   .insight-card .insight-body { padding: 24px 28px; }
   .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
   .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
   .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
   .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
-  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent); }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
 
   .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
 
   .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
   .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
   .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
-  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent); min-width: 28px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
   .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
   .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
   .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
@@ -95,13 +114,13 @@
   .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
   .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
   .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
-  .paper-item .paper-link { font-size: 12px; color: var(--accent); text-decoration: none; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
   .paper-item .paper-link:hover { text-decoration: underline; }
   .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
   .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
   .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
   .paper-also .paper-also-item:last-child { border-bottom: none; }
-  .paper-also .paper-also-num { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
   .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
   .paper-also .paper-also-item a:hover { text-decoration: underline; }
   .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
@@ -112,7 +131,7 @@
   .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
   .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
   .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
-  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
   .oss-content { flex: 1; min-width: 0; }
   .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
   .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
@@ -127,7 +146,7 @@
   .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
   .audio-player .play-btn:active { transform: scale(0.95); }
   .audio-player .play-info { flex: 1; min-width: 200px; }
-  .audio-player .play-label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
   .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
   .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
   .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
@@ -146,11 +165,13 @@
 </head>
 <body>
 
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-15.html">上一期 · 09-15</a><a href="ai-daily-digest-2026-09-17.html">下一期 · 09-17</a></nav>
+
 <!-- ===== Header ===== -->
-<div class="header">
+<header class="header">
   <div class="logo">AI Daily Digest</div>
   <h1>AI 日报</h1>
-  <div class="date">2026 年 9 月 16 日 · 周三 · 第 10 期</div>
+  <div class="date"><time datetime="2026-09-16">2026 年 9 月 16 日 · 周三 · 第 10 期</time></div>
   <div class="stats">
     <div class="stat"><span class="num">4</span>个板块</div>
     <div class="stat"><span class="num">8</span>条资讯</div>
@@ -158,11 +179,11 @@
     <div class="stat"><span class="num">9</span>个开源项目</div>
     <div class="stat">覆盖过去 <span class="num">48</span> 小时</div>
   </div>
-</div>
+</header>
 
 <!-- ===== Audio Player ===== -->
 <div class="audio-player">
-  <button class="play-btn" id="playBtn" onclick="togglePlay()">&#9654;</button>
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
   <div class="play-info">
     <div class="play-label">语音简报</div>
     <div class="play-title">AI 日报 · 2026年9月16日</div>
@@ -170,7 +191,7 @@
   </div>
   <div class="progress-row">
     <span class="current-time" id="currentTime">00:00</span>
-    <div class="progress-bar" id="progressBar" onclick="seekTo(event)">
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
       <div class="progress-fill" id="progressFill"></div>
     </div>
     <span class="duration-time" id="durationTime">--:--</span>
@@ -188,7 +209,9 @@
     audio.src = AUDIO_SRC;
   } else {
     var metaEl = document.querySelector('.play-meta');
-    if (metaEl) { metaEl.textContent = '语音版即将上线 · 小宇宙'; }
+    if (metaEl) { metaEl.innerHTML = '语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
   }
   var playBtn = document.getElementById('playBtn');
   var progressFill = document.getElementById('progressFill');
@@ -223,8 +246,25 @@
     var pct = x / rect.width;
     if (audio.duration) { audio.currentTime = pct * audio.duration; }
   }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
 </script>
 
+<main id="main">
 <!-- ===== 每日精选 ===== -->
 <div class="section">
   <div class="section-header">
@@ -246,7 +286,7 @@
       <h3>OpenAI 据报洽谈新一轮融资、估值剑指 1.2 万亿美元：投资者主动发起、讨论尚在早期；ARR 上月破 400 亿美元，同期 IPO 已推迟</h3>
     </div>
     <p>财联社 09-16 报道（全文已核）：3 月上一轮融了 1220 亿美元、投后估值 8520 亿美元，本轮目标估值较其提升约四成；知情人士称对话仍处早期、最终数字未来几个月可能变化，且讨论由投资者主动发起而非 OpenAI。资金需求背景：去年支出 340 亿美元、近年训练已烧掉数百亿美元，但公司坚称 3 月融资后资金储备充足；6 月已秘密提交 IPO 招股书、随后推迟时间表，新私募轮将为软银、Thrive 等长期支持者提供增持机会、但也意味着 IPO 回报更远；若落地将反超 Anthropic 5 月的 9650 亿美元估值。为什么值得看：配速之辩一周内出现最直接的资本对照——OpenAI 一边以安全为由推迟 IPO（09-14 期 Fortune 专访）、一边洽谈史上最大私募估值；Altman「为维持公众信心值得付出配速代价」与 1.2 万亿估值同周出现，「放缓叙事」与「资本扩张」并行不悖；与 Anthropic 10 月 2 万亿 IPO 目标互为镜像，前沿三强的资本卡位战已经开打。</p>
-    <div class="source">来源：<a href="https://finance.sina.com.cn/roll/2026-09-16/doc-iniryqvh3096365.shtml">财联社经新浪（全文已核）</a> · 发布于 09-16</div>
+    <div class="source">来源：<a href="https://finance.sina.com.cn/roll/2026-09-16/doc-iniryqvh3096365.shtml" target="_blank" rel="noopener">财联社经新浪（全文已核）</a> · 发布于 09-16</div>
   </div>
 
   <div class="news-item">
@@ -255,7 +295,7 @@
       <h3>OpenAI 公开支持两党《FRONTIER Act》关键条款：前沿实验室必须允许独立验证组织「嵌入」并评估安全实践——Amodei 呼吁三天内获最大竞争对手立法背书</h3>
     </div>
     <p>首席全球事务官 Lehane 周二对记者表态（POLITICO 09-15，原文 500 未开，POLITICO Pro 摘要 + CoinDesk + Trahan 官网三源交叉核实）。法案本体：《FRONTIER Act》（H.R. 9925，Frontier Risk Oversight, National Transparency, Independent Evaluation, and Reporting Act），众议员 Obernolte（共和党）与 Trahan（民主党）7 月 23 日提出，自称首个联邦 AI 安全框架：按前沿开发商规模设分层要求——模型卡、风险管理框架、独立审计、事故报告、持续评估，并建立统一的联邦透明度与灾难性风险报告标准、防止州级监管碎片化。为什么值得看：这是配速之辩从姿态转向立法文本的第一个落点——Amodei 09-13 呼吁 METR 式驻场评估员并要求政府强制全行业照做，OpenAI 09-15 站队两党法案将其联邦化；Lehane 上周刚上国会山会晤两党领导层、本周直接背书法案，「自我监管」到「外部强制监督」的转向速度超出预期；对州级碎片化的统一也是企业游说核心诉求，安全与商业利益在此罕见同向。</p>
-    <div class="source">来源：<a href="https://www.politico.com/news/2026/09/15/openai-backs-bipartisan-house-plan-for-third-party-safety-assessments-01076588">POLITICO（原文未开，三源交叉）</a> · <a href="https://trahan.house.gov/news/documentsingle.aspx?DocumentID=3823">法案详情 Trahan 官网（已核）</a> · 发布于 09-15</div>
+    <div class="source">来源：<a href="https://www.politico.com/news/2026/09/15/openai-backs-bipartisan-house-plan-for-third-party-safety-assessments-01076588" target="_blank" rel="noopener">POLITICO（原文未开，三源交叉）</a> · <a href="https://trahan.house.gov/news/documentsingle.aspx?DocumentID=3823" target="_blank" rel="noopener">法案详情 Trahan 官网（已核）</a> · 发布于 09-15</div>
   </div>
 
   <div class="news-item">
@@ -264,7 +304,7 @@
       <h3>白宫线三事同日推进：政府官员与 Anthropic 首席计算官 Tom Brown 会谈 AI 安全；Johnson 称已与 Trump 通话、一周内召集 AI 高管赴白宫；Kennedy「断路开关」法案文本今日发布</h3>
     </div>
     <p>Bloomberg 09-15/16 报道（经新浪与 Bloomberg Línea 双源转述，原文未开）：Brown 以线上形式会见五角大楼 CTO Emil Michael 与商务部长 Lutnick，Anthropic 拒绝置评——背景是双方仍在法院缠讼（五角大楼将其列为供应链风险、约 90% 机密工作负载迁离，09-13 期），而 Lutnick 9 月初曾公开表示信任 Anthropic、五角大楼禁令却仍然有效。Johnson 称周一晚与 Trump 通话、正召集「所有你知道的大人物」未来一周赴白宫开会（格隆汇摘要），时间表与 POLITICO 09-14 报道一致；Kennedy 法案要求 AI 模型内置断路开关、允许公司在模型脱离人类控制时完全关停（Daily Caller，摘要级）。叠加前白宫 AI 政策官员 Sihao Huang 本周加入 Anthropic 任前沿计算战略负责人（向 Tom Brown 汇报），Anthropic 正以计算基建团队为支点重建华盛顿关系。</p>
-    <div class="source">来源：<a href="https://finance.sina.com.cn/stock/estate/integration/2026-09-16/doc-iniryqva6564757.shtml">新浪转 Bloomberg（仅摘要）</a> · <a href="https://dailycallernewsfoundation.org/2026/09/15/john-kennedy-introducing-bill-to-require-kill-switch-on-ai-models/">Daily Caller（仅摘要）</a> · 发布于 09-15/16</div>
+    <div class="source">来源：<a href="https://finance.sina.com.cn/stock/estate/integration/2026-09-16/doc-iniryqva6564757.shtml" target="_blank" rel="noopener">新浪转 Bloomberg（仅摘要）</a> · <a href="https://dailycallernewsfoundation.org/2026/09/15/john-kennedy-introducing-bill-to-require-kill-switch-on-ai-models/" target="_blank" rel="noopener">Daily Caller（仅摘要）</a> · 发布于 09-15/16</div>
   </div>
 
   <div class="news-item">
@@ -273,7 +313,7 @@
       <h3>字节跳动上半年财务曝光：营收约 1200 亿美元（+30%）、海外收入占比创新高；净利润约 200 亿美元、同比个位数下滑、净利率降至 16.7%——AI 投入开始吃掉利润</h3>
     </div>
     <p>The Information 09-15 援引三名了解财务数据人士，IT之家/新浪科技/界面/中国经济网多源转述一致。为什么值得看：AI 军备竞赛的成本第一次在头部应用公司的利润表上显形——对照 09-15 期 296 亿美元银团贷款与最高 700 亿美元 2026 资本支出，贷款、资本开支、利润三张表拼出完整图景：收入侧仍在高速扩张，但 AI 投入已足以让净利转向下滑；再对照 Anthropic 连续两季盈利（09-14 期）与 OpenAI ARR 破 400 亿（今日第 1 条），「投入-回报」周期正在成为行业分化的新轴——市场会继续给有现金流的应用巨头送钱（认购超募五成），但利润率承压的代价刚刚开始入账。</p>
-    <div class="source">来源：<a href="https://finance.sina.com.cn/tech/digi/2026-09-16/doc-inirxhzw3686156.shtml">新浪科技转 IT之家/The Information（已核）</a> · 发布于 09-15/16</div>
+    <div class="source">来源：<a href="https://finance.sina.com.cn/tech/digi/2026-09-16/doc-inirxhzw3686156.shtml" target="_blank" rel="noopener">新浪科技转 IT之家/The Information（已核）</a> · 发布于 09-15/16</div>
   </div>
 
   <div class="news-item">
@@ -282,7 +322,7 @@
       <h3>黄仁勋 Dreamforce 公开反对新监管：「不需要新的法律或监管，因为市场逻辑已经在起作用」——安全靠市场纪律而非法律</h3>
     </div>
     <p>09-15 旧金山 Salesforce Dreamforce 大会（SBS English 原文已核）：AI 实验室不应落入在「创新速度」与「开发安全产品能力」之间做虚假选择的陷阱，各公司应自我约束——对产品能力、性能和安全没有信心就不发布。为什么值得看：至此五大掌门光谱完整：Amodei 要嵌入式评估员、Altman 背书联邦强制评估、Musk 说 Dario is right、Trump 定性骗局、黄仁勋说市场自会解决。同一人在三天内出现在配速之辩的所有阵营：Trump 免提电话的接听方（09-15 期）、邓弗里斯宫四实验室峰会参会方（09-15 期）、收购 Hugging Face 后承诺开放平台的买方（09-15 期）——Nvidia 的商业利益（数据中心扩张不受限）与其反监管立场完全同构。</p>
-    <div class="source">来源：<a href="https://m.news.sbs.co.kr/english/article.do?cooper=SBSNEWSMOBGNB&newsId=N1008755827&plink=MAINSEC">SBS English（原文已核）</a> · 发布于 09-15</div>
+    <div class="source">来源：<a href="https://m.news.sbs.co.kr/english/article.do?cooper=SBSNEWSMOBGNB&newsId=N1008755827&plink=MAINSEC" target="_blank" rel="noopener">SBS English（原文已核）</a> · 发布于 09-15</div>
   </div>
 
   <div class="news-item">
@@ -291,7 +331,7 @@
       <h3>众院推进《Ratepayer Protection Act》全院表决：≥100MW 数据中心承担电网全额增量成本、预留容量「用不用都付费」</h3>
     </div>
     <p>法案要求大型数据中心承担服务其的新建发电与输电全额增量成本、提交财务担保；markup 阶段适用范围从大型工业用户收窄至数据中心（数据中心行业协会由支持转为抱怨、钢铁业表态支持）。Reuters 09-10 报道本周表决、委员会主席 Guthrie 全院发言稿已备；截至发稿表决结果无权威确认——Roll Call 称表决未排期、9 月会期缩短，另有 AI 生成财经媒体称已通过（可信度存疑）。俄亥俄 2025 年同类先例：30GW 投机需求萎缩至 5.6GW 实际签约。</p>
-    <div class="source">来源：<a href="https://www.ainvest.com/news/house-decided-pays-ai-grid-isn-2609/">ainvest（已核原文，AI 生成媒体，结果待权威源确认）</a> · 发布于 09-16</div>
+    <div class="source">来源：<a href="https://www.ainvest.com/news/house-decided-pays-ai-grid-isn-2609/" target="_blank" rel="noopener">ainvest（已核原文，AI 生成媒体，结果待权威源确认）</a> · 发布于 09-16</div>
   </div>
 
   <div class="news-item">
@@ -300,7 +340,7 @@
       <h3>Google 发布 Gemini 3.8 Live 与 3.8 Live Extended Thinking：登顶 Artificial Analysis 语音对话质量指数，会话中自动切换 97 种语言</h3>
     </div>
     <p>Extended Thinking 版登顶 Artificial Analysis 语音对话质量指数（82.6）、τ-Voice 智能体任务完成率 68.6%、Big Bench Audio 97.7%；3.8 Live 支持近实时视觉输入、后台执行工具调用不打断对话；已上线 Gemini API、Search Live 与 Workspace。语音赛道在模型侧的竞争密度持续上升——一边是登顶质量指数的生成式路线，一边是 TypeSafe 这类「不生成、只决策」的反方向（见下条），「模型该输出什么」正在成为新的路线分野。</p>
-    <div class="source">来源：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/">Google 官方博客（已核）</a> · 发布于 09-15/16</div>
+    <div class="source">来源：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/" target="_blank" rel="noopener">Google 官方博客（已核）</a> · 发布于 09-15/16</div>
   </div>
 
   <div class="news-item">
@@ -309,7 +349,7 @@
       <h3>TypeSafe 发布 Jev：非生成式「System One」决策模型——不写邮件不聊天，输入混乱状态、输出类型化概率决策</h3>
     </div>
     <p>RLCD（校准决策强化学习）训练，端到端 70-500ms，输入 $0.042/百万 token、输出免费；官方称工作流层面比 GPT-6 Astra 与 Fable 5.1 快 193.6 倍、便宜 444.6 倍，「构造上」零 schema 幻觉（性能为官方口径，The Neuron 09-15 日报转述核实）。创始人 Diogo Almeida 为前 OpenAI RLHF/ChatGPT 研究员。当生成式模型在语音、写作上继续内卷时，「不生成、只决策」把成本与延迟压到另一个量级——这是本周模型侧最异质的一条路线。</p>
-    <div class="source">来源：<a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">TypeSafe 官方博客（经 The Neuron 09-15 日报转述核实）</a></div>
+    <div class="source">来源：<a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noopener">TypeSafe 官方博客（经 The Neuron 09-15 日报转述核实）</a></div>
   </div>
 
   <div class="oneliner">
@@ -421,35 +461,35 @@
     <div class="paper-also-title">也值得关注（已核 abs 页，版面原因未展开）</div>
     <div class="paper-also-item">
       <span class="paper-also-num">03</span>
-      <span><strong>Atria Dawn</strong>：阿里 Agentic 基础模型，16 基准 5 项最高。<a href="https://arxiv.org/abs/2609.15818">链接</a></span>
+      <span><strong>Atria Dawn</strong>：阿里 Agentic 基础模型，16 基准 5 项最高。<a href="https://arxiv.org/abs/2609.15818" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">04</span>
-      <span><strong>Stellar Colosseum</strong>：Google 多智能体数学/TCS 长周期研究，Gemini 3.1 Pro TCS-Bench 71.0%。<a href="https://arxiv.org/abs/2609.15983">链接</a></span>
+      <span><strong>Stellar Colosseum</strong>：Google 多智能体数学/TCS 长周期研究，Gemini 3.1 Pro TCS-Bench 71.0%。<a href="https://arxiv.org/abs/2609.15983" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">05</span>
-      <span><strong>MAPS</strong>：Meta LLM 服务调度（ICML 2026），端到端延迟 -42.6%。<a href="https://arxiv.org/abs/2609.15359">链接</a></span>
+      <span><strong>MAPS</strong>：Meta LLM 服务调度（ICML 2026），端到端延迟 -42.6%。<a href="https://arxiv.org/abs/2609.15359" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">06</span>
-      <span><strong>RSIAgent</strong>：阿里递归自我改进，OSWorld-v2 增强 Kimi-K3/GLM-5.3 超 GPT-6。<a href="https://arxiv.org/abs/2609.15364">链接</a></span>
+      <span><strong>RSIAgent</strong>：阿里递归自我改进，OSWorld-v2 增强 Kimi-K3/GLM-5.3 超 GPT-6。<a href="https://arxiv.org/abs/2609.15364" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">07</span>
-      <span><strong>执行缺口</strong>：20 行 conditional check 即可显著缓解智能体崩溃。<a href="https://arxiv.org/abs/2609.15293">链接</a></span>
+      <span><strong>执行缺口</strong>：20 行 conditional check 即可显著缓解智能体崩溃。<a href="https://arxiv.org/abs/2609.15293" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">08</span>
-      <span><strong>SaLT-DPO</strong>：推理安全对齐。<a href="https://arxiv.org/abs/2609.15517">链接</a></span>
+      <span><strong>SaLT-DPO</strong>：推理安全对齐。<a href="https://arxiv.org/abs/2609.15517" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">09</span>
-      <span><strong>NoteVQA</strong>：小红书 VLM 基准，252 样本最高 52.8%。<a href="https://arxiv.org/abs/2609.15695">链接</a></span>
+      <span><strong>NoteVQA</strong>：小红书 VLM 基准，252 样本最高 52.8%。<a href="https://arxiv.org/abs/2609.15695" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">10</span>
-      <span><strong>REVA</strong>：Amazon RAG 压缩 5.3-15.6 倍。<a href="https://arxiv.org/abs/2609.11209">链接</a></span>
+      <span><strong>REVA</strong>：Amazon RAG 压缩 5.3-15.6 倍。<a href="https://arxiv.org/abs/2609.11209" target="_blank" rel="noopener">链接</a></span>
     </div>
   </div>
 
@@ -485,7 +525,7 @@
     <div class="oss-rank top">1</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/earendil-works/pi">earendil-works / pi</a></span>
+        <span class="oss-name"><a href="https://github.com/earendil-works/pi" target="_blank" rel="noopener">earendil-works / pi</a></span>
         <span class="oss-stars">★ 105.9k</span>
         <span class="oss-license">TypeScript</span>
       </div>
@@ -497,7 +537,7 @@
     <div class="oss-rank top">2</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/addyosmani/agent-skills">addyosmani / agent-skills</a></span>
+        <span class="oss-name"><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani / agent-skills</a></span>
         <span class="oss-stars">★ 94.9k</span>
         <span class="oss-license">JavaScript</span>
       </div>
@@ -509,7 +549,7 @@
     <div class="oss-rank top">3</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/unclecode/crawl4ai">unclecode / crawl4ai</a></span>
+        <span class="oss-name"><a href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener">unclecode / crawl4ai</a></span>
         <span class="oss-stars">★ 83.6k</span>
         <span class="oss-license">Python</span>
       </div>
@@ -521,7 +561,7 @@
     <div class="oss-rank top">4</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/ComposioHQ/awesome-claude-skills">ComposioHQ / awesome-claude-skills</a></span>
+        <span class="oss-name"><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">ComposioHQ / awesome-claude-skills</a></span>
         <span class="oss-stars">★ 75.2k</span>
         <span class="oss-license">Markdown</span>
       </div>
@@ -533,7 +573,7 @@
     <div class="oss-rank top">5</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/calesthio/OpenMontage">calesthio / OpenMontage</a></span>
+        <span class="oss-name"><a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">calesthio / OpenMontage</a></span>
         <span class="oss-stars">★ 59.4k</span>
         <span class="oss-license">Python</span>
       </div>
@@ -545,7 +585,7 @@
     <div class="oss-rank">6</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/bojieli/ai-agent-book">bojieli / ai-agent-book</a></span>
+        <span class="oss-name"><a href="https://github.com/bojieli/ai-agent-book" target="_blank" rel="noopener">bojieli / ai-agent-book</a></span>
         <span class="oss-stars">★ 47.8k</span>
         <span class="oss-license">中文开源书</span>
       </div>
@@ -557,7 +597,7 @@
     <div class="oss-rank">7</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/danny-avila/LibreChat">danny-avila / LibreChat</a></span>
+        <span class="oss-name"><a href="https://github.com/danny-avila/LibreChat" target="_blank" rel="noopener">danny-avila / LibreChat</a></span>
         <span class="oss-stars">★ 44.0k</span>
         <span class="oss-license">TypeScript</span>
       </div>
@@ -569,7 +609,7 @@
     <div class="oss-rank">8</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/anthropics/claude-plugins-official">anthropics / claude-plugins-official</a></span>
+        <span class="oss-name"><a href="https://github.com/anthropics/claude-plugins-official" target="_blank" rel="noopener">anthropics / claude-plugins-official</a></span>
         <span class="oss-stars">★ 36.4k</span>
         <span class="oss-license">官方目录</span>
       </div>
@@ -581,7 +621,7 @@
     <div class="oss-rank">9</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/alphaXiv/OpenResearch">alphaXiv / OpenResearch</a></span>
+        <span class="oss-name"><a href="https://github.com/alphaXiv/OpenResearch" target="_blank" rel="noopener">alphaXiv / OpenResearch</a></span>
         <span class="oss-stars">★ 3.6k · 今日 +531</span>
         <span class="oss-license">Python</span>
       </div>
@@ -593,6 +633,10 @@
     一句话总结：上周开源圈在给智能体连外设，这周在给智能体装技能包——运行时、技能、插件、教材一天内凑齐，「智能体中间层」成了新基建；只是日榜第一自己承认没有权限系统，中间层长得越快，地基的欠账越显眼。
   </div>
 </div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-15.html">上一期 · 09-15</a><a href="ai-daily-digest-2026-09-17.html">下一期 · 09-17</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
 
 </body>
 </html>

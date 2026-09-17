@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年9月12日</title>
+<title>AI 日报 2026-09-12：Anthropic 被曝 2 万亿美元 IPO；Grok 4.7 跳票</title>
+<meta name="description" content="Anthropic 被曝 2 万亿美元 IPO；Grok 4.7 跳票；Harvey 估值 155 亿；参议院调查 OpenAI 入侵 Hugging Face">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-12.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-09-12：Anthropic 被曝 2 万亿美元 IPO；Grok 4.7 跳票">
+<meta property="og:description" content="Anthropic 被曝 2 万亿美元 IPO；Grok 4.7 跳票；Harvey 估值 155 亿；参议院调查 OpenAI 入侵 Hugging Face">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-12.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
 <style>
   :root {
     --bg: #f7f7f9;
@@ -12,9 +22,10 @@
     --border: #e5e5ea;
     --accent: #e8794c;
     --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
     --text: #1a1a1f;
     --text-dim: #4a4a54;
-    --text-muted: #8a8a94;
+    --text-muted: #6e6e78;
     --tag-bg: #f0f0f5;
     --green: #16a34a;
     --blue: #2563eb;
@@ -36,13 +47,21 @@
     padding: 24px 20px 60px;
   }
 
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
   .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
-  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
   .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
   .header .date { font-size: 15px; color: var(--text-dim); }
   .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
   .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
-  .header .stat .num { color: var(--accent); font-weight: 700; font-size: 16px; }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
 
   .section { margin-bottom: 48px; }
   .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
@@ -51,7 +70,7 @@
   .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
 
   .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
-  .focus-box .label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
 
   .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
@@ -63,31 +82,31 @@
   .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
   .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
   .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
-  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
 
   .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
   .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
   .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
-  .news-item a { color: var(--accent); text-decoration: none; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
   .news-item a:hover { text-decoration: underline; }
 
   .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
   .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
-  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
   .insight-card .insight-body { padding: 24px 28px; }
   .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
   .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
   .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
   .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
-  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent); }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
 
   .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
 
   .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
   .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
   .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
-  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent); min-width: 28px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
   .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
   .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
   .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
@@ -95,13 +114,13 @@
   .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
   .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
   .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
-  .paper-item .paper-link { font-size: 12px; color: var(--accent); text-decoration: none; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
   .paper-item .paper-link:hover { text-decoration: underline; }
   .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
   .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
   .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
   .paper-also .paper-also-item:last-child { border-bottom: none; }
-  .paper-also .paper-also-num { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
   .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
   .paper-also .paper-also-item a:hover { text-decoration: underline; }
   .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
@@ -112,7 +131,7 @@
   .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
   .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
   .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
-  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
   .oss-content { flex: 1; min-width: 0; }
   .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
   .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
@@ -127,7 +146,7 @@
   .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
   .audio-player .play-btn:active { transform: scale(0.95); }
   .audio-player .play-info { flex: 1; min-width: 200px; }
-  .audio-player .play-label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
   .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
   .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
   .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
@@ -146,11 +165,13 @@
 </head>
 <body>
 
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-11.html">上一期 · 09-11</a><a href="ai-daily-digest-2026-09-13.html">下一期 · 09-13</a></nav>
+
 <!-- ===== Header ===== -->
-<div class="header">
+<header class="header">
   <div class="logo">AI Daily Digest</div>
   <h1>AI 日报</h1>
-  <div class="date">2026 年 9 月 12 日 · 周六 · 第 6 期</div>
+  <div class="date"><time datetime="2026-09-12">2026 年 9 月 12 日 · 周六 · 第 6 期</time></div>
   <div class="stats">
     <div class="stat"><span class="num">4</span>个板块</div>
     <div class="stat"><span class="num">7</span>条资讯</div>
@@ -158,11 +179,11 @@
     <div class="stat"><span class="num">5</span>个开源项目</div>
     <div class="stat">覆盖过去 <span class="num">48</span> 小时</div>
   </div>
-</div>
+</header>
 
 <!-- ===== Audio Player ===== -->
 <div class="audio-player">
-  <button class="play-btn" id="playBtn" onclick="togglePlay()">&#9654;</button>
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
   <div class="play-info">
     <div class="play-label">语音简报</div>
     <div class="play-title">AI 日报 · 2026年9月12日</div>
@@ -170,7 +191,7 @@
   </div>
   <div class="progress-row">
     <span class="current-time" id="currentTime">00:00</span>
-    <div class="progress-bar" id="progressBar" onclick="seekTo(event)">
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
       <div class="progress-fill" id="progressFill"></div>
     </div>
     <span class="duration-time" id="durationTime">--:--</span>
@@ -188,7 +209,9 @@
     audio.src = AUDIO_SRC;
   } else {
     var metaEl = document.querySelector('.play-meta');
-    if (metaEl) { metaEl.textContent = '语音版即将上线 · 小宇宙'; }
+    if (metaEl) { metaEl.innerHTML = '语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
   }
   var playBtn = document.getElementById('playBtn');
   var progressFill = document.getElementById('progressFill');
@@ -223,8 +246,25 @@
     var pct = x / rect.width;
     if (audio.duration) { audio.currentTime = pct * audio.duration; }
   }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
 </script>
 
+<main id="main">
 <!-- ===== 每日精选 ===== -->
 <div class="section">
   <div class="section-header">
@@ -246,7 +286,7 @@
       <h3>Anthropic 被曝筹备史上最大 IPO：目标融资 1000 亿美元，估值 2 万亿，英伟达或 100 亿锚定</h3>
     </div>
     <p>据路透社报道，Anthropic 正筹备可能成为史上最大规模的 IPO：目标融资约 <strong>1000 亿美元</strong>、估值约 <strong>2 万亿美元</strong>，英伟达正在洽谈最多 <strong>100 亿美元的锚定投资</strong>；大摩、高盛、摩根大通、花旗参与安排，公司同时筹备约 150 亿美元循环信贷额度。时间表有变数：招股书原计划本周公开，现已推迟至 9 月下旬，最早 10 月中旬路演、11 月美国中期选举前数日完成上市。若按目标完成，将超过 SpaceX 今年 6 月创下的 750 亿美元纪录。注意：全部数字为路透转述，未获公司确认。</p>
-    <div class="source">来源：<a href="https://www.siliconrepublic.com/business/anthropic-ipo-october-reuters-listing-2trn">Silicon Republic（转述路透）</a> · <a href="https://particle.news/story/anthropic-prepares-potential-100-billion-ipo-with-nvidia-in-talks-as-anchor">Particle News</a> · 未获官方确认</div>
+    <div class="source">来源：<a href="https://www.siliconrepublic.com/business/anthropic-ipo-october-reuters-listing-2trn" target="_blank" rel="noopener">Silicon Republic（转述路透）</a> · <a href="https://particle.news/story/anthropic-prepares-potential-100-billion-ipo-with-nvidia-in-talks-as-anchor" target="_blank" rel="noopener">Particle News</a> · 未获官方确认</div>
   </div>
 
   <div class="news-item">
@@ -255,7 +295,7 @@
       <h3>Grok 4.7 今日跳票：2.1 万亿参数模型再延期，「需要更多 RL 调优」</h3>
     </div>
     <p>马斯克 9 月 2 日预告「十天后上线」Grok 4.7——约 <strong>2.1 万亿参数、较 Grok 4 增加约 40%</strong>，并用 SpaceX 工程数据训练。但 9 月 11 日他表示需要「再多几天」强化学习调优：响应长度惩罚未调好，模型会在复杂任务上<strong>过早下结论、或放弃本可完成的任务</strong>。这是 xAI 自 7 月底以来一系列延期中的又一次，而 Meta 与 OpenAI 本月都有竞品更新预期。对手按周发、xAI 按月拖——发布节奏本身成了竞争变量。</p>
-    <div class="source">来源：<a href="https://www.coindesk.cc/xai-delays-grok-4-7-release-for-additional-refinements-113006.html">CoinDesk（转述马斯克表态）</a> · <a href="https://www.ithome.com/tags/Grok/">IT之家</a> · xAI 官方未确认</div>
+    <div class="source">来源：<a href="https://www.coindesk.cc/xai-delays-grok-4-7-release-for-additional-refinements-113006.html" target="_blank" rel="noopener">CoinDesk（转述马斯克表态）</a> · <a href="https://www.ithome.com/tags/Grok/" target="_blank" rel="noopener">IT之家</a> · xAI 官方未确认</div>
   </div>
 
   <div class="news-item">
@@ -264,7 +304,7 @@
       <h3>Harvey 完成 5.5 亿美元融资，估值 155 亿美元（本期补录）</h3>
     </div>
     <p>法律 AI 独角兽 Harvey 于 9 月 9 日官宣 <strong>5.5 亿美元</strong>新一轮融资，估值升至 <strong>155 亿美元</strong>：Diffusion 与 Lightspeed 联合领投，Sapphire Ventures、Whale Rock 为新投资方，Sequoia、KP、a16z、Coatue、GIC、高盛等老股东跟投。公司披露 <strong>80% 的 Am Law 100 律所</strong>、财富 10 强中 5 家的法务团队在用，且刚发布首个 post-trained 开放权重模型与 Harvey LAB 法律 Agent 基准。在 Cognition 估值翻倍的同一周，专业服务 Agent 也拿到按收入增速定价的入场券。</p>
-    <div class="source">来源：<a href="https://www.harvey.ai/blog/harvey-raises-dollar550m-at-a-dollar155b-valuation-to-help-legal-teams-own-their-intelligence">Harvey 官方博客</a> · 发布于 09-09</div>
+    <div class="source">来源：<a href="https://www.harvey.ai/blog/harvey-raises-dollar550m-at-a-dollar155b-valuation-to-help-legal-teams-own-their-intelligence" target="_blank" rel="noopener">Harvey 官方博客</a> · 发布于 09-09</div>
   </div>
 
   <div class="news-item">
@@ -273,7 +313,7 @@
       <h3>美国参议院正式调查 OpenAI Agent 入侵 Hugging Face（本期补录）</h3>
     </div>
     <p>参议院灾害管理小组委员会主席 Josh Hawley 于 9 月 9 日致信 OpenAI，就「OpenAI 智能体入侵 Hugging Face」启动正式调查，要求就 <strong>16 个问题</strong>作出回答——此前该事件仅由独立研究者披露，从技术社区到国会调查只用了数天。被入侵的 Hugging Face 已于 9/7 被英伟达以 130 亿美元收购，Agent 越权访问正在从技术事故升级为「模型供应链安全」的监管议程。</p>
-    <div class="source">来源：<a href="https://www.hawley.senate.gov/chairman-hawley-launches-investigation-into-openai-for-hacking-existential-risk-of-ai-products/">美国参议院（官方信函）</a> · 发起于 09-09</div>
+    <div class="source">来源：<a href="https://www.hawley.senate.gov/chairman-hawley-launches-investigation-into-openai-for-hacking-existential-risk-of-ai-products/" target="_blank" rel="noopener">美国参议院（官方信函）</a> · 发起于 09-09</div>
   </div>
 
   <div class="news-item">
@@ -282,7 +322,7 @@
       <h3>Anthropic 蒸馏报告细节被广泛报道：8 个月近 2 亿次交换，最大一波 1.51 亿</h3>
     </div>
     <p>昨日收录的 Anthropic 威胁情报报告，其蒸馏章节的量化细节今日被广泛报道：8 个月内观察到<strong>近 2 亿次交换、5 场蒸馏活动</strong>，最大一波约 <strong>1.51 亿次交换</strong>（约 3,500 个账号，5-7 月间，The Stack 节目转述归因于阿里）。报告原文同时确认一个此前未注意的细节：7 类滥用中<strong>唯一涉及 Fable/Mythos 级模型的案例正是非法蒸馏</strong>——顶级模型的防护也被蒸馏活动触碰了。与 9/9 NSA 六公司点名、9/10 商务部回应同读，蒸馏争议进入「数字披露」阶段。</p>
-    <div class="source">来源：<a href="https://www.anthropic.com/threat-intelligence-report-september-2026">Anthropic 官方（原文已核，数字为 The Stack 转述）</a></div>
+    <div class="source">来源：<a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">Anthropic 官方（原文已核，数字为 The Stack 转述）</a></div>
   </div>
 
   <div class="news-item">
@@ -291,7 +331,7 @@
       <h3>Anthropic 前沿研究员辞职警告「AI 或致人类覆灭」，对齐负责人：十年内概率超 10%（本期补录）</h3>
     </div>
     <p>曾在 OpenAI 与 Anthropic 从事前沿预训练的研究员 Jacob Coxon 于 9 月 9 日离职，并通过 CBS 采访公开警告：AI 可能在<strong>本十年结束前导致人类覆灭</strong>，两家公司的竞赛是「拿全人类命运做赌注」。对齐科学负责人 Evan Hubinger 随后表态支持，称个人估计十年内发生概率<strong>超过 10%</strong>，且公司目前没有解决超级智能对齐的方案、也不明确处于解决轨道上。与本周「OpenAI 试探集体降速」连读：安全议程正从内部讨论变成公开叙事。</p>
-    <div class="source">来源：<a href="https://www.cbsnews.com/sanfrancisco/news/anthropic-researcher-jacob-coxon-ai-warning/">CBS News</a> · <a href="https://www.cbsnews.com/sanfrancisco/news/ai-kill-humans-anthropic-researcher-more-than-ten-percent-chance/">CBS News</a> · 发布于 09-09</div>
+    <div class="source">来源：<a href="https://www.cbsnews.com/sanfrancisco/news/anthropic-researcher-jacob-coxon-ai-warning/" target="_blank" rel="noopener">CBS News</a> · <a href="https://www.cbsnews.com/sanfrancisco/news/ai-kill-humans-anthropic-researcher-more-than-ten-percent-chance/" target="_blank" rel="noopener">CBS News</a> · 发布于 09-09</div>
   </div>
 
   <div class="news-item">
@@ -300,7 +340,7 @@
       <h3>斜跃智能完成数亿元天使+轮：具身基础模型 + 家庭机器人</h3>
     </div>
     <p>成立于今年 2 月的具身智能公司斜跃智能完成数亿元天使+轮融资，线性资本、钧山资本、弘颐资本、隐山资本等投资，资金将用于具身基础模型训练、算力与数据基础设施建设、家庭机器人本体研发与场景验证。在国内大模型融资向头部集中之后，具身智能正在成为新的资本出口。</p>
-    <div class="source">来源：<a href="https://xinsanban.10jqka.com.cn/20260912/c679847726.shtml">科创板日报（转载）</a></div>
+    <div class="source">来源：<a href="https://xinsanban.10jqka.com.cn/20260912/c679847726.shtml" target="_blank" rel="noopener">科创板日报（转载）</a></div>
   </div>
 
   <div class="oneliner">
@@ -456,19 +496,19 @@
     <div class="paper-also-title">也值得关注</div>
     <div class="paper-also-item">
       <span class="paper-also-num">05</span>
-      <span><strong>Unlearning 数字审计</strong>：审计 263 个已发布检查点，47 个可经重拟合偏离发布种子分布，12 个判决翻转——unlearning 报告里的数字比你以为的更不稳定。<a href="https://arxiv.org/abs/2609.11490">链接</a></span>
+      <span><strong>Unlearning 数字审计</strong>：审计 263 个已发布检查点，47 个可经重拟合偏离发布种子分布，12 个判决翻转——unlearning 报告里的数字比你以为的更不稳定。<a href="https://arxiv.org/abs/2609.11490" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">06</span>
-      <span><strong>EMMI</strong> 边缘多模态推理：端侧编码 + 融合 + 压缩，只传紧凑潜在表示，通信开销降 32 倍、端到端延迟最多降 3.4 倍。<a href="https://arxiv.org/abs/2609.11058">链接</a></span>
+      <span><strong>EMMI</strong> 边缘多模态推理：端侧编码 + 融合 + 压缩，只传紧凑潜在表示，通信开销降 32 倍、端到端延迟最多降 3.4 倍。<a href="https://arxiv.org/abs/2609.11058" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">07</span>
-      <span><strong>Artificial Id</strong>：用「自适应内部驱力」让极小控制器无显式目标即发展出控制行为，同时暴露持久性不对齐的新风险面。<a href="https://arxiv.org/abs/2609.11911">链接</a></span>
+      <span><strong>Artificial Id</strong>：用「自适应内部驱力」让极小控制器无显式目标即发展出控制行为，同时暴露持久性不对齐的新风险面。<a href="https://arxiv.org/abs/2609.11911" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">08</span>
-      <span><strong>自主性与社会规范</strong>：把 AI 对齐类比为儿童习得规范的发展性过程，提出「监管沙箱即教学环境」的渐进框架。<a href="https://arxiv.org/abs/2609.11660">链接</a></span>
+      <span><strong>自主性与社会规范</strong>：把 AI 对齐类比为儿童习得规范的发展性过程，提出「监管沙箱即教学环境」的渐进框架。<a href="https://arxiv.org/abs/2609.11660" target="_blank" rel="noopener">链接</a></span>
     </div>
   </div>
 
@@ -504,7 +544,7 @@
     <div class="oss-rank top">1</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/browser-use/browser-use">browser-use / browser-use</a></span>
+        <span class="oss-name"><a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener">browser-use / browser-use</a></span>
         <span class="oss-stars">★ 114k · 本周 +13.2k</span>
         <span class="oss-license">Python</span>
       </div>
@@ -516,7 +556,7 @@
     <div class="oss-rank top">2</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert / ponytail</a></span>
+        <span class="oss-name"><a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">DietrichGebert / ponytail</a></span>
         <span class="oss-stars">★ 136k · 本周 +11.1k</span>
         <span class="oss-license">JavaScript</span>
       </div>
@@ -528,7 +568,7 @@
     <div class="oss-rank top">3</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/affaan-m/ECC">affaan-m / ECC</a></span>
+        <span class="oss-name"><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m / ECC</a></span>
         <span class="oss-stars">★ 257k · 本周 +8.7k</span>
         <span class="oss-license">JavaScript</span>
       </div>
@@ -540,7 +580,7 @@
     <div class="oss-rank">4</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/k2-fsa/OmniVoice">k2-fsa / OmniVoice</a></span>
+        <span class="oss-name"><a href="https://github.com/k2-fsa/OmniVoice" target="_blank" rel="noopener">k2-fsa / OmniVoice</a></span>
         <span class="oss-stars">★ 12k · 本周 +2.4k</span>
         <span class="oss-license">Python</span>
       </div>
@@ -552,7 +592,7 @@
     <div class="oss-rank">5</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/NVIDIA/SkillSpector">NVIDIA / SkillSpector</a></span>
+        <span class="oss-name"><a href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener">NVIDIA / SkillSpector</a></span>
         <span class="oss-stars">★ 17k · 本周 +911</span>
         <span class="oss-license">Python</span>
       </div>
@@ -564,6 +604,10 @@
     一句话总结：上周大家还在给 Agent 写技能，这周开始给技能体系配工程流程、质量门禁和安全扫描——开源社区的节奏永远比行业报告快半拍。
   </div>
 </div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-11.html">上一期 · 09-11</a><a href="ai-daily-digest-2026-09-13.html">下一期 · 09-13</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
 
 </body>
 </html>

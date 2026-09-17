@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年9月15日</title>
+<title>AI 日报 2026-09-15：Trump 连发帖称 AI 风险是「骗局」正面回击配速呼吁；白宫 AI 领袖会议进入倒计时</title>
+<meta name="description" content="Trump 连发帖称 AI 风险是「骗局」正面回击配速呼吁；白宫 AI 领袖会议进入倒计时；查尔斯国王召集四实验室谈「共同原则」；Nvidia 129.3 亿美元收购 Hugging Face 补核">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-15.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-09-15：Trump 连发帖称 AI 风险是「骗局」正面回击配速呼吁；白宫 AI 领袖会议进入倒计时">
+<meta property="og:description" content="Trump 连发帖称 AI 风险是「骗局」正面回击配速呼吁；白宫 AI 领袖会议进入倒计时；查尔斯国王召集四实验室谈「共同原则」；Nvidia 129.3 亿美元收购 Hugging Face 补核">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-15.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
 <style>
   :root {
     --bg: #f7f7f9;
@@ -12,9 +22,10 @@
     --border: #e5e5ea;
     --accent: #e8794c;
     --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
     --text: #1a1a1f;
     --text-dim: #4a4a54;
-    --text-muted: #8a8a94;
+    --text-muted: #6e6e78;
     --tag-bg: #f0f0f5;
     --green: #16a34a;
     --blue: #2563eb;
@@ -36,13 +47,21 @@
     padding: 24px 20px 60px;
   }
 
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
   .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
-  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
   .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
   .header .date { font-size: 15px; color: var(--text-dim); }
   .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
   .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
-  .header .stat .num { color: var(--accent); font-weight: 700; font-size: 16px; }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
 
   .section { margin-bottom: 48px; }
   .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
@@ -51,7 +70,7 @@
   .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
 
   .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
-  .focus-box .label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
 
   .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
@@ -63,31 +82,31 @@
   .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
   .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
   .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
-  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
 
   .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
   .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
   .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
-  .news-item a { color: var(--accent); text-decoration: none; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
   .news-item a:hover { text-decoration: underline; }
 
   .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
   .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
-  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
   .insight-card .insight-body { padding: 24px 28px; }
   .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
   .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
   .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
   .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
-  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent); }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
 
   .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
 
   .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
   .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
   .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
-  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent); min-width: 28px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
   .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
   .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
   .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
@@ -95,13 +114,13 @@
   .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
   .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
   .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
-  .paper-item .paper-link { font-size: 12px; color: var(--accent); text-decoration: none; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
   .paper-item .paper-link:hover { text-decoration: underline; }
   .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
   .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
   .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
   .paper-also .paper-also-item:last-child { border-bottom: none; }
-  .paper-also .paper-also-num { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
   .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
   .paper-also .paper-also-item a:hover { text-decoration: underline; }
   .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
@@ -112,7 +131,7 @@
   .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
   .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
   .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
-  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
   .oss-content { flex: 1; min-width: 0; }
   .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
   .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
@@ -127,7 +146,7 @@
   .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
   .audio-player .play-btn:active { transform: scale(0.95); }
   .audio-player .play-info { flex: 1; min-width: 200px; }
-  .audio-player .play-label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
   .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
   .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
   .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
@@ -146,11 +165,13 @@
 </head>
 <body>
 
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-14.html">上一期 · 09-14</a><a href="ai-daily-digest-2026-09-16.html">下一期 · 09-16</a></nav>
+
 <!-- ===== Header ===== -->
-<div class="header">
+<header class="header">
   <div class="logo">AI Daily Digest</div>
   <h1>AI 日报</h1>
-  <div class="date">2026 年 9 月 15 日 · 周二 · 第 9 期</div>
+  <div class="date"><time datetime="2026-09-15">2026 年 9 月 15 日 · 周二 · 第 9 期</time></div>
   <div class="stats">
     <div class="stat"><span class="num">4</span>个板块</div>
     <div class="stat"><span class="num">8</span>条资讯</div>
@@ -158,11 +179,11 @@
     <div class="stat"><span class="num">8</span>个开源项目</div>
     <div class="stat">覆盖过去 <span class="num">48</span> 小时</div>
   </div>
-</div>
+</header>
 
 <!-- ===== Audio Player ===== -->
 <div class="audio-player">
-  <button class="play-btn" id="playBtn" onclick="togglePlay()">&#9654;</button>
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
   <div class="play-info">
     <div class="play-label">语音简报</div>
     <div class="play-title">AI 日报 · 2026年9月15日</div>
@@ -170,7 +191,7 @@
   </div>
   <div class="progress-row">
     <span class="current-time" id="currentTime">00:00</span>
-    <div class="progress-bar" id="progressBar" onclick="seekTo(event)">
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
       <div class="progress-fill" id="progressFill"></div>
     </div>
     <span class="duration-time" id="durationTime">--:--</span>
@@ -188,7 +209,9 @@
     audio.src = AUDIO_SRC;
   } else {
     var metaEl = document.querySelector('.play-meta');
-    if (metaEl) { metaEl.textContent = '语音版即将上线 · 小宇宙'; }
+    if (metaEl) { metaEl.innerHTML = '语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
   }
   var playBtn = document.getElementById('playBtn');
   var progressFill = document.getElementById('progressFill');
@@ -223,8 +246,25 @@
     var pct = x / rect.width;
     if (audio.duration) { audio.currentTime = pct * audio.duration; }
   }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
 </script>
 
+<main id="main">
 <!-- ===== 每日精选 ===== -->
 <div class="section">
   <div class="section-header">
@@ -246,7 +286,7 @@
       <h3>Trump 正面回击配速呼吁：称 AI 风险是「骗局（HOAX）」、限制 AI 与数据中心是「病态阴谋」，唯一需要的护栏是「强大聪明（高智商！）的总统」</h3>
     </div>
     <p>三条原帖连发：「AI taking over the World, destroying Humanity, and all other things bad, is a <strong>HOAX</strong>」「针对 AI 与数据中心的 <strong>SICK conspiracy</strong> 正在进行，唯一高兴的是中国」「AI 唯一需要的控制或『护栏』是一位 <strong>STRONG AND SMART (High IQ!) PRESIDENT</strong>，而美国绰绰有余」。他自称「Hoax Buster」，将 AI 风险警告者与气候变化警告者并置（后者他也称骗局），并称其政府「已经阻止 Anthropic 做坏的或可能坏的事」。同日 Trump 致电正在录播客的黄仁勋，后者设免提，双方认同 AI 恐慌被过度渲染；黄是少数公开称 AI 风险被夸大的头部 AI 公司掌门。回击同步：Jeffries「这非常真实，不管 Trump 怎么说——我们需要立即行动」；前芝加哥市长 Emanuel 评 Amodei 文章「等于承认我们正关着大灯在湿滑弯道上疾驰，而总统看起来又打瞌睡了」。市场面：放缓前景打击芯片与数据中心建材需求预期，AI 股周一早盘下挫。配速之辩从 CEO 公开接力到总统定性「骗局」，行政分支态度已明——「护栏=强总统」与 Amodei「嵌入式第三方评估员」在同一天构成光谱两端。</p>
-    <div class="source">来源：<a href="https://apnews.com/article/trump-ai-guardrails-data-centers-b85df16775ff7e9611a456b061a0e4b9">AP（原文已核）</a> · 发布于 09-14/15</div>
+    <div class="source">来源：<a href="https://apnews.com/article/trump-ai-guardrails-data-centers-b85df16775ff7e9611a456b061a0e4b9" target="_blank" rel="noopener">AP（原文已核）</a> · 发布于 09-14/15</div>
   </div>
 
   <div class="news-item">
@@ -255,7 +295,7 @@
       <h3>白宫 AI 领袖会议进入倒计时：Johnson 称「很快，本周五前后或下周初」、Trump 可能出席；Kennedy 提「断路开关」法案、Thune 定调「轻触式」</h3>
     </div>
     <p>Johnson 周一原话：<strong>「It will be soon. I think either end of this week or early next week. But wait and see.」</strong>会议尚未排期；他预告议程为「就企业维护安全的责任、以及政府（如果有）应扮演的角色进行深思熟虑的讨论」，同时警告「hyper-regulation」会拖累对华竞争力。立法线三头并进：参议员 Kennedy 周三将以 unanimous consent 提出 AI「kill switch」法案（要求企业自建断路开关，他明言不让联邦政府掌管、否则「总统可能会否决」）；参院多数党领袖 Thune 首次表态「需要平衡、轻触（light touch）」，与 Klobuchar 的修订版安全法案「希望尽快」定稿；众院周二表决《Ratepayer Protection Act》让科技公司承担数据中心电价上涨。民主党侧：Jeffries 敦促撤销休会（众院周四离场、11/9 才复会）；参议员 Andy Kim 称不能依赖 AI 公司「自愿的善意」；Schumer 呼吁切断先进 AI 芯片对华流出并要求全体参议员闭门简报。游说面：OpenAI 首席全球事务官 Lehane 同日到国会山会晤两党议员。中期前会期只剩三天，实质立法全部要等 11 月之后——白宫会议是选举前唯一可能产出共识的场合。</p>
-    <div class="source">来源：<a href="https://www.politico.com/live-updates/2026/09/14/congress/johnson-to-meet-ai-execs-soon-01074893">POLITICO（原文已核）</a> · 发布于 09-14</div>
+    <div class="source">来源：<a href="https://www.politico.com/live-updates/2026/09/14/congress/johnson-to-meet-ai-execs-soon-01074893" target="_blank" rel="noopener">POLITICO（原文已核）</a> · 发布于 09-14</div>
   </div>
 
   <div class="news-item">
@@ -264,7 +304,7 @@
       <h3>查尔斯国王本周在苏格兰邓弗里斯宫召集 Nvidia、DeepMind、OpenAI、Anthropic：Ditchley Foundation 已起草「共同原则」章程</h3>
     </div>
     <p>四家实验室高管与英国 AI 部长将在 Ayrshire 的 Dumfries House 闭门会谈；据 The Independent，黄仁勋、Demis Hassabis、IonQ 掌门及教皇 AI 伦理顾问 Benanti 预计出席。白金汉宫消息源：国王扮演 convener、为对话创造<strong>中立空间</strong>，核心设问「如何以造福人类的方式开发 AI」——「这不容易做到，但不意味着不该尝试」。组织方 Ditchley Foundation 备好章程草案：一套「共同原则」，让 AI 发展锚定<strong>人类尊严</strong>而非仅以能力与效率度量；是否会有任何签署仍不确定。峰会紧跟 Amodei 配速呼吁与研究员存续级警告，而各国方向相反：Trump 拒绝踩刹车、Global Times 称减速提议是「冷战式把戏」、英国走中间路线。Amodei 方案里「民主国家实验室」缺一个各方都能接受的中立召集方，王室+Ditchley 正在补位——但无签署机制的「原则章程」很可能重演 Bletchley 宣言式的象征性成果。</p>
-    <div class="source">来源：<a href="https://www.cryptopolitan.com/king-charles-ai-chiefs-scotland-safety-fears/">Cryptopolitan（已核，转述 Reuters/The Independent/白金汉宫）</a> · 另见 <a href="https://36kr.com/newsflashes/3983078848691205">36kr</a> · 发布于 09-14/15</div>
+    <div class="source">来源：<a href="https://www.cryptopolitan.com/king-charles-ai-chiefs-scotland-safety-fears/" target="_blank" rel="noopener">Cryptopolitan（已核，转述 Reuters/The Independent/白金汉宫）</a> · 另见 <a href="https://36kr.com/newsflashes/3983078848691205" target="_blank" rel="noopener">36kr</a> · 发布于 09-14/15</div>
   </div>
 
   <div class="news-item">
@@ -273,7 +313,7 @@
       <h3>Nvidia 以 129.303 亿美元收购 Hugging Face：承诺保持「开放平台」、通过 HF 构建部署「不要求使用 NVIDIA 计算」（09-03 官宣 · 09-07 期曾简讯报道，本期补核展开）</h3>
     </div>
     <p>黄仁勋署名官宣：交易由 HF 侧发起——CEO Delangue 在思考 HF 下一阶段时找到他、认为 NVIDIA 是「HF、其社区与开放模型未来的理想家园」，🤗 品牌保留。数字面：HF 服务 <strong>1800 万开发者</strong>、托管 <strong>300 万模型</strong>、50 万数据集、100 万应用，20 万企业使用；NVIDIA 自称已是 HF 上开放模型与数据的最大贡献者（500+ 模型、250+ 数据集）。承诺清单：开发者自选模型/框架/云/推理服务商/计算平台、继续支持全生态开源开放权重模型、多云多加速器部署。全球最大算力供应商买下全球最大开源模型社区——恰逢 Amodei 呼吁嵌入式评估员、ARC Prize 警告「任何减少开放性的行业协调」的同一周，开放生态的中立基础设施首次挂靠单一芯片巨头；Thomas Wolf 刚受命领导 Open Alignment Initiative，其评估独立性与 NVIDIA 商业利益的边界是持续观察点。</p>
-    <div class="source">来源：<a href="https://blogs.nvidia.cn/blog/nvidia-to-acquire-hugging-face/">NVIDIA 官方博客（原文已核）</a> · 发布于 09-03 · 09-07 期 VOL.01 曾简讯报道，本期补核展开</div>
+    <div class="source">来源：<a href="https://blogs.nvidia.cn/blog/nvidia-to-acquire-hugging-face/" target="_blank" rel="noopener">NVIDIA 官方博客（原文已核）</a> · 发布于 09-03 · 09-07 期 VOL.01 曾简讯报道，本期补核展开</div>
   </div>
 
   <div class="news-item">
@@ -282,7 +322,7 @@
       <h3>字节跳动落定 296 亿美元银团贷款：认购超募五成，亚洲第二大美元银团贷款；2026 年资本支出或提至最高 700 亿美元</h3>
     </div>
     <p>第一财经 09-03 披露（09-07 期 VOL.01 曾简讯报道，本期补核展开）：原计划筹集 <strong>200 亿美元</strong>、因银行认购踊跃扩至 <strong>296 亿美元</strong>，截至发稿尚未正式签约；完成后仅次于软银 3 月 400 亿美元过桥贷款，为今年亚洲第二大美元计价银团贷款。同期披露：字节考虑将 2026 年资本支出提升至<strong>最高 700 亿美元、约为去年两倍以上</strong>，主要用于扩建数据中心及其他 AI 基础设施；其上一次大规模境外贷款为 2024 年约 108 亿美元。财新 09-07 以「字节、阿里等 AI 巨头加大资本开支，市场承接其新增融资需求」跟进。与昨日智谱折价配售盘中跌超 10% 互为镜像——同一周，美元银团市场抢着给有现金流的应用巨头送钱，港股却对纯模型公司再融资用脚投票：「AI 资本」正按造血能力重新定价。</p>
-    <div class="source">来源：<a href="https://finance.sina.com.cn/wm/2026-09-03/doc-iniqpqxw1120595.shtml">第一财经经新浪（原文已核）</a> · <a href="http://www.caixin.com/2026-09-07/102482532.html">财新（仅搜索摘要）</a> · 发布于 09-03/07 · 09-07 期曾简讯报道，本期补核展开</div>
+    <div class="source">来源：<a href="https://finance.sina.com.cn/wm/2026-09-03/doc-iniqpqxw1120595.shtml" target="_blank" rel="noopener">第一财经经新浪（原文已核）</a> · <a href="http://www.caixin.com/2026-09-07/102482532.html" target="_blank" rel="noopener">财新（仅搜索摘要）</a> · 发布于 09-03/07 · 09-07 期曾简讯报道，本期补核展开</div>
   </div>
 
   <div class="news-item">
@@ -291,7 +331,7 @@
       <h3>Schumer：国会必须为 AI 设「安全、负责、有问责的护栏」，呼吁切断先进 AI 芯片对华流出、要求全体参议员闭门简报</h3>
     </div>
     <p>参院民主党领袖周一声明：理解对华竞争的担忧，但国会需要行动——「安全、负责、有问责的护栏」；他同时呼吁立法切断先进 AI 芯片与半导体技术对华流出以减缓对手发展，并要求行政官员为全体参议员做闭门 AI 应对简报。与 Jeffries「立即行动」、Kim「绑定框架」共同构成民主党选举前的 AI 政策攻势；而共和党侧 Thune 的「轻触」与 Kennedy 的「企业自建开关」已摆上桌——两党方案的分野在 11 月中期选举前不会再有交集。</p>
-    <div class="source">来源：<a href="https://www.politico.com/live-updates/2026/09/14/congress/what-were-watching-01074046">POLITICO Capitol agenda（原文已核）</a> · 发布于 09-14</div>
+    <div class="source">来源：<a href="https://www.politico.com/live-updates/2026/09/14/congress/what-were-watching-01074046" target="_blank" rel="noopener">POLITICO Capitol agenda（原文已核）</a> · 发布于 09-14</div>
   </div>
 
   <div class="news-item">
@@ -300,7 +340,7 @@
       <h3>Global Times 评论：西方实验室的减速提议是「冷战式把戏」，意在拖慢北京</h3>
     </div>
     <p>中国官媒 Global Times 对配速呼吁的定性——「冷战式把戏」，与 Trump「拒绝刹车、保持对华领先」同周出现。配速之辩的国际坐标系就此完整：美国行政分支反对减速、中国官方指其为遏制工具、英国王室试图提供中立召集空间——三方都没有拿出可执行机制，Amodei 设想中的「全球协调」在第一周就撞上了地缘政治的现实。</p>
-    <div class="source">来源：<a href="https://www.cryptopolitan.com/king-charles-ai-chiefs-scotland-safety-fears/">Cryptopolitan 转述（原文未开）</a> · 发布于 09-14/15</div>
+    <div class="source">来源：<a href="https://www.cryptopolitan.com/king-charles-ai-chiefs-scotland-safety-fears/" target="_blank" rel="noopener">Cryptopolitan 转述（原文未开）</a> · 发布于 09-14/15</div>
   </div>
 
   <div class="news-item">
@@ -309,7 +349,7 @@
       <h3>众院周二表决《Ratepayer Protection Act》：让科技公司承担数据中心带来的电价上涨</h3>
     </div>
     <p>选举季最直接的 AI 立法动作不是安全法案，而是电价法案——选民对数据中心推高电费的反弹让两党罕见合流：Johnson 支持快速通过，至少 5 名众院共和党前排议员 9 月以来加入联署，Jeffries 背书并称「这是向前一步，但显然还需要做更多」。参议员 Husted 透露参院正在讨论跟进。在「灾难性风险」辩论僵持不下时，<strong>「电费单政治」</strong>成了 AI 监管第一个真正落地的新滑坡。</p>
-    <div class="source">来源：<a href="https://www.politico.com/live-updates/2026/09/14/congress/what-were-watching-01074046">POLITICO Capitol agenda（原文已核）</a> · 发布于 09-14</div>
+    <div class="source">来源：<a href="https://www.politico.com/live-updates/2026/09/14/congress/what-were-watching-01074046" target="_blank" rel="noopener">POLITICO Capitol agenda（原文已核）</a> · 发布于 09-14</div>
   </div>
 
   <div class="oneliner">
@@ -399,35 +439,35 @@
     <div class="paper-also-title">也值得关注（已核 abs 页，版面原因未展开）</div>
     <div class="paper-also-item">
       <span class="paper-also-num">02</span>
-      <span><strong>SQD</strong>：按二次/次二次注意力类型（而非算子类型）做异构系统分离，8xB200 代理上最高 +56% tokens/J。<a href="https://arxiv.org/abs/2609.13134">链接</a></span>
+      <span><strong>SQD</strong>：按二次/次二次注意力类型（而非算子类型）做异构系统分离，8xB200 代理上最高 +56% tokens/J。<a href="https://arxiv.org/abs/2609.13134" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">03</span>
-      <span><strong>EvoRS</strong>：奖励 DAG 表示 + on-policy 自进化，解决固定奖励系统随策略漂移失效的问题。<a href="https://arxiv.org/abs/2609.12459">链接</a></span>
+      <span><strong>EvoRS</strong>：奖励 DAG 表示 + on-policy 自进化，解决固定奖励系统随策略漂移失效的问题。<a href="https://arxiv.org/abs/2609.12459" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">04</span>
-      <span><strong>DeFiFlowBench</strong>：自然语言生成 DeFi 工作流的安全可执行性基准，现有提示方法仍产生 14-19 次 unsafe 执行。<a href="https://arxiv.org/abs/2609.11504">链接</a></span>
+      <span><strong>DeFiFlowBench</strong>：自然语言生成 DeFi 工作流的安全可执行性基准，现有提示方法仍产生 14-19 次 unsafe 执行。<a href="https://arxiv.org/abs/2609.11504" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">05</span>
-      <span><strong>SoK 越狱</strong>：把攻击与防御映射到智能体管线的交互/规划/记忆/工具/通信各环节。<a href="https://arxiv.org/abs/2609.12413">链接</a></span>
+      <span><strong>SoK 越狱</strong>：把攻击与防御映射到智能体管线的交互/规划/记忆/工具/通信各环节。<a href="https://arxiv.org/abs/2609.12413" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">06</span>
-      <span><strong>自共识早退</strong>：多次探针答案一致不能证明推理完成，3520 条共识规则未通过任何安全门。<a href="https://arxiv.org/abs/2609.09989">链接</a></span>
+      <span><strong>自共识早退</strong>：多次探针答案一致不能证明推理完成，3520 条共识规则未通过任何安全门。<a href="https://arxiv.org/abs/2609.09989" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">07</span>
-      <span><strong>K-Bench</strong>：ReAct 智能体部署下的 LLM 遗忘基准，CoT/工具调用/观测/摘要六个泄露通道。<a href="https://arxiv.org/abs/2609.12808">链接</a></span>
+      <span><strong>K-Bench</strong>：ReAct 智能体部署下的 LLM 遗忘基准，CoT/工具调用/观测/摘要六个泄露通道。<a href="https://arxiv.org/abs/2609.12808" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">08</span>
-      <span><strong>ROAM</strong>：用语义关系组织原子记忆（Primary/Evidence 双角色），降低冗余与冲突。<a href="https://arxiv.org/abs/2609.09778">链接</a></span>
+      <span><strong>ROAM</strong>：用语义关系组织原子记忆（Primary/Evidence 双角色），降低冗余与冲突。<a href="https://arxiv.org/abs/2609.09778" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">09</span>
-      <span><strong>SocialRL</strong>：多轮 PPO + 六维过程奖励训练社交智能，Goal Achievement 平均 +9.2pp。<a href="https://arxiv.org/abs/2609.09764">链接</a></span>
+      <span><strong>SocialRL</strong>：多轮 PPO + 六维过程奖励训练社交智能，Goal Achievement 平均 +9.2pp。<a href="https://arxiv.org/abs/2609.09764" target="_blank" rel="noopener">链接</a></span>
     </div>
   </div>
 
@@ -463,7 +503,7 @@
     <div class="oss-rank top">1</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/TauricResearch/TradingAgents">TauricResearch / TradingAgents</a></span>
+        <span class="oss-name"><a href="https://github.com/TauricResearch/TradingAgents" target="_blank" rel="noopener">TauricResearch / TradingAgents</a></span>
         <span class="oss-stars">★ 105k · 今日 +745</span>
         <span class="oss-license">Python</span>
       </div>
@@ -475,7 +515,7 @@
     <div class="oss-rank top">2</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/Panniantong/Agent-Reach">Panniantong / Agent-Reach</a></span>
+        <span class="oss-name"><a href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">Panniantong / Agent-Reach</a></span>
         <span class="oss-stars">★ 82k · 今日 +651（页面口径）</span>
         <span class="oss-license">Python</span>
       </div>
@@ -487,7 +527,7 @@
     <div class="oss-rank top">3</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj / system_prompts_leaks</a></span>
+        <span class="oss-name"><a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank" rel="noopener">asgeirtj / system_prompts_leaks</a></span>
         <span class="oss-stars">★ 65k · 今日 +764</span>
         <span class="oss-license">JavaScript</span>
       </div>
@@ -499,7 +539,7 @@
     <div class="oss-rank top">4</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/OpenBMB/VoxCPM">OpenBMB / VoxCPM</a></span>
+        <span class="oss-name"><a href="https://github.com/OpenBMB/VoxCPM" target="_blank" rel="noopener">OpenBMB / VoxCPM</a></span>
         <span class="oss-stars">★ 37k · 今日 +216</span>
         <span class="oss-license">Python</span>
       </div>
@@ -511,7 +551,7 @@
     <div class="oss-rank top">5</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/JustVugg/colibri">JustVugg / colibri</a></span>
+        <span class="oss-name"><a href="https://github.com/JustVugg/colibri" target="_blank" rel="noopener">JustVugg / colibri</a></span>
         <span class="oss-stars">★ 32k · 今日 +2.2k</span>
         <span class="oss-license">C</span>
       </div>
@@ -523,7 +563,7 @@
     <div class="oss-rank">6</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/debpalash/VoiceStudio">debpalash / VoiceStudio</a></span>
+        <span class="oss-name"><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener">debpalash / VoiceStudio</a></span>
         <span class="oss-stars">★ 27k · 今日 +2.8k</span>
         <span class="oss-license">Python</span>
       </div>
@@ -535,7 +575,7 @@
     <div class="oss-rank">7</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/alibaba/open-code-review">alibaba / open-code-review</a></span>
+        <span class="oss-name"><a href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">alibaba / open-code-review</a></span>
         <span class="oss-stars">★ 23k-26k · 今日 +1.6k</span>
         <span class="oss-license">Go</span>
       </div>
@@ -547,7 +587,7 @@
     <div class="oss-rank">8</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/petergyang/no-ai-slop">petergyang / no-ai-slop</a></span>
+        <span class="oss-name"><a href="https://github.com/petergyang/no-ai-slop" target="_blank" rel="noopener">petergyang / no-ai-slop</a></span>
         <span class="oss-stars">★ 8.7k</span>
         <span class="oss-license">Python</span>
       </div>
@@ -559,6 +599,10 @@
     一句话总结：上周开源圈在给智能体立规矩，这周在给智能体开外挂——全网感知、本地推理、去 AI 味，三个方向共同回答一个问题：智能体时代，什么必须留在自己手里。
   </div>
 </div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-14.html">上一期 · 09-14</a><a href="ai-daily-digest-2026-09-16.html">下一期 · 09-16</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
 
 </body>
 </html>

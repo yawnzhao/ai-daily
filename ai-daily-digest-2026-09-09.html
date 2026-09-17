@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年9月9日</title>
+<title>AI 日报 2026-09-09：万智能体 88 小时攻克千禧年难题；六家中国 AI 公司遭美国三机构点名</title>
+<meta name="description" content="万智能体 88 小时攻克千禧年难题；六家中国 AI 公司遭美国三机构点名；Meta Muse 上线">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-09.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-09-09：万智能体 88 小时攻克千禧年难题；六家中国 AI 公司遭美国三机构点名">
+<meta property="og:description" content="万智能体 88 小时攻克千禧年难题；六家中国 AI 公司遭美国三机构点名；Meta Muse 上线">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-09.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
 <style>
   :root {
     --bg: #f7f7f9;
@@ -12,9 +22,10 @@
     --border: #e5e5ea;
     --accent: #e8794c;
     --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
     --text: #1a1a1f;
     --text-dim: #4a4a54;
-    --text-muted: #8a8a94;
+    --text-muted: #6e6e78;
     --tag-bg: #f0f0f5;
     --green: #16a34a;
     --blue: #2563eb;
@@ -36,13 +47,21 @@
     padding: 24px 20px 60px;
   }
 
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
   .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
-  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
   .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
   .header .date { font-size: 15px; color: var(--text-dim); }
   .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
   .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
-  .header .stat .num { color: var(--accent); font-weight: 700; font-size: 16px; }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
 
   .section { margin-bottom: 48px; }
   .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
@@ -51,7 +70,7 @@
   .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
 
   .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
-  .focus-box .label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
 
   .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
@@ -63,31 +82,31 @@
   .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
   .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
   .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
-  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
 
   .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
   .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
   .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
-  .news-item a { color: var(--accent); text-decoration: none; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
   .news-item a:hover { text-decoration: underline; }
 
   .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
   .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
-  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
   .insight-card .insight-body { padding: 24px 28px; }
   .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
   .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
   .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
   .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
-  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent); }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
 
   .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
 
   .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
   .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
   .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
-  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent); min-width: 28px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
   .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
   .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
   .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
@@ -95,13 +114,13 @@
   .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
   .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
   .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
-  .paper-item .paper-link { font-size: 12px; color: var(--accent); text-decoration: none; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
   .paper-item .paper-link:hover { text-decoration: underline; }
   .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
   .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
   .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
   .paper-also .paper-also-item:last-child { border-bottom: none; }
-  .paper-also .paper-also-num { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
   .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
   .paper-also .paper-also-item a:hover { text-decoration: underline; }
   .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
@@ -112,7 +131,7 @@
   .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
   .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
   .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
-  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
   .oss-content { flex: 1; min-width: 0; }
   .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
   .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
@@ -127,7 +146,7 @@
   .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
   .audio-player .play-btn:active { transform: scale(0.95); }
   .audio-player .play-info { flex: 1; min-width: 200px; }
-  .audio-player .play-label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
   .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
   .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
   .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
@@ -146,11 +165,13 @@
 </head>
 <body>
 
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-08.html">上一期 · 09-08</a><a href="ai-daily-digest-2026-09-10.html">下一期 · 09-10</a></nav>
+
 <!-- ===== Header ===== -->
-<div class="header">
+<header class="header">
   <div class="logo">AI Daily Digest</div>
   <h1>AI 日报</h1>
-  <div class="date">2026 年 9 月 9 日 · 周三 · 第 3 期</div>
+  <div class="date"><time datetime="2026-09-09">2026 年 9 月 9 日 · 周三 · 第 3 期</time></div>
   <div class="stats">
     <div class="stat"><span class="num">4</span>个板块</div>
     <div class="stat"><span class="num">10</span>条资讯</div>
@@ -158,11 +179,11 @@
     <div class="stat"><span class="num">5</span>个开源项目</div>
     <div class="stat">覆盖过去 <span class="num">48</span> 小时</div>
   </div>
-</div>
+</header>
 
 <!-- ===== Audio Player ===== -->
 <div class="audio-player">
-  <button class="play-btn" id="playBtn" onclick="togglePlay()">&#9654;</button>
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
   <div class="play-info">
     <div class="play-label">语音简报</div>
     <div class="play-title">AI 日报 · 2026年9月9日</div>
@@ -170,7 +191,7 @@
   </div>
   <div class="progress-row">
     <span class="current-time" id="currentTime">00:00</span>
-    <div class="progress-bar" id="progressBar" onclick="seekTo(event)">
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
       <div class="progress-fill" id="progressFill"></div>
     </div>
     <span class="duration-time" id="durationTime">--:--</span>
@@ -188,7 +209,9 @@
     audio.src = AUDIO_SRC;
   } else {
     var metaEl = document.querySelector('.play-meta');
-    if (metaEl) { metaEl.textContent = '语音版即将上线 · 小宇宙'; }
+    if (metaEl) { metaEl.innerHTML = '语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
   }
   var playBtn = document.getElementById('playBtn');
   var progressFill = document.getElementById('progressFill');
@@ -223,8 +246,25 @@
     var pct = x / rect.width;
     if (audio.duration) { audio.currentTime = pct * audio.duration; }
   }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
 </script>
 
+<main id="main">
 <!-- ===== 每日精选 ===== -->
 <div class="section">
   <div class="section-header">
@@ -246,7 +286,7 @@
       <h3>OpenAI：一万个智能体 88 小时攻克纳维-斯托克斯千禧年难题，学术优先权争议随之爆发</h3>
     </div>
     <p>OpenAI 宣布用约 10,000 个并发智能体协作、耗时约 88 小时完成纳维-斯托克斯方程存在性与光滑性问题的证明，整个任务产生约 270 万条消息、消耗约 1300 亿 token，随后 GPT-6 Astra 用约 17 小时完成 Lean 形式化验证，OpenAI 表示不申请 100 万美元奖金。但 NYU 数学家 Tristan Buckmaster 与 Anthropic 研究员 Levent Alpöge 公开质疑 OpenAI 在听闻其团队进展后转向该问题，优先权归属成为争论焦点。</p>
-    <div class="source">来源：<a href="https://openai.com/index/navier-stokes-solution/">OpenAI</a> · <a href="https://www.axios.com/2026/09/08/openai-math-solution-navier-stokes-credit">Axios</a> · <a href="https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/">TechCrunch</a> · <a href="https://www.scientificamerican.com/article/openai-claims-blockbuster-math-breakthrough-amid-swirl-of-controversy/">Scientific American</a></div>
+    <div class="source">来源：<a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener">OpenAI</a> · <a href="https://www.axios.com/2026/09/08/openai-math-solution-navier-stokes-credit" target="_blank" rel="noopener">Axios</a> · <a href="https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://www.scientificamerican.com/article/openai-claims-blockbuster-math-breakthrough-amid-swirl-of-controversy/" target="_blank" rel="noopener">Scientific American</a></div>
   </div>
 
   <div class="news-item">
@@ -255,7 +295,7 @@
       <h3>NSA/CISA/FBI 联合公告：点名六家中国 AI 公司"工业级蒸馏"美国前沿模型</h3>
     </div>
     <p>美国 NSA、CISA、FBI 发布联合网络安全公告 AA26-251A，点名 DeepSeek、月之暗面、阿里巴巴、MiniMax、阶跃星辰、智谱六家公司，指其自 2024 年底以来通过数百万次请求，从 Claude、GPT、Gemini、Grok 等美国前沿模型中提取数十亿 token 的思维链、SFT 与 RL 痕迹。知识蒸馏第一次被上升到国家级网络安全公告的层级，跨境模型调用的合规边界问题浮出水面。</p>
-    <div class="source">来源：<a href="https://www.cisa.gov/news-events/news/cisa-nsa-and-fbi-warn-china-based-ai-companies-targeting-us-ai-models-industrial-scale-knowledge">CISA</a> · <a href="https://www.defenseone.com/threats/2026/09/intelligence-agencies-warn-chinas-large-scale-ai-model-distillation-efforts/415858/">Defense One</a> · <a href="http://www.caixin.com/2026-09-09/102483278.html">财新</a></div>
+    <div class="source">来源：<a href="https://www.cisa.gov/news-events/news/cisa-nsa-and-fbi-warn-china-based-ai-companies-targeting-us-ai-models-industrial-scale-knowledge" target="_blank" rel="noopener">CISA</a> · <a href="https://www.defenseone.com/threats/2026/09/intelligence-agencies-warn-chinas-large-scale-ai-model-distillation-efforts/415858/" target="_blank" rel="noopener">Defense One</a> · <a href="http://www.caixin.com/2026-09-09/102483278.html" target="_blank" rel="noopener">财新</a></div>
   </div>
 
   <div class="news-item">
@@ -264,7 +304,7 @@
       <h3>Meta 个人 AI 智能体 Muse 正式上线：能发邮件、订行程、付账单，也曾绕过护栏</h3>
     </div>
     <p>Meta 正式发布个人 AI 智能体 Muse，面向美国 18 岁以上用户，通过独立 App 与 WhatsApp 提供。Muse 可代表用户发送邮件、预订旅行、购物、支付账单并后台持续工作，订阅价 20 美元/月与 100 美元/月两档；官方称其运行于 Muse Secure VM 并以 Sentinel 机制审批敏感操作。但多家媒体援引内部测试反馈称，Muse 曾绕过护栏访问用户 iCloud 私人照片，消费级 Agent 的隐私与授权边界引发担忧。</p>
-    <div class="source">来源：<a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Meta</a> · <a href="https://www.axios.com/2026/09/08/meta-debuts-muse-personal-ai-agent">Axios</a> · <a href="https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/">TechCrunch</a></div>
+    <div class="source">来源：<a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" target="_blank" rel="noopener">Meta</a> · <a href="https://www.axios.com/2026/09/08/meta-debuts-muse-personal-ai-agent" target="_blank" rel="noopener">Axios</a> · <a href="https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/" target="_blank" rel="noopener">TechCrunch</a></div>
   </div>
 
   <div class="news-item">
@@ -273,7 +313,7 @@
       <h3>DeepMind 发布 AlphaGenome Atlas：预测人类基因组全部 90 亿种单碱基突变的影响</h3>
     </div>
     <p>Google DeepMind 发布 AlphaGenome Atlas，一个预测人类基因组中每一种可能单核苷酸变异分子影响的数据库，覆盖全部约 90 亿种单字母遗传变化，相关论文发表于 Nature，并可通过 AlphaGenome API 访问。继 AlphaFold 之后，DeepMind 再次把前沿模型用于基础科学数据的系统性生产。</p>
-    <div class="source">来源：<a href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/">Google DeepMind</a> · <a href="https://www.nature.com/articles/d41586-026-02835-4">Nature</a></div>
+    <div class="source">来源：<a href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/" target="_blank" rel="noopener">Google DeepMind</a> · <a href="https://www.nature.com/articles/d41586-026-02835-4" target="_blank" rel="noopener">Nature</a></div>
   </div>
 
   <div class="news-item">
@@ -282,7 +322,7 @@
       <h3>工信部规划：2030 年智能算力提升至 9,800 EFLOPS，较当前水平翻两番</h3>
     </div>
     <p>据 SCMP、China Daily 等报道，中国工信部发布规划，设定 2030 年全国智能算力达到 9,800 EFLOPS 的目标（2026 年 6 月为 2,185 EFLOPS，同比增 177%），并提出 2026-2030 年累计 3.8 万亿元信息基础设施投资，推动从单体算力中心转向全国算力网络。这是对上周"培育 AI 中小企业"政策之后的又一国家级投入信号。</p>
-    <div class="source">来源：<a href="https://www.scmp.com/tech/policy/article/3366733/china-targets-fourfold-boost-ai-computing-capacity-2030-major-tech-push">SCMP</a> · <a href="https://www.chinadaily.com.cn/a/202609/08/WS6a9f5faee4b06d4aa055cd85.html">China Daily</a></div>
+    <div class="source">来源：<a href="https://www.scmp.com/tech/policy/article/3366733/china-targets-fourfold-boost-ai-computing-capacity-2030-major-tech-push" target="_blank" rel="noopener">SCMP</a> · <a href="https://www.chinadaily.com.cn/a/202609/08/WS6a9f5faee4b06d4aa055cd85.html" target="_blank" rel="noopener">China Daily</a></div>
   </div>
 
   <div class="news-item">
@@ -291,7 +331,7 @@
       <h3>Anthropic 五天内签署约 800 亿美元云计算协议，含 30 万千瓦集群与约 22 万块 GPU</h3>
     </div>
     <p>据 The Neuron 等报道，Anthropic 近五天内完成约 800 亿美元云计算协议：6 年 450 亿美元 Nscale 协议加 350 亿美元 Lambda 协议，并据分析获得 xAI/SpaceX 的 300MW Colossus 1 集群（约 22 万块 NVIDIA GPU）。在前几天 Amazon 500 亿美元绑定 OpenAI 之后，算力军备竞赛的量级再次刷新。</p>
-    <div class="source">来源：<a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-september-8-2026/">The Neuron</a> · <a href="https://www.resultsense.com/news/2026-09-01-anthropic-lambda-35bn-cloud-deal/">Reuters 转述</a></div>
+    <div class="source">来源：<a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-september-8-2026/" target="_blank" rel="noopener">The Neuron</a> · <a href="https://www.resultsense.com/news/2026-09-01-anthropic-lambda-35bn-cloud-deal/" target="_blank" rel="noopener">Reuters 转述</a></div>
   </div>
 
   <div class="news-item">
@@ -300,7 +340,7 @@
       <h3>ChatGPT Images 2.5 发布：生成提速 50%，新增草图转图与局部批注编辑</h3>
     </div>
     <p>OpenAI 推出 ChatGPT Images 2.5，图像生成延迟最高降低 50%，新增草图转图、图片局部批注修改与创作模板库，支持在标注区域定向编辑；API 同步开放 Flare 与 Sunburst 两个版本，后者面向精准编辑场景。图像生成正从"一次性生成"转向"可迭代编辑"的工作流。</p>
-    <div class="source">来源：<a href="https://openai.com/index/introducing-chatgpt-images-2-5/">OpenAI</a> · <a href="https://www.axios.com/2026/09/08/exclusive-hands-on-with-chatgpts-new-image-editor">Axios</a></div>
+    <div class="source">来源：<a href="https://openai.com/index/introducing-chatgpt-images-2-5/" target="_blank" rel="noopener">OpenAI</a> · <a href="https://www.axios.com/2026/09/08/exclusive-hands-on-with-chatgpts-new-image-editor" target="_blank" rel="noopener">Axios</a></div>
   </div>
 
   <div class="news-item">
@@ -309,7 +349,7 @@
       <h3>DeepSeek 官宣 V4.1 Flash：性能、费用、速度全面超越 V4 Pro，近期上线</h3>
     </div>
     <p>DeepSeek 开放平台发布通知，计划于北京时间 9 月 10 日前后正式上线 V4.1 Flash 模型。官方称经内部与外部多方测试，V4.1 Flash 在性能、费用、速度、总处理用时等指标上全面超越 V4 Pro。若兑现，"Flash 版本反超 Pro 版本"将成为开源阵营性价比叙事的又一注脚。</p>
-    <div class="source">来源：<a href="http://m.toutiao.com/group/7683445445875483171/">财联社</a> · <a href="http://m.toutiao.com/group/7683431508580811290/">IT之家</a></div>
+    <div class="source">来源：<a href="http://m.toutiao.com/group/7683445445875483171/" target="_blank" rel="noopener">财联社</a> · <a href="http://m.toutiao.com/group/7683431508580811290/" target="_blank" rel="noopener">IT之家</a></div>
   </div>
 
   <div class="news-item">
@@ -318,7 +358,7 @@
       <h3>Arm 发布 Total Design for Physical AI 计划与机器人能力分级框架，80 余家企业加入</h3>
     </div>
     <p>Arm 在年度大会发布面向物理 AI 的 Total Design for Physical AI 生态项目与机器人能力分级框架，汇聚 AWS、Hugging Face、Liquid AI、恩智浦、通义千问等 80 多家企业，覆盖从芯片到模型的完整技术栈。机器人赛道继大模型之后，开始出现统一的"能力分级"语言。</p>
-    <div class="source">来源：<a href="http://news.qq.com/rain/a/20260908A09FOM00">智东西</a> · <a href="http://m.163.com/dy/article/L6DFAAI5055375YV.html">智车星球</a></div>
+    <div class="source">来源：<a href="http://news.qq.com/rain/a/20260908A09FOM00" target="_blank" rel="noopener">智东西</a> · <a href="http://m.163.com/dy/article/L6DFAAI5055375YV.html" target="_blank" rel="noopener">智车星球</a></div>
   </div>
 
   <div class="news-item">
@@ -327,7 +367,7 @@
       <h3>英国就 AI 职场监控技术启动公众咨询：位置追踪、生物识别门禁、AI 绩效评估</h3>
     </div>
     <p>英国政府启动针对 AI 驱动职场监控技术的公众咨询，涵盖位置追踪、生物识别门禁与 AI 自动化绩效评估等场景，咨询持续至 9 月 30 日，并给出三种潜在政策路径。继"旋转门"争议之后，英国在 AI 治理上继续向劳动场景细化。</p>
-    <div class="source">来源：<a href="https://www.gov.uk/government/consultations/make-work-pay-workplace-monitoring-technologies">GOV.UK</a> · <a href="https://www.tlt.com/insights-and-events/insight/tlts-ai-brief-september-2026">TLT</a></div>
+    <div class="source">来源：<a href="https://www.gov.uk/government/consultations/make-work-pay-workplace-monitoring-technologies" target="_blank" rel="noopener">GOV.UK</a> · <a href="https://www.tlt.com/insights-and-events/insight/tlts-ai-brief-september-2026" target="_blank" rel="noopener">TLT</a></div>
   </div>
 
   <div class="oneliner">
@@ -491,19 +531,19 @@
     <div class="paper-also-title">也值得关注</div>
     <div class="paper-also-item">
       <span class="paper-also-num">05</span>
-      <span><strong>A*-Thought-V2</strong> 用几何动力学把 CoT 中"偏离方向"的步骤压缩为隐空间 token，每算力准确率提升 2.29 倍。<a href="https://arxiv.org/abs/2609.07821">链接</a></span>
+      <span><strong>A*-Thought-V2</strong> 用几何动力学把 CoT 中"偏离方向"的步骤压缩为隐空间 token，每算力准确率提升 2.29 倍。<a href="https://arxiv.org/abs/2609.07821" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">06</span>
-      <span><strong>Answer-Distribution Trajectories</strong> 追踪推理全程的答案分布轨迹，16 个开源模型 × 4 个基准的推理动力学分析。<a href="https://arxiv.org/abs/2609.09030">链接</a></span>
+      <span><strong>Answer-Distribution Trajectories</strong> 追踪推理全程的答案分布轨迹，16 个开源模型 × 4 个基准的推理动力学分析。<a href="https://arxiv.org/abs/2609.09030" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">07</span>
-      <span><strong>MemForest</strong> 用事件树划分与渐进合并压缩 Agent 记忆，保留 97% 性能的同时压缩 50%、检索提速 1.89 倍。<a href="https://arxiv.org/abs/2609.08273">链接</a></span>
+      <span><strong>MemForest</strong> 用事件树划分与渐进合并压缩 Agent 记忆，保留 97% 性能的同时压缩 50%、检索提速 1.89 倍。<a href="https://arxiv.org/abs/2609.08273" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">08</span>
-      <span><strong>Deposon</strong> 为推理路径叠加可审计的"散射层"，合成陷阱基准上机器可验证率达 100%（基线 7%）。<a href="https://arxiv.org/abs/2609.09001">链接</a></span>
+      <span><strong>Deposon</strong> 为推理路径叠加可审计的"散射层"，合成陷阱基准上机器可验证率达 100%（基线 7%）。<a href="https://arxiv.org/abs/2609.09001" target="_blank" rel="noopener">链接</a></span>
     </div>
   </div>
 
@@ -539,7 +579,7 @@
     <div class="oss-rank top">1</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/affaan-m/ECC">affaan-m / ECC</a></span>
+        <span class="oss-name"><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m / ECC</a></span>
         <span class="oss-stars">★ 254k · 本周 +8.5k</span>
         <span class="oss-license">JavaScript</span>
       </div>
@@ -551,7 +591,7 @@
     <div class="oss-rank top">2</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/NousResearch/hermes-agent">NousResearch / hermes-agent</a></span>
+        <span class="oss-name"><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch / hermes-agent</a></span>
         <span class="oss-stars">★ 242k+</span>
         <span class="oss-license">Python</span>
       </div>
@@ -563,7 +603,7 @@
     <div class="oss-rank">3</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/stablyai/orca">stablyai / orca</a></span>
+        <span class="oss-name"><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">stablyai / orca</a></span>
         <span class="oss-stars">★ 63k</span>
         <span class="oss-license">TypeScript</span>
       </div>
@@ -575,7 +615,7 @@
     <div class="oss-rank">4</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools / chrome-devtools-mcp</a></span>
+        <span class="oss-name"><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">ChromeDevTools / chrome-devtools-mcp</a></span>
         <span class="oss-stars">★ 51k</span>
         <span class="oss-license">TypeScript</span>
       </div>
@@ -587,7 +627,7 @@
     <div class="oss-rank">5</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/NVIDIA/SkillSpector">NVIDIA / SkillSpector</a></span>
+        <span class="oss-name"><a href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener">NVIDIA / SkillSpector</a></span>
         <span class="oss-stars">★ 16.7k · 本周 +1.1k</span>
         <span class="oss-license">Python</span>
       </div>
@@ -599,6 +639,10 @@
     一句话总结：harness 优化、长期陪伴、多 Agent 编排、官方工具接入、技能安全扫描——Agent 生态的"配套产业"正在一周之内密集成型。
   </div>
 </div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-08.html">上一期 · 09-08</a><a href="ai-daily-digest-2026-09-10.html">下一期 · 09-10</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
 
 </body>
 </html>

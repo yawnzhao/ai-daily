@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 2026年9月7日</title>
+<title>AI 日报 2026-09-07：GPT-6 Astra 触及 Critical 阈值；英伟达 130 亿美元收购 Hugging Face</title>
+<meta name="description" content="GPT-6 Astra 触及 Critical 阈值；英伟达 130 亿美元收购 Hugging Face；中国首部 AI 司法裁判规则">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-07.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-09-07：GPT-6 Astra 触及 Critical 阈值；英伟达 130 亿美元收购 Hugging Face">
+<meta property="og:description" content="GPT-6 Astra 触及 Critical 阈值；英伟达 130 亿美元收购 Hugging Face；中国首部 AI 司法裁判规则">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-07.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
 <style>
   :root {
     --bg: #f7f7f9;
@@ -12,9 +22,10 @@
     --border: #e5e5ea;
     --accent: #e8794c;
     --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
     --text: #1a1a1f;
     --text-dim: #4a4a54;
-    --text-muted: #8a8a94;
+    --text-muted: #6e6e78;
     --tag-bg: #f0f0f5;
     --green: #16a34a;
     --blue: #2563eb;
@@ -37,6 +48,14 @@
   }
 
   /* Header */
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
   .header {
     text-align: center;
     padding: 40px 0 32px;
@@ -46,7 +65,7 @@
   .header .logo {
     font-size: 14px;
     letter-spacing: 4px;
-    color: var(--accent);
+    color: var(--accent-text);
     text-transform: uppercase;
     margin-bottom: 12px;
     font-weight: 600;
@@ -76,7 +95,7 @@
     color: var(--text-muted);
   }
   .header .stat .num {
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 700;
     font-size: 16px;
   }
@@ -117,7 +136,7 @@
   }
   .focus-box .label {
     font-size: 12px;
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 8px;
@@ -160,7 +179,7 @@
   .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
   .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
   .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
-  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
   .badge-paper { background: rgba(167,139,250,0.15); color: var(--purple); }
 
   .news-item h3 {
@@ -180,7 +199,7 @@
     margin-top: 8px;
   }
   .news-item a {
-    color: var(--accent);
+    color: var(--accent-text);
     text-decoration: none;
   }
   .news-item a:hover { text-decoration: underline; }
@@ -199,7 +218,7 @@
   }
   .insight-card .insight-banner .meta {
     font-size: 12px;
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 8px;
@@ -238,7 +257,7 @@
     content: '▸';
     position: absolute;
     left: 0;
-    color: var(--accent);
+    color: var(--accent-text);
   }
 
   /* One-liner */
@@ -277,7 +296,7 @@
     flex-shrink: 0;
     font-size: 18px;
     font-weight: 800;
-    color: var(--accent);
+    color: var(--accent-text);
     min-width: 28px;
   }
   .paper-item .paper-title {
@@ -324,7 +343,7 @@
   }
   .paper-item .paper-link {
     font-size: 12px;
-    color: var(--accent);
+    color: var(--accent-text);
     text-decoration: none;
   }
   .paper-item .paper-link:hover { text-decoration: underline; }
@@ -352,7 +371,7 @@
   }
   .paper-also .paper-also-item:last-child { border-bottom: none; }
   .paper-also .paper-also-num {
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 700;
     flex-shrink: 0;
   }
@@ -414,7 +433,7 @@
     font-weight: 700;
     color: var(--text-muted);
   }
-  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
   .oss-content { flex: 1; min-width: 0; }
   .oss-content .oss-head {
     display: flex;
@@ -492,7 +511,7 @@
   }
   .audio-player .play-label {
     font-size: 12px;
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 4px;
@@ -581,11 +600,13 @@
 </head>
 <body>
 
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-08.html">下一期 · 09-08</a></nav>
+
 <!-- ===== Header ===== -->
-<div class="header">
+<header class="header">
   <div class="logo">AI Daily Digest</div>
   <h1>AI 日报</h1>
-  <div class="date">2026 年 9 月 7 日 · 周一 · 第 1 期</div>
+  <div class="date"><time datetime="2026-09-07">2026 年 9 月 7 日 · 周一 · 第 1 期</time></div>
   <div class="stats">
     <div class="stat"><span class="num">4</span>个板块</div>
     <div class="stat"><span class="num">10</span>条资讯</div>
@@ -593,11 +614,11 @@
     <div class="stat"><span class="num">5</span>个开源项目</div>
     <div class="stat">覆盖过去 <span class="num">48</span> 小时</div>
   </div>
-</div>
+</header>
 
 <!-- ===== Audio Player ===== -->
 <div class="audio-player">
-  <button class="play-btn" id="playBtn" onclick="togglePlay()">&#9654;</button>
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
   <div class="play-info">
     <div class="play-label">语音简报</div>
     <div class="play-title">AI 日报 · 2026年9月7日</div>
@@ -605,7 +626,7 @@
   </div>
   <div class="progress-row">
     <span class="current-time" id="currentTime">00:00</span>
-    <div class="progress-bar" id="progressBar" onclick="seekTo(event)">
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
       <div class="progress-fill" id="progressFill"></div>
     </div>
     <span class="duration-time" id="durationTime">--:--</span>
@@ -623,7 +644,9 @@
     audio.src = AUDIO_SRC;
   } else {
     var metaEl = document.querySelector('.play-meta');
-    if (metaEl) { metaEl.textContent = '语音版即将上线 · 小宇宙'; }
+    if (metaEl) { metaEl.innerHTML = '语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
   }
   var playBtn = document.getElementById('playBtn');
   var progressFill = document.getElementById('progressFill');
@@ -677,8 +700,25 @@
       audio.currentTime = pct * audio.duration;
     }
   }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
 </script>
 
+<main id="main">
 <!-- ===== 每日精选 ===== -->
 <div class="section">
   <div class="section-header">
@@ -700,7 +740,7 @@
       <h3>OpenAI 发布 GPT-6 Astra：首个触及"Critical"网络安全能力阈值的模型</h3>
     </div>
     <p>OpenAI 新模型 GPT-6 Astra 于 9 月 3 日正式发布，据称在网络安全能力上首次跨越"Critical"门槛，意味着可执行高水平攻击性安全任务。同时发布安全概述，引发双用途 AI 部署的治理讨论。</p>
-    <div class="source">来源：<a href="https://ai-news.ge/en/article/openai-gpt-6-astra-critical-cyber-rating">AI News</a> · <a href="https://www.university-365.com/post/ai-news-monday-7-september-2026-openai-gpt-6-astra-nvidia-hugging-face-bytedance-ai-loan">University-365</a></div>
+    <div class="source">来源：<a href="https://ai-news.ge/en/article/openai-gpt-6-astra-critical-cyber-rating" target="_blank" rel="noopener">AI News</a> · <a href="https://www.university-365.com/post/ai-news-monday-7-september-2026-openai-gpt-6-astra-nvidia-hugging-face-bytedance-ai-loan" target="_blank" rel="noopener">University-365</a></div>
   </div>
 
   <div class="news-item">
@@ -709,7 +749,7 @@
       <h3>黄仁勋祝贺 OpenAI：GPT-6 Astra 由 10 万 NVLink 72 芯片训练完成，宣布"AGI 已到来"</h3>
     </div>
     <p>黄仁勋在社交媒体发文，确认 GPT-6 Astra 由约 10 万颗 NVIDIA Grace Blackwell NVLink72 集群训练完成，并直言"AGI 已到来"。他还透露下一批 40 万 GPU 即将上线，暗示算力军备竞赛仍在加速。</p>
-    <div class="source">来源：<a href="https://36kr.com/newsflashes/3972946742604288">36氪</a></div>
+    <div class="source">来源：<a href="https://36kr.com/newsflashes/3972946742604288" target="_blank" rel="noopener">36氪</a></div>
   </div>
 
   <div class="news-item">
@@ -718,7 +758,7 @@
       <h3>英伟达 130 亿美元收购 Hugging Face：从芯片到模型托管的 AI 全栈整合</h3>
     </div>
     <p>英伟达以约 130 亿美元收购被誉为"AI 界 GitHub"的开源平台 Hugging Face，整合从硬件到模型托管的完整 AI 基础设施。英伟达承诺平台保持开放和多云，但开源社区对供应商锁定表示担忧。</p>
-    <div class="source">来源：<a href="https://arstechnica.com/ai/2026/09/nvidia-buys-hugging-face-the-github-of-ai-for-13-billion/">Ars Technica</a></div>
+    <div class="source">来源：<a href="https://arstechnica.com/ai/2026/09/nvidia-buys-hugging-face-the-github-of-ai-for-13-billion/" target="_blank" rel="noopener">Ars Technica</a></div>
   </div>
 
   <div class="news-item">
@@ -727,7 +767,7 @@
       <h3>四大 AI 模型罕见同时宕机：ChatGPT、Claude、Grok、Gemini 集体中断</h3>
     </div>
     <p>ChatGPT、Claude、Grok 和 Gemini 几乎在同一时间段内出现服务中断，凸显中心化 AI 基础设施的脆弱性。对于依赖单一供应商的机构而言，这次事件再次敲响多供应商冗余策略的警钟。</p>
-    <div class="source">来源：<a href="https://arstechnica.com/ai/2026/09/four-major-ai-models-suffer-rare-overlapping-downtime/">Ars Technica</a></div>
+    <div class="source">来源：<a href="https://arstechnica.com/ai/2026/09/four-major-ai-models-suffer-rare-overlapping-downtime/" target="_blank" rel="noopener">Ars Technica</a></div>
   </div>
 
   <div class="news-item">
@@ -736,7 +776,7 @@
       <h3>阿里千问 Qwen3.8-Max-0902 登顶 Code Arena，超越 Claude Opus 5</h3>
     </div>
     <p>阿里巴巴更新的 Qwen3.8-Max-0902 模型在 Arena.ai 的 Code Arena 编程排行榜上以 1691 分登顶，成为首个拿下这一核心战场的国产旗舰模型，力压 Anthropic Claude Opus 5。</p>
-    <div class="source">来源：<a href="https://ai-news.ge/en/article/alibaba-qwen3-8-max-0902-tops-code-arena">AI News</a></div>
+    <div class="source">来源：<a href="https://ai-news.ge/en/article/alibaba-qwen3-8-max-0902-tops-code-arena" target="_blank" rel="noopener">AI News</a></div>
   </div>
 
   <div class="news-item">
@@ -763,7 +803,7 @@
       <h3>字节跳动获 296 亿美元银团贷款加码 AI，亚洲今年最大企业融资之一</h3>
     </div>
     <p>字节跳动从近 30 家银行获得 296 亿美元贷款，将用于 TikTok、抖音及企业工具的 AI 开发。这笔融资是亚洲今年最大规模企业融资之一，凸显全球 AI 竞赛的资本密集度。</p>
-    <div class="source">来源：<a href="https://www.pymnts.com/artificial-intelligence-2/2026/bytedance-lands-29-6-billion-loan-to-fuel-ai-advances/">PYMNTS</a></div>
+    <div class="source">来源：<a href="https://www.pymnts.com/artificial-intelligence-2/2026/bytedance-lands-29-6-billion-loan-to-fuel-ai-advances/" target="_blank" rel="noopener">PYMNTS</a></div>
   </div>
 
   <div class="news-item">
@@ -772,7 +812,7 @@
       <h3>美国参议员 Sanders 提案永久禁止超级智能 AI，暂停前沿训练</h3>
     </div>
     <p>参议员 Bernie Sanders 与众议员 Greg Casar 提出法案，将永久禁止超级智能 AI，并在新的联邦机构制定安全规则之前暂停前沿模型训练。这代表美国立法层面对 AI 能力扩散的最新制衡尝试。</p>
-    <div class="source">来源：<a href="https://ai-news.ge/en/article/sanders-casar-bill-bans-ai-superintelligence">AI News</a></div>
+    <div class="source">来源：<a href="https://ai-news.ge/en/article/sanders-casar-bill-bans-ai-superintelligence" target="_blank" rel="noopener">AI News</a></div>
   </div>
 
   <div class="news-item">
@@ -781,7 +821,7 @@
       <h3>特斯拉 Cybercab 无人出租车上路即遭联邦安全调查</h3>
     </div>
     <p>特斯拉无人出租车 Cybercab 已投入公共道路运营，但立即受到美国联邦监管机构调查，以确认是否满足车辆安全标准。"先部署再调查"的模式折射出 AI 创新速度与监管准备之间的持续张力。</p>
-    <div class="source">来源：<a href="https://arstechnica.com/cars/2026/09/teslas-cybercab-has-been-deployed-and-its-already-under-investigation/">Ars Technica</a></div>
+    <div class="source">来源：<a href="https://arstechnica.com/cars/2026/09/teslas-cybercab-has-been-deployed-and-its-already-under-investigation/" target="_blank" rel="noopener">Ars Technica</a></div>
   </div>
 
   <div class="oneliner">
@@ -945,27 +985,27 @@
     <div class="paper-also-title">也值得关注</div>
     <div class="paper-also-item">
       <span class="paper-also-num">05</span>
-      <span><strong>CRISP</strong> 按输入结构动态选择长上下文稀疏预填充模式，值得核算路由开销是否会吞掉理论节省。<a href="https://arxiv.org/abs/2609.01925">链接</a></span>
+      <span><strong>CRISP</strong> 按输入结构动态选择长上下文稀疏预填充模式，值得核算路由开销是否会吞掉理论节省。<a href="https://arxiv.org/abs/2609.01925" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">06</span>
-      <span><strong>PaperCompiler</strong> 先把论文编译成仓库级规格，再交给编码 Agent，结构化中间表示旨在守住跨文件一致性。<a href="https://arxiv.org/abs/2609.02272">链接</a></span>
+      <span><strong>PaperCompiler</strong> 先把论文编译成仓库级规格，再交给编码 Agent，结构化中间表示旨在守住跨文件一致性。<a href="https://arxiv.org/abs/2609.02272" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">07</span>
-      <span>只定位推理轨迹中的<strong>第一个错误</strong>也能提供过程监督，Cliff 尝试省去为全部中间步骤训练专用奖励模型的成本。<a href="https://arxiv.org/abs/2609.02817">链接</a></span>
+      <span>只定位推理轨迹中的<strong>第一个错误</strong>也能提供过程监督，Cliff 尝试省去为全部中间步骤训练专用奖励模型的成本。<a href="https://arxiv.org/abs/2609.02817" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">08</span>
-      <span><strong>竞赛编程专门化</strong>可拆成题库、合成轨迹、SFT 与强化学习流水线，各训练阶段的实际贡献值得分别检验。<a href="https://arxiv.org/abs/2609.02849">链接</a></span>
+      <span><strong>竞赛编程专门化</strong>可拆成题库、合成轨迹、SFT 与强化学习流水线，各训练阶段的实际贡献值得分别检验。<a href="https://arxiv.org/abs/2609.02849" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">09</span>
-      <span>同一隐藏状态会因透镜拟合语料不同而被解读成不同 token，<strong>解码读数不能直接等同于模型内部语义</strong>。<a href="https://arxiv.org/abs/2609.01936">链接</a></span>
+      <span>同一隐藏状态会因透镜拟合语料不同而被解读成不同 token，<strong>解码读数不能直接等同于模型内部语义</strong>。<a href="https://arxiv.org/abs/2609.01936" target="_blank" rel="noopener">链接</a></span>
     </div>
     <div class="paper-also-item">
       <span class="paper-also-num">10</span>
-      <span>让优化 Agent 显式维护代码修改与分数变化的<strong>世界模型</strong>，Belief-Calibrated Optimization 试图减少盲目试错。<a href="https://arxiv.org/abs/2609.01861">链接</a></span>
+      <span>让优化 Agent 显式维护代码修改与分数变化的<strong>世界模型</strong>，Belief-Calibrated Optimization 试图减少盲目试错。<a href="https://arxiv.org/abs/2609.01861" target="_blank" rel="noopener">链接</a></span>
     </div>
   </div>
 
@@ -1001,7 +1041,7 @@
     <div class="oss-rank top">1</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/stablyai/orca">stablyai / orca</a></span>
+        <span class="oss-name"><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">stablyai / orca</a></span>
         <span class="oss-stars">★ 51.1K</span>
         <span class="oss-license">MIT</span>
       </div>
@@ -1013,7 +1053,7 @@
     <div class="oss-rank top">2</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/Wei-Shaw/sub2api">Wei-Shaw / sub2api</a></span>
+        <span class="oss-name"><a href="https://github.com/Wei-Shaw/sub2api" target="_blank" rel="noopener">Wei-Shaw / sub2api</a></span>
         <span class="oss-stars">★ 38.7K</span>
         <span class="oss-license">Go</span>
       </div>
@@ -1025,7 +1065,7 @@
     <div class="oss-rank top">3</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery / diagram-design</a></span>
+        <span class="oss-name"><a href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">cathrynlavery / diagram-design</a></span>
         <span class="oss-stars">★ 25.4K</span>
         <span class="oss-license">HTML</span>
       </div>
@@ -1037,7 +1077,7 @@
     <div class="oss-rank">4</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/can1357/oh-my-pi">can1357 / oh-my-pi</a></span>
+        <span class="oss-name"><a href="https://github.com/can1357/oh-my-pi" target="_blank" rel="noopener">can1357 / oh-my-pi</a></span>
         <span class="oss-stars">★ 26.5K</span>
         <span class="oss-license">MIT</span>
       </div>
@@ -1049,7 +1089,7 @@
     <div class="oss-rank">5</div>
     <div class="oss-content">
       <div class="oss-head">
-        <span class="oss-name"><a href="https://github.com/ifixai-ai/iFixAi">ifixai-ai / iFixAi</a></span>
+        <span class="oss-name"><a href="https://github.com/ifixai-ai/iFixAi" target="_blank" rel="noopener">ifixai-ai / iFixAi</a></span>
         <span class="oss-stars">★ 11.2K</span>
         <span class="oss-license">Python</span>
       </div>
@@ -1061,6 +1101,10 @@
     一句话总结：单 Agent 是玩具，多 Agent 是工程，管 Agent 才是生意——今天榜单上的项目正在把这条逻辑变成产品。
   </div>
 </div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-08.html">下一期 · 09-08</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
 
 </body>
 </html>

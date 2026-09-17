@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 日报 · 每日更新</title>
+<title>AI 日报 · 每日 AI 新闻 / 洞见 / 论文 / 开源</title>
+<meta name="description" content="OpenAI 发布模型失配报告框架并公开六份报告；众院 417:3 通过数据中心电费法案；Kennedy 断路开关被一票挡下；Zuckerberg 补齐六掌门配速光谱；字节分拆 Anew Labs 融资">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 · 每日 AI 新闻 / 洞见 / 论文 / 开源">
+<meta property="og:description" content="OpenAI 发布模型失配报告框架并公开六份报告；众院 417:3 通过数据中心电费法案；Kennedy 断路开关被一票挡下；Zuckerberg 补齐六掌门配速光谱；字节分拆 Anew Labs 融资">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
 <style>
   :root {
     --bg: #f7f7f9;
@@ -12,9 +22,10 @@
     --border: #e5e5ea;
     --accent: #e8794c;
     --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
     --text: #1a1a1f;
     --text-dim: #4a4a54;
-    --text-muted: #8a8a94;
+    --text-muted: #6e6e78;
     --tag-bg: #f0f0f5;
     --green: #16a34a;
   }
@@ -30,42 +41,48 @@
     padding: 24px 20px 60px;
   }
   .header { text-align: center; padding: 48px 0 36px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
-  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
   .header h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
   .header .sub { font-size: 15px; color: var(--text-dim); }
   .header .stats { display: flex; justify-content: center; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
   .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
-  .header .stat .num { color: var(--accent); font-weight: 700; font-size: 18px; }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 18px; }
   .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
   .section-header h2 { font-size: 20px; font-weight: 700; }
   .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
-  .episode { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin-bottom: 14px; display: flex; align-items: center; gap: 18px; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+  .episode { text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin-bottom: 14px; display: flex; align-items: center; gap: 18px; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
   .episode:hover { background: var(--card-hover); border-color: var(--accent-dim); transform: translateY(-1px); }
   .episode .vol { flex-shrink: 0; text-align: center; min-width: 58px; }
-  .episode .vol .num { font-size: 26px; font-weight: 800; color: var(--accent); line-height: 1.2; }
+  .episode .vol .num { font-size: 26px; font-weight: 800; color: var(--accent-text); line-height: 1.2; }
   .episode .vol .label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
   .episode .info { flex: 1; min-width: 0; }
   .episode .info .title { font-size: 16px; font-weight: 700; color: var(--text); text-decoration: none; }
-  .episode .info .title:hover { color: var(--accent); }
-  .episode .info .desc { font-size: 13px; color: var(--text-dim); margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .episode .info .title:hover { color: var(--accent-text); }
+  .episode .info .desc { font-size: 13px; color: var(--text-dim); margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .episode .info .meta { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
   .episode .info .chip { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
-  .episode .go { flex-shrink: 0; font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; }
+  .episode .go { flex-shrink: 0; font-size: 13px; color: var(--accent-text); text-decoration: none; font-weight: 600; }
   .episode .go:hover { text-decoration: underline; }
   .about { background: linear-gradient(135deg, rgba(232,121,76,0.10) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-top: 40px; }
-  .about .label { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .about .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .about .content { font-size: 14px; line-height: 1.9; color: var(--text-dim); }
   .about .content strong { color: var(--text); }
   .footer-note { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 48px; }
+  .chip-pending { color: var(--text-muted); background: transparent; border: 1px dashed var(--border); }
+  .subscribe { display: flex; justify-content: center; gap: 14px; margin-top: 20px; flex-wrap: wrap; }
+  .subscribe a { font-size: 13px; color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 16px; }
+  .subscribe a:hover { border-color: var(--accent-dim); }
   @media (max-width: 560px) {
-    .episode { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .episode { flex-direction: column; align-items: stretch; gap: 10px; }
     .episode .go { display: none; }
+    .episode .vol { text-align: left; }
+    .episode .vol .num { font-size: 22px; }
   }
 </style>
 </head>
 <body>
 
-<div class="header">
+<header class="header">
   <div class="logo">AI DAILY DIGEST</div>
   <h1>AI 日报</h1>
   <div class="sub">AI 领域每日资讯 · 新闻 / 洞见 / 论文 / 开源</div>
@@ -74,20 +91,21 @@
     <div class="stat"><span class="num">4</span>大板块</div>
     <div class="stat"><span class="num">日更</span></div>
   </div>
-</div>
+  <div class="subscribe"><a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">🎧 小宇宙 · 语音版</a><a href="https://yawnzhao.github.io/ai-daily/feed.xml">RSS 订阅</a></div>
+</header>
 
+<main>
 <div class="section-header">
   <h2>往期日报</h2>
   <span class="tag">最新在前</span>
 </div>
-
 <a class="episode" href="ai-daily-digest-2026-09-17.html">
   <div class="vol"><div class="num">11</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月17日 星期四</div>
+    <div class="title"><time datetime="2026-09-17">AI 日报 · 2026年9月17日 星期四</time></div>
     <div class="desc">OpenAI 发布模型失配报告框架并公开六份报告；众院 417:3 通过数据中心电费法案；Kennedy 断路开关被一票挡下；Zuckerberg 补齐六掌门配速光谱；字节分拆 Anew Labs 融资</div>
     <div class="meta">
-      <span class="chip">8 条精选</span><span class="chip">2 篇论文</span><span class="chip">7 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
+      <span class="chip">8 条精选</span><span class="chip">2 篇论文</span><span class="chip">7 个开源项目</span><span class="chip chip-pending">语音版制作中</span>
     </div>
   </div>
   <div class="go">阅读 →</div>
@@ -96,10 +114,10 @@
 <a class="episode" href="ai-daily-digest-2026-09-16.html">
   <div class="vol"><div class="num">10</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月16日 星期三</div>
+    <div class="title"><time datetime="2026-09-16">AI 日报 · 2026年9月16日 星期三</time></div>
     <div class="desc">OpenAI 洽谈 1.2 万亿美元估值新融资；OpenAI 背书《FRONTIER Act》第三方嵌入评估条款；字节上半年净利下滑；黄仁勋 Dreamforce 反监管</div>
     <div class="meta">
-      <span class="chip">8 条精选</span><span class="chip">2 篇论文</span><span class="chip">9 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
+      <span class="chip">8 条精选</span><span class="chip">2 篇论文</span><span class="chip">9 个开源项目</span><span class="chip chip-pending">语音版制作中</span>
     </div>
   </div>
   <div class="go">阅读 →</div>
@@ -108,10 +126,10 @@
 <a class="episode" href="ai-daily-digest-2026-09-15.html">
   <div class="vol"><div class="num">09</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月15日 星期二</div>
+    <div class="title"><time datetime="2026-09-15">AI 日报 · 2026年9月15日 星期二</time></div>
     <div class="desc">Trump 连发帖称 AI 风险是「骗局」正面回击配速呼吁；白宫 AI 领袖会议进入倒计时；查尔斯国王召集四实验室谈「共同原则」；Nvidia 129.3 亿美元收购 Hugging Face 补核</div>
     <div class="meta">
-      <span class="chip">8 条精选</span><span class="chip">2 篇论文</span><span class="chip">8 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
+      <span class="chip">0 条精选</span><span class="chip">2 篇论文</span><span class="chip">8 个开源项目</span><span class="chip chip-pending">语音版制作中</span>
     </div>
   </div>
   <div class="go">阅读 →</div>
@@ -120,7 +138,7 @@
 <a class="episode" href="ai-daily-digest-2026-09-14.html">
   <div class="vol"><div class="num">08</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月14日 星期一</div>
+    <div class="title"><time datetime="2026-09-14">AI 日报 · 2026年9月14日 星期一</time></div>
     <div class="desc">Altman 确认 2026 年不 IPO、三实验室洽谈标准机构；华盛顿两党就 AI 风险公开分裂；Anthropic 连续两季盈利瞄准 2 万亿 IPO；智谱融资次日港股跌超 10%</div>
     <div class="meta">
       <span class="chip">9 条精选</span><span class="chip">1 篇论文</span><span class="chip">8 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
@@ -132,7 +150,7 @@
 <a class="episode" href="ai-daily-digest-2026-09-13.html">
   <div class="vol"><div class="num">07</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月13日 星期日</div>
+    <div class="title"><time datetime="2026-09-13">AI 日报 · 2026年9月13日 星期日</time></div>
     <div class="desc">Amodei 呼吁全行业「配速」获 Musk/Altman 接力；25 位在世菲尔兹奖得主联名声明；五角大楼迁移 Anthropic 负载；Bengio 解析智能体作弊</div>
     <div class="meta">
       <span class="chip">13 条精选</span><span class="chip">1 篇论文</span><span class="chip">8 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
@@ -144,7 +162,7 @@
 <a class="episode" href="ai-daily-digest-2026-09-12.html">
   <div class="vol"><div class="num">06</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月12日 星期六</div>
+    <div class="title"><time datetime="2026-09-12">AI 日报 · 2026年9月12日 星期六</time></div>
     <div class="desc">Anthropic 被曝 2 万亿美元 IPO；Grok 4.7 跳票；Harvey 估值 155 亿；参议院调查 OpenAI 入侵 Hugging Face</div>
     <div class="meta">
       <span class="chip">7 条精选</span><span class="chip">4 篇论文</span><span class="chip">5 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
@@ -156,7 +174,7 @@
 <a class="episode" href="ai-daily-digest-2026-09-11.html">
   <div class="vol"><div class="num">05</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月11日 星期五</div>
+    <div class="title"><time datetime="2026-09-11">AI 日报 · 2026年9月11日 星期五</time></div>
     <div class="desc">OpenAI Agents API 公测 + GPT-Live-1 语音 API；Anthropic 威胁情报报告；美国解除 Claude Fable/Mythos 5 出口管制</div>
     <div class="meta">
       <span class="chip">11 条精选</span><span class="chip">4 篇论文</span><span class="chip">5 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
@@ -168,7 +186,7 @@
 <a class="episode" href="ai-daily-digest-2026-09-10.html">
   <div class="vol"><div class="num">04</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月10日 星期四</div>
+    <div class="title"><time datetime="2026-09-10">AI 日报 · 2026年9月10日 星期四</time></div>
     <div class="desc">Cognition 估值 480 亿美元；Claude Fable/Mythos 5.1 发布；商务部回应蒸馏指控；DeepSeek 被曝筹备 IPO</div>
     <div class="meta">
       <span class="chip">10 条精选</span><span class="chip">4 篇论文</span><span class="chip">5 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
@@ -180,7 +198,7 @@
 <a class="episode" href="ai-daily-digest-2026-09-09.html">
   <div class="vol"><div class="num">03</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月9日 星期三</div>
+    <div class="title"><time datetime="2026-09-09">AI 日报 · 2026年9月9日 星期三</time></div>
     <div class="desc">万智能体 88 小时攻克千禧年难题；六家中国 AI 公司遭美国三机构点名；Meta Muse 上线</div>
     <div class="meta">
       <span class="chip">10 条精选</span><span class="chip">4 篇论文</span><span class="chip">5 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
@@ -192,7 +210,7 @@
 <a class="episode" href="ai-daily-digest-2026-09-08.html">
   <div class="vol"><div class="num">02</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月8日 星期二</div>
+    <div class="title"><time datetime="2026-09-08">AI 日报 · 2026年9月8日 星期二</time></div>
     <div class="desc">Amazon 500亿美元联手 OpenAI；首席科学家公开踩刹车；泰国叫停全部数据中心</div>
     <div class="meta">
       <span class="chip">10 条精选</span><span class="chip">4 篇论文</span><span class="chip">5 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
@@ -204,7 +222,7 @@
 <a class="episode" href="ai-daily-digest-2026-09-07.html">
   <div class="vol"><div class="num">01</div><div class="label">VOL</div></div>
   <div class="info">
-    <div class="title">AI 日报 · 2026年9月7日 星期一</div>
+    <div class="title"><time datetime="2026-09-07">AI 日报 · 2026年9月7日 星期一</time></div>
     <div class="desc">GPT-6 Astra 触及 Critical 阈值；英伟达 130 亿美元收购 Hugging Face；中国首部 AI 司法裁判规则</div>
     <div class="meta">
       <span class="chip">10 条精选</span><span class="chip">4 篇论文</span><span class="chip">5 个开源项目</span><span class="chip">语音版 · 小宇宙</span>
@@ -212,6 +230,7 @@
   </div>
   <div class="go">阅读 →</div>
 </a>
+</main>
 
 <div class="about">
   <div class="label">关于本刊</div>
@@ -220,7 +239,7 @@
   </div>
 </div>
 
-<div class="footer-note">AI 日报 · 每日更新 · 语音由 MiniMax speech-2.8-hd 生成 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" style="color: var(--accent); text-decoration: none; font-weight: 600;">在小宇宙订阅收听 →</a></div>
+<div class="footer-note">AI 日报 · 每日更新 · 语音由 MiniMax speech-2.8-hd 生成 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" style="color: var(--accent-text); text-decoration: none; font-weight: 600;">在小宇宙订阅收听 →</a></div>
 
 </body>
 </html>
