@@ -45,7 +45,8 @@
 - 只提交 `daily/`、`data/runs/`、当天的 `ai-daily-digest-YYYY-MM-DD.html`，以及 `scripts/build_site.py` 生成的
   `index.html`、`feed.xml`、`sitemap.xml`、`robots.txt`；其余一律要人明确要求。
 - 提交前跑 `git status` 核对路径。落在白名单之外的一律还原，并在聊天里说明还原了什么。
-- 不改 `AGENTS.md`、`config/`、`scripts/`、`templates/`——这些是人的决定，要改先提议。
+- 不改 `AGENTS.md`、`config/`、根目录的 `scripts/`、`templates/`——这些是人的决定，要改先提议。
+  （`daily/scripts/` 是口播稿，不在此列，见第 5 节。）
 - **不改历史日期的网页**。唯一例外：语音版发布后回填当期的 `AUDIO_SRC` 直链，回填后重跑第 4 节的两个脚本。
 
 **安全**
@@ -85,3 +86,15 @@ python3 scripts/check_page.py     # 检查 meta、导航、语义标签、外链
 
 **不要手写 `index.html`、`feed.xml`、`sitemap.xml`**，它们由 `build_site.py` 从各期页面重建；
 手写的版本下次跑脚本就会被覆盖，而且很容易和事实对不上。
+
+## 5. 语音版
+
+口播稿进库，音频不进库。
+
+- 稿子落在 `daily/scripts/YYYY-MM-DD.txt`，和当天成稿一一对应；写法与长度见 `daily/scripts/README.md`。
+- **口播稿不是成稿的朗读版**：成稿七千字上下、带链接和校验标注，念不了，要按成稿另写。
+- 目标时长 10～13 分钟。moss 音色语速 1.0 实测 5.5～5.8 字/秒，对应正文 3,400～4,300 字
+  （`<#n#>` 停顿标记不计入）。合成后用接口返回的 `extra_info.audio_length` 核对时长，不要凭感觉判断。
+- 合成参数、密钥位置和上传后的回填步骤在 `audio/README.md`；该目录被 `.gitignore` 排除，mp3 不进库。
+- 上传小宇宙由人手动完成，须开启「本音频为 AI 生成」声明。拿到直链后按第 4 节回填 `AUDIO_SRC` 并重跑两个脚本。
+- 密钥只从环境变量或 `~/.config/ai-digest/minimax.env` 读，**不写进仓库、不写进日志、不贴进聊天**。
