@@ -2,28 +2,39 @@
 
 这个仓库是日报系列的执行契约。动手前先读完本文件。
 
-## 0. 开工前提（当前未满足）
+## 0. 开工前提
 
-下面几项还是「待定」，**填完之前不要开始每日例行**：
+2026-09-18 起以下各项已有依据，可以开始每日例行：
 
-- 日报覆盖什么、不覆盖什么
-- 信源清单与准入门槛（定下来后写进 `config/`，不写在提示词里）
-- 每日运行时间与时区
-- 发布去向：只留在库里，还是同时进 Notion / 站点
-- 选稿口径：几条重点、几条快讯、按什么排序
+- **信源清单与准入门槛**：`config/sources.json`（18 个源、来源分级、排除名单、选稿规则）。清单变更是人的决定。
+- **发布去向**：GitHub Pages 站点（第 4 节）与小宇宙语音版（第 5 节）。Notion「AI 早报」不归本库管。
+- **选稿口径**：重点最多 5 条（`config/sources.json` 的 `featured_max`）；快讯不设上限。两者都按实际，不凑数。
+- **时区**：Europe/Paris；运行时刻以 routine 的设置为准。
+- **覆盖范围**：暂按 `config/sources.json` 的五类议题（模型产品、开源工具、应用、政策治理、研究与社会影响）。
 
-规则由人来定。缺规则时不要自行设定门槛来凑数，停下来问。
+规则由人来定。缺规则或遇到上面没写到的边界情况，不要自行设定门槛来凑数，停下来问。
 
 ## 1. 每天做什么
 
 1. `git pull --ff-only origin main`。失败就停下报告，**不覆盖本地修改，不 force**。
-2. 按 `config/` 里的信源逐一打开检查。首页 HTTP 200 不等于扫过，搜索结果摘要不等于读过原文。
-3. 每个源写一条收据，存进 `data/runs/YYYY-MM-DD-receipts.json`：
-   `source_id` / `status`(ok\|partial\|failed) / `checked_at`(带时区 ISO) / `checked_url` / `evidence`(实际检查范围和结果) / `items`。
-   **无新条目也要有收据，失败的源不能省略。**
-4. 按 `templates/daily.md` 写当天成稿，落到 `daily/YYYY/YYYY-MM-DD.md`。
-5. 按第 4 节生成当天网页版，跑 `scripts/build_site.py` 和 `scripts/check_page.py`。
-6. 提交并 push。聊天里报告：计划源 / 成功失败 / 新增 / 去重 / 待补 / 选中数量，以及校验脚本的结果。
+2. 跑采集脚本，截止时间填当前 UTC 时间：
+   ```
+   python3 scripts/collect_sources.py --until 2026-09-19T06:00:00Z --out data/runs/YYYY-MM-DD-receipts.json
+   ```
+   它逐一抓取 `config/sources.json` 里的 rss 与 page 源，每个源写一条收据（`status` 为 ok / partial / failed / pending），
+   发现窗口 72 小时。
+3. 补齐脚本做不了的部分，写回同一个收据文件：
+   - `method` 为 `browser` 的源（xAI、微软）用浏览器打开，按实际改写 `status` 和 `evidence`；
+   - page 源是按日期粗筛的，会误报也会漏：窗口内有条目的，逐条点开确认标题和日期；
+   - 改完跑 `python3 scripts/collect_sources.py --recount data/runs/YYYY-MM-DD-receipts.json` 重算汇总。
+
+   首页 HTTP 200 不等于扫过，搜索结果摘要不等于读过原文。**无新条目也要有收据，失败的源不能省略。**
+4. 网页搜索只作发现渠道，不计入成功率。搜到的候选必须回到 official 或 original 来源核验。
+   在收据里分别记：`discovery`（搜了什么、找到什么）、`verification`（哪条用什么方式核了原文、结果如何）、
+   `excluded_hits`（命中了排除名单的哪个站、出现在哪条）。
+5. 按 `templates/daily.md` 写当天成稿，落到 `daily/YYYY/YYYY-MM-DD.md`。选稿遵守第 2 节「来源分级与选稿」。
+6. 按第 4 节生成当天网页版，跑 `scripts/build_site.py` 和 `scripts/check_page.py`。
+7. 提交并 push。聊天里报告：计划源 / 成功失败（含 `core_not_ok`）/ 新增 / 去重 / 待补 / 选中数量，以及校验脚本的结果。
 
 ## 2. 硬规则
 
@@ -34,12 +45,21 @@
 
 **空结果分四类，写清楚是哪一类**
 抓取失败 / 无新增 / 材料不足 / 无值得精选内容。
-成功率低于 90%，或任一核心源失败 → 标「采集不完整」。**任何情况下都不许写「全网无内容」。**
+成功率低于 90%，或任一核心源失败 → 标「采集不完整」。以收据的 `summary` 为准：partial 不算成功，网页搜索不计入。**任何情况下都不许写「全网无内容」。**
 
 **引用**
 - 一手链接优先。只有打开过原文才算核过，核过的才填 `verified_primary_url`。
 - 没读过原文就不要加引号。转述可以，直接引语不行。
 - 记者转述的引号 ≠ 当事人原话，别混。
+
+**来源分级与选稿**（以 `config/sources.json` 的 `tiers` 与 `selection_rules` 为准）
+- official 是一手官方发布；original 是通讯社和主流媒体自己采写的原文；relay 是转述。
+- 重点条目至少要有一个 official 或 original 链接，并且打开过原文。只有 relay 的，最多进快讯，并写明转述自谁。
+- `lead_only_domains` 里的站点只能当线索，不能作为任何条目的唯一来源；`blocked_domains` 里的不得引用，也不得当线索。
+- 金额、票数、star 数、估值这类数字，必须由主线程用官网或 API 复核；子代理给的数字只算线索。
+- 标题和 description 里不写只有 relay 来源的数字。
+- 原文拦截脚本时（AP、CNBC、OpenAI 文章页等）用浏览器打开；浏览器也打不开的，正文和收据里写明「原文未能打开」。
+- 发现新的仿冒站或 AI 生成站点：记进收据 `excluded_hits`，在聊天里提议加入名单，**不自行改 `config/`**。
 
 **提交范围**
 - 只提交 `daily/`、`data/runs/`、当天的 `ai-daily-digest-YYYY-MM-DD.html`，以及 `scripts/build_site.py` 生成的

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """按 config/sources.json 逐源检查，产出收据草稿。
 
-用法：python3 scripts/collect_sources.py --until 2026-09-18T01:15:00Z --out data/runs/2026-09-18-sources.json
+用法：python3 scripts/collect_sources.py --until 2026-09-18T01:15:00Z --out data/runs/2026-09-18-receipts.json
+      python3 scripts/collect_sources.py --recount data/runs/2026-09-18-receipts.json   # 人工补查后重算汇总
 
 - rss 源：解析 feed，列出发现窗口内的条目（标题、链接、发布时间）。
 - page 源：抓页面，提取页面上出现的日期，报告最新日期和窗口内的链接；提取不到日期记 partial。
@@ -99,12 +100,43 @@ def page_dates(text):
     return found
 
 
+def summarize(receipts, window):
+    core_bad = [r['source_id'] for r in receipts if r['core'] and r['status'] != 'ok']
+    return {'window': window, 'planned': len(receipts),
+            'ok': sum(r['status'] == 'ok' for r in receipts),
+            'partial': sum(r['status'] == 'partial' for r in receipts),
+            'failed': sum(r['status'] == 'failed' for r in receipts),
+            'pending_browser': sum(r['status'] == 'pending' for r in receipts),
+            'core_not_ok': core_bad}
+
+
+def report(s):
+    rate = s['ok'] / s['planned'] if s['planned'] else 0
+    print(f"计划 {s['planned']} 源：ok {s['ok']} / partial {s['partial']} / failed {s['failed']} / "
+          f"待浏览器 {s['pending_browser']}；成功率 {rate:.0%}；核心源未达 ok：{s['core_not_ok'] or '无'}")
+    if s['pending_browser']:
+        print('还有 pending 的源没补查，不能算采集完成。')
+    elif rate < 0.9 or s['core_not_ok']:
+        print('→ 采集不完整（成功率低于 90% 或有核心源未达 ok）')
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--until', required=True, help='采集截止时间（ISO，UTC）')
+    ap.add_argument('--until', help='采集截止时间（ISO，UTC）')
     ap.add_argument('--hours', type=int, help='发现窗口，默认取配置')
-    ap.add_argument('--out', required=True)
+    ap.add_argument('--out')
+    ap.add_argument('--recount', metavar='RECEIPTS', help='人工补查后，按各源 status 重算 summary 并写回')
     args = ap.parse_args()
+
+    if args.recount:
+        path = Path(args.recount)
+        data = json.loads(path.read_text())
+        data['summary'] = summarize(data['sources'], data.get('summary', {}).get('window'))
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+        report(data['summary'])
+        return 0
+    if not (args.until and args.out):
+        ap.error('采集需要 --until 和 --out；重算汇总用 --recount')
 
     cfg = json.loads((ROOT / 'config' / 'sources.json').read_text())
     until = parse_date(args.until)
@@ -159,18 +191,11 @@ def main():
         receipts.append(r)
         print(f"{r['status']:<8} {'核心' if s['core'] else '    '} {s['id']:<16} {r['evidence'][:110]}")
 
-    done = [r for r in receipts if r['status'] != 'pending']
-    ok = [r for r in done if r['status'] == 'ok']
-    core_bad = [r['source_id'] for r in receipts if r['core'] and r['status'] not in ('ok',)]
-    summary = {'window': [since.isoformat(), until.isoformat()], 'planned': len(receipts),
-               'ok': len(ok), 'partial': sum(r['status'] == 'partial' for r in receipts),
-               'failed': sum(r['status'] == 'failed' for r in receipts),
-               'pending_browser': sum(r['status'] == 'pending' for r in receipts),
-               'core_not_ok': core_bad}
+    summary = summarize(receipts, [since.isoformat(), until.isoformat()])
     Path(args.out).write_text(json.dumps({'summary': summary, 'sources': receipts},
                                          ensure_ascii=False, indent=2))
-    print(f"\n计划 {summary['planned']} 源：ok {summary['ok']} / partial {summary['partial']} / "
-          f"failed {summary['failed']} / 待浏览器 {summary['pending_browser']}；核心源未达 ok：{core_bad or '无'}")
+    print()
+    report(summary)
     return 0
 
 
