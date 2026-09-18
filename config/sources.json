@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "note": "日报信源清单。起点是 ai-concourse-library/config/guides.json 的 16 个官方源，补了订阅地址、来源分级和排除名单。搜索只算发现渠道，不计入成功率。",
+  "timezone": "Europe/Paris",
+  "discovery_window_hours": 72,
+  "minimum_success_rate": 0.9,
+  "featured_max": 5,
+  "brief_max": 10,
+
+  "tiers": {
+    "official": "一手：公司、机构、议员、法院的官方发布。重点条目的首选。",
+    "original": "原始报道：AP、Reuters、FT、The Information、Bloomberg、CNN、POLITICO 等自己采写的报道原文。",
+    "relay": "转述：转引上面两类的二手报道。只能进快讯，且要写明转述自谁。"
+  },
+  "selection_rules": [
+    "重点条目至少要有一个 official 或 original 链接，并且打开过原文。只有 relay 的，最多进快讯。",
+    "lead_only_domains 里的站点只能提供线索，不能作为任何条目的唯一来源。",
+    "blocked_domains 里的站点不得引用，也不得作为线索。",
+    "金额、票数、star 数、估值这类数字，必须由主线程用官网或 API 复核；子代理给出的数字只算线索。",
+    "标题和 description 里不写只有 relay 来源的数字。"
+  ],
+
+  "sources": [
+    {"id": "anthropic", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "method": "page", "core": true, "category": "models_products", "region": "global"},
+    {"id": "claude-blog", "name": "Claude Blog", "url": "https://claude.com/blog", "method": "page", "core": false, "category": "open_tools", "region": "global"},
+    {"id": "openai", "name": "OpenAI News", "url": "https://openai.com/news", "feed": "https://openai.com/news/rss.xml", "method": "rss", "core": true, "category": "models_products", "region": "global", "note": "页面对脚本返回 403，RSS 可用"},
+    {"id": "google-ai", "name": "Google AI Blog", "url": "https://blog.google/innovation-and-ai/", "feed": "https://blog.google/innovation-and-ai/technology/ai/rss/", "method": "rss", "core": true, "category": "models_products", "region": "global"},
+    {"id": "xai", "name": "xAI", "url": "https://x.ai/news", "method": "browser", "core": true, "category": "models_products", "region": "global", "note": "脚本 403，只能走浏览器"},
+    {"id": "deepmind", "name": "Google DeepMind", "url": "https://deepmind.google/blog/", "feed": "https://deepmind.google/blog/rss.xml", "method": "rss", "core": false, "category": "research_society", "region": "global"},
+    {"id": "nvidia", "name": "NVIDIA Newsroom", "url": "https://nvidianews.nvidia.com", "feed": "https://nvidianews.nvidia.com/releases.xml", "method": "rss", "core": false, "category": "applications", "region": "global"},
+    {"id": "huggingface", "name": "Hugging Face", "url": "https://huggingface.co/blog", "feed": "https://huggingface.co/blog/feed.xml", "method": "rss", "core": false, "category": "open_tools", "region": "global"},
+    {"id": "cursor", "name": "Cursor Changelog", "url": "https://cursor.com/changelog", "feed": "https://cursor.com/changelog/rss.xml", "method": "rss", "core": false, "category": "open_tools", "region": "global"},
+    {"id": "microsoft", "name": "Microsoft AI", "url": "https://blogs.microsoft.com/ai/", "method": "browser", "core": false, "category": "applications", "region": "global", "note": "页面和 feed 对脚本都返回 403"},
+    {"id": "qwen", "name": "Qwen", "url": "https://qwenlm.github.io/", "method": "page", "core": false, "category": "models_products", "region": "China"},
+    {"id": "deepseek", "name": "DeepSeek", "url": "https://api-docs.deepseek.com/updates", "method": "page", "core": false, "category": "models_products", "region": "China"},
+    {"id": "mistral", "name": "Mistral", "url": "https://mistral.ai/news", "method": "page", "core": false, "category": "models_products", "region": "Europe"},
+    {"id": "eu-digital", "name": "European Commission Digital Strategy", "url": "https://digital-strategy.ec.europa.eu/en/news", "method": "page", "core": false, "category": "policy_governance", "region": "Europe"},
+    {"id": "unesco", "name": "UNESCO AI", "url": "https://www.unesco.org/en/artificial-intelligence", "method": "page", "core": false, "category": "applications", "region": "global"},
+    {"id": "oecd", "name": "OECD.AI", "url": "https://oecd.ai/en/wonk", "method": "page", "core": false, "category": "research_society", "region": "global"},
+    {"id": "arxiv", "name": "arXiv cs.AI / cs.LG / cs.CL", "url": "https://export.arxiv.org/api/query", "method": "api", "core": true, "category": "research_society", "region": "global"},
+    {"id": "github-trending", "name": "GitHub Trending（日榜 + Python 日榜）", "url": "https://github.com/trending?since=daily", "method": "page", "core": true, "category": "open_tools", "region": "global", "note": "star 数一律用 api.github.com 复核"}
+  ],
+
+  "discovery": [
+    {"id": "web-search", "name": "中英文网页搜索", "note": "只产候选，不计入成功率；候选必须回到 official 或 original 来源核验"}
+  ],
+
+  "original_outlets": ["apnews.com", "reuters.com", "ft.com", "theinformation.com", "bloomberg.com", "cnn.com", "politico.com", "cnbc.com", "wsj.com", "nytimes.com", "caixin.com", "yicai.com"],
+
+  "lead_only_domains": [
+    {"domain": "ainvest.com", "reason": "AI 生成的财经站；09-16 期因它把众院表决写成矛盾待核"},
+    {"domain": "shattered.io", "reason": "AI 生成媒体，09-17 采集记录已弃用"},
+    {"domain": "thecodew.com", "reason": "每日科技简报聚合站，只做二次转述"},
+    {"domain": "cryptobriefing.com", "reason": "加密媒体，AI 政策类报道多为转述"}
+  ],
+  "blocked_domains": [
+    {"domain": "coindesk.cc", "reason": "冒用 CoinDesk 名义的仿冒域名（真 CoinDesk 为 coindesk.com，2008 年注册、MarkMonitor 托管；本域名 2020 年注册、另一注册商），内容从 Crypto Briefing 搬运。09-18 期被误当作 CoinDesk 引用"}
+  ]
+}

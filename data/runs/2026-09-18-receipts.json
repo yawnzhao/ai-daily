@@ -1,30 +1,509 @@
 {
   "date": "2026-09-18",
-  "notes": "config/ 信源清单尚未建立（AGENTS.md 第 0 节前提未定），沿用既定实践：AI 新闻多轮搜索 + 主线程复核、arXiv 近期批次、GitHub Trending。本期为 VOL.12（周五），主线为配速之辩第七天：英国国王查尔斯三世邓弗姆斯庄园 AI 峰会（国王致辞 + 黄仁勋『不安全就压回去』+ 2027 芯片翻倍）、OpenAI Astra for Law 行业定制、亚马逊第七家入局表态『要测试不要降速』、华为 Atlas 960 与 Ascend 970/980 路线图（Trump-Xi 预期 09-24）。本期另含 09-17 晚间补录 7 条的合并发布（用户 09-17 晚间指示）：Anthropic Cowork 合并、白宫会议排期、豆包座舱助手、S.5028、论文 2609.18998/2609.19000、腾讯系 Trending——去重时按指示未跳过、照记发布时间并标注首次发现时间。运行时点：罗马时间 03:15 CEST / 01:15 UTC，美国 09-17 晚间（EDT 21:15 周四）新闻周期已近尾声、中国 09-18 早间刚开始；arXiv 09-18 批次尚未公布。",
+  "mode": "rerun-by-sources-config",
+  "cutoff_utc": "2026-09-18T01:15:00Z",
+  "notes": "按 config/sources.json 重新采集并替换早版（早版见提交 a6f74c5），截止时间对齐早版（01:15 UTC），差异只来自方法。发现窗口 72 小时。网页搜索只作发现渠道，不计入成功率。",
+  "summary": {
+    "window": [
+      "2026-09-15T01:15:00+00:00",
+      "2026-09-18T01:15:00+00:00"
+    ],
+    "planned": 18,
+    "ok": 17,
+    "partial": 1,
+    "failed": 0,
+    "pending_browser": 0,
+    "core_not_ok": []
+  },
   "sources": [
     {
-      "source_id": "web-search-ai-news",
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://www.anthropic.com/news",
       "status": "ok",
-      "checked_at": "2026-09-18T03:20:00+02:00",
-      "checked_url": "多轮中英文 web 搜索（英国国王 AI 峰会 / OpenAI Astra for Law / 亚马逊配速表态 / 华为 Atlas 960 / Stop Rogue AI Act / Intel CPU 供需 / Apple AI 服务器 / 黄仁勋 2027 翻倍 / 白宫 AI 会议后续等，覆盖 2026-09-17 16:00 UTC 至 09-18 01:15 UTC）",
-      "evidence": "新闻子代理产出 12 条候选 + 主线程逐条复核。主线程已开原文：AP 英王峰会报道全文（09-17：国王开幕致辞原话『既引人入胜又同样令人深感忧虑』『在一切太迟之前需要足够的控制手段』、黄仁勋讲话『产品不够安全就该压回去继续工程』、与会名单黄仁勋/Hassabis/OpenAI CFO Sarah Friar/AI 大臣 Kanishka Narayan/Anthropic 代表、邓弗姆斯庄园=国王基金会总部、AP 将其与 Coxon 辞职-Amodei 檄文-行业分裂连线）、AP 华为报道全文（09-17：Atlas 960 SuperPoD 为 Atlas 950 更快后继、Ascend 970/980 计划 2028/2029、Trump-Xi 华盛顿会晤预期 09-24、Trump『谁在 AI 赢谁就赢』、George Chen『时机凸显北京信心与雄心』）、AP Trump-Xi 会晤报道（链接，用于快讯 1 的 09-24 日期确认）、OpenAI Astra for Law 官方博客全文（09-17：GPT-6 Astra + 法律检索索引 2.3 亿+ URL、Free Law Project 覆盖 99.9%+ 美国先例判例法、Vals AI 200 题 54.0% vs 38.7% 相对提升 40%、案例法问题 +24% 引用案例与 +54% 相关段落、Trusted Access/ChatGPT+Codex 先行、API 名 gpt-6-astra-law、Harvey/Legora 构建、ZDR + Enterprise 默认排除人工审查、Latham & Watkins 信息隔离墙合作、26 法律插件 iManage/Intapp/DeepJudge/Thomson Reuters、Sullivan & Cromwell/Ropes & Gray/Cooley 定制构建、Claude Fable 5.1 对比示例返回被推翻判例）、Lawler 官网《Stop Rogue AI Act》新闻稿全文（发布日期 09-15：NIST 制定发现/验证/控制 AI 智能体标准、持续可读清单/可验证身份来源/实时监控/允许-拒绝-撤销访问、联邦承包商采购要求、NIST+CISA 并入网安指引、法案 PDF 链接；今日晚发现照收，子代理与 The CODEW 所称 09-17 系误报）、CoinDesk 亚马逊表态全文（09-17 转述级：严格测试后发布、不加入放缓联盟、OpenAI/DeepMind/xAI/微软此前支持 Amodei、Frontier Model Safety Framework 为 2025 巴黎峰会既有承诺、Nova Premier 已按此评估、CBRN/进攻性网络/自动化 AI R&D 三类阈值）。搜索摘要级多源交叉：黄仁勋 2027 芯片销量翻倍（CNBC 报道经 24/7 Wall St./TradingKey 西/韩/越版/digitaltoday 至少四源一致，基数口径未披露、Vera Rubin 每吉瓦 400 亿美元 vs Blackwell 250 亿美元）、Intel 陈立武 CPU 需求仅能满足前沿客户约 50%（TradingKey/TrendForce/新浪多源转述，原文未开）、Apple M8 Ultra AI 服务器（The Information 经 The CODEW 两级转述，2011 年 Xserve 后首次重返服务器、NVLink Fusion 讨论、最早 2029）。补录 7 条合并沿用 09-17 晚间已核证据（Anthropic 官方博客、CNN、界面新闻四源、govinfo）。弃用核实：国家网络安全宣传周《AI 安全治理框架 3.0》（09-14 济南开幕旧闻）、民航局 AI+民航（行业推进会）、SK Hynix-Intel 洽谈（09-16 SK 官方声明、出窗）、AWS Trainium 4.4×（CoinDesk 转述量级不足）、AI Agent 安全事件汇总（The CODEW 聚合单一来源）、Pinterest/Google CC/Mistral/中国 AI 融资（搜索无果）。7 条跟踪项复查：白宫 AI 高管会未敲定（AP 确认 Trump-Xi 09-24）、OpenAI 失配报告无重大后续、Anthropic/豆包/S.5028/论文/腾讯系无新进展。",
-      "items": 19
+      "evidence": "HTTP 200，页面日期 609 处，最新 2026-09-18；窗口内 3 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-18"
+        },
+        {
+          "title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1 Announcements Sep 1, 2026 Our most advanced models for coding and kno",
+          "url": "/claude-fable-and-mythos-5-1",
+          "published_at": "2026-09-17"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-17"
+        }
+      ]
     },
     {
-      "source_id": "arxiv-recent",
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://claude.com/blog",
       "status": "ok",
-      "checked_at": "2026-09-18T03:20:00+02:00",
-      "checked_url": "https://arxiv.org/list/cs.AI/recent、https://arxiv.org/list/cs.CL/recent、https://arxiv.org/list/cs.LG/recent",
-      "evidence": "子代理确认批次状态：cs.AI 已更新至 09-17 批次（204 条，较昨日 195 新增 9 条）、cs.CL 仍为 09-16 批次（109 条）、cs.LG 仍为 09-17 批次（219 条）；09-18 批次截至采集时（01:15 UTC）尚未公布。子代理逐篇打开 29 篇 abs 页核实（cs.AI 09-17 批 20 篇 + cs.LG 09-17 批补查），产出候选 10 篇。主线程复核选定 2 篇并亲开 abs 页：2609.19107（How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents：架构干预可修改预训练缩放指数，循环/递归深度=模型增长机制，7.4B 模型增长架构以约 20× 更少计算在 CORE 匹配 GPT-3 13B 且效率增益随规模增大、boundary operator 也可提升指数、数据受限多轮下随规模增循环数计算最优；Zixi Chen/Akshay Vegesna/Samip Dahal/Andrew Gordon Wilson；v1 09-16、v2 09-17；44 页代码开源）、2609.18587（Label-free Steering：多数投票伪标签奖励 + 仅约 100K 偏置参数主干冻结，MATH-500 76.67% 超自家有监督复现版、比全参 TTRL 少 76,000× 参数，迁移 MathVista/AI2D/LogicVista/MMAU 与 4,500 道留出 MATH 题；Naveen Vakada/Mingyuan Li/Shaoxiong Ji；09-16 提交）。已核未用（待后续）：2609.18812（WaveTLM 时序语言建模合同编译，99.40% vs 37.83% 合同有效覆盖）、2609.18996（Compiled Agency：前沿编码智能体单会话构建游戏控制器，星际争霸 II 击败全部内置 AI 与作弊变体）、2609.18878（Fisher-Rao 视角防模型坍塌）、2609.18515（智谋数据培养安全警觉，ASR 17.40%→15.05%）、2609.19128（双过程智能体认知扩展，ScienceWorld 64.62）、2609.18916（HOPE：MoE 高阶专家剪枝，122B 上 50% 剪枝率排名 1.58/5、agentic coding +6.1%）、2609.19088（MUSE 教育多模态基准）、2609.19124（Flag Game 机制式群体可解释性）。昨日已选沿用：2609.18998、2609.19000（09-17 晚间已核，本期并入发布）。",
-      "items": 12
+      "evidence": "HTTP 200，页面日期 65 处，最新 2026-09-17；窗口内 11 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "/blog/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5",
+          "published_at": "2026-09-17"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-17"
+        },
+        {
+          "title": "",
+          "url": "/blog/projects-redesigned",
+          "published_at": "2026-09-16"
+        },
+        {
+          "title": "Read more",
+          "url": "/blog/claude-managed-agents-memory",
+          "published_at": "2026-09-16"
+        },
+        {
+          "title": "Product announcements",
+          "url": "/blog-category/announcements",
+          "published_at": "2026-09-16"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-16"
+        },
+        {
+          "title": "",
+          "url": "/blog/salesforce-in-claude",
+          "published_at": "2026-09-15"
+        },
+        {
+          "title": "Read more",
+          "url": "/blog/cowork-is-now-claude",
+          "published_at": "2026-09-15"
+        },
+        {
+          "title": "",
+          "url": "/blog/cowork-is-now-claude",
+          "published_at": "2026-09-15"
+        },
+        {
+          "title": "",
+          "url": "/blog/building-an-ai-native-revenue-organization",
+          "published_at": "2026-09-15"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-15"
+        }
+      ]
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 1208 条，带日期 1208 条，最新 2026-09-17T12:00:00+00:00；窗口内 7 条",
+      "items": [
+        {
+          "title": "How Cooley is accelerating IPO work with ChatGPT",
+          "url": "https://openai.com/index/cooley-gopublic",
+          "published_at": "2026-09-17T12:00:00+00:00"
+        },
+        {
+          "title": "Introducing Astra for Law",
+          "url": "https://openai.com/index/astra-for-law",
+          "published_at": "2026-09-17T00:00:00+00:00"
+        },
+        {
+          "title": "Helping older adults use AI in everyday life",
+          "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+          "published_at": "2026-09-16T16:00:00+00:00"
+        },
+        {
+          "title": "Reimagining advertising with AI",
+          "url": "https://openai.com/index/reimagining-advertising-with-ai",
+          "published_at": "2026-09-16T13:00:00+00:00"
+        },
+        {
+          "title": "How to connect AI usage to business value",
+          "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+          "published_at": "2026-09-16T12:00:00+00:00"
+        },
+        {
+          "title": "Our framework for reporting model misalignment",
+          "url": "https://openai.com/index/model-misalignment-reporting-framework",
+          "published_at": "2026-09-16T17:00:00+00:00"
+        },
+        {
+          "title": "How workers are unlocking new ways of working",
+          "url": "https://openai.com/index/unlocking-new-ways-of-working",
+          "published_at": "2026-09-16T09:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-17T20:00:00+00:00；窗口内 5 条",
+      "items": [
+        {
+          "title": "Making global data easier to explore",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
+          "published_at": "2026-09-17T20:00:00+00:00"
+        },
+        {
+          "title": "AI for Societal Impact",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+          "published_at": "2026-09-15T16:00:00+00:00"
+        },
+        {
+          "title": "Building AI to accelerate science and improve lives",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/",
+          "published_at": "2026-09-15T16:00:00+00:00"
+        },
+        {
+          "title": "AI for everyone in every language",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+          "published_at": "2026-09-15T16:00:00+00:00"
+        },
+        {
+          "title": "New insights from Google’s AI & Economy ATLAS",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/",
+          "published_at": "2026-09-15T13:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://x.ai/news（浏览器）",
+      "status": "ok",
+      "evidence": "浏览器打开，页面品牌已改为 SpaceXAI；最新条目 09-16「Memory in Grok Build」，窗口内 1 条，其余最新为 09-04、09-03、09-01，均出窗",
+      "items": [
+        {
+          "title": "Memory in Grok Build",
+          "url": "https://x.ai/news",
+          "published_at": "2026-09-16"
+        }
+      ]
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 100 条，带日期 100 条，最新 2026-09-15T17:05:57+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+          "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+          "published_at": "2026-09-15T17:05:57+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-17T13:00:55+00:00；窗口内 8 条",
+      "items": [
+        {
+          "title": "Cute Critters Come to the Cloud: ‘Aniimo’ Launches on GeForce NOW",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-aniimo/",
+          "published_at": "2026-09-17T13:00:55+00:00"
+        },
+        {
+          "title": "NVIDIA Vera Rubin NVL72 Delivers Leading Performance in MLPerf Inference v6.1 Debut",
+          "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
+          "published_at": "2026-09-16T15:00:48+00:00"
+        },
+        {
+          "title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers",
+          "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+          "published_at": "2026-09-16T13:00:33+00:00"
+        },
+        {
+          "title": "University of Manchester Uses NVIDIA Earth-2 to Forecast Air Pollution Across the UK",
+          "url": "https://blogs.nvidia.com/blog/uk-air-pollution-research-earth-2/",
+          "published_at": "2026-09-16T05:00:42+00:00"
+        },
+        {
+          "title": "‘Now We Can Know Everything and Do Anything,’ Jensen Huang Says at Dreamforce",
+          "url": "https://blogs.nvidia.com/blog/jensen-huang-dreamforce/",
+          "published_at": "2026-09-15T22:24:34+00:00"
+        },
+        {
+          "title": "From Megawatts to Tokens: How NVIDIA Maximizes AI Factory Production",
+          "url": "https://blogs.nvidia.com/blog/from-megawatts-to-tokens-how-nvidia-maximizes-ai-factory-production/",
+          "published_at": "2026-09-15T16:55:59+00:00"
+        },
+        {
+          "title": "AI Infra Summit: NVIDIA Vera Rubin and DSX Platform Advancements Showcase Energy Efficiencies of Optimizing Tokens Per Watt for AI Factories",
+          "url": "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/",
+          "published_at": "2026-09-15T16:55:40+00:00"
+        },
+        {
+          "title": "Heart of the Matter: How a Major Children’s Hospital Uses Open Source NVIDIA AI for Cardiac Care",
+          "url": "https://blogs.nvidia.com/blog/childrens-hospital-open-source-ai-cardiac-care/",
+          "published_at": "2026-09-15T09:00:42+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 862 条，带日期 862 条，最新 2026-09-15T16:00:44+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Your Agent Aced the Task. Will It Do It Again?",
+          "url": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
+          "published_at": "2026-09-15T16:00:44+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-09-10T00:00:00+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://blogs.microsoft.com/ai/（浏览器，跳转至 news.microsoft.com）",
+      "status": "partial",
+      "evidence": "浏览器打开后跳转到 news.microsoft.com 的 AI 标签页，列表不显示日期，无法判断窗口内有无新条目；首屏为客户案例与使用指南类文章",
+      "items": []
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://qwenlm.github.io/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 10 处，最新 2025-09-23；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 152 处，最新 2026-09-14；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 90 处，最新 2026-09-16；窗口内 1 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-16"
+        }
+      ]
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 13 处，最新 2026-09-17；窗口内 2 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-17"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-16"
+        }
+      ]
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 16 处，最新 2026-09-17；窗口内 2 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-17"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-16"
+        }
+      ]
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 145 处，最新 2026-09-03；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "status": "ok",
+      "evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "items": []
     },
     {
       "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-18T03:54:34+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
       "status": "ok",
-      "checked_at": "2026-09-18T03:20:00+02:00",
-      "checked_url": "https://github.com/trending?since=daily、https://github.com/trending/python?since=daily",
-      "evidence": "子代理打开两榜（主榜可见 20 条、Python 榜可见 15 条）并核对 3 个重点仓库 README 与趋势页一致性（colibri/ECC/Claude-Red 三仓描述逐字一致）。主线程经 api.github.com 授权复核 7 仓元数据：JustVugg/colibri（35,749★、C、2026-07-01 创建、09-17 有推送；纯 C 零依赖跑前沿 MoE、专家磁盘流式加载、README 称支持 744B-2.8T 参数）、affaan-m/ECC（261,185★、JavaScript、2026-01-18 创建；智能体 harness 性能优化：skills/instincts/memory/security，适配 Claude Code/Codex/Opencode/Cursor）、SnailSploit/Claude-Red（6,036★、Python、2026-03-04 创建、最后推送 08-30；Claude skills 攻击性安全技能库）、Tencent/BrowserSkill（4,179★、TypeScript、今日 +1,302 仍居主榜第 4）、cloudflare/security-audit-skill（10,704★、JavaScript、最后推送 09-14、连续第三日千级日增）、Tencent/WeKnora（26,252★、Go、回榜）、arnegiacomo/fugleramme（2,916★、Python、2026-07-08 创建；树莓派墨水屏本地 AI 鸟类识别相框）。趋势页其余 AI 相关：alphaXiv/OpenResearch（4,956★，+939）、anthropics/knowledge-work-plugins（24,566★，+287）、strands-agents/harness-sdk（7,333★）、google-research/timesfm（33,029★，+248）、SnailSploit 常青动态；非 AI 或常青（ghidra/cilium/n8n/cline/coder/supervision/onyx/pytorch/tinycast/ever-gauzy 等）仅记动态。昨日已收 OpenViking/YuE/ouroboros 跌出主榜前 20。两榜数据与昨日采集衔接正常。",
-      "items": 12
+      "evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "items": []
+    }
+  ],
+  "discovery": [
+    {
+      "channel": "web-search",
+      "query": "Amazon AI testing slower development statement September 2026",
+      "result": "找到路透原始报道（Greg Bensinger），经 The Star、AOL 等转载；早版所引 coindesk.cc 为转手搬运",
+      "used_for": "快讯 1"
+    },
+    {
+      "channel": "web-search",
+      "query": "Apple AI server M8 Ultra The Information",
+      "result": "9to5Mac 09-16 转述 The Information，替代聚合站 The CODEW",
+      "used_for": "快讯 8"
+    },
+    {
+      "channel": "web-search",
+      "query": "Jensen Huang chip sales double 2027 CNBC",
+      "result": "CNBC 原文存在但对采集环境拒绝访问，Barron's、24/7 Wall St. 等多源一致引述",
+      "used_for": "重点 1 正文，不进标题"
+    }
+  ],
+  "verification": [
+    {
+      "item": "英王峰会",
+      "url": "https://apnews.com/article/britain-king-charles-ai-summit-0765bee1e338cf65846a046fb5825a4a",
+      "method": "浏览器全文",
+      "result": "地名为 Dumfries House（邓弗里斯庄园），早版「邓弗姆斯」为笔误；Hassabis 头衔 AP 原文为 Chair，早版无误；「Surely, then…」一句早版漏译"
+    },
+    {
+      "item": "华为 Atlas 960",
+      "url": "https://apnews.com/article/huawei-ai-chips-nvidia-superpod-technology-26ab418df1339c518483918218ffbe57",
+      "method": "浏览器全文",
+      "result": "内容无误；AP 同文对 Atlas 950 推出时间有两种说法（数月前／去年底），本版并列注明"
+    },
+    {
+      "item": "亚马逊表态",
+      "url": "https://www.thestar.com.my/tech/tech-news/2026/09/17/amazon-enters-ai-safety-fray-calls-for-rigorous-testing-safeguards",
+      "method": "路透转载全文",
+      "result": "发言人两句原话核实；路透未称亚马逊为「第一个」，也未提 Frontier Model Safety Framework"
+    },
+    {
+      "item": "Anthropic 节奏指标",
+      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "method": "官方全文",
+      "result": "26%／>90%／约 3 万智能体／6% 与 12% 均为原文数字"
+    },
+    {
+      "item": "arXiv 4 篇",
+      "url": "https://export.arxiv.org/api/query?id_list=2609.19107,2609.18587,2609.18998,2609.19000",
+      "method": "API + abs 页",
+      "result": "均存在；2609.18998、2609.19000 abs 页显示提交于 2026-07-17"
+    },
+    {
+      "item": "GitHub 9 仓 star",
+      "url": "https://api.github.com/repos/",
+      "method": "API",
+      "result": "与早版相差 +7 至 +241，采集时间差所致"
+    }
+  ],
+  "excluded_hits": [
+    {
+      "domain": "coindesk.cc",
+      "list": "blocked",
+      "where": "早版重点 4 的唯一链接"
+    },
+    {
+      "domain": "thecodew.com",
+      "list": "lead_only",
+      "where": "早版快讯 4 的唯一链接"
     }
   ]
 }
