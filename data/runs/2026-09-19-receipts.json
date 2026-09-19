@@ -1,0 +1,397 @@
+{
+  "date": "2026-09-19",
+  "mode": "script-plus-manual-verification",
+  "cutoff_utc": "2026-09-19T05:30:00Z",
+  "incomplete": true,
+  "notes": "按 config/sources.json 采集。发现窗口 72 小时（09-16 05:30 UTC 起）。网页搜索只作发现渠道，不计入成功率。首轮脚本 5 源失败（arXiv 406、DeepMind/HF/Mistral/OECD SSL），补查后 arXiv、DeepMind、微软恢复；xAI/HF/Mistral/OECD 经脚本、curl（显式代理）、WebFetch/浏览器多路仍不可达，按失败记录。成功率 14/18=77.8% < 90%，且核心源 xai 失败 → 本期标注「采集不完整」。",
+  "summary": {
+    "window": [
+      "2026-09-16T05:30:00+00:00",
+      "2026-09-19T05:30:00+00:00"
+    ],
+    "planned": 18,
+    "ok": 14,
+    "partial": 0,
+    "failed": 4,
+    "pending_browser": 0,
+    "core_not_ok": [
+      "xai"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-19T06:12:00+00:00",
+      "checked_url": "https://www.anthropic.com/news",
+      "status": "ok",
+      "evidence": "HTTP 200。页面最新条目标注 Sep 18, 2026，即 Accenture 嵌入式评估（正文已核）。窗口内实际新条目 1 条；measuring-pace（09-17）与 LSVP（09-17）昨日已选；fable-mythos-5-1 为 09-01 旧文在列表重列",
+      "items": [
+        {
+          "title": "Partnering with Accenture on embedded evaluation",
+          "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+          "published_at": "2026-09-18",
+          "selected": true
+        },
+        {
+          "title": "Measuring the pace of AI development（昨日 09-18 期已选）",
+          "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+          "published_at": "2026-09-17",
+          "selected": false
+        },
+        {
+          "title": "Life Sciences Verification Program（昨日 09-18 期已选）",
+          "url": "https://www.anthropic.com/news/life-sciences-verification-program",
+          "published_at": "2026-09-17",
+          "selected": false
+        }
+      ]
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-19T06:12:00+00:00",
+      "checked_url": "https://claude.com/blog",
+      "status": "ok",
+      "evidence": "HTTP 200。列表页两条为日期误匹配：managed-agents-memory 实为 2026-04-23 旧文（点开核实）、projects-redesigned 为 09-16 产品更新（未选用）。窗口内实为新文并选用：Balyasny 治理访谈（09-17，全文已核）",
+      "items": [
+        {
+          "title": "Working at the frontier: How Balyasny Asset Management evaluates and governs Claude Fable 5",
+          "url": "https://claude.com/blog/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5",
+          "published_at": "2026-09-17",
+          "selected": true
+        }
+      ]
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-19T05:22:10+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 1210 条，最新 2026-09-18T12:00:00Z；窗口内 9 条。选用：Australian Youth Safety Blueprint（09-18，正文已核）。Cooley IPO 案例（09-17）昨日已并入 Astra for Law 报道；advertising 与 misalignment framework（09-16）昨日已选；older adults / Hex / business value / workers（09-16）为产品案例类，未选",
+      "items": [
+        {
+          "title": "Introducing the Australian Youth Safety Blueprint",
+          "url": "https://openai.com/index/australian-youth-safety-blueprint",
+          "published_at": "2026-09-18T12:00:00+00:00",
+          "selected": true
+        },
+        {
+          "title": "How Cooley is accelerating IPO work with ChatGPT（昨日已并入 Astra 报道）",
+          "url": "https://openai.com/index/cooley-gopublic",
+          "published_at": "2026-09-17T12:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "Introducing Astra for Law（昨日已选）",
+          "url": "https://openai.com/index/astra-for-law",
+          "published_at": "2026-09-17T00:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "Helping older adults use AI in everyday life（未选）",
+          "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+          "published_at": "2026-09-16T16:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "Reimagining advertising with AI（昨日已选）",
+          "url": "https://openai.com/index/reimagining-advertising-with-ai",
+          "published_at": "2026-09-16T13:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "Hex turns complex analysis into visual reports with GPT-6 Astra（未选）",
+          "url": "https://openai.com/index/hex-gpt-6-astra",
+          "published_at": "2026-09-16T12:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "How to connect AI usage to business value（未选）",
+          "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+          "published_at": "2026-09-16T12:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "Our framework for reporting model misalignment（昨日已选）",
+          "url": "https://openai.com/index/model-misalignment-reporting-framework",
+          "published_at": "2026-09-16T17:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "How workers are unlocking new ways of working（未选）",
+          "url": "https://openai.com/index/unlocking-new-ways-of-working",
+          "published_at": "2026-09-16T09:00:00+00:00",
+          "selected": false
+        }
+      ]
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-19T06:12:00+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，最新 2026-09-18T14:00:00Z；窗口内 3 条。选用：AI & Economy 团队扩编（09-18，全文已核）。另 Google Labs 的 CC 家庭智能体（09-17 官方博客，全文已核）经搜索发现后核实选用",
+      "items": [
+        {
+          "title": "New experts join Google's AI & Economy team",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+          "published_at": "2026-09-18T14:00:00+00:00",
+          "selected": true
+        },
+        {
+          "title": "Co-creating the future of fashion with Google（未选）",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
+          "published_at": "2026-09-18T13:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "Making global data easier to explore（未选）",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
+          "published_at": "2026-09-17T20:00:00+00:00",
+          "selected": false
+        },
+        {
+          "title": "The new CC, an AI agent built for families（Google Labs 博客，搜索发现后核原文）",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
+          "published_at": "2026-09-17",
+          "selected": true
+        }
+      ]
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-09-19T05:45:00+00:00",
+      "checked_url": "https://x.ai/news",
+      "status": "failed",
+      "evidence": "脚本与浏览器（多轮重试）均返回 ERR_CONNECTION_CLOSED；昨日（09-18 期）浏览器可用，今日不可达。窗口内动态无覆盖，本期标注采集不完整",
+      "items": []
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-19T05:55:00+00:00",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "status": "ok",
+      "evidence": "首轮 urllib SSL EOF；curl（走代理）重试成功：feed 20 条，lastBuildDate 2026-09-15T17:05:57Z，最新条目 Gemini 3.8 Live（09-15，昨日已选）；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-19T05:22:10+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，最新 2026-09-17T13:00:55Z；窗口内 3 条。Aniimo 上 GeForce NOW（09-17）为产品小更新未选；Vera Rubin MLPerf 与 AEMA 能源联盟（09-16）昨日已选",
+      "items": [
+        {
+          "title": "Cute Critters Come to the Cloud: 'Aniimo' Launches on GeForce NOW（未选）",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-aniimo/",
+          "published_at": "2026-09-17T13:00:55+00:00",
+          "selected": false
+        },
+        {
+          "title": "NVIDIA Vera Rubin NVL72 Delivers Leading Performance in MLPerf Inference v6.1 Debut（昨日已选）",
+          "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
+          "published_at": "2026-09-16T15:00:48+00:00",
+          "selected": false
+        },
+        {
+          "title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers（昨日已选）",
+          "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+          "published_at": "2026-09-16T13:00:33+00:00",
+          "selected": false
+        }
+      ]
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-19T06:05:00+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "failed",
+      "evidence": "urllib、curl（显式代理）、WebFetch 三路均 SSL/连接失败；非核心源",
+      "items": []
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-19T05:22:10+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 50 条，最新 2026-09-10T00:00:00Z；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-19T05:45:00+00:00",
+      "checked_url": "https://blogs.microsoft.com/ai/",
+      "status": "ok",
+      "evidence": "浏览器补查：跳转 news.microsoft.com/source/topics/ai/，列表可读；前 5 条日期为 2026-10-09（疑预发布排版，未取用）、2026-09-02、2026-08-10、2026-08-04、2026-07-27；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-19T05:22:10+00:00",
+      "checked_url": "https://qwenlm.github.io/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 10 处，最新 2025-09-23；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-19T05:22:10+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 152 处，最新 2026-09-14；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-19T06:05:00+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "failed",
+      "evidence": "urllib、curl（显式代理）、WebFetch 三路均 SSL/连接失败；非核心源",
+      "items": []
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-19T06:12:00+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "HTTP 200。窗口内 3 条全部点开核实并选用：IPCEI AI（09-16 pub）、EU KIDS Act（09-17 pub）、AI Board 第九次会议（09-18 pub）。同列表的 ChatGPT/Reddit/Roblox DSA 指定一条经核实发布于 08-31，出窗弃用",
+      "items": [
+        {
+          "title": "Commission welcomes the design of first Important Project of Common European Interest in AI",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-welcomes-design-first-important-project-common-european-interest-ai",
+          "published_at": "2026-09-16",
+          "selected": true
+        },
+        {
+          "title": "EU KIDS Act to restrict social media platforms' access to children in the EU",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/eu-kids-act-restrict-social-media-platforms-access-children-eu",
+          "published_at": "2026-09-17",
+          "selected": true
+        },
+        {
+          "title": "AI Board holds its ninth meeting",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/ai-board-holds-its-ninth-meeting",
+          "published_at": "2026-09-18",
+          "selected": true
+        }
+      ]
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-19T06:12:00+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "ok",
+      "evidence": "HTTP 200。窗口内 1 条：第四届全球 AI 伦理论坛（利雅得 09-14 至 09-17 举行，页面 09-17 更新），点开核实并选用",
+      "items": [
+        {
+          "title": "4th Global Forum on the Ethics of Artificial Intelligence",
+          "url": "https://www.unesco.org/en/articles/4th-global-forum-ethics-artificial-intelligence",
+          "published_at": "2026-09-17",
+          "selected": true
+        }
+      ]
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-19T06:05:00+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "failed",
+      "evidence": "urllib、curl（显式代理）、WebFetch 三路均 SSL/连接失败；非核心源；上次窗口内可见条目为 09-03（昨日收据）",
+      "items": []
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-09-19T05:58:00+00:00",
+      "checked_url": "https://export.arxiv.org/api/query + https://arxiv.org/list/{cat}/new",
+      "status": "ok",
+      "evidence": "首轮 API HTTP 406；显式代理重试 200（40 条抽样）。/new 列表页核对 09-18 批次（周五 20:00 ET 公布）：cs.AI 新增 89、cs.CL 新增 72、cs.LG 新增 107 条。选用 4 篇，abs 页均已核：2609.20812、2609.20804、2609.20751、2609.19606（均提交于 09-17）",
+      "items": [
+        {
+          "title": "Quantifying Overclaiming Propensity in Frontier LLM Agents",
+          "url": "https://arxiv.org/abs/2609.20812",
+          "published_at": "2026-09-17T17:59:00+00:00",
+          "selected": true
+        },
+        {
+          "title": "An Empirical Study of Harness Design for Coding Agents",
+          "url": "https://arxiv.org/abs/2609.20804",
+          "published_at": "2026-09-17T17:58:00+00:00",
+          "selected": true
+        },
+        {
+          "title": "dQwen3.5: Hybrid-Attention Diffusion Language Models",
+          "url": "https://arxiv.org/abs/2609.20751",
+          "published_at": "2026-09-17T17:39:00+00:00",
+          "selected": true
+        },
+        {
+          "title": "Chain-of-Thought Entropy as a Reliability Signal: A Preregistered Reproduction",
+          "url": "https://arxiv.org/abs/2609.19606",
+          "published_at": "2026-09-17T02:40:00+00:00",
+          "selected": true
+        }
+      ]
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-19T06:12:00+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
+      "status": "ok",
+      "evidence": "主榜 17 仓 + Python 榜 17 仓抓取解析；10 仓 star 经 api.github.com 授权复核（与榜单一致，差异为采集时间差）。选用 4 组：alibaba/open-code-review（★ 36,893，+2,704）；技能安全三件套 cloudflare/security-audit-skill（★ 14,225，+3,006）+ NVIDIA/SkillSpector（★ 17,784）；anthropics/claude-code（★ 146,399）+ knowledge-work-plugins（★ 24,935）+ Tencent/BrowserSkill（★ 5,447）+ TencentCloud/Octop（★ 4,034）+ affaan-m/ECC（★ 262,228）；jinchenma94/bazi-skill（★ 3,112）",
+      "items": []
+    }
+  ]
+}
