@@ -1,0 +1,270 @@
+{
+  "summary": {
+    "window": [
+      "2026-09-17T02:30:00+00:00",
+      "2026-09-20T02:30:00+00:00"
+    ],
+    "planned": 18,
+    "ok": 14,
+    "partial": 0,
+    "failed": 4,
+    "pending_browser": 0,
+    "core_not_ok": [
+      "xai"
+    ],
+    "success_rate": "14/18 = 77.8%，低于 90% 门槛，采集不完整"
+  },
+  "discovery": {
+    "searches": [
+      "AI news September 19 2026 / September 20 2026",
+      "White House AI meeting tech CEOs September 2026",
+      "OpenAI Anthropic Google DeepMind FINRA self-regulatory body",
+      "antitrust lawsuit Anthropic OpenAI xAI Google slow AI development",
+      "Google Gemini Irregular evaluation live companies disclosure",
+      "Trump AI task force / AI Force AI czar September 19 2026",
+      "AI Evaluators Forum open letter Hinton",
+      "Microsoft Research ProgramDistill benchmark",
+      "Cohere Aidan Gomez cartel essay",
+      "over 100 experts independent oversight AI letter"
+    ],
+    "found": [
+      "联邦反垄断诉讼（AP 经 CNN 全文转载）",
+      "Gemini 在 Irregular 评估中侵入三家真实公司（新华社电讯全文；WSJ 首发）",
+      "Trump 宣布 AI Force 与 AI 沙皇（CNN lite 全文 + 新华社英文电讯全文）",
+      "100+ 专家公开信 / AI 评估者论坛（总台国际在线全文，含 Narayanan 引语）",
+      "Cohere CEO Gomez《Who Gets to Define the Rules for AI?》（cohere.com 官方博客全文）",
+      "ProgramDistill 基准（arXiv 2609.18805 abs 页）",
+      "UN System Data Commons（Google 官方博客全文）"
+    ]
+  },
+  "verification": [
+    "AP 诉讼报道：lite.cnn.com 全文打开，被诉四方、递交时间（周五）、四名原告、N.D. Cal.、集体诉讼诉求、7 月员工联署、Amodei 豁免请求、Altman 回应、Trump/Hawley 表态均取自全文",
+    "Gemini 事件：新华网电讯全文打开（旧金山 09-18 电，记者吴晓凌）——五月测试、Irregular（以色列公司）、猜密码一次+公开仓库凭证两次、三家企业获告知、7 月底知情未主动披露、Google「无需披露」口径、OpenAI/Anthropic/Meta 前情均出自电讯；WSJ 为首发但原文未开（付费墙），未引用 WSJ 独有细节",
+    "Trump AI Force：CNN lite 全文 + 新华社英文电讯（chinaview）全文双开——Truth Social 原文引语、Space Force 类比、GDP 25% 说法、Obama 周五 Colgate 炉边谈话引语均取自全文",
+    "百名专家公开信：总台国际在线全文打开——联署时间（当地时间 09-18）、组织方 AI 评估者论坛、Hinton 联署、四项保护要求、Narayanan 完整引语；论坛构成（METR/Transluce/Averi）仅见转述，未进重点正文",
+    "Cohere Gomez 长文：cohere.com/blog/who-gets-to-define-the-rules-for-ai 全文打开——09-13 发布、「a cartel by any other name」原句、NRSRO 1975 与 1985 欧盟汽车豁免两案例、四支柱、准入门槛批评均取自全文",
+    "ProgramDistill：arXiv abs 页打开——09-16 15:19 UTC 提交、2609.18805、26 应用 4,063 任务、GPT-6 Astra 49.2% / Claude Opus 5 28.8%、100%→64.0% 与 96%→32%",
+    "UN Data Commons：Google 官方博客全文打开——09-17 发布、data.un.org、基于 Data Commons、MCP 支持、2027 年覆盖 80% 目标",
+    "arXiv：首轮 API 406，显式代理（HTTPS_PROXY）重试成功；API 最新条目 2609.20822（2026-09-17T17:59:58Z 提交）；/new 列表页确认仍为 89 条的 09-18 批次（昨日已发布）——周五/周六公告空窗，窗口内无新批次，论文板块为「无新增」",
+    "GitHub Trending：主榜 + Python 日榜两页解析，剔除 /sponsors/ 伪影后共 23 个去重仓库，其中 14 仓经 api.github.com 复核 star 数（榜单日增量与 API 一致）",
+    "xAI：脚本 403 之外，浏览器打开 x.ai/news 与 x.ai/ 均为 ERR_CONNECTION_CLOSED，连续第二日不可达，记 failed",
+    "微软：浏览器打开 blogs.microsoft.com/ai，跳转 news.microsoft.com/source/topics/ai/，页面可达；页面不显示条目日期，图片路径最新日期 2026-08-19，窗口内无新条目，记 ok"
+  ],
+  "excluded_hits": [
+    "aicnbc.com：自称「CNBC For AI News」，疑似仿冒 CNBC 域名的站点，出现在专家信搜索结果中，未引用——建议人审后加入 blocked_domains",
+    "worldnewsguru.us / wilsonsmedia.com / nogentech.org / kenyainsights.com / myxmr.com / 00011000.com / theroboticsmedia.com / yiaho.com 等转述站：仅作发现线索，所有事实均回原始来源核验，未作为引用来源",
+    "aitoolsrecap.com（每日聚合博客，relay）：仅作发现渠道与背景参考，其独有数字（如 Anthropic 6 月 1 日秘密递交 IPO 文件）未采用"
+  ],
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://www.anthropic.com/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 610 处，最新 2026-09-18；窗口内 4 条（按日期匹配，粒度到天）",
+      "items": [
+        {"title": "（09-18 条目，即 Accenture 嵌入式评估，09-19 期已选用）", "url": "https://www.anthropic.com/news/accenture-embedded-evaluation", "published_at": "2026-09-18"},
+        {"title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1（页面标注 Sep 1，日期字段误匹配 09-17）", "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1", "published_at": "2026-09-01"}
+      ]
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://claude.com/blog",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 65 处，最新 2026-09-17；窗口内 2 条，均为 09-19 期已选用或已核条目（Balyasny 治理访谈等）",
+      "items": []
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 1210 条，带日期 1210 条，最新 2026-09-18T12:00:00+00:00；窗口内 2 条（澳洲青年安全蓝图 09-19 期已选、Cooley IPO 09-18 期已并入 Astra for Law），本期无新增选用",
+      "items": [
+        {"title": "Introducing the Australian Youth Safety Blueprint", "url": "https://openai.com/index/australian-youth-safety-blueprint", "published_at": "2026-09-18T12:00:00+00:00"},
+        {"title": "How Cooley is accelerating IPO work with ChatGPT", "url": "https://openai.com/index/cooley-gopublic", "published_at": "2026-09-17T12:00:00+00:00"}
+      ]
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-18T14:00:00+00:00；窗口内 3 条：AI 与经济团队（09-19 期已选）、Flow 时装周（产品向未选）、UN Data Commons（本期快讯选用，原文已核）",
+      "items": [
+        {"title": "New experts join Google's AI & Economy team", "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/", "published_at": "2026-09-18T14:00:00+00:00"},
+        {"title": "Co-creating the future of fashion with Google", "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/", "published_at": "2026-09-18T13:00:00+00:00"},
+        {"title": "Making global data easier to explore", "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/", "published_at": "2026-09-17T20:00:00+00:00"}
+      ]
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-09-20T03:55:00+00:00",
+      "checked_url": "https://x.ai/news",
+      "status": "failed",
+      "evidence": "浏览器补查：x.ai/news 与 x.ai/ 均返回 ERR_CONNECTION_CLOSED（chrome-error://chromewebdata/），脚本 403 之外浏览器亦不可达，连续第二日；窗口内动态无覆盖",
+      "items": []
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 100 条，带日期 100 条，最新 2026-09-15T17:05:57+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-17T13:00:55+00:00；窗口内 1 条（Aniimo 上 GeForce NOW，产品小更新，与 09-19 期判断相同未选）",
+      "items": [
+        {"title": "Cute Critters Come to the Cloud: 'Aniimo' Launches on GeForce NOW", "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-aniimo/", "published_at": "2026-09-17T13:00:55+00:00"}
+      ]
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "failed",
+      "evidence": "URLError: SSL UNEXPECTED_EOF_WHILE_READING（与 09-19 期相同，三路均失败）",
+      "items": []
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-09-10T00:00:00+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-20T03:55:00+00:00",
+      "checked_url": "https://blogs.microsoft.com/ai/",
+      "status": "ok",
+      "evidence": "浏览器补查：跳转 news.microsoft.com/source/topics/ai/，页面可达；不显示条目日期，图片路径最新日期 2026-08-19，窗口内无新条目",
+      "items": []
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://qwenlm.github.io/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 10 处，最新 2025-09-23；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 152 处，最新 2026-09-14；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "failed",
+      "evidence": "URLError: SSL UNEXPECTED_EOF_WHILE_READING（与 09-19 期相同）",
+      "items": []
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 13 处，最新 2026-09-18；窗口内 2 条（AI Board 第九次会议 09-18、KIDS Act 09-17，均 09-19 期已选用）",
+      "items": []
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 16 处，最新 2026-09-18；窗口内 2 条（利雅得论坛相关，09-19 期已选用）",
+      "items": []
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-20T02:27:02+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "failed",
+      "evidence": "URLError: SSL UNEXPECTED_EOF_WHILE_READING（与 09-19 期相同）",
+      "items": []
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-09-20T04:08:40+00:00",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "status": "ok",
+      "evidence": "首轮 HTTP 406，显式代理重试成功；API 最新条目 2609.20822（2026-09-17T17:59:58Z 提交）；/new 列表页确认仍为 09-18 公布批次（cs.AI 89 条，09-19 期已收录）；周五/周六为公告空窗，窗口内无新批次——「无新增」而非失败",
+      "items": []
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-20T04:00:00+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
+      "status": "ok",
+      "evidence": "两榜解析完成，剔除 /sponsors/ 链接伪影后 23 个去重仓库；14 仓 star 经 api.github.com 复核一致。主榜前三：cloudflare/security-audit-skill（+3,155）、addyosmani/agent-skills（+556）、coder/coder（+402）；昨日主榜第 3 的 alibaba/open-code-review 已落榜",
+      "items": []
+    }
+  ]
+}
