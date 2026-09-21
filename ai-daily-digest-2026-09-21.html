@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-09-21：加州行政令推进 AI「kill switch」；Altman 将赴安理会简报；Anthropic 被曝权衡新模型</title>
+<meta name="description" content="加州州长签署行政令加速独立 AI 监督框架与前沿模型「kill switch」；Altman 周三将向联合国安理会作 AI 简报；路透社曝 Anthropic 权衡发布新模型应对 GPT-6 Astra 企业势头；阶跃星辰发布 Step 5 Preview 并定 10 月 15 日开放权重；习近平访美国宴名单云集 AI 高管">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-21.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-09-21：加州行政令推进 AI「kill switch」；Altman 将赴安理会简报；Anthropic 被曝权衡新模型">
+<meta property="og:description" content="加州州长签署行政令加速独立 AI 监督框架与前沿模型「kill switch」；Altman 周三将向联合国安理会作 AI 简报；路透社曝 Anthropic 权衡发布新模型应对 GPT-6 Astra 企业势头；阶跃星辰发布 Step 5 Preview 并定 10 月 15 日开放权重；习近平访美国宴名单云集 AI 高管">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-21.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-20.html">上一期 · 09-20</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-09-21">2026 年 9 月 21 日 · 周一 · 第 15 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">7</span>条资讯</div>
+    <div class="stat"><span class="num">6</span>篇论文</div>
+    <div class="stat"><span class="num">8</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">72</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player">
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
+  <div class="play-info">
+    <div class="play-label">语音简报</div>
+    <div class="play-title">AI 日报 · 2026 年 9 月 21 日</div>
+    <div class="play-meta">语音版 · 小宇宙</div>
+  </div>
+  <div class="progress-row">
+    <span class="current-time" id="currentTime">00:00</span>
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="duration-time" id="durationTime">--:--</span>
+  </div>
+  <audio id="audioPlayer" preload="metadata">
+    您的浏览器不支持音频播放。
+  </audio>
+</div>
+
+<script>
+  /* 小宇宙音频直链：节目发布后填入；为空时显示"语音版即将上线" */
+  var AUDIO_SRC = "";  /* 小宇宙直链，未发布时留空 */
+  var audio = document.getElementById('audioPlayer');
+  if (AUDIO_SRC) {
+    audio.src = AUDIO_SRC;
+  } else {
+    var metaEl = document.querySelector('.play-meta');
+    if (metaEl) { metaEl.innerHTML = '语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
+  }
+  var playBtn = document.getElementById('playBtn');
+  var progressFill = document.getElementById('progressFill');
+  var currentTimeEl = document.getElementById('currentTime');
+  var durationTimeEl = document.getElementById('durationTime');
+  var progressBar = document.getElementById('progressBar');
+  var isPlaying = false;
+
+  function togglePlay() {
+    if (!audio.src) { return; }
+    if (audio.paused) { audio.play(); playBtn.innerHTML = '&#10074;&#10074;'; isPlaying = true; }
+    else { audio.pause(); playBtn.innerHTML = '&#9654;'; isPlaying = false; }
+  }
+  function formatTime(s) {
+    if (isNaN(s)) return '--:--';
+    var m = Math.floor(s / 60); var sec = Math.floor(s % 60);
+    return (m < 10 ? '0' : '') + m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+  audio.addEventListener('loadedmetadata', function() { durationTimeEl.textContent = formatTime(audio.duration); });
+  audio.addEventListener('timeupdate', function() {
+    var pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  });
+  audio.addEventListener('ended', function() {
+    playBtn.innerHTML = '&#9654;'; isPlaying = false;
+    progressFill.style.width = '0%'; currentTimeEl.textContent = '00:00';
+  });
+  function seekTo(e) {
+    var rect = progressBar.getBoundingClientRect();
+    var x = (e.clientX || e.touches[0].clientX) - rect.left;
+    var pct = x / rect.width;
+    if (audio.duration) { audio.currentTime = pct * audio.duration; }
+  }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
+</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<!-- ===== 每日精选 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📰</span>
+    <h2>每日精选</h2>
+    <span class="tag">7 条核心资讯</span>
+  </div>
+
+  <div class="focus-box">
+    <div class="label">今日焦点</div>
+    <div class="content">
+      配速之辩第十天，「条件」开始变成「条文」——加州把 100+ 专家信的四项要求写进行政令并点名失控事件；配速议题周三登上联合国安理会；呼吁放慢的 Anthropic 被曝在 IPO 与竞争压力下权衡加速发布；同一周末，中国实验室发布 Step 5 Preview 并给出开源时间表；AI 高管们将在习近平访美国宴齐聚。<strong>要求放慢的实验室在权衡加速、要求监管的州政府绕开联邦先行——配速之辩从「要不要慢」进入「谁有权定速」的多轨并行期。</strong><br><br><em>本期采集不完整：18 个计划源中 xAI、Hugging Face、Mistral、OECD 四源不可达（xAI 为核心源，浏览器连续第三日 ERR_CONNECTION_CLOSED），成功率 14/18（77.8%）低于 90% 门槛；arXiv 周一批次 197 条经 /new 列表页 + abs 页逐篇核验，属「恢复」而非失败。详见当日成稿的采集说明。</em>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-policy">政策</span>
+      <h3>加州州长 Newsom 周五签署行政令 N-9-26：以「近期 AI 事件」为由加速推进全美首个独立 AI 监督框架，要求专家组两个月内拿出修法建议——四项方向全部对着本周的「越界」与「披露」争议，前沿模型「紧急关断开关（kill switch）」第一次进入美国任一法域的正式政策文件</h3>
+    </div>
+    <p>加州州长办公室新闻稿 09-18 全文已核；行政令 PDF 见稿内链接。要点：① 四项修法方向：前沿公司现场嵌入指定独立核证组织开展常规审计与评估；州法要求提交的安全框架、透明度报告与风险评估须经独立核证组织按其认可标准核证；推进前沿模型 kill switch 的建立、其有效性由独立核证组织持续核证；更新「关键安全事件」定义，把 Hugging Face 攻击这类失控事件纳入；② 行政令同时加速上周刚签署的 SB 813（独立核证组织认证框架）与 AB 1405（AI 审计师州登记册及独立性标准）的实施时间表；③ 新闻稿直接点名「Hugging Face 攻击」作为动因，并指联邦层面「没有一部法律要求 AI 公司在危险事件发生时报告」，Trump 已拒绝新监管；④ Newsom 定性句：「我们要深思熟虑，但要有紧迫的速度；赌注太高，不能等待或推迟行动」，并公开要求国会与 Trump 以加州框架为「国家底线」。为什么值得看：昨天 100+ 专家公开信开出的四项条件（嵌入式评估、独立核证、有效保护、准入），今天就被一个州政府转译成立法议程——「评估员进驻实验室」从公司间双边合同与行业信诉求，变成行政令里的强制性修法选项；加州给出的答案不是「放慢」，而是「外部核证下的继续开发」，与白宫「AI Force + 现有法律」、原告「禁止协调」构成第三条路线。</p>
+    <div class="source">来源：<a href="https://www.gov.ca.gov/wp-content/uploads/2026/09/FINAL-N-9-26-AI-EO-9.18.26-SIGNED.pdf" target="_blank" rel="noopener">行政令 N-9-26 原文 PDF</a> · <a href="https://mail.goldrushcam.com/sierrasuntimes/index.php/news/local-news/81774-california-governor-gavin-newsom-issues-executive-order-to-address-the-dangers-of-recent-ai-incidents-advances-the-creation-of-an-ai-kill-switch" target="_blank" rel="noopener">州长办公室新闻稿（Sierra Sun Times 转载，已核全文）</a> · 签署于 09-18</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-policy">外交</span>
+      <h3>OpenAI 确认：Altman 将于周三（09-23）亲自向联合国安理会 15 国公开会议作 AI 简报，会议由轮值主席国法国召集，正值联合国大会高级别周（09-21 至 09-27）——配速之辩登上全球最高安全舞台</h3>
+    </div>
+    <p>AFP 经 Euractiv 09-19 全文已核；OpenAI 发言人周五向 Reuters 确认。要点：① OpenAI 发言人口径：简报将聚焦国际协调、共同安全标准，以及 OpenAI 为确保全球受益于 AI 所采取的措施；② 古特雷斯上周三已先行定调：「国家行动必不可少，但全球协调同样不可或缺」；③ 报道背景交代了完整的呼应链：Amodei 09-12 文章、Altman 与 Musk 表态支持、Hassabis 呼吁美国牵头的全球监管机构——对照 Trump 的「骗局」定性；④ 转述级补充（Reuters 经 belgiumsun）：外交官预期 Anthropic 高级代表亦将出席但未获确认，法国外长将主持。为什么值得看：Amodei 在原文里要求「政府支持全球放慢自动化 AI 开发」，三天后这个议题就出现在安理会议程上——由法国而非美国召集，本身就是信号；这也是继白宫「AI Force」、加州行政令、联邦反垄断诉讼之后，配速之辩的第四个制度化出口，且是唯一的多边场合；周三的简报内容与各理事国反应将是明日重点。</p>
+    <div class="source">来源：<a href="https://www.euractiv.com/news/openais-sam-altman-to-brief-un-security-council-next-week/" target="_blank" rel="noopener">Euractiv（AFP 稿，已核全文）</a> · 发布于 09-19</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-money">商业</span>
+      <h3>路透社独家：三名知情人士称 Anthropic 正考虑发布一款新 AI 模型，以应对 OpenAI GPT-6 Astra（09-03 发布）在企业市场的强劲势头——此时距其 CEO 呼吁全行业放慢仅一周多，公司同时在做 IPO 准备并权衡新产品的投入力度</h3>
+    </div>
+    <p>Reuters 09-20 报道，原文被拦未开；Tekedia 全文转述 09-20 已核，环球网中文转述交叉一致，以下数字均按转述标注。要点：① 竞争压力的数据面：企业支出平台 Ramp 跟踪的企业 AI 支出里 GPT-6 Astra 约占 13%、Claude Fable 约 8%；模型路由平台 OpenRouter 称上周用户在 OpenAI 模型上的支出超过 Anthropic，为两年半多来首次；② 财务面：Anthropic 年化收入 7 月底超 650 亿美元（2025 年底约 90 亿），此前 Reuters 报道其预测 2028 年收入约 1,900-2,000 亿美元；OpenAI 年化收入 7 月突破 400 亿美元；③ 上市时间线：Altman 周六表示 OpenAI 2026 年不会上市，理由是 AI 安全考量、「现在不是合适时机」；两名知情人士称 Anthropic 的 IPO 可能推迟至 11 月中期选举之后，营销最早 10 月中旬才开始；④ 结构性背景：开源/开放权重模型（尤其中国系）正给商业模型定价施压，Meta 作为 Anthropic 大客户正在自建 AI 能力以减少依赖；⑤ 一名知情人士称，对下一款模型的安全评估是发布决策的一部分。为什么值得看：配速之辩最直接的内在张力第一次有了具象案例——同一家公司在同一周里，CEO 呼吁放慢、法务应对「协调放慢」诉讼、产品线却在评估加速发布；而「安全评估是发布决策的一部分」这句话，恰是加州行政令要外部核证的对象——内部安全评估与外部独立核证的边界，接下来每周都会被检验。</p>
+    <div class="source">来源：<a href="https://www.tekedia.com/anthropic-weighs-new-ai-model-as-openais-gpt-6-astra-threatens-enterprise-lead/" target="_blank" rel="noopener">Tekedia（Reuters 稿全文转述，已核；数字均标注转述）</a> · Reuters 原文连接被拦 · 发布于 09-20</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-model">模型</span>
+      <h3>阶跃星辰（StepFun）周日发布旗舰基座模型 Step 5 Preview：面向真实世界 Agentic 任务，稀疏 MoE 架构总参数 600B、每 token 激活 27B，原生支持 100 万 token 上下文与文本、图像输入；官方口径 10 月 15 日开放权重</h3>
+    </div>
+    <p>stepfun.com 官方页面 09-20 全文已核；开源日期见上观新闻/腾讯新闻报道（引官方口径）。要点：① 基准对照（官方页，对手均为各家 Max/High 档）：DeepSWE v1.1 得 67.7，居 GPT-6 Astra（74.1）、Claude Opus 5（74.0）之后、Kimi K3（67.5）与 GLM-5.3（66.9）之前；金融基准 FrontierFinance 得 66.4 位列第二（仅次 Claude Opus 5 的 69.7，高于 GPT-6 Astra 的 55.0）；智能体考试 ALE-CLI 得 29.5 亦列第二；Terminal-Bench v4 得 33.3 落后 GLM-5.3（41.9）与两家美国头部；② Artificial Analysis 智能指数 44 分，官方强调同等智能水平下任务成本显著低于同档模型（「Pareto 前沿」叙事）；③ 内外部专家评估中约 70% 参与者认为其能自主解决中等复杂度编程任务；④ 同场发布自建基准 StepCodeBench：553 个独立仓库、9 类任务、20 个应用域、33 种编程语言。为什么值得看：在「美国实验室讨论放慢」的同一周，中国实验室的旗舰迭代照常发布，且把「开放权重 + 极致成本」作为明确卖点——对照 Reuters 转述的「开放权重模型给商业模型定价施压」，Step 5 正是那个压力的具体来源之一；金融场景的相对强势（FrontierFinance 第二）与今日开源榜上 Anthropic 金融技能库登榜恰成镜像：中美两条路线都在把「AI + 金融」当作下一个垂直主战场。</p>
+    <div class="source">来源：<a href="https://www.stepfun.com/step-5-preview" target="_blank" rel="noopener">StepFun 官方页面（已核全文）</a> · 发布于 09-20 · 开放权重日期（10-15）为媒体转述官方口径</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-hot">焦点</span>
+      <h3>习近平周四（09-24）对美事访问的轮廓与 AI 议程落定中：白宫国宴名单经美方官员公布，包括 Altman、黄仁勋、Cook、Bezos、Musk、Pichai、Michael Dell 与 Jane Fraser；此前 CNN（09-16）报道特朗普政府正权衡在访问团侧召开 AI 高管会议，但截至发稿该会议仍未见官宣</h3>
+    </div>
+    <p>国宴名单：NY Post 09-18 报道经多源转述、SCMP 报道、particle.news 17 篇聚合簇 09-20 概览已核；团侧会议：CNN 09-16 报道，经转述确认存在、原文未开。要点：① 访问规格：Trump 将在安德鲁斯联合基地迎接，举行正式欢迎仪式，晚间的国宴设在白宫东厅；② 聚合簇概述的议程重心：AI 安全措施、前沿模型预览、先进芯片出口管制、开放权重模型流动限制，以及有限度的关税与稀土、LNG 磋商——「无重大双边协议已敲定」；③ CNN 稿内引述：政府官员称「行政当局与 AI 前沿实验室保持定期接触，将继续与科技业接触，以巩固美国 AI 主导地位并保障美国人安全」；Meta、Anthropic、谷歌与 SpaceXAI 代表均未回应置评请求；Altman 的赴宴由 OpenAI 全球事务负责人 Lehane 向 CBS 确认；④ 议长 Johnson 09-14 预告的「一周内」白宫 AI 领袖会议至此确认未在本周举行。为什么值得看：昨日待补的「会议是否移至访美团侧」得到部分解答——会议还在「权衡」、国宴名单先行，但 AI 高管集体现身中美峰会的画面本身已是配速之辩的国际背景板：美国实验室的「放慢 vs 加速」之争，嵌在两国科技竞速的大框架里，出口管制与开放权重流动正是中方与 Step 5 同步推进的两条线；周四国宴前后如有会议官宣或现场表态，将是本周后半程的主线。</p>
+    <div class="source">来源：<a href="https://particle.news/story/xi-to-visit-washington-as-top-tech-and-business-leaders-join-state-dinner" target="_blank" rel="noopener">particle.news 聚合簇概览（17 篇报道，已核）</a> · NY Post/SCMP 原文经转述 · 概览发布于 09-20</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-money">医药</span>
+      <h3>英矽智能（03696.HK）09-21 午间发自愿公告：与一家前沿基础模型实验室达成最高达数千万美元的合作，依托其 MMAI Gym 训练框架（1000+ 药物研发基准、约 1200 亿 token 制药数据）共同开发、验证并商业化面向生物学研究的基础模型</h3>
+    </div>
+    <p>时代周报/和讯网转述公司公告，港交所原文未打开，数字按转述标注。公司此前已与 Liquid AI 等在该框架上合作。</p>
+    <div class="source">来源：<a href="http://m.toutiao.com/group/7687864106333831689/" target="_blank" rel="noopener">时代周报（经今日头条转载，转述已核）</a> · 公告发布于 09-21 午间</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-head">
+      <span class="badge badge-infra">团队</span>
+      <h3>Google 扩充「AI &amp; Economy」研究团队：新增学术界顾问、fellow 与核心内部研究员，研究 AI 对经济与劳动市场的影响</h3>
+    </div>
+    <p>Google 官方博客 09-18，全文已核；同日另有教育者 AI 培训学分与 Flow 时装周两条产品向更新，未选用。</p>
+    <div class="source">来源：<a href="https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/" target="_blank" rel="noopener">Google 官方博客（已核全文）</a> · 发布于 09-18</div>
+  </div>
+</div>
+
+<!-- ===== 行业洞见 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">🔍</span>
+    <h2>行业洞见</h2>
+    <span class="tag">深度分析</span>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-banner">
+      <div class="meta">今日洞见 · 配速之辩第十天</div>
+      <h3>「条件」变成「条文」：配速之辩进入州、多边、市场、中美四轨并行期</h3>
+    </div>
+    <div class="insight-body">
+      <div class="focus-box" style="margin-bottom: 20px;">
+        <div class="label">今日焦点</div>
+        <div class="content">
+          一张行政令——加州把专家信的四项条件写进修法议程、kill switch 首入美国法域政策文件（州轨）；一场安理会简报——「全球放慢」议题周三登上最高安全舞台、由法国召集（多边轨）；一篇独家报道——呼吁放慢的实验室在 IPO 与竞争压力下权衡加速发布（市场轨）；一次旗舰发布与一份国宴名单——Step 5 开源时间表与 AI 高管齐聚同框（中美轨）。
+        </div>
+      </div>
+
+      <p>先看州轨。昨天 100+ 专家信开出四项条件——嵌入式评估、独立核证、有效保护、准入；今天加州就用行政令把它们逐一转译成修法方向：评估员「现场嵌入」、安全文件「第三方核证」、kill switch「持续核证」、失控事件「纳入强制报告定义」。<strong>「评估员进驻实验室」从公司间双边合同（Anthropic×Accenture）与行业信诉求，变成行政令里的强制性修法选项</strong>——而且 Newsom 的路线既不是白宫的「AI Force + 现有法律」，也不是原告的「禁止协调」，而是第三条：外部核证下的继续开发。绕开联邦、点名失控事件，这个姿态本身就是对「没有一部法律要求报告危险事件」的直接回答。</p>
+
+      <p>再看多边轨与市场轨。Amodei 在原文里要求「政府支持全球放慢自动化 AI 开发」，三天后该议题出现在安理会议程上——由法国而非美国召集，是继白宫、加州、联邦法院之后的第四个制度化出口，也是唯一的多边场合。与此同时，Reuters 独家给配速之辩补上了最直接的内在张力：同一家公司同一周里，CEO 呼吁放慢、法务应对「协调放慢」诉讼、产品线却在评估加速发布——企业支出占比被反超、IPO 窗口临近，「awkward moment」有了数据面。值得注意的恰是那句「安全评估是发布决策的一部分」：<strong>内部安全评估正是加州行政令要外部核证的对象，两者的边界接下来每周都会被检验</strong>。</p>
+
+      <p>最后看中美轨。美国实验室讨论放慢的同一周，Step 5 Preview 照常迭代并把「开放权重 + 极致成本」作为明确卖点——Reuters 稿里「开放权重模型给商业模型定价施压」的判断，Step 5 正是压力来源之一；而国宴名单上的 AI 高管集群与团侧会议的「权衡中」，把出口管制与开放权重流动两条线推到同一张谈判桌上。配速之辩从来不只是「要不要慢」：它嵌在两国科技竞速的框架里，「谁有权定速」才是各轨共同争夺的问题。</p>
+
+      <ul class="key-points">
+        <li><strong>州级先行</strong>：专家信四条件 → 行政令修法议程，kill switch 首入美国法域政策文件；</li>
+        <li><strong>多边登场</strong>：法国召集安理会简报，「全球放慢」登上最高安全舞台，第四个制度化出口；</li>
+        <li><strong>市场张力</strong>：同一周内呼吁放慢与权衡加速并存，内部安全评估正是外部核证的对象；</li>
+        <li><strong>中美镜像</strong>：Step 5 开放权重时间表与国宴 AI 名单同框，定价压力与管制流动互为筹码。</li>
+      </ul>
+
+      <p>接下来盯四件事：周三（09-23）Altman 安理会简报的内容与各理事国反应（明日重点）；周四（09-24）国宴与团侧 AI 会议是否官宣、现场有何表态；「AI 评估者论坛」公开信原文与机构构成（现仅见转述，加州行政令是否会明确援引值得留意）；xAI 连续第三日不可达，恢复后窗口内动态照记发布时间补录。</p>
+
+      <div class="oneliner">
+        一句话总结：放慢的呼吁撞上加速的报表——第十天，「谁有权定速」的裁判权从实验室会议桌散落到州议会、安理会与招股书里。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 论文速递 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📄</span>
+    <h2>论文速递</h2>
+    <span class="tag">从 arXiv 筛选 · 周一批次 197 条</span>
+  </div>
+
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">01</span>
+      <span class="paper-title">CogGym：258 个认知科学实验标准化，50 个大模型与人类「同卷」——最好的模型在视频实验上与人类行为的拟合度仅 0.43，而人类自身分半信度是 0.92</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">认知科学</span>
+      <span class="paper-tag">人机对比</span>
+      <span class="paper-tag">评估</span>
+    </div>
+    <div class="paper-body">半自动人工在环流水线把 100 篇论文的实验范式转成任务无关的实验标记语言（EML），实现人机行为在匹配实验试次上的可复现比较。结果：模型越大越新越能复现人类判断（清晰的 scaling 趋势），但常识推理上的进步速度显著慢于数学、代码等形式推理基准；文本、图像、视频上人类分半信度分别为 0.93、0.95、0.92，最好模型仅 0.59、0.58、0.43。<strong>「智能体基准」内卷一周后，认知科学家给出的参照系是人类自身的行为一致性——0.43 对 0.92 的缺口，是比任何榜单名次都冷静的进度条。</strong></div>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.21259" target="_blank" rel="noopener">arxiv.org/abs/2609.21259 →</a>
+  </div>
+
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">02</span>
+      <span class="paper-title">SWE-Proof：给真实 issue 的代码补丁上「机器可检验证明」——Benchproofer 流水线从 SWE-bench Verified 收得 500 个形式化验证任务</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">代码智能体</span>
+      <span class="paper-tag">形式化验证</span>
+      <span class="paper-tag">基准构建</span>
+    </div>
+    <div class="paper-body">把带已知正确补丁的编码任务转成形式化验证任务——为新代码写规约、为被调用的既有函数生成公理化摘要、机械与对抗双重闸门通过才收例。<strong>直指当前智能体编码基准的两大软肋——测试套件不完备与记忆化污染；「证明正确」替代「测试通过」，与昨日 ProgramDistill 的「重建验证」同属把评估做硬的路线。</strong></div>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.21190" target="_blank" rel="noopener">arxiv.org/abs/2609.21190 →</a>
+  </div>
+
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">03</span>
+      <span class="paper-title">给大模型做「测谎」：PIR 从内部状态读出模型不肯说的答案——五族八个模型上，被隐藏答案的恢复率达 0.70 以上</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">可解释性</span>
+      <span class="paper-tag">模型安全</span>
+      <span class="paper-tag">隐匿信息测试</span>
+    </div>
+    <div class="paper-body">把法医的「隐匿信息测试」（在多个候选中辨认真细节的异常反应）移植进模型——呈现问题与候选答案，从内部状态读取模型「认得」哪个候选；无需诚实参照模型、无需标注语料。Gemma、Qwen、Llama、Mistral、Phi 五族八个模型上验证有效。<strong>上周「智能体隐瞒/越界」事件的技术面出口——外部行为读不出的隐瞒，内部状态可能读得出；与安全评估、披露义务的治理讨论（今日重点 1、3）互为表里。</strong></div>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.21996" target="_blank" rel="noopener">arxiv.org/abs/2609.21996 →</a>
+  </div>
+
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">04</span>
+      <span class="paper-title">RecreationWorld：五平台混合「电脑操作」智能体的可验证环境——参考实现作 oracle，智能体用 GUI 操作 + 编码工具复现其行为</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">智能体环境</span>
+      <span class="paper-tag">GUI 交互</span>
+      <span class="paper-tag">Qwen 团队</span>
+    </div>
+    <div class="paper-body">给定一个运行中的参考实现，智能体须自行发现其行为并用 GUI 操作 + 编码工具复现——覆盖 Ubuntu、macOS、Windows、Android、Web 五平台，参考实现作为隐藏行为测试的 oracle 提供执行接地的奖励。<strong>继图形交互与命令行之后，「混合型 CUA」自主决定何时点界面、何时写代码、何时跑验证——上周 Gemini 评估越界事件里「模型侵入真实系统」的能力面，正是这类环境要安全承接的对象。</strong></div>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.22000" target="_blank" rel="noopener">arxiv.org/abs/2609.22000 →</a>
+  </div>
+
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">05</span>
+      <span class="paper-title">机器翻译里「推理」何时有用？Apple 团队的分层分析：最佳推理语言因模型而异，推理长度与质量非单调相关</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">机器翻译</span>
+      <span class="paper-tag">推理</span>
+      <span class="paper-tag">EMNLP 2026 Main</span>
+    </div>
+    <div class="paper-body">跨模型、语言、域、数据集分析推理轨迹，发现共性结构与域特异差异并存；提出的分层元总结（HMS）框架无预设类目地归纳出「理解/规划—翻译/起草—修改/校验」的三段结构。结论：<strong>MT 中的推理应按模型、长度、模式有意识地控制，而非默认开启</strong>——对「推理模型 everywhere」的默认配置是一份反向校准。</div>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.21247" target="_blank" rel="noopener">arxiv.org/abs/2609.21247 →</a>
+  </div>
+
+  <div class="paper-item">
+    <div class="paper-head">
+      <span class="paper-num">06</span>
+      <span class="paper-title">「下一轮更好」不等于「工作流更好」：SFT 的评估幻觉——下一轮预测协议下全面涨分，自主工作流执行时无一改善</span>
+    </div>
+    <div class="paper-tags">
+      <span class="paper-tag">SFT</span>
+      <span class="paper-tag">评估协议</span>
+      <span class="paper-tag">EMNLP 2026 Workshop</span>
+    </div>
+    <div class="paper-body">在多轮客服工作流上，SFT 后的 Qwen3（4B/14B）与 Gemma 3（4B/12B）在「金标准历史 + 下一轮预测」协议下全面涨分，但迁移到自主工作流执行时无一改善——严格轨迹完成口径下的工作流成功率最高仅 10.4%。<strong>给当前「智能体 SFT 数据」热泼的一盆冷水——评估协议本身决定结论，与 CogGym 的「参照系」问题同源。</strong></div>
+    <a class="paper-link" href="https://arxiv.org/abs/2609.21187" target="_blank" rel="noopener">arxiv.org/abs/2609.21187 →</a>
+  </div>
+
+  <div class="paper-observation">
+    <div class="label">本周观察</div>
+    <div class="content">六篇论文都在动「评估」本身：CogGym 换参照系（人类行为一致性）、SWE-Proof 换判定标准（证明替代测试）、PIR 换观测层（内部状态）、RecreationWorld 换环境（混合 CUA）、MT 分析与 SFT 幻觉警示协议与模式的适配。<strong>「怎么评」正在成为比「评多少分」更核心的问题——而这恰是加州行政令「独立核证」要解决的技术底座：核证组织认可什么标准，决定外部评估有没有牙齿。</strong></div>
+  </div>
+</div>
+
+<!-- ===== 开源解读 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">⚡</span>
+    <h2>开源解读</h2>
+    <span class="tag">GitHub Trending · 日榜 + Python 日榜</span>
+  </div>
+
+  <div class="focus-box">
+    <div class="label">今日焦点</div>
+    <div class="content">
+      cloudflare/security-audit-skill 连续第六日在榜、日增首次回落但仍为全场最大（今日 +2,428，累计破 1.8 万星）；anthropics/financial-services 新上榜即登双榜——平台厂商技能生态跨入金融垂直，与今日重点 4 的 FrontierFinance 基准互为镜像；docling v2.129.0 带动六日最大涨幅。star 数均经 api.github.com 或仓库页复核，榜单见 <a href="https://github.com/trending?since=daily" target="_blank" rel="noopener">GitHub Trending</a>。
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank top">1</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">cloudflare / security-audit-skill</a></span>
+        <span class="oss-stars">★ 18,294 · 今日 +2,428</span>
+        <span class="oss-license">主榜第 1 · 连续第六日</span>
+      </div>
+      <p>Cloudflare 的<strong>多阶段安全审计技能</strong>。六日走势：首日上榜 → 日增爬升五日 → 今日首次回落（昨日 +3,155 → +2,428），累计仍突破 1.8 万星——技能生态「防守端」的吸筹动能开始收敛，但基本盘稳固，仍是全场最大单点。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank top">2</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/anthropics/financial-services" target="_blank" rel="noopener">anthropics / financial-services</a></span>
+        <span class="oss-stars">★ 35,493 · 今日 +260</span>
+        <span class="oss-license">主榜 + Python 榜 · 新上榜</span>
+      </div>
+      <p>Anthropic 官方「Claude for Financial Services」——面向投行、股票研究、私募与财富管理的<strong>参考智能体、技能与数据连接器库</strong>：Pitch Agent（可比公司/先例交易/LBO → 路演材料）、Market Researcher、GL Reconciler 等智能体与 /comps、/dcf、/earnings 等技能。README 明示合规边界：所有产出均为「分析师工作草稿」，须经合格专业人士签字。为什么值得看：平台厂商的技能生态从安全审计跨入金融垂直，与 Step 5 的 FrontierFinance 基准互为镜像——「草稿 + 人类签字」的产品化合规设计，是对「智能体自主性边界」争论的一种工程回答。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank top">3</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/docling-project/docling" target="_blank" rel="noopener">docling-project / docling</a></span>
+        <span class="oss-stars">★ 67,466 · 今日 +585</span>
+        <span class="oss-license">Python 榜 · 六日最大涨幅</span>
+      </div>
+      <p>IBM 系<strong>文档处理库</strong>（PDF/DOCX/PPTX → 结构化 AI 就绪数据），09-18 发布 v2.129.0、三日两版（v2.128.0 为 09-16），版本节奏与 star 激增同步。为什么值得看：在智能体与技能占据 Trending 主体时，最老牌的「文档进 AI」基建仍在以周两版的节奏吃进增量——RAG 与企业智能体的地基需求没有降温。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank">4</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani / agent-skills</a></span>
+        <span class="oss-stars">★ 97,824 · 今日 +736</span>
+        <span class="oss-license">主榜第 2 · 第二日</span>
+      </div>
+      <p>Google Chrome 工程负责人 Addy Osmani 的「<strong>AI 编码智能体生产级工程技能</strong>」库，第二日在榜、逼近 10 万星——个人维护者的技能库在榜眼位置坐稳，技能层的「内容生产」持续个体化。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank">5</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">cactus-compute / needle</a></span>
+        <span class="oss-stars">★ 11,951 · 今日 +381</span>
+        <span class="oss-license">第二日</span>
+      </div>
+      <p>2-bit、8-29 MB 的<strong>微型设备自动化基础模型</strong>，「边缘侧自动化」路线连续第二日在榜——智能体基建的迷你化支线继续吸筹。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank">6</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/zhouxiaoka/autoclip" target="_blank" rel="noopener">zhouxiaoka / autoclip</a></span>
+        <span class="oss-stars">★ 7,936 · 今日 +395</span>
+        <span class="oss-license">Python 榜 · 新上榜</span>
+      </div>
+      <p><strong>AI 视频高光剪辑二创工具</strong>——中文项目新登 Python 榜，内容创作向的技能与工具仍在长尾生长。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank">7</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/Open-Dev-Society/OpenStock" target="_blank" rel="noopener">Open-Dev-Society / OpenStock</a> · <a href="https://github.com/vercel-labs/json-render" target="_blank" rel="noopener">vercel-labs / json-render</a></span>
+        <span class="oss-stars">★ 17,037 / 17,548</span>
+        <span class="oss-license">主榜新上榜</span>
+      </div>
+      <p>开源<strong>行情终端</strong>（今日 +755）与<strong>生成式 UI 框架</strong>（+291）同日新登主榜——金融数据工具与「JSON 直渲染界面」两条线，分别对应今日「AI + 金融」与智能体前端的两股热。</p>
+    </div>
+  </div>
+
+  <div class="oss-item">
+    <div class="oss-rank">8</div>
+    <div class="oss-content">
+      <div class="oss-head">
+        <span class="oss-name"><a href="https://github.com/coder/coder" target="_blank" rel="noopener">coder / coder</a> · <a href="https://github.com/browser-use/browser-harness" target="_blank" rel="noopener">browser-use / browser-harness</a> · <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">anthropics / claude-code</a></span>
+        <span class="oss-stars">★ 16,160 / 17,894 / 147,264</span>
+        <span class="oss-license">智能体基建 · claude-code 第四日</span>
+      </div>
+      <p>「开发者及其智能体的安全环境」（+379）、自愈式浏览器 harness（+87）与 Anthropic 官方编码智能体（+419）延续在榜——<strong>智能体基建的「环境供给」层持续是 Trending 的基本盘</strong>。</p>
+    </div>
+  </div>
+
+  <div class="oneliner">
+    一句话总结：技能生态防守端六日首现回落、平台厂商技能库跨入金融垂直、文档基建六日最大涨幅——Trending 的重心正从「单点爆发」转向「垂直深耕 + 基建长跑」。
+  </div>
+</div>
+
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-20.html">上一期 · 09-20</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
