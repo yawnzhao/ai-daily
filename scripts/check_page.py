@@ -6,6 +6,7 @@
 有问题时逐条打印并以退出码 1 结束。这些都是过去真出过的问题，不是风格偏好。
 """
 import datetime
+import json
 import re
 import sys
 from pathlib import Path
@@ -20,6 +21,7 @@ def check_issue(path):
     t = path.read_text()
     date = PAGE_RE.match(path.name).group(1)
     bad = []
+    editorial = 'data-layout="editorial-v2"' in t
 
     for pat, what in [
         (r'<meta name="description" content="[^"]{10,}">', 'meta description（分享和搜索都靠它）'),
@@ -29,15 +31,39 @@ def check_issue(path):
         (r'<meta name="twitter:card"', 'twitter:card'),
         (r'<link rel="icon"', 'favicon'),
         (r'<link rel="alternate" type="application/rss\+xml"', 'RSS 链接'),
-        (r'<header class="header">', '<header> 语义标签'),
+        (r'<header class="masthead">' if editorial else r'<header class="header">', '<header> 语义标签'),
         (r'<main id="main">', '<main> 语义标签'),
         (r'data-nav="top"', '页眉导航块'),
         (r'data-nav="bottom"', '页尾导航块'),
-        (r'role="slider"', '播放进度条的 role'),
-        (r'aria-label="播放语音简报"', '播放按钮的 aria-label'),
     ]:
         if not re.search(pat, t):
             bad.append(f'缺少 {what}')
+
+    if not editorial:
+        for pattern, label in [(r'role="slider"','播放进度条的 role'), (r'aria-label="播放语音简报"','播放按钮的 aria-label')]:
+            if not re.search(pattern,t): bad.append(f'缺少 {label}')
+    else:
+        match = re.search(r'<script type="application/json" id="daily-metadata">(.*?)</script>',t,re.S)
+        try:
+            metadata = json.loads(match.group(1)) if match else {}
+            if metadata.get('date') != date or metadata.get('layout') != 'editorial-v2':
+                bad.append('新版页面元数据与日期不一致')
+            src = metadata.get('audio_src')
+            if src:
+                if not isinstance(src,str) or not src.startswith('https://') or f'src="{src}"' not in t:
+                    bad.append('音频元数据与播放器不一致')
+                if not re.search(r'<audio[^>]*controls[^>]*aria-label=',t):
+                    bad.append('音频缺少可访问的播放控件')
+            elif '<audio' in t or '语音版制作中' not in t:
+                bad.append('未发布音频时应显示制作中，不应显示空播放器')
+            for key, section in [('news','featured'),('papers','papers'),('oss','opensource')]:
+                actual = len(re.findall(r'class="story '+section+r'-story"',t))
+                if type(metadata.get(key)) is not int or metadata[key] != actual:
+                    bad.append(f'{key} 数量与正文不一致')
+        except (ValueError,TypeError):
+            bad.append('新版页面元数据无法解析')
+        if re.search(r'noindex|LOCAL PREVIEW|尚未替换线上|本地预览',t):
+            bad.append('正式页面仍包含预览标记')
 
     if f'<time datetime="{date}">' not in t:
         bad.append(f'<time datetime="{date}"> 和文件名对不上')
@@ -48,7 +74,7 @@ def check_issue(path):
     elif date not in title.group(1) or len(title.group(1)) < 20:
         bad.append(f'标题要带日期和当期主线，现在是：{title.group(1) if title else ""}')
 
-    for name in SECTIONS:
+    for name in (['每日精选','行业观察','论文速递','开源解读'] if editorial else SECTIONS):
         if f'<h2>{name}</h2>' not in t:
             bad.append(f'少了「{name}」板块')
 
@@ -85,8 +111,13 @@ def check_index():
     for m in re.finditer(r'<a class="episode" href="(ai-daily-digest-[\d-]+\.html)">(.*?)</a>', t, re.S):
         page, block = m.group(1), m.group(2)
         claims_audio = '语音版 · 小宇宙' in block
-        src = re.search(r'var AUDIO_SRC = "([^"]*)"', (ROOT / page).read_text())
-        has_audio = bool(src and src.group(1))
+        page_text = (ROOT / page).read_text()
+        metadata_match = re.search(r'<script type="application/json" id="daily-metadata">(.*?)</script>',page_text,re.S)
+        if metadata_match:
+            has_audio = bool(json.loads(metadata_match.group(1)).get('audio_src'))
+        else:
+            src = re.search(r'var AUDIO_SRC = "([^"]*)"',page_text)
+            has_audio = bool(src and src.group(1))
         if claims_audio and not has_audio:
             bad.append(f'{page}：首页写了「语音版 · 小宇宙」，但页面里没有音频直链')
         if has_audio and not claims_audio:

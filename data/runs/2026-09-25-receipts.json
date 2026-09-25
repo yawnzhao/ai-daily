@@ -1,53 +1,65 @@
 {
+  "issue_date": "2026-09-25",
+  "kind": "published_revision",
+  "publication_window": {
+    "issue_date": "2026-09-25",
+    "vol": 19,
+    "window_start": "2026-09-24T04:56:00Z",
+    "window_end": "2026-09-24T23:56:00Z",
+    "discovery_hours": 72
+  },
   "summary": {
-    "window": [
-      "2026-09-24T04:56:00+00:00",
-      "2026-09-24T23:56:00+00:00"
-    ],
-    "planned": 18,
-    "ok": 17,
-    "partial": 1,
+    "planned": 24,
+    "ok": 18,
+    "partial": 6,
     "failed": 0,
-    "pending_browser": 0,
-    "core_not_ok": []
+    "pending": 0,
+    "core_not_ok": [],
+    "selected": 14,
+    "newly_added_to_original_issue": 4,
+    "featured": 4,
+    "arxiv_metadata_records": 952,
+    "success_rate": 0.75,
+    "incomplete": true
   },
   "sources": [
     {
       "source_id": "anthropic",
       "name": "Anthropic News",
       "core": true,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://www.anthropic.com/news",
       "status": "ok",
-      "evidence": "HTTP 200，页面日期 609 处，最新 2026-09-24；窗口内 1 条（按日期匹配，粒度到天）",
-      "items": [
-        {
-          "title": "",
-          "url": "",
-          "published_at": "2026-09-24"
-        }
-      ]
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://www.anthropic.com/news",
+      "evidence": [
+        "https://www.anthropic.com/news"
+      ],
+      "note": "已检查官方新闻列表；本期观察日未见新增。",
+      "verification": []
     },
     {
       "source_id": "claude-blog",
       "name": "Claude Blog",
       "core": false,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://claude.com/blog",
       "status": "ok",
-      "evidence": "HTTP 200，页面日期 65 处，最新 2026-09-24；窗口内 2 条（按日期匹配，粒度到天）",
-      "items": [
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://claude.com/blog",
+      "evidence": [
+        "https://claude.com/blog/claude-tag-now-supports-personal-connectors-in-channels",
+        "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context"
+      ],
+      "note": "发现 9/24 两篇产品文章，均打开正文核验。",
+      "verification": [
         {
-          "title": "",
-          "url": "/blog/claude-tag-now-supports-personal-connectors-in-channels",
-          "published_at": "2026-09-24"
+          "item_id": "claude-tag",
+          "verified_primary_url": "https://claude.com/blog/claude-tag-now-supports-personal-connectors-in-channels",
+          "scope": "已读官方全文"
         },
         {
-          "title": "",
-          "url": "",
-          "published_at": "2026-09-24"
+          "item_id": "opus-context",
+          "verified_primary_url": "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
+          "scope": "已读官方正文"
         }
       ]
     },
@@ -55,49 +67,61 @@
       "source_id": "openai",
       "name": "OpenAI News",
       "core": true,
-      "method": "rss",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 1229 条，带日期 1229 条，最新 2026-09-23T16:00:00+00:00；窗口内 0 条",
-      "items": []
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://openai.com/news",
+      "evidence": [
+        "https://openai.com/news"
+      ],
+      "note": "RSS 可解析；最新条目为 9/23，本期没有把它改写为 9/24 新闻。",
+      "verification": []
     },
     {
       "source_id": "google-ai",
       "name": "Google AI Blog",
       "core": true,
-      "method": "rss",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-23T18:00:00+00:00；窗口内 0 条",
-      "items": []
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://blog.google/innovation-and-ai/",
+      "evidence": [
+        "https://blog.google/innovation-and-ai/"
+      ],
+      "note": "配置 RSS 最新条目为 9/23；Live Avatar 从 DeepMind 源取得后回 Google 正文。",
+      "verification": []
     },
     {
       "source_id": "xai",
       "name": "xAI",
       "core": true,
-      "method": "browser",
-      "checked_at": "2026-09-25T00:05:00+00:00",
-      "checked_url": "https://x.ai/news",
       "status": "ok",
-      "evidence": "浏览器打开 https://x.ai/news。列表上 09-24 无新条目。",
-      "items": []
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://x.ai/news",
+      "evidence": [
+        "https://x.ai/news"
+      ],
+      "note": "页面阅读服务打开官方列表；最新可见日期 9/22，未见本期观察日新增。",
+      "verification": []
     },
     {
       "source_id": "deepmind",
       "name": "Google DeepMind",
       "core": false,
-      "method": "rss",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://deepmind.google/blog/rss.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 100 条，带日期 100 条，最新 2026-09-24T16:20:39+00:00；窗口内 1 条",
-      "items": [
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://deepmind.google/blog/",
+      "evidence": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
+      ],
+      "note": "RSS 给出 Live Avatar 的完整时间；已核验链接指向的 Google 原文。",
+      "verification": [
         {
-          "title": "Introducing Gemini 3.8 Live with Live Avatar",
-          "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
-          "published_at": "2026-09-24T16:20:39+00:00"
+          "item_id": "gemini-avatar",
+          "verified_primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
+          "scope": "已读官方全文"
         }
       ]
     },
@@ -105,21 +129,19 @@
       "source_id": "nvidia",
       "name": "NVIDIA Newsroom",
       "core": false,
-      "method": "rss",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-24T14:00:50+00:00；窗口内 2 条",
-      "items": [
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://nvidianews.nvidia.com",
+      "evidence": [
+        "https://blogs.nvidia.com/blog/open-protein-dataset/"
+      ],
+      "note": "9/24 有蛋白结构资源与游戏串流消息；精选前者并打开正文。",
+      "verification": [
         {
-          "title": "How Open Science Can Help Researchers Prepare for the Next Pandemic",
-          "url": "https://blogs.nvidia.com/blog/open-protein-dataset/",
-          "published_at": "2026-09-24T14:00:50+00:00"
-        },
-        {
-          "title": "Contain the Chaos: ‘CONTROL Resonant’ Launches on GeForce NOW",
-          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-control-resonant/",
-          "published_at": "2026-09-24T13:00:36+00:00"
+          "item_id": "protein",
+          "verified_primary_url": "https://blogs.nvidia.com/blog/open-protein-dataset/",
+          "scope": "已读官方全文"
         }
       ]
     },
@@ -127,16 +149,19 @@
       "source_id": "huggingface",
       "name": "Hugging Face",
       "core": false,
-      "method": "rss",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 868 条，带日期 868 条，最新 2026-09-24T14:08:57+00:00；窗口内 1 条",
-      "items": [
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://huggingface.co/blog",
+      "evidence": [
+        "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark"
+      ],
+      "note": "9/24 DSpark 作者文章已全文核验，性能数字保留硬件和任务条件。",
+      "verification": [
         {
-          "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
-          "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
-          "published_at": "2026-09-24T14:08:57+00:00"
+          "item_id": "dspark",
+          "verified_primary_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+          "scope": "已读作者全文"
         }
       ]
     },
@@ -144,76 +169,145 @@
       "source_id": "cursor",
       "name": "Cursor Changelog",
       "core": false,
-      "method": "rss",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://cursor.com/changelog/rss.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-09-23T00:00:00+00:00；窗口内 0 条",
-      "items": []
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://cursor.com/changelog",
+      "evidence": [
+        "https://cursor.com/changelog"
+      ],
+      "note": "更新 RSS 可解析，最新 9/23；不重复包装为本期新消息。",
+      "verification": []
     },
     {
       "source_id": "microsoft",
       "name": "Microsoft AI",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-25T00:05:00+00:00",
-      "checked_url": "https://blogs.microsoft.com/ai/",
       "status": "partial",
-      "evidence": "浏览器打开配置地址后跳到 https://news.microsoft.com/source/topics/ai/ 。列表有多条 AI 标题，页面上未显示日期，未能逐条确认是否落在本窗口，记 partial。",
-      "items": []
+      "outcome": "insufficient",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://blogs.microsoft.com/ai/",
+      "evidence": [
+        "https://blogs.microsoft.com/ai/"
+      ],
+      "note": "官方页面可读取，但未取得足够可靠的日期化列表，不能据此判断无新增。",
+      "verification": []
     },
     {
       "source_id": "qwen",
       "name": "Qwen",
       "core": false,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://qwenlm.github.io/",
-      "status": "ok",
-      "evidence": "HTTP 200，页面日期 10 处，最新 2025-09-23；窗口内 0 条（按日期匹配，粒度到天）",
-      "items": []
+      "status": "partial",
+      "outcome": "insufficient",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://qwenlm.github.io/",
+      "evidence": [
+        "https://qwenlm.github.io/"
+      ],
+      "note": "配置指向旧博客，当前可见最新日期停留在 2025；不足以覆盖目前全部官方动态。",
+      "verification": []
+    },
+    {
+      "source_id": "tongyi",
+      "name": "通义实验室",
+      "core": false,
+      "status": "partial",
+      "outcome": "insufficient",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://qianwen.aliyun.com/",
+      "evidence": [
+        "https://qianwen.aliyun.com/"
+      ],
+      "note": "返回产品首页，未取得可按日期核对的新闻列表。",
+      "verification": []
     },
     {
       "source_id": "deepseek",
       "name": "DeepSeek",
       "core": false,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://api-docs.deepseek.com/updates",
       "status": "ok",
-      "evidence": "HTTP 200，页面日期 152 处，最新 2026-09-14；窗口内 0 条（按日期匹配，粒度到天）",
-      "items": []
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://api-docs.deepseek.com/updates",
+      "evidence": [
+        "https://api-docs.deepseek.com/updates"
+      ],
+      "note": "官方更新日志最新可见为 9/10，配置页面未见本期新增。",
+      "verification": []
+    },
+    {
+      "source_id": "moonshot",
+      "name": "月之暗面 Moonshot",
+      "core": false,
+      "status": "ok",
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://www.moonshot.cn/",
+      "evidence": [
+        "https://www.moonshot.cn/"
+      ],
+      "note": "检查配置官网可见公告及日期；未见本期观察日新增。",
+      "verification": []
+    },
+    {
+      "source_id": "zhipu",
+      "name": "智谱 Z.ai",
+      "core": false,
+      "status": "partial",
+      "outcome": "insufficient",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://www.zhipuai.cn/news",
+      "evidence": [
+        "https://www.zhipuai.cn/news"
+      ],
+      "note": "官网部分新闻没有可可靠筛选的日期，未完成本期覆盖。",
+      "verification": []
+    },
+    {
+      "source_id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "core": false,
+      "status": "partial",
+      "outcome": "insufficient",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://www.stepfun.com/",
+      "evidence": [
+        "https://www.stepfun.com/"
+      ],
+      "note": "当前返回页面壳，未取得可用文章列表；HTTP 成功不算编辑核验完成。",
+      "verification": []
     },
     {
       "source_id": "mistral",
       "name": "Mistral",
       "core": false,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://mistral.ai/news",
       "status": "ok",
-      "evidence": "HTTP 200，页面日期 90 处，最新 2026-09-16；窗口内 0 条（按日期匹配，粒度到天）",
-      "items": []
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://mistral.ai/news",
+      "evidence": [
+        "https://mistral.ai/news"
+      ],
+      "note": "已检查官方日期化新闻列表，未见本期观察日新增。",
+      "verification": []
     },
     {
       "source_id": "eu-digital",
       "name": "European Commission Digital Strategy",
       "core": false,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
       "status": "ok",
-      "evidence": "HTTP 200，页面日期 14 处，最新 2026-09-24；窗口内 2 条（按日期匹配，粒度到天）",
-      "items": [
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "evidence": [
+        "https://digital-strategy.ec.europa.eu/en/news/press-statement-20th-meeting-european-board-digital-services"
+      ],
+      "note": "检查 9/24 新闻列表并打开会议声明；保留提案与会议动态的状态。",
+      "verification": [
         {
-          "title": "Press statement of the 20th meeting of the European Board for Digital Services",
-          "url": "/en/news/press-statement-20th-meeting-european-board-digital-services",
-          "published_at": "2026-09-24"
-        },
-        {
-          "title": "",
-          "url": "",
-          "published_at": "2026-09-24"
+          "item_id": "eu-board",
+          "verified_primary_url": "https://digital-strategy.ec.europa.eu/en/news/press-statement-20th-meeting-european-board-digital-services",
+          "scope": "已读官方全文"
         }
       ]
     },
@@ -221,32 +315,33 @@
       "source_id": "unesco",
       "name": "UNESCO AI",
       "core": false,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
       "status": "ok",
-      "evidence": "HTTP 200，页面日期 16 处，最新 2026-09-23；窗口内 0 条（按日期匹配，粒度到天）",
-      "items": []
+      "outcome": "no_new",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://www.unesco.org/en/artificial-intelligence",
+      "evidence": [
+        "https://www.unesco.org/en/artificial-intelligence"
+      ],
+      "note": "配置页新闻列出 9/23、9/18 等日期；未见本期观察日新增。",
+      "verification": []
     },
     {
       "source_id": "oecd",
       "name": "OECD.AI",
       "core": false,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://oecd.ai/en/wonk",
       "status": "ok",
-      "evidence": "HTTP 200，页面日期 139 处，最新 2026-09-24；窗口内 2 条（按日期匹配，粒度到天）",
-      "items": [
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://oecd.ai/en/wonk",
+      "evidence": [
+        "https://oecd.ai/en/wonk/putting-agentic-ai-systems-to-work-what-practitioners-reveal-about-deployment-and-governance"
+      ],
+      "note": "发现并核验 9/24 Agent 组织部署访谈介绍。",
+      "verification": [
         {
-          "title": "How are different organisations using agentic AI in practice? What governance approaches are they adopting to manage it ",
-          "url": "/en/wonk/putting-agentic-ai-systems-to-work-what-practitioners-reveal-about-deployment-and-governance",
-          "published_at": "2026-09-24"
-        },
-        {
-          "title": "",
-          "url": "",
-          "published_at": "2026-09-24"
+          "item_id": "agent-governance",
+          "verified_primary_url": "https://oecd.ai/en/wonk/putting-agentic-ai-systems-to-work-what-practitioners-reveal-about-deployment-and-governance",
+          "scope": "已读作者文章，未阅读全文所介绍的工作论文"
         }
       ]
     },
@@ -254,35 +349,106 @@
       "source_id": "arxiv",
       "name": "arXiv cs.AI / cs.LG / cs.CL",
       "core": true,
-      "method": "api",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://export.arxiv.org/api/query",
       "status": "ok",
-      "evidence": "HTTP 200，可达；条目由主线程另行核验",
-      "items": []
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://export.arxiv.org/api/query",
+      "evidence": [
+        "https://arxiv.org/abs/2609.30266"
+      ],
+      "note": "72 小时窗口两页取得 952 条唯一元数据；精选论文回摘要页核验。元数据齐全不等于全部全文已读。",
+      "verification": [
+        {
+          "item_id": "trace-paper",
+          "verified_primary_url": "https://arxiv.org/abs/2609.30266",
+          "scope": "仅核对摘要和提交记录"
+        }
+      ]
+    },
+    {
+      "source_id": "hf-daily-papers",
+      "name": "Hugging Face Daily Papers",
+      "core": false,
+      "status": "ok",
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://huggingface.co/api/daily_papers",
+      "evidence": [
+        "https://arxiv.org/abs/2609.26780",
+        "https://arxiv.org/abs/2609.23038"
+      ],
+      "note": "按 9/24 查询取得 29 条，所选论文另核对 arXiv 提交日期。",
+      "verification": [
+        {
+          "item_id": "speaker-memory",
+          "verified_primary_url": "https://arxiv.org/abs/2609.26780",
+          "scope": "仅核对摘要和版本记录"
+        },
+        {
+          "item_id": "spatial-interactor",
+          "verified_primary_url": "https://arxiv.org/abs/2609.23038",
+          "scope": "仅核对摘要和提交记录"
+        }
+      ]
+    },
+    {
+      "source_id": "openreview",
+      "name": "OpenReview",
+      "core": false,
+      "status": "partial",
+      "outcome": "insufficient",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://openreview.net/",
+      "evidence": [
+        "https://openreview.net/"
+      ],
+      "note": "打开平台后只有会议导航，未取得目标日期论文列表，不能报告无论文。",
+      "verification": []
     },
     {
       "source_id": "github-trending",
       "name": "GitHub Trending（日榜 + Python 日榜）",
       "core": true,
-      "method": "page",
-      "checked_at": "2026-09-24T23:56:00+00:00",
-      "checked_url": "https://github.com/trending?since=daily",
       "status": "ok",
-      "evidence": "HTTP 200，可达；条目由主线程另行核验",
-      "items": []
+      "outcome": "selected",
+      "checked_on": "2026-09-25",
+      "configured_url": "https://github.com/trending?since=daily",
+      "evidence": [
+        "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "https://github.com/vectorize-io/hindsight",
+        "https://github.com/dream-num/univer",
+        "https://github.com/google/ax"
+      ],
+      "note": "补查综合日榜与 Python 日榜；四个项目回官方 README 和 API 核验。榜单不是 9/24 历史快照。",
+      "verification": [
+        {
+          "item_id": "ai-course",
+          "verified_primary_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+          "scope": "已读 README 与官方 API 元数据"
+        },
+        {
+          "item_id": "hindsight",
+          "verified_primary_url": "https://github.com/vectorize-io/hindsight",
+          "scope": "已读 README 与官方 API 元数据"
+        },
+        {
+          "item_id": "univer",
+          "verified_primary_url": "https://github.com/dream-num/univer",
+          "scope": "已读 README 与官方 API 元数据"
+        },
+        {
+          "item_id": "google-ax",
+          "verified_primary_url": "https://github.com/google/ax",
+          "scope": "已读 README 与官方 API 元数据"
+        }
+      ]
     }
   ],
   "discovery": {
-    "searches": [
-      "浏览器打开 x.ai/news、openai.com 文章页、anthropic.com/claude-opus-5-5、blog.google Gemini 3.8 两篇、cursor changelog",
-      "arXiv API submittedDate 按日",
-      "GitHub trending since=daily 仅 09-25 当场页面；api.github.com 复核星标"
-    ],
-    "found": [
-      "见当期成稿。网页搜索接口本轮失败，发现主要来自信源页与浏览器。"
-    ]
+    "method": "Configured sources, public page reader, feeds, arXiv API, HF Daily Papers and GitHub lists; late-discovered originals retained with publication dates.",
+    "metadata_is_full_text_review": false
   },
-  "verification": [],
-  "excluded_hits": []
+  "excluded_hits": [],
+  "excluded_hits_note": "本轮未采用排除名单站点；不是对全网搜索结果的完整审计。",
+  "revision_note": "重新核验并改编第 19 期；原文公开链接随条目保留。"
 }

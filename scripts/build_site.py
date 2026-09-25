@@ -9,6 +9,7 @@
 """
 import argparse
 import datetime
+import json
 import re
 import sys
 from pathlib import Path
@@ -35,6 +36,22 @@ def read_page(path):
     t = path.read_text()
     date = PAGE_RE.match(path.name).group(1)
     d = datetime.date.fromisoformat(date)
+    metadata_match = re.search(r'<script type="application/json" id="daily-metadata">(.*?)</script>', t, re.S)
+    if metadata_match:
+        metadata = json.loads(metadata_match.group(1))
+        if metadata.get('layout') != 'editorial-v2' or metadata.get('date') != date:
+            raise ValueError(f'{path.name}: editorial metadata layout/date mismatch')
+        for key in ('vol', 'news', 'papers', 'oss'):
+            if type(metadata.get(key)) is not int or metadata[key] < 0:
+                raise ValueError(f'{path.name}: invalid {key}')
+        audio = metadata.get('audio_src')
+        if audio is not None and (not isinstance(audio, str) or not audio.startswith('https://')):
+            raise ValueError(f'{path.name}: invalid audio URL')
+        return {'file': path.name, 'date': date, 'weekday': WEEKDAYS[d.weekday()],
+                'human': f'{d.year}年{d.month}月{d.day}日', 'vol': str(metadata['vol']),
+                'desc': need(r'<meta name="description" content="(.*?)">', t, path.name, 'description'),
+                'news': str(metadata['news']), 'papers': str(metadata['papers']), 'oss': str(metadata['oss']),
+                'audio': bool(audio), 'text': t}
     # 用标签做键。若先用数字做键，资讯数和开源数相同（例如都是 4）时会互相覆盖，首页就会显示 0 条精选。
     stats = {label: num for num, label in re.findall(
         r'<span class="num">(\d+)</span>(条资讯|篇论文|个开源项目)', t)}
