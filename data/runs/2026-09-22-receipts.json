@@ -1,0 +1,344 @@
+{
+  "summary": {
+    "window": [
+      "2026-09-21T05:52:00+00:00",
+      "2026-09-22T05:52:00+00:00"
+    ],
+    "planned": 18,
+    "ok": 16,
+    "partial": 1,
+    "failed": 1,
+    "pending_browser": 0,
+    "core_not_ok": []
+  },
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://www.anthropic.com/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 609 处，最新 2026-09-24；窗口内 2 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Introducing Claude Opus 5.5 Announcements Sep 22, 2026 Opus 5.5 performs at the level of Claude Fable 5.1 on most work a",
+          "url": "/claude-opus-5-5",
+          "published_at": "2026-09-22"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://claude.com/blog",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 65 处，最新 2026-09-24；窗口内 2 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "/blog/claude-marketplace",
+          "published_at": "2026-09-22"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 1229 条，带日期 1229 条，最新 2026-09-23T16:00:00+00:00；窗口内 5 条",
+      "items": [
+        {
+          "title": "Priorities and principles for effective third party assessments",
+          "url": "https://openai.com/index/priorities-principles-third-party-assessments",
+          "published_at": "2026-09-22T00:00:00+00:00"
+        },
+        {
+          "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+          "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+          "published_at": "2026-09-21T12:00:00+00:00"
+        },
+        {
+          "title": "Advisory Group on Mathematics and Artificial Intelligence",
+          "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+          "published_at": "2026-09-21T12:00:00+00:00"
+        },
+        {
+          "title": "Building standards for the next phase of AI",
+          "url": "https://openai.com/index/building-standards-next-phase-ai",
+          "published_at": "2026-09-21T10:00:00+00:00"
+        },
+        {
+          "title": "Expanding OpenAI Academy with new learning paths",
+          "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+          "published_at": "2026-09-21T07:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-23T18:00:00+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-09-25T00:05:00+00:00",
+      "checked_url": "https://x.ai/news",
+      "status": "ok",
+      "evidence": "浏览器打开 https://x.ai/news（2026-09-25 补查）。窗口内可见：Grok 4.7（页面日期 Sep 21, 2026，https://x.ai/news/grok-4-7，正文已打开）。Grok Bot 客服稿日期为 Sep 22，落在下一窗口。",
+      "items": [
+        {
+          "title": "Introducing Grok 4.7",
+          "url": "https://x.ai/news/grok-4-7",
+          "published_at": "2026-09-21"
+        }
+      ]
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "status": "failed",
+      "evidence": "ParseError: not well-formed (invalid token): line 1, column 0",
+      "items": []
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-24T14:00:50+00:00；窗口内 5 条",
+      "items": [
+        {
+          "title": "NVIDIA Launches DSX Ready to Qualify Power and Cooling Products for AI Factories",
+          "url": "https://blogs.nvidia.com/blog/dsx-ready-ai-factories-power-cooling/",
+          "published_at": "2026-09-21T18:00:07+00:00"
+        },
+        {
+          "title": "From Enablement to Execution, Egypt’s AI Ecosystem Reaches Production Scale",
+          "url": "https://blogs.nvidia.com/blog/egypt-africa-ai-ecosystem/",
+          "published_at": "2026-09-21T16:00:10+00:00"
+        },
+        {
+          "title": "Why Deploying Physical AI at Scale Demands Safety at Every Layer",
+          "url": "https://blogs.nvidia.com/blog/physical-ai-halos-safety/",
+          "published_at": "2026-09-21T16:00:00+00:00"
+        },
+        {
+          "title": "AI Security Is an Engineering Problem — How to Solve It at Every Layer of the Agent Stack",
+          "url": "https://blogs.nvidia.com/blog/ai-security-agent-stack/",
+          "published_at": "2026-09-21T14:51:34+00:00"
+        },
+        {
+          "title": "5 Companies Using NVIDIA AI for Clean Energy",
+          "url": "https://blogs.nvidia.com/blog/clean-energy-nvidia-ai/",
+          "published_at": "2026-09-21T10:00:35+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 868 条，带日期 868 条，最新 2026-09-24T14:08:57+00:00；窗口内 4 条",
+      "items": [
+        {
+          "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
+          "url": "https://huggingface.co/blog/evaleval-aisi",
+          "published_at": "2026-09-22T00:00:00+00:00"
+        },
+        {
+          "title": "Transformers now runs llama.cpp quants",
+          "url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+          "published_at": "2026-09-22T00:00:00+00:00"
+        },
+        {
+          "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community",
+          "url": "https://huggingface.co/blog/omlx",
+          "published_at": "2026-09-22T00:00:00+00:00"
+        },
+        {
+          "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem",
+          "url": "https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an",
+          "published_at": "2026-09-21T13:44:34+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-09-23T00:00:00+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-25T00:05:00+00:00",
+      "checked_url": "https://blogs.microsoft.com/ai/",
+      "status": "partial",
+      "evidence": "浏览器打开配置地址后跳到 https://news.microsoft.com/source/topics/ai/ 。列表有多条 AI 标题，页面上未显示日期，未能逐条确认是否落在本窗口，记 partial。",
+      "items": []
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://qwenlm.github.io/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 10 处，最新 2025-09-23；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 152 处，最新 2026-09-14；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 90 处，最新 2026-09-16；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 14 处，最新 2026-09-24；窗口内 2 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-22"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-21"
+        }
+      ]
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 16 处，最新 2026-09-23；窗口内 1 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 139 处，最新 2026-09-24；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "status": "ok",
+      "evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "items": []
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-24T23:55:25+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
+      "status": "ok",
+      "evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "items": []
+    }
+  ],
+  "discovery": {
+    "searches": [
+      "浏览器打开 x.ai/news、openai.com 文章页、anthropic.com/claude-opus-5-5、blog.google Gemini 3.8 两篇、cursor changelog",
+      "arXiv API submittedDate 按日",
+      "GitHub trending since=daily 仅 09-25 当场页面；api.github.com 复核星标"
+    ],
+    "found": [
+      "见当期成稿。网页搜索接口本轮失败，发现主要来自信源页与浏览器。"
+    ]
+  },
+  "verification": [],
+  "excluded_hits": []
+}
