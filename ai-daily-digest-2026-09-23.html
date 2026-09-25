@@ -309,19 +309,19 @@
   <div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">arXiv 2 篇 · HF Daily Papers 2 篇</span></div>
   <div class="paper-item"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">推理时的能力与效率如何一起缩放</span></div>
   <div class="paper-tags"><span class="paper-tag">推理</span><span class="paper-tag">效率</span></div>
-  <div class="paper-body">提交于 09-22。能力指答对，效率指用有限资源答对。</div>
+  <div class="paper-body">推理模型的能力是答对，效率是用有限的 token 答对。思维链面对可控难度的题目时，答对的题数和花掉的 token 都跟题目难度、模型大小有关，但两者怎么一起变还不清楚。论文用分层贝叶斯模型，看 DeepSeek-R1-Distill 系列在四类算术和算法题上的表现。模型大小固定时，答对概率大致随题目规模指数下降。提交于 09-22。</div>
   <a class="paper-link" href="https://arxiv.org/abs/2609.27166" target="_blank" rel="noopener">arxiv.org/abs/2609.27166 →</a></div>
   <div class="paper-item"><div class="paper-head"><span class="paper-num">02</span><span class="paper-title">数证据，不要数句子：长文本价值测量的证据融合</span></div>
   <div class="paper-tags"><span class="paper-tag">评估</span><span class="paper-tag">长文本</span></div>
-  <div class="paper-body">提交于 09-22。长帖里往往只有少数句子在表达立场。</div>
+  <div class="paper-body">用大模型从长社交媒体帖子里测量价值取向时，帖子里混着背景、引语和让步，真正表态的句子很少。直接给整篇打标签容易过度自信；把每句的预测拿来投票，又把含糊的句子和决定性的句子当成一样重要。TEF 不另外训练，按每句的信息增益给它的判断加权，不确定的句子几乎不计入总分。配套基准 MIND 有 8358 篇中英文帖子，覆盖五年公共事件和六个价值维度。提交于 09-22。</div>
   <a class="paper-link" href="https://arxiv.org/abs/2609.27165" target="_blank" rel="noopener">arxiv.org/abs/2609.27165 →</a></div>
   <div class="paper-item"><div class="paper-head"><span class="paper-num">03</span><span class="paper-title">RRSI：对智能体 harness 做带正则的递归自我改进</span></div>
   <div class="paper-tags"><span class="paper-tag">HF Daily Papers</span><span class="paper-tag">09-22 上榜</span></div>
-  <div class="paper-body">智能体能力很大程度来自模型外面的提示、控制流、工具、记忆和上下文管理。收录于 09-22 的 Hugging Face 当日论文。</div>
+  <div class="paper-body">智能体的本事很大一部分不在冻结的模型里，而在外面的提示、控制流、工具、记忆和上下文管理，也就是 harness。自动一轮轮改这些部件，会记住训练任务：分布内涨很多，换到分布外就缩掉甚至消失。RRSI 给这种自我改进加约束：每次候选能打包的修改数量随时间收紧，并鼓励走还没探索过的改法；选择时用一个批评者挡掉只对某个基准有效的方案，再用剪枝去掉多余修改。09-22 出现在 Hugging Face 当日论文。</div>
   <a class="paper-link" href="https://arxiv.org/abs/2609.24972" target="_blank" rel="noopener">arxiv.org/abs/2609.24972 →</a></div>
   <div class="paper-item"><div class="paper-head"><span class="paper-num">04</span><span class="paper-title">OmniEdu：面向学与教的开放基础模型</span></div>
   <div class="paper-tags"><span class="paper-tag">HF Daily Papers</span><span class="paper-tag">09-22 上榜</span></div>
-  <div class="paper-body">教育模型要会解题、理解课程结构、诊断学习者困难并给出相应支持。收录于 09-22 的 Hugging Face 当日论文。</div>
+  <div class="paper-body">面向中小学的基础模型不能只会做题，还要理解课程结构、判断学生卡在哪里，并给出合适的讲解和支架。现有教育模型常常只偏解题或只偏辅导。OmniEdu 把指令数据按四种能力来组织：学科能力、课程落地、诊断推理、教学行动与支架。清洗、改写、质量打分和多样性筛选之后，得到 69999 条例子。论文提交于 09-19，09-22 出现在 Hugging Face 当日论文。</div>
   <a class="paper-link" href="https://arxiv.org/abs/2609.23088" target="_blank" rel="noopener">arxiv.org/abs/2609.23088 →</a></div>
 </div>
 <div class="section">
