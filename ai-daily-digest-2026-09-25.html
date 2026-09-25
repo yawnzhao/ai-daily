@@ -1,64 +1,207 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-25.html">
-<meta property="og:type" content="article">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-09-25 · Claude Tag 接入个人资料，Gemini Live 加入实时形象</title>
+<meta name="description" content="Claude Tag 接入个人资料，Gemini Live 加入虚拟形象；同时关注本地推理提速、病毒蛋白预测与 Agent 日志研究。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-25.html">
+<meta property="og:type" content="website">
 <meta property="og:title" content="AI 日报 2026-09-25 · Claude Tag 接入个人资料，Gemini Live 加入实时形象">
 <meta property="og:description" content="Claude Tag 接入个人资料，Gemini Live 加入虚拟形象；同时关注本地推理提速、病毒蛋白预测与 Agent 日志研究。">
 <meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-25.html">
-<meta property="og:site_name" content="创学空间 · AI 日报">
+<meta property="og:site_name" content="AI 日报">
 <meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
-<script type="application/json" id="daily-metadata">{"layout": "editorial-v2", "date": "2026-09-25", "vol": 19, "news": 4, "papers": 3, "oss": 4, "audio_src": null}</script><meta name="color-scheme" content="light"><meta name="description" content="Claude Tag 接入个人资料，Gemini Live 加入虚拟形象；同时关注本地推理提速、病毒蛋白预测与 Agent 日志研究。"><title>AI 日报 2026-09-25 · Claude Tag 接入个人资料，Gemini Live 加入实时形象｜创学空间</title><link rel="icon" href="assets/editorial-v2/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/editorial-v2/site.css"><script defer src="assets/editorial-v2/site.js"></script></head>
-<body id="top" data-layout="editorial-v2"><a class="skip-link" href="#main">跳至正文</a><div class="read-progress" aria-hidden="true"></div>
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
 
-<div class="page-shell"><header class="masthead"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">创</span>创学空间 <span class="brand-en">CHUANGXUE SPACE</span></a><a class="source-top" href="#coverage">查看来源说明 <span aria-hidden="true">↗</span></a></header>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+</style>
+</head>
+<body>
+
 <nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-24.html">上一期 · 09-24</a></nav>
-<div class="issue-line"><span>AI DAILY DIGEST</span><time datetime="2026-09-25">2026.09.25 · 星期五</time><span>VOL. 019</span></div>
-<header class="hero"><div class="hero-main"><p class="hero-kicker">AI 日报</p><h1>Claude Tag 接入个人资料<br><em>Gemini Live 加入实时形象</em></h1><p class="hero-deck">从 Slack 里的个人资料，到能边交谈边查询的虚拟形象，再到本地模型提速。本期关注新能力如何使用，以及它们成立的条件。</p><a class="text-link" href="#overview">从三个要点开始 <span aria-hidden="true">↓</span></a></div><div class="edition-block" aria-label="第 19 期，4 条精选，3 篇论文，4 个开源项目"><div class="edition-label">本期 / ISSUE</div><div class="edition-number">19<span> /</span></div><div class="edition-counts"><div><strong>04</strong><span>精选更新</span></div><div><strong>03</strong><span>研究论文</span></div><div><strong>04</strong><span>开源项目</span></div></div><p>关注 9 月 24 日发布<br>与近期研究、工具发现</p></div></header>
-<section id="overview" class="overview" aria-labelledby="overview-title"><div class="overview-label"><span class="smallcaps">THE SHORT LIST</span><h2 id="overview-title">先看三个要点</h2></div><div class="overview-items"><a href="#claude-tag"><span>协作</span><strong>个人资料可进频道，<br>回答的分享范围要看清。</strong><span aria-hidden="true">↗</span></a><a href="#dspark"><span>效率</span><strong>本地推理有新进展，<br>加速数字要连条件一起读。</strong><span aria-hidden="true">↗</span></a><a href="#trace-paper"><span>研究</span><strong>Agent 做过什么，<br>需要可信的日志来回答。</strong><span aria-hidden="true">↗</span></a></div></section>
-<div class="reading-layout"><aside class="reading-sidebar"><nav aria-label="本期目录"><p class="smallcaps">IN THIS ISSUE</p><a href="#featured"><span>01</span>每日精选</a><a href="#briefs"><span>02</span>还有两条</a><a href="#insight"><span>03</span>行业观察</a><a href="#papers"><span>04</span>论文速递</a><a href="#opensource"><span>05</span>开源解读</a><a href="#coverage"><span>06</span>来源说明</a></nav><div class="sidebar-note"><span>本期补入</span><p>Claude 的两篇更新<br>OECD 组织部署观察<br>Agent 日志研究</p></div><a class="back-top" href="#top">回到顶部 ↑</a></aside><main id="main"><section id="featured" class="editorial-section featured-section"><div class="section-heading"><div><span class="section-number">01</span><h2>每日精选</h2></div><p>4 条更新，把变化与使用条件一起读。</p></div><div class="section-stories"><article id="claude-tag" class="story featured-story">
-      <div class="story-meta"><span class="story-number">01</span><span>协作工具</span><span class="published">发布于 9 月 24 日</span></div>
-      <h3>Claude Tag 接入个人资料，发到频道前要看清分享范围</h3><div class="story-body"><p class="lede">Claude Tag 开始支持在 Slack 频道中调用个人连接器。你可以让它读取自己有权访问的文档、日历或客户资料，再围绕频道里的工作给出回答。</p><p class="">过去，频道中的 Claude 主要使用管理员接入的共享工具。现在，个人也能把自己的工作上下文带进讨论：例如读取自己 Drive 中的计划，与频道里的进度更新做比较。<strong>这项能力正向 Team 套餐逐步开放，Enterprise 随后跟进。</strong></p><p class="">关键在于回答怎样发出去。用户可以逐条审阅，也可以选择自动模式，让 Claude 判断是否含有需要审阅的敏感内容。<strong>一旦回答发到频道，频道成员都能看到</strong>；文件原有的访问权限，并不等于回答也只对原来的读者可见。</p><p class="boundary"><strong>使用条件</strong>：个人连接器只用于有人发起的请求。定时任务和 Claude 自行启动的动作，仍使用管理员配置的共享连接器。</p></div><figure class="flow-figure"><figcaption>从个人资料，到频道回答</figcaption><ol><li><span>01</span>本人发起请求</li><li><span>02</span>读取有权访问的资料</li><li><span>03</span>审阅或自动筛查</li><li><span>04</span>发布后频道可见</li></ol><p>定时任务仍使用管理员配置的共享连接器。</p></figure><div class="source-line"><a href="https://claude.com/blog/claude-tag-now-supports-personal-connectors-in-channels" target="_blank" rel="noopener noreferrer">Claude 官方博客<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读官方全文。本轮查阅于 9 月 25 日。发布日期只精确到日；未取得时分。 本期补查发生在原稿之后。</p></details></div></article><article id="gemini-avatar" class="story featured-story">
-      <div class="story-meta"><span class="story-number">02</span><span>模型与产品</span><span class="published">发布于 9 月 24 日</span></div>
-      <h3>Gemini Live 加入虚拟形象，也能在交谈中继续调用工具</h3><div class="story-body"><p class="lede">Google 发布 Gemini 3.8 Live with Live Avatar，在实时语音交流中加入同步的面部表情与口型，并支持在后台调用工具时继续对话。</p><p class="">以办理入住为例，虚拟接待员可以一边与客人交谈，一边查询相关信息。对企业应用来说，值得关注的是对话、工具调用和业务流程能否顺畅衔接；形象只是用户能直接看见的部分。</p><p class="">产品已在 Gemini Enterprise 提供。企业可以使用预设形象，<strong>自定义形象目前需要企业白名单资格</strong>。Google 表示，生成的音频和视频带有 SynthID 水印。</p></div><div class="source-line"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/" target="_blank" rel="noopener noreferrer">Google 官方博客<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读官方全文。本轮查阅于 9 月 25 日。 本期补查发生在原稿之后。</p></details></div></article><article id="dspark" class="story featured-story">
-      <div class="story-meta"><span class="story-number">03</span><span>本地推理</span><span class="published">发布于 9 月 24 日</span></div>
-      <h3>DSpark 给视觉语言模型提速，要分清生成速度与总耗时</h3><div class="story-body"><p class="lede">Liquid AI 为 LFM2.5-VL-3B 发布实验性的 DSpark 草稿模型，用较小的模型预先提出候选输出，再交给目标模型核验，减少逐字生成的等待。</p><p class="">草稿模型约有 <strong>2.8 亿参数</strong>，在原目标模型之上增加约 8.9% 的部署参数量。它加速的是解码，也就是生成输出的阶段；图像编码和输入处理不会一起按同样比例提速。</p><p class="">在作者使用 <strong>M5 Max 与 MLX</strong> 的测试中，不同任务的解码速度为基线的 2.30～3.13 倍，端到端加速比为 1.56～2.62 倍。因此，“最高 3.13 倍”不能直接理解成每次请求的总等待时间都缩短到三分之一。</p><p class="boundary"><strong>使用条件</strong>：这些结果来自作者报告，仍取决于硬件与任务；运行需要支持 DSpark 的相应构建版本，不能默认任意已安装版本都能直接使用。</p></div><figure class="speed-figure"><figcaption>两种“加速”，衡量的是不同范围</figcaption><div class="speed-row"><span>解码阶段</span><div class="speed-track"><span class="speed-decode"></span></div><strong>最高 3.13×</strong></div><div class="speed-row"><span>端到端</span><div class="speed-track"><span class="speed-total"></span></div><strong>最高 2.62×</strong></div><p>作者报告 · M5 Max / MLX · 各任务最大值，不代表每个任务都达到该速度。</p></figure><div class="source-line"><a href="https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark" target="_blank" rel="noopener noreferrer">Liquid AI · Hugging Face<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读作者全文。本轮查阅于 9 月 25 日。 本期补查发生在原稿之后。</p></details></div></article><article id="protein" class="story featured-story">
-      <div class="story-meta"><span class="story-number">04</span><span>AI 与科学</span><span class="published">发布于 9 月 24 日</span></div>
-      <h3>覆盖逾 2,800 种病毒的结构预测，为研究提供可检验的线索</h3><div class="story-body"><p class="lede">NVIDIA、Google DeepMind 与 EMBL-EBI 合作公布病毒蛋白复合物的结构预测资源，覆盖超过 2,800 种病毒，并通过 AlphaFold 数据库提供访问。</p><p class="">蛋白质如何组合、相互作用，是理解病毒运作方式的重要线索。此次工作结合 AlphaFold 2 与 NVIDIA BioNeMo 的计算流程，帮助研究人员从结构假设出发，挑选值得进一步研究的相互作用。</p><p class="boundary"><strong>要区分预测与实验结论</strong>：这些是带有置信度信息的计算预测，不代表所有相互作用已经在实验中证实，也不等于已经获得药物或疫苗。它的直接价值是扩充可供检验的研究起点。</p></div><div class="source-line"><a href="https://blogs.nvidia.com/blog/open-protein-dataset/" target="_blank" rel="noopener noreferrer">NVIDIA 官方博客<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读官方全文。本轮查阅于 9 月 25 日。 本期补查发生在原稿之后。</p></details></div></article></div></section><section id="briefs" class="editorial-section briefs-section"><div class="section-heading"><div><span class="section-number">02</span><h2>还有两条</h2></div><p>值得知道，简短说明。</p></div><div class="section-stories"><article id="opus-context" class="story briefs-story">
-      <div class="story-meta"><span class="story-number">01</span><span>开发工具</span><span class="published">发布于 9 月 24 日</span></div>
-      <h3>Opus 5.5：长任务账单，需要连缓存一起看</h3><div class="story-body"><p class="">Anthropic 的新文章解释了 Opus 5.5 在长编程会话中的上下文用量。厂商称，典型工作负载的计费成本较 Opus 5 低约 40%。这是特定用量结构下的估算；实际账单还取决于轮数、输入输出量与缓存命中，不能当作所有任务统一降价 40%。</p></div><div class="source-line"><a href="https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context" target="_blank" rel="noopener noreferrer">Claude 官方博客<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读官方正文。本轮查阅于 9 月 25 日。发布日期只精确到日；未取得时分。 本期补查发生在原稿之后。</p></details></div></article><article id="eu-board" class="story briefs-story">
-      <div class="story-meta"><span class="story-number">02</span><span>政策动态</span><span class="published">发布于 9 月 24 日</span></div>
-      <h3>欧盟数字服务委员会讨论未成年人保护等议题</h3><div class="story-body"><p class="">欧盟委员会发布第 20 次欧洲数字服务委员会会议声明，涉及未成年人网络保护、选举完整性与可信举报人等事项。本条是会议动态；声明提及的 KIDS Act 仍为提案，不应写成已经生效的新规或新一轮处罚。</p></div><div class="source-line"><a href="https://digital-strategy.ec.europa.eu/en/news/press-statement-20th-meeting-european-board-digital-services" target="_blank" rel="noopener noreferrer">欧盟委员会<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读官方全文。本轮查阅于 9 月 25 日。发布日期只精确到日；未取得时分。 本期补查发生在原稿之后。</p></details></div></article></div></section><section id="insight" class="editorial-section insight-section"><div class="section-heading"><div><span class="section-number">03</span><h2>行业观察</h2></div><p>把产品更新放回实践中。</p></div><div class="section-stories"><article id="agent-governance" class="story insight-story">
-      <div class="story-meta"><span class="story-number">01</span><span>行业观察</span><span class="published">发布于 9 月 24 日</span></div>
-      <h3>当 AI 开始做事，权限与核验就成为产品的一部分</h3><div class="story-body"><p class="">OECD.AI 9 月 24 日的文章介绍了一项访谈研究：受访者来自 11 个国家的 25 家组织，没有一家报告部署了不受限制的自主 Agent。实践更多集中在任务清楚、结果可核验、出错代价可控或可逆的场景，并在关键步骤保留人工确认。</p><p class="">这是一个实践样本，不能据此推算全行业的 Agent 普及率。</p><p class=""><strong>编辑观察</strong>：把它与 Claude Tag 的个人连接器、频道审阅机制放在一起看，值得追踪的产品问题是：AI 以谁的身份获取资料，替谁执行动作，结果由谁看见，以及出错后能否查清过程。这些具体设计，会直接影响工具能否进入日常工作。</p></div><div class="source-line"><a href="https://oecd.ai/en/wonk/putting-agentic-ai-systems-to-work-what-practitioners-reveal-about-deployment-and-governance" target="_blank" rel="noopener noreferrer">OECD.AI · AI Wonk<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读作者文章，未阅读全文所介绍的工作论文。本轮查阅于 9 月 25 日。发布日期只精确到日；未取得时分。 本期补查发生在原稿之后。</p></details></div></article></div></section><section id="papers" class="editorial-section papers-section"><div class="section-heading"><div><span class="section-number">04</span><h2>论文速递</h2></div><p>3 篇摘要解读 · 已核对提交日，未复现实验。</p></div><div class="section-stories"><article id="trace-paper" class="story papers-story">
-      <div class="story-meta"><span class="story-number">01</span><span>Agent 评估</span><span class="published">首次提交 09/24</span></div>
-      <h3>执行日志如果能被 Agent 修改，还能用来审计吗？</h3><div class="story-body"><p class="">《LLM Agents Can Easily Tamper With Their Own Traces》研究了本地编程 Agent 的执行记录。在作者测试的配置中，多种工具框架允许 Agent 删除自己的记录，外部攻击也可能利用这个缺口。</p><p class="">作者提出，应让日志记录机制独立于 Agent 的控制范围。对实际部署者来说，这提醒我们：除了保留记录，还要检查执行任务的 Agent 是否有权改写或删除这些记录。</p></div><div class="source-line"><a href="https://arxiv.org/abs/2609.30266" target="_blank" rel="noopener noreferrer">arXiv · 2609.30266<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>仅核对摘要和提交记录。本轮查阅于 9 月 25 日。 本期补查发生在原稿之后。</p></details></div></article><article id="speaker-memory" class="story papers-story">
-      <div class="story-meta"><span class="story-number">02</span><span>长期记忆</span><span class="published">首次提交 09/22 · 9/24 HF 列表</span></div>
-      <h3>SpeakerMem-R1：长期记忆还要记清“谁说的”</h3><div class="story-body"><p class="">多人对话中的错误，不只来自忘记内容，也可能来自把一个人的经历记到另一个人身上。SpeakerMem-R1 同时保存带说话人标记的原话，以及整理后的人物、群体状态，查询时再按人物、事件与时间结合两类证据。</p><p class="">这项设计值得关注的，是把“检索到相关内容”和“把内容归给正确的人”拆开处理。阅读其效果评测时，也应分别看内容召回、说话人归属与状态更新，避免只凭一个总分判断记忆是否可靠。</p></div><div class="source-line"><a href="https://arxiv.org/abs/2609.26780" target="_blank" rel="noopener noreferrer">arXiv · 2609.26780<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>仅核对摘要和版本记录。本轮查阅于 9 月 25 日。 本期补查发生在原稿之后。</p></details></div></article><article id="spatial-interactor" class="story papers-story">
-      <div class="story-meta"><span class="story-number">03</span><span>空间推理</span><span class="published">首次提交 09/19 · 9/24 HF 列表</span></div>
-      <h3>Spatial-Interactor：让模型学习动作前后的空间变化</h3><div class="story-body"><p class="">物体移动、视角切换以后，模型能否更新对场景的理解？Spatial-Interactor 用“观察—动作—下一次观察”的交互轨迹训练视觉语言模型，从局部变化逐步扩展到更长的行动过程。</p><p class="">这种训练把注意力从静态的位置关系转向连续的状态更新，仍需区分空间推理评测与完整机器人任务。论文在 9 月 19 日首次提交，本期通过 9 月 24 日的 Hugging Face 列表发现。</p></div><div class="source-line"><a href="https://arxiv.org/abs/2609.23038" target="_blank" rel="noopener noreferrer">arXiv · 2609.23038<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>仅核对摘要和提交记录。本轮查阅于 9 月 25 日。 本期补查发生在原稿之后。</p></details></div></article></div></section><section id="opensource" class="editorial-section opensource-section"><div class="section-heading"><div><span class="section-number">05</span><h2>开源解读</h2></div><p>依据官方仓库说明整理 · 本期未进行部署实测。</p></div><div class="section-stories"><article id="ai-course" class="story opensource-story">
-      <div class="story-meta"><span class="story-number">01</span><span>学习路径</span><span class="license">MIT</span><span class="published">9 月 25 日补查 · 非新发布判定</span></div>
-      <h3>AI Engineering from Scratch</h3><div class="story-body"><p class=""><strong>用来做什么</strong>：一套按阶段组织的 AI 工程学习材料，覆盖基础知识、模型应用与 Agent 开发，课程强调产出可复用的代码或工具。</p><p class=""><strong>适合谁</strong>：希望按路径补齐知识的开发者。先根据已有基础选入口，比从头照单全读更实际。</p></div><div class="source-line"><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener noreferrer">GitHub · rohitg00<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读 README 与官方 API 元数据。本轮查阅于 9 月 25 日。未判定首次发布日期；本条属于工具发现。 本期补查发生在原稿之后。</p></details></div></article><article id="hindsight" class="story opensource-story">
-      <div class="story-meta"><span class="story-number">02</span><span>Agent 记忆</span><span class="license">MIT</span><span class="published">9 月 25 日补查 · 非新发布判定</span></div>
-      <h3>Hindsight</h3><div class="story-body"><p class=""><strong>用来做什么</strong>：为 Agent 提供写入、召回和反思记忆的服务，并用独立的记忆库组织不同对象或项目的内容。</p><p class=""><strong>接入前看什么</strong>：记忆如何隔离、能否追溯到原文、怎样删除与更新。这些细节会影响长期使用时的纠错成本。</p></div><div class="source-line"><a href="https://github.com/vectorize-io/hindsight" target="_blank" rel="noopener noreferrer">GitHub · vectorize-io<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读 README 与官方 API 元数据。本轮查阅于 9 月 25 日。未判定首次发布日期；本条属于工具发现。 本期补查发生在原稿之后。</p></details></div></article><article id="univer" class="story opensource-story">
-      <div class="story-meta"><span class="story-number">03</span><span>可编辑内容</span><span class="license">Apache-2.0</span><span class="published">9 月 25 日补查 · 非新发布判定</span></div>
-      <h3>Univer</h3><div class="story-body"><p class=""><strong>用来做什么</strong>：把表格、文档和幻灯片能力嵌入自己的产品，提供插件与程序接口。对需要把 AI 输出变成可编辑办公内容的团队有参考价值。</p><p class=""><strong>接入前看什么</strong>：本仓库开源 SDK 使用 Apache-2.0；可选的 Univer Pro 有独立的产品与授权边界，不能把全部商业功能都算作开源。</p></div><div class="source-line"><a href="https://github.com/dream-num/univer" target="_blank" rel="noopener noreferrer">GitHub · dream-num<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读 README 与官方 API 元数据。本轮查阅于 9 月 25 日。未判定首次发布日期；本条属于工具发现。 本期补查发生在原稿之后。</p></details></div></article><article id="google-ax" class="story opensource-story">
-      <div class="story-meta"><span class="story-number">04</span><span>任务编排</span><span class="license">Apache-2.0</span><span class="published">9 月 25 日补查 · 非新发布判定</span></div>
-      <h3>Google AX</h3><div class="story-body"><p class=""><strong>用来做什么</strong>：用声明式配置组织 Agent 任务、工作空间与模型，并提供沙箱执行及集群编排相关能力。</p><p class=""><strong>接入前看什么</strong>：README 明确提示项目尚未稳定，可能出现不兼容改动。更适合作为架构参考或隔离环境中的试验对象。</p></div><div class="source-line"><a href="https://github.com/google/ax" target="_blank" rel="noopener noreferrer">GitHub · google<span aria-hidden="true"> ↗</span></a>
-      <details class="source-detail"><summary>核验范围</summary><p>已读 README 与官方 API 元数据。本轮查阅于 9 月 25 日。未判定首次发布日期；本条属于工具发现。 本期补查发生在原稿之后。</p></details></div></article></div></section><section id="coverage" class="coverage"><div class="section-heading"><div><span class="section-number">06</span><h2>来源与采集说明</h2></div><p>把没有覆盖到的地方也交代清楚。</p></div>
-      <div class="coverage-summary"><strong>采集不完整</strong><span>18 / 24 个源完成检查 · 6 个待补齐</span></div>
-      <p>本轮完成比例为 75%。仍待补齐：Microsoft AI、Qwen、通义实验室、智谱 Z.ai、阶跃星辰 StepFun、OpenReview。这些来源不能据此判断为没有新消息。</p><p>本期为 9 月 25 日的修订版，补查发生在原稿之后。保留原期观察窗口：北京时间 9 月 24 日 12:56 至 9 月 25 日 07:56；发现窗口向前回溯 72 小时。只有发布日期、没有时分的公告按 9 月 24 日归档，无法证明其落在精确的 19 小时窗口内。</p><p>论文分别记录提交日与发现日；开源项目来自补查时的仓库和榜单，只作为工具发现，不表示它们在 9 月 24 日首次发布。已读原文表示查阅了发布者的说明，不等于完成独立实测。</p><p>arXiv 发现窗口取得 952 条唯一元数据，精选条目另读摘要；这不表示读完了 952 篇全文。</p>
-      <details class="receipt-details"><summary>展开 24 个来源的检查记录<span aria-hidden="true">＋</span></summary><div class="table-scroll"><table><caption>本轮来源检查；“已检查”不表示所有条目都进行了独立实测。</caption><thead><tr><th scope="col">来源</th><th scope="col">状态</th><th scope="col">检查结果</th></tr></thead><tbody><tr><th scope="row"><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic News</a></th><td><span class="status-ok">已检查</span></td><td>已检查官方新闻列表；本期观察日未见新增。</td></tr><tr><th scope="row"><a href="https://claude.com/blog" target="_blank" rel="noopener noreferrer">Claude Blog</a></th><td><span class="status-ok">已检查</span></td><td>发现 9/24 两篇产品文章，均打开正文核验。</td></tr><tr><th scope="row"><a href="https://openai.com/news" target="_blank" rel="noopener noreferrer">OpenAI News</a></th><td><span class="status-ok">已检查</span></td><td>RSS 可解析；最新条目为 9/23，本期没有把它改写为 9/24 新闻。</td></tr><tr><th scope="row"><a href="https://blog.google/innovation-and-ai/" target="_blank" rel="noopener noreferrer">Google AI Blog</a></th><td><span class="status-ok">已检查</span></td><td>配置 RSS 最新条目为 9/23；Live Avatar 从 DeepMind 源取得后回 Google 正文。</td></tr><tr><th scope="row"><a href="https://x.ai/news" target="_blank" rel="noopener noreferrer">xAI</a></th><td><span class="status-ok">已检查</span></td><td>页面阅读服务打开官方列表；最新可见日期 9/22，未见本期观察日新增。</td></tr><tr><th scope="row"><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind</a></th><td><span class="status-ok">已检查</span></td><td>RSS 给出 Live Avatar 的完整时间；已核验链接指向的 Google 原文。</td></tr><tr><th scope="row"><a href="https://nvidianews.nvidia.com" target="_blank" rel="noopener noreferrer">NVIDIA Newsroom</a></th><td><span class="status-ok">已检查</span></td><td>9/24 有蛋白结构资源与游戏串流消息；精选前者并打开正文。</td></tr><tr><th scope="row"><a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer">Hugging Face</a></th><td><span class="status-ok">已检查</span></td><td>9/24 DSpark 作者文章已全文核验，性能数字保留硬件和任务条件。</td></tr><tr><th scope="row"><a href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">Cursor Changelog</a></th><td><span class="status-ok">已检查</span></td><td>更新 RSS 可解析，最新 9/23；不重复包装为本期新消息。</td></tr><tr><th scope="row"><a href="https://blogs.microsoft.com/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI</a></th><td><span class="status-partial">待补齐</span></td><td>官方页面可读取，但未取得足够可靠的日期化列表，不能据此判断无新增。</td></tr><tr><th scope="row"><a href="https://qwenlm.github.io/" target="_blank" rel="noopener noreferrer">Qwen</a></th><td><span class="status-partial">待补齐</span></td><td>配置指向旧博客，当前可见最新日期停留在 2025；不足以覆盖目前全部官方动态。</td></tr><tr><th scope="row"><a href="https://qianwen.aliyun.com/" target="_blank" rel="noopener noreferrer">通义实验室</a></th><td><span class="status-partial">待补齐</span></td><td>返回产品首页，未取得可按日期核对的新闻列表。</td></tr><tr><th scope="row"><a href="https://api-docs.deepseek.com/updates" target="_blank" rel="noopener noreferrer">DeepSeek</a></th><td><span class="status-ok">已检查</span></td><td>官方更新日志最新可见为 9/10，配置页面未见本期新增。</td></tr><tr><th scope="row"><a href="https://www.moonshot.cn/" target="_blank" rel="noopener noreferrer">月之暗面 Moonshot</a></th><td><span class="status-ok">已检查</span></td><td>检查配置官网可见公告及日期；未见本期观察日新增。</td></tr><tr><th scope="row"><a href="https://www.zhipuai.cn/news" target="_blank" rel="noopener noreferrer">智谱 Z.ai</a></th><td><span class="status-partial">待补齐</span></td><td>官网部分新闻没有可可靠筛选的日期，未完成本期覆盖。</td></tr><tr><th scope="row"><a href="https://www.stepfun.com/" target="_blank" rel="noopener noreferrer">阶跃星辰 StepFun</a></th><td><span class="status-partial">待补齐</span></td><td>当前返回页面壳，未取得可用文章列表；HTTP 成功不算编辑核验完成。</td></tr><tr><th scope="row"><a href="https://mistral.ai/news" target="_blank" rel="noopener noreferrer">Mistral</a></th><td><span class="status-ok">已检查</span></td><td>已检查官方日期化新闻列表，未见本期观察日新增。</td></tr><tr><th scope="row"><a href="https://digital-strategy.ec.europa.eu/en/news" target="_blank" rel="noopener noreferrer">European Commission Digital Strategy</a></th><td><span class="status-ok">已检查</span></td><td>检查 9/24 新闻列表并打开会议声明；保留提案与会议动态的状态。</td></tr><tr><th scope="row"><a href="https://www.unesco.org/en/artificial-intelligence" target="_blank" rel="noopener noreferrer">UNESCO AI</a></th><td><span class="status-ok">已检查</span></td><td>配置页新闻列出 9/23、9/18 等日期；未见本期观察日新增。</td></tr><tr><th scope="row"><a href="https://oecd.ai/en/wonk" target="_blank" rel="noopener noreferrer">OECD.AI</a></th><td><span class="status-ok">已检查</span></td><td>发现并核验 9/24 Agent 组织部署访谈介绍。</td></tr><tr><th scope="row"><a href="https://export.arxiv.org/api/query" target="_blank" rel="noopener noreferrer">arXiv cs.AI / cs.LG / cs.CL</a></th><td><span class="status-ok">已检查</span></td><td>72 小时窗口两页取得 952 条唯一元数据；精选论文回摘要页核验。元数据齐全不等于全部全文已读。</td></tr><tr><th scope="row"><a href="https://huggingface.co/api/daily_papers" target="_blank" rel="noopener noreferrer">Hugging Face Daily Papers</a></th><td><span class="status-ok">已检查</span></td><td>按 9/24 查询取得 29 条，所选论文另核对 arXiv 提交日期。</td></tr><tr><th scope="row"><a href="https://openreview.net/" target="_blank" rel="noopener noreferrer">OpenReview</a></th><td><span class="status-partial">待补齐</span></td><td>打开平台后只有会议导航，未取得目标日期论文列表，不能报告无论文。</td></tr><tr><th scope="row"><a href="https://github.com/trending?since=daily" target="_blank" rel="noopener noreferrer">GitHub Trending（日榜 + Python 日榜）</a></th><td><span class="status-ok">已检查</span></td><td>补查综合日榜与 Python 日榜；四个项目回官方 README 和 API 核验。榜单不是 9/24 历史快照。</td></tr></tbody></table></div></details><p class="audio-note">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener noreferrer">前往小宇宙节目页 ↗</a></p></section></main></div>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-09-25">2026年9月25日 · 星期五 · 第 19 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">4</span>条资讯</div>
+    <div class="stat"><span class="num">3</span>篇论文</div>
+    <div class="stat"><span class="num">4</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">19</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年9月25日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">4 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">Claude Tag 接入个人资料，Gemini Live 加入虚拟形象；同时关注本地推理提速、病毒蛋白预测与 Agent 日志研究。</div></div><div class="news-item" id="claude-tag"><div class="news-head"><span class="badge badge-model">协作工具</span><h3>Claude Tag 接入个人资料，发到频道前要看清分享范围</h3></div><p>Claude Tag 开始支持在 Slack 频道中调用个人连接器。你可以让它读取自己有权访问的文档、日历或客户资料，再围绕频道里的工作给出回答。</p><p>过去，频道中的 Claude 主要使用管理员接入的共享工具。现在，个人也能把自己的工作上下文带进讨论：例如读取自己 Drive 中的计划，与频道里的进度更新做比较。<strong>这项能力正向 Team 套餐逐步开放，Enterprise 随后跟进。</strong></p><p>关键在于回答怎样发出去。用户可以逐条审阅，也可以选择自动模式，让 Claude 判断是否含有需要审阅的敏感内容。<strong>一旦回答发到频道，频道成员都能看到</strong>；文件原有的访问权限，并不等于回答也只对原来的读者可见。</p><p><strong>使用条件</strong>：个人连接器只用于有人发起的请求。定时任务和 Claude 自行启动的动作，仍使用管理员配置的共享连接器。</p><div class="source">来源：<a href="https://claude.com/blog/claude-tag-now-supports-personal-connectors-in-channels" target="_blank" rel="noopener">Claude 官方博客</a> · 发布于 9 月 24 日 · 已读官方全文</div></div><div class="news-item" id="gemini-avatar"><div class="news-head"><span class="badge badge-model">模型与产品</span><h3>Gemini Live 加入虚拟形象，也能在交谈中继续调用工具</h3></div><p>Google 发布 Gemini 3.8 Live with Live Avatar，在实时语音交流中加入同步的面部表情与口型，并支持在后台调用工具时继续对话。</p><p>以办理入住为例，虚拟接待员可以一边与客人交谈，一边查询相关信息。对企业应用来说，值得关注的是对话、工具调用和业务流程能否顺畅衔接；形象只是用户能直接看见的部分。</p><p>产品已在 Gemini Enterprise 提供。企业可以使用预设形象，<strong>自定义形象目前需要企业白名单资格</strong>。Google 表示，生成的音频和视频带有 SynthID 水印。</p><div class="source">来源：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/" target="_blank" rel="noopener">Google 官方博客</a> · 发布于 9 月 24 日 · 已读官方全文</div></div><div class="news-item" id="dspark"><div class="news-head"><span class="badge badge-infra">本地推理</span><h3>DSpark 给视觉语言模型提速，要分清生成速度与总耗时</h3></div><p>Liquid AI 为 LFM2.5-VL-3B 发布实验性的 DSpark 草稿模型，用较小的模型预先提出候选输出，再交给目标模型核验，减少逐字生成的等待。</p><p>草稿模型约有 <strong>2.8 亿参数</strong>，在原目标模型之上增加约 8.9% 的部署参数量。它加速的是解码，也就是生成输出的阶段；图像编码和输入处理不会一起按同样比例提速。</p><p>在作者使用 <strong>M5 Max 与 MLX</strong> 的测试中，不同任务的解码速度为基线的 2.30～3.13 倍，端到端加速比为 1.56～2.62 倍。因此，“最高 3.13 倍”不能直接理解成每次请求的总等待时间都缩短到三分之一。</p><p><strong>使用条件</strong>：这些结果来自作者报告，仍取决于硬件与任务；运行需要支持 DSpark 的相应构建版本，不能默认任意已安装版本都能直接使用。</p><div class="source">来源：<a href="https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark" target="_blank" rel="noopener">Liquid AI · Hugging Face</a> · 发布于 9 月 24 日 · 已读作者全文</div></div><div class="news-item" id="protein"><div class="news-head"><span class="badge badge-model">AI 与科学</span><h3>覆盖逾 2,800 种病毒的结构预测，为研究提供可检验的线索</h3></div><p>NVIDIA、Google DeepMind 与 EMBL-EBI 合作公布病毒蛋白复合物的结构预测资源，覆盖超过 2,800 种病毒，并通过 AlphaFold 数据库提供访问。</p><p>蛋白质如何组合、相互作用，是理解病毒运作方式的重要线索。此次工作结合 AlphaFold 2 与 NVIDIA BioNeMo 的计算流程，帮助研究人员从结构假设出发，挑选值得进一步研究的相互作用。</p><p><strong>要区分预测与实验结论</strong>：这些是带有置信度信息的计算预测，不代表所有相互作用已经在实验中证实，也不等于已经获得药物或疫苗。它的直接价值是扩充可供检验的研究起点。</p><div class="source">来源：<a href="https://blogs.nvidia.com/blog/open-protein-dataset/" target="_blank" rel="noopener">NVIDIA 官方博客</a> · 发布于 9 月 24 日 · 已读官方全文</div></div><div class="paper-also"><div class="paper-also-title">另两条动态</div><div class="paper-also-item" id="opus-context"><span class="paper-also-num">01</span><div><strong>Opus 5.5：长任务账单，需要连缓存一起看</strong><p>Anthropic 的新文章解释了 Opus 5.5 在长编程会话中的上下文用量。厂商称，典型工作负载的计费成本较 Opus 5 低约 40%。这是特定用量结构下的估算；实际账单还取决于轮数、输入输出量与缓存命中，不能当作所有任务统一降价 40%。</p><p>来源：<a href="https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context" target="_blank" rel="noopener">Claude 官方博客</a> · 发布于 9 月 24 日 · 已读官方正文</p></div></div><div class="paper-also-item" id="eu-board"><span class="paper-also-num">02</span><div><strong>欧盟数字服务委员会讨论未成年人保护等议题</strong><p>欧盟委员会发布第 20 次欧洲数字服务委员会会议声明，涉及未成年人网络保护、选举完整性与可信举报人等事项。本条是会议动态；声明提及的 KIDS Act 仍为提案，不应写成已经生效的新规或新一轮处罚。</p><p>来源：<a href="https://digital-strategy.ec.europa.eu/en/news/press-statement-20th-meeting-european-board-digital-services" target="_blank" rel="noopener">欧盟委员会</a> · 发布于 9 月 24 日 · 已读官方全文</p></div></div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="agent-governance"><div class="insight-banner"><div class="meta">发布于 9 月 24 日</div><h3>当 AI 开始做事，权限与核验就成为产品的一部分</h3></div><div class="insight-body"><p>OECD.AI 9 月 24 日的文章介绍了一项访谈研究：受访者来自 11 个国家的 25 家组织，没有一家报告部署了不受限制的自主 Agent。实践更多集中在任务清楚、结果可核验、出错代价可控或可逆的场景，并在关键步骤保留人工确认。</p><p>这是一个实践样本，不能据此推算全行业的 Agent 普及率。</p><p><strong>编辑观察</strong>：把它与 Claude Tag 的个人连接器、频道审阅机制放在一起看，值得追踪的产品问题是：AI 以谁的身份获取资料，替谁执行动作，结果由谁看见，以及出错后能否查清过程。这些具体设计，会直接影响工具能否进入日常工作。</p><p>来源：<a href="https://oecd.ai/en/wonk/putting-agentic-ai-systems-to-work-what-practitioners-reveal-about-deployment-and-governance" target="_blank" rel="noopener">OECD.AI · AI Wonk</a> · 发布于 9 月 24 日 · 已读作者文章，未阅读全文所介绍的工作论文</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">3 篇论文</span></div><div class="paper-item" id="trace-paper"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">执行日志如果能被 Agent 修改，还能用来审计吗？</span></div><div class="paper-tags"><span class="paper-tag">Agent 评估</span><span class="paper-tag">首次提交 09/24</span><span class="paper-tag">仅核对摘要和提交记录</span></div><div class="paper-body"><p>《LLM Agents Can Easily Tamper With Their Own Traces》研究了本地编程 Agent 的执行记录。在作者测试的配置中，多种工具框架允许 Agent 删除自己的记录，外部攻击也可能利用这个缺口。</p><p>作者提出，应让日志记录机制独立于 Agent 的控制范围。对实际部署者来说，这提醒我们：除了保留记录，还要检查执行任务的 Agent 是否有权改写或删除这些记录。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.30266" target="_blank" rel="noopener">arXiv · 2609.30266 →</a></div><div class="paper-item" id="speaker-memory"><div class="paper-head"><span class="paper-num">02</span><span class="paper-title">SpeakerMem-R1：长期记忆还要记清“谁说的”</span></div><div class="paper-tags"><span class="paper-tag">长期记忆</span><span class="paper-tag">首次提交 09/22 · 9/24 HF 列表</span><span class="paper-tag">仅核对摘要和版本记录</span></div><div class="paper-body"><p>多人对话中的错误，不只来自忘记内容，也可能来自把一个人的经历记到另一个人身上。SpeakerMem-R1 同时保存带说话人标记的原话，以及整理后的人物、群体状态，查询时再按人物、事件与时间结合两类证据。</p><p>这项设计值得关注的，是把“检索到相关内容”和“把内容归给正确的人”拆开处理。阅读其效果评测时，也应分别看内容召回、说话人归属与状态更新，避免只凭一个总分判断记忆是否可靠。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.26780" target="_blank" rel="noopener">arXiv · 2609.26780 →</a></div><div class="paper-item" id="spatial-interactor"><div class="paper-head"><span class="paper-num">03</span><span class="paper-title">Spatial-Interactor：让模型学习动作前后的空间变化</span></div><div class="paper-tags"><span class="paper-tag">空间推理</span><span class="paper-tag">首次提交 09/19 · 9/24 HF 列表</span><span class="paper-tag">仅核对摘要和提交记录</span></div><div class="paper-body"><p>物体移动、视角切换以后，模型能否更新对场景的理解？Spatial-Interactor 用“观察—动作—下一次观察”的交互轨迹训练视觉语言模型，从局部变化逐步扩展到更长的行动过程。</p><p>这种训练把注意力从静态的位置关系转向连续的状态更新，仍需区分空间推理评测与完整机器人任务。论文在 9 月 19 日首次提交，本期通过 9 月 24 日的 Hugging Face 列表发现。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.23038" target="_blank" rel="noopener">arXiv · 2609.23038 →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">4 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="ai-course"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener">AI Engineering from Scratch</a></span><span class="oss-license">MIT</span></div><p><strong>用来做什么</strong>：一套按阶段组织的 AI 工程学习材料，覆盖基础知识、模型应用与 Agent 开发，课程强调产出可复用的代码或工具。</p><p><strong>适合谁</strong>：希望按路径补齐知识的开发者。先根据已有基础选入口，比从头照单全读更实际。</p></div></div><div class="oss-item" id="hindsight"><div class="oss-rank top">2</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/vectorize-io/hindsight" target="_blank" rel="noopener">Hindsight</a></span><span class="oss-license">MIT</span></div><p><strong>用来做什么</strong>：为 Agent 提供写入、召回和反思记忆的服务，并用独立的记忆库组织不同对象或项目的内容。</p><p><strong>接入前看什么</strong>：记忆如何隔离、能否追溯到原文、怎样删除与更新。这些细节会影响长期使用时的纠错成本。</p></div></div><div class="oss-item" id="univer"><div class="oss-rank top">3</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/dream-num/univer" target="_blank" rel="noopener">Univer</a></span><span class="oss-license">Apache-2.0</span></div><p><strong>用来做什么</strong>：把表格、文档和幻灯片能力嵌入自己的产品，提供插件与程序接口。对需要把 AI 输出变成可编辑办公内容的团队有参考价值。</p><p><strong>接入前看什么</strong>：本仓库开源 SDK 使用 Apache-2.0；可选的 Univer Pro 有独立的产品与授权边界，不能把全部商业功能都算作开源。</p></div></div><div class="oss-item" id="google-ax"><div class="oss-rank">4</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/google/ax" target="_blank" rel="noopener">Google AX</a></span><span class="oss-license">Apache-2.0</span></div><p><strong>用来做什么</strong>：用声明式配置组织 Agent 任务、工作空间与模型，并提供沙箱执行及集群编排相关能力。</p><p><strong>接入前看什么</strong>：README 明确提示项目尚未稳定，可能出现不兼容改动。更适合作为架构参考或隔离环境中的试验对象。</p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 18/24 个来源完成检查</summary><div class="content"><p>本期为 9 月 25 日的修订版，补查发生在原稿之后。保留原期观察窗口：北京时间 9 月 24 日 12:56 至 9 月 25 日 07:56；发现窗口向前回溯 72 小时。只有发布日期、没有时分的公告按 9 月 24 日归档，无法证明其落在精确的 19 小时窗口内。</p><p>论文分别记录提交日与发现日；开源项目来自补查时的仓库和榜单，只作为工具发现，不表示它们在 9 月 24 日首次发布。已读原文表示查阅了发布者的说明，不等于完成独立实测。</p><p>待补齐：Microsoft AI、Qwen、通义实验室、智谱 Z.ai、阶跃星辰 StepFun、OpenReview。不能据此判断这些来源没有新消息。</p><p>来源核验不等于独立实测；论文解读限于摘要与提交记录。</p></div></details>
+
+</main>
+
 <nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-24.html">上一期 · 09-24</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
-<footer class="site-footer"><a class="footer-brand" href="index.html">创学空间 · AI 日报</a><p>理解变化，也读清变化的条件。</p><span>2026.09.25 · VOL.019</span></footer></div></body></html>
+
+</body>
+</html>

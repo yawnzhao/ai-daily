@@ -22,6 +22,7 @@ def check_issue(path):
     date = PAGE_RE.match(path.name).group(1)
     bad = []
     editorial = 'data-layout="editorial-v2"' in t
+    audio = re.search(r'var AUDIO_SRC = "([^"]*)"', t)
 
     for pat, what in [
         (r'<meta name="description" content="[^"]{10,}">', 'meta description（分享和搜索都靠它）'),
@@ -40,8 +41,11 @@ def check_issue(path):
             bad.append(f'缺少 {what}')
 
     if not editorial:
-        for pattern, label in [(r'role="slider"','播放进度条的 role'), (r'aria-label="播放语音简报"','播放按钮的 aria-label')]:
-            if not re.search(pattern,t): bad.append(f'缺少 {label}')
+        if audio and audio.group(1):
+            for pattern, label in [(r'role="slider"','播放进度条的 role'), (r'aria-label="播放语音简报"','播放按钮的 aria-label')]:
+                if not re.search(pattern,t): bad.append(f'缺少 {label}')
+        elif '语音版制作中' not in t:
+            bad.append('未发布音频时应显示制作中')
     else:
         match = re.search(r'<script type="application/json" id="daily-metadata">(.*?)</script>',t,re.S)
         try:
@@ -62,8 +66,8 @@ def check_issue(path):
                     bad.append(f'{key} 数量与正文不一致')
         except (ValueError,TypeError):
             bad.append('新版页面元数据无法解析')
-        if re.search(r'noindex|LOCAL PREVIEW|尚未替换线上|本地预览',t):
-            bad.append('正式页面仍包含预览标记')
+    if re.search(r'noindex|LOCAL PREVIEW|尚未替换线上|本地预览',t):
+        bad.append('正式页面仍包含预览标记')
 
     if f'<time datetime="{date}">' not in t:
         bad.append(f'<time datetime="{date}"> 和文件名对不上')
@@ -90,7 +94,6 @@ def check_issue(path):
         bad.append(f'{len(plain)} 条外链没写 target="_blank" rel="noopener"，第一条：{plain[0][:60]}')
 
     # 音频：有直链才说有语音版
-    audio = re.search(r'var AUDIO_SRC = "([^"]*)"', t)
     if audio and audio.group(1) and not audio.group(1).startswith('https://'):
         bad.append('AUDIO_SRC 不是 https 直链')
 

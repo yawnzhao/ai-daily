@@ -1,9 +1,8 @@
-"""Check compatibility between editorial pages, archive metadata and audio state."""
-import json
+"""Check the restored daily template, archive metadata and audio state."""
+import re
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
 import build_site
 import check_page
 
@@ -23,17 +22,20 @@ class EditorialPagesTests(unittest.TestCase):
         self.assertFalse(page['audio'])
         self.assertFalse(check_page.check_issue(ROOT/page['file']))
 
-    def test_validator_rejects_misleading_audio_metadata(self):
-        text=(ROOT/'ai-daily-digest-2026-09-25.html').read_text().replace('"audio_src": null','"audio_src": "https://example.com/audio.mp3"')
+    def test_validator_rejects_non_https_audio(self):
+        text=(ROOT/'ai-daily-digest-2026-09-25.html').read_text().replace('var AUDIO_SRC = ""','var AUDIO_SRC = "http://example.com/audio.mp3"')
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'ai-daily-digest-2026-09-25.html';path.write_text(text)
-            self.assertTrue(any('音频' in e for e in check_page.check_issue(path)))
+            self.assertTrue(any('AUDIO_SRC' in e for e in check_page.check_issue(path)))
 
-    def test_validator_rejects_incorrect_article_counts(self):
-        text=(ROOT/'ai-daily-digest-2026-09-25.html').read_text().replace('"papers": 3','"papers": 99')
-        with tempfile.TemporaryDirectory() as tmp:
-            path=Path(tmp)/'ai-daily-digest-2026-09-25.html';path.write_text(text)
-            self.assertTrue(any('papers 数量' in e for e in check_page.check_issue(path)))
+    def test_restored_edition_uses_original_styles_and_four_sections(self):
+        text=(ROOT/'ai-daily-digest-2026-09-25.html').read_text()
+        template=(ROOT/'templates/daily.html').read_text()
+        self.assertEqual(re.search(r'<style>(.*?)</style>',text,re.S).group(1),
+                         re.search(r'<style>(.*?)</style>',template,re.S).group(1))
+        self.assertEqual(re.findall(r'<h2>(.*?)</h2>',text),check_page.SECTIONS)
+        self.assertNotIn('editorial-v2',text)
+        self.assertNotIn('<audio',text)
 
     def test_validator_rejects_preview_markers(self):
         text=(ROOT/'ai-daily-digest-2026-09-25.html').read_text().replace('</head>','<meta name="robots" content="noindex,nofollow"></head>')
