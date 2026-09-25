@@ -35,8 +35,9 @@ def read_page(path):
     t = path.read_text()
     date = PAGE_RE.match(path.name).group(1)
     d = datetime.date.fromisoformat(date)
-    stats = dict(re.findall(r'<span class="num">(\d+)</span>(条资讯|篇论文|个开源项目)', t))
-    stats = {v: k for k, v in stats.items()}
+    # 用标签做键。若先用数字做键，资讯数和开源数相同（例如都是 4）时会互相覆盖，首页就会显示 0 条精选。
+    stats = {label: num for num, label in re.findall(
+        r'<span class="num">(\d+)</span>(条资讯|篇论文|个开源项目)', t)}
     return {
         'file': path.name,
         'date': date,
