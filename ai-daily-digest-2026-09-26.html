@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-09-26 · Claude 开放插件提交，Codex 帮业务人员制作客户演示</title>
+<meta name="description" content="Claude 开放插件提交流程，Codex 走进售前演示，UNESCO 更新教师 AI 课程；关注 AI 怎样进入具体工作。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-26.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-09-26 · Claude 开放插件提交，Codex 帮业务人员制作客户演示">
+<meta property="og:description" content="Claude 开放插件提交流程，Codex 走进售前演示，UNESCO 更新教师 AI 课程；关注 AI 怎样进入具体工作。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-26.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-25.html">上一期 · 09-25</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-09-26">2026年9月26日 · 星期六 · 第 20 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">3</span>条资讯</div>
+    <div class="stat"><span class="num">3</span>篇论文</div>
+    <div class="stat"><span class="num">3</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年9月26日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">3 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">Claude 开放插件提交流程，Codex 走进售前演示，UNESCO 更新教师 AI 课程；关注 AI 怎样进入具体工作。</div></div><div class="news-item" id="claude-plugins"><div class="news-head"><span class="badge badge-model">开发工具</span><h3>Claude 开放插件提交流程，从写好工具走向审核与分发</h3></div><p>Claude 9 月 25 日公布新的开发者提交入口。付费套餐用户可以提交远程 MCP 连接器，也可以提交托管在 GitHub 上的插件包，把连接器和 Agent Skills 等能力一起交付。</p><p>提交后，系统会进行自动校验与安全扫描，开发者可以跟踪审核进度、处理反馈。<strong>通过审核之后，还需要开发者选择发布</strong>；提交成功不代表插件已经对外上架。发布后，后台会提供安装量等使用数据，帮助开发者了解工具是否被采用。</p><p>值得分清的是开放节奏：提交入口已经推出，Claude 与 Claude Code 之间更统一的发现体验仍将在未来几周逐步上线。现有已上架的连接器、技能和插件，无须因为这次调整立即改造。</p><p><strong>为什么值得看</strong>：对于做垂直工具的小团队，开发工作开始延伸到上架、审核反馈和版本维护。能调用一个工具只是起点，用户能否找到它、理解它的用途并持续使用，才决定这项能力能否进入日常工作。</p><div class="source">来源：<a href="https://claude.com/blog/build-plugins-for-claude" target="_blank" rel="noopener">Claude 官方博客</a> · 发布于 9 月 25 日 · 已读官方全文</div></div><div class="news-item" id="codex-proaction"><div class="news-head"><span class="badge badge-model">应用案例</span><h3>Codex 帮业务人员制作客户演示，先把需求讲清楚</h3></div><p>OpenAI 发布车队管理软件公司 Proaction 的使用案例：不以编程为主要工作的联合创始人，把客户通话记录、邮件和表格交给 Codex，制作贴近客户实际车队的 HTML 演示。</p><p>这种演示的作用，是让客户看见拟议中的流程，并让工程师在接手时获得更具体的需求。它位于产品开发之前，不能直接等同于可上线的业务系统。</p><p>公司自报每月制作约 <strong>4～6 个演示，每个耗时 30～45 分钟</strong>。这些数字来自厂商刊载的客户案例，本期没有独立测量。文章标题中的增长幅度，也不宜直接解读为营收增长：正文讨论的是销售机会从首次接触推进到方案开发的比例，以及团队对节省工时的估算。</p><p><strong>可借鉴之处</strong>：先用可讨论的界面，把客户口中的“需要一个功能”拆成具体操作与反馈。之后再由工程团队核实数据、权限、异常处理和真实系统对接，减少需求靠口头往返解释的成本。</p><div class="source">来源：<a href="https://openai.com/index/proaction/" target="_blank" rel="noopener">OpenAI · 客户案例</a> · 发布于 9 月 25 日 · 已读官方案例全文 · 效果为客户自报</div></div><div class="news-item" id="unesco-course"><div class="news-head"><span class="badge badge-model">AI 与教育</span><h3>UNESCO 教师 AI 课程开放第三期，新增葡萄牙语</h3></div><p>UNESCO 9 月 25 日宣布，数字公民与人工智能免费在线课程第三期将于 <strong>10 月 12 日</strong>开始。课程面向教师、教育团队及相关社会工作者，在英语、西班牙语之外，新增葡萄牙语版本。</p><p>课程包含五个模块，围绕数字足迹、错误信息、信息过滤、AI 伦理及参与公共生活等议题展开，结合视频、案例与讨论。重点是帮助教育者把技术放回学生的日常数字生活，而不只是教授工具操作。</p><p><strong>参与条件</strong>：按公告，完成至少 80% 的课程内容及考核要求，方可取得证书。9 月 25 日是公告日期，10 月 12 日才是本期课程开始日期；报名信息以原文链接中的课程入口为准。</p><p><strong>为什么值得看</strong>：学校讨论 AI 时，容易把注意力集中在作业能否使用、答案是否准确。这门课程提供了另一组教学入口：信息为什么出现在眼前，个人留下了哪些数据，以及如何作出有依据的判断。</p><div class="source">来源：<a href="https://www.unesco.org/en/articles/unesco-opens-third-edition-its-course-digital-citizenship-and-artificial-intelligence-now-also" target="_blank" rel="noopener">UNESCO</a> · 发布于 9 月 25 日 · 已读官方全文</div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="government-agents"><div class="insight-banner"><div class="meta">发布于 9 月 25 日</div><h3>AI 开始替政府执行任务，授权需要具体到每一步</h3></div><div class="insight-body"><p>OECD.AI 9 月 25 日刊登政府 Agent 工作组文章，讨论系统从回答问题走向执行动作之后，公共部门如何界定权限、责任与监督。文章提出的判断是：现有治理机制需要延伸到动作层面，不能只检查生成的文字是否正确。</p><p>文中以公共服务申请为例，说明 Agent 可以辅助理解要求、收集材料、准备申请及转交办理；涉及敏感动作或正式决定时，则需要明确的同意、授权与责任安排。这些是文章讨论的设计方向，不能读成某个国家已经全面上线的统一制度。</p><p>文章也提醒，政府场景中的价值仍待验证。不同部门的数据、法定职责和纠错机制并不相同，适合先从范围清楚的具体任务展开。本文为作者观点，不代表 OECD 或成员国的正式立场。</p><p><strong>编辑观察</strong>：把它与今天的插件和售前案例放在一起看，下一步值得追踪的是任务交接。一个插件能读取资料，并不自然获得替人提交申请的权力；一个原型能演示业务流程，也还没有承担正式系统的责任。</p><p>实际评估时，可以沿着一条任务链看：谁发起请求，系统以谁的身份读取资料，哪个动作需要确认，发生错误后谁能停止或撤回。这些问题越早进入设计，团队越容易判断哪些步骤可以交给 AI，哪些步骤仍须保留人工处理。</p><p>来源：<a href="https://oecd.ai/en/wonk/governing-with-agentic-ai-when-machines-act-on-governments-behalf" target="_blank" rel="noopener">OECD.AI · AI Wonk</a> · 发布于 9 月 25 日 · 已读作者全文 · 非 OECD 正式立场</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">3 篇论文</span></div><div class="paper-item" id="qwen-planner"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">Qwen-Planner-Agent：把手机任务中的失败带回训练</span></div><div class="paper-tags"><span class="paper-tag">手机 Agent</span><span class="paper-tag">首次提交 09/24 · 9/25 HF 列表</span><span class="paper-tag">仅核对摘要与提交记录</span></div><div class="paper-body"><p>《Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents》关注长流程手机任务。真实设备上的交互成本高，数据、训练与运行环境之间如果脱节，系统就容易重复犯错。</p><p>作者把任务构造、轨迹筛选、训练和部署反馈连接起来，并在人类把关下组织数据循环。运行时得到的动作结果、验证信息和失败记录，可以为下一轮训练与工具配置调整提供材料。</p><p><strong>阅读价值</strong>：它将注意力从单次规划是否漂亮，转向系统如何从执行中积累可用反馈。摘要中的闭环仍包含人工环节，不能概括为完全无人干预的自我进化。本期只核对摘要与提交记录，未核验全文实验及泛化表现。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.29892" target="_blank" rel="noopener">arXiv · 2609.29892 →</a></div><div class="paper-item" id="object-permanence"><div class="paper-head"><span class="paper-num">02</span><span class="paper-title">训练世界模型记住：物体被遮住，并不等于消失</span></div><div class="paper-tags"><span class="paper-tag">世界模型</span><span class="paper-tag">首次提交 09/23 · 9/25 HF 列表</span><span class="paper-tag">仅核对摘要与提交记录</span></div><div class="paper-body"><p>《Training Object Permanence in World Models》研究视频模型对物体持续存在、实体不能随意穿透等规律的表现。画面看起来流畅，并不必然意味着模型在连续场景中保持了这些约束。</p><p>作者构建 WROP，包含六类、150 种可程序化生成的认知任务，并用可控场景改变速度、光照和观察角度；同时提供 300 道测试题，对视频模型进行比较。其训练与评估结果属于作者报告，本期未复现实验。</p><p><strong>阅读价值</strong>：这种设计把“视觉上像真的”和“状态变化一致”拆成可以分别检查的问题。评测仍围绕特定生成任务，不能据此直接判定模型已经理解整个物理世界。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.28654" target="_blank" rel="noopener">arXiv · 2609.28654 →</a></div><div class="paper-item" id="agent-editing"><div class="paper-head"><span class="paper-num">03</span><span class="paper-title">Agent-Editing World Model：先修正错误的任务状态，再决定下一步</span></div><div class="paper-tags"><span class="paper-tag">Agent 状态</span><span class="paper-tag">首次提交 09/23 · 9/25 HF 列表</span><span class="paper-tag">仅核对摘要与提交记录</span></div><div class="paper-body"><p>Agent 在长任务中可能把未经支持的假设或过期计划带进后续决策。《Agent-Editing World Model: Rethinking World Modeling for LLM Agents》把这类问题视作任务状态受到干扰。</p><p>作者提出，先判断动作属于关键、探索或噪声，再修订妨碍后续推理的内部状态，并将这个过程融入执行框架。摘要报告了搜索、终端和软件工程等任务中的改进；本期尚未阅读全文，无法判断不同场景中的收益是否一致。</p><p><strong>需要区分</strong>：这里整理的是 Agent 用于继续决策的内部任务状态，不是授权它改写外部审计记录。系统可以修正自己对任务的理解，同时保留实际发生过什么的独立记录。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.28416" target="_blank" rel="noopener">arXiv · 2609.28416 →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">3 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="paperclip"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">Paperclip</a></span><span class="oss-license">MIT</span></div><p><strong>用来做什么</strong>：把不同 Agent 的任务分配、目标、预算和审批放到同一套管理界面。项目使用 Node.js 服务与 React 界面，可连接多种外部 Agent，帮助团队看清一项工作由谁负责、目前走到哪里。</p><p><strong>适合谁</strong>：已经同时使用多个 Agent，希望统一查看任务和成本的个人或小团队。它提供组织与协调功能，但“配置了预算或审批”不自动等于所有执行路径都已受到有效约束；接入后仍需检查实际权限和失败处理。</p><p>依据官方 README 与 GitHub API 整理，MIT 许可证；未部署实测。本期作为工具发现，不是当天新发布消息。</p></div></div><div class="oss-item" id="model-optimizer"><div class="oss-rank top">2</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/NVIDIA/Model-Optimizer" target="_blank" rel="noopener">NVIDIA Model Optimizer</a></span><span class="oss-license">Apache-2.0</span></div><p><strong>用来做什么</strong>：提供量化、剪枝、蒸馏、稀疏化和推测解码等模型优化能力，并衔接不同的推理运行环境，帮助部署者在模型质量、显存占用与速度之间做取舍。</p><p><strong>适合谁</strong>：已有明确模型、硬件和工作负载的部署团队。比较优化前后的结果时，需要同时看任务质量、总耗时与资源使用，并核对导出格式是否受到目标运行环境支持；工具本身并不保证每种组合都得到相同收益。</p><p>依据官方 README 与 GitHub API 整理，Apache-2.0 许可证；未部署实测。本期作为工具发现，不是当天新版本公告。</p></div></div><div class="oss-item" id="openbao"><div class="oss-rank top">3</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">OpenBao</a></span><span class="oss-license">MPL-2.0</span></div><p><strong>用来做什么</strong>：集中管理密钥、证书和凭证，提供加密存储、访问控制、审计，以及适用后端的动态凭证、租约和撤销能力。</p><p><strong>适合谁</strong>：需要让多个服务或 Agent 调用业务系统，同时希望减少长期凭证散落在脚本与配置中的团队。动态凭证能力取决于具体后端支持；部署工具之后，仍要设计身份、访问策略与凭证有效期。</p><p>依据官方 README 与 GitHub API 整理，MPL-2.0 许可证；未部署实测。本期作为基础设施发现，不是当天新发布消息。</p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 19/24 个来源完成检查</summary><div class="content"><p><strong>采集不完整。</strong> 本轮截止为 2026 年 9 月 26 日 02:59 UTC（巴黎 04:59，北京 10:59），重点关注最近 24 小时，向前 72 小时补查。只有日期、没有时刻的消息按自然日识别，不强行归入精确的 24 小时区间。</p><p>计划 24 个来源，完成 19 个，部分完成 5 个，成功率 79.2%。核心来源 arXiv 未完整取回：API 报告 596 条，取得 500 条元数据，分页重试后仍缺 96 条。通义、智谱、阶跃缺少可靠的带日期新闻材料，OpenReview 候选声明详情受验证页阻挡。</p><p>本轮记录 590 次候选出现，合并 20 次重复后为 570 项：新闻 34 项、论文 509 项、仓库 27 项。与往期引用比对，20 项已用，550 项未在往期引用；这里的“新增”是相对于日报档案，不代表今天发布。元数据候选未全部逐篇阅读全文。</p><p>本期选中 10 项：3 条重点、1 篇观察、3 篇论文、3 个仓库。三篇论文通过 9 月 25 日 Hugging Face 列表发现，首次提交分别为 9 月 24 日、9 月 23 日、9 月 23 日；只核对摘要与提交记录。案例效果属于客户自报，开源项目未实测。</p><p>待补齐：通义实验室、智谱 Z.ai、阶跃星辰 StepFun、arXiv cs.AI / cs.LG / cs.CL、OpenReview。不能据此判断这些来源没有新消息。</p><p>来源核验不等于独立实测；论文解读限于摘要与提交记录。</p></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-25.html">上一期 · 09-25</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
