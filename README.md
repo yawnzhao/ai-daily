@@ -28,12 +28,19 @@
 
 ## 状态
 
-已发布 19 期。2026-09-25 第 19 期恢复原版 UI：沿用橙色配色、居中标题、卡片和四栏目结构。保留已核实的正文、来源和日期修订；两条补充动态合并到每日精选末尾，采集说明折叠展示。
+截至 2026-09-26，已发布 **20 期**。最新一期为 [第 20 期 · 2026-09-26](https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-26.html)，正文和[小宇宙语音版](https://www.xiaoyuzhoufm.com/episode/6ab764c0e742e36efcbb5b61)均已上线，音频时长约 **11 分 24 秒**。
+
+- **线上核验**：第 20 期音频更新提交 `1cd5b718de3e98345a87740c81f72ecfab04df67` 对应的 [GitHub Pages 部署](https://github.com/yawnzhao/ai-daily/actions/runs/36228526574)成功。首页、最新一期、RSS 和站点地图可访问；最新一期 HTML 与该版本仓库文件一致。浏览器已成功加载音频，但本次未完整试听。
+- **采集范围**：第 20 期完成 19/24 个来源，5 个部分完成，成功率 79.2%，已标注“采集不完整”。arXiv 报告 596 条、取得 500 条，仍缺 96 条；其余待补来源为通义、智谱、阶跃和 OpenReview。不能据此判断这些来源没有新消息。
+- **历史音频**：当前首页中，2026-09-19、09-20、09-21、09-25 仍显示“语音版制作中”；这仅反映本站状态，不代表已经核验这些日期在小宇宙上的发布情况。
+- **自动化**：原 AI-daily routine 的启停及切换状态尚未确认。
+
+第 19 期于 2026-09-25 恢复原版 UI，第 20 期继续沿用橙色配色、居中标题、卡片和四栏目结构，采集说明折叠展示。
 
 正文仍以 `daily/YYYY/YYYY-MM-DD.md` 为权威；`data/issues/YYYY-MM-DD.json` 保存条目来源、日期、栏目、页面标题及音频状态，不复制整份正文。公开收据只保存可公开的来源链接与检查结论。生成脚本沿用现有文件名，但现在使用 `templates/daily.html`，不再使用 `templates/editorial.html` 或 `assets/editorial-v2/`。后续更新在原有框架内做小幅调整，不重新设计版式。
 
 ```sh
-python3 scripts/build_editorial_issue.py 2026-09-25
+python3 scripts/build_editorial_issue.py 2026-09-26
 python3 scripts/build_site.py
 python3 scripts/check_page.py
 python3 -m unittest discover -s scripts -p 'test_editorial_pages.py'
@@ -41,7 +48,7 @@ python3 -m unittest discover -s scripts -p 'test_editorial_pages.py'
 
 将生成文件与对应正文、元数据、收据提交到 `main` 后，GitHub Pages 发布站点。首页、RSS 与上下期导航由 `build_site.py` 统一生成。
 
-语音未发布时，页面仅显示“制作中”和小宇宙节目入口；取得匹配本期内容的 HTTPS 音频直链后，再更新 `audio_src` 并重新构建。第 19 期此次发布不代表定时采集任务已切换。
+语音未发布时，页面仅显示“制作中”和小宇宙节目入口；取得匹配本期内容的 HTTPS 音频直链后，再更新 `audio_src` 并重新构建。音频发布与定时采集任务的切换分别核验。
 
 ## 备份
 
