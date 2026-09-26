@@ -182,8 +182,87 @@
 </header>
 
 <!-- ===== Audio Player ===== -->
-<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年9月26日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
-<script>var AUDIO_SRC = "";</script>
+<div class="audio-player">
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
+  <div class="play-info">
+    <div class="play-label">语音简报</div>
+    <div class="play-title">AI 日报 · 2026年9月26日</div>
+    <div class="play-meta">语音版 · 小宇宙</div>
+  </div>
+  <div class="progress-row">
+    <span class="current-time" id="currentTime">00:00</span>
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="duration-time" id="durationTime">--:--</span>
+  </div>
+  <audio id="audioPlayer" preload="metadata">
+    您的浏览器不支持音频播放。
+  </audio>
+</div>
+
+<script>
+  /* 小宇宙音频直链：节目发布后填入；为空时显示"语音版即将上线" */
+  var AUDIO_SRC = "https://media.xyzcdn.net/6aa034c1002d4e51bf4b4f31/lsx0bbIbRdvCjtMbqGsWIuVOd2hw.m4a";  /* 小宇宙直链，未发布时留空 */
+  var audio = document.getElementById('audioPlayer');
+  if (AUDIO_SRC) {
+    audio.src = AUDIO_SRC;
+  } else {
+    var metaEl = document.querySelector('.play-meta');
+    if (metaEl) { metaEl.innerHTML = '语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
+  }
+  var playBtn = document.getElementById('playBtn');
+  var progressFill = document.getElementById('progressFill');
+  var currentTimeEl = document.getElementById('currentTime');
+  var durationTimeEl = document.getElementById('durationTime');
+  var progressBar = document.getElementById('progressBar');
+  var isPlaying = false;
+
+  function togglePlay() {
+    if (!audio.src) { return; }
+    if (audio.paused) { audio.play(); playBtn.innerHTML = '&#10074;&#10074;'; isPlaying = true; }
+    else { audio.pause(); playBtn.innerHTML = '&#9654;'; isPlaying = false; }
+  }
+  function formatTime(s) {
+    if (isNaN(s)) return '--:--';
+    var m = Math.floor(s / 60); var sec = Math.floor(s % 60);
+    return (m < 10 ? '0' : '') + m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+  audio.addEventListener('loadedmetadata', function() { durationTimeEl.textContent = formatTime(audio.duration); });
+  audio.addEventListener('timeupdate', function() {
+    var pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  });
+  audio.addEventListener('ended', function() {
+    playBtn.innerHTML = '&#9654;'; isPlaying = false;
+    progressFill.style.width = '0%'; currentTimeEl.textContent = '00:00';
+  });
+  function seekTo(e) {
+    var rect = progressBar.getBoundingClientRect();
+    var x = (e.clientX || e.touches[0].clientX) - rect.left;
+    var pct = x / rect.width;
+    if (audio.duration) { audio.currentTime = pct * audio.duration; }
+  }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
+</script>
 
 <main id="main">
 
