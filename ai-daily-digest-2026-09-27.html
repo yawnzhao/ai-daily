@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-09-27 · 周末补读：代理懂你的偏好吗，云端记忆怎样保护</title>
+<meta name="description" content="周末补读，非今日首发：代理换书实验与云端记忆技术跟进，三篇论文和两款工具；本轮来源检查20/24完成，缺口如实保留。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-27.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-09-27 · 周末补读：代理懂你的偏好吗，云端记忆怎样保护">
+<meta property="og:description" content="周末补读，非今日首发：代理换书实验与云端记忆技术跟进，三篇论文和两款工具；本轮来源检查20/24完成，缺口如实保留。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-27.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-26.html">上一期 · 09-26</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-09-27">2026年9月27日 · 星期日 · 第 21 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">2</span>条资讯</div>
+    <div class="stat"><span class="num">3</span>篇论文</div>
+    <div class="stat"><span class="num">2</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年9月27日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">2 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">周末补读，非今日首发：代理换书实验与云端记忆技术跟进，三篇论文和两款工具；本轮来源检查20/24完成，缺口如实保留。</div></div><div class="news-item" id="project-swap"><div class="news-head"><span class="badge badge-model">代理与偏好</span><h3>代理替你换书之前，先确认它懂不懂你的偏好</h3></div><p>Anthropic 在 9 月 24 日公布 Project Swap：201 名员工参与换书，由 Claude 代理代为协商。参与者另行排列一组书的喜好顺序，以检验代理的理解。短谈之后，模型与人的两两排序一致率为 61%；这不是交易成功率。研究认为，结果离理想分配的差距主要来自偏好表示，而非协商本身。</p><p>这项实验提示，任务执行能力和目标理解应分开评估。它仍是单一公司员工、受控市场和友善模型组成的研究，不能外推成面向全体消费者的购物效果，更不是商业交易产品已经上线。</p><div class="source">来源：<a href="https://www.anthropic.com/research/project-swap" target="_blank" rel="noopener">Anthropic · 研究</a> · 晚发现补读 · 发布于 9 月 24 日 · 已读官方研究正文</div></div><div class="news-item" id="private-memory"><div class="news-head"><span class="badge badge-model">个人 AI</span><h3>跟进：Google 说明如何把持久记忆放进受保护的云端环境</h3></div><p>Google Private AI Compute 团队 9 月 23 日的技术说明，本期已补读正文。其设计让设备持有解密所需的密钥，个人数据以加密形式存储；处理请求时，在隔离的云端安全环境中暂时解密，新增上下文再加密保存。官方还提出公开服务器软件记录，让设备在发送数据前验证软件。</p><p>此前 9 月 24 日刊只记录了该材料未能完整打开，本期补齐机制说明。原文使用面向未来的表述，因此这里报告的是架构与技术计划，不写成所有用户已经获得跨设备永久记忆。我们未独立审计其安全性；加密保护和记忆内容是否准确，也属于不同问题。</p><div class="source">来源：<a href="https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/" target="_blank" rel="noopener">Google DeepMind</a> · 跟进补核 · 发布于 9 月 23 日 · 已读技术说明 · 未独立审计</div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="delegation-check"><div class="insight-banner"><div class="meta">9 月 27 日观察 · 基于 9 月 24 日材料</div><h3>本刊观察：给代理一个目标，还需要一种可检查的验收方式</h3></div><div class="insight-body"><p>从换书实验可以引出一个产品设计问题：系统完成动作之前，用户是否有机会看见它怎样理解目标？以下是本刊推论，并非该研究验证过的部署方案。</p><p>例如，代选礼物可以先展示两个候选和取舍理由；整理新闻可以先区分首发、跟进与旧闻补读；维护代码则可以把通过测试的修改与准备发布的修改分开。样例决策让抽象要求变得可检查，留下过程记录也便于定位偏差。</p><p>评估宜同时看目标理解、执行结果和纠错成本。一次任务成功并不能证明下一次也可靠，动作更多也不等于更符合用户意图。让用户能修改偏好、修正记忆与追回错误，是值得持续观察的设计方向。</p><p>来源：<a href="https://www.anthropic.com/research/project-swap" target="_blank" rel="noopener">本刊分析 · 依据 Project Swap</a> · 9 月 27 日观察 · 基于 9 月 24 日材料 · 明确区分本刊推论与研究结论</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">3 篇论文</span></div><div class="paper-item" id="explorationbench"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">ExplorationBench：用陌生规则区分探索能力与已有知识</span></div><div class="paper-tags"><span class="paper-tag">探索评估</span><span class="paper-tag">首次提交 09/24 · 今日补读</span><span class="paper-tag">仅核对摘要及提交记录</span></div><div class="paper-body"><p>论文首次提交于 9 月 24 日。研究构造可执行、可精确验证且与熟悉知识相冲突的“异世界”，让系统依据有缺陷的手册和环境反馈探索，再完成留出任务。两个沙盒分别设置 70 个任务，论文评估了 10 个 AI 系统。</p><p>摘要报告，较强系统能够学习并使用新规则，但不同探索轨迹差异明显，继续探索有时停滞甚至倒退。这个结果限定在人工沙盒内，不证明真实科学发现能力；它的价值在于把试验、反馈和新任务迁移纳入测量。本期只核对摘要及提交记录。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.30199" target="_blank" rel="noopener">arXiv · 2609.30199 →</a></div><div class="paper-item" id="coding-tamp"><div class="paper-head"><span class="paper-num">02</span><span class="paper-title">编程代理生成规划程序：在冻结程序后测试新场景</span></div><div class="paper-tags"><span class="paper-tag">程序与规划</span><span class="paper-tag">首次提交 09/24 · 今日补读</span><span class="paper-tag">仅核对摘要及提交记录</span></div><div class="paper-body"><p>这篇 9 月 24 日提交的论文让编程代理获得任务描述与模拟器，在固定预算内生成程序，随后冻结程序，在未见实例上评估。实验覆盖 28 个模拟环境；980 个程序各测试 100 次，合计 98,000 个评估回合。</p><p>在有手工规划器可比较的 16 个环境中，摘要报告三种代理配置的平均成功率为 56% 至 95%，规划器为 47%。区间属于不同配置，不是所有环境都达到 95%。这是模拟任务与运动规划结果，不等于真实机器人已具备同等可靠性。本期未核读完整实验附录，也未复现。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.30233" target="_blank" rel="noopener">arXiv · 2609.30233 →</a></div><div class="paper-item" id="itersynth"><div class="paper-head"><span class="paper-num">03</span><span class="paper-title">IterSynth：把检索规划与证据综合分开</span></div><div class="paper-tags"><span class="paper-tag">深度搜索</span><span class="paper-tag">首次提交 09/24 · 今日补读</span><span class="paper-tag">仅核对摘要及提交记录</span></div><div class="paper-body"><p>9 月 24 日提交的 IterSynth 将深度搜索拆成规划者与综合者：前者决定还缺什么信息，后者把证据更新到持续演化的摘要中，避免搜索历史只增不减。训练方法同时考虑最终结果和每轮任务评分，分别分配角色的学习信号。</p><p>摘要报告，8B 模型在五项长程搜索基准上平均得分 50.7。这里引用的是作者报告的综合分数，不是通用正确率。摘要状态是否会遗漏重要反例，是实际使用时值得另外评估的风险；这一点是本刊推论。本期仅核对摘要与首次提交时间。</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.29444" target="_blank" rel="noopener">arXiv · 2609.29444 →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">2 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="buzz"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/block/buzz" target="_blank" rel="noopener">block/buzz：把人与代理的协作放进同一份事件记录</a></span><span class="oss-license">Apache-2.0</span></div><p>Buzz 的官方仓库把它描述为人与代理共用的工作空间，基于自主管理的消息中继，以签名事件记录消息、工作流与代码活动。README 列出频道、搜索、审计日志、桌面端和面向代理的命令行接口，并明确把工作流审批关卡等功能放在仍在接线的栏目。</p><p>它值得观察的方向是把过程与结果放到同一处查看。签名只能帮助确定事件身份，不能自动证明操作正确或权限设计完备。本期核对 README 与 GitHub API 的 Apache-2.0 许可证记录，未安装或实测；这是 9 月 27 日榜单发现，不是当日首发。</p></div></div><div class="oss-item" id="mobile-mcp"><div class="oss-rank top">2</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/mobile-next/mobile-mcp" target="_blank" rel="noopener">mobile-next/mobile-mcp：让代理操作手机应用的连接层</a></span><span class="oss-license">Apache-2.0</span></div><p>该项目通过 MCP 向代理提供 iOS、Android 模拟器及真机操作接口，优先读取无障碍结构，必要时使用截图与坐标。官方说明包含点击、滑动、应用管理及设备操作，也列明不同平台所需的连接和开发环境条件。</p><p>它提供的是设备交互工具，不能替代任务意图、操作授权或结果验证。适合把它作为移动应用测试工具来评估，而不是据此认定代理能可靠处理任意手机任务。许可证经 GitHub API 核对为 Apache-2.0；本期只读仓库，未连接设备或执行代码，按今日工具发现收录。</p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 20/24 个来源完成检查</summary><div class="content"><p>本期采集不完整：24 个配置来源中 20 个完成本轮检查，4 个为 partial，成功率 83.3%；无 failed 或 pending，核心源均已完成本轮检查。partial 为通义实验室、智谱、阶跃星辰和 OpenReview：前三者缺少可完整判定窗口内动态的日期列表，OpenReview 首页是会议入口而非完整论文时间流。不能据此断言这些来源没有新内容。</p><p>主窗口为 2026-09-25 22:00 UTC 至 2026-09-26 22:00 UTC；发现窗口向前回溯 72 小时。刊期从今天开始按 Asia/Shanghai 编号，接续第 20 期为第 21 期，历史日期不改动，来源 UTC 时间保留。仅有日期而无时分的内容，不强行判定落在精确的 24 小时窗口中。</p><p>arXiv 按 cs.AI、cs.LG、cs.CL 与提交时间联合查询，分两页取回接口报告的 312/312 条记录；这表示列表完整提取，不表示逐篇精读。Hugging Face 9 月 26 日列表返回空数组，补读 25 日的 22 条候选。GitHub 日榜及 Python 日榜已提取仓库，所选两个项目均核对官方 README 和 API 许可证。所有研究结果均为作者报告，未独立复现。</p><p>结构化候选共 385 条，合并 14 条重复后为 371 个唯一链接；其中 23 个已见于历史稿或选稿元数据，348 个为本轮候选池中未见历史引用的链接。这个“新增”不是当日新闻数，也不表示已逐篇核验；最终选入 8 个板块。</p><p>本期以 2 条精选、1 条本刊观察、3 篇论文、2 个仓库构成 8 个内容板块；观察与换书条目共用一个来源。Project Swap 为晚发现补读，云端记忆为此前未核全文材料的跟进。Claude 插件、Proaction、UNESCO 课程和 OECD 代理治理等已报道内容不重复展开。DeepMind 列表置顶的 Gemini 3.8 Flash 原文日期为 9 月 2 日，未当成新发布。</p><p>OpenAI 事件时间线在搜索索引中出现 9 月 25 日更新，但本轮正式页面与浏览器均未加载出相应正文；仅保留待核线索，不纳入事实报道。</p><p>待补齐：通义实验室、智谱 Z.ai、阶跃星辰 StepFun、OpenReview。不能据此判断这些来源没有新消息。</p><p>来源核验不等于独立实测；论文解读限于摘要与提交记录。</p></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-26.html">上一期 · 09-26</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
