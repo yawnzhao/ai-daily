@@ -13,9 +13,21 @@
 | `templates/daily.md` | 成稿模板。改格式改这里，不在单篇里即兴发挥 |
 | `data/runs/YYYY-MM-DD-receipts.json` | 当天的采集收据：查了哪些源、成功失败、原始条目。没有收据的成稿不算数 |
 | `config/` | 信源、来源分级与覆盖门槛 |
+| `templates/source-review.md` | 来源与论文轻量周回顾模板 |
+| `data/runs/YYYY-MM-DD-source-review.md` | 按实际跨度保存的来源回顾、论文候选理由与主题追踪 |
 | `scripts/` | 采集、页面生成与发布前校验脚本 |
 | `data/issues/`、`templates/daily.html` | 单期公开元数据与原版四栏目页面模板 |
 | `AGENTS.md` | agent 的执行契约。动手前先读它 |
+
+## 来源与回顾规则
+
+当前来源以 [config/sources.json](config/sources.json) 为准；执行方法见 [AGENTS.md](AGENTS.md)。每次运行先拉取 main，并把配置 commit 记入收据。来源数量从配置计算，历史收据保留当期口径。
+
+2026-09-27 的清单为 32 源：在原有 24 源基础上加入 36氪、网信办、字节 Seed、MiniMax，以及两周试用的 TechCrunch、Ars Technica、MIT Technology Review、404 Media。试用源计入覆盖率，浏览器来源完成补查前仍为 pending。媒体按文章判断原创与转载，不能把域名当作原创保证。
+
+论文继续使用 arXiv、HF Daily Papers、OpenReview 等现有渠道。按稳定论文 ID 记录核验范围与采用理由；每周用 [回顾模板](templates/source-review.md) 做轻量评价，先追踪 Agent 与评测/可靠性两个方向。规则由执行日报的 agent 落实，本次未新增自动评分器或定时任务。
+
+每天还衔接 [AI 话语场素材库](https://github.com/yawnzhao/ai-concourse-library)：播客、访谈、演讲的完整新增清单与待补材料在该库积累，日报按需引用已核验内容。使用现有早晨任务，分别报告两套来源覆盖，先查已有运行避免重复。
 
 ## 公开范围
 
