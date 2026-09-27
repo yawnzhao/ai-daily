@@ -1,0 +1,770 @@
+{
+  "summary": {
+    "window": [
+      "2026-09-24T21:10:00+00:00",
+      "2026-09-27T21:10:00+00:00"
+    ],
+    "planned": 32,
+    "ok": 28,
+    "partial": 4,
+    "failed": 0,
+    "pending_browser": 0,
+    "core_not_ok": [],
+    "timezone": "Asia/Shanghai",
+    "until": "2026-09-27T21:10:00Z",
+    "discovery_hours": 72,
+    "focus_hours": 24,
+    "success_rate": 0.875,
+    "incomplete": true,
+    "selected": 8,
+    "config_commit": "4767efcfadc3ca6e5f9d1ed8335e5f29ee1d455d",
+    "candidate_metrics": {
+      "candidate_occurrences": 32,
+      "unique_candidates": 30,
+      "previously_cited": 7,
+      "new_to_published_archive": 23,
+      "selected": 8,
+      "definition": "含收据 items 与主线程核验的 OpenAI 对齐页；新增指未见于 09-20～09-27 成稿链接，不代表当日首发或全文核验。"
+    }
+  },
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.anthropic.com/news",
+      "status": "ok",
+      "evidence": "页面打开确认 Newsroom；窗口粗筛日期 2026-09-24 可能来自研究区其他卡片；本期精选未采用 Anthropic 新发。",
+      "items": [
+        {
+          "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
+          "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+          "date": "2026-09-23",
+          "decision": "already_reported"
+        }
+      ]
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://claude.com/blog",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 65 处，最新 2026-09-25；窗口内 4 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-25"
+        },
+        {
+          "title": "",
+          "url": "/blog/claude-tag-now-supports-personal-connectors-in-channels",
+          "published_at": "2026-09-24"
+        },
+        {
+          "title": "",
+          "url": "/blog/build-plugins-for-claude",
+          "published_at": "2026-09-24"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-24"
+        }
+      ]
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 1230 条，带日期 1230 条，最新 2026-09-25T19:00:00+00:00；窗口内 1 条；主线程另核 alignment 报告与 third-party impact 页面（见 related_verified）。",
+      "items": [
+        {
+          "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+          "url": "https://openai.com/index/proaction",
+          "date": "2026-09-25T19:00:00+00:00",
+          "decision": "already_reported"
+        }
+      ],
+      "related_verified": [
+        {
+          "title": "An agent used DNS to reach an external chatbot",
+          "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+          "date": "report_updated_2026-09-25",
+          "sample": "2026-09-20",
+          "verification_scope": "full_report",
+          "selected": true
+        },
+        {
+          "title": "The Hugging Face incident and other third-party impact from misaligned models",
+          "url": "https://openai.com/hugging-face-incident-and-misalignment/",
+          "date": "page_shows_September_25_2026",
+          "verification_scope": "opened_full_page",
+          "selected": true
+        },
+        {
+          "title": "Self-replicating prompt injections exist",
+          "url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+          "date": "disclosure_2026-09-25",
+          "verification_scope": "full_report",
+          "selected": true
+        }
+      ]
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-23T18:00:00+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://x.ai/news",
+      "status": "ok",
+      "evidence": "浏览器 headless 打开 https://x.ai/news：可见 Grok 4.7 等条目；页面 datetime 最新为 2026-09-22，落在发现窗口(since 2026-09-24T21:10Z)之外；窗口内 0 条。",
+      "items": [],
+      "reviewed_at": "2026-09-27T21:20:00Z"
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 100 条，带日期 100 条，最新 2026-09-24T16:20:39+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-09-24T14:00:50+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 868 条，带日期 868 条，最新 2026-09-24T14:08:57+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-09-23T00:00:00+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://blogs.microsoft.com/ai/",
+      "status": "ok",
+      "evidence": "浏览器打开 https://blogs.microsoft.com/ai/：页面可达，列出多篇 AI 相关文章标题，但未提取到 2026-09-20 及之后的绝对发布日期；按可见列表判断发现窗口内无新增日期条目。",
+      "items": [],
+      "reviewed_at": "2026-09-27T21:20:00Z"
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://qwenlm.github.io/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 10 处，最新 2025-09-23；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "tongyi",
+      "name": "通义实验室",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://qianwen.aliyun.com/",
+      "status": "partial",
+      "evidence": "HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目",
+      "items": []
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 152 处，最新 2026-09-14；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "moonshot",
+      "name": "月之暗面 Moonshot",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.moonshot.cn/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 6 处，最新 2026-07-17；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "zhipu",
+      "name": "智谱 Z.ai",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.zhipuai.cn/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 319 处，最新 2026-09-10；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.stepfun.com/",
+      "status": "partial",
+      "evidence": "HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目",
+      "items": []
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 90 处，最新 2026-09-16；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 15 处，最新 2026-09-24；窗口内 2 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Press statement of the 20th meeting of the European Board for Digital Services",
+          "url": "/en/news/press-statement-20th-meeting-european-board-digital-services",
+          "published_at": "2026-09-24"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-24"
+        }
+      ]
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 16 处，最新 2026-09-25；窗口内 1 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-25"
+        }
+      ]
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 139 处，最新 2026-09-25；窗口内 5 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Governing with agentic AI: when machines act on government’s behalf",
+          "url": "/en/wonk/governing-with-agentic-ai-when-machines-act-on-governments-behalf",
+          "published_at": "2026-09-25"
+        },
+        {
+          "title": "Agentic AI raises new questions about how governments can maintain standards of safe, secure and trustworthy AI while ma",
+          "url": "/en/wonk/governing-with-agentic-ai-when-machines-act-on-governments-behalf",
+          "published_at": "2026-09-25"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-25"
+        },
+        {
+          "title": "How are different organisations using agentic AI in practice? What governance approaches are they adopting to manage it ",
+          "url": "/en/wonk/putting-agentic-ai-systems-to-work-what-practitioners-reveal-about-deployment-and-governance",
+          "published_at": "2026-09-24"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-24"
+        }
+      ]
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "status": "ok",
+      "evidence": "API query cat:cs.AI|LG|CL sortBy submittedDate；接口最新批次停在 2026-09-24T17:59Z；提交日查询 2026-09-25～27 的 URL 语法未成功，改用最新列表前 40 条。主线程核摘要并选 2 篇。",
+      "items": [
+        {
+          "paper_key": "arxiv:2609.30266",
+          "title": "LLM Agents Can Easily Tamper With Their Own Traces",
+          "url": "https://arxiv.org/abs/2609.30266",
+          "date": "2026-09-24T17:59:54Z",
+          "discovery_sources": [
+            "arxiv"
+          ],
+          "verification_scope": "abstract",
+          "decision": "selected",
+          "selected_item_ids": [
+            "trace-tamper"
+          ]
+        },
+        {
+          "paper_key": "arxiv:2609.30217",
+          "title": "Instrumental Monitor Evasion Emerges Under Ordinary Task Pressure",
+          "url": "https://arxiv.org/abs/2609.30217",
+          "date": "2026-09-24T17:46:27Z",
+          "discovery_sources": [
+            "arxiv"
+          ],
+          "verification_scope": "abstract",
+          "decision": "selected",
+          "selected_item_ids": [
+            "evasionbench"
+          ]
+        },
+        {
+          "paper_key": "arxiv:2609.30199",
+          "title": "ExplorationBench",
+          "url": "https://arxiv.org/abs/2609.30199",
+          "date": "2026-09-24T17:37:14Z",
+          "decision": "already_reported"
+        }
+      ]
+    },
+    {
+      "source_id": "hf-daily-papers",
+      "name": "Hugging Face Daily Papers",
+      "core": false,
+      "method": "api",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://huggingface.co/api/daily_papers",
+      "status": "ok",
+      "evidence": "API daily_papers：09-25 返回 22 条，09-26/27 返回空数组；空数组不代表无论文发表。",
+      "items": [
+        {
+          "date": "2026-09-25",
+          "count": 22,
+          "note": "接口返回 22 条；含 ExplorationBench 等，多数已见于或与 09-24 提交重叠"
+        },
+        {
+          "date": "2026-09-26",
+          "count": 0
+        },
+        {
+          "date": "2026-09-27",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "source_id": "openreview",
+      "name": "OpenReview",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://openreview.net/",
+      "status": "partial",
+      "evidence": "浏览器打开 https://openreview.net/：首页为 Venues 会议入口列表，不是可按提交时间浏览的完整论文时间流；无法完整判定发现窗口内新投稿。",
+      "items": [],
+      "reviewed_at": "2026-09-27T21:20:00Z"
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
+      "status": "ok",
+      "evidence": "日榜与 Python 日榜页面提取仓库；star/许可证以 api.github.com 复核。选 scriptc。",
+      "items": [
+        {
+          "repo": "vercel-labs/scriptc",
+          "url": "https://github.com/vercel-labs/scriptc",
+          "stars_api": 5353,
+          "license": "Apache-2.0",
+          "decision": "selected"
+        },
+        {
+          "repo": "NVIDIA/Model-Optimizer",
+          "url": "https://github.com/NVIDIA/Model-Optimizer",
+          "stars_api": 4926,
+          "license": "Apache-2.0",
+          "decision": "not_selected"
+        },
+        {
+          "repo": "microsoft/data-formulator",
+          "url": "https://github.com/microsoft/data-formulator",
+          "stars_api": 17425,
+          "license": "MIT",
+          "decision": "already_known_or_not_selected"
+        },
+        {
+          "repo": "paperclipai/paperclip",
+          "url": "https://github.com/paperclipai/paperclip",
+          "decision": "already_reported"
+        },
+        {
+          "repo": "vectorize-io/hindsight",
+          "url": "https://github.com/vectorize-io/hindsight",
+          "decision": "already_reported"
+        }
+      ]
+    },
+    {
+      "source_id": "36kr-ai",
+      "name": "36氪 AI 频道（逐篇核验原创与转载）",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.36kr.com/information/AI/",
+      "status": "ok",
+      "evidence": "浏览器打开 AI 频道列表：可见相对时间（13–20小时前）与绝对日期 2026-09-24～09-26；抽样打开 /p/4001348750512260，标题为「刚刚，Gemini 4 Pro全新曝光，实测碾压Opus 5.5」，属未经验证的产品曝光/测评转述，未选入；其余条目未逐篇打开全文。",
+      "items": [
+        {
+          "title": "刚刚，Gemini 4 Pro全新曝光，实测碾压Opus 5.5",
+          "url": "https://www.36kr.com/p/4001348750512260",
+          "date": "2026-09-28",
+          "tier_hint": "relay",
+          "verification_scope": "opened_title_only",
+          "decision": "not_selected",
+          "decision_reason": "无 Google 官方首发可核，属曝光/测评转述"
+        }
+      ],
+      "reviewed_at": "2026-09-27T21:20:00Z"
+    },
+    {
+      "source_id": "cac-ai",
+      "name": "国家网信办·网信发布（AI 相关）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 20 处，最新 2026-09-23；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "bytedance-seed",
+      "name": "字节跳动 Seed·博客与论文",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://seed.bytedance.com/research",
+      "status": "partial",
+      "evidence": "浏览器打开 https://seed.bytedance.com/research：可见 Blog & Publication 推荐卡片（含 SeedRealtime 等）；点开 SeedRealtime 文稿提取日期 2026-08-05，在窗口外。推荐区不能证明完整窗口覆盖，按配置 note 记 partial。",
+      "items": [
+        {
+          "title": "SeedRealtime Audio-Visual Full-Duplex LLM Released",
+          "url": "https://seed.bytedance.com/en/blog/seedrealtime-audio-visual-full-duplex-llm-released-toward-omni-modal-natural-interaction",
+          "date": "2026-08-05",
+          "decision": "out_of_window"
+        }
+      ],
+      "reviewed_at": "2026-09-27T21:20:00Z"
+    },
+    {
+      "source_id": "minimax",
+      "name": "MiniMax·News & Updates",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.minimax.io/news",
+      "status": "ok",
+      "evidence": "浏览器打开 https://www.minimax.io/news：可见新闻卡片；打开 Speech 2.8（日期 2026-01-23）与 M2.7（2026-03-18）均在窗口外。News 入口在发现窗口内无新发布卡片可确认。",
+      "items": [],
+      "reviewed_at": "2026-09-27T21:20:00Z"
+    },
+    {
+      "source_id": "techcrunch-ai",
+      "name": "TechCrunch AI（试用）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "页面粗筛混有作者页；主线程重抓文章链接并打开 53-images 全文；金额类条目未核官网故不入选。",
+      "items": [
+        {
+          "title": "Unsecured OpenAI agents posted 53 user images…",
+          "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+          "date": "2026-09-25",
+          "tier": "original",
+          "verification_scope": "opened_full",
+          "decision": "used_as_secondary_to_openai_primary"
+        },
+        {
+          "title": "Anthropic to pay Akamai $11.6 billion…",
+          "url": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal/",
+          "date": "2026-09-25",
+          "decision": "not_selected",
+          "decision_reason": "金额须官网复核，本期未打开 Anthropic/Akamai 官方确认"
+        }
+      ]
+    },
+    {
+      "source_id": "ars-technica-ai",
+      "name": "Ars Technica AI（试用）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://arstechnica.com/ai/",
+      "status": "ok",
+      "evidence": "重抓文章链接；打开澳大利亚政府门户事件全文作为背景；本期重点以 OpenAI 官方披露为主。",
+      "items": [
+        {
+          "title": "OpenAI agent “didn’t accept no for an answer” in Australian government breach",
+          "url": "https://arstechnica.com/ai/2026/09/openai-agent-didnt-accept-no-for-an-answer-in-australian-government-breach/",
+          "date": "2026-09-24",
+          "tier": "original",
+          "verification_scope": "opened_full",
+          "decision": "cited_as_context_not_featured"
+        },
+        {
+          "title": "Court rules Pentagon can blacklist Anthropic…",
+          "url": "https://arstechnica.com/tech-policy/2026/09/court-rules-trump-can-blacklist-anthropic-for-refusing-to-enable-claude-features/",
+          "date": "2026-09-25",
+          "decision": "not_selected"
+        }
+      ]
+    },
+    {
+      "source_id": "mit-technology-review-ai",
+      "name": "MIT Technology Review AI（试用）",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "浏览器打开 AI 专题列表：提取到多篇带绝对日期的文章链接，窗口内包括 2026-09-25 Pentagon AI lie detector 等；抽样打开该文页面可达，正文较长，本期未作精选。",
+      "items": [
+        {
+          "title": "The Pentagon wants $30 million to build an AI-powered lie detector",
+          "url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector/",
+          "date": "2026-09-25",
+          "tier_hint": "original",
+          "verification_scope": "opened_page",
+          "decision": "not_selected",
+          "decision_reason": "政策/采购线索，本期主题聚焦 OpenAI 对齐披露"
+        }
+      ],
+      "reviewed_at": "2026-09-27T21:20:00Z"
+    },
+    {
+      "source_id": "404-media",
+      "name": "404 Media（试用）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-09-27T21:08:14+00:00",
+      "checked_url": "https://www.404media.co/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 51 处，最新 2026-09-26；窗口内 9 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Subscribe",
+          "url": "/signup/",
+          "published_at": "2026-09-26"
+        },
+        {
+          "title": "Becky Ferreira",
+          "url": "/author/becky/",
+          "published_at": "2026-09-26"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-26"
+        },
+        {
+          "title": "Joseph Cox",
+          "url": "/author/joseph-cox/",
+          "published_at": "2026-09-25"
+        },
+        {
+          "title": "Jason Koebler",
+          "url": "/author/jason-koebler/",
+          "published_at": "2026-09-25"
+        },
+        {
+          "title": "Becky Ferreira",
+          "url": "/author/becky/",
+          "published_at": "2026-09-25"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-25"
+        },
+        {
+          "title": "Matthew Gault",
+          "url": "/author/matthew/",
+          "published_at": "2026-09-24"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-24"
+        }
+      ]
+    }
+  ],
+  "config_commit": "4767efcfadc3ca6e5f9d1ed8335e5f29ee1d455d",
+  "date_policy": {
+    "issue_date": "2026-09-28",
+    "timezone": "Asia/Shanghai",
+    "volume": 22,
+    "previous_issue": "2026-09-27",
+    "focus_window": {
+      "since": "2026-09-26T21:10:00Z",
+      "until": "2026-09-27T21:10:00Z",
+      "hours": 24
+    },
+    "discovery_window": {
+      "since": "2026-09-24T21:10:00Z",
+      "until": "2026-09-27T21:10:00Z",
+      "hours": 72
+    },
+    "note": "周一覆盖自上一期以来窗口；晚发现保留原始日期"
+  },
+  "discovery": {
+    "web_search": [
+      {
+        "query": "AI news September 27 28 2026 OpenAI Anthropic Google DeepMind",
+        "hits": [
+          "Frontier AI Standards Agency relays",
+          "OpenAI training pause relays"
+        ]
+      },
+      {
+        "query": "人工智能 发布 新闻 2026年9月27日",
+        "hits": [
+          "OpenAI pause Chinese relays"
+        ]
+      }
+    ],
+    "note": "搜索只作发现；Frontier AI Standards Agency 首发据称为 The Information，本期未打开付费原文，不作为精选。"
+  },
+  "verification": [
+    {
+      "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+      "method": "WebFetch",
+      "result": "ok_full"
+    },
+    {
+      "url": "https://openai.com/hugging-face-incident-and-misalignment/",
+      "method": "headless_chrome",
+      "result": "ok_full"
+    },
+    {
+      "url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+      "method": "curl",
+      "result": "ok_full"
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/09/openai-agent-didnt-accept-no-for-an-answer-in-australian-government-breach/",
+      "method": "WebFetch",
+      "result": "ok_full"
+    },
+    {
+      "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+      "method": "WebFetch",
+      "result": "ok_full"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.30266",
+      "method": "arxiv_api_abstract",
+      "result": "ok_abstract"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.30217",
+      "method": "arxiv_api_abstract",
+      "result": "ok_abstract"
+    },
+    {
+      "url": "https://github.com/vercel-labs/scriptc",
+      "method": "gh_api_readme",
+      "result": "ok"
+    }
+  ],
+  "excluded_hits": [],
+  "unverified": [
+    {
+      "claim": "Frontier AI Standards Agency / SAFA CEO approach",
+      "lead_from": "web search relays citing The Information",
+      "reason": "未打开 The Information 原文；无 Google/Anthropic 独立确认页"
+    },
+    {
+      "claim": "Gemini 4 Pro 曝光碾压 Opus 5.5",
+      "lead_from": "36kr",
+      "reason": "无 Google 官方发布"
+    }
+  ]
+}
