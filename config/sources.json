@@ -17,7 +17,8 @@
     "lead_only_domains 里的站点只能提供线索，不能作为任何条目的唯一来源。",
     "blocked_domains 里的站点不得引用，也不得作为线索。",
     "金额、票数、star 数、估值这类数字，必须由主线程用官网或 API 复核；子代理给出的数字只算线索。",
-    "标题和 description 里不写只有 relay 来源的数字。"
+    "标题和 description 里不写只有 relay 来源的数字。",
+    "对 36氪等混合内容平台逐篇判断来源级别：原创采访/调查须打开全文并记录原始发布者，转载/编译追到官方或原始报道；入驻作者、转载、广告及活动推广不因平台域名自动获得 original 级别。同一原文的多站转载只算一份证据。"
   ],
 
   "sources": [
@@ -44,7 +45,11 @@
     {"id": "arxiv", "name": "arXiv cs.AI / cs.LG / cs.CL", "url": "https://export.arxiv.org/api/query", "method": "api", "core": true, "category": "research_society", "region": "global"},
     {"id": "hf-daily-papers", "name": "Hugging Face Daily Papers", "url": "https://huggingface.co/api/daily_papers", "method": "api", "core": false, "category": "research_society", "region": "global", "note": "按上榜日筛选 arXiv 论文；摘要以接口为准，提交日仍回 arXiv abs 页核对"},
     {"id": "openreview", "name": "OpenReview", "url": "https://openreview.net/", "method": "browser", "core": false, "category": "research_society", "region": "global", "note": "会议投稿原文。接口对脚本返回验证页，须浏览器补查"},
-    {"id": "github-trending", "name": "GitHub Trending（日榜 + Python 日榜）", "url": "https://github.com/trending?since=daily", "method": "page", "core": true, "category": "open_tools", "region": "global", "note": "star 数一律用 api.github.com 复核"}
+    {"id": "github-trending", "name": "GitHub Trending（日榜 + Python 日榜）", "url": "https://github.com/trending?since=daily", "method": "page", "core": true, "category": "open_tools", "region": "global", "note": "star 数一律用 api.github.com 复核"},
+    {"id":"36kr-ai","name":"36氪 AI 频道（逐篇核验原创与转载）","url":"https://www.36kr.com/information/AI/","method":"browser","core":false,"category":"applications","region":"China","note":"2026-09-27 经用户要求补入国内来源。用于发现国内产品、创业及产业应用线索；频道混合原创、转载和入驻作者，逐篇记录署名、原始发布者、日期、original/relay 与核验范围，不能按 36kr 域名整体视为 original。原创采访可作为 original；转述需追到官方或原始报道，广告/商单/活动促销不入选。相对时间须回文章页核对绝对时间。"},
+    {"id":"cac-ai","name":"国家网信办·网信发布（AI 相关）","url":"https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm","method":"page","core":false,"category":"policy_governance","region":"China","note":"2026-09-27 补入。只选与人工智能、算法、生成式服务相关的正式公告和政策；逐条核对正文发布日期、发布主体、附件与效力状态，区分征求意见、正式发布和生效日期。页面日期粗筛结果须回正文确认，无关网信动态不选。"},
+    {"id":"bytedance-seed","name":"字节跳动 Seed·博客与论文","url":"https://seed.bytedance.com/research","method":"browser","core":false,"category":"models_products","region":"China","note":"2026-09-27 补入国内机构官方来源，接受中英文原文。渲染后读取 Blog & Publication 卡片的标题、日期和原文链接；继续核对相关模型分类与论文列表，不能把推荐区当作全站完整更新流。论文按 arXiv ID 与既有论文源去重，模型导航和页面版权年份不算发布日期；未完成窗口覆盖记 partial。"},
+    {"id":"minimax","name":"MiniMax·News & Updates","url":"https://www.minimax.io/news","method":"browser","core":false,"category":"models_products","region":"China","note":"2026-09-27 补入国内机构官方来源，接受中英文原文。页面需渲染；读取新闻卡片及日期，必要时 Load More 覆盖发现窗口。另核对导航/页脚中相关模型的官方发布文章，News 无新增只代表该入口，不代表全部产品无更新。模型性能为厂商报告；Speech/Music 等产品名中的版本号不当日期。"}
   ],
 
   "discovery": [
