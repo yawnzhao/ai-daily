@@ -18,7 +18,8 @@
     "blocked_domains 里的站点不得引用，也不得作为线索。",
     "金额、票数、star 数、估值这类数字，必须由主线程用官网或 API 复核；子代理给出的数字只算线索。",
     "标题和 description 里不写只有 relay 来源的数字。",
-    "对 36氪等混合内容平台逐篇判断来源级别：原创采访/调查须打开全文并记录原始发布者，转载/编译追到官方或原始报道；入驻作者、转载、广告及活动推广不因平台域名自动获得 original 级别。同一原文的多站转载只算一份证据。"
+    "对 36氪等混合内容平台逐篇判断来源级别：原创采访/调查须打开全文并记录原始发布者，转载/编译追到官方或原始报道；入驻作者、转载、广告及活动推广不因平台域名自动获得 original 级别。同一原文的多站转载只算一份证据。",
+    "对 TechCrunch、Ars Technica、MIT Technology Review、404 Media 等试用媒体也按文章判断 original/relay：原创采访与调查可作为 original，转引、编译或转载须追溯首发；活动促销、赞助和品牌内容不入选。全文未能读取的只记线索，不凭摘要填 verified_primary_url；多家转载同一原文只算一份证据。"
   ],
 
   "sources": [
@@ -49,7 +50,11 @@
     {"id":"36kr-ai","name":"36氪 AI 频道（逐篇核验原创与转载）","url":"https://www.36kr.com/information/AI/","method":"browser","core":false,"category":"applications","region":"China","note":"2026-09-27 经用户要求补入国内来源。用于发现国内产品、创业及产业应用线索；频道混合原创、转载和入驻作者，逐篇记录署名、原始发布者、日期、original/relay 与核验范围，不能按 36kr 域名整体视为 original。原创采访可作为 original；转述需追到官方或原始报道，广告/商单/活动促销不入选。相对时间须回文章页核对绝对时间。"},
     {"id":"cac-ai","name":"国家网信办·网信发布（AI 相关）","url":"https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm","method":"page","core":false,"category":"policy_governance","region":"China","note":"2026-09-27 补入。只选与人工智能、算法、生成式服务相关的正式公告和政策；逐条核对正文发布日期、发布主体、附件与效力状态，区分征求意见、正式发布和生效日期。页面日期粗筛结果须回正文确认，无关网信动态不选。"},
     {"id":"bytedance-seed","name":"字节跳动 Seed·博客与论文","url":"https://seed.bytedance.com/research","method":"browser","core":false,"category":"models_products","region":"China","note":"2026-09-27 补入国内机构官方来源，接受中英文原文。渲染后读取 Blog & Publication 卡片的标题、日期和原文链接；继续核对相关模型分类与论文列表，不能把推荐区当作全站完整更新流。论文按 arXiv ID 与既有论文源去重，模型导航和页面版权年份不算发布日期；未完成窗口覆盖记 partial。"},
-    {"id":"minimax","name":"MiniMax·News & Updates","url":"https://www.minimax.io/news","method":"browser","core":false,"category":"models_products","region":"China","note":"2026-09-27 补入国内机构官方来源，接受中英文原文。页面需渲染；读取新闻卡片及日期，必要时 Load More 覆盖发现窗口。另核对导航/页脚中相关模型的官方发布文章，News 无新增只代表该入口，不代表全部产品无更新。模型性能为厂商报告；Speech/Music 等产品名中的版本号不当日期。"}
+    {"id":"minimax","name":"MiniMax·News & Updates","url":"https://www.minimax.io/news","method":"browser","core":false,"category":"models_products","region":"China","note":"2026-09-27 补入国内机构官方来源，接受中英文原文。页面需渲染；读取新闻卡片及日期，必要时 Load More 覆盖发现窗口。另核对导航/页脚中相关模型的官方发布文章，News 无新增只代表该入口，不代表全部产品无更新。模型性能为厂商报告；Speech/Music 等产品名中的版本号不当日期。"},
+    {"id":"techcrunch-ai","name":"TechCrunch AI（试用）","url":"https://techcrunch.com/category/artificial-intelligence/","method":"page","core":false,"category":"applications","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补产品、创业及融资报道；只收 AI 相关编辑内容，排除 TechCrunch Events、票务促销、赞助/品牌内容。逐篇核绝对发布时间、署名、原始发布者和引用对象；原创采访可为 original，In Brief 或转述追到原始报道/官方材料，不按域名自动评级。page 粗筛后须打开正文，未覆盖发现窗口记 partial。"},
+    {"id":"ars-technica-ai","name":"Ars Technica AI（试用）","url":"https://arstechnica.com/ai/","method":"page","core":false,"category":"research_society","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补技术分析、安全、监管及社会影响报道；栏目混有其他主题和 Financial Times/WIRED 等转载，逐篇核署名、首发出处、绝对日期和 original/relay，转载同一原文不算独立证据。只选 AI 相关项，页面粗筛与列表可达不代表正文已核；覆盖不足记 partial。"},
+    {"id":"mit-technology-review-ai","name":"MIT Technology Review AI（试用）","url":"https://www.technologyreview.com/topic/artificial-intelligence/","method":"browser","core":false,"category":"research_society","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补研究背景及技术的商业、社会影响；每日检查列表，深度内容在每周回顾集中评估，不要求日更或每日采用。页面需渲染，2026-09-27 仅确认栏目框架与官方 feed 入口，尚未证明完整窗口覆盖。先记 pending，浏览器核对列表及正文后按实际回写。保留作者、绝对发布日期、首发出处和核验范围；摘要/付费墙不当全文，未能打开正文仅作线索；原始研究结论仍回论文。"},
+    {"id":"404-media","name":"404 Media（试用）","url":"https://www.404media.co/","method":"page","core":false,"category":"research_society","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补独立调查、安全、劳动与平台影响视角；首页包含非 AI 新闻、播客及站务，只收 AI 相关原创采访/调查或明确关联的报道。打开正文核作者、日期及证据归属；仅标题/摘要或登录/订阅受限只留线索，不据此填 verified_primary_url。必要时 Load more 覆盖发现窗口；未覆盖记 partial，不能把首页可达当完整采集。"}
   ],
 
   "discovery": [
