@@ -7,9 +7,9 @@
 2026-09-18 起以下各项已有依据，可以开始每日例行：
 
 - **信源清单与准入门槛**：`config/sources.json` 是唯一来源清单；计划数量、来源 ID、核心标记、采集方式、来源说明、分级和选稿规则均从当次配置读取，不在执行说明中维护固定数量或名单。清单变更是人的决定，已获用户确认的调整应同步配置与相关规则。
-- **发布去向**：GitHub Pages 站点（第 4 节）与小宇宙语音版（第 5 节）。Notion「AI 早报」不归本库管。
+- **发布去向**：成稿只写在本库 `daily/YYYY/YYYY-MM-DD.md`，并随 git 提交。GitHub Pages（第 4 节）与小宇宙语音版（第 5 节）都从这份 Markdown 生成。本流水线不向 Notion 发布，也不维护 Notion 页面。
 - **选稿口径**：重点最多 5 条（`config/sources.json` 的 `featured_max`）；快讯不设上限。两者都按实际，不凑数。
-- **时区**：Europe/Paris；运行时刻以 routine 的设置为准。
+- **时区与运行时刻**：Asia/Shanghai（北京时间，UTC+8）。每日例行在当天 **05:00** 北京时间启动，即前一日历日 **21:00 UTC**。刊期文件名用北京时间的日历日。采集 `--until` 填该次运行的 UTC 时刻；按时启动时即为前一日历日 `T21:00:00Z`。
 - **覆盖范围**：暂按 `config/sources.json` 的五类议题（模型产品、开源工具、应用、政策治理、研究与社会影响）。
 
 规则由人来定。缺规则或遇到上面没写到的边界情况，不要自行设定门槛来凑数，停下来问。
@@ -17,9 +17,9 @@
 ## 1. 每天做什么
 
 1. `git pull --ff-only origin main`。失败就停下报告，**不覆盖本地修改，不 force**。读取本轮 `AGENTS.md` 与 `config/sources.json`，记录配置所在的 commit SHA；不要沿用旧聊天或历史收据里的来源数量。
-2. 跑采集脚本，截止时间填当前 UTC 时间：
+2. 跑采集脚本。例行在北京时间当天 05:00 启动，`--until` 填该时刻的 UTC（前一日历日 21:00 UTC）。例如北京时间 2026-09-28 05:00 这一期：
    ```
-   python3 scripts/collect_sources.py --until 2026-09-19T06:00:00Z --out data/runs/YYYY-MM-DD-receipts.json
+   python3 scripts/collect_sources.py --until 2026-09-27T21:00:00Z --out data/runs/2026-09-28-receipts.json
    ```
    它逐一抓取 `config/sources.json` 里的 rss 与 page 源，每个源写一条收据（`status` 为 ok / partial / failed / pending），
    发现窗口 72 小时。
@@ -102,7 +102,7 @@
 独立论文项目在 `Paper-Radar`；本库保留自己的「论文速递」、候选收据与周回顾。访谈 / 演讲素材在 `ai-concourse-library`。周报的口播稿与成片在 `reusable_ai_digest_video_workflow` 那条线。
 本库只管日报本身，日报自己的口播稿留在本库 `daily/scripts/`，见第 5 节。2026-09-27 用户确认每日同时检查「话语场」新增播客、访谈与演讲：素材扫描、候选库及新增清单写在 `ai-concourse-library`，遵循该库规则；本日报只引用其已核验原片/文字和候选链接，按自身标准选稿，不复制整库或改 Paper-Radar。
 
-本机现有 06:00 准备任务负责衔接话语场，先查该库同日扫描和提交，能复用则不重跑，缺项再补。两套来源覆盖率分别计算，不把话语场的频道/人物搜索混进 `config/sources.json` 的分母；报告要分别列出「AI 日报」与「话语场新增」。话语场暂缺材料不会自动降低新闻源成功率，也不能让日报无限等待。具体阶段、恢复与防重见本机运行约定及话语场的 `bots/OPERATIONS.md`。
+每日例行在北京时间 05:00（前一日历日 21:00 UTC）启动，并在同一次运行里衔接话语场：先查该库同日扫描和提交，能复用则不重跑，缺项再补。两套来源覆盖率分别计算，不把话语场的频道/人物搜索混进 `config/sources.json` 的分母；报告要分别列出「AI 日报」与「话语场新增」。话语场暂缺材料不会自动降低新闻源成功率，也不能让日报无限等待。具体阶段、恢复与防重见本机运行约定及话语场的 `bots/OPERATIONS.md`。
 
 ## 4. 网页版
 
