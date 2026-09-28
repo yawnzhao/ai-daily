@@ -1,40 +1,53 @@
 {
+  "date": "2026-09-29",
+  "run_timezone": "Asia/Shanghai",
+  "config_commit": "10c519f329a10426b3790d9c25f212e368d37868",
+  "cutoff": "2026-09-28T22:00:00Z",
+  "focus_since": "2026-09-27T22:00:00Z",
+  "discovery_since": "2026-09-25T22:00:00Z",
   "summary": {
-    "window": [
-      "2026-09-26T21:18:00Z",
-      "2026-09-28T21:18:00Z"
-    ],
-    "focus_window": [
-      "2026-09-27T22:00:00Z",
-      "2026-09-28T22:00:00Z"
-    ],
-    "planned": 16,
-    "ok": 13,
-    "partial": 3,
+    "planned": 32,
+    "ok": 24,
+    "partial": 8,
     "failed": 0,
-    "pending_browser": 0,
+    "success_rate": 0.75,
+    "complete": false,
     "core_not_ok": [],
-    "timezone": "Asia/Shanghai",
-    "until": "2026-09-28T21:18:00Z",
-    "discovery_hours": 72,
-    "focus_hours": 24,
-    "success_rate": 0.8125,
-    "incomplete": true,
-    "selected": 8,
-    "config_commit": null,
-    "config_path": "ai-concourse-library/config/guides.json",
-    "note": "本轮按父任务权威配置采集 guides.json 16 源；非 ai-daily sources.json 32 源全量。"
+    "incomplete": true
   },
   "sources": [
     {
-      "source_id": "news-1",
+      "id": "anthropic",
       "name": "Anthropic News",
+      "url": "https://www.anthropic.com/news",
+      "method": "page",
       "core": true,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://www.anthropic.com/news",
+      "category": "models_products",
+      "region": "global",
+      "source_id": "anthropic",
       "status": "ok",
-      "evidence": "Opened Anthropic Newsroom HTML. Featured grid lists Introducing Claude Sonnet 5.5 dated 2026-09-28 (url /claude-sonnet-5-5). Opened and read full primary https://www.anthropic.com/claude-sonnet-5-5 (date September 28, 2026). Older cards: enzyme Sep 23, Opus 5.5 Sep 22 already covered prior issues. Third-party RSS stale vs live page.",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "当前新闻表：Sonnet 5.5 Sep28，下一条Sep23；已读新品原文。",
+      "upstream_receipt": {
+        "source_id": "news-1",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://www.anthropic.com/news",
+        "evidence": "Opened Anthropic Newsroom HTML. Featured grid lists Introducing Claude Sonnet 5.5 dated 2026-09-28 (url /claude-sonnet-5-5). Opened and read full primary https://www.anthropic.com/claude-sonnet-5-5 (date September 28, 2026). Older cards: enzyme Sep 23, Opus 5.5 Sep 22 already covered prior issues. Third-party RSS stale vs live page.",
+        "items": [
+          {
+            "title": "Introducing Claude Sonnet 5.5",
+            "url": "https://www.anthropic.com/claude-sonnet-5-5",
+            "event_id": "anthropic-claude-sonnet-5-5-2026-09-28",
+            "category": "models_products",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://www.anthropic.com/claude-sonnet-5-5"
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "Introducing Claude Sonnet 5.5",
@@ -44,17 +57,44 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": "https://www.anthropic.com/claude-sonnet-5-5"
         }
+      ],
+      "evidence_files": [
+        "evidence/anthropic.raw",
+        "evidence/anthropic.txt"
       ]
     },
     {
-      "source_id": "news-2",
-      "name": "Claude Blog / Academy",
+      "id": "claude-blog",
+      "name": "Claude Blog",
+      "url": "https://claude.com/blog",
+      "method": "page",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://claude.com/blog",
+      "category": "open_tools",
+      "region": "global",
+      "source_id": "claude-blog",
       "status": "ok",
-      "evidence": "Opened Claude Blog listing. Window cards: Sep 28 NVIDIA agent control; Sep 25 Build plugins; Sep 24 Claude Tag personal connectors / Opus 5.5 coding. Opened and read https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia (pairs with NVIDIA Open Agent Safety Platform).",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "完整列表含Sep28 NVIDIA合作、Sep25插件及更早；合作正文已核。",
+      "upstream_receipt": {
+        "source_id": "news-2",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://claude.com/blog",
+        "evidence": "Opened Claude Blog listing. Window cards: Sep 28 NVIDIA agent control; Sep 25 Build plugins; Sep 24 Claude Tag personal connectors / Opus 5.5 coding. Opened and read https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia (pairs with NVIDIA Open Agent Safety Platform).",
+        "items": [
+          {
+            "title": "Giving companies more control over their AI agents, with NVIDIA",
+            "url": "https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia",
+            "event_id": "nvidia-open-agent-safety-platform-2026-09-28",
+            "category": "models_products",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia"
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "Giving companies more control over their AI agents, with NVIDIA",
@@ -64,17 +104,54 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": "https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia"
         }
+      ],
+      "evidence_files": [
+        "evidence/claude-blog.txt",
+        "evidence/claude-blog.raw"
       ]
     },
     {
-      "source_id": "news-3",
+      "id": "openai",
       "name": "OpenAI News",
+      "url": "https://openai.com/news",
+      "feed": "https://openai.com/news/rss.xml",
+      "method": "rss",
       "core": true,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://openai.com/news",
+      "category": "models_products",
+      "region": "global",
+      "note": "页面对脚本返回 403，RSS 可用",
+      "source_id": "openai",
       "status": "ok",
-      "evidence": "Opened OpenAI News page + news RSS. Window cards Sep 28: Lenfest AI Collaborative expansion; Basis tax workbook with GPT-6 Astra; Codex Originals form. Opened Lenfest and Basis article HTML (both dated September 28, 2026). Prior alignment pages already featured 09-28 issue.",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "Parsed 1233 entries; delta hits 0; latest 2026-09-28T07:00:00+00:00",
+      "upstream_receipt": {
+        "source_id": "news-3",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://openai.com/news",
+        "evidence": "Opened OpenAI News page + news RSS. Window cards Sep 28: Lenfest AI Collaborative expansion; Basis tax workbook with GPT-6 Astra; Codex Originals form. Opened Lenfest and Basis article HTML (both dated September 28, 2026). Prior alignment pages already featured 09-28 issue.",
+        "items": [
+          {
+            "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+            "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+            "event_id": "openai-lenfest-expansion-2026-09-28",
+            "category": "applications",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://openai.com/index/lenfest-ai-collaborative-expansion"
+          },
+          {
+            "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
+            "url": "https://openai.com/index/basis-tax-workbook-with-astra",
+            "event_id": "openai-basis-astra-2026-09-28",
+            "category": "applications",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://openai.com/index/basis-tax-workbook-with-astra"
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
@@ -92,17 +169,44 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": "https://openai.com/index/basis-tax-workbook-with-astra"
         }
+      ],
+      "evidence_files": [
+        "evidence/openai.raw"
       ]
     },
     {
-      "source_id": "news-4",
-      "name": "Google Gemini / DeepMind",
+      "id": "google-ai",
+      "name": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/",
+      "feed": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "method": "rss",
       "core": true,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://blog.google/innovation-and-ai/",
+      "category": "models_products",
+      "region": "global",
+      "source_id": "google-ai",
       "status": "ok",
-      "evidence": "Opened Google Innovation & AI hub + site RSS. Window (site RSS): Future Vision XPRIZE Sep 28; Arts & Culture app; See what 4 builders are making with Gemini 3.8 Flash Sep 28; Edy's Grocer Gemini; Vertical Video Unification. Opened builders post https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-flash-developers/ (Sep 28, 2026); post states Gemini 3.8 Flash already launched earlier this month—this is community showcase, not first release.",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "Parsed 20 entries; delta hits 0; latest 2026-09-28T19:00:00+00:00",
+      "upstream_receipt": {
+        "source_id": "news-4",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://blog.google/innovation-and-ai/",
+        "evidence": "Opened Google Innovation & AI hub + site RSS. Window (site RSS): Future Vision XPRIZE Sep 28; Arts & Culture app; See what 4 builders are making with Gemini 3.8 Flash Sep 28; Edy's Grocer Gemini; Vertical Video Unification. Opened builders post https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-flash-developers/ (Sep 28, 2026); post states Gemini 3.8 Flash already launched earlier this month—this is community showcase, not first release.",
+        "items": [
+          {
+            "title": "See what 4 builders are making with Gemini 3.8 Flash",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-flash-developers/",
+            "event_id": "google-gemini-3-8-flash-builders-2026-09-28",
+            "category": "models_products",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-flash-developers/"
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "See what 4 builders are making with Gemini 3.8 Flash",
@@ -112,28 +216,44 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-flash-developers/"
         }
+      ],
+      "evidence_files": [
+        "evidence/google-ai.raw"
       ]
     },
     {
-      "source_id": "news-5",
-      "name": "Cursor Changelog",
-      "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://cursor.com/changelog",
-      "status": "ok",
-      "evidence": "Opened Cursor Changelog + RSS. Latest dated entry Rollouts and Security Review 2026-09-23; no new changelog card dated 2026-09-26 through 2026-09-29 in 72h window after prior issue coverage.",
-      "items": []
-    },
-    {
-      "source_id": "news-6",
+      "id": "xai",
       "name": "xAI",
-      "core": true,
+      "url": "https://x.ai/news",
       "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://x.ai/news",
+      "core": true,
+      "category": "models_products",
+      "region": "global",
+      "note": "脚本 403，只能走浏览器",
+      "source_id": "xai",
       "status": "ok",
-      "evidence": "Opened x.ai/news (SpaceXAI). Listing shows Product · Sep 28, 2026 Team Bots. Opened and read https://x.ai/news/team-bots (page date Sep 28, 2026). Grok 4.7 Sep 21 outside focus for re-feature.",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "渲染新闻表最新Team Bots Sep28，下一条Sep22；完整原文已读。",
+      "upstream_receipt": {
+        "source_id": "news-6",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://x.ai/news",
+        "evidence": "Opened x.ai/news (SpaceXAI). Listing shows Product · Sep 28, 2026 Team Bots. Opened and read https://x.ai/news/team-bots (page date Sep 28, 2026). Grok 4.7 Sep 21 outside focus for re-feature.",
+        "items": [
+          {
+            "title": "Team Bots: AI coworkers that learn from your team",
+            "url": "https://x.ai/news/team-bots",
+            "event_id": "xai-team-bots-2026-09-28",
+            "category": "models_products",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://x.ai/news/team-bots"
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "Team Bots: AI coworkers that learn from your team",
@@ -143,17 +263,75 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": "https://x.ai/news/team-bots"
         }
+      ],
+      "evidence_files": [
+        "evidence/browser-xai.txt"
       ]
     },
     {
-      "source_id": "news-7",
-      "name": "NVIDIA Newsroom",
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "url": "https://deepmind.google/blog/",
+      "feed": "https://deepmind.google/blog/rss.xml",
+      "method": "rss",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://nvidianews.nvidia.com",
+      "category": "research_society",
+      "region": "global",
+      "source_id": "deepmind",
       "status": "ok",
-      "evidence": "Opened NVIDIA Newsroom + releases.xml. Window: Open Agent Safety Platform 2026-09-28 09:00 UTC; $150B share repurchase 2026-09-28 (finance, not selected). Opened and read full press release https://nvidianews.nvidia.com/news/open-agent-safety-platform (September 28, 2026).",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "补解gzip RSS；最新Sep24 Live Avatar，已覆盖发现窗口，无窗口内新首发。",
+      "upstream_receipt": {
+        "source_id": "deepmind",
+        "status": "partial",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://deepmind.google/blog/",
+        "evidence": "Opened DeepMind News/blog page. Cards show month-level 'September 2026' only (Gemini 3.8 Flash/Cyber, Live Avatar, Private AI Compute memory, TTS, etc.) without day-level timestamps on listing; RSS was gzip/binary and not usable as dated feed. Cannot verify day within 72h window for individual posts → partial.",
+        "items": []
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
+      "items": [],
+      "evidence_files": [
+        "evidence/deepmind-feed.txt",
+        "evidence/deepmind-feed.raw",
+        "evidence/deepmind.raw"
+      ]
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "url": "https://nvidianews.nvidia.com",
+      "feed": "https://nvidianews.nvidia.com/releases.xml",
+      "method": "rss",
+      "core": false,
+      "category": "applications",
+      "region": "global",
+      "source_id": "nvidia",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "Parsed 20 entries; delta hits 0; latest 2026-09-28T11:00:00+00:00",
+      "upstream_receipt": {
+        "source_id": "news-7",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://nvidianews.nvidia.com",
+        "evidence": "Opened NVIDIA Newsroom + releases.xml. Window: Open Agent Safety Platform 2026-09-28 09:00 UTC; $150B share repurchase 2026-09-28 (finance, not selected). Opened and read full press release https://nvidianews.nvidia.com/news/open-agent-safety-platform (September 28, 2026).",
+        "items": [
+          {
+            "title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment",
+            "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+            "event_id": "nvidia-open-agent-safety-platform-2026-09-28",
+            "category": "policy_governance",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform"
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment",
@@ -163,28 +341,48 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform"
         }
+      ],
+      "evidence_files": [
+        "evidence/primary-claude-nvidia.html",
+        "evidence/primary-nvidia-safety.html",
+        "evidence/primary-claude-nvidia.txt",
+        "evidence/nvidia.raw",
+        "evidence/primary-nvidia-safety.txt"
       ]
     },
     {
-      "source_id": "deepmind",
-      "name": "Google DeepMind",
-      "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://deepmind.google/blog/",
-      "status": "partial",
-      "evidence": "Opened DeepMind News/blog page. Cards show month-level 'September 2026' only (Gemini 3.8 Flash/Cyber, Live Avatar, Private AI Compute memory, TTS, etc.) without day-level timestamps on listing; RSS was gzip/binary and not usable as dated feed. Cannot verify day within 72h window for individual posts → partial.",
-      "items": []
-    },
-    {
-      "source_id": "hf",
+      "id": "huggingface",
       "name": "Hugging Face",
+      "url": "https://huggingface.co/blog",
+      "feed": "https://huggingface.co/blog/feed.xml",
+      "method": "rss",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://huggingface.co/blog",
+      "category": "open_tools",
+      "region": "global",
+      "source_id": "huggingface",
       "status": "ok",
-      "evidence": "Opened HF Blog + feed.xml. Window: Holo4 Sep 28, 2026. Opened and read https://huggingface.co/blog/Hcompany/holo4 (Published September 28, 2026). Other recent cards Sep 24 and earlier.",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "Parsed 869 entries; delta hits 0; latest 2026-09-28T09:44:05+00:00",
+      "upstream_receipt": {
+        "source_id": "hf",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://huggingface.co/blog",
+        "evidence": "Opened HF Blog + feed.xml. Window: Holo4 Sep 28, 2026. Opened and read https://huggingface.co/blog/Hcompany/holo4 (Published September 28, 2026). Other recent cards Sep 24 and earlier.",
+        "items": [
+          {
+            "title": "Holo4: powering generalist computer-use agents",
+            "url": "https://huggingface.co/blog/Hcompany/holo4",
+            "event_id": "hcompany-holo4-2026-09-28",
+            "category": "open_tools",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://huggingface.co/blog/Hcompany/holo4"
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "Holo4: powering generalist computer-use agents",
@@ -194,50 +392,248 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": "https://huggingface.co/blog/Hcompany/holo4"
         }
+      ],
+      "evidence_files": [
+        "evidence/huggingface.raw"
       ]
     },
     {
-      "source_id": "ms",
+      "id": "cursor",
+      "name": "Cursor Changelog",
+      "url": "https://cursor.com/changelog",
+      "feed": "https://cursor.com/changelog/rss.xml",
+      "method": "rss",
+      "core": false,
+      "category": "open_tools",
+      "region": "global",
+      "source_id": "cursor",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "Parsed 50 entries; delta hits 0; latest 2026-09-23T00:00:00+00:00",
+      "upstream_receipt": {
+        "source_id": "news-5",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://cursor.com/changelog",
+        "evidence": "Opened Cursor Changelog + RSS. Latest dated entry Rollouts and Security Review 2026-09-23; no new changelog card dated 2026-09-26 through 2026-09-29 in 72h window after prior issue coverage.",
+        "items": []
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
+      "items": [],
+      "evidence_files": [
+        "evidence/cursor.raw"
+      ]
+    },
+    {
+      "id": "microsoft",
       "name": "Microsoft AI",
-      "core": false,
+      "url": "https://blogs.microsoft.com/ai/",
       "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://blogs.microsoft.com/ai/",
+      "core": false,
+      "category": "applications",
+      "region": "global",
+      "note": "页面和 feed 对脚本都返回 403",
+      "source_id": "microsoft",
       "status": "partial",
-      "evidence": "blogs.microsoft.com/ai/ redirects to https://news.microsoft.com/source/topics/ai/. Opened topics page HTML; could not extract reliable absolute article datetimes for 2026-09-26..29 window from listing markup. Not claiming zero Microsoft AI news.",
-      "items": []
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "渲染官方AI频道见灾害救援、RetroChimera等；列表不提供绝对日期，未建立完整窗口覆盖。",
+      "upstream_receipt": {
+        "source_id": "ms",
+        "status": "partial",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://blogs.microsoft.com/ai/",
+        "evidence": "blogs.microsoft.com/ai/ redirects to https://news.microsoft.com/source/topics/ai/. Opened topics page HTML; could not extract reliable absolute article datetimes for 2026-09-26..29 window from listing markup. Not claiming zero Microsoft AI news.",
+        "items": []
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
+      "items": [],
+      "evidence_files": [
+        "evidence/browser-microsoft.txt"
+      ]
     },
     {
-      "source_id": "qwen",
+      "id": "qwen",
       "name": "Qwen",
+      "url": "https://qwenlm.github.io/",
+      "method": "page",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://qwenlm.github.io/",
+      "category": "models_products",
+      "region": "China",
+      "source_id": "qwen",
       "status": "ok",
-      "evidence": "Opened Qwen blog index. Visible dated posts remain 2025-09-23 era (Qwen-Image-Edit etc.); none dated 2026-09-26..29 in window.",
-      "items": []
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "旧入口显示迁移提示，跟进qwen.ai最新研究：Sep20、Sep18、Sep03；无窗口内新条目。",
+      "upstream_receipt": {
+        "source_id": "qwen",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://qwenlm.github.io/",
+        "evidence": "Opened Qwen blog index. Visible dated posts remain 2025-09-23 era (Qwen-Image-Edit etc.); none dated 2026-09-26..29 in window.",
+        "items": []
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
+      "items": [],
+      "evidence_files": [
+        "evidence/browser-qwen-new.txt",
+        "evidence/qwen.raw",
+        "evidence/qwen.txt"
+      ]
     },
     {
-      "source_id": "deepseek",
+      "id": "tongyi",
+      "name": "通义实验室",
+      "url": "https://qianwen.aliyun.com/",
+      "method": "page",
+      "core": false,
+      "category": "models_products",
+      "region": "China",
+      "source_id": "tongyi",
+      "status": "partial",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "产品介绍可读，缺带日期更新流，不能将现有版本当今日发布。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/tongyi.raw",
+        "evidence/tongyi.txt"
+      ]
+    },
+    {
+      "id": "deepseek",
       "name": "DeepSeek",
+      "url": "https://api-docs.deepseek.com/updates",
+      "method": "page",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://api-docs.deepseek.com/updates",
+      "category": "models_products",
+      "region": "China",
+      "source_id": "deepseek",
       "status": "ok",
-      "evidence": "Opened DeepSeek API Change Log. Latest entry Date: 2026-09-10 DeepSeek-V4.1-Flash Release; prior 2026-08-21 Vision-Exp. No entries in 2026-09-26..29 window.",
-      "items": []
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "变更日志最新Sep10，下一条Aug21。",
+      "upstream_receipt": {
+        "source_id": "deepseek",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://api-docs.deepseek.com/updates",
+        "evidence": "Opened DeepSeek API Change Log. Latest entry Date: 2026-09-10 DeepSeek-V4.1-Flash Release; prior 2026-08-21 Vision-Exp. No entries in 2026-09-26..29 window.",
+        "items": []
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
+      "items": [],
+      "evidence_files": [
+        "evidence/deepseek.txt",
+        "evidence/deepseek.raw"
+      ]
     },
     {
-      "source_id": "mistral",
-      "name": "Mistral",
+      "id": "moonshot",
+      "name": "月之暗面 Moonshot",
+      "url": "https://www.moonshot.cn/",
+      "method": "page",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://mistral.ai/news",
+      "category": "models_products",
+      "region": "China",
+      "source_id": "moonshot",
       "status": "ok",
-      "evidence": "Opened Mistral news listing. Window: Hallo Deutschland / Munich hub September 28, 2026. Opened and read https://mistral.ai/news/hallo-deutschland/.",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "当前官方最新研究列Kimi K3与PerceptionBench Jul16；首页无窗口新条目。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/moonshot.raw",
+        "evidence/moonshot.txt"
+      ]
+    },
+    {
+      "id": "zhipu",
+      "name": "智谱 Z.ai",
+      "url": "https://www.zhipuai.cn/news",
+      "method": "page",
+      "core": false,
+      "category": "models_products",
+      "region": "China",
+      "source_id": "zhipu",
+      "status": "partial",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "主页GLM-5.3与新闻可读，但缺可靠发布日期，未据此报新发布。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/zhipu.raw",
+        "evidence/zhipu.txt"
+      ]
+    },
+    {
+      "id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "url": "https://www.stepfun.com/",
+      "method": "page",
+      "core": false,
+      "category": "models_products",
+      "region": "China",
+      "source_id": "stepfun",
+      "status": "partial",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "渲染见Step5 Preview倒计时与模型列表，不能用倒计时反推首发日期。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/stepfun.txt",
+        "evidence/stepfun.raw"
+      ]
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral",
+      "url": "https://mistral.ai/news",
+      "method": "page",
+      "core": false,
+      "category": "models_products",
+      "region": "Europe",
+      "source_id": "mistral",
+      "status": "partial",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "复用已核Sep28 Munich；当前列表缺完整日期，未证明所有入口增量覆盖。",
+      "upstream_receipt": {
+        "source_id": "mistral",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://mistral.ai/news",
+        "evidence": "Opened Mistral news listing. Window: Hallo Deutschland / Munich hub September 28, 2026. Opened and read https://mistral.ai/news/hallo-deutschland/.",
+        "items": [
+          {
+            "title": "Hallo, Deutschland! Mistral Opens German Hub in Munich",
+            "url": "https://mistral.ai/news/hallo-deutschland/",
+            "event_id": "mistral-munich-hub-2026-09-28",
+            "category": "models_products",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": "https://mistral.ai/news/hallo-deutschland/"
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "Hallo, Deutschland! Mistral Opens German Hub in Munich",
@@ -247,28 +643,75 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": "https://mistral.ai/news/hallo-deutschland/"
         }
+      ],
+      "evidence_files": [
+        "evidence/primary-mistral-munich.txt",
+        "evidence/primary-mistral-munich.html",
+        "evidence/mistral.txt",
+        "evidence/mistral.raw"
       ]
     },
     {
-      "source_id": "eu",
+      "id": "eu-digital",
       "name": "European Commission Digital Strategy",
+      "url": "https://digital-strategy.ec.europa.eu/en/news",
+      "method": "page",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "category": "policy_governance",
+      "region": "Europe",
+      "source_id": "eu-digital",
       "status": "ok",
-      "evidence": "Opened EC Digital Strategy news list. Window includes 28 Sep 2026 'Meet the Jury of the European Digital Connectivity Awards 2026' and 24 Sep Board for Digital Services / Code of Conduct items; no new AI Act primary product launch selected. AI/education reports dated 22 Sep already outside or previously noted.",
-      "items": []
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "Sep28数字连接评奖、Sep24 DSA等列表已查；本期未选非AI更新。",
+      "upstream_receipt": {
+        "source_id": "eu",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+        "evidence": "Opened EC Digital Strategy news list. Window includes 28 Sep 2026 'Meet the Jury of the European Digital Connectivity Awards 2026' and 24 Sep Board for Digital Services / Code of Conduct items; no new AI Act primary product launch selected. AI/education reports dated 22 Sep already outside or previously noted.",
+        "items": []
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
+      "items": [],
+      "evidence_files": [
+        "evidence/eu-digital.txt",
+        "evidence/eu-digital.raw"
+      ]
     },
     {
-      "source_id": "unesco",
+      "id": "unesco",
       "name": "UNESCO AI",
+      "url": "https://www.unesco.org/en/artificial-intelligence",
+      "method": "page",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
-      "status": "partial",
-      "evidence": "Opened UNESCO AI hub listing: 'UNESCO panel maps an inclusive path for AI in justice' dated 28 September 2026; digital citizenship course 25 Sep. Article URL fetched but returned bot-challenge shell without readable body → cannot fully verify article text; listing date noted. Not claiming zero UNESCO AI content.",
+      "category": "applications",
+      "region": "global",
+      "source_id": "unesco",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "入口Sep28 AI justice原文已用浏览器读通；上游反爬材料缺口解决。",
+      "upstream_receipt": {
+        "source_id": "unesco",
+        "status": "partial",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+        "evidence": "Opened UNESCO AI hub listing: 'UNESCO panel maps an inclusive path for AI in justice' dated 28 September 2026; digital citizenship course 25 Sep. Article URL fetched but returned bot-challenge shell without readable body → cannot fully verify article text; listing date noted. Not claiming zero UNESCO AI content.",
+        "items": [
+          {
+            "title": "UNESCO panel maps an inclusive path for AI in justice",
+            "url": "https://www.unesco.org/en/articles/unesco-panel-maps-inclusive-path-ai-justice",
+            "event_id": "unesco-ai-justice-2026-09-28",
+            "category": "policy_governance",
+            "published_at_source": "2026-09-28",
+            "verified_primary_url": null
+          }
+        ]
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
       "items": [
         {
           "title": "UNESCO panel maps an inclusive path for AI in justice",
@@ -278,30 +721,1833 @@
           "published_at_source": "2026-09-28",
           "verified_primary_url": null
         }
+      ],
+      "evidence_files": [
+        "evidence/unesco-justice.txt",
+        "evidence/unesco.txt",
+        "evidence/unesco-justice.raw",
+        "evidence/unesco.raw",
+        "evidence/browser-unesco-justice.txt"
       ]
     },
     {
-      "source_id": "oecd",
-      "name": "OECD AI",
+      "id": "oecd",
+      "name": "OECD.AI",
+      "url": "https://oecd.ai/en/wonk",
+      "method": "page",
       "core": false,
-      "method": "browser",
-      "checked_at": "2026-09-28T21:18:53.033876+00:00",
-      "checked_url": "https://oecd.ai/en/wonk",
+      "category": "research_society",
+      "region": "global",
+      "source_id": "oecd",
       "status": "ok",
-      "evidence": "Opened OECD.AI Wonk. Visible posts include Governing with agentic AI Sep 25 and Putting agentic AI systems to work Sep 24—already reported in prior issues; no newer day-dated AI Wonk post in 2026-09-26..29 beyond those.",
-      "items": []
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "日期化Wonk列表最新Sep25治理与Sep24部署，早前已报道，不重报。",
+      "upstream_receipt": {
+        "source_id": "oecd",
+        "status": "ok",
+        "checked_at": "2026-09-28T21:18:53.033876+00:00",
+        "checked_url": "https://oecd.ai/en/wonk",
+        "evidence": "Opened OECD.AI Wonk. Visible posts include Governing with agentic AI Sep 25 and Putting agentic AI systems to work Sep 24—already reported in prior issues; no newer day-dated AI Wonk post in 2026-09-26..29 beyond those.",
+        "items": []
+      },
+      "upstream_reused": true,
+      "actual_upstream_checked_at": "2026-09-28T21:18:53.033876+00:00",
+      "local_scope": "increment 05:18:53 to06:00",
+      "items": [],
+      "evidence_files": [
+        "evidence/oecd.raw",
+        "evidence/oecd.txt"
+      ]
+    },
+    {
+      "id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "url": "https://export.arxiv.org/api/query",
+      "method": "api",
+      "core": true,
+      "category": "research_society",
+      "region": "global",
+      "source_id": "arxiv",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "实际解析最新100条，最近提交Sep25 17:59:52UTC；涵盖72h，周末后截至时间前尚无新提交；HF另提供补读线索。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [
+        {
+          "title": "Learning to Stop without Learning to Stop: Self-Supervised Confidence Training Improves Reasoning Efficiency",
+          "primary_url": "http://arxiv.org/abs/2609.31619v1",
+          "original_submitted_at": "2026-09-25T17:59:52Z",
+          "updated_at": "2026-09-25T17:59:52Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Gap-free Differentially Private PCA for Gaussian Data",
+          "primary_url": "http://arxiv.org/abs/2609.31614v1",
+          "original_submitted_at": "2026-09-25T17:58:38Z",
+          "updated_at": "2026-09-25T17:58:38Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "First-Order Stationarity of Reverse Diffusions",
+          "primary_url": "http://arxiv.org/abs/2609.31612v1",
+          "original_submitted_at": "2026-09-25T17:57:43Z",
+          "updated_at": "2026-09-25T17:57:43Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Statistical attribute alignment for black-box generative AI via output post-processing",
+          "primary_url": "http://arxiv.org/abs/2609.31607v1",
+          "original_submitted_at": "2026-09-25T17:55:49Z",
+          "updated_at": "2026-09-25T17:55:49Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "User Model Extraction via Belief Self-Distillation",
+          "primary_url": "http://arxiv.org/abs/2609.31603v1",
+          "original_submitted_at": "2026-09-25T17:54:32Z",
+          "updated_at": "2026-09-25T17:54:32Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "New LoRA Skills Should Read but Never Write",
+          "primary_url": "http://arxiv.org/abs/2609.31600v1",
+          "original_submitted_at": "2026-09-25T17:54:01Z",
+          "updated_at": "2026-09-25T17:54:01Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Common-Mode Collapse and Recovery in Direct Feedback Alignment",
+          "primary_url": "http://arxiv.org/abs/2609.31589v1",
+          "original_submitted_at": "2026-09-25T17:43:40Z",
+          "updated_at": "2026-09-25T17:43:40Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Compact Documentation for Coding Agents: A Benchmark, an Optimizer, and Why It Does Not Transfer",
+          "primary_url": "http://arxiv.org/abs/2609.31587v1",
+          "original_submitted_at": "2026-09-25T17:42:22Z",
+          "updated_at": "2026-09-25T17:42:22Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Trust Guided Decision Transformer",
+          "primary_url": "http://arxiv.org/abs/2609.31586v1",
+          "original_submitted_at": "2026-09-25T17:42:19Z",
+          "updated_at": "2026-09-25T17:42:19Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "OC-GS: Gaussian Splatting for Irregular Turntable Capture",
+          "primary_url": "http://arxiv.org/abs/2609.31572v1",
+          "original_submitted_at": "2026-09-25T17:35:05Z",
+          "updated_at": "2026-09-25T17:35:05Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Strategically Diverse Sampling for Self-Training",
+          "primary_url": "http://arxiv.org/abs/2609.31571v1",
+          "original_submitted_at": "2026-09-25T17:35:05Z",
+          "updated_at": "2026-09-25T17:35:05Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Uncertainty and Explainability in Deep Rough Volatility: A Neural Information-Theoretic Posterior Approach",
+          "primary_url": "http://arxiv.org/abs/2609.31570v1",
+          "original_submitted_at": "2026-09-25T17:34:56Z",
+          "updated_at": "2026-09-25T17:34:56Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Adapting for AI: How elementary teachers adjust their practices for an AI-integrated curriculum",
+          "primary_url": "http://arxiv.org/abs/2609.31569v1",
+          "original_submitted_at": "2026-09-25T17:33:47Z",
+          "updated_at": "2026-09-25T17:33:47Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "DeepEdu-v1: Efficient and Scalable Agentic LLMs for Vietnamese Education",
+          "primary_url": "http://arxiv.org/abs/2609.31568v1",
+          "original_submitted_at": "2026-09-25T17:33:41Z",
+          "updated_at": "2026-09-25T17:33:41Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Weight Pair Encoding: Inducing a Smaller Grammar in Neural Network Weights",
+          "primary_url": "http://arxiv.org/abs/2609.31564v1",
+          "original_submitted_at": "2026-09-25T17:29:43Z",
+          "updated_at": "2026-09-25T17:29:43Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Multi-agent Scaling Across Disjunctive and Compensatory Tasks",
+          "primary_url": "http://arxiv.org/abs/2609.31563v1",
+          "original_submitted_at": "2026-09-25T17:29:15Z",
+          "updated_at": "2026-09-25T17:29:15Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Generalization behavior of OPTQ and the role of regularization",
+          "primary_url": "http://arxiv.org/abs/2609.31560v1",
+          "original_submitted_at": "2026-09-25T17:27:18Z",
+          "updated_at": "2026-09-25T17:27:18Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Online Learning via Learned Latent Bayesian Tracking",
+          "primary_url": "http://arxiv.org/abs/2609.31559v1",
+          "original_submitted_at": "2026-09-25T17:27:14Z",
+          "updated_at": "2026-09-25T17:27:14Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "MexHat: A Dataset for Hate Speech Detection in Mexican Spanish Videos",
+          "primary_url": "http://arxiv.org/abs/2609.31553v1",
+          "original_submitted_at": "2026-09-25T17:23:36Z",
+          "updated_at": "2026-09-25T17:23:36Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "EAServe: Encode-Aware Disaggregated Serving for Multimodal Large Language Models",
+          "primary_url": "http://arxiv.org/abs/2609.31551v1",
+          "original_submitted_at": "2026-09-25T17:20:22Z",
+          "updated_at": "2026-09-25T17:20:22Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Two Conformal Constructions for Adaptive Within-Document AI-Text Screening",
+          "primary_url": "http://arxiv.org/abs/2609.31547v1",
+          "original_submitted_at": "2026-09-25T17:18:39Z",
+          "updated_at": "2026-09-25T17:18:39Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "BeatGraph: Self-Supervised Heartbeat Graphs for Infant ECG Representations from the Home Environment",
+          "primary_url": "http://arxiv.org/abs/2609.31546v1",
+          "original_submitted_at": "2026-09-25T17:18:20Z",
+          "updated_at": "2026-09-25T17:18:20Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "A Flow Matching Framework for Neural Representational Dissimilarity",
+          "primary_url": "http://arxiv.org/abs/2609.31544v1",
+          "original_submitted_at": "2026-09-25T17:15:43Z",
+          "updated_at": "2026-09-25T17:15:43Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Can You Check That? The Checkability Boundary for Local LLM Network Automation",
+          "primary_url": "http://arxiv.org/abs/2609.31540v1",
+          "original_submitted_at": "2026-09-25T17:11:55Z",
+          "updated_at": "2026-09-25T17:11:55Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "NEXT: Physics-Informed Neuro-Spectral Exponential Time Differencing Architectures",
+          "primary_url": "http://arxiv.org/abs/2609.31539v1",
+          "original_submitted_at": "2026-09-25T17:11:44Z",
+          "updated_at": "2026-09-25T17:11:44Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "HySTAR: Anchored Hypergraphs for Stable Credit Assignment in Cooperative Multi-Agent Reinforcement Learning",
+          "primary_url": "http://arxiv.org/abs/2609.31531v1",
+          "original_submitted_at": "2026-09-25T17:06:54Z",
+          "updated_at": "2026-09-25T17:06:54Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Retrainable physics-integrated neural differentiable modeling of sintering across material systems",
+          "primary_url": "http://arxiv.org/abs/2609.31518v1",
+          "original_submitted_at": "2026-09-25T16:56:17Z",
+          "updated_at": "2026-09-25T16:56:17Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Statistical Foundations for a Google Play User-Review Sentiment Index: Signal Fusion, Shrinkage, Distributional Validation, and Dynamic Smoothing",
+          "primary_url": "http://arxiv.org/abs/2609.31513v1",
+          "original_submitted_at": "2026-09-25T16:54:09Z",
+          "updated_at": "2026-09-25T16:54:09Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Muslim: A Deployed Arabic Voice AI Platform for Grounded Islamic Knowledge",
+          "primary_url": "http://arxiv.org/abs/2609.31511v1",
+          "original_submitted_at": "2026-09-25T16:51:22Z",
+          "updated_at": "2026-09-25T16:51:22Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "ClearGS: Reliability-Aware Gaussian Splatting from Handheld Videos",
+          "primary_url": "http://arxiv.org/abs/2609.31509v1",
+          "original_submitted_at": "2026-09-25T16:50:46Z",
+          "updated_at": "2026-09-25T16:50:46Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Evaluating Cultural Awareness of LLMs for Haitian Creole",
+          "primary_url": "http://arxiv.org/abs/2609.31506v1",
+          "original_submitted_at": "2026-09-25T16:47:07Z",
+          "updated_at": "2026-09-25T16:47:07Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Prompt Minimization: Reducing Input Redundancy Without Sacrificing Output Fidelity",
+          "primary_url": "http://arxiv.org/abs/2609.31505v1",
+          "original_submitted_at": "2026-09-25T16:45:28Z",
+          "updated_at": "2026-09-25T16:45:28Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Retail Product Search: A Practical Approach at Target",
+          "primary_url": "http://arxiv.org/abs/2609.31498v1",
+          "original_submitted_at": "2026-09-25T16:36:48Z",
+          "updated_at": "2026-09-25T16:36:48Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "UQ-LOB: Uncertainty-Aware Limit Order Book Mid-Price Forecasting",
+          "primary_url": "http://arxiv.org/abs/2609.31491v1",
+          "original_submitted_at": "2026-09-25T16:33:23Z",
+          "updated_at": "2026-09-25T16:33:23Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Scaling Density Functional Theory with Gaussian Splatting",
+          "primary_url": "http://arxiv.org/abs/2609.31483v1",
+          "original_submitted_at": "2026-09-25T16:26:40Z",
+          "updated_at": "2026-09-25T16:26:40Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "\"AI is (not) the new...\": A Diagnostic Analogy Framework for Generative AI's Cultural Impacts",
+          "primary_url": "http://arxiv.org/abs/2609.31482v1",
+          "original_submitted_at": "2026-09-25T16:25:46Z",
+          "updated_at": "2026-09-25T16:25:46Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Game Arena: Strategic LLM Evaluation in Competitive Environments",
+          "primary_url": "http://arxiv.org/abs/2609.31473v1",
+          "original_submitted_at": "2026-09-25T16:20:55Z",
+          "updated_at": "2026-09-25T16:20:55Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Beyond Empirical Support: Structured Outlier Generation via Sinkhorn Optimal Transport",
+          "primary_url": "http://arxiv.org/abs/2609.31470v1",
+          "original_submitted_at": "2026-09-25T16:18:02Z",
+          "updated_at": "2026-09-25T16:18:02Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "LandscapeSHAP: Which Persistent Homology Class Gets the Credit?",
+          "primary_url": "http://arxiv.org/abs/2609.31469v1",
+          "original_submitted_at": "2026-09-25T16:17:42Z",
+          "updated_at": "2026-09-25T16:17:42Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "PriceBench: A Diagnostic Benchmark for Price, Quality, and Brand Preferences in LLM Booking Agents",
+          "primary_url": "http://arxiv.org/abs/2609.31468v1",
+          "original_submitted_at": "2026-09-25T16:17:28Z",
+          "updated_at": "2026-09-25T16:17:28Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Scaffold: Support Graph Theory Based Sparsification for Graph Neural Networks",
+          "primary_url": "http://arxiv.org/abs/2609.31466v1",
+          "original_submitted_at": "2026-09-25T16:17:09Z",
+          "updated_at": "2026-09-25T16:17:09Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Uncertainty-Aware Federated Learning for Infant Movement Analysis",
+          "primary_url": "http://arxiv.org/abs/2609.31463v1",
+          "original_submitted_at": "2026-09-25T16:13:48Z",
+          "updated_at": "2026-09-25T16:13:48Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Segment-Level Agentic Topic Modeling for Improved Data Exploration and Resource Efficiency",
+          "primary_url": "http://arxiv.org/abs/2609.31460v1",
+          "original_submitted_at": "2026-09-25T16:11:42Z",
+          "updated_at": "2026-09-25T16:11:42Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Nonparametric In-Context Learning under Growing Geometric Complexity: Minimax Optimality and Local Geometry-Adaptivity of Transformers",
+          "primary_url": "http://arxiv.org/abs/2609.31458v1",
+          "original_submitted_at": "2026-09-25T16:10:53Z",
+          "updated_at": "2026-09-25T16:10:53Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Different Corruptions, Different Signals: Uncertainty and Loss in Federated Data Quality",
+          "primary_url": "http://arxiv.org/abs/2609.31454v1",
+          "original_submitted_at": "2026-09-25T16:09:21Z",
+          "updated_at": "2026-09-25T16:09:21Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "From Reward Signal to Visual Utility: A Controlled Audit of Medical VLM Post-Training",
+          "primary_url": "http://arxiv.org/abs/2609.31450v1",
+          "original_submitted_at": "2026-09-25T16:06:54Z",
+          "updated_at": "2026-09-25T16:06:54Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "ViSTA: A Simple Bridge Extends Visual Alignment to Clinical Time-Series Understanding in Multimodal LLMs",
+          "primary_url": "http://arxiv.org/abs/2609.31448v1",
+          "original_submitted_at": "2026-09-25T16:06:29Z",
+          "updated_at": "2026-09-25T16:06:29Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Implicit Neural Representation for Hyperspectral Video Compression",
+          "primary_url": "http://arxiv.org/abs/2609.31435v1",
+          "original_submitted_at": "2026-09-25T15:57:02Z",
+          "updated_at": "2026-09-25T15:57:02Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Compress What You See, Not What You Say: Anchored Context Distillation for Latent-Observation Software Engineering Agents",
+          "primary_url": "http://arxiv.org/abs/2609.31430v1",
+          "original_submitted_at": "2026-09-25T15:51:40Z",
+          "updated_at": "2026-09-25T15:51:40Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Towards Mitigating Fabricated Consensus: The Active Provenance Gate for Multi-Agent Debate Synthesis",
+          "primary_url": "http://arxiv.org/abs/2609.31422v1",
+          "original_submitted_at": "2026-09-25T15:44:18Z",
+          "updated_at": "2026-09-25T15:44:18Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Evaluating the accuracy of KV cache reuse techniques",
+          "primary_url": "http://arxiv.org/abs/2609.31415v1",
+          "original_submitted_at": "2026-09-25T15:36:43Z",
+          "updated_at": "2026-09-25T15:36:43Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Sorry Robot, Happy Human: Vision-Language Models Read Only One of Two Legible Typographic Layers",
+          "primary_url": "http://arxiv.org/abs/2609.31403v1",
+          "original_submitted_at": "2026-09-25T15:27:21Z",
+          "updated_at": "2026-09-25T15:27:21Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "AFA-Net: A Differential Attention Approach for Auditory Attention Detection",
+          "primary_url": "http://arxiv.org/abs/2609.31402v1",
+          "original_submitted_at": "2026-09-25T15:25:45Z",
+          "updated_at": "2026-09-25T15:25:45Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Decodable In-Context State and Model Output Across Training",
+          "primary_url": "http://arxiv.org/abs/2609.31401v1",
+          "original_submitted_at": "2026-09-25T15:25:38Z",
+          "updated_at": "2026-09-25T15:25:38Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Differential Attention Unlocks Complementary EEG and Speech Fusion for Emotion Recognition",
+          "primary_url": "http://arxiv.org/abs/2609.31399v1",
+          "original_submitted_at": "2026-09-25T15:25:24Z",
+          "updated_at": "2026-09-25T15:25:24Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Intent2Tc: Automated Intent-to-Traffic Control Translation with Language Models",
+          "primary_url": "http://arxiv.org/abs/2609.31397v1",
+          "original_submitted_at": "2026-09-25T15:25:05Z",
+          "updated_at": "2026-09-25T15:25:05Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "ActKV: Efficient LLM Agents through Action-Guided KV Cache Management",
+          "primary_url": "http://arxiv.org/abs/2609.31395v1",
+          "original_submitted_at": "2026-09-25T15:24:30Z",
+          "updated_at": "2026-09-25T15:24:30Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Guiding End-to-End Driving Models with Endpoint-Constrained Trajectory Optimization",
+          "primary_url": "http://arxiv.org/abs/2609.31383v1",
+          "original_submitted_at": "2026-09-25T15:17:21Z",
+          "updated_at": "2026-09-25T15:17:21Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Highlight-Then-Summarize: Learning to Compress Evidence for Long-Context Understanding",
+          "primary_url": "http://arxiv.org/abs/2609.31382v1",
+          "original_submitted_at": "2026-09-25T15:16:35Z",
+          "updated_at": "2026-09-25T15:16:35Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Completed Pairs Hide Capped Failures: A ReVerPi Case Study of Selective Context Projection",
+          "primary_url": "http://arxiv.org/abs/2609.31381v1",
+          "original_submitted_at": "2026-09-25T15:16:08Z",
+          "updated_at": "2026-09-25T15:16:08Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Towards Understanding LLM-Based Log Anomaly Detection: An Empirical Study of Performance, Efficiency, and Robustness",
+          "primary_url": "http://arxiv.org/abs/2609.31371v1",
+          "original_submitted_at": "2026-09-25T15:08:16Z",
+          "updated_at": "2026-09-25T15:08:16Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Equation discovery with Bayesian tree-adjoining grammars",
+          "primary_url": "http://arxiv.org/abs/2609.31368v1",
+          "original_submitted_at": "2026-09-25T15:04:40Z",
+          "updated_at": "2026-09-25T15:04:40Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Brenier Meets Adversarial Training: Optimal Transport Geometry for Robust Learning",
+          "primary_url": "http://arxiv.org/abs/2609.31363v1",
+          "original_submitted_at": "2026-09-25T14:57:04Z",
+          "updated_at": "2026-09-25T14:57:04Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Programs-of-Layers in LLMs through the Lens of Cortical Areas",
+          "primary_url": "http://arxiv.org/abs/2609.31360v1",
+          "original_submitted_at": "2026-09-25T14:55:50Z",
+          "updated_at": "2026-09-25T14:55:50Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "A Safety-Bounded SDC-to-MCP Gateway for Medical AI Agents",
+          "primary_url": "http://arxiv.org/abs/2609.31358v1",
+          "original_submitted_at": "2026-09-25T14:54:21Z",
+          "updated_at": "2026-09-25T14:54:21Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Open Vocabulary Domain Unlearning",
+          "primary_url": "http://arxiv.org/abs/2609.31356v1",
+          "original_submitted_at": "2026-09-25T14:52:36Z",
+          "updated_at": "2026-09-25T14:52:36Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Mutable Transcripts: Mitigating Context Pollution through Editable Conversation State",
+          "primary_url": "http://arxiv.org/abs/2609.31354v1",
+          "original_submitted_at": "2026-09-25T14:51:49Z",
+          "updated_at": "2026-09-25T14:51:49Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Progressive Memory Transformer: Memory-Aware Attention for Time-Series",
+          "primary_url": "http://arxiv.org/abs/2609.31351v1",
+          "original_submitted_at": "2026-09-25T14:49:42Z",
+          "updated_at": "2026-09-25T14:49:42Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "DyMD: Preserving Interaction Dynamics through Distribution Matching Distillation in Few-Step Video World Models",
+          "primary_url": "http://arxiv.org/abs/2609.31349v1",
+          "original_submitted_at": "2026-09-25T14:47:17Z",
+          "updated_at": "2026-09-25T14:47:17Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Stale-Document Poisoning: When Outdated Retrieval Overrides Correct Model Answers",
+          "primary_url": "http://arxiv.org/abs/2609.31342v1",
+          "original_submitted_at": "2026-09-25T14:43:43Z",
+          "updated_at": "2026-09-25T14:43:43Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "The Right Information Extraction Pipeline Depends on the Document: Accuracy-Energy Trade-offs for Small, Local Models",
+          "primary_url": "http://arxiv.org/abs/2609.31341v1",
+          "original_submitted_at": "2026-09-25T14:43:18Z",
+          "updated_at": "2026-09-25T14:43:18Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Bridging Body and Brain: Gene-Driven Morphology--Control Co-Design",
+          "primary_url": "http://arxiv.org/abs/2609.31329v1",
+          "original_submitted_at": "2026-09-25T14:36:18Z",
+          "updated_at": "2026-09-25T14:36:18Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "CG-HAF: An Interpretable Global-Local Lesion-Burden Fusion Framework for Ordinal Acne Severity Grading in Agentic Skincare Support",
+          "primary_url": "http://arxiv.org/abs/2609.31326v1",
+          "original_submitted_at": "2026-09-25T14:30:16Z",
+          "updated_at": "2026-09-25T14:30:16Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "More Sensors Only One Field: Rethinking Continual Spatio-Temporal Forecasting",
+          "primary_url": "http://arxiv.org/abs/2609.31325v1",
+          "original_submitted_at": "2026-09-25T14:29:22Z",
+          "updated_at": "2026-09-25T14:29:22Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "AgentXploit: Autonomous Repository-to-Runtime Red-Teaming for AI Agents",
+          "primary_url": "http://arxiv.org/abs/2609.31318v1",
+          "original_submitted_at": "2026-09-25T14:26:04Z",
+          "updated_at": "2026-09-25T14:26:04Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "LUCID: Learning Under Confounding for Inference and Discovery in Time Series",
+          "primary_url": "http://arxiv.org/abs/2609.31315v1",
+          "original_submitted_at": "2026-09-25T14:21:21Z",
+          "updated_at": "2026-09-25T14:21:21Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Towards VLA-Dreamer: Refining VLA Behavior Using World Models",
+          "primary_url": "http://arxiv.org/abs/2609.31313v1",
+          "original_submitted_at": "2026-09-25T14:21:20Z",
+          "updated_at": "2026-09-25T14:21:20Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Benchmarking Attention for Tabular Foundation Models",
+          "primary_url": "http://arxiv.org/abs/2609.31306v1",
+          "original_submitted_at": "2026-09-25T14:14:48Z",
+          "updated_at": "2026-09-25T14:14:48Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Geometric Moment Contraction for Stochastic Nesterov Acceleration",
+          "primary_url": "http://arxiv.org/abs/2609.31303v1",
+          "original_submitted_at": "2026-09-25T14:14:14Z",
+          "updated_at": "2026-09-25T14:14:14Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Beyond Approved Actions: Runtime Validation of Persistent Outcomes in Agent Workflows",
+          "primary_url": "http://arxiv.org/abs/2609.31301v1",
+          "original_submitted_at": "2026-09-25T14:11:14Z",
+          "updated_at": "2026-09-25T14:11:14Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "UniAR: A Unified Framework for Autism Recognition Enhanced by Multi-View Prompt Learning",
+          "primary_url": "http://arxiv.org/abs/2609.31298v1",
+          "original_submitted_at": "2026-09-25T14:07:52Z",
+          "updated_at": "2026-09-25T14:07:52Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Why Alzheimer's Speech Screening Fails to Generalize: Bridging the Deployment Gap via Cross-Corpus Evidence Anchoring",
+          "primary_url": "http://arxiv.org/abs/2609.31293v1",
+          "original_submitted_at": "2026-09-25T14:02:52Z",
+          "updated_at": "2026-09-25T14:02:52Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Softmax Reparameterization for Output-Head Quantization",
+          "primary_url": "http://arxiv.org/abs/2609.31291v1",
+          "original_submitted_at": "2026-09-25T14:01:25Z",
+          "updated_at": "2026-09-25T14:01:25Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "G2MAF: Test-Time Gradient Guidance for Multi-Agent Flow Policies",
+          "primary_url": "http://arxiv.org/abs/2609.31286v1",
+          "original_submitted_at": "2026-09-25T13:57:02Z",
+          "updated_at": "2026-09-25T13:57:02Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Resource-Optimized and Energy-Aware Agentic AI Framework Anchored on Blockchain for Secure Software Supply Chains",
+          "primary_url": "http://arxiv.org/abs/2609.31282v1",
+          "original_submitted_at": "2026-09-25T13:53:50Z",
+          "updated_at": "2026-09-25T13:53:50Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "MA-WAM: Multi-Agent World-Action Model for Test-Time Planning",
+          "primary_url": "http://arxiv.org/abs/2609.31281v1",
+          "original_submitted_at": "2026-09-25T13:52:39Z",
+          "updated_at": "2026-09-25T13:52:39Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Cognitive Skills in the Age of AI: Computing Students and Experts Perceptions",
+          "primary_url": "http://arxiv.org/abs/2609.31272v1",
+          "original_submitted_at": "2026-09-25T13:48:02Z",
+          "updated_at": "2026-09-25T13:48:02Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Identifying Scientists on X",
+          "primary_url": "http://arxiv.org/abs/2609.31264v1",
+          "original_submitted_at": "2026-09-25T13:39:48Z",
+          "updated_at": "2026-09-25T13:39:48Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "MoSAR: Mixture of Semantic Attention Regimes for Learning Adaptive and Approximable Attention Geometries",
+          "primary_url": "http://arxiv.org/abs/2609.31261v1",
+          "original_submitted_at": "2026-09-25T13:38:28Z",
+          "updated_at": "2026-09-25T13:38:28Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Agentic Limit Order Books: Phase Transitions and Market Impact",
+          "primary_url": "http://arxiv.org/abs/2609.31260v1",
+          "original_submitted_at": "2026-09-25T13:38:26Z",
+          "updated_at": "2026-09-25T13:38:26Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "PIA: A Personal Intelligence Agent Turning Health Conversations into Records and Records into Understanding",
+          "primary_url": "http://arxiv.org/abs/2609.31255v1",
+          "original_submitted_at": "2026-09-25T13:32:20Z",
+          "updated_at": "2026-09-25T13:32:20Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Deterministic Regime Switching and Feasibility Inversion in Dynamic Tensor Rematerialization",
+          "primary_url": "http://arxiv.org/abs/2609.31250v1",
+          "original_submitted_at": "2026-09-25T13:26:36Z",
+          "updated_at": "2026-09-25T13:26:36Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Geometric Inconsistency Localization in Multi-View Image Sets",
+          "primary_url": "http://arxiv.org/abs/2609.31247v1",
+          "original_submitted_at": "2026-09-25T13:25:56Z",
+          "updated_at": "2026-09-25T13:25:56Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "RupeeBias: Auditing Demographic Bias in Indian Economic Guidance from Large Language Models",
+          "primary_url": "http://arxiv.org/abs/2609.31245v1",
+          "original_submitted_at": "2026-09-25T13:22:24Z",
+          "updated_at": "2026-09-25T13:22:24Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Purin: A Biology-inspired Mechanism for Artificial Neural Networks",
+          "primary_url": "http://arxiv.org/abs/2609.31235v1",
+          "original_submitted_at": "2026-09-25T13:15:22Z",
+          "updated_at": "2026-09-25T13:15:22Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Acoustic-to-Text KV Compression for Full-Duplex Speech Models",
+          "primary_url": "http://arxiv.org/abs/2609.31224v1",
+          "original_submitted_at": "2026-09-25T13:04:09Z",
+          "updated_at": "2026-09-25T13:04:09Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Budgeted Quotient-Residual Guidance for Frozen Pocket-Conditioned Molecular Diffusion",
+          "primary_url": "http://arxiv.org/abs/2609.31222v1",
+          "original_submitted_at": "2026-09-25T13:02:11Z",
+          "updated_at": "2026-09-25T13:02:11Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "DIAL: Position-Debiased LLM Judges with Adaptive Human Preference Calibration",
+          "primary_url": "http://arxiv.org/abs/2609.31215v1",
+          "original_submitted_at": "2026-09-25T12:56:36Z",
+          "updated_at": "2026-09-25T12:56:36Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Which Influence Are We Estimating? The Role of Counterfactual Specifications in Data Attribution",
+          "primary_url": "http://arxiv.org/abs/2609.31214v1",
+          "original_submitted_at": "2026-09-25T12:56:12Z",
+          "updated_at": "2026-09-25T12:56:12Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        },
+        {
+          "title": "Self-Supervised Representation Learning: From Spectral Foundation Models to Auroral Emission Spectra",
+          "primary_url": "http://arxiv.org/abs/2609.31206v1",
+          "original_submitted_at": "2026-09-25T12:45:06Z",
+          "updated_at": "2026-09-25T12:45:06Z",
+          "decision": "unreviewed",
+          "verification_scope": "API metadata"
+        }
+      ],
+      "evidence_files": [
+        "evidence/arxiv.raw"
+      ]
+    },
+    {
+      "id": "hf-daily-papers",
+      "name": "Hugging Face Daily Papers",
+      "url": "https://huggingface.co/api/daily_papers",
+      "method": "api",
+      "core": false,
+      "category": "research_society",
+      "region": "global",
+      "note": "按上榜日筛选 arXiv 论文；摘要以接口为准，提交日仍回 arXiv abs 页核对",
+      "source_id": "hf-daily-papers",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "Sep28 API完整30篇；保留原始提交日，上榜日不当首发。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [
+        {
+          "paper_key": "arxiv:2609.31620",
+          "title": "FuseReg: Regularizing Layer Fusion Mitigates the Reconstruction-Generation Gap in Representation Autoencoders",
+          "primary_url": "https://arxiv.org/abs/2609.31620",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.18703",
+          "title": "RayOrch: Programming and Executing Lineage-Controlled Multi-Grain Dataflows for Foundation-Model Data Preparation",
+          "primary_url": "https://arxiv.org/abs/2609.18703",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-16T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.26333",
+          "title": "Disaggregated Quantization: Specializing LLM Prefill and Decode",
+          "primary_url": "https://arxiv.org/abs/2609.26333",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-22T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.31093",
+          "title": "Block Sparse Attention with Log-Linear Complexity",
+          "primary_url": "https://arxiv.org/abs/2609.31093",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.31394",
+          "title": "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+          "primary_url": "https://arxiv.org/abs/2609.31394",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.24385",
+          "title": "Tactile-JEPA: Topology-Aware Self-Supervised Representation Learning for Distributed Tactile Sensors",
+          "primary_url": "https://arxiv.org/abs/2609.24385",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-21T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.31199",
+          "title": "Enhancing Photogrammetric Digital Surface Models with Pretrained Diffusion Models and Multimodal Conditioning",
+          "primary_url": "https://arxiv.org/abs/2609.31199",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.30216",
+          "title": "Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem",
+          "primary_url": "https://arxiv.org/abs/2609.30216",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-24T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.25716",
+          "title": "FoMo: Forking Moment in Generative Trajectory as a Perceptual Distance",
+          "primary_url": "https://arxiv.org/abs/2609.25716",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-22T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.30222",
+          "title": "TrackEverything: Long Horizon Dense Tracking via De-Duplicating 3D Scene Representations",
+          "primary_url": "https://arxiv.org/abs/2609.30222",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-24T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.30192",
+          "title": "SAGE: Mitigating Long-Horizon Reasoning Biases via Topological Guidance",
+          "primary_url": "https://arxiv.org/abs/2609.30192",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-24T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.31590",
+          "title": "AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs",
+          "primary_url": "https://arxiv.org/abs/2609.31590",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": "2026-09-25T17:44:03Z",
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "全文§3-4与表2/3；未复现",
+          "decision": "selected",
+          "decision_reason": "补足多代理协作的实验证据，属于旧内容补读",
+          "topics": [
+            "Agent/记忆/工具使用",
+            "评测/可靠性/安全"
+          ],
+          "selected_item_ids": [
+            "agentworld"
+          ]
+        },
+        {
+          "paper_key": "arxiv:2609.29050",
+          "title": "SLCA-GRPO: Resolving Cross-Segment Credit Misattribution in Tool-Calling RL",
+          "primary_url": "https://arxiv.org/abs/2609.29050",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-24T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2601.06352",
+          "title": "CARD: Cluster-level Adaptation with Reward-guided Decoding for Personalized Text Generation",
+          "primary_url": "https://arxiv.org/abs/2601.06352",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-20T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2601.06362",
+          "title": "Do Implicit Personalization and Explicit Styles Conflict? PsPLUG: A Lightweight Plug-in for Balancing Personalization and Style in Customized LLMs",
+          "primary_url": "https://arxiv.org/abs/2601.06362",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-20T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.31473",
+          "title": "Game Arena: Strategic LLM Evaluation in Competitive Environments",
+          "primary_url": "https://arxiv.org/abs/2609.31473",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.29167",
+          "title": "IndicBankBench: Evaluating Safety and Reliability of Language Model Assistants in Indian Retail Banking",
+          "primary_url": "https://arxiv.org/abs/2609.29167",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-24T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.30670",
+          "title": "TRACE: Temporal Audit and Condition-aware Evaluation of Streaming Video Understanding",
+          "primary_url": "https://arxiv.org/abs/2609.30670",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.28327",
+          "title": "LightMIS: Ultra-Lightweight Medical Image Segmentation Without a Stage-Wise Decoder",
+          "primary_url": "https://arxiv.org/abs/2609.28327",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-24T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.31291",
+          "title": "Softmax Reparameterization for Output-Head Quantization",
+          "primary_url": "https://arxiv.org/abs/2609.31291",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.30837",
+          "title": "MOPD-Router: Rethinking Teacher Routing in Multi-Teacher On-Policy Distillation",
+          "primary_url": "https://arxiv.org/abs/2609.30837",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.04355",
+          "title": "VLA-Precision: Asymmetric Co-Bootstrapping for Efficient Real-World Online RL of Vision-Language-Action Models",
+          "primary_url": "https://arxiv.org/abs/2609.04355",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-18T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.30867",
+          "title": "Evidence-Grounded Auditing of Identification Assumptions in Climate-Policy Causal Evaluations",
+          "primary_url": "https://arxiv.org/abs/2609.30867",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.31002",
+          "title": "ZooWork-ShopRanker: An Open, Preference-Aligned E-Commerce Reranker",
+          "primary_url": "https://arxiv.org/abs/2609.31002",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.28660",
+          "title": "Morphometric Imitation: From Morphology and Contact Aware Hand Retargeting to Sim-to-Real Visuomotor Policy",
+          "primary_url": "https://arxiv.org/abs/2609.28660",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-23T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.24749",
+          "title": "D-JEPA: A Decision-Aligned Latent World Model",
+          "primary_url": "https://arxiv.org/abs/2609.24749",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-21T15:17:32.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.29474",
+          "title": "CodeGraph: Open-Taxonomy Knowledge Graph for Source Code with Wikidata Grounding",
+          "primary_url": "https://arxiv.org/abs/2609.29474",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-24T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2608.09444",
+          "title": "Depth-adaptive Inference of Looped Language Models via Continuous Depth Batching",
+          "primary_url": "https://arxiv.org/abs/2608.09444",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-25T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2604.02103",
+          "title": "BoundInk: Boundary-Aware Online Handwriting Generation",
+          "primary_url": "https://arxiv.org/abs/2604.02103",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-20T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        },
+        {
+          "paper_key": "arxiv:2609.23551",
+          "title": "Paragraph Boundaries Are Not White Space:Compression Depth as the Signature of Hierarchical Structure",
+          "primary_url": "https://arxiv.org/abs/2609.23551",
+          "discovery_sources": [
+            "hf-daily-papers"
+          ],
+          "hf_listing_date": "2026-09-28",
+          "original_submitted_at": null,
+          "upstream_published_at": "2026-09-20T00:00:00.000Z",
+          "first_seen_at": "2026-09-28T22:10:05.737776+00:00",
+          "verification_scope": "未核原文",
+          "decision": "unreviewed",
+          "decision_reason": null,
+          "topics": [],
+          "selected_item_ids": []
+        }
+      ],
+      "evidence_files": [
+        "evidence/hf-daily-papers.raw"
+      ]
+    },
+    {
+      "id": "openreview",
+      "name": "OpenReview",
+      "url": "https://openreview.net/",
+      "method": "browser",
+      "core": false,
+      "category": "research_society",
+      "region": "global",
+      "note": "会议投稿原文。接口对脚本返回验证页，须浏览器补查",
+      "source_id": "openreview",
+      "status": "partial",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "浏览器读主页新闻和会议入口；仅主页不能证明论文时间窗口完整覆盖。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/browser-openreview.txt"
+      ]
+    },
+    {
+      "id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "url": "https://github.com/trending?since=daily",
+      "method": "page",
+      "core": true,
+      "category": "open_tools",
+      "region": "global",
+      "note": "star 数一律用 api.github.com 复核",
+      "source_id": "github-trending",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "实际解析日榜8项目与Python榜13项目，按仓库名去重；榜单发现不是新版本发布。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [
+        {
+          "repo": "debpalash/VoiceStudio",
+          "url": "https://github.com/debpalash/VoiceStudio",
+          "discovery_list": "github-trending",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "paperclipai/paperclip",
+          "url": "https://github.com/paperclipai/paperclip",
+          "discovery_list": "github-trending",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "vectorize-io/hindsight",
+          "url": "https://github.com/vectorize-io/hindsight",
+          "discovery_list": "github-trending",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "NawfalMotii79/PLFM_RADAR",
+          "url": "https://github.com/NawfalMotii79/PLFM_RADAR",
+          "discovery_list": "github-trending",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "cs341-illinois/coursebook",
+          "url": "https://github.com/cs341-illinois/coursebook",
+          "discovery_list": "github-trending",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "byoungd/up",
+          "url": "https://github.com/byoungd/up",
+          "discovery_list": "github-trending",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "mvschwarz/openrig",
+          "url": "https://github.com/mvschwarz/openrig",
+          "discovery_list": "github-trending",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "dream-num/univer",
+          "url": "https://github.com/dream-num/univer",
+          "discovery_list": "github-trending",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "debpalash/VoiceStudio",
+          "url": "https://github.com/debpalash/VoiceStudio",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "vectorize-io/hindsight",
+          "url": "https://github.com/vectorize-io/hindsight",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "0x4m4/hexstrike-ai",
+          "url": "https://github.com/0x4m4/hexstrike-ai",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "ashhart/TensorFold",
+          "url": "https://github.com/ashhart/TensorFold",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "rohitg00/ai-engineering-from-scratch",
+          "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "microsoft/SkillOpt",
+          "url": "https://github.com/microsoft/SkillOpt",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "alirezarezvani/claude-skills",
+          "url": "https://github.com/alirezarezvani/claude-skills",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "samugit83/redamon",
+          "url": "https://github.com/samugit83/redamon",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "practical-tutorials/project-based-learning",
+          "url": "https://github.com/practical-tutorials/project-based-learning",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "agent0ai/agent-zero",
+          "url": "https://github.com/agent0ai/agent-zero",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "Rizzo-AI-Academy/rizzo-pii",
+          "url": "https://github.com/Rizzo-AI-Academy/rizzo-pii",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "mealie-recipes/mealie",
+          "url": "https://github.com/mealie-recipes/mealie",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        },
+        {
+          "repo": "topoteretes/cognee",
+          "url": "https://github.com/topoteretes/cognee",
+          "discovery_list": "github-python",
+          "decision": "unreviewed",
+          "note": "不将热榜当新发布；本期使用Holo4官方发布解读"
+        }
+      ],
+      "evidence_files": [
+        "evidence/github-trending.txt",
+        "evidence/github-trending.raw"
+      ]
+    },
+    {
+      "id": "36kr-ai",
+      "name": "36氪 AI 频道（逐篇核验原创与转载）",
+      "url": "https://www.36kr.com/information/AI/",
+      "method": "browser",
+      "core": false,
+      "category": "applications",
+      "region": "China",
+      "note": "2026-09-27 经用户要求补入国内来源。用于发现国内产品、创业及产业应用线索；频道混合原创、转载和入驻作者，逐篇记录署名、原始发布者、日期、original/relay 与核验范围，不能按 36kr 域名整体视为 original。原创采访可作为 original；转述需追到官方或原始报道，广告/商单/活动促销不入选。相对时间须回文章页核对绝对时间。",
+      "source_id": "36kr-ai",
+      "status": "partial",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "浏览器读AI频道当前条目，但相对小时未逐篇换成绝对时间且未覆盖72h；仅作线索。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/browser-36kr-ai.txt"
+      ]
+    },
+    {
+      "id": "cac-ai",
+      "name": "国家网信办·网信发布（AI 相关）",
+      "url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+      "method": "page",
+      "core": false,
+      "category": "policy_governance",
+      "region": "China",
+      "note": "2026-09-27 补入。只选与人工智能、算法、生成式服务相关的正式公告和政策；逐条核对正文发布日期、发布主体、附件与效力状态，区分征求意见、正式发布和生效日期。页面日期粗筛结果须回正文确认，无关网信动态不选。",
+      "source_id": "cac-ai",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "带日期公告列表最新Sep23，后续Sep18/Sep14；无窗口内AI公告。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/cac-ai.raw",
+        "evidence/cac-ai.txt"
+      ]
+    },
+    {
+      "id": "bytedance-seed",
+      "name": "字节跳动 Seed·博客与论文",
+      "url": "https://seed.bytedance.com/research",
+      "method": "browser",
+      "core": false,
+      "category": "models_products",
+      "region": "China",
+      "note": "2026-09-27 补入国内机构官方来源，接受中英文原文。渲染后读取 Blog & Publication 卡片的标题、日期和原文链接；继续核对相关模型分类与论文列表，不能把推荐区当作全站完整更新流。论文按 arXiv ID 与既有论文源去重，模型导航和页面版权年份不算发布日期；未完成窗口覆盖记 partial。",
+      "source_id": "bytedance-seed",
+      "status": "partial",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "渲染博客最新Aug05、精选论文Jul06；精选列表不能代表全研究入口覆盖。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/browser-bytedance-seed.txt"
+      ]
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax·News & Updates",
+      "url": "https://www.minimax.io/news",
+      "method": "browser",
+      "core": false,
+      "category": "models_products",
+      "region": "China",
+      "note": "2026-09-27 补入国内机构官方来源，接受中英文原文。页面需渲染；读取新闻卡片及日期，必要时 Load More 覆盖发现窗口。另核对导航/页脚中相关模型的官方发布文章，News 无新增只代表该入口，不代表全部产品无更新。模型性能为厂商报告；Speech/Music 等产品名中的版本号不当日期。",
+      "source_id": "minimax",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "News最新Aug26/Aug03；另核页脚M3 Jun01、Speech2.8 Jan23、Music3 Aug13原文日期，无窗口新增。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/minimax-m3.txt",
+        "evidence/minimax-music.txt",
+        "evidence/browser-minimax.txt",
+        "evidence/minimax-speech.raw",
+        "evidence/minimax-speech.txt",
+        "evidence/minimax-m3.raw",
+        "evidence/minimax-music.raw"
+      ]
+    },
+    {
+      "id": "techcrunch-ai",
+      "name": "TechCrunch AI（试用）",
+      "url": "https://techcrunch.com/category/artificial-intelligence/",
+      "method": "page",
+      "core": false,
+      "category": "applications",
+      "region": "global",
+      "note": "2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补产品、创业及融资报道；只收 AI 相关编辑内容，排除 TechCrunch Events、票务促销、赞助/品牌内容。逐篇核绝对发布时间、署名、原始发布者和引用对象；原创采访可为 original，In Brief 或转述追到原始报道/官方材料，不按域名自动评级。page 粗筛后须打开正文，未覆盖发现窗口记 partial。",
+      "source_id": "techcrunch-ai",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "栏目至Sep25已覆盖；AMD收购全文与官方声明核验，活动推广排除，其余候选未审阅；来源成功指列表覆盖而非全部正文核验。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/techcrunch-ai.raw",
+        "evidence/techcrunch-ai.txt"
+      ]
+    },
+    {
+      "id": "ars-technica-ai",
+      "name": "Ars Technica AI（试用）",
+      "url": "https://arstechnica.com/ai/",
+      "method": "page",
+      "core": false,
+      "category": "research_society",
+      "region": "global",
+      "note": "2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补技术分析、安全、监管及社会影响报道；栏目混有其他主题和 Financial Times/WIRED 等转载，逐篇核署名、首发出处、绝对日期和 original/relay，转载同一原文不算独立证据。只选 AI 相关项，页面粗筛与列表可达不代表正文已核；覆盖不足记 partial。",
+      "source_id": "ars-technica-ai",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "列表Sep28至Sep25已覆盖；暂停训练全文追溯Sep25事件，与昨日已报道去重；其余仅候选未审阅。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/ars-technica-ai.txt",
+        "evidence/ars-technica-ai.raw"
+      ]
+    },
+    {
+      "id": "mit-technology-review-ai",
+      "name": "MIT Technology Review AI（试用）",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "method": "browser",
+      "core": false,
+      "category": "research_society",
+      "region": "global",
+      "note": "2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补研究背景及技术的商业、社会影响；每日检查列表，深度内容在每周回顾集中评估，不要求日更或每日采用。页面需渲染，2026-09-27 仅确认栏目框架与官方 feed 入口，尚未证明完整窗口覆盖。先记 pending，浏览器核对列表及正文后按实际回写。保留作者、绝对发布日期、首发出处和核验范围；摘要/付费墙不当全文，未能打开正文仅作线索；原始研究结论仍回论文。",
+      "source_id": "mit-technology-review-ai",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "渲染最新Sep28两篇至Sep25；科学发现评论与代理责任正文已读，不据媒体评论冒充科学证据。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/browser-mit-technology-review-ai.txt"
+      ]
+    },
+    {
+      "id": "404-media",
+      "name": "404 Media（试用）",
+      "url": "https://www.404media.co/",
+      "method": "page",
+      "core": false,
+      "category": "research_society",
+      "region": "global",
+      "note": "2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补独立调查、安全、劳动与平台影响视角；首页包含非 AI 新闻、播客及站务，只收 AI 相关原创采访/调查或明确关联的报道。打开正文核作者、日期及证据归属；仅标题/摘要或登录/订阅受限只留线索，不据此填 verified_primary_url。必要时 Load more 覆盖发现窗口；未覆盖记 partial，不能把首页可达当完整采集。",
+      "source_id": "404-media",
+      "status": "ok",
+      "checked_at": "2026-09-28T22:10:05.737776+00:00",
+      "evidence": "Sep28至Sep25列表已覆盖；Copilot调查全文含匿名信源及Microsoft回应已读。",
+      "upstream_receipt": null,
+      "upstream_reused": false,
+      "actual_upstream_checked_at": null,
+      "local_scope": "missing-source full72h discovery review",
+      "items": [],
+      "evidence_files": [
+        "evidence/404-media.raw",
+        "evidence/404-media.txt"
+      ]
     }
   ],
-  "config_commit": null,
-  "date_policy": {
-    "issue_date": "2026-09-29",
-    "timezone": "Asia/Shanghai",
-    "cutoff": "2026-09-29T06:00:00+08:00"
-  },
-  "discovery": [],
+  "discovery": [
+    {
+      "source": "techcrunch-ai",
+      "item": "AMD World Labs",
+      "primary_url": "https://newsroom.amd.com/news/amd-acquire-world-labs/"
+    }
+  ],
   "verification": [],
   "excluded_hits": [],
-  "unverified": [
-    "unesco-ai-justice listing only"
+  "media_trial": {
+    "techcrunch-ai": {
+      "adopted": 1,
+      "unique_information": "AMD收购World Labs，追至官方",
+      "readability": "full",
+      "excluded": "活动/票务推广"
+    },
+    "ars-technica-ai": {
+      "adopted": 0,
+      "reason": "暂停训练报道重复昨日事件",
+      "readability": "full"
+    },
+    "mit-technology-review-ai": {
+      "adopted": 0,
+      "reason": "评论/背景留待周回顾，技术结论以原始研究为准",
+      "readability": "full"
+    },
+    "404-media": {
+      "adopted": 1,
+      "unique_information": "Copilot人工质量评估隐私调查",
+      "readability": "full"
+    }
+  },
+  "paper_counts": {
+    "hf_candidates": 30,
+    "arxiv_api_candidates": 100,
+    "fulltext_reviewed": 1,
+    "selected_papers": 1,
+    "editorial_paper_items": 1,
+    "note": "跨渠道需按paper_key归并；未审阅保留，不虚构淘汰理由"
+  },
+  "topic_tracking": [
+    {
+      "paper_key": "arxiv:2609.31590",
+      "topics": [
+        "Agent/记忆/工具使用",
+        "评测/可靠性/安全"
+      ],
+      "change": "从单代理约束拓展到协作因果贡献及计划修订",
+      "open_question": "真实业务和更新模型的外推效果尚未核验"
+    }
   ]
 }
