@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """按 config/sources.json 逐源检查，产出收据草稿。
 
-用法：python3 scripts/collect_sources.py --until 2026-09-18T01:15:00Z --out data/runs/2026-09-18-receipts.json
+用法：python3 scripts/collect_sources.py --until 2026-09-27T21:00:00Z --out data/runs/2026-09-28-receipts.json
       python3 scripts/collect_sources.py --recount data/runs/2026-09-18-receipts.json   # 人工补查后重算汇总
+
+例行时刻见 config/sources.json：Asia/Shanghai 当天 05:00，即前一日历日 21:00 UTC。
+`--until` 填该次运行的 UTC 时刻；上面的例子对应北京时间 2026-09-28 05:00 这一期。
 
 - rss 源：解析 feed，列出发现窗口内的条目（标题、链接、发布时间）。
 - page 源：抓页面，提取页面上出现的日期，报告最新日期和窗口内的链接；提取不到日期记 partial。
