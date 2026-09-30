@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-10-01 · Argon、蒸馏与自愿安全承诺</title>
+<meta name="description" content="Gemini 4 Argon分阶段放量，OpenAI披露蒸馏攻击，白宫推动自愿四层控制；话语场对照Altman与Lovely。采集26/32源，仍不完整。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-01.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-10-01 · Argon、蒸馏与自愿安全承诺">
+<meta property="og:description" content="Gemini 4 Argon分阶段放量，OpenAI披露蒸馏攻击，白宫推动自愿四层控制；话语场对照Altman与Lovely。采集26/32源，仍不完整。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-01.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-30.html">上一期 · 09-30</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-10-01">2026年10月1日 · 星期四 · 第 25 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">5</span>条资讯</div>
+    <div class="stat"><span class="num">1</span>篇论文</div>
+    <div class="stat"><span class="num">1</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player">
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
+  <div class="play-info">
+    <div class="play-label">语音简报</div>
+    <div class="play-title">AI 日报 · 2026年10月1日</div>
+    <div class="play-meta">语音版 · 小宇宙</div>
+  </div>
+  <div class="progress-row">
+    <span class="current-time" id="currentTime">00:00</span>
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="duration-time" id="durationTime">--:--</span>
+  </div>
+  <audio id="audioPlayer" preload="metadata">
+    您的浏览器不支持音频播放。
+  </audio>
+</div>
+
+<script>
+  /* 小宇宙音频直链：节目发布后填入；为空时显示"语音版即将上线" */
+  var AUDIO_SRC = "";  /* 小宇宙直链，未发布时留空 */
+  var audio = document.getElementById('audioPlayer');
+  if (AUDIO_SRC) {
+    audio.src = AUDIO_SRC;
+  } else {
+    var metaEl = document.querySelector('.play-meta');
+    if (metaEl) { metaEl.innerHTML = '语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
+  }
+  var playBtn = document.getElementById('playBtn');
+  var progressFill = document.getElementById('progressFill');
+  var currentTimeEl = document.getElementById('currentTime');
+  var durationTimeEl = document.getElementById('durationTime');
+  var progressBar = document.getElementById('progressBar');
+  var isPlaying = false;
+
+  function togglePlay() {
+    if (!audio.src) { return; }
+    if (audio.paused) { audio.play(); playBtn.innerHTML = '&#10074;&#10074;'; isPlaying = true; }
+    else { audio.pause(); playBtn.innerHTML = '&#9654;'; isPlaying = false; }
+  }
+  function formatTime(s) {
+    if (isNaN(s)) return '--:--';
+    var m = Math.floor(s / 60); var sec = Math.floor(s % 60);
+    return (m < 10 ? '0' : '') + m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+  audio.addEventListener('loadedmetadata', function() { durationTimeEl.textContent = formatTime(audio.duration); });
+  audio.addEventListener('timeupdate', function() {
+    var pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  });
+  audio.addEventListener('ended', function() {
+    playBtn.innerHTML = '&#9654;'; isPlaying = false;
+    progressFill.style.width = '0%'; currentTimeEl.textContent = '00:00';
+  });
+  function seekTo(e) {
+    var rect = progressBar.getBoundingClientRect();
+    var x = (e.clientX || e.touches[0].clientX) - rect.left;
+    var pct = x / rect.width;
+    if (audio.duration) { audio.currentTime = pct * audio.duration; }
+  }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
+</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">5 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">Gemini 4 Argon分阶段放量，OpenAI披露针对受保护推理的蒸馏活动，白宫推动自愿四层控制与用语调整；话语场对照安全节奏与自愿监管。采集26/32源，仍不完整。</div></div>
+<div class="news-item" id="argon"><div class="news-head"><span class="badge badge-model">前沿模型</span><h3>Gemini 4 Argon：先给防御者，再谈全面开放</h3></div>
+<p>Google DeepMind于9月30日宣布前沿模型Gemini 4 Argon。发布页写明，它正通过Fairwind计划向受信任的网络防御方滚动开放；面向开发者、企业与消费者的更广可用性，需等待防护迭代与美国政府自愿性的预发布接触流程。本刊未获测。</p>
+<p>能力与价格均来自官方陈述。DeepSWE v1.1报告77.9%；输出token上限扩至100万（此前64K）；introductory价为每百万输入token 2美元、输出10美元，缓存输入按输入价再减95%；introductory结束后为输入4美元、输出20美元。CWE-bench v1上报告并列第一、得分68%。这些是发布方评测与价目，不能外推为所有任务排序。</p>
+<p>安全叙述与产品节奏绑在一起：滥用与CBRN拒答、间接提示注入鲁棒性、对思维链与动作的失配监测，以及加固沙箱。对受信任防御方，官方表示将提供「不带网络护栏」的版本以发挥防御能力——这是明确的对象区分，不是默认对所有用户关闭护栏。本刊观察：在能力上冲的同时，发布策略本身已成为安全论证的一部分。</p>
+<div class="source">来源：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener">Google / DeepMind</a> · 2026-09-30原发 · 官方发布全文；未获测</div></div>
+<div class="news-item" id="distill"><div class="news-head"><span class="badge badge-safety">安全事件</span><h3>OpenAI打断蒸馏活动：争的是受保护推理，不是对话库被拖库</h3></div>
+<p>OpenAI于9月30日发布调查说明：最早约7月第一周观察到协调活动，旨在提取模型的受保护推理，以帮助训练或复现另一模型。公司称攻击者并未破解加密、入侵数据库或直接读取用户会话存储，而是操纵交互，使本应隐藏的推理以可见形式被批量取出，并违反服务条款。</p>
+<p>关键数字写明：7月24—25日高峰中，相关提取模式请求约1.6万次、涉及逾4,000个用户；进一步关联到逾1.5万用户的提示模式集群，并称7月28日前已完全打断。脚注强调这些是尝试次数，不等于成功提取。归因上，公司称核心集群与月之暗面（Moonshot AI / Kimi）相关人员有关，同时说明观察期内是否全部来自单一行动方仍不清楚。已通过Frontier Model Forum与政府渠道分享信息。本刊未独立取证；这是厂商调查结论。</p>
+<div class="source">来源：<a href="https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign" target="_blank" rel="noopener">OpenAI</a> · 2026-09-30原发 · 官方调查全文；未独立取证</div></div>
+<div class="news-item" id="accord"><div class="news-head"><span class="badge badge-policy">政策治理</span><h3>白宫自愿承诺：四层控制写进文本，执法与披露仍留白</h3></div>
+<p>9月29日白宫相关活动后，多家媒体刊出题为《White House Accord on Super Intelligence: Joint Commitment on Frontier Responsibilities》的自愿文本。公开转载的约三百字文本要求前沿训练与部署方落实四层措施：内部监测（含网络、生化物威胁与非预期系统访问）、内部团队确保监测有效、独立外部审计/评估、董事会独立委员会监督整改；并称日后或可写入法律。同期白宫事实页确认签署行政令，要求行政部门在非法定文件中改用「Super Intelligence / SI」称呼，并另提定义工作。</p>
+<p>Ars Technica等报道强调：目前无新的法定义务与罚则，审计方与公开披露细节仍少。签署人名单与「两打公司」等说法在不同报道间不完全一致，本期不以转述数字作标题。本刊判断：文本把外部审计写进自愿承诺，但把「是否足够」留给公司自选审计方与董事会——与当天厂商加码内部监测、硬件侧隔离的新闻应分开阅读。</p>
+<div class="source">来源：<a href="https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-inaugurates-the-era-of-super-intelligence/" target="_blank" rel="noopener">White House Fact Sheet</a> · <a href="https://arstechnica.com/tech-policy/2026/09/trump-plan-to-combat-ai-risks-hinges-on-big-tech-pals-policing-themselves/" target="_blank" rel="noopener">Ars Technica</a> · 2026-09-29/30 · 事实页+媒体报道核对；承诺全文见公开转载</div></div>
+<div class="news-item" id="openshell"><div class="news-head"><span class="badge badge-infra">代理安全</span><h3>NVIDIA Open Agent Safety：把边界放到模型与应用之外</h3></div>
+<p>NVIDIA于9月28日发布Open Agent Safety Platform（本期按原始日期补读）。新闻稿称平台含开源运行时OpenShell与基于BlueField-4 DPU的Sentry参考设计：前者在CPU侧为代理执行设策略边界并可扩展到Arm/Intel等平台；后者在带外以毫秒级隔离越界代理。合作名单很长，含Anthropic、微软、Hugging Face等；SpaceXAI称用于Cursor与Grok。本刊核读新闻稿与OpenShell仓库说明，未部署实测。</p>
+<p>GitHub仓库页在本期抓取时显示星标约12,389；星标会变，只作当时快照。Altman在DevDay当天的访谈里谈到类似工程护栏「不是完整方案」、对齐仍有科学问题——那是当事人意见，不能当作对本平台的测评。</p>
+<div class="source">来源：<a href="https://nvidianews.nvidia.com/news/open-agent-safety-platform" target="_blank" rel="noopener">NVIDIA</a> · <a href="https://github.com/NVIDIA/OpenShell" target="_blank" rel="noopener">OpenShell</a> · 2026-09-28原发 · 本期补读 · 新闻稿与仓库页；未实测</div></div>
+<div class="news-item" id="synthid-bio"><div class="news-head"><span class="badge badge-safety">生物安全</span><h3>SynthID Bio：给合成蛋白盖水印，实验室里先证明还能用</h3></div>
+<p>DeepMind同日介绍SynthID Bio：把水印嵌进氨基酸选择或结构坐标，使合成后的实体蛋白仍可检测，并称在VEGF-A、SARS-CoV-2 spike RBD、PD-L1等 binder 湿实验中，命中率与结合亲和力与未加水印版本相当。对结构预测，方法微调AlphaFold 3扩散网络的一小部分权重。官方称将公开方法论文、代码、体外数据与权重，并提到与斯坦福/Arc Institute在噬菌体基因组水印上的后续工作。这是生物安全工具链中的一层，不是替代DNA合成筛查的银弹。</p>
+<div class="source">来源：<a href="https://deepmind.google/blog/introducing-synthid-bio/" target="_blank" rel="noopener">DeepMind</a> · 2026-09-30原发 · 官方博文；湿实验为作者报告</div></div>
+<div class="paper-also"><div class="paper-also-title">更多动态</div>
+<div class="paper-also-item" id="claude-gov"><span class="paper-also-num">01</span><div><strong>Claude for Government：FedRAMP High环境转正式可用</strong><p>Anthropic于9月30日宣布Claude for Government对联邦与州机构正式可用，称自7月公测以来在FedRAMP High授权环境中提供与商业侧相近的能力节奏；管理员可设部门配额与硬封顶、审计日志支持ATO。Claude Code CLI与Claude for Microsoft 365为同一环境下的early access。核读发布文，未核实各机构实际开通进度。</p><p>来源：<a href="https://claude.com/blog/claude-for-government-is-now-generally-available" target="_blank" rel="noopener">Claude Blog</a> · 2026-09-30原发 · 发布全文</p></div></div>
+<div class="paper-also-item" id="team-bots"><span class="paper-also-num">02</span><div><strong>SpaceXAI Team Bots：共享技能，对话仍分人隔离</strong><p>xAI（SpaceXAI）于9月28日发布Team Bots：围绕团队角色装配上下文、插件、凭证与记忆，可在Slack以独立句柄协作；官方强调Bot共享，但每人对话与记忆仍隔离。文中给出销售、工程、市场、数据等内部用例及客户引言。属产品说明，效果未独立验证。</p><p>来源：<a href="https://x.ai/news/team-bots" target="_blank" rel="noopener">SpaceXAI</a> · 2026-09-28原发 · 官方产品文；未独立验证</p></div></div>
+<div class="paper-also-item" id="mark-chen"><span class="paper-also-num">03</span><div><strong>MIT Technology Review访Mark Chen：训练期也要上监测</strong><p>Will Douglas Heaven于9月30日刊出对OpenAI首席研究官Mark Chen的访谈。报道称公司已将约5%–10%算力转向安全与监测，并开始在训练运行上启用原主要用于部署的监测；同时引述公司发言人关于暂停部分训练、复查日志的说明。这是访谈与公司陈述，不是事故调查结论。试用媒体本期采用此条原创访谈作背景。</p><p>来源：<a href="https://www.technologyreview.com/2026/09/30/1145339/were-not-going-to-shoot-ourselves-in-the-foot-over-hugging-face-says-openais-chief-research-officer/" target="_blank" rel="noopener">MIT Technology Review</a> · 2026-09-30原发 · 原创访谈全文</p></div></div>
+</div></div>
+
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">话语场精选</span></div>
+<div class="insight-card" id="discourse-altman"><div class="insight-banner"><div class="meta">2026-09-29原发 · CNBC非正式逐字稿</div><h3>话语场精选①｜Sam Altman：下架是「谨慎有余」，护栏也不等于对齐完成</h3></div><div class="insight-body">
+<p>今天的蒸馏披露、Argon分阶段放量与OpenShell发布，适合回看9月29日CNBC《Halftime Report》在DevDay现场对Sam Altman的访谈。本期核读CNBC发布的非正式逐字稿页面（须注明转述自CNBC），未把标题党写成官方技术报告。</p>
+<p>谈及放弃推出某一新模型时，Altman称应把安全、对齐、监测放在能力之前，并说该次属于abundance of caution，强调「没有特别可怕的单一事件」、模型在部分评估上略差；同时区分pacing与单纯停训——目标是继续进步，但要能给出可依赖的安全论证。被问及NVIDIA类工程护栏时，他表示就所知是好事、OpenAI也在做类似的事，但不认为那是完整解决方案，担心若把安全只当成工程问题，会忽略仍需发现的对齐科学。</p>
+<p>本刊关联：蒸馏争夺的是推理痕迹与能力迁移；自愿审计与硬件隔离回答的是另一类边界问题。二者都需要，但不能互相冒充。材料档位为媒体非正式逐字稿。Concourse ID：cnbc-sam-altman-halftime-2026-09-29。</p>
+<p>来源：<a href="https://www.cnbc.com/2026/09/29/first-on-cnbc-transcript-openai-ceo-sam-altman-speaks-with-cnbcs-kate-rooney-on-halftime-report-today.html" target="_blank" rel="noopener">CNBC × Sam Altman</a> · 2026-09-29原发 · 非正式逐字稿；转述自CNBC</p>
+</div></div>
+<div class="insight-card" id="discourse-lovely"><div class="insight-banner"><div class="meta">2026-09-29原发</div><h3>话语场精选②｜Garrison Lovely：自愿承诺解决不了「淘汰劳动力」这条线</h3></div><div class="insight-body">
+<p>白宫文本强调公司自我监测与外部审计。与之对照的是9月29日Cognitive Revolution对记者Garrison Lovely的访谈，围绕新书《Obsolete》。本期核读节目页AI生成的show notes与站点自动转写；直接引语以转述为主，不把机器字幕当作精校录音。</p>
+<p>Lovely把问题从「要不要AI」收窄到obsoleting project——专门追求通用替代人类劳动的那条产品线，并主张freeze the frontier一类可动员的政治要求；同时批评缺乏硬约束的安全承诺易在出货压力下被改写，并把技术对齐、规范、经济与地缘并列为alignment polycrisis。</p>
+<p>本刊关联分析：自愿四层控制可以增加可检查的程序，但并不自动回答「谁有权决定是否继续冲通用替代」；把程序完善与政治授权分开写，才不至于把签约仪式写成问题已关闭。Concourse ID：PiBNrW7Q_Ws。</p>
+<p>来源：<a href="https://www.cognitiverevolution.ai/obsolete-or-irreplaceable-garrison-lovely-on-stopping-the-race-to-replace-human-labor/" target="_blank" rel="noopener">Cognitive Revolution × Garrison Lovely</a> · 2026-09-29原发 · show notes与自动转写；转述</p>
+</div></div></div>
+
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇</span></div>
+<div class="paper-item" id="plan-gap"><div class="paper-head"><span class="paper-num">01</span><div class="paper-title">计划声明—执行差距：说好要分层，跑起来却在ReAct里打转</div></div>
+<div class="paper-tags"><span class="paper-tag">arXiv:2609.38108</span><span class="paper-tag">代理规划</span><span class="paper-tag">预印本</span></div>
+<div class="paper-body"><p>论文于9月29日17:47 UTC提交，发现窗口内。已核HTML摘要与文中主要结果表，未复现。</p>
+<p>作者提出Plan Declaration–Execution Gap诊断，并试验Planning-as-Routing：模型先声明Predefined / Sequential / Hierarchical / Search四种模式之一，再由确定性路由交给对应执行器。在ALFWorld、Mind2Web、SWE-bench Verified、WebArena与三款骨干模型上，作者报告：通用Plan+ReAct对已声明结构的保持率在多个基准上约22%–45%，且随计划变长下降；模式专用执行器把ALFWorld任务成功率从Plan+ReAct的约0.48提到最强固定模式约0.92（DeepSeek-V4，Search），SWE-bench Verified从约0.36提到约0.44（Hierarchical）。同时，当前声明策略往往选不中该任务上最强的固定模式。</p>
+<p>局限包括：四种模式与固定预算、部分Search多候选带来的额外尝试次数需用对照拆开解读。它提醒产品评测不要只看最终成功率——「写了计划」不等于「按该结构执行」。</p></div>
+<a class="paper-link" href="https://arxiv.org/abs/2609.38108" target="_blank" rel="noopener">arXiv 2609.38108 →</a></div></div>
+
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据发布方博文整理，未进行部署实测；许可范围按原始条款。本期作为工具发现，不表示项目在当日首次发布。</div></div>
+<div class="oss-item" id="holo4"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://huggingface.co/blog/Hcompany/holo4" target="_blank" rel="noopener">Holo4：同一套权重打GUI、代码、MCP与API</a></span><span class="oss-license">权重已开源多精度格式；完整许可未逐条审阅</span></div>
+<p>Hcompany于9月28日在Hugging Face介绍Holo4（27B稠密与35B-A3B MoE），并开源轨迹与多精度权重。模型强调跨界面通用：同一调用方式覆盖桌面/网页/Android、代码沙箱与业务API。作者报告OSWorld 2.0上27B为61.7%（对比文中引用的Opus 5.5为81.8%），并公开轨迹供复盘。数字为作者评测与特定harness，版本与子集可能与他表不同。对本期代理安全讨论，它提供的是「能力侧」开源对照，不是隔离运行时本身。</p>
+</div></div></div>
+
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 26/32 个来源完成检查</summary><div class="content">
+<p>按现行32源配置，26源完成配置入口与时间窗口检查，6源partial（microsoft、openreview、bytedance-seed、minimax、tongyi、stepfun），成功率81.25%，核心源本轮均达ok。采集不完整。来源完成指入口发现覆盖，不表示列表内每篇已核全文。</p>
+<p>WebSearch仅作发现；金额、星标与基准数字均回一手页或仓库页复核。OpenAI Dots/Sol等已在第24期写过的，本期不重复作重点。FTC调查等多家转述且关键信息依赖匿名官员，本期不单列重点。</p>
+<p>本期12个编辑条目：5条重点、2条话语场精选、1篇论文、1项开源解读、3条短讯。话语场采用Altman、Lovely两条，不重复上期Cotra/Thariq。配置commit：06756544d77cb172f7e79c52b4fc24b7a638cdbe。</p>
+<p>待补齐：Microsoft AI 话题页逐篇日期、OpenReview会议过滤、字节Seed日期、MiniMax新闻卡、通义、阶跃星辰。不能据此判断这些来源没有新消息。</p>
+</div></details>
+
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-09-30.html">上一期 · 09-30</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
