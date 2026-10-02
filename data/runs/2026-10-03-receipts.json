@@ -1,0 +1,884 @@
+{
+  "summary": {
+    "window": {
+      "main_start": "2026-10-01T21:07:00+00:00",
+      "cutoff": "2026-10-02T21:07:00+00:00",
+      "discovery_start": "2026-09-29T21:07:00+00:00",
+      "timezone": "Asia/Shanghai"
+    },
+    "planned": 32,
+    "ok": 27,
+    "partial": 5,
+    "failed": 0,
+    "pending_browser": 0,
+    "core_not_ok": [],
+    "success_rate": 0.84375,
+    "incomplete": true
+  },
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://www.anthropic.com/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 616 处，最新 2026-10-02；窗口内 3 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap (Claude Frontier Academy)",
+          "url": "https://www.anthropic.com/news/claude-frontier-academy",
+          "published_at": "2026-10-02",
+          "published_at_source": "2026-10-02",
+          "verified_primary_url": "https://www.anthropic.com/news/claude-frontier-academy",
+          "note": "newsroom 列表标 Oct 2；页面 meta article:published_time=2026-10-02T23:01:00.000Z（采集时已可打开全文）"
+        },
+        {
+          "title": "Barclays scales Claude to upgrade operations and improve client experience",
+          "url": "https://www.anthropic.com/news/barclays-scales-claude",
+          "published_at": "2026-10-01",
+          "note": "上期已报道，去重"
+        }
+      ]
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://claude.com/blog",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 65 处，最新 2026-10-01；窗口内 6 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "",
+          "url": "/blog/claude-for-government-is-now-generally-available",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "",
+          "url": "/blog/claude-code-mods",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "",
+          "url": "/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents",
+          "published_at": "2026-09-29"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 1245 条，带日期 1245 条，最新 2026-10-02T16:15:00+00:00；窗口内 7 条",
+      "items": [
+        {
+          "title": "A model guide for the GPT-6 family",
+          "url": "https://openai.com/index/practical-guide-building-gpt-6",
+          "published_at": "2026-10-02T16:15:00+00:00",
+          "verified_primary_url": "https://openai.com/index/practical-guide-building-gpt-6"
+        },
+        {
+          "title": "Chatham scales its capital markets expertise with OpenAI",
+          "url": "https://openai.com/index/chatham-financial",
+          "published_at": "2026-10-02T00:00:00+00:00",
+          "verified_primary_url": "https://openai.com/index/chatham-financial"
+        },
+        {
+          "title": "The eternal complement",
+          "url": "https://openai.com/index/the-eternal-complement",
+          "published_at": "2026-10-01T17:00:00+00:00",
+          "note": "上期已报道"
+        },
+        {
+          "title": "How Albertsons Companies is reimagining retail from the inside out",
+          "url": "https://openai.com/index/albertsons-reimagining-retail",
+          "published_at": "2026-10-01T16:00:00+00:00"
+        },
+        {
+          "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
+          "url": "https://openai.com/index/the-den-family-social",
+          "published_at": "2026-10-01T00:00:00+00:00"
+        },
+        {
+          "title": "Disrupting a coordinated model-distillation campaign",
+          "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+          "published_at": "2026-09-30T10:30:00+00:00",
+          "note": "10-01期已报道"
+        },
+        {
+          "title": "Helping small businesses put AI to work",
+          "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+          "published_at": "2026-09-30T10:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-02T15:00:00+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "The latest AI news we announced in September 2026",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+          "published_at": "2026-10-02T15:00:00+00:00",
+          "verified_primary_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+        },
+        {
+          "title": "Our Project Suncatcher prototype satellite is in orbit.",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/",
+          "published_at": "2026-10-01T23:30:00+00:00",
+          "verified_primary_url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/",
+          "note": "Google 总 RSS 可见；innovation-and-ai 子源初扫仅1条，补收入库"
+        }
+      ]
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-10-02T21:25:00+00:00",
+      "checked_url": "https://x.ai/news",
+      "status": "ok",
+      "evidence": "curl/浏览器UA打开 https://x.ai/news HTTP 200；可见日期最新 2026-09-28 Team Bots；同页另有更早产品卡。窗口内无更新于 Team Bots 之后的新闻卡。",
+      "items": []
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-02T21:25:00+00:00",
+      "checked_url": "https://deepmind.google/blog/",
+      "status": "ok",
+      "evidence": "配置 RSS 返回压缩/非 XML，改打开 https://deepmind.google/blog/ HTTP 200（Accept-Encoding: identity）；首页可见 SIMA 2、AlphaEarth、AlphaEvolve 等入口卡，未见带 2026-09-30～10-02 绝对日期的新博文卡。窗口内无新增已核条目。SynthID Bio 等更早条目不重复计入本期新增。",
+      "items": []
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-02T13:00:39+00:00；窗口内 6 条",
+      "items": [
+        {
+          "title": "NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI",
+          "url": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/",
+          "published_at": "2026-10-02T13:00:39+00:00",
+          "verified_primary_url": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/"
+        },
+        {
+          "title": "How NVIDIA GPUs Help Accelerate OpenAI’s GPT-6 Astra Ultrafast",
+          "url": "https://blogs.nvidia.com/blog/gpus-openai-gpt-6-astra-ultrafast/",
+          "published_at": "2026-10-01T23:44:13+00:00"
+        },
+        {
+          "title": "Productive, Durable, Fungible: How NVIDIA AI Factories Maximize Return on Investment",
+          "url": "https://blogs.nvidia.com/blog/productive-durable-fungible-ai-factories/",
+          "published_at": "2026-10-01T13:00:49+00:00",
+          "note": "上期已报道"
+        }
+      ]
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 872 条，带日期 872 条，最新 2026-10-02T15:19:50+00:00；窗口内 3 条",
+      "items": [
+        {
+          "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+          "url": "https://huggingface.co/blog/allenai/astabrief",
+          "published_at": "2026-10-02T15:19:50+00:00",
+          "verified_primary_url": "https://huggingface.co/blog/allenai/astabrief"
+        },
+        {
+          "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
+          "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
+          "published_at": "2026-10-02T04:01:31+00:00",
+          "verified_primary_url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata"
+        }
+      ]
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-09-23T00:00:00+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-02T21:25:00+00:00",
+      "checked_url": "https://blogs.microsoft.com/ai/",
+      "status": "partial",
+      "evidence": "打开 https://blogs.microsoft.com/ai/ HTTP 200，话题聚合页缺少可核验的近期绝对日期；未能证明完整发现窗口下界。无新增已选条目。",
+      "items": []
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://qwenlm.github.io/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 10 处，最新 2025-09-23；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "tongyi",
+      "name": "通义实验室",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://qianwen.aliyun.com/",
+      "status": "partial",
+      "evidence": "HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目",
+      "items": []
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 152 处，最新 2026-09-14；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "moonshot",
+      "name": "月之暗面 Moonshot",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://www.moonshot.cn/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 6 处，最新 2026-07-17；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "zhipu",
+      "name": "智谱 Z.ai",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://www.zhipuai.cn/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 319 处，最新 2026-09-10；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://www.stepfun.com/",
+      "status": "partial",
+      "evidence": "HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目",
+      "items": []
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 91 处，最新 2026-09-28；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 13 处，最新 2026-10-02；窗口内 4 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Commission seeks feedback on EU KIDS Act",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-seeks-feedback-eu-kids-act",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Meet the 10 finalists of the Apply AI Startup Award",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/meet-10-finalists-apply-ai-startup-award",
+          "published_at": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 17 处，最新 2026-10-20；窗口内 1 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-10-02"
+        }
+      ]
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 170 处，最新 2026-10-02；窗口内 4 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Bridging frameworks: How HAIP 2.0 supports interoperability with the EU AI Act",
+          "url": "https://oecd.ai/en/wonk/bridging-frameworks-how-haip-2-0-supports-interoperability-with-the-eu-ai-act",
+          "published_at": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "status": "ok",
+      "evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "items": []
+    },
+    {
+      "source_id": "hf-daily-papers",
+      "name": "Hugging Face Daily Papers",
+      "core": false,
+      "method": "api",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://huggingface.co/api/daily_papers",
+      "status": "ok",
+      "evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "items": []
+    },
+    {
+      "source_id": "openreview",
+      "name": "OpenReview",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-02T21:25:00+00:00",
+      "checked_url": "https://openreview.net/",
+      "status": "partial",
+      "evidence": "打开 https://openreview.net/ HTTP 200；可见 ICLR/ICML/NeurIPS 等会场入口，未完成各会议提交时间筛到发现窗口下界。",
+      "items": []
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
+      "status": "ok",
+      "evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "items": []
+    },
+    {
+      "source_id": "36kr-ai",
+      "name": "36氪 AI 频道（逐篇核验原创与转载）",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-02T21:25:00+00:00",
+      "checked_url": "https://www.36kr.com/information/AI/",
+      "status": "partial",
+      "evidence": "打开 https://www.36kr.com/information/AI/ HTTP 200；列表可见 2026-10-01/09-30 多条（含转载/入驻）。已展开列表，仍未确认 72h 发现窗口完整下边界；转述不单独作一手。未采用未独立核全文的新文。",
+      "items": []
+    },
+    {
+      "source_id": "cac-ai",
+      "name": "国家网信办·网信发布（AI 相关）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 20 处，最新 2026-09-23；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "bytedance-seed",
+      "name": "字节跳动 Seed·博客与论文",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-02T21:25:00+00:00",
+      "checked_url": "https://seed.bytedance.com/research",
+      "status": "ok",
+      "evidence": "打开 https://seed.bytedance.com/research HTTP 200；博客/论文卡片可见最新约 2026-05–07（SeedRealtime、Seedance 2.5、Seed Audio、EdgeBench 等），窗口内无新发公告卡。",
+      "items": []
+    },
+    {
+      "source_id": "minimax",
+      "name": "MiniMax·News & Updates",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-02T21:25:00+00:00",
+      "checked_url": "https://www.minimax.io/news",
+      "status": "ok",
+      "evidence": "打开 https://www.minimax.io/news HTTP 200；动态列表已加载，可见 MiniMax Speech 2.8 / Music 3.0 等 NEW 标记，但新闻卡缺少可核窗口内绝对发布时间；未将无日期产品卡计为窗口新增。",
+      "items": []
+    },
+    {
+      "source_id": "techcrunch-ai",
+      "name": "TechCrunch AI（试用）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 61 处，最新 2026-10-03；窗口内 22 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Theresa Loconsolo",
+          "url": "https://techcrunch.com/author/theresa-loconsolo/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "TechCrunch Events",
+          "url": "https://techcrunch.com/author/techcrunch-events/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Sarah Perez",
+          "url": "https://techcrunch.com/author/sarah-perez/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Russell Brandom",
+          "url": "https://techcrunch.com/author/russell-brandom/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Kirsten Korosec",
+          "url": "https://techcrunch.com/author/kirsten-korosec/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Julie Bort",
+          "url": "https://techcrunch.com/author/julie-bort/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Tim Fernholz",
+          "url": "https://techcrunch.com/author/tim-fernholz/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Sarah Perez",
+          "url": "https://techcrunch.com/author/sarah-perez/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Russell Brandom",
+          "url": "https://techcrunch.com/author/russell-brandom/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Ivan Mehta",
+          "url": "https://techcrunch.com/author/ivan-mehta/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Dominic-Madori Davis",
+          "url": "https://techcrunch.com/author/dominic-madori-davis/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Aisha Malik",
+          "url": "https://techcrunch.com/author/aisha-malik/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Aditya Mehta",
+          "url": "https://techcrunch.com/author/aditya-mehta/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Tim Fernholz",
+          "url": "https://techcrunch.com/author/tim-fernholz/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "TechCrunch Events",
+          "url": "https://techcrunch.com/author/techcrunch-events/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Sarah Perez",
+          "url": "https://techcrunch.com/author/sarah-perez/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Russell Brandom",
+          "url": "https://techcrunch.com/author/russell-brandom/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Marina Temkin",
+          "url": "https://techcrunch.com/author/marina-temkin/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Lucas Ropek",
+          "url": "https://techcrunch.com/author/lucas-ropek/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Julie Bort",
+          "url": "https://techcrunch.com/author/julie-bort/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Aisha Malik",
+          "url": "https://techcrunch.com/author/aisha-malik/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "source_id": "ars-technica-ai",
+      "name": "Ars Technica AI（试用）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://arstechnica.com/ai/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 78 处，最新 2026-10-02；窗口内 19 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "US arrests tech CEO accused of smuggling $300M in Nvidia chips into China",
+          "url": "https://arstechnica.com/tech-policy/2026/10/us-arrests-tech-ceo-accused-of-smuggling-300m-in-nvidia-chips-into-china/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Amazon’s $1B plan to combat data center backlash draws more backlash",
+          "url": "https://arstechnica.com/tech-policy/2026/10/amazons-1b-plan-to-combat-data-center-backlash-draws-more-backlash/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "The 7-year-old Nvidia Shield TV is now $100 more expensive due to AI",
+          "url": "https://arstechnica.com/gadgets/2026/10/the-7-year-old-nvidia-shield-tv-is-now-100-more-expensive-thanks-to-ai/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "With most information hidden, the game Stratego had stumped AI—until now",
+          "url": "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Judge dismisses Chegg and Penske antitrust lawsuits targeting Google AI search",
+          "url": "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Trump plan to combat AI risks hinges on Big Tech pals policing themselves",
+          "url": "https://arstechnica.com/tech-policy/2026/09/trump-plan-to-combat-ai-risks-hinges-on-big-tech-pals-policing-themselves/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "“An AI did it” is no defense, says nonprofit suing OpenAI over Hugging Face hack",
+          "url": "https://arstechnica.com/tech-policy/2026/09/lawsuit-demands-openai-halt-unsafe-development-that-caused-hugging-face-hack/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Google figures out how to watermark AI-designed proteins",
+          "url": "https://arstechnica.com/science/2026/09/google-figures-out-how-to-watermark-ai-designed-proteins/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "RFK Jr. thinks AI will free us from the “tyranny” of medical facts, expertise",
+          "url": "https://arstechnica.com/health/2026/09/rfk-jr-says-ai-backs-his-anti-vaccine-views-we-checked-it-doesnt/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Google’s early attempt to pay websites for AI answers is struggling",
+          "url": "https://arstechnica.com/google/2026/09/google-is-paying-100-websites-for-contributions-to-ai-overviews-but-the-amounts-are-tiny/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Google announces Gemini 4 Argon AI model, but you can’t use it yet",
+          "url": "https://arstechnica.com/google/2026/09/google-announces-gemini-4-argon-ai-model-but-you-cant-use-it-yet/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "OpenAI delays IPO over AI safety concerns",
+          "url": "https://arstechnica.com/ai/2026/09/openai-delays-ipo-over-ai-safety-concerns/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Interview: Firefox’s chief on why he hopes a redesign will help win users from Chrome",
+          "url": "https://arstechnica.com/gadgets/2026/09/mozillas-head-of-firefox-talks-product-priorities-ai-skepticism-and-browser-choice/",
+          "published_at": "2026-09-29"
+        },
+        {
+          "title": "Protests against OpenAI get increasingly creative",
+          "url": "https://arstechnica.com/ai/2026/09/what-iceberg-bay-area-artists-target-openai-with-titanic-themed-protest-art/",
+          "published_at": "2026-09-29"
+        },
+        {
+          "title": "OpenAI says planned GPT-6.1 is too insecure to release",
+          "url": "https://arstechnica.com/ai/2026/09/openai-says-planned-gpt-6-1-is-too-insecure-to-release/",
+          "published_at": "2026-09-29"
+        },
+        {
+          "title": "Here’s what actually happened in OpenAI’s Australian gov’t server hack",
+          "url": "https://arstechnica.com/ai/2026/09/heres-what-actually-happened-in-openais-australian-govt-server-hack/",
+          "published_at": "2026-09-29"
+        },
+        {
+          "title": "Anthropic’s IPO pitch includes a warning about human extinction",
+          "url": "https://arstechnica.com/ai/2026/09/anthropics-ipo-pitch-includes-a-warning-about-human-extinction/",
+          "published_at": "2026-09-29"
+        },
+        {
+          "title": "AMD acquires World Labs AI startup, upping the ante against Nvidia",
+          "url": "https://arstechnica.com/ai/2026/09/amd-acquires-world-labs-ai-pioneer-fei-fei-lis-world-models-startup/",
+          "published_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "source_id": "mit-technology-review-ai",
+      "name": "MIT Technology Review AI（试用）",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-02T21:25:00+00:00",
+      "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "打开 https://www.technologyreview.com/topic/artificial-intelligence/ HTTP 200；列表未能稳定抽出 /2026/10/ 新文链接；未见窗口内可核绝对日期的新 AI 专题文。保留栏目可达。",
+      "items": []
+    },
+    {
+      "source_id": "404-media",
+      "name": "404 Media（试用）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-02T21:08:30+00:00",
+      "checked_url": "https://www.404media.co/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 36 处，最新 2026-10-02；窗口内 12 条（按日期匹配，粒度到天）",
+      "items": [
+        {
+          "title": "Subscribe",
+          "url": "/signup/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Joseph Cox",
+          "url": "/author/joseph-cox/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Jason Koebler",
+          "url": "/author/jason-koebler/",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-10-02"
+        },
+        {
+          "title": "Samantha Cole",
+          "url": "/author/samantha-cole/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Lorenzo Franceschi-Bicchierai",
+          "url": "/author/lorenzo/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Claire Woodcock",
+          "url": "/author/claire/",
+          "published_at": "2026-10-01"
+        },
+        {
+          "title": "Samantha Cole",
+          "url": "/author/samantha-cole/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Lorenzo Franceschi-Bicchierai",
+          "url": "/author/lorenzo/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Joseph Cox",
+          "url": "/author/joseph-cox/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "Jason Koebler",
+          "url": "/author/jason-koebler/",
+          "published_at": "2026-09-30"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-09-30"
+        }
+      ]
+    }
+  ],
+  "paper_candidates": [
+    {
+      "paper_key": "2610.02142",
+      "title": "Keyword Harnesses Fail Open: A Cheap Diagnostic Ladder for Tool-Use Claims in Small Language Models",
+      "primary_url": "https://arxiv.org/abs/2610.02142",
+      "html_url": "https://arxiv.org/html/2610.02142",
+      "submitted": "2026-10-01",
+      "discovery_sources": [
+        "arxiv",
+        "hf-daily-papers"
+      ],
+      "topics": [
+        "评测/可靠性",
+        "Agent/工具使用"
+      ],
+      "verification_scope": "摘要+HTML 方法/结果表/局限；未复现",
+      "decision": "adopt",
+      "decision_reason": "工具调用宽松指标可虚高，与本期 harness/生产指南主题相关",
+      "selected_item_ids": [
+        "keyword-harness"
+      ]
+    },
+    {
+      "paper_key": "2609.36435",
+      "title": "MemFold: Learning Compact Soft Memory for Long-Context Personalization via On-Policy Optimization",
+      "primary_url": "https://arxiv.org/abs/2609.36435",
+      "discovery_sources": [
+        "hf-daily-papers"
+      ],
+      "topics": [
+        "Agent/记忆"
+      ],
+      "verification_scope": "摘要",
+      "decision": "stash",
+      "decision_reason": "与长期个性化记忆相关，全文待核"
+    }
+  ],
+  "discourse_selections": [
+    {
+      "concourse_id": "kog7mwsDqnk",
+      "item_id": "discourse-rlm",
+      "title": "Academia is for Ambition — Alex Zhang, MIT (Recursive Language Models)",
+      "primary_url": "https://www.latent.space/p/rlm",
+      "youtube_url": "https://www.youtube.com/watch?v=kog7mwsDqnk",
+      "published_at": "2026-10-02",
+      "verification_scope": "官方文字稿节目说明与要点列表；未逐字校听",
+      "reason": "与本期 GPT-6 生产指南、harness/脚手架主题相关；讨论 RLM、上下文卸载与 harness 作为组合泛化"
+    }
+  ],
+  "discovery": {
+    "websearch": [
+      "AI news October 2-3 2026 OpenAI Anthropic Google",
+      "site:anthropic.com/news",
+      "site:openai.com"
+    ],
+    "notes": "网页搜索仅作线索；入选条目均回官方页核验"
+  },
+  "verification": {
+    "opened_primary": [
+      "https://www.anthropic.com/news/claude-frontier-academy",
+      "https://openai.com/index/practical-guide-building-gpt-6",
+      "https://openai.com/index/chatham-financial",
+      "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/",
+      "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/",
+      "https://huggingface.co/blog/allenai/astabrief",
+      "https://www.latent.space/p/rlm",
+      "https://arxiv.org/html/2610.02142",
+      "https://arxiv.org/abs/2610.02142"
+    ]
+  },
+  "excluded_hits": [],
+  "config_commit": "fbcfd5474663adce71791cbcb2d9d51c14258015",
+  "editorial_counts": {
+    "featured": 4,
+    "briefs": 4,
+    "papers": 1,
+    "opensource": 1,
+    "discourse": 1,
+    "selected_total": 10
+  },
+  "topic_tracking": {
+    "agent_tools_memory": [
+      "keyword-harness",
+      "discourse-rlm",
+      "gpt6-guide"
+    ],
+    "eval_reliability_safety": [
+      "keyword-harness"
+    ]
+  }
+}

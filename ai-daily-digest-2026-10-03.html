@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-10-03 · 把能力装进组织与本地机器：Academy、Suncatcher、GPT-6 指南</title>
+<meta name="description" content="Anthropic 启动 Frontier Academy、Suncatcher 原型入轨、GPT-6 生产选用指南与 DGX Spark 64GB；话语场补充 RLM/harness 视角。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-03.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-10-03 · 把能力装进组织与本地机器：Academy、Suncatcher、GPT-6 指南">
+<meta property="og:description" content="Anthropic 启动 Frontier Academy、Suncatcher 原型入轨、GPT-6 生产选用指南与 DGX Spark 64GB；话语场补充 RLM/harness 视角。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-03.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-10-02.html">上一期 · 10-02</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-10-03">2026年10月3日 · 星期六 · 第 27 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">4</span>条资讯</div>
+    <div class="stat"><span class="num">1</span>篇论文</div>
+    <div class="stat"><span class="num">1</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年10月3日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">4 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">Anthropic 启动 Frontier Academy、Suncatcher 原型入轨、GPT-6 生产选用指南与 DGX Spark 64GB；话语场补充 RLM/harness 视角。</div></div><div class="news-item" id="frontier-academy"><div class="news-head"><span class="badge badge-model">企业人才</span><h3>Claude Frontier Academy：1 亿美元，要培养 1 万名能把模型装进业务的工程师</h3></div><p>Anthropic 新闻室列出日期为 <strong>10月2日</strong> 的公告（页面 meta `article:published_time` 为 2026-10-02T23:01:00.000Z；采集时全文已可打开）。公司启动 Claude Frontier Academy，承诺投入 <strong>1 亿美元</strong>，目标到 <strong>2027 年底</strong> 培养 10,000 名 Frontier Deployed Engineers（FDE）。首期合作方包括 Accenture、Bain、Capgemini、澳洲联邦银行、Deloitte、McKinsey、Morgan Stanley、Novo Nordisk 等。</p><p>培训按“住院医师”式路径：多日面授与模拟企业部署，通过后进入约 12 周驻场；组织提名工程师并携带回公司要落地的 Claude 项目。地点包括旧金山、纽约与伦敦。<strong>1 万是培训目标，不是已结业人数；1 亿美元是公司承诺口径，本刊未独立审计拨款进度。</strong>本刊观察：企业缺口往往不在“有没有模型”，而在有没有人能把模型接到安全审查、流程与交接上。</p><div class="source">来源：<a href="https://www.anthropic.com/news/claude-frontier-academy" target="_blank" rel="noopener">Anthropic</a> · 2026-10-02 · 官方公告全文；1亿美元与1万人为承诺/目标口径，未独立审计</div></div><div class="news-item" id="suncatcher"><div class="news-head"><span class="badge badge-model">算力试验</span><h3>Project Suncatcher 原型卫星已入轨：太空算力仍是长期试验</h3></div><p>Google Research <strong>10月1日</strong>宣布，与 Planet 合作的 Project Suncatcher 原型卫星已随 SpaceX Transporter-18 搭载入轨，团队确认卫星联系正常并按预期运行。这是探索未来是否可能在太空部署可扩展机器学习基础设施的长期研究步骤之一；随后数周将收集 TPU 在轨承受辐射与热环境的数据。同行评议论文已发表于 *Joule*。</p><p>本刊核读官方全文。<strong>入轨不等于太空数据中心已可用，也不等于算力经济结论已经成立。</strong>它提供的是硬件环境试验，而不是生产负载承诺。</p><div class="source">来源：<a href="https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/" target="_blank" rel="noopener">Google Research</a> · 2026-10-01 · 官方全文；入轨不等于可用太空算力</div></div><div class="news-item" id="gpt6-guide"><div class="news-head"><span class="badge badge-model">生产实践</span><h3>GPT-6 族选用指南：先匹配工作负载，再谈推理强度与成本</h3></div><p>OpenAI <strong>10月2日</strong>发布《A model guide for the GPT-6 family》，面向把 GPT-6 系列用于原型、功能开发与多步工作流的团队。指南强调：用缓存与压缩控制上下文和成本（文中称缓存输入 token 最高可便宜约 95%，<strong>为厂商报价口径，非本刊实测</strong>）；按任务选择模型、reasoning effort 与速度；保持提示、skills 与仓库说明一致；对长任务使用 steering、异步工具与委托，并事先规定何时必须请示人类。</p><p>这是产品文档式实践建议，不是新模型发布。本刊关联：它把“模型有多强”换成“如何在生产里选、控、盯”，与昨日关于执行能力的讨论同一条线。</p><div class="source">来源：<a href="https://openai.com/index/practical-guide-building-gpt-6" target="_blank" rel="noopener">OpenAI</a> · 2026-10-02 · 官方指南全文；成本数字为厂商口径，未实测</div></div><div class="news-item" id="dgx-spark-64"><div class="news-head"><span class="badge badge-model">本地算力</span><h3>DGX Spark 64GB：本地 agent 的入门配置，厂商给出集群加速数字</h3></div><p>NVIDIA <strong>10月2日</strong>介绍 DGX Spark 新增 <strong>64GB</strong> 统一内存配置，由 Acer、ASUS、Dell、Gigabyte、HP、MSI 等厂商提供，沿用 GB10 Grace Blackwell、DGX OS 与 NVIDIA AI 软件栈，文称可支持最高约 1000 亿参数量级本地模型（<strong>厂商能力声明，未独立实测</strong>）。两台 64GB 可通过 Sync Cluster Assistant 组集群；NVIDIA 给出的 Qwen 3.8 27B 测试称双机相对单机最高约 <strong>1.7×</strong> 性能。预装 Agent Toolkit、Nemotron、Ollama、vLLM、PyTorch CUDA 等。</p><p>本刊核读官方博文，<strong>不把厂商基准当作可迁移的端到端结论</strong>。对本期主题而言，它提醒：本地私有推理与云上租用正在同时扩容，选择取决于数据边界和利用率，而不是单一峰值。</p><div class="source">来源：<a href="https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/" target="_blank" rel="noopener">NVIDIA Blog</a> · 2026-10-02 · 厂商全文；参数量与1.7×为厂商测试口径，未独立实测</div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="discourse-rlm"><div class="insight-banner"><div class="meta">2026-10-02</div><h3>话语场精选｜Alex Zhang：脚手架可能比再堆一层模型参数更值钱</h3></div><div class="insight-body"><p><strong>人物背景｜</strong> Alex Zhang 是 MIT 博士生，工作横跨 GPU 内核与 KernelBench、Recursive Language Models（RLM）等多 agent / harness 方向。本刊依据 Latent Space 节目介绍与其公开学术主页叙述核验身份，将其观点读作研究者对“系统层能力”的观察，而非实验室官方路线图。（[节目页](https://www.latent.space/p/rlm)）</p><p><strong>节目背景｜</strong> Latent Space 是面向 AI 工程师的技术播客与社区，关注工程、产品与研究交界，提供音视频访谈及文字说明。这是节目整体定位，不单指本集。（[官方介绍](https://www.latent.space/about)）</p><p>原节目页标注 <strong>10月2日</strong>。本期核读官方文字稿中的主题提纲与导语：讨论 RLM 的上下文卸载、代码执行与递归子 agent、共享记忆；以及为何 Claude Code / Codex / Pi 等在结构上比外表更相似；并把 harness 视为跨任务的组合泛化器。文中还提到 RLM 系 harness 曾在 ARC-AGI-3 等评测叙事中领先出现——<strong>评测成绩随版本与设置变化，本刊不把提纲中的“领先”写成当前榜首事实</strong>。</p><p>本刊关联：今天的 GPT-6 生产指南谈缓存、委托与监控；这篇访谈提醒，很多“模型做不到”的问题，可能是脚手架没有把已有能力组合起来。节目早于或并行于今日新闻，<strong>不是对今日公告的回应</strong>。Concourse ID：`kog7mwsDqnk`；核验范围为官方节目页文字，未逐字校听录音。</p><p>来源：<a href="https://www.latent.space/p/rlm" target="_blank" rel="noopener">Latent Space 原节目</a> · 2026-10-02 · 官方节目页文字提纲与导语；未逐字校听</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇论文</span></div><div class="paper-item" id="keyword-harness"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">Keyword Harnesses Fail Open：宽松的工具调用分数，可能在给从未调用工具的模型打高分</span></div><div class="paper-tags"><span class="paper-tag">评测可靠性</span><span class="paper-tag">2026-10-01</span><span class="paper-tag">摘要、结果表与局限；未复现</span></div><div class="paper-body"><p>预印本 arXiv:2610.02142v1，<strong>10月1日</strong>提交。作者在一对共享解码器/词表的西班牙语安全向小模型上记录假阳性：约 <strong>661.6M</strong>（代码/技术文本占比高、无专用 SFT）与约 <strong>1,109M</strong>（网页为主、含约 6B token 工具 SFT）在宽松工具指标 B4 上几乎同分（<strong>0.660 vs 0.650</strong>），但 verbatim 复现训练样例的工具调用时，600M 为 <strong>6/6</strong>，1B 多检查点为 <strong>0/6</strong>。首 token 探测把 1B 失败定位到对 `&lt;|tool_call|&gt;` 先验被网页训练阶段冲掉（概率约 \(10^{-4}\)–\(10^{-5}\)）。文中提出一套便宜的严格诊断阶梯，并给出定向 SFT 修复路径。</p><p>本刊核读摘要、HTML 结果表与局限段，<strong>未复现</strong>。不能外推到所有工具评测；它说明的是：匹配关键词的 harness 可能“默认放行”。与本期 RLM / 生产指南并列阅读时，重点是评测是否真的在测工具行为。</p></div><a class="paper-link" href="https://arxiv.org/html/2610.02142" target="_blank" rel="noopener">arXiv HTML →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="astabrief"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://huggingface.co/blog/allenai/astabrief" target="_blank" rel="noopener">AstaBrief：把“带引用的科研报告”做成可自托管的小模型</a></span><span class="oss-license">见模型卡</span></div><p>Ai2 <strong>10月2日</strong>在 Hugging Face 介绍并开源 AstaBrief 8B：输入研究问题与检索到的文献片段，一次性生成带引用报告；在 Asta 平台作为 Fast mode，与 Claude 驱动的 Thinking mode 并列。训练强调引用过滤与偏好数据；文称相对原先分段生成管线有近一个数量级的效率提升（<strong>作者报告，未独立实测</strong>）。开放权重便于机构在敏感课题上本地运行，并附示例工作流。</p><p>已核官方博文；许可证与具体权重卡以仓库页为准，本刊未部署。观察：开源的价值不只是省 API 费，还有证据链与部署边界由使用者控制。</p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 27/32 个来源完成检查</summary><div class="content"><p>来源覆盖以当前 <strong>32</strong> 源配置计：`ok 27 / partial 5 / failed 0`，成功率 <strong>84.4%</strong>，核心源均达 ok，但仍 <strong>采集不完整</strong>（成功率 &amp;lt;90%）。partial：Microsoft AI 话题页、通义、阶跃、OpenReview 会场列表、36氪 AI（缺完整时间下界或日期化列表）。xAI 最新可见 Team Bots（9月28日），窗口无更新。DeepMind 博客入口可达，窗口内无新的已核日期博文。</p><p>arXiv / HF Daily Papers 接口可达；本期论文精读 1 篇，另将 MemFold 摘要暂存。TechCrunch 列表混入作者页，未当作文章采用；Ars 有芯片走私等报道，因非一手官方且非本期主线，未升为精选。Barclays、mods、eternal complement、NVIDIA AI 工厂回报、蒸馏活动等上期已报道，去重。</p><p>话语场读取 Concours 当日扫描与候选库；选用材料已核的 Latent Space × Alex Zhang 一条。网页与口播采用同一组。</p><p>试用媒体与浏览器源继续记录可读性，不因零采用改配置。继续追踪 Agent/工具使用及评测/可靠性主题。</p><p>待补齐：Microsoft AI、通义、阶跃、OpenReview、36氪（逐篇核验原创与转载）。不能据此判断这些来源没有新消息。</p><p>待补齐：Microsoft AI、通义实验室、阶跃星辰 StepFun、OpenReview、36氪 AI 频道（逐篇核验原创与转载）。不能据此判断这些来源没有新消息。</p><p>来源核验不等于独立实测；论文解读限于摘要与提交记录。</p></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-10-02.html">上一期 · 10-02</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
