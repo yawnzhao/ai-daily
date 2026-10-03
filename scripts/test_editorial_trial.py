@@ -17,6 +17,7 @@ class EditorialTrialTests(unittest.TestCase):
         rules = dict(rule.split('/', 1) for rule in request['pronunciation_dict']['tone'])
         self.assertEqual(rules['校对'], '(jiao4)(dui4)')
         self.assertEqual(rules['校验'], '(jiao4)(yan4)')
+        self.assertEqual(rules['宏碁'], '(hong2)(ji1)')
         self.assertNotIn('校', rules)
         self.assertNotIn('学校', rules)
 
