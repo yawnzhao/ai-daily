@@ -33,7 +33,7 @@ class EditorialPagesTests(unittest.TestCase):
         text=(ROOT/'ai-daily-digest-2026-09-25.html').read_text()
         template=(ROOT/'templates/daily.html').read_text()
         self.assertEqual(re.search(r'<style>(.*?)</style>',text,re.S).group(1),
-                         re.search(r'<style>(.*?)</style>',template,re.S).group(1))
+                         re.search(r'<style>(.*?)</style>',template,re.S).group(1).split('  /* Collapsed source catalog. */')[0])
         self.assertEqual(re.findall(r'<h2>(.*?)</h2>',text),check_page.SECTIONS)
         self.assertNotIn('editorial-v2',text)
         self.assertIn('<audio',text)

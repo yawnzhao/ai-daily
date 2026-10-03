@@ -97,6 +97,43 @@ def render_coverage(receipts, manuscript):
             f'<p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>')
 
 
+def render_source_catalog(issue, content):
+    path = issue.get('source_catalog_path')
+    if not path:
+        if issue['date'] >= '2026-10-04':
+            raise ValueError('Missing source catalog; save discovered candidates before publishing')
+        return ''
+    catalog = json.loads((ROOT / path).read_text())
+    if catalog['date'] != issue['date']:
+        raise ValueError('Source catalog date mismatch')
+    selected = {i['primary_url'].rstrip('/'): i for i in issue['items']}
+    rows = []
+    seen = set()
+    for entry in catalog['items']:
+        url = entry['url']
+        if not url.startswith('https://') or url in seen:
+            raise ValueError('Invalid or duplicate catalog URL: ' + url)
+        seen.add(url)
+        item = selected.get(url.rstrip('/'))
+        if item:
+            original = entry.get('original_title')
+            if not original:
+                raise ValueError('Missing original title for selected item: ' + item['id'])
+            title = esc(content[item['id']]['title'])
+            if original != content[item['id']]['title']:
+                title += ('<span class="source-catalog-original">' + esc(original) + '</span>')
+        else:
+            title = esc(entry.get('original_title') or entry['title'])
+        rows.append('<li><a href="' + esc(url) + '" target="_blank" rel="noopener">'
+                    + title + '</a><span class="source-catalog-name">'
+                    + esc(entry['source']) + '</span></li>')
+    return ('<details class="paper-observation source-catalog" id="source-catalog">'
+            '<summary class="label">资讯源 <span class="source-catalog-count">'
+            + str(len(rows)) + ' 条</span></summary><div class="content">'
+            '<ul class="source-catalog-list" aria-label="资讯标题与来源">'
+            + ''.join(rows) + '</ul></div></details>')
+
+
 def build(date):
     issue = json.loads((ROOT / 'data/issues' / (date + '.json')).read_text())
     receipts = json.loads((ROOT / 'data/runs' / (date + '-receipts.json')).read_text())
@@ -118,13 +155,6 @@ def build(date):
     if audio and not audio.startswith('https://'):
         raise ValueError('Audio URL must be HTTPS')
     sections = []
-    takeaways = issue.get('quick_takeaways', [])
-    if takeaways:
-        if not 1 <= len(takeaways) <= 3:
-            raise ValueError('Quick overview must contain 1–3 takeaways')
-        sections.append('<div class="focus-box" id="quick-overview"><div class="label">30秒看完今天</div>'
-                        '<div class="content"><ol>' + ''.join('<li>' + inline(t) + '</li>' for t in takeaways)
-                        + '</ol></div></div>')
     labels = [('featured', '📰', '每日精选', f'{len(groups["featured"])} 条核心资讯'),
               ('insight', '🔍', '行业洞见', '深度分析'),
               ('papers', '📄', '论文速递', f'{len(groups["papers"])} 篇论文'),
@@ -153,7 +183,8 @@ def build(date):
               'VOL': str(issue['vol']), 'NEWS_COUNT': str(len(groups['featured']) + len(groups['briefs'])),
               'PAPER_COUNT': str(len(groups['papers'])), 'OSS_COUNT': str(len(groups['opensource'])),
               'WINDOW_HOURS': str(issue['window_hours']), 'AUDIO_SRC': esc(audio),
-              'CONTENT': '\n'.join(sections) + '\n' + render_coverage(receipts, manuscript)}
+              'CONTENT': '\n'.join(sections) + '\n' + render_coverage(receipts, manuscript)
+                         + '\n' + render_source_catalog(issue, content)}
     page = (ROOT / 'templates/daily.html').read_text()
     for key, value in values.items():
         page = page.replace('{{' + key + '}}', value)
