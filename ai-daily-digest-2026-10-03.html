@@ -182,8 +182,87 @@
 </header>
 
 <!-- ===== Audio Player ===== -->
-<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年10月3日</div><div class="play-meta">语音版制作中（原曲下载受阻，混音未完成） · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
-<script>var AUDIO_SRC = "";</script>
+<div class="audio-player">
+  <button class="play-btn" id="playBtn" type="button" aria-label="播放语音简报" onclick="togglePlay()">&#9654;</button>
+  <div class="play-info">
+    <div class="play-label">语音简报</div>
+    <div class="play-title">AI 日报 · 2026年10月3日</div>
+    <div class="play-meta">语音版 · 小宇宙</div>
+  </div>
+  <div class="progress-row">
+    <span class="current-time" id="currentTime">00:00</span>
+    <div class="progress-bar" id="progressBar" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" onclick="seekTo(event)" onkeydown="seekKey(event)">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <span class="duration-time" id="durationTime">--:--</span>
+  </div>
+  <audio id="audioPlayer" preload="metadata">
+    您的浏览器不支持音频播放。
+  </audio>
+</div>
+
+<script>
+  /* 小宇宙音频直链：节目发布后填入；为空时显示"语音版即将上线" */
+  var AUDIO_SRC = "https://media.xyzcdn.net/6aa034c1002d4e51bf4b4f31/lho3uwcHwjK-FVqBNPFyh4sr2va1.m4a";  /* 小宇宙直链，未发布时留空 */
+  var audio = document.getElementById('audioPlayer');
+  if (AUDIO_SRC) {
+    audio.src = AUDIO_SRC;
+  } else {
+    var metaEl = document.querySelector('.play-meta');
+    if (metaEl) { metaEl.innerHTML = '音频暂时无法加载 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a>'; }
+    var btnEl = document.getElementById('playBtn');
+    if (btnEl) { btnEl.setAttribute('aria-disabled', 'true'); btnEl.setAttribute('aria-label', '语音版尚未上线'); }
+  }
+  var playBtn = document.getElementById('playBtn');
+  var progressFill = document.getElementById('progressFill');
+  var currentTimeEl = document.getElementById('currentTime');
+  var durationTimeEl = document.getElementById('durationTime');
+  var progressBar = document.getElementById('progressBar');
+  var isPlaying = false;
+
+  function togglePlay() {
+    if (!audio.src) { return; }
+    if (audio.paused) { audio.play(); playBtn.innerHTML = '&#10074;&#10074;'; isPlaying = true; }
+    else { audio.pause(); playBtn.innerHTML = '&#9654;'; isPlaying = false; }
+  }
+  function formatTime(s) {
+    if (isNaN(s)) return '--:--';
+    var m = Math.floor(s / 60); var sec = Math.floor(s % 60);
+    return (m < 10 ? '0' : '') + m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+  audio.addEventListener('loadedmetadata', function() { durationTimeEl.textContent = formatTime(audio.duration); });
+  audio.addEventListener('timeupdate', function() {
+    var pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  });
+  audio.addEventListener('ended', function() {
+    playBtn.innerHTML = '&#9654;'; isPlaying = false;
+    progressFill.style.width = '0%'; currentTimeEl.textContent = '00:00';
+  });
+  function seekTo(e) {
+    var rect = progressBar.getBoundingClientRect();
+    var x = (e.clientX || e.touches[0].clientX) - rect.left;
+    var pct = x / rect.width;
+    if (audio.duration) { audio.currentTime = pct * audio.duration; }
+  }
+
+  /* a11y 补丁：按钮状态、进度条键盘操作 */
+  if (playBtn.getAttribute('aria-disabled') !== 'true') { playBtn.setAttribute('aria-label', '播放语音简报'); }
+  audio.addEventListener('play', function() { playBtn.setAttribute('aria-label', '暂停语音简报'); });
+  audio.addEventListener('pause', function() { playBtn.setAttribute('aria-label', '播放语音简报'); });
+  audio.addEventListener('timeupdate', function() {
+    progressBar.setAttribute('aria-valuenow', Math.round((audio.currentTime / audio.duration) * 100) || 0);
+  });
+  function seekKey(e) {
+    if (!audio.src) { return; }
+    if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); return; }
+    if (!audio.duration) { return; }
+    var step = e.shiftKey ? 30 : 5;
+    if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.duration, audio.currentTime + step); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - step); e.preventDefault(); }
+  }
+</script>
 
 <main id="main">
 
@@ -197,7 +276,7 @@
 <div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">话语场精选</span></div><div class="insight-card" id="discourse-rlm"><div class="insight-banner"><div class="meta">2026-10-02</div><h3>话语场精选｜Alex Zhang：通过系统组织模型已有的能力</h3></div><div class="insight-body"><p><strong>人物背景｜</strong> Alex Zhang是MIT CSAIL博士生，研究如何通过系统设计与上下文组织发挥模型能力。他参与KernelBench和GPUMODE相关工作，并研究Recursive Language Models（RLM）。本刊将其视为系统设计研究者的观察角度，非厂商路线图。（<a href="https://alexzhang13.github.io/" target="_blank" rel="noopener">个人学术主页</a>）</p><p><strong>节目背景｜</strong> Latent Space是面向AI工程师的技术播客、通讯与社区，关注模型、工程、基础设施及相关研究。本集为技术访谈，定位依据<a href="https://www.latent.space/about" target="_blank" rel="noopener">节目官方介绍</a>。</p><p>原节目发布于<strong>10月2日</strong>。本刊核读官方文字稿<strong>00:36:42—00:52:01</strong>：Alex讨论通过代码组织调用，把上下文留在文件或内存中，再拆分、组合任务，让较大的任务由熟悉的小步骤完成。这是组合泛化与系统设计的研究思路，<strong>不保证所有任务都能可靠拆解</strong>；不采用节目中未公开成绩作为当前排行榜事实。</p><p><strong>为何现在听｜</strong> GPT-6指南谈完整任务的成本与成功率，工具论文谈是否真正执行；这段访谈补充了步骤怎样组织的问题。本刊据此提出资料边界、实际调用和组合后条件是否丢失三个检查点；这是本刊分析，不是嘉宾逐字给出的清单。节目不是对今日公告的回应；未逐字校听整集录音。Concourse ID：<code>kog7mwsDqnk</code>。已检索整个积累库，相关性与已核材料优先，网页和口播采用同一条。</p><p>来源：<a href="https://www.latent.space/p/rlm" target="_blank" rel="noopener">Latent Space 原节目</a> · 2026-10-02 · 官方文字稿00:36:42—00:52:01；个人官网与节目About；未逐字校听</p></div></div></div>
 <div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇论文</span></div><div class="paper-item" id="keyword-harness"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">Keyword Harnesses Fail Open：关键词分数不等于实际工具调用</span></div><div class="paper-tags"><span class="paper-tag">评测可靠性</span><span class="paper-tag">2026-10-01</span><span class="paper-tag">v1方法、结果、训练设定与局限；未复现</span></div><div class="paper-body"><p>arXiv:2610.02142v1，提交于<strong>10月1日17:46:38 UTC</strong>（北京时间10月2日01:46），早于本期24小时窗口，属于72小时论文发现补充。作者比较两个解码器和词表相近、训练经历不同的西班牙语小模型：关键词指标B4几乎同分，但严格检查结构化工具调用的样例表现明显分开。</p><p>定向训练在一个检查点改善了正确调用；负面提示下仍容易过度触发。部分检查点训练未完成，训练数据不相同，是有限自然实验，不能外推到所有工具评测。本刊核读方法、结果与局限，<strong>未复现</strong>；结论限于评分要区分提到工具、实际执行与是否应该执行。</p></div><a class="paper-link" href="https://arxiv.org/html/2610.02142v1" target="_blank" rel="noopener">arXiv HTML →</a></div></div>
 <div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="astabrief"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://huggingface.co/blog/allenai/astabrief" target="_blank" rel="noopener">AstaBrief 8B：一次生成带引用的科研报告</a></span><span class="oss-license">Apache-2.0</span></div><p>Ai2发布基于Qwen3-8B后训练的AstaBrief，输入研究问题和检索文献片段，一次生成带引用报告。核对模型卡为<strong>Apache-2.0、英语</strong>；本刊未部署或验证中文质量。（<a href="https://huggingface.co/allenai/AstaBrief_8B" target="_blank" rel="noopener">模型卡</a>）</p><p><strong>速度口径要分开：</strong>作者报告近一个数量级提升指生成阶段；包含检索的完整流程中，Fast约51.1秒、Thinking约178.5秒，约3.5倍。训练使用引用过滤与偏好数据，但带引用仍不保证每句话忠实、引文范围足够。较多训练与评测来自2025年，不能写成超过当前所有前沿模型的结论。</p></div></div></div>
-<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 25/32 个来源完成检查</summary><div class="content"><p>当前32个新闻来源，独立验收25项完成、7项partial。partial为Microsoft AI、通义、智谱、阶跃、UNESCO、OpenReview与字节Seed整体栏目；其中部分入口或论文列表可查，但缺可靠绝对发布时间或完整发现范围，不能据此称没有新增。Qwen已复核迁移后的当前站点；MiniMax和xAI已核日期列表。36氪展开到9月28日，MIT Technology Review核到9月28日，列表发现不等于全文已读。</p><p>上游实际截至约05:07，本机补到06:00；已核RSS增量未发现新增。arXiv补全72小时cs.AI/cs.LG/cs.CL发现，HF推荐快照另记；发现数量不等于论文精读数量。Keyword Harnesses采用，MemFold暂存并说明未读全文的理由。继续追踪Agent/记忆/工具使用及评测/可靠性/安全，试用媒体逐源记录采用与未采用理由，不因零采用改配置。</p><p>Anthropic Academy公告的页面时间为10月3日07:01、晚于截止，而列表标10月2日；保留时间冲突候选，<strong>本期不纳入主新闻</strong>。已修正DGX供应日期、AstaBrief速度口径及论文窗口，不把访问时间当发布时间。</p><p>话语场发现覆盖55项与新闻32源分别统计。复用31份有效上游收据，仅补24个缺证据入口；所有补查发现均已在索引或依规则排除，未重复全扫。缺文字材料另外保留。</p><p>音频：原始口播已生成（11分39秒），完整解码核验通过；原创新闻歌曲《把每一步做稳》已在MiniMax官方网页按数量1生成，显示1分36秒，但下载链接被浏览器拦截，原曲和混音尚未完成核验。<strong>音频待处理，不发布纯口播替代约定混音。</strong></p><p>待补齐：Microsoft AI、通义实验室、智谱 Z.ai、阶跃星辰 StepFun、UNESCO AI、OpenReview、字节跳动 Seed·博客与论文。不能据此判断这些来源没有新消息。</p><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 25/32 个来源完成检查</summary><div class="content"><p>当前32个新闻来源，独立验收25项完成、7项partial。partial为Microsoft AI、通义、智谱、阶跃、UNESCO、OpenReview与字节Seed整体栏目；其中部分入口或论文列表可查，但缺可靠绝对发布时间或完整发现范围，不能据此称没有新增。Qwen已复核迁移后的当前站点；MiniMax和xAI已核日期列表。36氪展开到9月28日，MIT Technology Review核到9月28日，列表发现不等于全文已读。</p><p>上游实际截至约05:07，本机补到06:00；已核RSS增量未发现新增。arXiv补全72小时cs.AI/cs.LG/cs.CL发现，HF推荐快照另记；发现数量不等于论文精读数量。Keyword Harnesses采用，MemFold暂存并说明未读全文的理由。继续追踪Agent/记忆/工具使用及评测/可靠性/安全，试用媒体逐源记录采用与未采用理由，不因零采用改配置。</p><p>Anthropic Academy公告的页面时间为10月3日07:01、晚于截止，而列表标10月2日；保留时间冲突候选，<strong>本期不纳入主新闻</strong>。已修正DGX供应日期、AstaBrief速度口径及论文窗口，不把访问时间当发布时间。</p><p>话语场发现覆盖55项与新闻32源分别统计。复用31份有效上游收据，仅补24个缺证据入口；所有补查发现均已在索引或依规则排除，未重复全扫。缺文字材料另外保留。</p><p>音频：第27期完整节目已在<a href="https://www.xiaoyuzhoufm.com/episode/6ac04a41e742e36efcbde268" target="_blank" rel="noopener">小宇宙公开</a>，约13分29秒。原创新闻歌曲《把每一步做稳》实际1分36.68秒，来自MiniMax官方网页一次生成；原始口播11分39秒。节目依次为12秒歌曲片头（前8秒音量0.70，后4秒淡出至0）、完整口播音量0.90、精确静音2秒、从头播放完整歌曲音量0.70，各段不重叠。原始文件保留，上传混音的完整解码、段落边界、音量与静音已核；小宇宙转码后公开文件另核解码、时长、片头/口播/片尾及静音。口播与歌曲均由AI生成，歌曲实际男女声效果未独立校听。</p><p>待补齐：Microsoft AI、通义实验室、智谱 Z.ai、阶跃星辰 StepFun、UNESCO AI、OpenReview、字节跳动 Seed·博客与论文。不能据此判断这些来源没有新消息。</p><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
 
 </main>
 
