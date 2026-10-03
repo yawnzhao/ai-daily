@@ -13,6 +13,8 @@
 | 路径 | 放什么 |
 |---|---|
 | `daily/YYYY/YYYY-MM-DD.md` | 当天成稿。一天一个文件，文件名即日期，不改历史文件 |
+| [daily/scripts/STYLE.md](daily/scripts/STYLE.md) | 口播写作与证据表达：通俗例子、故事与适度幽默；相关证据与第三方评测的使用 |
+| [daily/scripts/README.md](daily/scripts/README.md) | 口播文件、长度、发音和音频制作约定 |
 | `index.html`、`ai-daily-digest-YYYY-MM-DD.html` | 站点页面。push 到 `main` 后由 GitHub Pages 直接发布 |
 | `templates/daily.md` | 成稿模板。改格式改这里，不在单篇里即兴发挥 |
 | `data/runs/YYYY-MM-DD-receipts.json` | 当天的采集收据：查了哪些源、成功失败、原始条目。没有收据的成稿不算数 |
