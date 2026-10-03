@@ -15,6 +15,8 @@ def esc(value):
 
 def inline(text):
     text = esc(text)
+    text = re.sub(r'\[([^\]]+)\]\((https://[^\s)]+)\)',
+                  r'<a href="\2" target="_blank" rel="noopener">\1</a>', text)
     return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
 
 
@@ -75,15 +77,24 @@ def render_item(item, content, number):
 
 def render_coverage(receipts, manuscript):
     summary = receipts['summary']
-    missing = [s['name'] for s in receipts['sources'] if s['status'] != 'ok']
+    missing = [s for s in receipts['sources'] if s['status'] != 'ok']
     status = '采集不完整' if summary['incomplete'] else '本轮来源检查完成'
     notes = manuscript.split('## 采集说明', 1)[1].split('\n## ', 1)[0].strip()
     notes_html = ''.join('<p>' + inline(p) + '</p>' for p in re.split(r'\n\s*\n', notes) if p.strip())
-    gap = '<p>待补齐：' + esc('、'.join(missing)) + '。不能据此判断这些来源没有新消息。</p>' if missing else ''
+    gap = ''
+    if missing:
+        labels = {'partial': '已检查部分内容，覆盖或日期待核',
+                  'failed': '访问或抓取失败', 'pending': '尚未完成检查'}
+        rows = ''.join('<li><strong>' + esc(s['name']) + '</strong>：'
+                       + esc(labels.get(s['status'], '检查未完成')) + '。'
+                       + esc(s.get('evidence') or '尚无足够检查证据。') + '</li>'
+                       for s in missing)
+        gap = ('<p><strong>检查尚未完成的来源</strong>：下列状态表示检查缺口，'
+               '不能据此认定近期无更新；“已完整检查且无新增”另行记录。</p><ul>' + rows + '</ul>')
     return (f'<details class="paper-observation" id="coverage"><summary class="label">'
             f'采集说明 · {status} · {summary["ok"]}/{len(receipts["sources"])} 个来源完成检查</summary>'
             f'<div class="content">{notes_html}{gap}'
-            f'<p>来源核验不等于独立实测；论文解读限于摘要与提交记录。</p></div></details>')
+            f'<p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>')
 
 
 def build(date):
@@ -107,6 +118,13 @@ def build(date):
     if audio and not audio.startswith('https://'):
         raise ValueError('Audio URL must be HTTPS')
     sections = []
+    takeaways = issue.get('quick_takeaways', [])
+    if takeaways:
+        if not 1 <= len(takeaways) <= 3:
+            raise ValueError('Quick overview must contain 1–3 takeaways')
+        sections.append('<div class="focus-box" id="quick-overview"><div class="label">30秒看完今天</div>'
+                        '<div class="content"><ol>' + ''.join('<li>' + inline(t) + '</li>' for t in takeaways)
+                        + '</ol></div></div>')
     labels = [('featured', '📰', '每日精选', f'{len(groups["featured"])} 条核心资讯'),
               ('insight', '🔍', '行业洞见', '深度分析'),
               ('papers', '📄', '论文速递', f'{len(groups["papers"])} 篇论文'),
@@ -123,7 +141,7 @@ def build(date):
                       '本期作为工具发现，不表示项目在当日首次发布。</div></div>')
         block += ''.join(render_item(item, content[item['id']], n + 1) for n, item in enumerate(groups[key]))
         if key == 'featured' and groups['briefs']:
-            block += '<div class="paper-also"><div class="paper-also-title">另两条动态</div>'
+            block += '<div class="paper-also"><div class="paper-also-title">其他动态</div>'
             block += ''.join(render_item(item, content[item['id']], n + 1) for n, item in enumerate(groups['briefs']))
             block += '</div>'
         sections.append(block + '</div>')
@@ -132,7 +150,7 @@ def build(date):
     values = {'TITLE': esc(f'AI 日报 {date} · {issue["title"]}'), 'DESC': esc(issue['description']),
               'CANONICAL': BASE + '/ai-daily-digest-' + date + '.html', 'DATE': date,
               'DATE_HUMAN': day_human, 'WEEKDAY': ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'][day.weekday()],
-              'VOL': str(issue['vol']), 'NEWS_COUNT': str(len(groups['featured'])),
+              'VOL': str(issue['vol']), 'NEWS_COUNT': str(len(groups['featured']) + len(groups['briefs'])),
               'PAPER_COUNT': str(len(groups['papers'])), 'OSS_COUNT': str(len(groups['opensource'])),
               'WINDOW_HOURS': str(issue['window_hours']), 'AUDIO_SRC': esc(audio),
               'CONTENT': '\n'.join(sections) + '\n' + render_coverage(receipts, manuscript)}
@@ -165,4 +183,3 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('date', help='Issue date, YYYY-MM-DD')
     build(parser.parse_args().date)
-

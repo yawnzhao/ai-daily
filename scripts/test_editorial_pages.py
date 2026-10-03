@@ -16,14 +16,15 @@ class EditorialPagesTests(unittest.TestCase):
         self.assertEqual(page['vol'],'18')
         self.assertFalse(check_page.check_issue(ROOT/page['file']))
 
-    def test_new_edition_counts_and_pending_audio_are_read_correctly(self):
+    def test_published_edition_counts_and_audio_are_read_correctly(self):
         page = build_site.read_page(ROOT/'ai-daily-digest-2026-09-25.html')
         self.assertEqual((page['news'],page['papers'],page['oss']),('4','3','4'))
-        self.assertFalse(page['audio'])
+        self.assertTrue(page['audio'])
         self.assertFalse(check_page.check_issue(ROOT/page['file']))
 
     def test_validator_rejects_non_https_audio(self):
-        text=(ROOT/'ai-daily-digest-2026-09-25.html').read_text().replace('var AUDIO_SRC = ""','var AUDIO_SRC = "http://example.com/audio.mp3"')
+        text=re.sub(r'var AUDIO_SRC = "[^"]*"', 'var AUDIO_SRC = "http://example.com/audio.mp3"',
+                    (ROOT/'ai-daily-digest-2026-09-25.html').read_text())
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'ai-daily-digest-2026-09-25.html';path.write_text(text)
             self.assertTrue(any('AUDIO_SRC' in e for e in check_page.check_issue(path)))
@@ -35,7 +36,7 @@ class EditorialPagesTests(unittest.TestCase):
                          re.search(r'<style>(.*?)</style>',template,re.S).group(1))
         self.assertEqual(re.findall(r'<h2>(.*?)</h2>',text),check_page.SECTIONS)
         self.assertNotIn('editorial-v2',text)
-        self.assertNotIn('<audio',text)
+        self.assertIn('<audio',text)
 
     def test_validator_rejects_preview_markers(self):
         text=(ROOT/'ai-daily-digest-2026-09-25.html').read_text().replace('</head>','<meta name="robots" content="noindex,nofollow"></head>')

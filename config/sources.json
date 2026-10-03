@@ -21,7 +21,10 @@
     "金额、票数、star 数、估值这类数字，必须由主线程用官网或 API 复核；子代理给出的数字只算线索。",
     "标题和 description 里不写只有 relay 来源的数字。",
     "对 36氪等混合内容平台逐篇判断来源级别：原创采访/调查须打开全文并记录原始发布者，转载/编译追到官方或原始报道；入驻作者、转载、广告及活动推广不因平台域名自动获得 original 级别。同一原文的多站转载只算一份证据。",
-    "对 TechCrunch、Ars Technica、MIT Technology Review、404 Media 等试用媒体也按文章判断 original/relay：原创采访与调查可作为 original，转引、编译或转载须追溯首发；活动促销、赞助和品牌内容不入选。全文未能读取的只记线索，不凭摘要填 verified_primary_url；多家转载同一原文只算一份证据。"
+    "对 TechCrunch、Ars Technica、MIT Technology Review、404 Media 等试用媒体也按文章判断 original/relay：原创采访与调查可作为 original，转引、编译或转载须追溯首发；活动促销、赞助和品牌内容不入选。全文未能读取的只记线索，不凭摘要填 verified_primary_url；多家转载同一原文只算一份证据。",
+    "2026-10-03起试跑：每日复核约10—15个重要候选，不足按实际，不设最低入选数。保存入选、暂存、重复、超时、证据不足或价值较低的逐条理由；没读过的明确未核，不虚构落选原因。",
+    "官方材料确认发布事实，原创采访或调查可同等进入重点；不能以已有官方主线为由跳过重要媒体候选正文。优先评估平台规则、安全、重要产品及研究变化，指南和案例按相对重要性决定重点或快讯。",
+    "来源入口检查、候选发现、正文核读、最终采用分别记录；无新增仅适用于已完整覆盖窗口的入口。公开网页简述状态，细节留折叠核验记录。"
   ],
 
   "sources": [
@@ -37,7 +40,7 @@
     {"id": "microsoft", "name": "Microsoft AI", "url": "https://blogs.microsoft.com/ai/", "method": "browser", "core": false, "category": "applications", "region": "global", "note": "页面和 feed 对脚本都返回 403"},
     {"id": "qwen", "name": "Qwen", "url": "https://qwenlm.github.io/", "method": "page", "core": false, "category": "models_products", "region": "China"},
     {"id": "tongyi", "name": "通义实验室", "url": "https://qianwen.aliyun.com/", "method": "page", "core": false, "category": "models_products", "region": "China"},
-    {"id": "deepseek", "name": "DeepSeek", "url": "https://api-docs.deepseek.com/updates", "method": "page", "core": false, "category": "models_products", "region": "China"},
+    {"id": "deepseek", "name": "DeepSeek", "url": "https://api-docs.deepseek.com/updates", "method": "browser", "core": false, "category": "models_products", "region": "China", "additional_urls": ["https://www.deepseek.com/en/harness/", "https://github.com/deepseek-ai"], "note": "2026-10-03用户确认补齐入口。保留API更新页，同时检查additional_urls中的官网产品与官方项目发布，逐入口记录URL、日期和覆盖范围。产品首页无首发时间时仅作发现线索，追原始公告或release；不得用API页无更新推断整个机构无更新。全部入口均有范围证据才能将整源标ok，缺失记partial。"},
     {"id": "moonshot", "name": "月之暗面 Moonshot", "url": "https://www.moonshot.cn/", "method": "page", "core": false, "category": "models_products", "region": "China"},
     {"id": "zhipu", "name": "智谱 Z.ai", "url": "https://www.zhipuai.cn/news", "method": "page", "core": false, "category": "models_products", "region": "China"},
     {"id": "stepfun", "name": "阶跃星辰 StepFun", "url": "https://www.stepfun.com/", "method": "page", "core": false, "category": "models_products", "region": "China"},
@@ -56,7 +59,10 @@
     {"id":"techcrunch-ai","name":"TechCrunch AI（试用）","url":"https://techcrunch.com/category/artificial-intelligence/","method":"page","core":false,"category":"applications","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补产品、创业及融资报道；只收 AI 相关编辑内容，排除 TechCrunch Events、票务促销、赞助/品牌内容。逐篇核绝对发布时间、署名、原始发布者和引用对象；原创采访可为 original，In Brief 或转述追到原始报道/官方材料，不按域名自动评级。page 粗筛后须打开正文，未覆盖发现窗口记 partial。"},
     {"id":"ars-technica-ai","name":"Ars Technica AI（试用）","url":"https://arstechnica.com/ai/","method":"page","core":false,"category":"research_society","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补技术分析、安全、监管及社会影响报道；栏目混有其他主题和 Financial Times/WIRED 等转载，逐篇核署名、首发出处、绝对日期和 original/relay，转载同一原文不算独立证据。只选 AI 相关项，页面粗筛与列表可达不代表正文已核；覆盖不足记 partial。"},
     {"id":"mit-technology-review-ai","name":"MIT Technology Review AI（试用）","url":"https://www.technologyreview.com/topic/artificial-intelligence/","method":"browser","core":false,"category":"research_society","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补研究背景及技术的商业、社会影响；每日检查列表，深度内容在每周回顾集中评估，不要求日更或每日采用。页面需渲染，2026-09-27 仅确认栏目框架与官方 feed 入口，尚未证明完整窗口覆盖。先记 pending，浏览器核对列表及正文后按实际回写。保留作者、绝对发布日期、首发出处和核验范围；摘要/付费墙不当全文，未能打开正文仅作线索；原始研究结论仍回论文。"},
-    {"id":"404-media","name":"404 Media（试用）","url":"https://www.404media.co/","method":"page","core":false,"category":"research_society","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补独立调查、安全、劳动与平台影响视角；首页包含非 AI 新闻、播客及站务，只收 AI 相关原创采访/调查或明确关联的报道。打开正文核作者、日期及证据归属；仅标题/摘要或登录/订阅受限只留线索，不据此填 verified_primary_url。必要时 Load more 覆盖发现窗口；未覆盖记 partial，不能把首页可达当完整采集。"}
+    {"id":"404-media","name":"404 Media（试用）","url":"https://www.404media.co/","method":"page","core":false,"category":"research_society","region":"global","note":"2026-09-27 按用户确认加入两周试用；2026-10-11 回顾采用条数、新增独立信息、重复/未采用原因及全文可读性。试用不等于文章已核验。 补独立调查、安全、劳动与平台影响视角；首页包含非 AI 新闻、播客及站务，只收 AI 相关原创采访/调查或明确关联的报道。打开正文核作者、日期及证据归属；仅标题/摘要或登录/订阅受限只留线索，不据此填 verified_primary_url。必要时 Load more 覆盖发现窗口；未覆盖记 partial，不能把首页可达当完整采集。"},
+    {"id": "the-verge-ai", "name": "The Verge AI（试用）", "url": "https://www.theverge.com/ai-artificial-intelligence", "feed": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "method": "rss", "core": false, "category": "applications", "region": "global", "note": "2026-10-03用户确认两周试用，10-17回顾。关注消费产品、平台规则与代理权限；逐篇区分原创采访、评论和转述，追官方原文。Feed可能仅保留少量条目，须对照栏目分页确认覆盖窗口，不足记partial；赞助、活动不入选。"},
+    {"id": "cloudflare-ai", "name": "Cloudflare AI（试用）", "url": "https://blog.cloudflare.com/tag/ai/", "feed": "https://blog.cloudflare.com/tag/ai/rss/", "method": "rss", "core": false, "category": "open_tools", "region": "global", "note": "2026-10-03用户确认两周试用，10-17回顾。只收AI基础设施、工具和平台变化；官方性能数字明确厂商口径。订阅截断不足发现窗口时补栏目分页，不把HTTP200当完成。"},
+    {"id": "apple-developer-ai", "name": "Apple Developer News·AI相关（试用）", "url": "https://developer.apple.com/news/", "feed": "https://developer.apple.com/news/rss/news.rss", "method": "rss", "core": false, "category": "policy_governance", "region": "global", "note": "2026-10-03用户确认两周试用，10-17回顾。仅筛Apple Intelligence、模型工具、AI代理及相关权限与平台规则；常规系统测试版和无关活动排除并记理由。日期须核原文，传闻不视为官方发布。"}
   ],
 
   "discovery": [
@@ -73,5 +79,24 @@
   ],
   "blocked_domains": [
     {"domain": "coindesk.cc", "reason": "冒用 CoinDesk 名义的仿冒域名（真 CoinDesk 为 coindesk.com，2008 年注册、MarkMonitor 托管；本域名 2020 年注册、另一注册商），内容从 Crypto Briefing 搬运。09-18 期被误当作 CoinDesk 引用"}
-  ]
+  ],
+  "editorial_trial": {
+    "start": "2026-10-03",
+    "first_daily_issue": "2026-10-04",
+    "workflow_review_date": "2026-10-10",
+    "new_sources_review_date": "2026-10-17",
+    "shortlist_target": [
+      10,
+      15
+    ],
+    "no_quota": true,
+    "keep_existing_schedule": true,
+    "weekly_observation": [
+      {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/",
+        "scope": "技术实践与分析观察；亲测、评论、转引逐篇分开，不计入每日固定源分母。"
+      }
+    ]
+  }
 }
