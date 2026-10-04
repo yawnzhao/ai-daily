@@ -5,8 +5,8 @@
     "title",
     "source"
   ],
-  "count": 250,
-  "scope": "2026-10-05 采集窗口内已保存的新闻、HF daily papers、GitHub trending 快照与 DeepSeek 窗口内 commit。不含 arXiv 全量。不表示已核读或采用。",
+  "count": 255,
+  "scope": "上游已保存的新闻、论文候选与开源快照，另补读今晨POLITICO原创采访、官方规则及话语场原稿。原始日期保留；标题或列表核验不等于正文已读。",
   "raw_arxiv_backlog_not_displayed": true,
   "arxiv_metadata_count_in_receipt": 0,
   "duplicates_by": "canonical URL / paper ID",
@@ -139,9 +139,12 @@
       "source_id": "huggingface",
       "published_at": "2026-10-03T22:56:48+00:00",
       "date_precision": "second",
-      "selected": false,
-      "verification_scope": "list",
-      "decision": "pending_verification"
+      "selected": true,
+      "verification_scope": "联合文章全文；原论文v1方法与数据集说明；未复现",
+      "decision": "adopted",
+      "original_title": "The Agent Said It Was Done. The Database Disagreed.",
+      "related_item_id": "thinkingbox",
+      "paper_key": "arxiv:2608.19741"
     },
     {
       "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
@@ -1800,9 +1803,11 @@
       "source_id": "github-trending",
       "published_at": "",
       "date_precision": "unknown",
-      "selected": false,
-      "verification_scope": "list",
-      "decision": "pending_verification"
+      "selected": true,
+      "verification_scope": "README、许可证与步骤记录条件；未部署实测",
+      "decision": "adopted",
+      "original_title": "tester-army/e2e",
+      "related_item_id": "tester-e2e"
     },
     {
       "title": "pbakaus/impeccable",
@@ -2460,9 +2465,11 @@
       "source_id": "mit-technology-review-ai",
       "published_at": "2026-10-02T08:00:00+00:00",
       "date_precision": "second",
-      "selected": false,
-      "verification_scope": "list",
-      "decision": "pending_verification"
+      "selected": true,
+      "verification_scope": "署名观点全文；架构主张，不作统一实验证明",
+      "decision": "adopted",
+      "original_title": "Don’t be fooled—LLMs don’t reason",
+      "related_item_id": "graepel-reasoning"
     },
     {
       "title": "Our Solar System Is Terminally Unstable and Will Be Completely Destroyed, Study Finds",
@@ -2779,9 +2786,11 @@
       "source_id": "cloudflare-ai",
       "published_at": "2026-10-02T13:28:10+00:00",
       "date_precision": "second",
-      "selected": false,
-      "verification_scope": "list",
-      "decision": "pending_verification"
+      "selected": true,
+      "verification_scope": "官方全文；提供方、接口、爬虫要求及未上线项目",
+      "decision": "adopted",
+      "original_title": "Introducing Web Search API via AI Gateway",
+      "related_item_id": "cloudflare-search"
     },
     {
       "title": "Building for good: How civil society organizations are automating on Cloudflare",
@@ -2793,6 +2802,72 @@
       "selected": false,
       "verification_scope": "list",
       "decision": "pending_verification"
+    },
+    {
+      "title": "Google Open Source Software Vulnerability Reward Program Rules",
+      "url": "https://bughunters.google.com/about/rules/open-source/google-open-source-software-vulnerability-reward-program-rules#product-vulnerabilities",
+      "source": "Google官方规则及Google VRP原帖",
+      "source_id": "editorial-primary-supplement",
+      "date_note": "10月1日生效；10月4日媒体发现",
+      "original_title": "Google Open Source Software Vulnerability Reward Program Rules",
+      "selected": true,
+      "verification_scope": "产品漏洞条款与官方暂停原因；区分自动化与媒体AI归因",
+      "decision": "adopted",
+      "related_item_id": "google-oss-vrp"
+    },
+    {
+      "title": "Sam Altman to Decoded: ‘The world should accept some bad things happening’ for the benefits of AI",
+      "url": "https://www.politico.com/news/2026/10/04/sam-altman-decoded-interview-ai-01106217",
+      "source": "POLITICO · Christine Mui、Brendan Bordelon",
+      "source_id": "editorial-primary-supplement",
+      "date_note": "北京时间10月5日04:55 · 独家采访",
+      "original_title": "Sam Altman to Decoded: ‘The world should accept some bad things happening’ for the benefits of AI",
+      "selected": true,
+      "verification_scope": "原创报道全文；风险表述、对Anthropic比较及其上下文",
+      "decision": "adopted",
+      "related_item_id": "altman-politico",
+      "published_at": "2026-10-04T20:55:00Z",
+      "date_precision": "minute",
+      "first_seen_at": "2026-10-04T22:17:59.393818+00:00",
+      "first_seen_note": "本机首次保存原文核验收据的时间；更早发现时刻未单独记录，不倒填06:00。",
+      "discovery_path": "https://www.theverge.com/ai-artificial-intelligence"
+    },
+    {
+      "title": "Sam Altman’s remarks at the United Nations Security Council",
+      "url": "https://openai.com/index/sam-altman-un-security-council-remarks/",
+      "source": "OpenAI官方演讲稿 × 联合国原视频",
+      "source_id": "editorial-primary-supplement",
+      "date_note": "9月23日演讲；10月1日视频上传",
+      "original_title": "Sam Altman’s remarks at the United Nations Security Council",
+      "selected": true,
+      "verification_scope": "官方稿全文、原视频自动字幕、安全标准段落与活动背景",
+      "decision": "adopted",
+      "related_item_id": "discourse-un"
+    },
+    {
+      "title": "Who gets to pull the plug on AI?",
+      "url": "https://www.possible.fm/podcasts/riffs057/",
+      "source": "Possible官网节目及文字稿",
+      "source_id": "editorial-primary-supplement",
+      "date_note": "9月30日原节目 · 积累库精选",
+      "original_title": "Who gets to pull the plug on AI?",
+      "selected": true,
+      "verification_scope": "官网文字稿全文；停机与审计段落、主持人及节目背景",
+      "decision": "adopted",
+      "related_item_id": "discourse-possible"
+    },
+    {
+      "title": "VISTA: A Visual Harness for Reasoning in an Interactive World",
+      "url": "https://arxiv.org/html/2610.02200v1",
+      "source": "arXiv原论文 v1 × 作者代码",
+      "source_id": "editorial-primary-supplement",
+      "date_note": "10月1日17:59 UTC提交；10月4日媒体补收",
+      "original_title": "VISTA: A Visual Harness for Reasoning in an Interactive World",
+      "selected": true,
+      "verification_scope": "方法、表1及组件实验；25个公开游戏；未独立复现",
+      "decision": "adopted",
+      "related_item_id": "vista",
+      "paper_key": "arxiv:2610.02200"
     }
   ]
 }
