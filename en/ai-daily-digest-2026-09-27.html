@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Digest · 2026-09-27 · Weekend Reading: Agent Preferences, Protected Memory, and Verifiable Tasks</title>
+<meta name="description" content="Weekend catch-up examines agent preferences, protected memory and verifiable tasks, retaining publication dates and reading limits.">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-27.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Daily Digest · 2026-09-27 · Weekend Reading: Agent Preferences, Protected Memory, and Verifiable Tasks">
+<meta property="og:description" content="Weekend catch-up examines agent preferences, protected memory and verifiable tasks, retaining publication dates and reading limits.">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-27.html">
+<meta property="og:site_name" content="AI Daily Digest">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI Daily Digest · English" href="https://yawnzhao.github.io/ai-daily/en/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+  .play-title a { color: var(--accent-text); text-decoration: none; }
+  .play-title a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .news-item .news-head { flex-direction: column; gap: 6px; }
+    .section-header { flex-wrap: wrap; }
+  }
+</style>
+<link rel="alternate" hreflang="zh-CN" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-27.html">
+<link rel="alternate" hreflang="en" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-27.html">
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="Issue navigation" data-nav="top"><a href="../ai-daily-digest-2026-09-27.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="index.html">← All issues</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-26.html">Previous · 09-26</a><a href="ai-daily-digest-2026-09-28.html">Next · 09-28</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">English edition</div>
+  <h1>AI Daily Digest</h1>
+  <div class="date"><time datetime="2026-09-27">September 27, 2026 · Sunday · Issue 21</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>sections</div>
+    <div class="stat"><span class="num">2</span>news items</div>
+    <div class="stat"><span class="num">3</span>papers</div>
+    <div class="stat"><span class="num">2</span>open-source projects</div>
+    <div class="stat"><span class="num">24</span> hours of news</div>
+  </div>
+</header>
+
+<div class="audio-player"><div class="play-info"><div class="play-label">Audio · Chinese</div><div class="play-title"><a href="https://www.xiaoyuzhoufm.com/episode/6ab85c89195d838e2aea72b6" target="_blank" rel="noopener">Listen in Chinese →</a></div><div class="play-meta">Issue 21 · About 10 min 46 sec · AI-generated audio</div></div></div>
+
+<main id="main">
+
+<!-- 四sections的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="focus-box"><div class="label">Weekend Reading: Agent Preferences, Protected Memory, and Verifiable Tasks</div><div class="content">This is a weekend catch-up issue. The main window runs September 26 at 06:00 through September 27 at 06:00 Beijing time (UTC+8), or September 25 at 22:00 through September 26 at 22:00 UTC. No selected top story could be confirmed as first published in that interval. Original dates are retained for a September 24 agent experiment, a follow-up to previously unread memory documentation, and papers and tools not previously explored in this series.</div></div>
+<section class="section" id="featured"><div class="section-header"><span class="icon" aria-hidden="true">📰</span><h2>Top Stories</h2><span class="tag">2 stories</span></div><div class="news-item" id="project-swap"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Before an agent trades books for you, check whether it understands your preferences</h3></div><p>Anthropic’s September 24 Project Swap involved 201 employees trading books through negotiating Claude agents. Participants separately ranked books to assess the agents’ understanding. After short conversations, human and model pairwise preference rankings agreed 61% of the time; <strong>this is not a trade-completion rate</strong>. The study attributes most of the gap from an ideal allocation to preference representation rather than negotiation.</p><p>Task execution and goal understanding deserve separate evaluation. This was research among one company’s employees in a controlled market with cooperative models, not evidence of shopping outcomes for all consumers or a commercial trading product already launched.</p><div class="source">Source: <a href="https://www.anthropic.com/research/project-swap" target="_blank" rel="noopener">Anthropic · Research</a> · Original publication/submission: 2026-09-24 · Official research article reviewed</div></div><div class="news-item" id="private-memory"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Follow-up: Google explains persistent memory in a protected cloud environment</h3></div><p>The September 23 Private AI Compute technical explanation was read in this issue. Devices hold the keys needed to decrypt personal data, which is stored encrypted. For a request, data is temporarily decrypted in an isolated secure cloud environment; added context is encrypted again for storage. Google also proposes public records of server software so devices can verify it before sending data.</p><p>The September 24 issue recorded that the body could not be opened; this follow-up supplies the mechanism. The source uses future-facing language, so this reports an architecture and technical plan, not permanent cross-device memory already available to all users. Security was not independently audited, and encryption protection is a separate question from memory accuracy.</p><div class="source">Source: <a href="https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/" target="_blank" rel="noopener">Google DeepMind</a> · Original publication/submission: 2026-09-23T16:00:57.674000Z · Technical explanation reviewed; not independently audited</div></div></section>
+<section class="section" id="insight"><div class="section-header"><span class="icon" aria-hidden="true">🔍</span><h2>Industry Insights</h2><span class="tag">Conversation Spotlight</span></div><div class="insight-card" id="delegation-check"><div class="insight-banner"><div class="meta">Original publication/submission: 2026-09-24</div><h3>Our take: a delegated goal also needs a checkable acceptance step</h3></div><div class="insight-body"><p>Project Swap suggests a design question: can users see how a system understands a goal before it acts? This is editorial inference, not a deployment design established by the experiment.</p><p>For gifts, show two candidates and their trade-offs first. For news, distinguish first publication, follow-up and old material read later. For code, distinguish tested changes from changes ready to release. Example decisions make abstract instructions checkable, while process records help locate deviations.</p><p>Evaluate goal understanding, execution outcomes and correction costs together. One successful task does not prove future reliability; more actions do not necessarily better match intent. The ability to revise preferences, correct memory and recover from mistakes is worth tracking.</p><p>Source: <a href="https://www.anthropic.com/research/project-swap" target="_blank" rel="noopener">Our analysis · Based on Project Swap</a> · Original publication/submission: 2026-09-24 · Our editorial inference is distinguished from the research findings</p></div></div></section>
+<section class="section" id="papers"><div class="section-header"><span class="icon" aria-hidden="true">📄</span><h2>Research Briefs</h2><span class="tag">3 papers</span></div><div class="paper-item" id="explorationbench"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">ExplorationBench separates exploration from familiar knowledge</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original publication/submission: 2026-09-24T17:37:14Z</span><span class="paper-tag">Abstract and submission record only</span></div><div class="paper-body"><p>First submitted September 24, the study creates executable, precisely verifiable alien worlds with rules that conflict with familiar knowledge. Systems explore using flawed manuals and environmental feedback, then solve held-out tasks. Two sandboxes each contain 70 tasks, with ten AI systems evaluated.</p><p>The abstract reports that stronger systems learn and apply new rules, but exploration trajectories vary considerably and further exploration can stall or regress. Artificial-sandbox results do not establish real scientific-discovery ability. The contribution is measuring experiments, feedback and transfer to new tasks. Only the abstract and submission record were reviewed.</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.30199" target="_blank" rel="noopener">arXiv · 2609.30199 →</a></div><div class="paper-item" id="coding-tamp"><div class="paper-head"><span class="paper-num">02</span><span class="paper-title">Coding agents generate planning programs, then face unseen scenarios</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original publication/submission: 2026-09-24T17:53:35Z</span><span class="paper-tag">Abstract and submission record only</span></div><div class="paper-body"><p>The September 24 paper gives coding agents task descriptions and simulators, with a fixed budget to generate programs. Programs are then frozen and evaluated on unseen instances. Across 28 simulated environments, 980 programs each undergo 100 tests, totaling 98,000 evaluation episodes.</p><p>For the 16 environments with handcrafted-planner comparisons, the abstract reports average success rates of 56%–95% across three agent configurations, versus 47% for the planner. The range describes different configurations; it does not mean every environment achieved 95%. These simulated task-and-motion-planning results do not establish equivalent real-robot reliability. The full experimental appendix was not reviewed and results were not reproduced.</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.30233" target="_blank" rel="noopener">arXiv · 2609.30233 →</a></div><div class="paper-item" id="itersynth"><div class="paper-head"><span class="paper-num">03</span><span class="paper-title">IterSynth separates retrieval planning from evidence synthesis</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original publication/submission: 2026-09-24T12:02:53Z</span><span class="paper-tag">Abstract and submission record only</span></div><div class="paper-body"><p>Submitted September 24, IterSynth divides deep search between a planner, which decides what information is missing, and a synthesizer, which updates a continually evolving evidence summary instead of allowing the search history to grow without limit. Training assigns role-specific learning signals from final outcomes and turn-level scores.</p><p>The abstract reports a mean score of 50.7 for an 8B model across five long-search benchmarks. This is an author-reported aggregate score, not general accuracy. Whether the summary drops important counterexamples is a practical risk to assess; that observation is editorial inference. Only the abstract and first-submission time were checked.</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.29444" target="_blank" rel="noopener">arXiv · 2609.29444 →</a></div></section>
+<section class="section" id="opensource"><div class="section-header"><span class="icon" aria-hidden="true">⭐</span><h2>Open Source Spotlight</h2><span class="tag">2 projects</span></div><div class="focus-box"><div class="label">Reading note</div><div class="content">Based on official documentation; no deployment tests were performed. Inclusion here is a tool-discovery recommendation, not a claim that each project was first released today.</div></div><div class="oss-item" id="buzz"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/block/buzz" target="_blank" rel="noopener">block/buzz puts people and agents into a shared event record</a></span><span class="oss-license">Apache-2.0</span></div><p>Buzz describes a workspace shared by people and agents, using a self-hosted message relay and signed events for messages, workflows and code activity. The README lists channels, search, audit logs, a desktop app and an agent CLI; workflow approval gates are explicitly among features still being wired up.</p><p>The useful direction is viewing process and results together. Signatures help establish event identity; they do not prove correctness or complete permission design. README and GitHub API license records were reviewed: Apache-2.0. The tool was not installed or tested. It was discovered on the September 27 ranking, not identified as a same-day first release.</p></div></div><div class="oss-item" id="mobile-mcp"><div class="oss-rank top">2</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/mobile-next/mobile-mcp" target="_blank" rel="noopener">mobile-next/mobile-mcp connects agents to mobile applications</a></span><span class="oss-license">Apache-2.0</span></div><p>The project exposes iOS and Android simulator and real-device operations through MCP. It prefers accessibility structure and falls back to screenshots and coordinates. Official documentation covers taps, swipes, application management and device operations, with platform-specific connection and development requirements.</p><p>These are device-interaction tools, not substitutes for understanding intent, authorizing actions or verifying outcomes. Evaluate it as a mobile-app testing tool rather than evidence that agents reliably handle arbitrary phone tasks. GitHub API records show Apache-2.0. Only the repository was read; no device was connected or code executed. It is included as tool discovery.</p></div></div></section>
+<details class="paper-observation" id="coverage"><summary class="label">Coverage notes · Incomplete · 20/24 checks recorded</summary><div class="content"><p>Collection was incomplete: 20 of 24 configured sources completed checks, four were partial, for 83.3%; none failed or remained pending and all core sources completed their checks. Tongyi, Z.ai and StepFun lacked date lists sufficient to establish complete window coverage. OpenReview’s homepage provides conference entry points rather than a complete paper timeline. These gaps do not imply no updates.</p><p>The main UTC window is September 25 at 22:00 through September 26 at 22:00, with a 72-hour discovery lookback. Issue numbering switches to Asia/Shanghai starting here, continuing Issue 20 as Issue 21; historical dates stay unchanged and source UTC times remain. Day-only dates are not forced into exact 24-hour membership.</p><p>The arXiv query combined cs.AI, cs.LG, cs.CL and submission time, retrieving all 312/312 API records over two pages. This means complete list extraction, not full-paper reading. The September 26 HF list returned an empty array; 22 candidates from September 25 were considered instead. GitHub daily and Python daily lists were extracted; selected repositories’ READMEs and API licenses were checked. Research findings are author-reported and were not independently reproduced.</p><p>The pool contained 385 candidate appearances, merged into 371 unique links after 14 duplicates. Of these, 23 had appeared in prior manuscripts or selection metadata, leaving 348 links not previously cited. This does not mean 348 same-day stories or fully verified items. Eight content blocks were selected: two stories, one analysis, three papers and two repositories; the analysis shares its source with Project Swap.</p><p>Project Swap is late-discovered reading; cloud memory follows up previously unread material. Claude plugins, Proaction, UNESCO’s course and OECD agent governance were not expanded again. DeepMind’s pinned Gemini 3.8 Flash article is dated September 2 and was not treated as a new release.</p><p>An OpenAI incident timeline appeared in the search index with a September 25 update, but neither the formal page nor browser yielded the relevant body in this run. It remained a lead awaiting review, rather than factual coverage.</p><p><strong>Coverage gaps</strong> reflect incomplete checks; they do not establish that a source had no updates.</p><ul><li><strong>Tongyi Lab</strong> — Partially checked. The official product or research entry point did not establish a complete, reliably dated publication list.</li><li><strong>Z.ai</strong> — Partially checked. The original check was partial; complete dates or discovery-window coverage were not established. Details are retained in the historical coverage notes.</li><li><strong>StepFun</strong> — Partially checked. The product page did not provide a complete dated publication stream; preview or countdown text is not a publication timestamp.</li><li><strong>OpenReview</strong> — Partially checked. Homepage or venue access did not establish complete submission coverage through the discovery-window boundary.</li></ul><p>Reviewing a source does not constitute independent testing. Paper-reading scope is stated with each item; experiments were not reproduced.</p></div></details>
+<div class="source">AI-assisted translation, checked against the Chinese edition. <a href="../ai-daily-digest-2026-09-27.html">Read the Chinese edition</a>.</div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="Issue navigation" data-nav="bottom"><a href="../ai-daily-digest-2026-09-27.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="ai-daily-digest-2026-09-26.html">Previous · 09-26</a><a href="ai-daily-digest-2026-09-28.html">Next · 09-28</a><span class="spacer"></span><a href="index.html">All issues →</a></nav>
+
+</body>
+</html>

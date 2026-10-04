@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Digest · 2026-09-23 · GPT-6 Sol and Luna, Chinese Data-Breach Reporting, and Cursor Rollouts</title>
+<meta name="description" content="GPT-6 Sol and Luna, data-breach reporting and Cursor rollouts lead the issue, alongside autonomous-agent reliability research.">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-23.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Daily Digest · 2026-09-23 · GPT-6 Sol and Luna, Chinese Data-Breach Reporting, and Cursor Rollouts">
+<meta property="og:description" content="GPT-6 Sol and Luna, data-breach reporting and Cursor rollouts lead the issue, alongside autonomous-agent reliability research.">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-23.html">
+<meta property="og:site_name" content="AI Daily Digest">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI Daily Digest · English" href="https://yawnzhao.github.io/ai-daily/en/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+  .play-title a { color: var(--accent-text); text-decoration: none; }
+  .play-title a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .news-item .news-head { flex-direction: column; gap: 6px; }
+    .section-header { flex-wrap: wrap; }
+  }
+</style>
+<link rel="alternate" hreflang="zh-CN" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-23.html">
+<link rel="alternate" hreflang="en" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-23.html">
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="Issue navigation" data-nav="top"><a href="../ai-daily-digest-2026-09-23.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="index.html">← All issues</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-22.html">Previous · 09-22</a><a href="ai-daily-digest-2026-09-24.html">Next · 09-24</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">English edition</div>
+  <h1>AI Daily Digest</h1>
+  <div class="date"><time datetime="2026-09-23">September 23, 2026 · Wednesday · Issue 17</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>sections</div>
+    <div class="stat"><span class="num">6</span>news items</div>
+    <div class="stat"><span class="num">4</span>papers</div>
+    <div class="stat"><span class="num">0</span>open-source projects</div>
+    <div class="stat"><span class="num">24</span> hours of news</div>
+  </div>
+</header>
+
+<div class="audio-player"><div class="play-info"><div class="play-label">Audio · Chinese</div><div class="play-title"><a href="https://www.xiaoyuzhoufm.com/episode/6ab5efc1e742e36efcbb0b1f" target="_blank" rel="noopener">Listen in Chinese →</a></div><div class="play-meta">Issue 17 · About 10 min 54 sec · AI-generated audio</div></div></div>
+
+<main id="main">
+
+<!-- 四sections的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="focus-box"><div class="label">GPT-6 Sol and Luna, Chinese Data-Breach Reporting, and Cursor Rollouts</div><div class="content">This issue was reconstructed on September 25, 2026; it was not published on September 23 at the time. The original window runs from September 22 at 05:52 UTC to September 23 at 05:52 UTC, or 13:52 to 13:52 Beijing time (UTC+8). Late discoveries retain their original publication dates and September 25 as the first-discovery date. The historical record reports 17 of 18 sources ok and Microsoft partial: 94.4%, with all core sources ok.</div></div>
+<section class="section" id="featured"><div class="section-header"><span class="icon" aria-hidden="true">📰</span><h2>Top Stories</h2><span class="tag">3 stories + 3 briefs</span></div><div class="news-item" id="featured-01"><div class="news-head"><span class="badge badge-model">AI news</span><h3>OpenAI introduces GPT-6 Sol and Luna with lower prices</h3></div><p>OpenAI’s announcement has an RSS timestamp of September 22 at 18:00 UTC; the full article was opened. Sol and Luna offer a more affordable route to the Astra generation, using the same approach for professional work, factual tasks, coding, computer use and alignment. Astra remains the strongest overall. The article’s broad headline is about roughly 50% lower prices relative to GPT-5.6 promotional prices; the detailed rates must be read individually.</p><p>Per million tokens, Sol input falls from $4 to $2 and output from $20 to $10. Luna input falls from $0.20 to $0.10 and output from $1.20 to $0.50. The last change should not be rounded into an exactly 50% reduction. On AutomationBench 1.0.6, Sol xhigh reports 33.2% at $0.27 per task; Opus 5 max reports 26.9% at 11.1 times the cost. Fable 5.1 with Opus 5 fallback at max reports 31.4%, but the shown cost omits fallback in 40% of tasks and thus understates actual cost.</p><p>Other API changes include a 90% discount for cached input reads, cache diagnostics, changing reasoning effort or tool availability without invalidating the cache, and explicit cache breakpoints. Original source: https://openai.com/index/introducing-gpt-6-sol-and-luna/</p><div class="source">Source: <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener">Archived source · openai.com</a> · Original issue: 2026-09-23 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="news-item" id="featured-02"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Bloomberg Law reports a Chinese probe into DeepSeek and Moonshot data practices</h3></div><p>The visible Bloomberg Law introduction, timestamped September 22 at 11:27 UTC, reports that the Cyberspace Administration of China was investigating DeepSeek and Moonshot after Anthropic alleged that user data was routed to Claude. It describes visits to offices and interviews with executives and staff, rather than a penalty decision. The accessible introduction and four points were reviewed; the rest was behind a login wall, and The Information’s original report was not opened. Source: https://news.bloomberglaw.com/artificial-intelligence/china-probes-deepseek-moonshot-over-data-breaches-information</p><p>Anthropic’s 154-page September 10 threat-intelligence report was read as a source for its allegations, not as proof of regulatory action. It names seven Chinese companies: DeepSeek, Moonshot, Alibaba, Z.ai, SenseTime, MiniMax and Xiaomi. It alleges that DeepSeek, Xiaomi and Moonshot sent their models’ user conversations to Claude and distilled the responses; it reports more than 23 million relevant Moonshot interactions from May through July 2026 and alleges that DeepSeek silently routed some user conversations without their knowledge. These claims remain attributed to Anthropic. Source: https://www.anthropic.com/threat-intelligence-report-september-2026</p><p>An official CAC statement and the companies’ responses were not reviewed in this run. Their absence from the review is not a claim that no response exists. Hong Kong stock-price declines are omitted because exchange quotations were not verified.</p><div class="source">Source: <a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">Archived source · www.anthropic.com</a> · Original issue: 2026-09-23 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="news-item" id="featured-03"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Cursor adds rollout monitoring and a security reviewer</h3></div><p>Cursor’s September 23 changelog, with an RSS time of 00:00 UTC, was read in full. Rollouts are available to Teams and Enterprise users. Per pull request and environment, the system monitors deployments and labels outcomes healthy, regression or inconclusive. It builds a monitoring plan from the diff, posts it on the PR, and uses deployment triggers plus logs, metrics and traces.</p><p>For regressions it points to the relevant change and alerts the team. Configurable follow-up can create a rollback PR or use a cloud agent; this does not mean it automatically merges or deploys the fix. Security Review focuses on exploitable vulnerabilities. Source: https://cursor.com/changelog/rollouts-and-security-reviewer</p><div class="source">Source: <a href="https://cursor.com/changelog/rollouts-and-security-reviewer" target="_blank" rel="noopener">Archived source · cursor.com</a> · Original issue: 2026-09-23 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="paper-also"><div class="paper-also-title">Briefs</div><div class="paper-also-item" id="briefs-01"><span class="paper-also-num">01</span><div><strong>ChatGPT ads expand into Southeast Asia and Taiwan</strong><p>The OpenAI RSS entry is timestamped September 23 at 02:00 UTC. The article was not opened; its summary says eligible businesses in more than 60 countries can participate. No revenue figures absent from the summary are added. Source: https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan</p><p>Source: <a href="https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan" target="_blank" rel="noopener">Archived source · openai.com</a> · Original issue: 2026-09-23 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</p></div></div><div class="paper-also-item" id="briefs-02"><span class="paper-also-num">02</span><div><strong>NVIDIA announces Isaac ROS 5.0 at ROSCon in Toronto</strong><p>The original article was opened. Its publication timestamp is September 22 at 12:00 UTC; it presents Isaac ROS 5.0 and agentic open-source robotics. Source: https://blogs.nvidia.com/blog/isaac-ros-5-0-agentic-open-source-robotics/</p><p>Source: <a href="https://blogs.nvidia.com/blog/isaac-ros-5-0-agentic-open-source-robotics/" target="_blank" rel="noopener">Archived source · blogs.nvidia.com</a> · Original issue: 2026-09-23 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</p></div></div><div class="paper-also-item" id="briefs-03"><span class="paper-also-num">03</span><div><strong>xAI lists Grok Bot for customer support</strong><p>The xAI list carries September 22 as the date. The listing was checked but the article body was not opened, so this is a listing-level brief. Source: https://x.ai/news/grok-bot-customer-support</p><p>Source: <a href="https://x.ai/news/grok-bot-customer-support" target="_blank" rel="noopener">Archived source · x.ai</a> · Original issue: 2026-09-23 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</p></div></div></div></section>
+<section class="section" id="insight"><div class="section-header"><span class="icon" aria-hidden="true">🔍</span><h2>Industry Insights</h2><span class="tag">Editorial analysis</span></div><p>No separate items were recorded in this section of the original manuscript.</p></section>
+<section class="section" id="papers"><div class="section-header"><span class="icon" aria-hidden="true">📄</span><h2>Research Briefs</h2><span class="tag">4 papers</span></div><div class="paper-item" id="papers-01"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">Capability-efficiency scaling in chain reasoning</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original issue: 2026-09-23</span><span class="paper-tag">Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</span></div><div class="paper-body"><p>The paper defines capability as answering correctly and efficiency as doing so with limited resources, then examines how both scale in chain reasoning. For arXiv 2609.27166, the API publication time is September 22 at 23:56:45 UTC. The title, abstract and timestamp were checked through the API; the individual abstract HTML page was not opened. Source: https://arxiv.org/abs/2609.27166</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.27166" target="_blank" rel="noopener">Archived source · arxiv.org →</a></div><div class="paper-item" id="papers-02"><div class="paper-head"><span class="paper-num">02</span><span class="paper-title">Evidence fusion for long social posts</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original issue: 2026-09-23</span><span class="paper-tag">Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</span></div><div class="paper-body"><p>The paper addresses posts whose stance is conveyed by only a few sentences in a long text. It proposes tempered evidence fusion: combining judgments by evidence rather than simply counting sentences or directly predicting the whole document. For arXiv 2609.27165, the API publication time is September 22 at 23:57:55 UTC. Review was limited to API title, abstract and timestamp; the abstract HTML page was not opened. Source: https://arxiv.org/abs/2609.27165</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.27165" target="_blank" rel="noopener">Archived source · arxiv.org →</a></div><div class="paper-item" id="papers-03"><div class="paper-head"><span class="paper-num">03</span><span class="paper-title">RRSI: regularized recursive self-improvement of agent harnesses</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original issue: 2026-09-23</span><span class="paper-tag">Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</span></div><div class="paper-body"><p>The paper appeared on the September 22 Hugging Face Daily Papers list. The API abstract for arXiv 2609.24972 was reviewed; the abstract HTML page was not opened. Source: https://arxiv.org/abs/2609.24972</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.24972" target="_blank" rel="noopener">Archived source · arxiv.org →</a></div><div class="paper-item" id="papers-04"><div class="paper-head"><span class="paper-num">04</span><span class="paper-title">OmniEdu: open foundation models for learning and teaching</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original issue: 2026-09-23</span><span class="paper-tag">Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</span></div><div class="paper-body"><p>The paper appeared on the September 22 Hugging Face Daily Papers list. The API abstract for arXiv 2609.23088 was reviewed; the abstract HTML page was not opened. Source: https://arxiv.org/abs/2609.23088</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.23088" target="_blank" rel="noopener">Archived source · arxiv.org →</a></div></section>
+<section class="section" id="opensource"><div class="section-header"><span class="icon" aria-hidden="true">⭐</span><h2>Open Source Spotlight</h2><span class="tag">0 projects</span></div><p>No separate items were recorded in this section of the original manuscript.</p></section>
+<details class="paper-observation" id="coverage"><summary class="label">Historical coverage record · 17/18 checks recorded</summary><div class="content"><p>The historical GitHub daily ranking could not be reconstructed, so ranks and daily gains were not invented. Cursor is a closed product update and is not counted as an open-source repository. Editorial context is included with the news items. The issue links three shifts: Anthropic’s Opus 5.5 cost claim and OpenAI’s concrete Sol/Luna price table; regulatory scrutiny of where user requests are routed; and tools that monitor changes after deployment rather than supplying another chat model. These relationships are editorial framing.</p><p>The original run recorded 18 planned sources, 17 ok and Microsoft partial, with all core sources ok. Microsoft’s visible entries lacked absolute dates; complete window membership was not established. DeepMind’s feed parsed successfully in this issue and yielded no entry in the window. This differs from the previous issue’s failed feed and does not rewrite that older receipt.</p><p>Four Chinese official sources were checked on September 25 and do not retroactively enter the original denominator. Step 5 Preview had already been covered; the other three showed no specific new announcement within the original window. The regulatory story uses the accessible Bloomberg Law reporting and Anthropic report rather than inferring a probe from those homepages. The CAC’s own statement and company responses were not reviewed.</p><p>Day-only publication dates do not establish a time before the 05:52 UTC cutoff. Paper discovery through the September 22 HF list is distinguished from first submission. API abstracts do not constitute full-paper review or reproduction.</p><p>The historical Chinese narration was re-recorded to include the data-investigation story, at 10 min 54 sec. Episode: https://www.xiaoyuzhoufm.com/episode/6ab5efc1e742e36efcbb0b1f . This English version is a later translation of the September 25 reconstruction.</p><p><strong>Coverage gaps</strong> reflect incomplete checks; they do not establish that a source had no updates.</p><ul><li><strong>Microsoft AI</strong> — Partially checked. The accessible Microsoft list did not provide reliable publication dates or establish complete coverage of the original discovery window.</li></ul><p>Reviewing a source does not constitute independent testing. Paper-reading scope is stated with each item; experiments were not reproduced.</p></div></details>
+<div class="source">AI-assisted translation, checked against the Chinese edition. <a href="../ai-daily-digest-2026-09-23.html">Read the Chinese edition</a>.</div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="Issue navigation" data-nav="bottom"><a href="../ai-daily-digest-2026-09-23.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="ai-daily-digest-2026-09-22.html">Previous · 09-22</a><a href="ai-daily-digest-2026-09-24.html">Next · 09-24</a><span class="spacer"></span><a href="index.html">All issues →</a></nav>
+
+</body>
+</html>

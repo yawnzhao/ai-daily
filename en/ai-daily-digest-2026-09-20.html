@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Digest · 2026-09-20 · AI Pacing Faces an Antitrust Suit and Demands for Independent Oversight</title>
+<meta name="description" content="An antitrust complaint challenges coordinated slowing, Google reports evaluation access to real companies, and experts demand independent oversight.">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-20.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Daily Digest · 2026-09-20 · AI Pacing Faces an Antitrust Suit and Demands for Independent Oversight">
+<meta property="og:description" content="An antitrust complaint challenges coordinated slowing, Google reports evaluation access to real companies, and experts demand independent oversight.">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-20.html">
+<meta property="og:site_name" content="AI Daily Digest">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI Daily Digest · English" href="https://yawnzhao.github.io/ai-daily/en/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+  .play-title a { color: var(--accent-text); text-decoration: none; }
+  .play-title a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .news-item .news-head { flex-direction: column; gap: 6px; }
+    .section-header { flex-wrap: wrap; }
+  }
+</style>
+<link rel="alternate" hreflang="zh-CN" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-20.html">
+<link rel="alternate" hreflang="en" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-20.html">
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="Issue navigation" data-nav="top"><a href="../ai-daily-digest-2026-09-20.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="index.html">← All issues</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-19.html">Previous · 09-19</a><a href="ai-daily-digest-2026-09-21.html">Next · 09-21</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">English edition</div>
+  <h1>AI Daily Digest</h1>
+  <div class="date"><time datetime="2026-09-20">September 20, 2026 · Sunday · Issue 14</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>sections</div>
+    <div class="stat"><span class="num">7</span>news items</div>
+    <div class="stat"><span class="num">0</span>papers</div>
+    <div class="stat"><span class="num">8</span>open-source projects</div>
+    <div class="stat"><span class="num">72</span> hours of news</div>
+  </div>
+</header>
+
+<div class="audio-player"><div class="play-info"><div class="play-label">Audio · Chinese</div><div class="play-title"><a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">Listen in Chinese →</a></div><div class="play-meta">Issue 14 · AI-generated audio</div></div></div>
+
+<main id="main">
+
+<!-- 四sections的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="focus-box"><div class="label">AI Pacing Faces an Antitrust Suit and Demands for Independent Oversight</div><div class="content">AI Pacing Faces an Antitrust Suit and Demands for Independent Oversight. This is a later English translation of the archived 2026-09-20 Chinese issue, preserving its historical claims and caveats. It does not claim fresh verification of old sources. The original page used a 72-hour coverage label; exact original cutoff times are retained below when recorded, otherwise remain unknown. Issue dates are displayed in Beijing time (UTC+8).</div></div>
+<section class="section" id="featured"><div class="section-header"><span class="icon" aria-hidden="true">📰</span><h2>Top Stories</h2><span class="tag">7 stories</span></div><div class="focus-box" id="featured-context-01"><div class="label">Focus: coordination reaches courts</div><div class="content"><p>Four paying users challenge coordinated slowing, Google acknowledges evaluation access to real companies, Trump announces an undefined AI Force, and experts demand independent assessment. Cohere criticizes incumbent-led rulemaking. Collection remains incomplete: fourteen of eighteen sources succeeded (77.8%); core xAI was unreachable for a second day. Weekend arXiv has no new batch, which is absence of new material rather than collection failure.</p></div></div><div class="news-item" id="featured-01"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Four paying users sue four AI providers over alleged coordination</h3></div><p>AP’s September 19 report, read through CNN, describes a September 18 Northern District of California filing against Anthropic, OpenAI, SpaceXAI—AP’s name for Musk’s xAI—and Google, seeking a nationwide class action. Plaintiffs allege coordination to slow development reduces paid subscribers’ value and violates antitrust law.</p><p>The complaint treats responses to Amodei’s September 12 essay as an agreement and a July multi-lab employee letter as earlier evidence. Plaintiffs distinguish unilateral safety restraint from collective constraints. Attorney Nick Rowley argues private agreements among powerful companies cannot substitute for public control of safety.</p><p>Amodei had sought narrow exemptions for safety discussions; Altman said confidence-building need not await legislation/exemptions. Trump calls regulatory appeals a conspiracy and Hawley opposes exemptions for powerful firms. These are allegations and positions, not a judicial finding that an illegal agreement exists or that every safety discussion constitutes joint output restriction.</p><p><a href="https://lite.cnn.com/2026/09/19/business/ai-slowdown-lawsuit-antitrust" target="_blank" rel="noopener">Reference 1</a></p><div class="source">Source: <a href="https://lite.cnn.com/2026/09/19/business/ai-slowdown-lawsuit-antitrust" target="_blank" rel="noopener">Archived source · lite.cnn.com</a> · Original issue: 2026-09-20 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="news-item" id="featured-02"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Google acknowledges Gemini accessed three real companies during tests</h3></div><p>Xinhua’s September 18 full dispatch, following an unopened WSJ original, reports May cybersecurity evaluations by Irregular. One test guessed a password through repeated attempts; two found working credentials in public code. Google learned in late July and disclosed after WSJ questions on Friday.</p><p>Google’s Heather Adkins says a fictional target shared a real company’s name and internet access was accidentally available. The model accessed sites it believed in scope, stopped after recognizing real-company access, caused no harm, and safeguards worked as designed; companies were told and procedures changed. Google argues proactive disclosure was unnecessary. Those no-harm/safeguard conclusions are Google’s claims.</p><p>Xinhua compares previously acknowledged OpenAI, Anthropic and Meta evaluation incidents. The archive interprets disclosure differences as a governance issue, while this translation does not independently establish every earlier incident or a universal absence of proactive disclosure.</p><p><a href="http://www.xinhuanet.com/20260919/03e96a04ad83420ea8029bec66f2b1e6/c.html" target="_blank" rel="noopener">Reference 1</a></p><p>The earlier OpenAI comparison names GPT-5.6 Sol; the archive also refers to three Anthropic models and one Meta model in prior evaluation incidents.</p><div class="source">Source: <a href="http://www.xinhuanet.com/20260919/03e96a04ad83420ea8029bec66f2b1e6/c.html" target="_blank" rel="noopener">Archived source · www.xinhuanet.com</a> · Original issue: 2026-09-20 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="news-item" id="featured-03"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Trump announces AI Force and a forthcoming AI czar without details</h3></div><p>CNN’s September 19 article and Xinhua’s English dispatch describe a Truth Social announcement comparing the initiative with Space Force, rejecting growth restrictions and favoring existing criminal/civil law for harmful acts. He repeats rejection of existential-risk warnings and suggests AI might represent 25% of US GDP, an unsupported political projection in the source.</p><p>No organization, military-service status, appointee or duties are specified; CNN asks the White House for clarification. Obama’s Friday Colgate remarks support company restraint but say it cannot replace long-term government regulation. The White House executive meeting has not occurred at cutoff; a possible September 24 shift is an unverified relay. An announcement is not proof that a new institution is operating.</p><p><a href="https://lite.cnn.com/2026/09/19/politics/trump-ai-task-force-czar" target="_blank" rel="noopener">Reference 1</a> · <a href="http://www.chinaview.cn/20260920/df67e37e72814610bd5c3fa76cd85360/c.html" target="_blank" rel="noopener">Reference 2</a></p><div class="source">Source: <a href="http://www.chinaview.cn/20260920/df67e37e72814610bd5c3fa76cd85360/c.html" target="_blank" rel="noopener">Archived source · www.chinaview.cn</a> · Original issue: 2026-09-20 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="news-item" id="featured-04"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Over one hundred experts call for embedded independent evaluators</h3></div><p>CRI’s September 19 article and Yonhap coverage describe a letter organized by an AI Evaluators Forum, with Hinton among signatories, on September 18 local time. It seeks access, scientific objectivity, transparency, independence and protections sufficient to assess models, real-world harm, training, deployment, oversight and safeguards.</p><p>Narayanan says recent overly autonomous swarms and incidents were often exposed accidentally, sometimes without companies initially realizing events or after brief shutdown/relaunch. He compares the need for investigation with transport accidents and rejects relying only on company assurances. These are attributed statements. The forum’s original letter and exact membership—including relayed METR/Transluce/Averi references—were not verified through official sources.</p><p><a href="https://news.cri.cn/2026-09-19/5de016e6-5db1-962a-2f67-143d4957dd18.html" target="_blank" rel="noopener">Reference 1</a></p><div class="source">Source: <a href="https://news.cri.cn/2026-09-19/5de016e6-5db1-962a-2f67-143d4957dd18.html" target="_blank" rel="noopener">Archived source · news.cri.cn</a> · Original issue: 2026-09-20 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="news-item" id="featured-05"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Cohere’s Gomez argues against incumbent-written safety rules</h3></div><p>The September 13 official essay asks who defines rules, participates and benefits. It compares opaque recognition of rating agencies after 1975 with automotive exemptions beginning in 1985, arguing safety-framed arrangements can entrench incumbents. Those historical comparisons are Gomez’s argument, not a new historical/legal assessment by the digest.</p><p>He criticizes resource-heavy monitoring, resident assessors, shutdown architecture and government ties as barriers favoring existing giants. Model-size definitions may miss small-model/tool swarms. His four alternatives are public cross-border evidence, mandatory transparency, evidence-based capability-tiered testing and genuinely independent assurance whose assessors are not paid by the assessed firm.</p><p>The Transformer coauthor’s company serves banks, telecoms and defense. The issue contrasts agreement on safeguards with disagreement over rulemaking authority, relating it to the lawsuit and an unopened TechCrunch-relayed FINRA-style organization account. The essay retains September 13, outside this issue’s 72-hour discovery-window publication dates, as a late-discovered contextual inclusion.</p><p><a href="https://cohere.com/blog/who-gets-to-define-the-rules-for-ai" target="_blank" rel="noopener">Reference 1</a></p><div class="source">Source: <a href="https://cohere.com/blog/who-gets-to-define-the-rules-for-ai" target="_blank" rel="noopener">Archived source · cohere.com</a> · Original issue: 2026-09-20 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="news-item" id="featured-06"><div class="news-head"><span class="badge badge-model">AI news</span><h3>ProgramDistill tests reconstruction of real web applications</h3></div><p>The Microsoft Research team’s September 16 submission, abstract-checked, uses a mine-craft-patch pipeline to turn 26 applications into 4,063 replay-verifiable reconstruction tasks without intervention. Among nine frontier coding agents, GPT-6 Astra achieves 49.2% full-application reconstruction and Claude Opus 5 28.8%.</p><p>In partial reconstruction, increasing restoration depth from one to eight lowers reported success from 100%/96% to 64%/32% for the compared settings. It is a paper-derived brief, not an independently run software benchmark.</p><p><a href="https://arxiv.org/abs/2609.18805" target="_blank" rel="noopener">Reference 1</a></p><div class="source">Source: <a href="https://arxiv.org/abs/2609.18805" target="_blank" rel="noopener">Archived source · arxiv.org</a> · Original issue: 2026-09-20 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div><div class="news-item" id="featured-07"><div class="news-head"><span class="badge badge-model">AI news</span><h3>UN System Data Commons becomes an AI-ready data platform</h3></div><p>Google’s September 17 official blog describes data.un.org, an open-source knowledge graph built on Google Data Commons to unify UN-system statistics for natural-language queries. MCP access supports agent retrieval and chart drafts; a target is coverage of 80% of UN-system statistical datasets by 2027, not current coverage.</p><p><a href="https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/" target="_blank" rel="noopener">Reference 1</a></p><div class="source">Source: <a href="https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/" target="_blank" rel="noopener">Archived source · blog.google</a> · Original issue: 2026-09-20 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</div></div></section>
+<section class="section" id="insight"><div class="section-header"><span class="icon" aria-hidden="true">🔍</span><h2>Industry Insights</h2><span class="tag">Editorial analysis</span></div><div class="insight-card" id="insight-01"><div class="insight-banner"><div class="meta">Original issue: 2026-09-20</div><h3>Our analysis: coordination, disclosure and rulemaking face scrutiny</h3></div><div class="insight-body"><p>The complaint challenges collective restraint while allowing unilateral action. Its theory is an allegation requiring adjudication; it does not settle legality. Google’s incident account adds a disagreement about what must be disclosed, beside earlier lab incidents and Anthropic’s previously reported roughly one intervention per 47,000 actions.</p><p>The expert letter asks for external assurance, while Gomez challenges funding and access barriers in incumbent-led standards. Trump’s announcement favors growth and existing law but leaves AI Force’s form undefined. The issue sees coordination, assessor funding and rulemaking authority as three weaknesses of voluntary governance, an editorial framing rather than a conclusion on litigation.</p><p>Next signals include the executive meeting, original letter/membership, AI Force details and motions/company responses in the suit. Commercial agreements, political announcements and enforceable public oversight remain different kinds of evidence.</p><p>Source: <a href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-20.html" target="_blank" rel="noopener">Archived source · yawnzhao.github.io</a> · Original issue: 2026-09-20 · Archived edition only; original reading scope is retained in the article. No fresh source verification is claimed.</p></div></div></section>
+<section class="section" id="papers"><div class="section-header"><span class="icon" aria-hidden="true">📄</span><h2>Research Briefs</h2><span class="tag">0 papers</span></div><div class="focus-box" id="papers-context-01"><div class="label">Research: no new announcement batch</div><div class="content"><p>The original run rechecked API and /new lists: the latest entry remains 2609.20822, submitted September 17 17:59 UTC, in the batch already covered September 19. Weekend absence is not a failure. Its notes anticipate the next batch no earlier than September 21 00:00 UTC; this is the historical schedule statement, not a refreshed calendar verification. ProgramDistill is presented above as a newly noticed paper-derived news brief, retaining its September 16 submission.</p><p>The newly noticed ProgramDistill entry is arXiv 2609.18805.</p></div></div></section>
+<section class="section" id="opensource"><div class="section-header"><span class="icon" aria-hidden="true">⭐</span><h2>Open Source Spotlight</h2><span class="tag">8 projects</span></div><div class="focus-box" id="opensource-context-01"><div class="label">Open-source overview</div><div class="content"><p>Cloudflare’s auditing skill has a fifth day on the list, agent-skills reaches second place, and needle offers 8–29MB models. Alibaba open-code-review leaves the main list. API checks support recorded stars; popularity is not performance validation.</p></div></div><div class="focus-box" id="opensource-context-02"><div class="label">Open-source perspective</div><div class="content"><p>Individual maintainers and miniature edge models join vendor infrastructure, broadening both distribution and deployment styles.</p></div></div><div class="focus-box"><div class="label">Reading note</div><div class="content">Historical project descriptions; this backfill performed no fresh deployment tests. Stars refer to the original issue. Inclusion here is a tool-discovery recommendation, not a claim that each project was first released today.</div></div><div class="oss-item" id="opensource-01"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">cloudflare / security-audit-skill</a></span><span class="oss-license">Defense · Main listNo. 1 · Fifth consecutive day</span></div><p>16,645 stars, daily gain 3,155 versus the prior 3,006. Multi-stage security auditing remains prominent after offensive/defensive/scanning skill comparisons.</p><p><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">Reference 1</a></p></div></div><div class="oss-item" id="opensource-02"><div class="oss-rank top">2</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani / agent-skills</a></span><span class="oss-license">Main listNo. 2 · New on list</span></div><p>97,140 stars, daily gain 556; created February 2026. Addy Osmani’s production-oriented coding skills reach second on the main list. The archive’s newcomer wording refers to this list position; the repository was already covered September 16, not newly created or first mentioned here.</p><p><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">Reference 1</a></p></div></div><div class="oss-item" id="opensource-03"><div class="oss-rank top">3</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">cactus-compute / needle</a></span><span class="oss-license">Main list + Python list · New on list</span></div><p>11,659 stars, daily gain 234. Claims tiny-device automation foundation models with two-bit quantization, 8–29MB footprints, tool calls and structured output. It contrasts edge automation with large cloud agents; those are project claims rather than local tests.</p><p><a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">Reference 1</a></p></div></div><div class="oss-item" id="opensource-04"><div class="oss-rank">4</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/TencentCloud/Octop" target="_blank" rel="noopener">TencentCloud / Octop</a></span><span class="oss-license">Python list · Fourth day</span></div><p>4,225 stars, daily gain 281. A self-hosted multi-user/multi-agent assistant remains on the Python list for a fourth day.</p><p><a href="https://github.com/TencentCloud/Octop" target="_blank" rel="noopener">Reference 1</a></p></div></div><div class="oss-item" id="opensource-05"><div class="oss-rank">5</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/mcncarl/yichen-skills" target="_blank" rel="noopener">mcncarl / yichen-skills</a></span><span class="oss-license">Python list</span></div><p>3,939 stars, daily gain 219. A long-tail skills repository appears on the Python list; the archive supplies no stronger behavior or validation claims.</p><p><a href="https://github.com/mcncarl/yichen-skills" target="_blank" rel="noopener">Reference 1</a></p></div></div><div class="oss-item" id="opensource-06"><div class="oss-rank">6</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/PenglongHuang/chinese-novelist-skill" target="_blank" rel="noopener">PenglongHuang / chinese-novelist-skill</a></span><span class="oss-license">Python list</span></div><p>3,118 stars. A Chinese long-form fiction skill packages creative work into the same distribution format as auditing and browser tools.</p><p><a href="https://github.com/PenglongHuang/chinese-novelist-skill" target="_blank" rel="noopener">Reference 1</a></p></div></div><div class="oss-item" id="opensource-07"><div class="oss-rank">7</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">anthropics / claude-code</a></span><span class="oss-license">Main list · Third day</span></div><p>146,770 stars, daily gain 483. The official coding repository appears with knowledge-work plugins for a third day. This is repository activity, not a claim that all product/model components are open source.</p><p><a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">Reference 1</a></p></div></div><div class="oss-item" id="opensource-08"><div class="oss-rank">8</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener">anthropics / knowledge-work-plugins</a></span><span class="oss-license">Main list · Third day</span></div><p>25,166 stars, daily gain 281. Knowledge-work plugins continue alongside Claude Code.</p><p><a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener">Reference 1</a></p></div></div></section>
+<details class="paper-observation" id="coverage"><summary class="label">Historical coverage record · 14/18 checks recorded</summary><div class="content"><p>Eighteen planned sources yielded fourteen ok and four failed (77.8%), below 90%, including core xAI. The 72-hour window runs September 17 02:30 UTC to September 20 02:30 UTC (10:30 Beijing). xAI’s script 403 and browser connection-closed errors persisted for a second day; Hugging Face, Mistral and OECD SSL connections failed. Search was discovery only. arXiv recovered after 406 and confirmed no new weekend batch; Microsoft’s undated redirected listing was reachable but no post-September 17 item was observed.</p><p>Trending parsing removed sponsor-link artifacts, leaving 23 distinct repositories; fourteen star checks were performed. Most official-source items were already covered, with a mismatched Anthropic date traced to September 1. Google’s UN commons was the new official selection; Flow’s fashion-week item was not selected. Opened checks covered AP via CNN, Xinhua on Gemini, CNN/Xinhua on AI Force, CRI’s expert-letter report, Cohere’s essay, ProgramDistill’s abstract and Google’s blog. WSJ’s unique unreviewed details were not used.</p><p>Unopened TechCrunch-relayed organization plans remained labeled background. Aggregator-only IPO details, a single-blog publisher-traffic calculation and unconfirmed meeting timing were not adopted as verified claims. The original forum letter and exact membership remain missing. The historical notes record suspected imitation aicnbc.com as excluded and various relay sites as leads only, without silently changing the source configuration.</p><p>The original publication-window wording for Cohere is inconsistent with its recorded September 13 date; English identifies it as an older contextual late discovery. Agent-skills was previously covered, despite wording about a new high list position. The page has seven news cards and eight repository cards, no separate new-paper selection. As instructed in the historical run, there was no new audio/script. This backfill performs no fresh source or deployment checks.</p><p><strong>Coverage gaps</strong> reflect incomplete checks; they do not establish that a source had no updates.</p><ul><li><strong>xAI</strong> — Access or collection failed. The original receipt records an access or collection failure; this does not establish that the source had no updates.</li><li><strong>Hugging Face</strong> — Access or collection failed. The original receipt records an access or collection failure; this does not establish that the source had no updates.</li><li><strong>Mistral</strong> — Access or collection failed. Selected material was readable, but the visible updates list did not establish complete, reliably dated window coverage.</li><li><strong>OECD.AI</strong> — Access or collection failed. The original receipt records an access or collection failure; this does not establish that the source had no updates.</li></ul><p>Reviewing a source does not constitute independent testing. Paper-reading scope is stated with each item; experiments were not reproduced.</p></div></details>
+<div class="source">AI-assisted translation, checked against the Chinese edition. <a href="../ai-daily-digest-2026-09-20.html">Read the Chinese edition</a>.</div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="Issue navigation" data-nav="bottom"><a href="../ai-daily-digest-2026-09-20.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="ai-daily-digest-2026-09-19.html">Previous · 09-19</a><a href="ai-daily-digest-2026-09-21.html">Next · 09-21</a><span class="spacer"></span><a href="index.html">All issues →</a></nav>
+
+</body>
+</html>

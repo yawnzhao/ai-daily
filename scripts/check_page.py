@@ -122,11 +122,12 @@ def check_translation(path):
         return ['英文版缺少对应中文页面']
     try:
         issue = json.loads((ROOT / f'data/issues/{date}.json').read_text())
+        build_english_issue.validate_archive_provenance(issue)
         edition = json.loads((ROOT / f'data/issues/en/{date}.json').read_text())
         en = renderer.parse_manuscript((ROOT / edition['canonical_markdown']).read_text())
         zh = renderer.parse_manuscript((ROOT / issue['canonical_markdown']).read_text())
         ids = [i['id'] for i in issue['items']]
-        if list(en) != ids or list(zh) != ids or set(edition['items']) != set(ids):
+        if list(en) != list(zh) or set(zh) != set(ids) or set(edition['items']) != set(ids):
             bad.append('中英条目 ID、顺序或翻译字段不一致')
         if edition.get('status') != 'published' or not edition.get('published_at'):
             bad.append('英文版缺少正式发布状态与时间')
@@ -141,6 +142,9 @@ def check_translation(path):
                 bad.append('英文元数据重复保存或覆盖事实字段：' + item['id'])
             if t.count('id="' + item['id'] + '"') != 1 or html.escape(item['primary_url'], quote=True) not in t:
                 bad.append('英文正文缺少条目或原始链接：' + item['id'])
+            for url in item.get('source_urls', []):
+                if html.escape(url, quote=True) not in t:
+                    bad.append('英文正文缺少原刊的补充来源链接：' + item['id'])
         if '<html lang="en">' not in t or 'noindex' in t or 'English edition · Preview' in t:
             bad.append('英文语言标记或正式发布标记不正确')
         canonical = f'{renderer.BASE}/en/{path.name}'
@@ -154,8 +158,9 @@ def check_translation(path):
         zh_page = (ROOT / path.name).read_text()
         if f'href="en/{path.name}"' not in zh_page or f'href="../{path.name}"' not in t:
             bad.append('中英语言切换不是双向的')
-        audio = bool(issue.get('audio_src') and issue.get('episode_url'))
-        if audio != ('Listen in Chinese' in t) or (audio and issue['episode_url'] not in t):
+        episode_url = issue.get('episode_url') or issue.get('audio_episode_url')
+        audio = bool(issue.get('audio_src') and episode_url)
+        if audio != ('Listen in Chinese' in t) or (audio and episode_url not in t):
             bad.append('中文音频入口与原版状态不一致')
         counts = {'news items': sum(i['section'] in ('featured', 'briefs') for i in issue['items']),
                   'papers': sum(i['section'] == 'papers' for i in issue['items']),

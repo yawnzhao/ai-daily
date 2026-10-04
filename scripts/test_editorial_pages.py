@@ -1,15 +1,46 @@
 """Check the restored daily template, archive metadata and audio state."""
 import re
+import copy
+import json
 import tempfile
 import unittest
 from pathlib import Path
 import build_site
 import check_page
+import build_english_issue
 
 ROOT = Path(__file__).resolve().parent.parent
 
 
 class EditorialPagesTests(unittest.TestCase):
+    def test_legacy_backfill_keeps_supplementary_source_links(self):
+        path = ROOT / 'en/ai-daily-digest-2026-09-21.html'
+        text = path.read_text()
+        self.assertIn('https://github.com/coder/coder', text)
+        self.assertIn('https://github.com/browser-use/browser-harness', text)
+        self.assertIn('https://github.com/anthropics/claude-code', text)
+        self.assertFalse(check_page.check_issue(path, 'en'))
+
+    def test_archive_provenance_rejects_unreviewed_changes(self):
+        issue = json.loads((ROOT / 'data/issues/2026-09-07.json').read_text())
+        build_english_issue.validate_archive_provenance(issue)
+        changed = copy.deepcopy(issue)
+        changed['archive_provenance']['source_main_sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'page changed'):
+            build_english_issue.validate_archive_provenance(changed)
+        issue = json.loads((ROOT / 'data/issues/2026-09-18.json').read_text())
+        issue['archive_provenance']['source_manuscript_sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'manuscript changed'):
+            build_english_issue.validate_archive_provenance(issue)
+
+    def test_legacy_paper_suggestions_and_unavailable_receipts_remain_visible(self):
+        text = (ROOT / 'en/ai-daily-digest-2026-09-14.html').read_text()
+        self.assertIn('id="paper_briefs-02"', text)
+        self.assertIn('id="paper_briefs-08"', text)
+        text = (ROOT / 'en/ai-daily-digest-2026-09-07.html').read_text()
+        self.assertIn('Receipts unavailable', text)
+        self.assertNotIn('Coverage threshold met', text)
+
     def test_english_issue_uses_shared_counts_and_passes_validation(self):
         path = ROOT / 'en/ai-daily-digest-2026-10-04.html'
         page = build_site.read_page(path, 'en')

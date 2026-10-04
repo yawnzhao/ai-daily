@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Digest · 2026-09-26 · Claude Plugin Submissions, Codex Sales Demos, and UNESCO’s AI Course</title>
+<meta name="description" content="Claude plugin submissions, Codex-built sales demos and UNESCO’s AI course show how tools move into concrete work.">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-26.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Daily Digest · 2026-09-26 · Claude Plugin Submissions, Codex Sales Demos, and UNESCO’s AI Course">
+<meta property="og:description" content="Claude plugin submissions, Codex-built sales demos and UNESCO’s AI course show how tools move into concrete work.">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-26.html">
+<meta property="og:site_name" content="AI Daily Digest">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI Daily Digest · English" href="https://yawnzhao.github.io/ai-daily/en/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+  .play-title a { color: var(--accent-text); text-decoration: none; }
+  .play-title a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .news-item .news-head { flex-direction: column; gap: 6px; }
+    .section-header { flex-wrap: wrap; }
+  }
+</style>
+<link rel="alternate" hreflang="zh-CN" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-09-26.html">
+<link rel="alternate" hreflang="en" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-09-26.html">
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="Issue navigation" data-nav="top"><a href="../ai-daily-digest-2026-09-26.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="index.html">← All issues</a><span class="spacer"></span><a href="ai-daily-digest-2026-09-25.html">Previous · 09-25</a><a href="ai-daily-digest-2026-09-27.html">Next · 09-27</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">English edition</div>
+  <h1>AI Daily Digest</h1>
+  <div class="date"><time datetime="2026-09-26">September 26, 2026 · Saturday · Issue 20</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>sections</div>
+    <div class="stat"><span class="num">3</span>news items</div>
+    <div class="stat"><span class="num">3</span>papers</div>
+    <div class="stat"><span class="num">3</span>open-source projects</div>
+    <div class="stat"><span class="num">24</span> hours of news</div>
+  </div>
+</header>
+
+<div class="audio-player"><div class="play-info"><div class="play-label">Audio · Chinese</div><div class="play-title"><a href="https://www.xiaoyuzhoufm.com/episode/6ab764c0e742e36efcbb5b61" target="_blank" rel="noopener">Listen in Chinese →</a></div><div class="play-meta">Issue 20 · About 11 min 24 sec · AI-generated audio</div></div></div>
+
+<main id="main">
+
+<!-- 四sections的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="focus-box"><div class="label">Claude Plugin Submissions, Codex Sales Demos, and UNESCO’s AI Course</div><div class="content">How does AI enter concrete work? Developers need to get tools into users’ hands, business staff need to turn requirements into demos people can discuss, and teachers need to help students understand AI’s effects. This issue’s original cutoff was September 26 at 02:59 UTC—10:59 Beijing time (UTC+8), or 04:59 in Paris—with a 24-hour news focus and 72-hour discovery lookback.</div></div>
+<section class="section" id="featured"><div class="section-header"><span class="icon" aria-hidden="true">📰</span><h2>Top Stories</h2><span class="tag">3 stories</span></div><div class="news-item" id="claude-plugins"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Claude opens plugin submissions: building a tool now includes review and distribution</h3></div><p>Claude announced a developer submission entry point on September 25. Paid-plan users can submit remote MCP connectors or GitHub-hosted plugin bundles that deliver connectors, Agent Skills and related capabilities together.</p><p>Submissions undergo automated validation and security scanning; developers can follow review progress and respond to feedback. <strong>After approval, the developer must still choose to publish.</strong> A successful submission is not a public listing. Once published, installation and usage data help developers understand adoption.</p><p>The submission entry point is available now, while more unified discovery across Claude and Claude Code will roll out over the coming weeks. Existing listed connectors, skills and plugins do not need an immediate retrofit because of this change.</p><p>For small teams building specialized tools, development now extends to listings, review feedback and version maintenance. Tool invocation is a starting point; whether users can find, understand and continue using the tool determines its place in everyday work.</p><div class="source">Source: <a href="https://claude.com/blog/build-plugins-for-claude" target="_blank" rel="noopener">Claude Blog</a> · Original publication/submission: 2026-09-25 · Full official article reviewed</div></div><div class="news-item" id="codex-proaction"><div class="news-head"><span class="badge badge-model">AI news</span><h3>Codex helps business staff make customer demos and clarify requirements</h3></div><p>OpenAI’s Proaction case study describes a fleet-management software cofounder whose main job is not programming. Customer call notes, emails and spreadsheets become HTML demos tailored to the customer’s actual fleet.</p><p>The demo lets customers see a proposed process and gives engineers more concrete requirements when they take over. It precedes product development and does not establish a production-ready business system.</p><p>The company reports making <strong>four to six demos per month, taking 30–45 minutes each</strong>. These figures come from a vendor-published customer case and were not independently measured. The growth figure in the headline should not automatically be read as revenue growth: the body discusses the share of sales opportunities moving from first contact to solution development, plus estimated hours saved.</p><p>A useful practice is to turn a requested feature into specific operations and feedback through an interface people can discuss. Engineering still has to validate data, permissions, exceptions and real-system integration; the demo can reduce repeated verbal explanation of requirements.</p><div class="source">Source: <a href="https://openai.com/index/proaction/" target="_blank" rel="noopener">OpenAI · Customer case study</a> · Original publication/submission: 2026-09-25T19:00:00Z · Full official case study; results are customer-reported</div></div><div class="news-item" id="unesco-course"><div class="news-head"><span class="badge badge-model">AI news</span><h3>UNESCO’s third teacher AI course adds Portuguese</h3></div><p>UNESCO announced September 25 that the third edition of its free online course on digital citizenship and artificial intelligence will begin <strong>October 12</strong>. It is intended for teachers, education teams and relevant social workers, adding Portuguese to English and Spanish.</p><p>Five modules cover digital footprints, misinformation, information filtering, AI ethics and participation in public life, using videos, cases and discussion. The aim is to put technology in students’ daily digital lives, beyond teaching tool operation.</p><p><strong>Participation:</strong> the announcement requires completing at least 80% of the course content and assessment requirements for a certificate. September 25 is the announcement date; October 12 is the course start. Enrollment information is available through the original course link.</p><p>School AI debates often focus on whether students may use it for homework and whether answers are correct. This course offers other entry points: why information appears in front of us, what data we leave behind, and how to make supported judgments.</p><div class="source">Source: <a href="https://www.unesco.org/en/articles/unesco-opens-third-edition-its-course-digital-citizenship-and-artificial-intelligence-now-also" target="_blank" rel="noopener">UNESCO</a> · Original publication/submission: 2026-09-25 · Full official article reviewed</div></div></section>
+<section class="section" id="insight"><div class="section-header"><span class="icon" aria-hidden="true">🔍</span><h2>Industry Insights</h2><span class="tag">Conversation Spotlight</span></div><div class="insight-card" id="government-agents"><div class="insight-banner"><div class="meta">Original publication/submission: 2026-09-25</div><h3>When AI acts for governments, authorization must reach each step</h3></div><div class="insight-body"><p>An OECD.AI government-agent working-group article dated September 25 asks how public institutions should define permissions, responsibility and oversight when systems move from answering questions to taking action. Its argument is that governance must extend to actions, beyond checking generated text.</p><p>Public-service applications illustrate the issue: agents could help interpret requirements, collect documents, prepare an application and forward it for processing. Sensitive actions and formal decisions require explicit consent, authorization and responsibility. These are design directions discussed in the article, not a unified system already deployed across a country.</p><p>Value in government settings remains to be established. Departments have different data, statutory duties and correction mechanisms, favoring bounded tasks with clear scope. The article presents the authors’ views, not an official position of the OECD or its members.</p><p><strong>Our take:</strong> alongside plugins and sales demos, watch how tasks are handed over. A plugin’s ability to read documents does not grant authority to submit applications; a prototype that illustrates a workflow has not assumed a formal system’s responsibilities.</p><p>Follow the chain: who starts the request, whose identity is used to read information, which actions require confirmation, and who can stop or withdraw an action after an error. Designing these questions early helps teams identify the steps AI can perform and those that still need people.</p><p>Source: <a href="https://oecd.ai/en/wonk/governing-with-agentic-ai-when-machines-act-on-governments-behalf" target="_blank" rel="noopener">OECD.AI · AI Wonk</a> · Original publication/submission: 2026-09-25 · Full author article; not an official OECD position</p></div></div></section>
+<section class="section" id="papers"><div class="section-header"><span class="icon" aria-hidden="true">📄</span><h2>Research Briefs</h2><span class="tag">3 papers</span></div><div class="paper-item" id="qwen-planner"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">Qwen-Planner-Agent feeds mobile-task failures back into training</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original publication/submission: 2026-09-24T14:38:08Z</span><span class="paper-tag">Abstract and submission record only</span></div><div class="paper-body"><p><em>Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents</em> addresses long mobile workflows. Real-device interaction is costly; disconnects among data, training and runtime environments can cause repeated errors.</p><p>The authors connect task construction, trajectory filtering, training and deployment feedback in a data cycle with human oversight. Action results, verification information and failure records can inform later training and tool configuration.</p><p>The focus shifts from a single attractive plan to usable feedback from execution. The abstract’s loop still includes people and should not be described as fully autonomous self-evolution. Only the abstract and submission record were reviewed; full experiments and generalization results were not checked.</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.29892" target="_blank" rel="noopener">arXiv · 2609.29892 →</a></div><div class="paper-item" id="object-permanence"><div class="paper-head"><span class="paper-num">02</span><span class="paper-title">Training world models to remember that occluded objects still exist</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original publication/submission: 2026-09-23T18:02:12Z</span><span class="paper-tag">Abstract and submission record only</span></div><div class="paper-body"><p><em>Training Object Permanence in World Models</em> studies video models’ handling of object persistence and solidity. Smooth-looking video does not necessarily preserve these constraints across a scene.</p><p>The authors build WROP with six categories and 150 procedurally generated cognitive tasks, varying speed, lighting and viewpoint in controlled scenes, plus 300 test questions for model comparisons. Training and evaluation results are author-reported and were not reproduced here.</p><p>This separates visual plausibility from consistent state changes. The evaluation concerns specific generation tasks and does not establish understanding of the entire physical world. Review was limited to the abstract and submission record.</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.28654" target="_blank" rel="noopener">arXiv · 2609.28654 →</a></div><div class="paper-item" id="agent-editing"><div class="paper-head"><span class="paper-num">03</span><span class="paper-title">Agent-Editing World Model corrects task state before choosing the next action</span></div><div class="paper-tags"><span class="paper-tag">Research</span><span class="paper-tag">Original publication/submission: 2026-09-23T17:18:26Z</span><span class="paper-tag">Abstract and submission record only</span></div><div class="paper-body"><p>Agents in long tasks can carry unsupported assumptions or stale plans into later decisions. <em>Agent-Editing World Model: Rethinking World Modeling for LLM Agents</em> treats these as disruptions to task state.</p><p>The method classifies actions as critical, exploratory or noise, then revises internal state that interferes with subsequent reasoning and integrates the process into the execution framework. Its abstract reports improvements in search, terminal and software-engineering tasks. The full paper was not read, so consistent benefits across settings cannot be assessed here.</p><p><strong>Distinction:</strong> this edits the internal state an agent uses for further decisions, not external audit records. A system can correct its understanding while preserving an independent record of what actually happened.</p></div><a class="paper-link" href="https://arxiv.org/abs/2609.28416" target="_blank" rel="noopener">arXiv · 2609.28416 →</a></div></section>
+<section class="section" id="opensource"><div class="section-header"><span class="icon" aria-hidden="true">⭐</span><h2>Open Source Spotlight</h2><span class="tag">3 projects</span></div><div class="focus-box"><div class="label">Reading note</div><div class="content">Based on official documentation; no deployment tests were performed. Inclusion here is a tool-discovery recommendation, not a claim that each project was first released today.</div></div><div class="oss-item" id="paperclip"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">Paperclip</a></span><span class="oss-license">MIT</span></div><p><strong>Purpose:</strong> one interface for assigning agent tasks, goals, budgets and approvals. A Node.js service and React interface connect different external agents, helping teams see who owns a job and where it stands.</p><p><strong>Audience:</strong> individuals or small teams already using multiple agents and seeking shared task and cost visibility. Organizational controls do not automatically constrain every execution path; actual permissions and failure handling still need inspection.</p><p>Official README and GitHub API reviewed; MIT; not deployed or tested. Included as tool discovery, rather than a same-day release.</p></div></div><div class="oss-item" id="model-optimizer"><div class="oss-rank top">2</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/NVIDIA/Model-Optimizer" target="_blank" rel="noopener">NVIDIA Model Optimizer</a></span><span class="oss-license">Apache-2.0</span></div><p><strong>Purpose:</strong> quantization, pruning, distillation, sparsity and speculative decoding, connected to different inference runtimes to trade off model quality, memory and speed.</p><p><strong>Audience:</strong> deployment teams with a defined model, hardware and workload. Compare task quality, total latency and resource use, and check export support in the target runtime. The library does not guarantee equal gains for every combination.</p><p>Official README and GitHub API reviewed; Apache-2.0; not deployed or tested. Included as tool discovery, rather than a new-version announcement.</p></div></div><div class="oss-item" id="openbao"><div class="oss-rank top">3</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/openbao/openbao" target="_blank" rel="noopener">OpenBao</a></span><span class="oss-license">MPL-2.0</span></div><p><strong>Purpose:</strong> centralized management of secrets, certificates and credentials, with encrypted storage, access controls, auditing and, for supported backends, dynamic credentials, leases and revocation.</p><p><strong>Audience:</strong> teams whose services or agents call business systems and that want fewer long-lived credentials scattered through scripts and configuration. Dynamic credentials depend on backend support; identity, access policies and lifetimes still require design.</p><p>Official README and GitHub API reviewed; MPL-2.0; not deployed or tested. Included as infrastructure discovery, rather than a same-day release.</p></div></div></section>
+<details class="paper-observation" id="coverage"><summary class="label">Coverage notes · Incomplete · 19/24 checks recorded</summary><div class="content"><p><strong>Collection was incomplete.</strong> The original cutoff was September 26 at 02:59 UTC, or 10:59 Beijing time and 04:59 Paris time. The focus is the preceding 24 hours with a 72-hour lookback. Day-only dates are recognized as calendar dates, not forced into the precise 24-hour interval.</p><p>Of 24 planned sources, 19 were completed and five partial, for 79.2%. Core source arXiv was incomplete: its API reported 596 records, 500 metadata records were retrieved, and 96 remained missing after pagination retries. Tongyi, Z.ai and StepFun lacked reliable dated news material; OpenReview’s candidate announcement details were blocked by a verification page.</p><p>There were 590 candidate appearances; merging 20 duplicates left 570 items: 34 news candidates, 509 papers and 27 repositories. Comparing prior citations found 20 previously used and 550 not previously cited. New here means new to the digest archive, not released today. Metadata candidates were not all read in full.</p><p>Ten items were selected: three top stories, one analysis, three papers and three repositories. The papers were discovered through the September 25 HF list and first submitted September 24, September 23 and September 23 respectively. Reading was limited to abstracts and submission records. Customer effects are self-reported; repositories were not tested.</p><p><strong>Coverage gaps</strong> reflect incomplete checks; they do not establish that a source had no updates.</p><ul><li><strong>Tongyi Lab</strong> — Partially checked. The official product or research entry point did not establish a complete, reliably dated publication list.</li><li><strong>Z.ai</strong> — Partially checked. The original check was partial; complete dates or discovery-window coverage were not established. Details are retained in the historical coverage notes.</li><li><strong>StepFun</strong> — Partially checked. The product page did not provide a complete dated publication stream; preview or countdown text is not a publication timestamp.</li><li><strong>arXiv cs.AI / cs.LG / cs.CL</strong> — Partially checked. The original arXiv collection remained partial: 596 records were reported, 500 retrieved, and 96 missing after three bounded attempts. Selected abstracts were checked separately.</li><li><strong>OpenReview</strong> — Partially checked. Homepage or venue access did not establish complete submission coverage through the discovery-window boundary.</li></ul><p>Reviewing a source does not constitute independent testing. Paper-reading scope is stated with each item; experiments were not reproduced.</p></div></details>
+<div class="source">AI-assisted translation, checked against the Chinese edition. <a href="../ai-daily-digest-2026-09-26.html">Read the Chinese edition</a>.</div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="Issue navigation" data-nav="bottom"><a href="../ai-daily-digest-2026-09-26.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="ai-daily-digest-2026-09-25.html">Previous · 09-25</a><a href="ai-daily-digest-2026-09-27.html">Next · 09-27</a><span class="spacer"></span><a href="index.html">All issues →</a></nav>
+
+</body>
+</html>

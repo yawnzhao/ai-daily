@@ -21,20 +21,38 @@ def read_json(path):
 
 def inline(text):
     rendered = renderer.inline(text)
+    rendered = re.sub(r'\[([^\]]+)\]\((http://[^\s)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', rendered)
     rendered = re.sub(r'`([^`]+)`', r'<code>\1</code>', rendered)
     return re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)', r'<em>\1</em>', rendered)
+
+
+def validate_archive_provenance(issue):
+    """Keep normalized legacy inputs tied to the untouched published originals."""
+    if not issue.get('archive_backfill'):
+        return
+    provenance = issue['archive_provenance']
+    page = (ROOT / provenance['source_page']).read_text()
+    main = re.search(r'<main id="main">(.*?)</main>', page, re.S)
+    if not main or hashlib.sha256(main.group(1).encode()).hexdigest() != provenance['source_main_sha256']:
+        raise ValueError('Archived Chinese page changed; source review required')
+    if provenance.get('source_manuscript'):
+        original = ROOT / provenance['source_manuscript']
+        if hashlib.sha256(original.read_bytes()).hexdigest() != provenance['source_manuscript_sha256']:
+            raise ValueError('Archived Chinese manuscript changed; source review required')
 
 
 def build(date):
     issue = read_json(ROOT / f'data/issues/{date}.json')
     edition = read_json(ROOT / f'data/issues/en/{date}.json')
-    receipts = read_json(ROOT / f'data/runs/{date}-receipts.json')
+    validate_archive_provenance(issue)
+    receipt_path = ROOT / f'data/runs/{date}-receipts.json'
+    receipts = read_json(receipt_path) if receipt_path.exists() else {'sources': []}
     glossary = read_json(ROOT / 'config/glossary.en.json')
     manuscript = (ROOT / edition['canonical_markdown']).read_text()
     source_content = renderer.parse_manuscript((ROOT / issue['canonical_markdown']).read_text())
     content = renderer.parse_manuscript(manuscript)
     ids = [i['id'] for i in issue['items']]
-    if list(content) != ids or list(source_content) != ids or set(edition['items']) != set(ids):
+    if list(content) != list(source_content) or set(source_content) != set(ids) or set(edition['items']) != set(ids):
         raise ValueError('English/Chinese item IDs or ordering differ')
     if edition['date'] != date or edition['language'] != 'en' or edition['status'] != 'published':
         raise ValueError('English edition is not ready for publication')
@@ -44,20 +62,22 @@ def build(date):
         if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != edition[field]:
             raise ValueError('Review required after a source or translation change: ' + path)
     items = []
-    for item in issue['items']:
+    by_id = {item['id']: item for item in issue['items']}
+    for item_id in source_content:
+        item = by_id[item_id]
         localized = edition['items'][item['id']]
         if set(localized) - LOCALIZED_FIELDS:
             raise ValueError('English overlay may only localize display fields')
         items.append({**item, **localized})
     groups = {key: [i for i in items if i['section'] == key]
-              for key in ('featured', 'briefs', 'insight', 'papers', 'opensource')}
+              for key in ('featured', 'briefs', 'insight', 'discourse', 'papers', 'paper_briefs', 'opensource')}
     intro = manuscript.split('\n\n', 1)[1].split('\n## ', 1)[0].strip()
     parts = ['<div class="focus-box"><div class="label">' + esc(edition['title'])
              + '</div><div class="content">' + inline(intro) + '</div></div>']
     labels = [
         ('featured', '📰', 'Top Stories', f'{len(groups["featured"])} stories'
          + (f' + {len(groups["briefs"])} briefs' if groups['briefs'] else '')),
-        ('insight', '🔍', 'Industry Insights', 'Conversation Spotlight'),
+        ('insight', '🔍', 'Industry Insights', 'Editorial analysis' if issue.get('archive_backfill') else 'Conversation Spotlight'),
         ('papers', '📄', 'Research Briefs', f'{len(groups["papers"])} paper' + ('s' if len(groups['papers']) != 1 else '')),
         ('opensource', '⭐', 'Open Source Spotlight', f'{len(groups["opensource"])} project' + ('s' if len(groups['opensource']) != 1 else '')),
     ]
@@ -65,36 +85,48 @@ def build(date):
         block = (f'<section class="section" id="{key}"><div class="section-header">'
                  f'<span class="icon" aria-hidden="true">{icon}</span><h2>{label}</h2>'
                  f'<span class="tag">{tag}</span></div>')
-        if key == 'opensource':
+        contexts = [i for i in items if i['section'] == key + '_context']
+        for item in contexts:
+            c = content[item['id']]
+            block += ('<div class="focus-box" id="' + esc(item['id']) + '"><div class="label">' + inline(c['title']) + '</div><div class="content">' + ''.join('<p>' + inline(p) + '</p>' for p in c['paragraphs']) + '</div></div>')
+        if key == 'opensource' and groups['opensource']:
             block += ('<div class="focus-box"><div class="label">Reading note</div>'
-                      '<div class="content">Based on official documentation; no deployment tests were performed. '
+                      '<div class="content">' + ('Historical project descriptions; this backfill performed no fresh deployment tests. Stars refer to the original issue. ' if issue.get('archive_backfill') else 'Based on official documentation; no deployment tests were performed. ')
+                      +
                       'Inclusion here is a tool-discovery recommendation, not a claim that each project was first released today.</div></div>')
-        selected = groups[key] + (groups['briefs'] if key == 'featured' else [])
+        selected = groups[key] + (groups['briefs'] if key == 'featured' else groups['discourse'] if key == 'insight' else groups['paper_briefs'] if key == 'papers' else [])
+        if not selected and not contexts:
+            block += '<p>' + esc(edition.get('section_notes', {}).get(key, 'No separate items were recorded in this section of the original manuscript.')) + '</p>'
         for number, item in enumerate(selected, 1):
             if key == 'featured' and groups['briefs'] and item['id'] == groups['briefs'][0]['id']:
                 block += '<div class="paper-also"><div class="paper-also-title">Briefs</div>'
-            rendered = renderer.render_item(item, content[item['id']],
+            render_item = {**item, 'section': 'insight' if item['section'] == 'discourse' else 'briefs' if item['section'] == 'paper_briefs' else item['section']}
+            rendered = renderer.render_item(render_item, content[item['id']],
                                             number - len(groups['featured']) if item['section'] == 'briefs' else number)
             rendered = re.sub(r'`([^`]+)`', r'<code>\1</code>', rendered)
             rendered = re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)', r'<em>\1</em>', rendered)
+            rendered = re.sub(r'\[([^\]]+)\]\((http://[^\s)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', rendered)
             block += rendered
         if key == 'featured' and groups['briefs']:
             block += '</div>'
         parts.append(block.replace('来源：', 'Source: ') + '</section>')
 
-    summary = receipts['summary']
+    summary = receipts.get('summary', {})
     gaps = [s for s in receipts['sources'] if s['status'] != 'ok']
-    if set(edition['coverage_gaps']) != {s['name'] for s in gaps}:
+    if set(edition['coverage_gaps']) != {s.get('name', s.get('source_id', s.get('id'))) for s in gaps}:
         raise ValueError('Translated coverage gaps do not match the source receipts')
     notes = manuscript.split('## Coverage Notes\n', 1)[1].strip()
     notes_html = ''.join('<p>' + inline(p) + '</p>' for p in notes.split('\n\n'))
     status_names = {'partial': 'Partially checked', 'failed': 'Access or collection failed', 'pending': 'Not yet checked'}
-    rows = ''.join('<li><strong>' + esc(glossary['source_names'].get(s['name'], s['name']))
+    rows = ''.join('<li><strong>' + esc(glossary['source_names'].get(s.get('name', s.get('source_id', s.get('id'))), s.get('name', s.get('source_id', s.get('id')))))
                    + '</strong> — ' + status_names[s['status']] + '. '
-                   + esc(edition['coverage_gaps'][s['name']]) + '</li>' for s in gaps)
-    status = 'Incomplete' if summary['incomplete'] else 'Source checks complete'
-    parts.append('<details class="paper-observation" id="coverage"><summary class="label">'
-                 f'Coverage notes · {status} · {summary["ok"]}/{len(receipts["sources"])} sources checked'
+                   + esc(edition['coverage_gaps'][s.get('name', s.get('source_id', s.get('id')))]) + '</li>' for s in gaps)
+    ok = summary.get('ok', sum(s['status'] == 'ok' for s in receipts['sources']))
+    incomplete = summary.get('incomplete', bool(receipts['sources']) and (ok / len(receipts['sources']) < .9 or bool(summary.get('core_not_ok'))))
+    status = 'Incomplete' if incomplete else 'Coverage threshold met'
+    coverage_label = ('Historical coverage record' if issue.get('archive_backfill') else f'Coverage notes · {status}')
+    parts.append('<details class="paper-observation" id="coverage"><summary class="label">' +
+                 coverage_label + (f' · {ok}/{len(receipts["sources"])} checks recorded' if receipts['sources'] else ' · Receipts unavailable') +
                  '</summary><div class="content">' + notes_html
                  + ('<p><strong>Coverage gaps</strong> reflect incomplete checks; they do not establish that a source had no updates.</p><ul>' + rows + '</ul>' if gaps else '')
                  + '<p>Reviewing a source does not constitute independent testing. '
@@ -115,12 +147,13 @@ def build(date):
     parts.append('<div class="source">AI-assisted translation, checked against the Chinese edition. '
                  '<a href="../' + filename + '">Read the Chinese edition</a>.</div>')
     audio = ''
-    if issue.get('episode_url') and issue.get('audio_src'):
-        seconds = round(issue.get('audio_duration_seconds') or issue['audio_duration'])
+    episode_url = issue.get('episode_url') or issue.get('audio_episode_url')
+    if episode_url and issue.get('audio_src'):
+        seconds = round(issue.get('audio_duration_seconds') or issue.get('audio_duration') or 0)
         audio = ('<div class="audio-player"><div class="play-info"><div class="play-label">Audio · Chinese</div>'
-                 '<div class="play-title"><a href="' + esc(issue['episode_url'])
+                 '<div class="play-title"><a href="' + esc(episode_url)
                  + '" target="_blank" rel="noopener">Listen in Chinese →</a></div>'
-                 f'<div class="play-meta">Issue {issue["vol"]} · About {seconds // 60} min {seconds % 60} sec · AI-generated audio</div></div></div>')
+                 f'<div class="play-meta">Issue {issue["vol"]}' + (f' · About {seconds // 60} min {seconds % 60} sec' if seconds else '') + ' · AI-generated audio</div></div></div>')
     day = dt.date.fromisoformat(date)
     values = {'TITLE': esc(f'AI Daily Digest · {date} · {edition["title"]}'),
               'DESC': esc(edition['description']), 'CANONICAL': BASE + '/en/' + filename,

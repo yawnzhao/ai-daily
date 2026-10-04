@@ -49,7 +49,7 @@ def read_page(path, lang='zh-CN'):
                 'human': d.strftime('%B ') + str(d.day) + d.strftime(', %Y'),
                 'vol': str(issue['vol']), 'desc': esc(edition['description']),
                 'news': str(counts['featured'] + counts['briefs']), 'papers': str(counts['papers']),
-                'oss': str(counts['opensource']), 'audio': bool(issue.get('audio_src') and issue.get('episode_url')),
+                'oss': str(counts['opensource']), 'audio': bool(issue.get('audio_src') and (issue.get('episode_url') or issue.get('audio_episode_url'))),
                 'text': t, 'published_at': edition['published_at']}
     metadata_match = re.search(r'<script type="application/json" id="daily-metadata">(.*?)</script>', t, re.S)
     if metadata_match:
@@ -181,6 +181,7 @@ def main():
                           f'<link rel="alternate" hreflang="en" href="{BASE}/en/">\n')
             tpl = tpl.replace('</head>', alternates + '</head>')
         outputs[prefix + 'index.html'] = (tpl.replace('{{TOTAL}}', str(len(issues)))
+                                        .replace('{{FIRST_DATE}}', issues[-1]['human'])
                                         .replace('{{DESC}}', issues[0]['desc'])
                                         .replace('{{CARDS}}', '\n\n'.join(card(p, lang) for p in issues)))
 
