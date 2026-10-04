@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Digest · English · News / Insights / Research / Open Source</title>
+<meta name="description" content="A safety dispute at OpenAI, Anthropic's engineer training program, and a reporter's Dots trial; plus robots that know when to stop, device SDKs, and decision models.">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Daily Digest · English · News / Insights / Research / Open Source">
+<meta property="og:description" content="A safety dispute at OpenAI, Anthropic's engineer training program, and a reporter's Dots trial; plus robots that know when to stop, device SDKs, and decision models.">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/en/">
+<meta property="og:site_name" content="AI Daily Digest">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI Daily Digest" href="https://yawnzhao.github.io/ai-daily/en/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+  .header { text-align: center; padding: 48px 0 36px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
+  .header .sub { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 18px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+  .episode { text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin-bottom: 14px; display: flex; align-items: center; gap: 18px; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+  .episode:hover { background: var(--card-hover); border-color: var(--accent-dim); transform: translateY(-1px); }
+  .episode .vol { flex-shrink: 0; text-align: center; min-width: 58px; }
+  .episode .vol .num { font-size: 26px; font-weight: 800; color: var(--accent-text); line-height: 1.2; }
+  .episode .vol .label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
+  .episode .info { flex: 1; min-width: 0; }
+  .episode .info .title { font-size: 16px; font-weight: 700; color: var(--text); text-decoration: none; }
+  .episode .info .title:hover { color: var(--accent-text); }
+  .episode .info .desc { font-size: 13px; color: var(--text-dim); margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .episode .info .meta { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .episode .info .chip { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .episode .go { flex-shrink: 0; font-size: 13px; color: var(--accent-text); text-decoration: none; font-weight: 600; }
+  .episode .go:hover { text-decoration: underline; }
+  .about { background: linear-gradient(135deg, rgba(232,121,76,0.10) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-top: 40px; }
+  .about .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .about .content { font-size: 14px; line-height: 1.9; color: var(--text-dim); }
+  .about .content strong { color: var(--text); }
+  .footer-note { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 48px; }
+  .chip-pending { color: var(--text-muted); background: transparent; border: 1px dashed var(--border); }
+  .subscribe { display: flex; justify-content: center; gap: 14px; margin-top: 20px; flex-wrap: wrap; }
+  .subscribe a { font-size: 13px; color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 16px; }
+  .subscribe a:hover { border-color: var(--accent-dim); }
+  @media (max-width: 560px) {
+    .episode { flex-direction: column; align-items: stretch; gap: 10px; }
+    .episode .go { display: none; }
+    .episode .vol { text-align: left; }
+    .episode .vol .num { font-size: 22px; }
+  }
+</style>
+<link rel="alternate" hreflang="zh-CN" href="https://yawnzhao.github.io/ai-daily/">
+<link rel="alternate" hreflang="en" href="https://yawnzhao.github.io/ai-daily/en/">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">AI DAILY DIGEST</div>
+  <h1>AI Daily Digest</h1>
+  <div class="sub">Daily AI news · Insights / Research / Open Source</div>
+  <div class="stats">
+    <div class="stat"><span class="num" id="volCount">3</span>English editions</div>
+    <div class="stat"><span class="num">4</span>sections</div>
+    <div class="stat"><span class="num">Oct 2, 2026</span>First English edition</div>
+  </div>
+  <div class="subscribe"><a href="../index.html" lang="zh-CN">中文</a><a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">🎧 Audio · Chinese</a><a href="https://yawnzhao.github.io/ai-daily/en/feed.xml">English RSS</a></div>
+</header>
+
+<main>
+<div class="section-header">
+  <h2>All issues</h2>
+  <span class="tag">Newest first</span>
+</div>
+<a class="episode" href="ai-daily-digest-2026-10-04.html">
+  <div class="vol"><div class="num">28</div><div class="label">VOL</div></div>
+  <div class="info"><div class="title"><time datetime="2026-10-04">AI Daily Digest · October 4, 2026 · Sunday</time></div>
+    <div class="desc">A safety dispute at OpenAI, Anthropic's engineer training program, and a reporter's Dots trial; plus robots that know when to stop, device SDKs, and decision models.</div><div class="meta"><span class="chip">6 news items</span><span class="chip">1 paper</span><span class="chip">2 open-source projects</span><span class="chip">Audio · Chinese</span></div></div>
+  <div class="go">Read →</div>
+</a>
+
+<a class="episode" href="ai-daily-digest-2026-10-03.html">
+  <div class="vol"><div class="num">27</div><div class="label">VOL</div></div>
+  <div class="info"><div class="title"><time datetime="2026-10-03">AI Daily Digest · October 3, 2026 · Saturday</time></div>
+    <div class="desc">GPT-6 development guidance, a forthcoming DGX Spark configuration, transaction verification, and an orbital experiment; an RLM interview, tool evaluation, and AstaBrief add context.</div><div class="meta"><span class="chip">6 news items</span><span class="chip">1 paper</span><span class="chip">1 open-source project</span><span class="chip">Audio · Chinese</span></div></div>
+  <div class="go">Read →</div>
+</a>
+
+<a class="episode" href="ai-daily-digest-2026-10-02.html">
+  <div class="vol"><div class="num">26</div><div class="label">VOL</div></div>
+  <div class="info"><div class="title"><time datetime="2026-10-02">AI Daily Digest · October 2, 2026 · Friday</time></div>
+    <div class="desc">Barclays expands Claude adoption, Claude Code opens up mods, and an economics essay explores execution; NVIDIA examines AI factory returns, while interviews add tool-design and financing perspectives.</div><div class="meta"><span class="chip">4 news items</span><span class="chip">1 paper</span><span class="chip">1 open-source project</span><span class="chip">Audio · Chinese</span></div></div>
+  <div class="go">Read →</div>
+</a>
+</main>
+
+<div class="about">
+  <div class="label">About this edition</div>
+  <div class="content">
+    English editions of the Chinese AI Daily Digest, covering Top Stories, Industry Insights, Research Briefs, and Open Source Spotlight. AI-assisted translations are checked against the Chinese edition. Source-catalog titles retain the Chinese edition’s wording; source names are shown in English. Audio is available in Chinese.
+  </div>
+</div>
+
+<div class="footer-note">AI Daily Digest · English edition · Issue dates follow Beijing time (UTC+8).</div>
+
+</body>
+</html>

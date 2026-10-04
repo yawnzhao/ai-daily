@@ -10,6 +10,29 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 class EditorialPagesTests(unittest.TestCase):
+    def test_english_issue_uses_shared_counts_and_passes_validation(self):
+        path = ROOT / 'en/ai-daily-digest-2026-10-04.html'
+        page = build_site.read_page(path, 'en')
+        self.assertEqual((page['news'], page['papers'], page['oss']), ('6', '1', '2'))
+        self.assertFalse(check_page.check_issue(path, 'en'))
+
+    def test_english_navigation_does_not_link_untranslated_issues(self):
+        pages = [build_site.read_page(p, 'en') for p in sorted((ROOT / 'en').glob('ai-daily-digest-*.html'), reverse=True)]
+        oldest = build_site.nav_html(pages, len(pages) - 1, lang='en')
+        self.assertNotIn('Previous', oldest)
+        self.assertIn('Next', oldest)
+        self.assertNotIn('href="#featured"', oldest)
+
+    def test_translation_validator_rejects_missing_item_and_changed_catalog_title(self):
+        original = (ROOT / 'en/ai-daily-digest-2026-10-04.html').read_text()
+        variants = [(original.replace('id="frontier-academy"', 'id="wrong-id"'), '缺少条目'),
+                    (original.replace('Anthropic 投入1亿美元', 'Changed catalog title'), '来源目录标题')]
+        for text, expected in variants:
+            with tempfile.TemporaryDirectory() as tmp:
+                path = Path(tmp) / 'ai-daily-digest-2026-10-04.html'
+                path.write_text(text)
+                self.assertTrue(any(expected in e for e in check_page.check_translation(path)))
+
     def test_existing_edition_remains_readable(self):
         page = build_site.read_page(ROOT/'ai-daily-digest-2026-09-24.html')
         self.assertEqual(page['date'],'2026-09-24')

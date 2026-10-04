@@ -213,4 +213,10 @@ def build(date):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('date', help='Issue date, YYYY-MM-DD')
-    build(parser.parse_args().date)
+    parser.add_argument('--lang', choices=['zh-CN', 'en'], default='zh-CN')
+    args = parser.parse_args()
+    if args.lang == 'en':
+        from build_english_issue import build as build_english
+        build_english(args.date)
+    else:
+        build(args.date)

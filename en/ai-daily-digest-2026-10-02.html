@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Digest · 2026-10-02 · Turning Intelligence into Work: Claude, Compute, and Execution</title>
+<meta name="description" content="Barclays expands Claude adoption, Claude Code opens up mods, and an economics essay explores execution; NVIDIA examines AI factory returns, while interviews add tool-design and financing perspectives.">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-10-02.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Daily Digest · 2026-10-02 · Turning Intelligence into Work: Claude, Compute, and Execution">
+<meta property="og:description" content="Barclays expands Claude adoption, Claude Code opens up mods, and an economics essay explores execution; NVIDIA examines AI factory returns, while interviews add tool-design and financing perspectives.">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-10-02.html">
+<meta property="og:site_name" content="AI Daily Digest">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI Daily Digest · English" href="https://yawnzhao.github.io/ai-daily/en/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+  .play-title a { color: var(--accent-text); text-decoration: none; }
+  .play-title a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .news-item .news-head { flex-direction: column; gap: 6px; }
+    .section-header { flex-wrap: wrap; }
+  }
+</style>
+<link rel="alternate" hreflang="zh-CN" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-02.html">
+<link rel="alternate" hreflang="en" href="https://yawnzhao.github.io/ai-daily/en/ai-daily-digest-2026-10-02.html">
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="Issue navigation" data-nav="top"><a href="../ai-daily-digest-2026-10-02.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="index.html">← All issues</a><span class="spacer"></span><a href="ai-daily-digest-2026-10-03.html">Next · 10-03</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">English edition</div>
+  <h1>AI Daily Digest</h1>
+  <div class="date"><time datetime="2026-10-02">October 2, 2026 · Friday · Issue 26</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>sections</div>
+    <div class="stat"><span class="num">4</span>news items</div>
+    <div class="stat"><span class="num">1</span>paper</div>
+    <div class="stat"><span class="num">1</span>open-source project</div>
+    <div class="stat"><span class="num">24</span> hours of news</div>
+  </div>
+</header>
+
+<div class="audio-player"><div class="play-info"><div class="play-label">Audio · Chinese</div><div class="play-title"><a href="https://www.xiaoyuzhoufm.com/episode/6abef42e195d838e2aec8171" target="_blank" rel="noopener">Listen in Chinese →</a></div><div class="play-meta">Issue 26 · About 13 min 28 sec · AI-generated audio</div></div></div>
+
+<main id="main">
+
+<!-- 四sections的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="focus-box"><div class="label">Turning Intelligence into Work: Claude, Compute, and Execution</div><div class="content">Turning intelligence into useful work is the thread running through this edition: Barclays expands Claude adoption, Claude Code opens up mods, an economics essay explores the relationship between intelligence and execution, and NVIDIA examines returns on AI factories. Two interviews add perspectives on tool design and infrastructure financing. The main news window runs from October 1 at 06:00 to October 2 at 06:00 Beijing time (UTC+8), or September 30 at 22:00 to October 1 at 22:00 UTC. Discovery looks back 72 hours. Source coverage remains incomplete; gaps do not establish that a source had no updates.</div></div>
+<section class="section" id="featured"><div class="section-header"><span class="icon" aria-hidden="true">📰</span><h2>Top Stories</h2><span class="tag">4 stories</span></div><div class="news-item" id="barclays"><div class="news-head"><span class="badge badge-model">Enterprise adoption</span><h3>Barclays expands Claude adoption, from coding to email and knowledge search</h3></div><p>Anthropic announced an expanded partnership with Barclays on October 1. The bank expects approximately 50% of its developers to adopt Claude Code by the end of 2026, with most software engineers covered in 2027. <strong>These are adoption plans, not coverage already achieved.</strong></p><p>Existing applications include an internal knowledge assistant introduced in 2025. The announcement says more than 16,000 colleagues have used it for over one million searches. An email platform in the markets business classifies, enriches, and routes around 120,000 emails a day. These figures are reported by the partners; the Chinese edition reviewed the announcement but did not independently audit the results. Deployment also emphasizes security, governance, and human oversight. Our take: a useful way to assess enterprise AI is to examine the workflows in which it is used repeatedly, beyond the success of a single demonstration.</p><div class="source">Source: <a href="https://www.anthropic.com/news/barclays-scales-claude" target="_blank" rel="noopener">Anthropic</a> · October 1 · Full official announcement; partner-reported figures, not independently audited</div></div><div class="news-item" id="mods"><div class="news-head"><span class="badge badge-model">Tool boundaries</span><h3>Claude Code mods let developers change their tools—and require them to manage trust</h3></div><p>An October 1 Claude blog post introduces mods: small TypeScript functions that can respond to tool events, rewrite prompts, adjust the interface, or replace functionality. They are distributed through plugins and support both the CLI and desktop app. Compared with existing hooks, they give developers deeper control over execution and interaction.</p><p><strong>Mods have the same local-machine access as Claude Code and run without a sandbox.</strong> The documentation says to install them only from trusted sources. Team and enterprise plugin management still applies; managed devices load sec-default first by default to keep user mods from bypassing existing deny rules. This is room for customization, not a basis for describing mods as safely isolated code. Our take: building checks, audits, and team practices into tools can reduce reliance on users remembering them at the right moment. The power to change a tool also needs clear boundaries.</p><div class="source">Source: <a href="https://claude.com/blog/claude-code-mods" target="_blank" rel="noopener">Claude Blog</a> · October 1 · Full official article; not deployed or tested</div></div><div class="news-item" id="eternal"><div class="news-head"><span class="badge badge-model">Intelligence and execution</span><h3>The eternal complement: better ideas may make execution capacity more valuable</h3></div><p>OpenAI&#x27;s Intelligence Age platform published Hemanth Asirvatham and Elliott Mokski&#x27;s essay, <em>The eternal complement</em>, on October 1. <strong>It is a signed economics essay expressing the authors&#x27; personal views, not OpenAI&#x27;s institutional position or a certain forecast.</strong></p><p>The authors treat frontier intelligence and the capacity to put ideas into practice as complements: better questions make instruments more valuable, and instruments make good questions more valuable. They compare two possible futures—progress through deeper reasoning with limited expansion, or a need for broader experimentation, institutions, and logistics because of nature&#x27;s complexity. The essay directs attention to the work of implementing ideas. Our take: Barclays&#x27; workflow applications provide a current example relevant to that discussion, but one bank&#x27;s deployment cannot settle the economy&#x27;s long-term trajectory.</p><div class="source">Source: <a href="https://openai.com/index/the-eternal-complement/" target="_blank" rel="noopener">OpenAI Intelligence Age</a> · October 1 · Full signed personal essay; not an institutional position or certain forecast</div></div><div class="news-item" id="nvidia-roi"><div class="news-head"><span class="badge badge-model">Compute economics</span><h3>NVIDIA on AI factory returns: output needs demand and a useful earning life</h3></div><p>NVIDIA&#x27;s October 1 article breaks returns on AI factories into three factors: output at full utilization, the period over which hardware can keep earning money, and actual demand. High throughput alone cannot guarantee a return if the output cannot be sold. The article emphasizes software optimization across hardware generations and support for multiple workloads.</p><p>The Chinese edition reviewed the full vendor article. We use its analytical framework here; <strong>its claims about performance advantages, hardware longevity, and future returns are not independent test results</strong>. Read alongside this edition&#x27;s economics essay, it raises further questions: after capabilities improve, who supplies real demand, who funds deployment, and who bears the cost of low utilization?</p><div class="source">Source: <a href="https://blogs.nvidia.com/blog/productive-durable-fungible-ai-factories/" target="_blank" rel="noopener">NVIDIA Blog</a> · October 1 · Full vendor article; performance and returns not independently tested</div></div></section>
+<section class="section" id="insight"><div class="section-header"><span class="icon" aria-hidden="true">🔍</span><h2>Industry Insights</h2><span class="tag">Conversation Spotlight</span></div><div class="insight-card" id="discourse-thariq"><div class="insight-banner"><div class="meta">Original episode: September 29</div><h3>Conversation Spotlight: Thariq Shihipar on building checks into tools that users can modify</h3></div><div class="insight-body"><p><strong>About the guest:</strong> Thariq Shihipar works at Anthropic on Claude Code interaction and tool extensions. In this interview, he describes experiments with an assumption-tracking tool and a model router. We read his comments from the perspective of a product practitioner; his role and work were checked against the original program&#x27;s introduction and his own account. (<a href="https://www.latent.space/p/thariq" target="_blank" rel="noopener">Original episode</a>)</p><p><strong>About the program:</strong> Latent Space is a technical podcast and community for AI engineers, covering engineering, product, and business practice through audio and video interviews. This is the program&#x27;s broader remit, rather than just this episode&#x27;s subject. (<a href="https://www.latent.space/about" target="_blank" rel="noopener">Official introduction</a>)</p><p>The original episode was published on <strong>September 29</strong>. The Chinese edition reviewed the official transcript at <strong>32:49–38:34</strong>, covering mods, assumption tracking, and routing. Shihipar discusses checking task status after each turn, displaying questions and answers, and recording assumptions made during the process. These are practical examples and exploratory ideas; they do not imply that every feature is a default. The suggestion that Claude Tag might be supported remains uncertain.</p><p>The formal mods announcement adds context for reading this earlier discussion. Our connection: verification steps that are easy to forget can become recurring parts of a tool&#x27;s workflow, while customization privileges still require security governance. The interview predates the announcement and <strong>was not a response to the October 1 release</strong>. Concourse ID: <code>IZAlq-V19U8</code>. Review covered the specified official transcript segment; the recording was not checked word for word.</p><p>Source: <a href="https://www.latent.space/p/thariq" target="_blank" rel="noopener">Latent Space · Original episode</a> · Original episode: September 29 · Official transcript 32:49–38:34; recording not checked word for word</p></div></div><div class="insight-card" id="discourse-dylan"><div class="insight-banner"><div class="meta">Original episode: August 25</div><h3>Conversation Spotlight: Dylan Patel on the contracts and financing behind compute returns</h3></div><div class="insight-body"><p><strong>About the guest:</strong> Dylan Patel is the founder and CEO of SemiAnalysis. Its website describes the research team he has built since 2020, covering semiconductor supply chains, cloud computing, and data-center costs. We therefore read this discussion as a supply-and-cost researcher&#x27;s analysis, while preserving the distinction between observations and forecasts. (<a href="https://semianalysis.com/dylan-patel/" target="_blank" rel="noopener">Institutional biography</a>)</p><p><strong>About the program:</strong> Dwarkesh Podcast, hosted by Dwarkesh Patel, is a long-form interview program whose official description emphasizes deeply researched conversations. It is categorized under technology, and its remit extends beyond AI; this episode focuses on compute economics. (<a href="https://www.dwarkesh.com/about" target="_blank" rel="noopener">Official introduction</a>, <a href="https://podcasts.apple.com/us/podcast/the-lunar-society/id1516093381" target="_blank" rel="noopener">Program listing</a>)</p><p>Using the accumulated library&#x27;s link to the original recording, this edition returned to the <strong>August 25</strong> interview, <em>Dylan Patel – Anthropic &amp; OpenAI will have most of the world’s compute by 2028</em>. The September 2 date belongs to a Chinese commentary video, not the original interview. In the official transcript at <strong>13:08–25:40</strong>, Patel distinguishes compute used by model customers from ownership of the physical infrastructure. He discusses the difference between securing customer commitments before financing construction and funding construction through one&#x27;s own balance sheet.</p><p>Our connection: NVIDIA&#x27;s article discusses output, earning life, and demand; this earlier conversation adds contracts, financing, and the distribution of value among users, model providers, and infrastructure owners. The guest&#x27;s numbers about future compute concentration, prices, and profits were forecasts at the time. This edition does not turn them into established facts. Library Concourse ID: <code>5krZ6fJ8v-w</code>; linked original video ID: <code>aV26V1UvkJw</code>. Review used the official original text, not the Chinese commentary&#x27;s summary; the recording was not checked word for word.</p><p>Source: <a href="https://www.dwarkesh.com/p/dylan-patel-3" target="_blank" rel="noopener">Dwarkesh Podcast · Original episode</a> · Original episode: August 25 · Official transcript 13:08–25:40; recording not checked word for word</p></div></div></section>
+<section class="section" id="papers"><div class="section-header"><span class="icon" aria-hidden="true">📄</span><h2>Research Briefs</h2><span class="tag">1 paper</span></div><div class="paper-item" id="mid-harness"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">Mid-Harness: sampling more actions helps only if a verifier can choose well</span></div><div class="paper-tags"><span class="paper-tag">Agent verification</span><span class="paper-tag">Submitted September 30 · From the 72-hour discovery window</span><span class="paper-tag">Methods, results, costs, and limitations; not reproduced</span></div><div class="paper-body"><p>The preprint arXiv:2609.39982v1 was first submitted on September 30 at 15:40:39 UTC. At each step of a terminal agent&#x27;s work, the method samples several actions from the same history and asks a verifier to choose one to execute. The generator and execution framework remain unchanged.</p><p>On TerminalBench-Lite, the authors report that with a fixed TMAX-9B generator, GPT-5.6 Sol as verifier, and eight candidates per step, Pass@1 rises from a 50.00% baseline to 68.03%. The metric averages success over three runs per task. More candidates provide limited help with a weaker self-verifier. Pairwise comparison outperforms the other two tested approaches but adds verifier calls and output costs. Distillation still leaves a gap relative to the stronger verifier.</p><p>The Chinese edition reviewed the HTML paper&#x27;s methods, experimental setup, results, costs, and limitations; the experiments were not reproduced. The study lacks gold-standard labels for action correctness and does not compare against increasing single-call reasoning effort at a fixed, matched budget. It cannot establish that multiple agents or more samples are generally better. Our connection to mods is workflow control, but this research selects actions before execution; the two are different techniques.</p></div><a class="paper-link" href="https://arxiv.org/html/2609.39982v1" target="_blank" rel="noopener">arXiv · v1 →</a></div></section>
+<section class="section" id="opensource"><div class="section-header"><span class="icon" aria-hidden="true">⭐</span><h2>Open Source Spotlight</h2><span class="tag">1 project</span></div><div class="focus-box"><div class="label">Reading note</div><div class="content">Based on official documentation; no deployment tests were performed. Inclusion here is a tool-discovery recommendation, not a claim that each project was first released today.</div></div><div class="oss-item" id="olmo-core"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://huggingface.co/blog/allenai/olmocore3" target="_blank" rel="noopener">Olmo-core 3 opens up MoE training infrastructure; trillion-parameter figures describe system tests</a></span><span class="oss-license">Apache-2.0</span></div><p>Ai2 introduced Olmo-core 3 on October 1, improving infrastructure for training large mixture-of-experts models. MoE activates only some experts for each token, but the full model still occupies memory and routing across GPUs incurs communication costs. The new stack keeps experts resident on GPUs and sends data to them, avoiding the previous implementation&#x27;s repeated gathering of weights.</p><p>In one test reported by the authors, the expert count increases from 8 to 128 while each token still selects 4 experts, keeping active parameters near 3.2 billion. Total parameters rise from 4.6 billion to 47 billion, with a throughput decline of less than 5%. Separately, <strong>the 1.2-trillion-parameter test on 512 B300 GPUs used random routing to measure system performance; the 2.38-trillion-parameter result was a brief capacity test</strong>. These results do not announce a newly released, fully trained model at those scales.</p><p>The official article, repository README, and Apache-2.0 license were reviewed; no deployment was performed. The README notes that images and dependencies depend on hardware, drivers, and CUDA versions. Our take: openness includes training infrastructure as well as model weights, and its performance claims deserve the same scrutiny. Actual throughput depends on the whole system; a faster kernel does not automatically mean a faster end-to-end workflow.</p></div></div></section>
+<details class="paper-observation" id="coverage"><summary class="label">Coverage notes · Incomplete · 26/32 sources checked</summary><div class="content"><p>The Chinese edition checked the then-current configuration of 32 sources: 26 checks were complete and six remained partial. It reused upstream records with source-specific evidence and checked entry-point updates through 06:00 Beijing time. The RSS increment yielded no additional top story for this edition. The independent arXiv interface returned 1,371 papers across the discovery window, and the October 1 Hugging Face API returned 50 items. These are discovery counts, not counts of papers read in full or selected. One paper was selected; False Frontiers was held for further review after its abstract was read, without using unread result tables to support news claims.</p><p>Browser sources were checked, but several product and news entry points could not establish complete date coverage. At 36Kr, one syndicated item&#x27;s author, original source, and October 1 10:08 timestamp were checked; it concerned Gemini 4 Argon, already covered in the previous issue, and was deduplicated. Original reporting was assessed article by article, not inferred from the domain.</p><p>Conversation-source review used the day&#x27;s remote scan, lists, and 528-entry candidate index, with additional checks of seven RSS feeds and four newly configured people. Insufficient program material was recorded separately from failed discovery checks. An upstream recommendation based only on an a16z program description was not reused; two interviews with reviewed material were selected for both the Chinese webpage and audio edition.</p><p>Trial media checks revisited TechCrunch AI lists and timestamps, dated Ars listings, MIT Technology Review&#x27;s visible AI entries through September 21, and original-reporting leads on the 404 Media homepage. This edition did not adopt new articles from those four sources whose full text had not been independently reviewed. MIT Technology Review&#x27;s Mark Chen interview was used in the preceding issue. Source configuration was unchanged.</p><p>The Chinese audio edition includes an AI-generated song inspired by the Barclays and mods stories; its lyrics are artistic expression. The narration and song were mixed and checked, and the public Xiaoyuzhou audio and Chinese webpage player were synchronized.</p><p><strong>Coverage gaps</strong> reflect incomplete checks; they do not establish that a source had no updates.</p><ul><li><strong>Microsoft AI</strong> — Partially checked. The topic page loaded, but visible dates stopped around July and did not establish coverage of September 28 through October 1. View all and the feed returned HTTP 410. The alternative Microsoft Source AI entry point and an article check also did not establish reliable dates and the full lower boundary.</li><li><strong>Tongyi Lab</strong> — Partially checked. The official product entry point loaded, but a reliably dated news list and complete coverage of the discovery window could not be established.</li><li><strong>Z.ai</strong> — Partially checked. The configured news URL and zhipuai.cn/news returned the BigModel application, which required JavaScript. Product cards and menus did not establish a reliably dated news list covering all 72 hours.</li><li><strong>StepFun</strong> — Partially checked. The configured entry point returned very little content or appeared to redirect. Product pages and previews lacked complete, verifiable publication dates.</li><li><strong>OpenReview</strong> — Partially checked. The homepage and conference entry points were accessible, but submissions across venues were not fully filtered back to the discovery window boundary. Access alone does not complete that check.</li><li><strong>36Kr AI (article-level checks for original and syndicated reporting)</strong> — Partially checked. The AI list included syndicated or contributed articles. Expanding it did not establish the full 72-hour lower boundary. One syndicated item’s author, original source, and October 1 10:08 timestamp were checked; its Gemini Argon story was deduplicated against prior coverage.</li></ul><p>Reviewing a source does not constitute independent testing. Paper-reading scope is stated with each item; experiments were not reproduced.</p></div></details>
+<div class="source">AI-assisted translation, checked against the Chinese edition. <a href="../ai-daily-digest-2026-10-02.html">Read the Chinese edition</a>.</div>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="Issue navigation" data-nav="bottom"><a href="../ai-daily-digest-2026-10-02.html" lang="zh-CN">中文</a><a href="#" lang="en" aria-current="page">English</a><a href="ai-daily-digest-2026-10-03.html">Next · 10-03</a><span class="spacer"></span><a href="index.html">All issues →</a></nav>
+
+</body>
+</html>
