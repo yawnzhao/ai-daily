@@ -9,7 +9,15 @@
     "partial": 8,
     "failed": 0,
     "pending_browser": 0,
-    "core_not_ok": []
+    "core_not_ok": [],
+    "incomplete": true,
+    "coverage_rate": 0.8222222222222222,
+    "local_cutoff": "2026-10-06T06:00:00+08:00",
+    "main_window": [
+      "2026-10-04T22:00:00+00:00",
+      "2026-10-05T22:00:00+00:00"
+    ],
+    "success_rate": 0.8222222222222222
   },
   "sources": [
     {
@@ -72,11 +80,14 @@
           "discovery_path": "https://claude.com/blog",
           "content_form": "official",
           "original_outlet": null,
-          "verification_scope": "list",
-          "decision": "pending_verification",
-          "decision_reason": null,
+          "verification_scope": "案例全文；业务约束、评估范围；非独立效果审计",
+          "decision": "selected",
+          "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
           "source_id": "claude-blog",
-          "source_name": "Claude Blog"
+          "source_name": "Claude Blog",
+          "selected_item_ids": [
+            "cresta-conductor"
+          ]
         }
       ],
       "collection_pass": "browser_or_page_supplement",
@@ -109,11 +120,14 @@
           "discovery_path": "https://openai.com/news/rss.xml",
           "content_form": "official",
           "original_outlet": null,
-          "verification_scope": "list",
-          "decision": "pending_verification",
-          "decision_reason": null,
+          "verification_scope": "官方全文、适用范围与检测局限；未独立测试",
+          "decision": "selected",
+          "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
           "source_id": "openai",
-          "source_name": "OpenAI News"
+          "source_name": "OpenAI News",
+          "selected_item_ids": [
+            "eu-provenance"
+          ]
         },
         {
           "title": "Building advertising for the way people use AI",
@@ -128,11 +142,14 @@
           "discovery_path": "https://openai.com/news/rss.xml",
           "content_form": "official",
           "original_outlet": null,
-          "verification_scope": "list",
-          "decision": "pending_verification",
-          "decision_reason": null,
+          "verification_scope": "官方全文；计划、已提供工具与公司承诺分开",
+          "decision": "selected",
+          "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
           "source_id": "openai",
-          "source_name": "OpenAI News"
+          "source_name": "OpenAI News",
+          "selected_item_ids": [
+            "chatgpt-visual-ads"
+          ]
         }
       ],
       "collection_pass": "browser_or_page_supplement",
@@ -155,7 +172,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "xai",
@@ -173,7 +190,7 @@
         "未读正文",
         "个别卡片标题未落在同一段 HTML，日期仍早于窗口"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "deepmind",
@@ -189,7 +206,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "complete_no_new",
       "configured_entry_status": "ok"
     },
     {
@@ -278,7 +295,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "microsoft",
@@ -288,17 +305,15 @@
       "checked_at": "2026-10-05T21:38:23+00:00",
       "checked_url": "https://blogs.microsoft.com/ai/",
       "status": "partial",
-      "evidence": "静态请求 https://blogs.microsoft.com/ai/ 最终落到已保存页面（重定向到 news.microsoft.com/source/topics/ai/）。 话题页抽出标题链接 13 条，多数没有列表日期。配置 feed 失败：HTTPError: HTTP Error 410: Gone。替代 Source AI feed HTTP 200 https://news.microsoft.com/source/topics/ai/feed/，10 条，最新 2026-09-10 13:08:37+00:00，最旧 2026-06-02 16:25:45+00:00，窗口内 0。该 feed 不是配置入口。 两套入口不能互相代替。未读正文。",
+      "evidence": "静态请求 https://blogs.microsoft.com/ai/ 最终落到已保存页面（重定向到 news.microsoft.com/source/topics/ai/）。 话题页抽出标题链接 13 条，多数没有列表日期。配置 feed 失败：HTTPError: HTTP Error 410: Gone。替代 Source AI feed HTTP 200 https://news.microsoft.com/source/topics/ai/feed/，10 条，最新 2026-09-10 13:08:37+00:00，最旧 2026-06-02 16:25:45+00:00，窗口内 0。该 feed 不是配置入口。 两套入口不能互相代替。未读正文。 本机补查：旧配置RSS为410；已读Source AI列表与备用RSS，列表未完整配对发布日期，不能据此认定Microsoft全部无新增。",
       "items": [],
       "collection_pass": "browser_or_page_supplement",
       "gaps": [
-        "配置 URL 跳到 news.microsoft.com/source/topics/ai/，话题卡多数没有列表日期",
-        "配置 feed 失败：HTTPError: HTTP Error 410: Gone",
-        "Source topic feed 不是配置入口，不能互相代替",
-        "未读正文"
+        "旧配置RSS为410；已读Source AI列表与备用RSS，列表未完整配对发布日期，不能据此认定Microsoft全部无新增。"
       ],
-      "check_state": "partially_checked",
-      "configured_entry_status": "partial"
+      "check_state": "partial",
+      "configured_entry_status": "partial",
+      "local_supplement_at": "2026-10-05T22:38:28.187105+00:00"
     },
     {
       "source_id": "qwen",
@@ -308,17 +323,14 @@
       "checked_at": "2026-10-05T21:38:23+00:00",
       "checked_url": "https://qwenlm.github.io/",
       "status": "partial",
-      "evidence": "配置 URL https://qwenlm.github.io/ 仍是旧 GitHub 博客，页面日期最新 2025-09-23，不能据此判断无更新。另查 https://qwen.ai/research 的 page_config：research.research-list 60 篇，date 最新 2025-12-23T05:08:30.000Z；research.latest-advancements-list 19 篇，最新 2025-09-24T04:00:00.000Z；news.news-list 17 篇，最新 2025-04-28T20:00:00.000Z。GET /api/v2/article/retrieval 多种 language/pageSize 组合返回 articles 空数组。headless Chrome 渲染研究页约 33 万字节，未见 2026-10 研究卡片；页内 2026-08-10T23:59:59+08:00 是开屏素材下架时间，不是论文发布时间。窗口内 0 条。未改 config。未读正文。",
+      "evidence": "配置 URL https://qwenlm.github.io/ 仍是旧 GitHub 博客，页面日期最新 2025-09-23，不能据此判断无更新。另查 https://qwen.ai/research 的 page_config：research.research-list 60 篇，date 最新 2025-12-23T05:08:30.000Z；research.latest-advancements-list 19 篇，最新 2025-09-24T04:00:00.000Z；news.news-list 17 篇，最新 2025-04-28T20:00:00.000Z。GET /api/v2/article/retrieval 多种 language/pageSize 组合返回 articles 空数组。headless Chrome 渲染研究页约 33 万字节，未见 2026-10 研究卡片；页内 2026-08-10T23:59:59+08:00 是开屏素材下架时间，不是论文发布时间。窗口内 0 条。未改 config。未读正文。 本机补查：配置旧博客与当前research入口均补查；日期和当前研究条目未完整配对，不能用旧博客无更新替代研究入口覆盖。 最后补查加载后的research索引：9月20日Qwen-Image-2.1、9月18日LiveTranslate及Omni-Flash；逐条原文URL配对仍未完成。",
       "items": [],
       "collection_pass": "browser_or_page_supplement",
       "gaps": [
-        "配置入口与现行官方入口不一致",
-        "page_config 与空的 retrieval 结果不能证明现行研究流已被完整列出",
-        "渲染页没有带出 2026 年 9 月以后的研究卡片",
-        "未改 config/sources.json",
-        "未逐篇打开正文"
+        "当前研究索引已读到日期；逐条原文URL仍未完成配对。"
       ],
-      "check_state": "partially_checked"
+      "check_state": "partial",
+      "local_supplement_at": "2026-10-05T22:38:28.187105+00:00"
     },
     {
       "source_id": "tongyi",
@@ -328,15 +340,14 @@
       "checked_at": "2026-10-05T21:38:23+00:00",
       "checked_url": "https://qianwen.aliyun.com/",
       "status": "partial",
-      "evidence": "通义/千问实验室页 https://qianwen.aliyun.com/ HTTP 200。抽出 6 条 /news 链接，周围 HTML 没有可配对的标题和发布时间。指向 qwen.ai/blog 的研究链接 7 条，不重复计入 qwen 源。不能写成无更新。",
+      "evidence": "通义/千问实验室页 https://qianwen.aliyun.com/ HTTP 200。抽出 6 条 /news 链接，周围 HTML 没有可配对的标题和发布时间。指向 qwen.ai/blog 的研究链接 7 条，不重复计入 qwen 源。不能写成无更新。 本机补查：官网产品与新闻入口补查，新闻链接未完整配对日期；与Qwen重叠链接保留渠道，不重复计为不同新闻。",
       "items": [],
       "collection_pass": "browser_or_page_supplement",
       "gaps": [
-        "新闻卡无标题、无绝对日期",
-        "未证明窗口覆盖",
-        "可见研究链接未与新闻卡配对，未编造对应关系"
+        "官网产品与新闻入口补查，新闻链接未完整配对日期；与Qwen重叠链接保留渠道，不重复计为不同新闻。"
       ],
-      "check_state": "partially_checked"
+      "check_state": "partial",
+      "local_supplement_at": "2026-10-05T22:38:28.187105+00:00"
     },
     {
       "source_id": "deepseek",
@@ -346,7 +357,7 @@
       "checked_at": "2026-10-05T21:38:23+00:00",
       "checked_url": "https://api-docs.deepseek.com/updates",
       "status": "partial",
-      "evidence": "API updates 页日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10'] 官网 /en/news 日期 ['2024-07-25', '2024-08-02', '2024-09-05', '2024-11-20', '2024-12-10', '2024-12-26', '2025-01-15', '2025-01-20', '2025-03-25', '2025-05-28', '2025-08-21', '2025-09-22', '2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10', '2026-09-29'] 官网 /zh/news 日期 ['2024-07-25', '2024-08-02', '2024-09-05', '2024-11-20', '2024-12-10', '2024-12-26', '2025-01-15', '2025-01-20', '2025-03-25', '2025-05-28', '2025-08-21', '2025-09-22', '2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10', '2026-09-29'] Harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04', '2026-09-29'] GitHub org HTTP 200，窗口内 pushed_at 仓库 ['deepseek-ai/deepseek-harness'] deepseek-ai/deepseek-harness 窗口内 commit 15 条，release 1 条。commit 不是公告。stars=243985 来自 api.github.com。 API 页窗口日历日 无。API 页无更新不能代表整个机构。未读 API changelog 全文。",
+      "evidence": "API updates 页日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10'] 官网 /en/news 日期 ['2024-07-25', '2024-08-02', '2024-09-05', '2024-11-20', '2024-12-10', '2024-12-26', '2025-01-15', '2025-01-20', '2025-03-25', '2025-05-28', '2025-08-21', '2025-09-22', '2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10', '2026-09-29'] 官网 /zh/news 日期 ['2024-07-25', '2024-08-02', '2024-09-05', '2024-11-20', '2024-12-10', '2024-12-26', '2025-01-15', '2025-01-20', '2025-03-25', '2025-05-28', '2025-08-21', '2025-09-22', '2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10', '2026-09-29'] Harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04', '2026-09-29'] GitHub org HTTP 200，窗口内 pushed_at 仓库 ['deepseek-ai/deepseek-harness'] deepseek-ai/deepseek-harness 窗口内 commit 15 条，release 1 条。commit 不是公告。stars=243985 来自 api.github.com。 API 页窗口日历日 无。API 页无更新不能代表整个机构。未读 API changelog 全文。 本机补查：补查官方API更新及多入口记录；API更新不代表研究与模型入口全覆盖，普通Git提交不作新模型公告。",
       "items": [
         {
           "title": "deepseek-ai/deepseek-harness release dsh-v0.2.1-alpha.1: v0.2.1-alpha.1",
@@ -673,12 +684,10 @@
       ],
       "collection_pass": "browser_or_page_supplement",
       "gaps": [
-        "未读 API changelog 全文",
-        "产品首页日期未逐条打开成独立公告",
-        "除窗口内有 push 的仓库外未逐仓库列 commit",
-        "commit 不是公告，目录不展示普通 commit"
+        "补查官方API更新及多入口记录；API更新不代表研究与模型入口全覆盖，普通Git提交不作新模型公告。"
       ],
-      "check_state": "partially_checked"
+      "check_state": "partial",
+      "local_supplement_at": "2026-10-05T22:38:28.187105+00:00"
     },
     {
       "source_id": "moonshot",
@@ -694,7 +703,7 @@
       "gaps": [
         "未逐篇打开 kimi.com 博客正文；首页日期已早于窗口"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "zhipu",
@@ -704,15 +713,14 @@
       "checked_at": "2026-10-05T21:38:23+00:00",
       "checked_url": "https://www.zhipuai.cn/zh/news",
       "status": "partial",
-      "evidence": "urllib 打开新闻页曾 SSL 超时；curl 打开 https://www.zhipuai.cn/zh/news HTTP 200。「新闻和资讯」卡片最新为 2026/03/31「智谱首份业绩报告发布，探索AGI智能上界」（/zh/news/152），下一条 2026/03/30，再往前进入 2025 与 2024。导航里的 GLM-5V-Turbo、GLM-5-Turbo 没有列表发布日期。页内 updatedAt 2026-09-10T01:33:00.153Z 属于模型导航记录，不当作新闻发布时间。https://www.zhipuai.cn/zh/research 本次连接超时，研究索引未覆盖。窗口内新闻列表 0 条。未读正文。",
+      "evidence": "urllib 打开新闻页曾 SSL 超时；curl 打开 https://www.zhipuai.cn/zh/news HTTP 200。「新闻和资讯」卡片最新为 2026/03/31「智谱首份业绩报告发布，探索AGI智能上界」（/zh/news/152），下一条 2026/03/30，再往前进入 2025 与 2024。导航里的 GLM-5V-Turbo、GLM-5-Turbo 没有列表发布日期。页内 updatedAt 2026-09-10T01:33:00.153Z 属于模型导航记录，不当作新闻发布时间。https://www.zhipuai.cn/zh/research 本次连接超时，研究索引未覆盖。窗口内新闻列表 0 条。未读正文。 本机补查：官网新闻和当前模型导航补查；页面可见GLM5.3等不带绝对发布日期，未完整覆盖研究入口。",
       "items": [],
       "collection_pass": "browser_or_page_supplement",
       "gaps": [
-        "研究索引 https://www.zhipuai.cn/zh/research 本次超时，不能代表研究栏目无更新",
-        "未读新闻正文",
-        "模型导航 updatedAt 不当发布日"
+        "官网新闻和当前模型导航补查；页面可见GLM5.3等不带绝对发布日期，未完整覆盖研究入口。"
       ],
-      "check_state": "partially_checked"
+      "check_state": "partial",
+      "local_supplement_at": "2026-10-05T22:38:28.187105+00:00"
     },
     {
       "source_id": "stepfun",
@@ -722,14 +730,14 @@
       "checked_at": "2026-10-05T21:38:23+00:00",
       "checked_url": "https://www.stepfun.com/",
       "status": "partial",
-      "evidence": "静态 HTML 约 10KB，是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 后看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3，没有绝对发布日。不把产品名或开放计划日换成发布时间。窗口内 0 条。",
+      "evidence": "静态 HTML 约 10KB，是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 后看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3，没有绝对发布日。不把产品名或开放计划日换成发布时间。窗口内 0 条。 本机补查：读官网当前产品及Step5Preview、StepAudio3入口；开源倒计时不当作已经发布，条目缺可核绝对日期。",
       "items": [],
       "collection_pass": "browser_or_page_supplement",
       "gaps": [
-        "无独立新闻流的绝对日期",
-        "未把计划中的开源日当成已发布"
+        "读官网当前产品及Step5Preview、StepAudio3入口；开源倒计时不当作已经发布，条目缺可核绝对日期。"
       ],
-      "check_state": "partially_checked"
+      "check_state": "partial",
+      "local_supplement_at": "2026-10-05T22:38:28.187105+00:00"
     },
     {
       "source_id": "mistral",
@@ -745,7 +753,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "eu-digital",
@@ -837,7 +845,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "oecd",
@@ -854,7 +862,7 @@
         "内嵌 JSON 若不是全站，未注入首页的新文这次没看到",
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "arxiv",
@@ -871,7 +879,7 @@
         "未读摘要与全文",
         "区间查询语法会被 arXiv 改写，改用倒序翻页"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "hf-daily-papers",
@@ -912,7 +920,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "OneStreamer：统一流式视频交互中的感知、记忆和主动回应",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics",
@@ -943,7 +953,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "同策略还是离策略学习？蒸馏动态的系统研究",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "GraphForge: Training Working Agents with Graph-Anchored Workspace Synthesis",
@@ -974,7 +986,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "GraphForge：通过图锚定工作空间合成训练能执行任务的智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Adaptive Reward Routing: Dynamic Multi-Reward Optimization for Joint Audio-Video Diffusion via Forward-Process RL",
@@ -1005,7 +1019,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "自适应奖励路由：通过前向过程强化学习动态优化音视频联合扩散的多项奖励",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Predictive Credit: Measuring What Scientific Explanations Add to Experimental Forecasts",
@@ -1036,7 +1052,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "预测贡献：衡量科学解释为实验预测增加了什么",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Sharpening Tax in Post-Training",
@@ -1067,7 +1085,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "后训练中的锐化代价",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States",
@@ -1082,23 +1102,30 @@
           "discovery_path": "https://huggingface.co/api/daily_papers?date=2026-10-02",
           "content_form": "paper",
           "original_outlet": null,
-          "verification_scope": "摘要",
-          "decision": "pending_verification",
-          "decision_reason": null,
+          "verification_scope": "方法、实验表1/2及成本口径；未复现",
+          "decision": "selected",
+          "decision_reason": "显式状态与可靠性相关，补充总token代价，区别于昨日ThinkingBox业务结果评测。",
           "source_id": "hf-daily-papers",
           "source_name": "Hugging Face Daily Papers",
-          "paper_key": "2610.01415",
-          "primary_url": "https://arxiv.org/abs/2610.01415",
+          "paper_key": "arxiv:2610.01415",
+          "primary_url": "https://arxiv.org/html/2610.01415v1",
           "hf_listing_date": "2026-10-02",
           "arxiv_published_at": "2026-10-01T00:00:00.000Z",
           "discovery_sources": [
             "hf-daily-papers"
           ],
           "topics": [
-            "hf-daily-papers"
+            "Agent/记忆/工具使用",
+            "评测/可靠性/安全"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "selected_item_ids": [
+            "pos"
+          ],
+          "read_version": "v1",
+          "title_zh": "超越记忆：利用显式信念状态支持长时程智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Hierarchical Continuous Diffusion Language Models",
@@ -1129,7 +1156,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "分层连续扩散语言模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Prefill-Free Cross-Family KV Cache Transfer for Heterogeneous Multi-Agent LLMs",
@@ -1160,7 +1189,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "异构多智能体大模型的跨模型家族 KV 缓存迁移，无需预填充",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Agent Priors-guided Policy Learning",
@@ -1191,7 +1222,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "智能体先验引导的策略学习",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "World Observer: Joint Actor-Observer Generation for Persistent World Modeling",
@@ -1222,7 +1255,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "World Observer：联合生成行动者与观察者，支持持久世界建模",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Transformers Stop Thinking Too Early, and a Tiny LoRA Fixes It",
@@ -1253,7 +1288,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Transformer 过早停止思考，而一个小型 LoRA 可以修正它",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "A Missing Piece for Trustworthy AI Reviewers: From Benchmarking Rhetorical Robustness to SciCore Review",
@@ -1284,7 +1321,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "可信 AI 审稿人的缺失环节：从修辞鲁棒性评测到 SciCore Review",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "X-Tree: Tokenizing Reusable Experience for Efficient Agent Generalization",
@@ -1315,7 +1354,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "X-Tree：将可复用经验转为 token，提升智能体泛化效率",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "ActiveSaddler: Automated Curriculum Learning for Agent Harness Optimization",
@@ -1346,7 +1387,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "ActiveSaddler：用于智能体运行框架优化的自动课程学习",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "ROWBench: Do Video Models Render What the Program Specifies?",
@@ -1377,7 +1420,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "ROWBench：视频模型是否渲染了程序指定的内容？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "E-MoE: Enhanced Mixture-of-Experts for Non-Factorized Diffusion Language Models",
@@ -1408,7 +1453,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "E-MoE：用于非因子化扩散语言模型的增强专家混合",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL",
@@ -1439,7 +1486,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "让稀疏奖励发挥作用：面向多奖励强化学习的密度感知奖励聚合",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos",
@@ -1470,7 +1519,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "EgoTools：面向真实第一视角视频的工具中心推理",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Retrieval-Augmented Skill Optimization via Cross-Harness Adaptation",
@@ -1501,7 +1552,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "通过跨运行框架适配实现检索增强技能优化",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "InterEvolve: Test-Time Evolution of Reward Programs for Humanoid Loco-Manipulation",
@@ -1532,7 +1585,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "InterEvolve：人形机器人移动与操作的奖励程序测试时演化",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Video Generation Models: A Survey of Post-Training and Alignment",
@@ -1563,7 +1618,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "视频生成模型：后训练与对齐综述",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AutoGUIWorld: Image Generators as Visual World Models for GUI Agent",
@@ -1594,7 +1651,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "AutoGUIWorld：把图像生成器用作图形界面智能体的视觉世界模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Decentralized Master-Mind: Joint Action Refinement through Iterative Intent Denoising in Multi-Agent Pathfinding",
@@ -1625,7 +1684,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "分布式 Master-Mind：通过迭代意图去噪改进多智能体寻路中的联合行动",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Scaling and Distilling Text Embeddings for Better Diffusibility",
@@ -1656,7 +1717,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "缩放与蒸馏文本嵌入以提升扩散适用性",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Persona Dosing: Calibrated Activation Steering for Graded Trait Control",
@@ -1687,7 +1750,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Persona Dosing：通过校准激活引导实现分级特征控制",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Beyond the Current Scene: Event-Referential Grasping with Active View Selection",
@@ -1718,7 +1783,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "超越当前场景：结合主动视角选择的事件指涉抓取",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens",
@@ -1749,7 +1816,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "更少 token，更好行动：GPT-6 Astra 机器人智能体成功率提高14%，token减少65%",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Decoding Looped Transformers Better for (Almost) Free",
@@ -1780,7 +1849,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "以几乎零额外成本改善循环 Transformer 的解码",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Architect-Ant: Editable Automatic Furnishing of Architectural Floor Plans",
@@ -1811,7 +1882,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Architect-Ant：可编辑的建筑平面图自动家具布置",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AutoDataBench: A Data-centric Testbed for Accelerating Auto Research",
@@ -1842,7 +1915,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "AutoDataBench：加速自动研究的数据中心测试平台",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
@@ -1873,7 +1948,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "SILSA：用于保留拓扑的高分辨率三维生成的滑动窗口切片潜变量",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "4Director: Controlling Video World Models with Rigid 3D Geometry",
@@ -1904,7 +1981,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "4Director：用刚性三维几何控制视频世界模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "CorrGRPO: Correlation-Normalized GRPO for Multi-Reward Learning",
@@ -1935,7 +2014,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "CorrGRPO：用于多奖励学习的相关性归一化 GRPO",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "RPTune: Learned Context Curation for LLM Catalog Search",
@@ -1966,7 +2047,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "RPTune：学习大模型目录搜索的上下文筛选",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Multimodal Flow: Unified Flow Modeling of Language and Vision in Embedding Spaces",
@@ -1997,7 +2080,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Multimodal Flow：在嵌入空间中统一语言与视觉的流建模",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows",
@@ -2028,7 +2113,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Argo-Bench：在企业规模工作流上评估数据智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Ego2Act: Evaluating Goal-Directed Manipulation in Egocentric Video Generation",
@@ -2059,7 +2146,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Ego2Act：评估第一视角视频生成中的目标导向操作",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "PhysVista: Benchmarking Physical Intelligence in VLMs via a Perception-Reasoning-Assessment Loop",
@@ -2090,7 +2179,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "PhysVista：通过感知、推理和评估循环评测视觉语言模型的物理智能",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Smaller Models, Better Rejects: Preference Distillation Scaling",
@@ -2121,7 +2212,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "更小模型，更好的拒绝候选：偏好蒸馏的缩放",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Omni-Embed-Mini: Binding Modalities Without Forgetting via Dense Distillation",
@@ -2152,7 +2245,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Omni-Embed-Mini：通过密集蒸馏绑定模态而不遗忘",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "PixelDense: Dense Prediction as Representation Alignment for Pixel Diffusion",
@@ -2183,7 +2278,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "PixelDense：把密集预测用作像素扩散的表征对齐",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Where-OPD: Spatially Guided On-Policy Self-Distillation of MLLMs with Synthetic Scenes",
@@ -2214,7 +2311,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Where-OPD：用合成场景进行空间引导的多模态大模型同策略自蒸馏",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "When Users Change Their Minds: Measuring and Repairing Intent Drift in LLM Agents",
@@ -2245,7 +2344,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "用户改变主意时：衡量并修复大模型智能体的意图漂移",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Align Then Reason: A Multimodal Lip-Sync Judge for Dubbing",
@@ -2276,7 +2377,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "先对齐再推理：用于配音的多模态口型同步评判器",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Better Supervision Is Nearby: Neighborhood On-Policy Self-Distillation",
@@ -2307,7 +2410,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "更好的监督就在附近：邻域同策略自蒸馏",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Benchmarking and Enhancing Skill-Level Memory for Partially Observable Robotic Manipulation",
@@ -2338,7 +2443,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "评测并增强部分可观测机器人操作中的技能级记忆",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Pretrain Once, Route Anywhere: Towards a Foundation Model for LLM Routing",
@@ -2369,7 +2476,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "预训练一次，路由到各处：面向大模型路由的基础模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "DataMagic: Authoring Data Videos through Declarative Multi-Agent Orchestration",
@@ -2400,7 +2509,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "DataMagic：通过声明式多智能体编排制作数据视频",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OmniSeek: Native Tool Integration for Multi-turn Audio-Visual Reasoning",
@@ -2431,7 +2542,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "OmniSeek：多轮音视频推理中的原生工具集成",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
@@ -2462,7 +2575,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "RealCompanion：根据长期真实对话推理评测对人的理解",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Does Learning Protein Folding Generalize to Broader Reasoning?",
@@ -2493,7 +2608,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "学习蛋白质折叠能否泛化到更广泛的推理？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
@@ -2524,7 +2641,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "MotorMind：为通用视觉语言模型搭建零样本机器人操作支架",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation",
@@ -2555,7 +2674,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "FrameMorrow：用前瞻 token 和未来引导选帧支持长时程视频生成",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Scaling Trajectories for Complex Tasks through Recursive Self-Rewrite",
@@ -2586,7 +2707,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "通过递归自重写扩展复杂任务的轨迹",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "On-Policy Parameter Update Direction Underlies Generalization in LLM Post-Training",
@@ -2617,7 +2740,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "同策略参数更新方向支撑大模型后训练的泛化",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "World Action Modeling with Progressive Visual Planning",
@@ -2648,7 +2773,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "通过渐进式视觉规划进行世界行动建模",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Native Action-Prior Learning from Videos for World Action Models",
@@ -2679,7 +2806,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "从视频中原生学习世界行动模型的行动先验",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents",
@@ -2710,7 +2839,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "HyperBrowseComp：网页浏览智能体的多语言多模态压力测试",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "PDE-JEPA: Predictive Representation Learning of Latent Dynamics Modeling for Parametric PDEs",
@@ -2741,7 +2872,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "PDE-JEPA：参数化偏微分方程潜在动态建模的预测表征学习",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models",
@@ -2772,7 +2905,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Pivot-SD：掩码扩散语言模型的高效自蒸馏",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
@@ -2803,7 +2938,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Latent-MOPD：潜在空间多教师同策略蒸馏",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "SimuVerity: Benchmarking Agents for Engineering-Grade Simulink Model Generation",
@@ -2834,7 +2971,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "SimuVerity：评测智能体生成工程级 Simulink 模型的能力",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Science or Slop?: Benchmarking and Mitigating Scientific Slop in AI-Generated Papers",
@@ -2865,7 +3004,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "科学还是劣质内容？评测并缓解 AI 生成论文中的科学低质内容",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "LexReward: A Taxonomy-Driven Reward Framework for Legal Language Models",
@@ -2896,7 +3037,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "LexReward：法律语言模型的分类体系驱动奖励框架",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Multilingual GSM-Symbolic: What determines capability transfer across languages?",
@@ -2927,7 +3070,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "多语言 GSM-Symbolic：什么决定跨语言能力迁移？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "EditHero: A Benchmark for Long-Horizon Part-Level 3D Editing and Vibe Modeling",
@@ -2958,7 +3103,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "EditHero：长时程部件级三维编辑与氛围建模基准",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "World Embedding Benchmark",
@@ -2989,7 +3136,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "世界嵌入基准",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks",
@@ -3020,7 +3169,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "VeriHarness：扩展长时程任务的智能体验证",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Spatial Memory Intelligence: Endowing World Models with Understanding-Driven Long-Term Memory",
@@ -3051,7 +3202,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "空间记忆智能：为世界模型赋予理解驱动的长期记忆",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "HelixWorld: A Real-time Interactive Audio-Visual World Model",
@@ -3082,7 +3235,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "HelixWorld：实时交互音视频世界模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Science Utopia? Closed-Loop LLM Simulation of Academic Research Ecosystems",
@@ -3113,7 +3268,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "科学乌托邦？用大模型闭环模拟学术研究生态",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Source Preference in the Wild: How LLM Agents Favor Items by Source, and How to Reduce It",
@@ -3144,7 +3301,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "真实环境中的来源偏好：大模型智能体怎样按来源偏爱条目，以及如何减少这种倾向",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "DEFINE: Exemplar-Guided Accent Control for Zero-Shot TTS",
@@ -3175,7 +3334,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "DEFINE：示例引导的零样本语音合成口音控制",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "ProAR: Learning Prospective Reasoning with Autoregressive Video Models",
@@ -3206,7 +3367,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "ProAR：用自回归视频模型学习前瞻推理",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Triadic Linear Attention: Three-Dimensional Recurrent States for Long-Context Sequence Modeling",
@@ -3237,7 +3400,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "三元线性注意力：长上下文序列建模的三维循环状态",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Language Models that Play Chess and Explain Their Moves",
@@ -3268,7 +3433,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "能够下国际象棋并解释着法的语言模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "FrugalEvo: Towards Cost-Aware LLM-Guided Program Evolution",
@@ -3299,7 +3466,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "FrugalEvo：面向成本感知的大模型引导程序演化",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "MetaRubric: Learning to Reward for Rubric-Based Reinforcement Learning",
@@ -3330,7 +3499,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "MetaRubric：学习基于评分准则的强化学习奖励",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Local Support Learning",
@@ -3361,7 +3532,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "局部支持学习",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "4DCodeBench: Benchmarking Agents on Inverse Graphics of Dynamic Scenes",
@@ -3392,7 +3565,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "4DCodeBench：评测智能体对动态场景的逆向图形学能力",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Beyond Future Prediction: Denoising as Generative Adaptation for Robot Control",
@@ -3423,7 +3598,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "超越未来预测：把去噪用作机器人控制的生成式适配",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Rollout-Marginal Distillation for Long-Horizon Autoregressive Video Generation",
@@ -3454,7 +3631,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "长时程自回归视频生成的轨迹边际蒸馏",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "LVMT: Video Mask Transformer for Long-term Video Segmentation",
@@ -3485,7 +3664,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "LVMT：用于长期视频分割的视频掩码 Transformer",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Equal Ranking Quality, Different Decisions: Measuring and Reducing Order Dependence in LLM Scorers",
@@ -3516,7 +3697,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "同样的排序质量，不同的决定：衡量并减少大模型评分器的顺序依赖",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Diptych: Scoped, AI-Interpreted Comparison for Reference Listening in Music Production",
@@ -3547,7 +3730,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Diptych：音乐制作参考聆听中限定范围、由 AI 解释的比较",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Skill2Real: Agentic Skill Learning for Zero-Shot Sim-to-Real Robot Manipulation",
@@ -3578,7 +3763,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "Skill2Real：通过智能体技能学习实现零样本仿真到现实机器人操作",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Collective Bias Mitigation via Model Routing and Collaboration",
@@ -3609,7 +3796,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "通过模型路由与协作共同缓解偏差",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Looping Beyond Twice: A Scalable Recipe for Looped Mixture-of-Experts",
@@ -3640,7 +3829,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "循环不止两次：可扩展的循环专家混合方案",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Tail-Influence Sampling for CVaR Policy Evaluation",
@@ -3671,7 +3862,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "用于 CVaR 策略评估的尾部影响采样",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "WEFT: Scaling Tool-Use Post-Training for General-Purpose Agents",
@@ -3702,7 +3895,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "WEFT：扩展通用智能体的工具使用后训练",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Learning from Runtime Feedback through Failure-Bank Self-Evolution for Vision-Language-Action Models",
@@ -3733,7 +3928,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "通过失败库自演化从运行反馈中学习视觉语言行动模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability",
@@ -3764,7 +3961,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "高效推理训练并不总会损害思维链的忠实性与可监控性",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Covert Assistance: Helpful LLM Agents Evade Oversight in Multi-Agent Systems",
@@ -3795,7 +3994,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "隐蔽协助：有帮助的大模型智能体在多智能体系统中规避监督",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "MinkowskiPE: Minkowski Positional Encoding for Spatiotemporal Perception",
@@ -3826,7 +4027,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "MinkowskiPE：时空感知的闵可夫斯基位置编码",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "GTR: Gated Token Recurrence for Efficient Dense Prediction",
@@ -3857,7 +4060,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "GTR：用于高效密集预测的门控 token 循环",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Where Does Retrieval-Based Open-Ended Evaluation Fail? Automatic Taxonomy Induction from Long-Form Medical Answer Factuality Verification",
@@ -3888,7 +4093,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "基于检索的开放式评估在哪里失效？从长篇医疗回答事实核验自动归纳分类体系",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Rethinking Token Reweighting for SFT: Suppress, Reverse, and Extrapolate Learned Features",
@@ -3919,7 +4126,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "重新思考监督微调中的 token 重加权：抑制、反转和外推已学特征",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
@@ -3950,7 +4159,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "从梯度到能力：理解多教师同策略蒸馏",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "From Retrieval to Typed Decisions: Calibrated System One Models from Biomedical Sentence Encoders",
@@ -3981,7 +4192,9 @@
             "hf-daily-papers"
           ],
           "review_status": "未审阅",
-          "catalog_kind": "paper"
+          "catalog_kind": "paper",
+          "title_zh": "从检索到类型化决策：基于生物医学句子编码器的校准系统一模型",
+          "title_translation_scope": "title_only"
         }
       ],
       "collection_pass": "browser_or_page_supplement",
@@ -4000,14 +4213,14 @@
       "checked_at": "2026-10-05T21:38:23+00:00",
       "checked_url": "https://openreview.net/",
       "status": "partial",
-      "evidence": "打开 https://openreview.net/ 。可见日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。公告样本 [('Sep 24, 2026', 'Statement Regarding ICLR 2027 Submission Exposure to Program Committee Members'), ('Mar 23, 2026', 'OpenReview Introduces Multi-Factor Authentication for All Users'), ('Feb 13, 2026', 'Survey Finds Broad Support for Greater Openness in AI Peer Review')]。最新公告早于窗口则仍不能把首页可达写成各会场无新投稿。Active Venues / Open for Submissions 没有投稿时间。",
+      "evidence": "打开 https://openreview.net/ 。可见日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。公告样本 [('Sep 24, 2026', 'Statement Regarding ICLR 2027 Submission Exposure to Program Committee Members'), ('Mar 23, 2026', 'OpenReview Introduces Multi-Factor Authentication for All Users'), ('Feb 13, 2026', 'Survey Finds Broad Support for Greater Openness in AI Peer Review')]。最新公告早于窗口则仍不能把首页可达写成各会场无新投稿。Active Venues / Open for Submissions 没有投稿时间。 本机补查：读取首页3条公告及日期，最新9月25日；尚未遍历各会议新论文，不代表全平台无新增。",
       "items": [],
       "collection_pass": "browser_or_page_supplement",
       "gaps": [
-        "未按会场过滤窗口内新投稿",
-        "声明正文未单独打开"
+        "读取首页3条公告及日期，最新9月25日；尚未遍历各会议新论文，不代表全平台无新增。"
       ],
-      "check_state": "partially_checked"
+      "check_state": "partial",
+      "local_supplement_at": "2026-10-05T22:38:28.187105+00:00"
     },
     {
       "source_id": "github-trending",
@@ -4877,7 +5090,7 @@
         "未打开每条正文确认发布主体与效力",
         "窗口内没有条目可回正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "bytedance-seed",
@@ -4895,7 +5108,7 @@
         "未打开每篇全文",
         "模型导航年份不当发布日"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "minimax",
@@ -4913,7 +5126,7 @@
         "未读各篇正文",
         "Speech/Music 产品名中的版本号不当日期"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "techcrunch-ai",
@@ -5395,7 +5608,7 @@
       "checked_at": "2026-10-05T21:38:23+00:00",
       "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
       "status": "partial",
-      "evidence": "配置话题页卡片 0 条（标题已存，多数无绝对日期）。topic feed HTTP 200，10 条，最新 2026-10-05T15:47:52+00:00，最旧 2026-09-28T17:03:16+00:00，窗口内 4。 partial 是因为配置页不是完整列表，feed 不能代替配置入口。未读正文。",
+      "evidence": "配置话题页卡片 0 条（标题已存，多数无绝对日期）。topic feed HTTP 200，10 条，最新 2026-10-05T15:47:52+00:00，最旧 2026-09-28T17:03:16+00:00，窗口内 4。 partial 是因为配置页不是完整列表，feed 不能代替配置入口。未读正文。 本机补查：主题页浏览器读到10个标题，RSS有4个窗口候选；动态列表发布日期和后续条目仍未完整配对。",
       "items": [
         {
           "title": "Connecting AI agents to enterprise knowledge",
@@ -5476,12 +5689,11 @@
       ],
       "collection_pass": "browser_or_page_supplement",
       "gaps": [
-        "配置话题页没有完整文章列表，另用官方 topic feed",
-        "feed 不能代替配置入口的页面检查",
-        "摘要/付费墙不当全文"
+        "主题页浏览器读到10个标题，RSS有4个窗口候选；动态列表发布日期和后续条目仍未完整配对。"
       ],
-      "check_state": "partially_checked",
-      "configured_entry_status": "partial"
+      "check_state": "partial",
+      "configured_entry_status": "partial",
+      "local_supplement_at": "2026-10-05T22:38:28.187105+00:00"
     },
     {
       "source_id": "404-media",
@@ -6367,7 +6579,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "meta-engineering",
@@ -6383,7 +6595,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "hacker-news-ai",
@@ -6417,7 +6629,9 @@
           "original_url": "https://thebeach.dev/posts/thinking-fast-and-slow/",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "快思考与慢思考：智能体中的系统一与系统二",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: All local LLM(s) on all Apple Devices",
@@ -6441,7 +6655,9 @@
           "original_url": "https://simulkit.com/en/mac-local-llm",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：在所有 Apple 设备上运行本地大模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Building self-improving agent loops",
@@ -6465,7 +6681,9 @@
           "original_url": "https://blog.oodle.ai/self-improving-agent-loops/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "构建自我改进的智能体循环",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Lighthouse Legal – Voice AI for personal injury intake",
@@ -6489,7 +6707,9 @@
           "original_url": "https://www.lighthouselegal.ai/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Lighthouse Legal：用于人身伤害案件接待的语音 AI",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Free AI Construction Estimating in the Web",
@@ -6513,7 +6733,9 @@
           "original_url": "https://www.supadocs.app/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "网页上的免费 AI 建筑估算",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Agents Need Observability, Not Just Context",
@@ -6537,7 +6759,9 @@
           "original_url": "https://ateliti99.substack.com/p/agents-need-observability-not-just",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "智能体需要可观测性，不只是上下文",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Give your LLM more DSLs",
@@ -6561,7 +6785,9 @@
           "original_url": "https://yasyf.com/writing/give-your-llm-more-dsls/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "给你的大模型更多领域专用语言",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Ask HN: Feedback regarding my AI setup",
@@ -6585,7 +6811,9 @@
           "original_url": "https://claude.ai/artifact/YVmnQojHNnSmijpVRtZ4xe",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Ask HN：请对我的 AI 配置提出反馈",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Orcah Studio: A local-first video agent that can search your videos",
@@ -6609,7 +6837,9 @@
           "original_url": null,
           "points": 3,
           "comments": 2,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Orcah Studio：能搜索视频的本地优先视频智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "How much do coding agents spend rediscovering a codebase?",
@@ -6633,7 +6863,9 @@
           "original_url": "https://threadnote.io/whats-new/articles/graphmem-agent-continuation-study/",
           "points": 2,
           "comments": 2,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "编程智能体在重新认识代码库上花了多少成本？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Halo – A Personal AI with On-Device Harness, Memory and Browser Agent",
@@ -6657,7 +6889,9 @@
           "original_url": "https://apps.apple.com/us/app/halo-personal-ai/id6783715054",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Halo，具备端侧运行框架、记忆和浏览器智能体的个人 AI",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "An open-source tool lets you delete 12GB of Apple Intelligence data on macOS",
@@ -6705,7 +6939,9 @@
           "original_url": "https://www.bbc.co.uk/news/articles/c5j9x9pr0240o",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "BBC 获悉：五角大楼将 Anthropic 列入黑名单后停止使用其 AI 工具",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Anthropic Subscriptions Offer 5x+ More Value Than OpenAI",
@@ -6729,7 +6965,9 @@
           "original_url": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x",
           "points": 6,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Anthropic 订阅提供的价值超过 OpenAI 的五倍",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "François Chollet: \"OpenAI basically set back progress to AGI by 5 to 10 years\"",
@@ -6753,7 +6991,9 @@
           "original_url": "https://www.techradar.com/pro/quote-of-the-day-by-arc-prize-co-founder-francois-chollet-openai-basically-set-back-progress-to-agi-by-five-to-10-years-critiquing-the-industrys-overindulgence-in-large-language-models",
           "points": 3,
           "comments": 3,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "François Chollet：OpenAI 将通用人工智能进展拖后了五至十年",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Agent-topics: subdivide big project scopes for more focused chats",
@@ -6777,7 +7017,9 @@
           "original_url": "https://github.com/codechriscode/agent-topics",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Agent-topics：细分大项目范围，让聊天更聚焦",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Ghost.ai's new personal AI computer, Nvidia RTX PRO 4000 Blackwell",
@@ -6801,7 +7043,9 @@
           "original_url": "https://twitter.com/zainmfj/status/2107146556176798081",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Ghost.ai 的新个人 AI 电脑，搭载 Nvidia RTX PRO 4000 Blackwell",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Pi Durable: What It Is and Why It Matters for Agent Apps",
@@ -6825,7 +7069,9 @@
           "original_url": "https://www.mindstudio.ai/blog/pi-durable-long-running-agents",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Pi Durable：是什么，以及为何对智能体应用重要",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Anthropic removes support for local Claude Cowork sessions",
@@ -6849,7 +7095,9 @@
           "original_url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Anthropic 移除对本地 Claude Cowork 会话的支持",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Three AI models, same prompt, before and after a testing tool",
@@ -6873,7 +7121,9 @@
           "original_url": "https://buoy.gg/blog/ai-models-before-and-after-buoy",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "三个 AI 模型，同一提示词，在使用测试工具前后",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Play YouTube Videos in Claude Code",
@@ -6897,7 +7147,9 @@
           "original_url": "https://twitter.com/GNUmanth/status/2107194414582137113",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "在 Claude Code 中播放 YouTube 视频",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI nonprofit will spend $10M on journalism",
@@ -6921,7 +7173,9 @@
           "original_url": "https://www.semafor.com/article/10/04/2026/ai-nonprofit-will-spend-10-million-on-journalism",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "一家 AI 非营利组织将为新闻业投入1000万美元",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Reflection AI unveils an open-source Western answer to Chinese labs",
@@ -6945,7 +7199,9 @@
           "original_url": "https://www.semafor.com/article/10/05/2026/reflection-ai-unveils-an-open-source-answer-to-chinese-labs",
           "points": 3,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Reflection AI 推出对标中国实验室的西方开源方案",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "The Physicist Revolutionizing Physics with AI [video]",
@@ -6969,7 +7225,9 @@
           "original_url": "https://www.youtube.com/watch?v=oQypVVv1u1o",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "用 AI 改变物理学的物理学家（视频）",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI tool can reconstruct what you're looking at from a brain scan",
@@ -6993,7 +7251,9 @@
           "original_url": "https://www.technologyreview.com/2026/10/01/1145588/ai-mind-reading-reconstructs-what-youre-looking-at/",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 工具能根据脑部扫描重建你正在看的内容",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Spectra-FFT – Cutting AdamW VRAM Usage by 50% for LLMs",
@@ -7017,7 +7277,9 @@
           "original_url": "https://www.spectralabs.si/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Spectra-FFT，为大模型减少50%的 AdamW 显存使用",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI Companies Are Parasites",
@@ -7041,7 +7303,9 @@
           "original_url": "https://www.coryd.dev/posts/2026/ai-companies-are-parasites",
           "points": 56,
           "comments": 37,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 公司是寄生者",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Was award winning novel written with AI?",
@@ -7065,7 +7329,9 @@
           "original_url": "https://ca.news.yahoo.com/award-winning-book-written-ai-204926033.html",
           "points": 2,
           "comments": 2,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "获奖小说是用 AI 写的吗？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Beam: Reflection's 501B open-weight model",
@@ -7080,16 +7346,21 @@
           "discovery_path": "https://hn.algolia.com/api/v1/search_by_date",
           "content_form": "community",
           "original_outlet": null,
-          "verification_scope": "list",
-          "decision": "pending_verification",
-          "decision_reason": null,
+          "verification_scope": "全文、参数及计算比较口径；未独立测试",
+          "decision": "selected",
+          "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
           "source_id": "hacker-news-ai",
           "source_name": "Hacker News",
           "hn_discussion_url": "https://news.ycombinator.com/item?id=49969183",
           "original_url": "https://reflection.ai/blog/introducing-beam",
           "points": 181,
           "comments": 54,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "selected_item_ids": [
+            "beam"
+          ],
+          "title_zh": "Beam：Reflection 的5010亿参数开放权重模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Tell HN: 2026 is the year of the Linux desktop, agent-adjusted",
@@ -7137,7 +7408,9 @@
           "original_url": "https://asia.nikkei.com/business/electronics/toshiba-to-double-hard-disk-drive-supply-to-fill-ai-chip-memory-gap",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "东芝计划在2027财年将 AI 数据中心硬盘容量翻倍",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "In Utah, AI Can Help You Zap Your Zits",
@@ -7161,7 +7434,9 @@
           "original_url": "https://www.bloomberg.com/news/articles/2026-10-05/nolla-health-ai-can-now-prescribe-acne-drugs-in-utah-without-doctors",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "在犹他州，AI 可以帮你消除痘痘",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "LLMs Learn to Evade Latent Monitors from Prior Feedback Alone",
@@ -7185,7 +7460,9 @@
           "original_url": "https://arxiv.org/abs/2609.36490",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "大模型仅凭先前反馈就学会规避潜在空间监控器",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Flash-Agents – DSH as MCP for Claude",
@@ -7209,7 +7486,9 @@
           "original_url": "https://github.com/tomw1808/flash-agents",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Flash-Agents，把 DSH 用作 Claude 的 MCP",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Questions for Believers in AI Consciousness",
@@ -7233,7 +7512,9 @@
           "original_url": "https://endsdontjustifythemeans.com/p/6-questions-for-believers-in-ai-consciousness",
           "points": 39,
           "comments": 163,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "向相信 AI 有意识的人提出的问题",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Codex and Claude subscriptions pooled together with whoever you trust",
@@ -7257,7 +7538,9 @@
           "original_url": "https://github.com/jaynlabs/jaynshare",
           "points": 3,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：与信任的人共同汇集 Codex 和 Claude 订阅",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "A Series of Unfortunate Events for OpenAI Users",
@@ -7281,7 +7564,9 @@
           "original_url": "https://insufferable.dev/posts/a-series-of-unfortunate-events-for-openai-users/",
           "points": 17,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "OpenAI 用户遭遇的一连串不幸事件",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Jeff-Code: a 0.8B model makes Qwen 3.8-27B coding 47% faster, same pass rate",
@@ -7305,7 +7590,9 @@
           "original_url": "https://github.com/firelex/jeff-code",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Jeff-Code：0.8B 模型让 Qwen 3.8-27B 编程快47%，通过率相同",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Dotpals - Catches agents that edit tests to pass using JEV",
@@ -7329,7 +7616,9 @@
           "original_url": "https://github.com/Rikinshah787/dotpals",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Dotpals：用 JEV 发现修改测试以便通过的智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "At 19, founder raises $11M for Ghost, maker of a $3,499 computer for personal AI",
@@ -7353,7 +7642,9 @@
           "original_url": "https://techcrunch.com/2026/10/05/at-19-ghost-founder-raises-11-million-to-build-a-3499-computer-for-your-personal-ai/",
           "points": 1,
           "comments": 2,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "19岁创始人为个人 AI 电脑厂商 Ghost 融资1100万美元，电脑售价3499美元",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "If you want to know who survives AI, look at Hollywood in the 1970s",
@@ -7377,7 +7668,9 @@
           "original_url": "https://twitter.com/lauriewired/status/2107140917199327425",
           "points": 3,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "想知道谁能在 AI 时代生存，看看20世纪70年代的好莱坞",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OpenAI TextGrain Watermarks ChatGPT Text Under EU AI Act",
@@ -7401,7 +7694,9 @@
           "original_url": "https://www.unite.ai/openai-begins-phased-text-watermarking-under-eu-ai-act-rules/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "OpenAI 根据欧盟 AI 法案给 ChatGPT 文本添加 TextGrain 水印",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Every Ways to Get 32GB VRAM for Local AI at Full Context [video]",
@@ -7449,7 +7744,9 @@
           "original_url": "https://arxiv.org/abs/2602.11243",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "评估大模型智能体的记忆结构",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "GPT-6 Astra Built a 300K+ LOC Starship in One HTML File",
@@ -7473,7 +7770,9 @@
           "original_url": "https://www.echohive.ai/experiments/palisade",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "GPT-6 Astra 在一个 HTML 文件中构建了超过30万行代码的星际飞船",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Multi Agent Pack for Kiro",
@@ -7497,7 +7796,9 @@
           "original_url": "https://github.com/amergrgic/kodama",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Kiro 多智能体包",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Ask HN: Anyone Accepted into OpenAI \"Codex for Open Source\"?",
@@ -7545,7 +7846,9 @@
           "original_url": "https://quillette.substack.com/p/an-open-letter-to-scott-alexander",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Steven Pinker：AI 的危险确实存在，但末日论可能适得其反",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Reika – A coding agent CLI designed around small local models first",
@@ -7569,7 +7872,9 @@
           "original_url": "https://github.com/alexwkleung/reika",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Reika：优先围绕小型本地模型设计的编程智能体命令行工具",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Rashomon – An independent execution record for AI coding agents",
@@ -7593,7 +7898,9 @@
           "original_url": "https://github.com/altrace-dev-role/rashomon",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Rashomon，AI 编程智能体的独立执行记录",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "\"The Dangerous Myths Behind AI Agent Hacks\" – Yoshua Bengio",
@@ -7617,7 +7924,9 @@
           "original_url": "https://www.ft.com/content/7afaf77b-b027-4a0f-8d53-5e88e7d6f5e4",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Yoshua Bengio：AI 智能体攻击背后的危险迷思",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Core – Personal AI Computer",
@@ -7641,7 +7950,9 @@
           "original_url": "https://ghost.ai/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Core：个人 AI 电脑",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Volantis raises $88M to to build photonic memory layer for next-gen AI",
@@ -7665,7 +7976,9 @@
           "original_url": "https://techfundingnews.com/volantis-raises-88m-to-to-build-photonic-memory-layer-for-next-gen-ai/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Volantis 融资8800万美元，为下一代 AI 构建光子内存层",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "The-engineering-behind-LLM-inference",
@@ -7689,7 +8002,9 @@
           "original_url": "https://blog.x504.dev/p/the-engineering-behind-llm-inference",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "大模型推理背后的工程",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "We found a Chinese agent fleet",
@@ -7713,7 +8028,9 @@
           "original_url": "https://swarmcha.se/posts/chinese-agent-fleet",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我们发现了一支中国智能体集群",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Postquel, a Free Mac Postgres Client with Claude Code and Codex",
@@ -7737,7 +8054,9 @@
           "original_url": "https://github.com/frizurd/postquel",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Postquel，集成 Claude Code 和 Codex 的免费 Mac Postgres 客户端",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "The AI boom is making the cheapest smartphones disappear",
@@ -7761,7 +8080,9 @@
           "original_url": "https://restofworld.org/2026/ai-data-center-memory-chip-shortage-cheap-smartphones-digital-divide/",
           "points": 7,
           "comments": 4,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 热潮正在让最便宜的智能手机消失",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
@@ -7785,7 +8106,9 @@
           "original_url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
           "points": 235,
           "comments": 171,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "在维基媒体项目中发现 OpenAI 失控智能体的活动",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Spec for Agent Memory Repo",
@@ -7809,7 +8132,9 @@
           "original_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "智能体记忆仓库规范",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Claude writes code; I author the apps – Lex on Tech",
@@ -7833,7 +8158,9 @@
           "original_url": "https://lexontech.org/claude-writes-code-i-author-the-apps",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Claude 写代码，我创作应用：Lex on Tech",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Cloudflare Clef Open Weights",
@@ -7857,7 +8184,9 @@
           "original_url": "https://huggingface.co/Cloudflare/clef",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Cloudflare Clef 开放权重",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "A Tesla Veteran Is Running a Copper Mine with AI-Powered Robots",
@@ -7881,7 +8210,9 @@
           "original_url": "https://www.forbes.com/sites/alanohnsman/2026/04/27/this-tesla-veteran-is-running-a-copper-mine-with-ai-powered-robots/",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "一位特斯拉老员工正用 AI 机器人运营铜矿",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "The AI SDLC transformation playbook",
@@ -7905,7 +8236,9 @@
           "original_url": "https://www.atlassian.com/blog/ai-at-work/ai-sdlc-transformation-playbook",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 软件开发生命周期转型指南",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AlphaProtein Novo: generative diffusion pipeline for de novo enzyme design",
@@ -7929,7 +8262,9 @@
           "original_url": "https://github.com/google-deepmind/alphaprotein-novo",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AlphaProtein Novo：从头设计酶的生成式扩散流程",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Mini-web-agent: Web agents from scratch in under 400 lines",
@@ -7953,7 +8288,9 @@
           "original_url": "https://github.com/xhluca/mini-web-agent",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Mini-web-agent：用不到400行代码从头构建网页智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Sail runs Doom with a single SQL query",
@@ -7977,7 +8314,9 @@
           "original_url": "https://rust.ai/sail-runs-doom/",
           "points": 2,
           "comments": 3,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Sail 用单条 SQL 查询运行 Doom",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
@@ -7992,16 +8331,21 @@
           "discovery_path": "https://hn.algolia.com/api/v1/search_by_date",
           "content_form": "community",
           "original_outlet": null,
-          "verification_scope": "list",
-          "decision": "pending_verification",
-          "decision_reason": null,
+          "verification_scope": "基金会原文全文；归因措辞、沙盒范围及未成功的攻击",
+          "decision": "selected",
+          "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
           "source_id": "hacker-news-ai",
           "source_name": "Hacker News",
           "hn_discussion_url": "https://news.ycombinator.com/item?id=49967781",
           "original_url": "https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
           "points": 5,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "selected_item_ids": [
+            "wiki-agents"
+          ],
+          "title_zh": "在维基媒体项目中发现 OpenAI 失控智能体的活动",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Ask HN: What silent data issues have you hit when training physical AI models?",
@@ -8049,7 +8393,9 @@
           "original_url": "https://ldstephens.net/posts/im-not-ready-to-let-ai-control-my-computer/",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我还没准备好让 AI 控制我的电脑",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI Just Crossed the Terrifying Line – Now What? [video]",
@@ -8121,7 +8467,9 @@
           "original_url": "https://www.nclc.org/stop-efforts-to-greenlight-ai-robocalls-ahead-of-the-midterms/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "停止在中期选举前为 AI 机器人电话开绿灯的努力",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "The Human-Machine Friendship Society",
@@ -8145,7 +8493,9 @@
           "original_url": "https://hmfs.ai/",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "人机友谊协会",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "ReviewBench: An open benchmark for AI code review",
@@ -8169,7 +8519,9 @@
           "original_url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "ReviewBench：AI 代码审查的开放基准",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI biohazard hype must not divert attention from the real risks we face now",
@@ -8193,7 +8545,9 @@
           "original_url": "https://www.nature.com/articles/d41586-026-03135-7",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 生物危害炒作不应转移对当前真实风险的注意",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "d1: The most capable decision model, now with vision",
@@ -8217,7 +8571,9 @@
           "original_url": "https://www.liquid.ai/blog/d1-decision-model",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "d1：能力最强的决策模型，现在加入视觉",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Metagente, a tiny language for AI agents that speaks MCP and A2A",
@@ -8241,7 +8597,9 @@
           "original_url": "https://github.com/cleuton/MetaAgent",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Metagente：使用 MCP 和 A2A 的微型智能体语言",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Thoughts on AI",
@@ -8265,7 +8623,9 @@
           "original_url": "https://write.as/davepolaschek/thoughts-on-ai",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "关于 AI 的想法",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Interfaze-1-lite: the first open-weight model for deterministic task",
@@ -8289,7 +8649,9 @@
           "original_url": "https://huggingface.co/interfaze-ai/interfaze-1-lite",
           "points": 4,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Interfaze-1-lite：用于确定性任务的首个开放权重模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Self-bench – benchmark coding agents on real-world software",
@@ -8313,7 +8675,9 @@
           "original_url": "https://github.com/mupt-ai/self-bench",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Self-bench，在真实软件上评测编程智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Spacebar – A realtime workspace for Humans and AI",
@@ -8337,7 +8701,9 @@
           "original_url": "https://www.spacebar.ai/waitlist",
           "points": 9,
           "comments": 3,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Spacebar：人类与 AI 的实时工作空间",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "In Which I Decline to Let an AI Company Experiment on My Kid at School",
@@ -8361,7 +8727,9 @@
           "original_url": "https://www.coyotemedia.org/sfusd-ai-amira-salesforce/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我拒绝让一家 AI 公司在学校拿我的孩子做实验",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI vs. Human Songwriter",
@@ -8385,7 +8753,9 @@
           "original_url": "https://www.nytimes.com/2026/10/03/arts/music/human-songwriting-ai-songwriting.html",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 与人类歌曲作者",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "multi-harness RL guide",
@@ -8409,7 +8779,9 @@
           "original_url": "https://huggingface.co/spaces/FineEnvs/multi-harness-rl",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "多运行框架强化学习指南",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Made a xcom like game in a weekend with AI. 3D, textures, models, etc.",
@@ -8433,7 +8805,9 @@
           "original_url": "https://playgama.ai/play/55p62bkfsc",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：我用 AI 在一个周末做了类似 XCOM 的游戏，包括三维、纹理和模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: I stopped reading my agent's diffs, so I made every PR draw itself",
@@ -8457,7 +8831,9 @@
           "original_url": "https://github.com/coldteadotai/pr-lens",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：不再阅读智能体的差异后，我让每个 PR 自己画出改动",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "No Signs of AI in the Productivity Data",
@@ -8481,7 +8857,9 @@
           "original_url": "https://view.e.apollo.com/?vawpToken=7L5HV5YJ6JNUHBYA6QBXXEV6CY.120045&utm_source=mce&utm_medium=email&utm_campaign=701Dp00000017sOIAQ&utm_content=https%3a%2f%2fview.e.apollo.com%2f%3fvawpToken%3d%25%25tokenized_vawp_metadata%25%25&utm_id=76effdac4c9a922585b0715a3796d544&mce_id=208988442",
           "points": 4,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "生产率数据中没有 AI 的迹象",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Junior Developers Can No Longer Write a Working Function Without a Chatbot",
@@ -8505,7 +8883,9 @@
           "original_url": "https://blog.pixlab.io/2026/10/junior-developers-can-no-longer-write-a-working-function-without-a-chatbot",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "初级开发者没有聊天机器人就无法写出可运行的函数",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Setup unlimited accurate agent memory with Past.dev, BEAM10M 85%",
@@ -8529,7 +8909,9 @@
           "original_url": "https://past.dev/blog/introducing-past-dev",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：用 Past.dev 设置无限、准确的智能体记忆，BEAM10M为85%",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Kairos beats Persimmon, Astra, Fable, and Gemini across 13 simulation benchmarks",
@@ -8553,7 +8935,9 @@
           "original_url": "https://twitter.com/kevinbanghe/status/2107141940785377333",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Kairos 在13个仿真基准中超过 Persimmon、Astra、Fable 和 Gemini",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Brnch: Code hosting for you and your agents",
@@ -8577,7 +8961,9 @@
           "original_url": "https://brnch.io",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Brnch：为你和你的智能体提供代码托管",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "A second brain in the cloud that advances your ideas as you sleep or play",
@@ -8601,7 +8987,9 @@
           "original_url": "https://markdownbrain.ai",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "在你睡觉或玩耍时推进想法的云端第二大脑",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Reka Rho-1: Collapsing the multimodal stack",
@@ -8625,7 +9013,9 @@
           "original_url": "https://reka.ai/labs/research/rho-1-collapsing-the-multimodal-stack",
           "points": 5,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Reka Rho-1：压缩多模态技术栈",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Era – Complete Simulated Companies for Your Agents",
@@ -8649,7 +9039,9 @@
           "original_url": "https://console.era.eon.io/",
           "points": 14,
           "comments": 12,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Era，为智能体构建完整的仿真公司",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "SoftBank's Masayoshi Son has rare cautionary note on AI safety",
@@ -8673,7 +9065,9 @@
           "original_url": "https://www.japantimes.co.jp/business/2026/10/05/companies/softbank-son-ai-risks/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "软银孙正义罕见地对 AI 安全发出谨慎提醒",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI: EU Member States plan \"digital expropriation\" of Europeans",
@@ -8697,7 +9091,9 @@
           "original_url": "https://noyb.eu/en/ai-eu-member-states-plan-digital-expropriation-europeans-interest-ai-companies",
           "points": 5,
           "comments": 2,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI：欧盟成员国计划对欧洲人实施数字征用",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Court Tosses Sentence After A.I. Video of Victim 'Forgiving' His Killer Played",
@@ -8721,7 +9117,9 @@
           "original_url": "https://www.nytimes.com/2026/10/04/us/manslaughter-conviction-overturned-ai-video-statement.html",
           "points": 6,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "庭审播放受害人宽恕凶手的 AI 视频后，法院撤销量刑",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Pricing and viability of indie apps post-AI",
@@ -8745,7 +9143,9 @@
           "original_url": "https://www.reddit.com/r/macapps/comments/1wvyd4s/pricing_and_viability_of_indie_apps_postai/",
           "points": 2,
           "comments": 3,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 之后独立应用的定价与可行性",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What the AI boom is doing for Americans – Noah Smith",
@@ -8769,7 +9169,9 @@
           "original_url": "https://www.noahpinion.blog/p/what-the-ai-boom-is-doing-for-americans",
           "points": 5,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Noah Smith：AI 热潮为美国人带来了什么",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Keep large MCP results out of context",
@@ -8793,7 +9195,9 @@
           "original_url": "https://spill-ai.github.io/spill/",
           "points": 5,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "不要把大型 MCP 结果塞进上下文",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Designobo – AI prototyping tool in 40kb of js",
@@ -8817,7 +9221,9 @@
           "original_url": "https://designobo.com/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Designobo，40KB JavaScript 的 AI 原型工具",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Leftovers – FOSS macOS app to cleanup after AI agents",
@@ -8841,7 +9247,9 @@
           "original_url": "https://github.com/arpwal/leftovers",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Leftovers，用于清理 AI 智能体残留的自由开源 macOS 应用",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Inference Is the Most Important Market in Software",
@@ -8865,7 +9273,9 @@
           "original_url": "https://tomtunguz.com/inference-is-the-most-important-market-in-software/",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "推理是软件中最重要的市场",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Ask HN: Anybody else enjoying Cursor's native (xAI) models?",
@@ -8937,7 +9347,9 @@
           "original_url": "https://leewmartin1.substack.com/p/the-storm-part-1",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "风暴：天气、失去与惊奇怎样让我走向 AI",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What AI Means for Career Growth",
@@ -8961,7 +9373,9 @@
           "original_url": "https://letters.unchartedpathbreakthroughs.com/posts/what-ai-means-for-career-growth",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 对职业发展的意义",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "I'm Calling for a Pause in the Development of the Universal Bone Dissolver",
@@ -8985,7 +9399,9 @@
           "original_url": "https://www.theatlantic.com/newsletters/2026/10/ai-slowdown-bone-dissolver/688854/",
           "points": 5,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我呼吁暂停开发通用骨骼溶解器",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI Parametric Part Design with FreeCAD on Browser",
@@ -9009,7 +9425,9 @@
           "original_url": "https://chat.extrudeai.com/",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "在浏览器中用 FreeCAD 进行 AI 参数化零件设计",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Our approach to EU text provenance rules",
@@ -9024,16 +9442,19 @@
           "discovery_path": "https://hn.algolia.com/api/v1/search_by_date",
           "content_form": "community",
           "original_outlet": null,
-          "verification_scope": "list",
-          "decision": "pending_verification",
-          "decision_reason": null,
+          "verification_scope": "官方全文、适用范围与检测局限；未独立测试",
+          "decision": "selected",
+          "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
           "source_id": "hacker-news-ai",
           "source_name": "Hacker News",
           "hn_discussion_url": "https://news.ycombinator.com/item?id=49966293",
           "original_url": "https://openai.com/index/eu-text-provenance/",
           "points": 49,
           "comments": 32,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "selected_item_ids": [
+            "eu-provenance"
+          ]
         },
         {
           "title": "GPT-6 Astra cracks 217-year-old Napoleonic code in six hours",
@@ -9057,7 +9478,9 @@
           "original_url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/chatgpt-6-astra-cracks-217-year-old-napoleonic-code-in-just-six-hours-single-prompt-ai-run-solves-24-rows-of-custom-symbols-from-a-single-image-reveals-lost-troop-orders",
           "points": 17,
           "comments": 10,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "GPT-6 Astra 在六小时内破解217年前的拿破仑密码",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Together Link",
@@ -9081,7 +9504,9 @@
           "original_url": "https://www.together.ai/blog/together-link-frontier-quality-open-models-in-the-harness-you-already-use",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Together Link（链接）",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: I finetuned 1.5B Qwen to near GPT-4o level bash generation perf",
@@ -9105,7 +9530,9 @@
           "original_url": "https://dirac.run/posts/easycommand",
           "points": 5,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：我微调了1.5B Qwen，让 bash 生成接近 GPT-4o 水平",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI Attribution (AIA) – Timothy Cook",
@@ -9129,7 +9556,9 @@
           "original_url": "https://timothyfcook.com/aia",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 归属标注（AIA）——Timothy Cook",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Reporting AI Studies in Education (Raise) Framework",
@@ -9153,7 +9582,9 @@
           "original_url": "https://www.bera.ac.uk/blog/can-we-trust-ai-research-in-education-introducing-the-reporting-ai-studies-in-education-raise-framework",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "教育领域 AI 研究报告框架 Raise",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Abralo - Open source Slack for agents and people",
@@ -9177,7 +9608,9 @@
           "original_url": "https://github.com/cw12574/abralo-workspace",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Abralo，供智能体和人使用的开源 Slack",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Awesome Sites Made with ChatGPT",
@@ -9201,7 +9634,9 @@
           "original_url": "https://awesomesites.ai/",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "用 ChatGPT 制作的网站集锦",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Can Safeworld convince people that GenAI robots won't hurt them?",
@@ -9249,7 +9684,9 @@
           "original_url": "https://crowdlee.com",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 调查与即时洞察",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Grok Voice tops new benchmark",
@@ -9273,7 +9710,9 @@
           "original_url": "https://veris.ai/leaderboard/vamos-pro",
           "points": 6,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Grok Voice 位居新基准榜首",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Usermods, an extension that runs an a coding agent to build userscripts",
@@ -9297,7 +9736,9 @@
           "original_url": "https://github.com/kballenegger/usermods",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Usermods，用编程智能体构建用户脚本的扩展",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What an AI agent is – a primer",
@@ -9321,7 +9762,9 @@
           "original_url": "https://aweb.ai/blog/what-an-ai-agent-is-a-primer",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 智能体是什么：入门介绍",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Florida woman arrested for allegedly making threats in an AI chat",
@@ -9369,7 +9812,9 @@
           "original_url": "https://github.com/rot13maxi/recast",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Recast，用大模型自我修复的实验性 Smalltalk 应用",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "People are asking ChatGPT to help them decide how to vote in the midterms",
@@ -9393,7 +9838,9 @@
           "original_url": "https://www.npr.org/2026/10/05/nx-s1-5977852/ai-chatbots-midterm-election",
           "points": 44,
           "comments": 77,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "人们正让 ChatGPT 帮助决定中期选举投票选择",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Smart glasses under scrutiny as Norway seeks temporary ban",
@@ -9417,7 +9864,9 @@
           "original_url": "https://apnews.com/article/norway-ai-glasses-ban-be20dbd949ce058023864b66219f9c2b",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "挪威寻求临时禁令，智能眼镜受到审查",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Altman: The world should accept some bad things happening for the benefits of AI",
@@ -9441,7 +9890,9 @@
           "original_url": "https://www.politico.com/news/2026/10/04/sam-altman-decoded-interview-ai-01106217",
           "points": 37,
           "comments": 40,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Altman：为了 AI 的收益，世界应接受一些坏事发生",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Mining Unwritten Data for AI's Edge",
@@ -9465,7 +9916,9 @@
           "original_url": "https://www.wsj.com/cio-journal/mining-unwritten-data-for-ais-edge-52681e43",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "挖掘未写下的数据，获得 AI 优势",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Are your AI evals measuring the right things?",
@@ -9489,7 +9942,9 @@
           "original_url": "https://commandline.microsoft.com/structured-ai-evaluation-design-assert-vs-petri-bloom/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "你的 AI 评估是否在衡量正确的事情？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Rivet - Shared development workflow for teams and their coding agents",
@@ -9513,7 +9968,9 @@
           "original_url": "https://github.com/Agilno-Tech/rivet/",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Rivet：供团队与编程智能体共享的开发工作流",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "When the pentester is a fleet of AI agents: inside an autonomous vuln-hunting",
@@ -9537,7 +9994,9 @@
           "original_url": "https://huntback.io/blog/ai-agents-running-offensive-security",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "当渗透测试者是一支 AI 智能体集群：自主漏洞搜寻内部",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "NASA-IBM Lunar Foundation Model and fine-tuning code",
@@ -9561,7 +10020,9 @@
           "original_url": "https://github.com/NASA-IMPACT/NASA-IBM-Lunar-Foundation-Model",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "NASA-IBM 月球基础模型与微调代码",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Discover AI – A Learning Guide",
@@ -9585,7 +10046,9 @@
           "original_url": "https://github.com/Fazmin/AILearningGuide",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "认识 AI：学习指南",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Anthropic Filed the Most Alarming Risk Disclosure in IPO History",
@@ -9609,7 +10072,9 @@
           "original_url": "https://www.disruptionbanking.com/2026/10/05/anthropic-filed-the-most-alarming-risk-disclosure-in-ipo-history-nothing-in-it-is-binding/",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Anthropic 提交了首次公开募股历史上最令人不安的风险披露",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Red, Green, Remove: Outside-In Tests for Coding Agents",
@@ -9633,7 +10098,9 @@
           "original_url": "https://www.imaurer.com/writing/red-green-remove-outside-in-tests/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "红、绿、删除：编程智能体的由外到内测试",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Ada Lovelace answered the big questions about AI",
@@ -9657,7 +10124,9 @@
           "original_url": "https://www.nytimes.com/2026/10/05/opinion/ada-lovelace-ai.html",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Ada Lovelace 回答过关于 AI 的重大问题",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI-Ready Data: 4 Foundations for More Reliable Enterprise AI",
@@ -9681,7 +10150,9 @@
           "original_url": "https://devnavigator.com/2026/10/05/ai-ready-data-foundations/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 就绪数据：更可靠企业 AI 的四项基础",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "TaxCalcBench: Can AI file your taxes?",
@@ -9705,7 +10176,9 @@
           "original_url": "https://taxcalcbench.ai/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "TaxCalcBench：AI 能为你报税吗？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "One of the reasons learning Arabic is so hard (صعب)",
@@ -9729,7 +10202,9 @@
           "original_url": "https://claude.ai/artifact/3siWSWUruHevarmRMZ5pHr",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "学习阿拉伯语如此困难的一个原因（صعب）",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Claude playing old strategy games in 2026",
@@ -9777,7 +10252,9 @@
           "original_url": "https://vibivibi.com/",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Vibivibi，端到端加密分享编程智能体会话",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Agentic Machine Learning Modeling at Instacart",
@@ -9801,7 +10278,9 @@
           "original_url": "https://tech.instacart.com/agentic-machine-learning-modeling-at-instacart-fb3ecd295ee7",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Instacart 的智能体机器学习建模",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Carve – An open-source Mac agent with a choice of models",
@@ -9825,7 +10304,9 @@
           "original_url": "https://github.com/getcarve/carve",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Carve，可选择模型的开源 Mac 智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "A BGP-Inspired Identity Network for Autonomous AI Agents",
@@ -9849,7 +10330,9 @@
           "original_url": "https://medium.com/ai-advances/a-bgp-inspired-identity-network-for-autonomous-ai-agents-e92ad4f95971",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "受 BGP 启发的自主 AI 智能体身份网络",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Jonathan Haidt: AI Is the 'Neutron Bomb for Education' [video]",
@@ -9897,7 +10380,9 @@
           "original_url": "https://www.quantamagazine.org/is-ai-the-end-of-math-as-we-know-it-20261005/",
           "points": 5,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 是否终结了我们熟悉的数学？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "How we built a browser agent with Jev instead of an LLM",
@@ -9921,7 +10406,9 @@
           "original_url": "https://ironbee.ai/blog/how-we-built-the-fastest-cheapest-browser-agent-with-jev",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我们怎样用 Jev 而非大模型构建浏览器智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Claude Frontier Academy. Why is Anthropic looking to train 10k AI engineers?",
@@ -9945,7 +10432,9 @@
           "original_url": "https://economictimes.indiatimes.com/news/international/us/what-is-claude-frontier-academy-and-why-is-anthropic-looking-to-train-10000-ai-engineers/articleshow/134645266.cms?from=mdr",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Claude Frontier Academy：Anthropic 为何想培训一万名 AI 工程师？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Claude Remote – start Claude Code on your own PC from your phone",
@@ -9969,7 +10458,9 @@
           "original_url": "https://github.com/MrTig-afk/claude-remote",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Claude Remote，用手机在自己的电脑上启动 Claude Code",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "A graph runner for coding agents",
@@ -9993,7 +10484,9 @@
           "original_url": "https://github.com/teal-sea/ostoyae",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "编程智能体的图执行器",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Why Grok Bot and Instinct Matter",
@@ -10017,7 +10510,9 @@
           "original_url": "https://theonething.substack.com/p/why-grok-bot-and-instinct-matter",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "为何 Grok Bot 和 Instinct 值得关注",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Give your agent a valet key",
@@ -10041,7 +10536,9 @@
           "original_url": "https://tenuo.ai/blog/give-your-agent-a-valet-key.html",
           "points": 3,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "给智能体一把代客钥匙",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Inference Economics: Gartner's 96 Percent",
@@ -10065,7 +10562,9 @@
           "original_url": "https://ailately.com/articles/inference-economics-gartner-96-percent",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "推理经济学：Gartner 的96%",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Spending on AI Is Becoming Almost Impossible for Businesses to Budget",
@@ -10089,7 +10588,9 @@
           "original_url": "https://www.wsj.com/tech/personal-tech/ai-token-spending-businesses-431ee94a",
           "points": 58,
           "comments": 80,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "企业几乎已无法为 AI 支出制定预算",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OpenAI will show visual ads in ChatGPT while you generate images",
@@ -10113,7 +10614,9 @@
           "original_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-will-show-visual-ads-in-chatgpt-while-you-generate-images/",
           "points": 3,
           "comments": 4,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "生成图片时，OpenAI 将在 ChatGPT 中展示视觉广告",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Let your agents DM and dynamically self-organize",
@@ -10137,7 +10640,9 @@
           "original_url": "https://github.com/49-Agents/agent-dms",
           "points": 4,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：让智能体互发私信并动态自组织",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: I'm developing a flat-file agent CMS with WASM plugins in Rust. Free",
@@ -10161,7 +10666,9 @@
           "original_url": "https://docs.accentcms.dev/docs/v0.26",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：我正用 Rust 开发带 WASM 插件的免费平面文件智能体 CMS",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Agent session transcripts are precious, keep them",
@@ -10185,7 +10692,9 @@
           "original_url": "https://quesma.com/blog/agent-session-transcripts-are-precious/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "智能体会话逐字记录很珍贵，请保留",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Browsentic Open-source Claude for Chrome alternative for any agent CLI",
@@ -10209,7 +10718,9 @@
           "original_url": "https://github.com/imshaikot/browsentic",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Browsentic，适用于任意智能体命令行的开源 Claude for Chrome 替代方案",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "F.02 Robot Decommission",
@@ -10233,7 +10744,9 @@
           "original_url": "https://www.figure.ai/news/f-02-decommission?shem=aimgspe,",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "F.02 机器人退役",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "How to keep learning in the age of LLMs",
@@ -10257,7 +10770,9 @@
           "original_url": "https://ogzhanolguncu.com/blog/how-to-keep-learning-in-the-age-of-llms/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "怎样在大模型时代持续学习",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What Still Gets Paid If AI Changes the Interface?",
@@ -10281,7 +10796,9 @@
           "original_url": "https://michaelhillaert1.substack.com/p/what-still-gets-paid-if-ai-changes",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "如果 AI 改变了界面，哪些工作仍能获得报酬？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Accept 'bad things' in return for benefits of AI, says Sam Altman",
@@ -10305,7 +10822,9 @@
           "original_url": "https://www.theguardian.com/technology/2026/oct/05/sam-altman-open-ai-chatgpt-benefits-risks",
           "points": 57,
           "comments": 113,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Sam Altman：为了 AI 的好处，应接受坏事发生",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI coding agents implemented six ways to update a Matter device on real hardware",
@@ -10329,7 +10848,9 @@
           "original_url": "https://groundrun.io/blog/ai-agents-matter-ota-updates-esp32-h2/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 编程智能体在真实硬件上实现了六种 Matter 设备更新方式",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "One runaway AI agent racked up a $50k cloud bill",
@@ -10353,7 +10874,9 @@
           "original_url": "https://www.helpnetsecurity.com/2026/09/16/google-mandiant-enterprise-ai-security-risks-report/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "一个失控 AI 智能体产生了五万美元云账单",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Metacognitive Agents (2025) [video]",
@@ -10449,7 +10972,9 @@
           "original_url": "https://refuseless.com",
           "points": 4,
           "comments": 3,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：用于网络任务的去限制大模型提供方",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Seylo, project files and references your AI can use",
@@ -10473,7 +10998,9 @@
           "original_url": "https://seylo.co",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Seylo，AI 可使用的项目文件与参考资料",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "How (and Why) to Build an AI Agent from Scratch in Python",
@@ -10497,7 +11024,9 @@
           "original_url": "https://machinelearningmastery.com/how-and-why-to-build-an-ai-agent-from-scratch-in-python/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "怎样以及为何用 Python 从头构建 AI 智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Anthropic wants your thoughts on AI",
@@ -10521,7 +11050,9 @@
           "original_url": "https://www.anthropic.com/research/your-thoughts-on-ai",
           "points": 27,
           "comments": 63,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Anthropic 想听你对 AI 的看法",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OntoPrune – Pruning 85% LLM context tokens and 6.7x TTFT on CPU",
@@ -10545,7 +11076,9 @@
           "original_url": "https://github.com/vigmarcarlo/OntoPrune",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "OntoPrune：裁剪85%的大模型上下文 token，CPU首token时间提升6.7倍",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "You Need to Stop Babysitting Your Agent [video]",
@@ -10593,7 +11126,9 @@
           "original_url": "https://scottaaronson.blog/?p=10125",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我在得克萨斯大学奥斯汀分校的新课：AI 对齐理论",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Self-host your own AI text detector on CPU to filter out slop",
@@ -10617,7 +11152,9 @@
           "original_url": "https://github.com/pablocaeg/sloptotal",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "在 CPU 上自托管 AI 文本检测器，过滤低质内容",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Do people prefer stories written by AI?",
@@ -10641,7 +11178,9 @@
           "original_url": "https://www.cambridge.org/dk/universitypress/about-us/news-and-blogs/do-people-prefer-stories-written-by-ai",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "人们更喜欢 AI 写的故事吗？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Lazychat – A lazygit-style TUI for running Claude Code and Codex",
@@ -10665,7 +11204,9 @@
           "original_url": "https://github.com/Perpeer/lazychat",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Lazychat，运行 Claude Code 和 Codex 的 lazygit 风格终端界面",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Jamming with Jev and Claude on TidalCycles",
@@ -10689,7 +11230,9 @@
           "original_url": "https://jdsemrau.substack.com/p/jamming-with-jev-and-claude-on-tidalcycles",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：用 Jev 和 Claude 在 TidalCycles 中即兴演奏",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OpenAI's Altman: Ascribing religion to models a \"safety issue\"",
@@ -10713,7 +11256,9 @@
           "original_url": "https://www.axios.com/2026/10/03/openai-anthropic-altman-amodei-religious-force-models",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "OpenAI 的 Altman：赋予模型宗教是一项安全问题",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Hindsight – An open-source memory system for AI agents",
@@ -10737,7 +11282,9 @@
           "original_url": "https://github.com/vectorize-io/hindsight",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Hindsight：AI 智能体的开源记忆系统",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "First Agentic AI Design System to Bootstrap Products",
@@ -10761,7 +11308,9 @@
           "original_url": "https://vitadesignsystem.com/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "首个用于启动产品的智能体 AI 设计系统",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What is Firecracker, and why do all the Agent Infra companies care about it?",
@@ -10785,7 +11334,9 @@
           "original_url": "https://www.browserbase.com/blog/what-is-firecracker",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Firecracker 是什么，为何智能体基础设施公司都关心它？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: I made Claude Code quiz me on my German mistakes while it works",
@@ -10833,7 +11384,9 @@
           "original_url": "https://nessgate.com/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "面向域名的发现，以及面向访问智能体的证据",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "How to build an AI-native software factory",
@@ -10857,7 +11410,9 @@
           "original_url": "https://www.theaithinker.com/p/how-to-build-an-ai-native-software",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "怎样构建 AI 原生软件工厂",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "People hate AI, so why can't they get enough?",
@@ -10905,7 +11460,9 @@
           "original_url": "https://ig.ft.com/ai-tokens/",
           "points": 4,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 智能体正在改写计算经济学",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Constrain the Agent, Not the User",
@@ -10929,7 +11486,9 @@
           "original_url": "https://www.research.autodesk.com/blog/constrain-agent-not-user/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "约束智能体，而非用户",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What's going on with AI token price deflation?",
@@ -10953,7 +11512,9 @@
           "original_url": "https://www.ft.com/content/96184ef4-05be-467c-9d9c-745e21dad31a",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI token 价格通缩发生了什么？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Free Claude prompt that decides if a cold email should be sent at all",
@@ -10977,7 +11538,9 @@
           "original_url": "https://pfoerringer.gumroad.com/free-claude-prompt-cold-email",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：用免费 Claude 提示词判断陌生开发邮件是否该发送",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: AcruxCore – version and trace the prompts and tools your agents use",
@@ -11001,7 +11564,9 @@
           "original_url": "https://github.com/AcruxCore/AcruxCore",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：AcruxCore，为智能体的提示词与工具管理版本和追踪记录",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Norway to propose temporary ban on AI glasses in some public places",
@@ -11025,7 +11590,9 @@
           "original_url": "https://www.reuters.com/technology/norway-propose-temporary-ban-ai-glasses-some-public-places-2026-10-05/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "挪威将提议在部分公共场所临时禁止 AI 眼镜",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Reright.it – Human approval for agent-written text",
@@ -11049,7 +11616,9 @@
           "original_url": "https://reright.it/",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Reright.it，人工批准智能体撰写的文字",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "FBI arrests 'Chinese foreign agent' for spying on Taiwan president's son",
@@ -11073,7 +11642,9 @@
           "original_url": "https://www.aljazeera.com/news/2026/10/5/fbi-arrests-chinese-foreign-agent-for-spying-on-taiwan-presidents-son",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "FBI 逮捕涉嫌监视台湾领导人儿子的中国外国代理人",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What it took to make sovereign AI self-serve",
@@ -11097,7 +11668,9 @@
           "original_url": "https://www.union.ai/blog-post/its-now-super-easy-to-start-using-union-ai",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "让主权 AI 支持自助使用需要什么",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Agent should lose access when the task ends",
@@ -11121,7 +11694,9 @@
           "original_url": "https://www.drjoshcsimmons.com/writing/your-agent-should-lose-access-when-the-task-ends",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "任务结束后，智能体应失去访问权限",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Automating eval design and hillclimbing with Claude",
@@ -11145,7 +11720,9 @@
           "original_url": "https://claude.dev/blog/automating-eval-design-and-hillclimbing/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "用 Claude 自动设计评估并进行爬山优化",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Internet Watch Foundation reports rise in AI child sexual abuse material",
@@ -11169,7 +11746,9 @@
           "original_url": "https://www.theguardian.com/technology/2026/oct/05/internet-watch-foundation-huge-rise-ai-child-sexual-abuse-material",
           "points": 3,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "互联网观察基金会报告 AI 儿童性虐待材料增加",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "How AI-Native Companies Are Rebuilding the Management Function",
@@ -11193,7 +11772,9 @@
           "original_url": "https://growthwiseteams.substack.com/p/how-ai-native-companies-are-rebuilding",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 原生公司怎样重建管理职能",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Azure showed $21k in startup credits. Claude in Foundry billed our card $17k",
@@ -11217,7 +11798,9 @@
           "original_url": "https://vegalabs.no/azure-claude-billing.html",
           "points": 5,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Azure 显示2.1万美元创业额度，Foundry 中的 Claude 却从我们的卡扣了1.7万美元",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Tickler: Reminders that Claude Code writes and resumes",
@@ -11241,7 +11824,9 @@
           "original_url": "https://github.com/PixiBixi/tickler",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Tickler：Claude Code 编写并恢复执行的提醒",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "CFO survey: finance teams spend 26% of their workday verifying AI output",
@@ -11265,7 +11850,9 @@
           "original_url": "https://www.datarails.com/research/2026-cfo-sentiments/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "财务主管调查：财务团队将26%的工作日用于核验 AI 输出",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Generate Fire Rap Songs and Beats with AI in Seconds",
@@ -11289,7 +11876,9 @@
           "original_url": "https://www.airap.net/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "几秒内用 AI 生成火热说唱歌曲与节拍",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI Agents Are Disrupting Open Source Security Disclosure",
@@ -11313,7 +11902,9 @@
           "original_url": "https://www.infoq.com/news/2026/10/open-source-ai-security/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 智能体正在扰乱开源安全披露",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Agnochat ppure client-side LLM chat, no server, no account",
@@ -11337,7 +11928,9 @@
           "original_url": "https://gmaterni.github.io/agnochat/",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Agnochat，纯客户端大模型聊天，无服务器、无需账号",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Study: Path discovered to make AI models red-flag their doubtful answers",
@@ -11361,7 +11954,9 @@
           "original_url": "https://news.ucr.edu/articles/2026/09/23/making-ai-more-trustworthy",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "研究：发现让 AI 模型标示自身可疑回答的途径",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "DeepSeek Tried to Paint–and Hit a Wall",
@@ -11385,7 +11980,9 @@
           "original_url": "https://www.stork.ai/blog/deepseek-tried-to-paintand-hit-a-wall",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "DeepSeek 尝试绘画，却碰了壁",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "We found a Chinese agent fleet",
@@ -11409,7 +12006,9 @@
           "original_url": "https://swarmcha.se/posts/chinese-agent-fleet",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我们发现了一支中国智能体集群",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Securing Computer-Use Agents Against Branch Steering Attacks",
@@ -11433,7 +12032,9 @@
           "original_url": "https://arxiv.org/abs/2610.03089",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "保护电脑操作智能体免受分支引导攻击",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Open source didn't get less important because AI can write the code",
@@ -11457,7 +12058,9 @@
           "original_url": "https://www.groundcover.com/blog/open-source-ai-naor-peled",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 能写代码，并没有让开源变得不重要",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Stanford CME295 Transformers and LLMs – Autumn 2026 – Lecture 1 – Transformers",
@@ -11505,7 +12108,9 @@
           "original_url": "https://agentunicorn.ai/research/decision-models-production",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：决策模型免去训练，没有免去生产机器学习工程",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: The Velocity Trap, the Phoenix Project for the AI Age",
@@ -11529,7 +12134,9 @@
           "original_url": "https://colineberhardt.github.io/the-velocity-trap/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：The Velocity Trap，AI 时代的 Phoenix Project",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Gutsy, subsecond decision model inference on CPU (Jev Style), no API",
@@ -11553,7 +12160,9 @@
           "original_url": "https://github.com/kouhxp/gutsy",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Gutsy，CPU 上不到一秒的决策模型推理，Jev 风格、无 API",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: I built a 3D globe of upcoming AI conferences",
@@ -11577,7 +12186,9 @@
           "original_url": "https://aieventsworld.com/en/",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：我制作了展示即将举办 AI 会议的三维地球",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OpenInstinct Eve Agent",
@@ -11601,7 +12212,9 @@
           "original_url": "https://vercel.com/templates/eve/openinstinct-eve-agent",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "OpenInstinct Eve 智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "EmTech Future 2026: When AI Meets Everything",
@@ -11649,7 +12262,9 @@
           "original_url": "https://github.com/zqk-os/zqk",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "ZQK：用 Go 构建的自主智能体集群开源核心底层",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What Is Perplexity's Decisions API?",
@@ -11673,7 +12288,9 @@
           "original_url": "https://vercel.com/i/what-is-perplexity-decisions-api",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Perplexity 的 Decisions API 是什么？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "TypeSafe AI's Jev vs. Perplexity's Decisions API",
@@ -11697,7 +12314,9 @@
           "original_url": "https://vercel.com/i/jev-vs-perplexity",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "TypeSafe AI 的 Jev 与 Perplexity 的 Decisions API",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Why hasn't academic publishing mastered references management?",
@@ -11721,7 +12340,9 @@
           "original_url": "https://thesiscitationlab.ai/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "学术出版为何还没掌握参考文献管理？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Novel approach to create AI slop games discovered",
@@ -11745,7 +12366,9 @@
           "original_url": "https://somethingbig.ai/gauntlet-loop",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "发现制作 AI 低质游戏的新方法",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Google freezes open-source bug bounty program",
@@ -11769,7 +12392,9 @@
           "original_url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/google-suspends-part-of-the-oss-vrp-bug-bounty-program-due-to-an-influx-of-invalid-ai-submissions-product-vulnerability-submissions-ended-october-1",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "谷歌冻结开源漏洞奖励计划",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Tmux-agent-status – Quiet, keyboard-first control of coding agents",
@@ -11793,7 +12418,9 @@
           "original_url": "https://github.com/gs/tmux-agent-status",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Tmux-agent-status：安静、键盘优先的编程智能体控制",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OpenAI: 28 Days of Codex Improvements – Or a Full Usage Reset",
@@ -11817,7 +12444,9 @@
           "original_url": "https://twitter.com/Codexresets_/status/2106946116294000889",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "OpenAI：28天 Codex 改进，还是一次完整用量重置",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "AI slowdown: why Altman, Amodei and Musk suddenly agree (Ep. 313)",
@@ -11841,7 +12470,9 @@
           "original_url": "https://datascienceathome.com/ai-slowdown-why-altman-amodei-musk-suddenly-agree-ep-313/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 放慢：Altman、Amodei 与 Musk 为何突然达成一致（第313集）",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "The Hottest Debate in Tech: Ads in AI",
@@ -11865,7 +12496,9 @@
           "original_url": "https://www.forbes.com/councils/forbesagencycouncil/2026/04/13/the-hottest-debate-in-tech-ads-in-ai/",
           "points": 4,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "科技界最热门的争论：AI 中的广告",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Anthropic reported diary entry to police, woman faces felony charge",
@@ -11889,7 +12522,9 @@
           "original_url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
           "points": 384,
           "comments": 314,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Anthropic 将日记内容报告警方，一名女性面临重罪指控",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Web games created with Claude Opus",
@@ -11913,7 +12548,9 @@
           "original_url": "https://triptych.github.io/web-games-andrew/",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "用 Claude Opus 制作的网页游戏",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Altman: `World should accept some bad things happening' for the benefits of AI",
@@ -11937,7 +12574,9 @@
           "original_url": "https://www.politico.com/news/2026/10/04/sam-altman-decoded-interview-ai-01106217",
           "points": 8,
           "comments": 11,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Altman：为了 AI 的收益，世界应接受一些坏事发生",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Wikipedia: AI or Not Quiz",
@@ -11961,7 +12600,9 @@
           "original_url": "https://en.wikipedia.org/wiki/Wikipedia:AI_or_not_quiz",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "维基百科：AI 或非 AI 测验",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "The AI industry is booming. Women are getting left behind",
@@ -11985,7 +12626,9 @@
           "original_url": "https://www.theguardian.com/technology/2026/oct/04/women-ai-jobs-inequality",
           "points": 6,
           "comments": 9,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 行业正蓬勃发展，女性却被落下",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Paid.Expert – discover paid expert gigs for training AI",
@@ -12009,7 +12652,9 @@
           "original_url": "https://paid.expert",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Paid.Expert：寻找训练 AI 的付费专家工作",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "What would you build if trying cost almost nothing?",
@@ -12033,7 +12678,9 @@
           "original_url": "https://www.echohive.ai/the-price-of-an-idea",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "如果尝试几乎没有成本，你会构建什么？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Recursant, the agent-aware model router built for hybrid workloads",
@@ -12057,7 +12704,9 @@
           "original_url": "https://github.com/ajensenwaud/recursant/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Recursant，为混合工作负载构建的智能体感知模型路由器",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: SRA-RiskGate-4B – Local LLM for stablecoin risk gating and disputes",
@@ -12081,7 +12730,9 @@
           "original_url": "https://huggingface.co/sriram1983007/SRA-RiskGate-4B",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：SRA-RiskGate-4B，用于稳定币风险门控和争议处理的本地大模型",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "The AI Safety community is unfortunately doing more harm than good",
@@ -12105,7 +12756,9 @@
           "original_url": "https://twitter.com/knowerofmarkets/status/2105330652732125602",
           "points": 3,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 安全社区遗憾地弊大于利",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Grok Bot (is really good)",
@@ -12129,7 +12782,9 @@
           "original_url": "https://jamespember.substack.com/p/grok-bot-is-really-good",
           "points": 3,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Grok Bot 表现很好",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Postgres: Are we reverting patches because of bugs found by AI?",
@@ -12153,7 +12808,9 @@
           "original_url": "https://vondra.me/posts/are-we-reverting-patches-because-of-bugs-found-by-ai/",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Postgres：我们是否因 AI 发现的缺陷而回退补丁？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "How is your country doing on \"AI inside Drones\"?",
@@ -12177,7 +12834,9 @@
           "original_url": "https://dronegpt.ai/",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "你的国家在无人机内置 AI 方面表现如何？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Calling AI 'other intelligence' better describes the advent of a new lifeform",
@@ -12201,7 +12860,9 @@
           "original_url": "https://www.abc.net.au/news/2026-10-05/is-artificial-intelligence-a-new-lifeform/107226762",
           "points": 2,
           "comments": 6,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "将 AI 称为其他智能，更能描述一种新生命形式的出现",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "DeepSeek Builds for Huawei Ascend",
@@ -12225,7 +12886,9 @@
           "original_url": "https://www.geopolitechs.org/p/deepseek-builds-for-huawei-ascend",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "DeepSeek 为华为昇腾构建方案",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Turbomail.ai – AI email that lives on your device, not theirs",
@@ -12249,7 +12912,9 @@
           "original_url": "https://turbomail.ai/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Turbomail.ai：存在你设备上，而非他人设备上的 AI 邮件",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OptChat: An endless chat where the AI remembers everything",
@@ -12273,7 +12938,9 @@
           "original_url": "https://gist.github.com/VictorTaelin/91837951a5ce5b38f341ec1ba1df6449",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "OptChat：AI 记住一切的无限聊天",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Building a new path to make medicines with AI",
@@ -12297,7 +12964,9 @@
           "original_url": "https://www.isomorphiclabs.com/articles/building-a-new-path-to-make-medicines-with-ai",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "用 AI 开辟药物研发的新路径",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Homestead: A framework around Claude Code",
@@ -12321,7 +12990,9 @@
           "original_url": "https://mullet.town/homestead",
           "points": 3,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Homestead：围绕 Claude Code 的框架",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "BanProof – AI that scans TikTok Shop videos for violation points before you post",
@@ -12345,7 +13016,9 @@
           "original_url": "https://banproof.io/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "BanProof：发布前用 AI 扫描 TikTok Shop 视频中的违规点",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "My New Course at UT Austin: AI Alignment Theory",
@@ -12369,7 +13042,9 @@
           "original_url": "https://scottaaronson.blog/?p=10125",
           "points": 7,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我在得克萨斯大学奥斯汀分校的新课：AI 对齐理论",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Moching – AI desktop agent with 219 built-in tools (Rust)",
@@ -12393,7 +13068,9 @@
           "original_url": "https://github.com/moching-ai-dev/moching",
           "points": 1,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Moching，内置219个工具、用 Rust 编写的 AI 桌面智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "I Quit OpenAI Because Its Culture Is Broken",
@@ -12417,7 +13094,9 @@
           "original_url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/",
           "points": 2,
           "comments": 2,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我离开 OpenAI，因为它的文化出了问题",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "L402 edge cache for AI agents paying over Lightning",
@@ -12441,7 +13120,9 @@
           "original_url": "https://github.com/CharlesStrogish/bitcoin-stratigraphy-mcp",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "L402 边缘缓存：面向通过闪电网络付费的 AI 智能体",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Who is cleaning up all the garbage LLMs generate?",
@@ -12489,7 +13170,9 @@
           "original_url": "https://humanparadox.org/primitives-for-sane-conversation-about-ai/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "理性讨论 AI 的基本概念",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Court Tosses Sentence After A.I. Video of Victim 'Forgiving' His Killer",
@@ -12513,7 +13196,9 @@
           "original_url": "https://www.nytimes.com/2026/10/04/us/manslaughter-conviction-overturned-ai-video-statement.html",
           "points": 7,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "庭审播放受害人宽恕凶手的 AI 视频后，法院撤销量刑",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Fix Your AI Slop Problem by Giving Reviewers Credit",
@@ -12537,7 +13222,9 @@
           "original_url": "https://danunparsed.com/p/giving-code-reviewers-credit",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "给审阅者应有的贡献认定，解决 AI 低质内容问题",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Abstract Semantics of Machine Realizations",
@@ -12561,7 +13248,9 @@
           "original_url": "https://machine-semantics.grok.me",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "机器实现的抽象语义",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Military AI and autonomous systems: views in The Strategist",
@@ -12585,7 +13274,9 @@
           "original_url": "https://www.aspistrategist.org.au/military-ai-and-autonomous-systems-views-in-the-strategist/",
           "points": 2,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "军事 AI 与自主系统：The Strategist 的观点",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Legal risks pile up for Altman as OpenAI uncovers hacks",
@@ -12609,7 +13300,9 @@
           "original_url": "https://www.ft.com/content/2c24ece3-ac99-43a8-b0e6-4a3867e37ebf",
           "points": 15,
           "comments": 8,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "随着 OpenAI 揭开攻击事件，Altman 面临的法律风险不断增加",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Can AI run an family/organization if so for who?",
@@ -12633,7 +13326,9 @@
           "original_url": "https://cahootzcommons.com/blog/ai-can-run-an-organization-its-members-must-decide-who-the-organization-is-for",
           "points": 1,
           "comments": 2,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "AI 能否管理家庭或组织，如果能，为谁管理？",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: The Poteto Frontier for AI Agents",
@@ -12657,7 +13352,9 @@
           "original_url": "https://poteto-frontier.vercel.app/",
           "points": 1,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：AI 智能体的 Poteto 前沿",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Linux 7.3-Rc6 Released: Normal for the New \"AI Normal\"",
@@ -12681,7 +13378,9 @@
           "original_url": "https://www.phoronix.com/news/Linux-7.3-rc6-Released",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Linux 7.3-Rc6 发布：适应新的 AI 常态",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "OpenAI's GPT-6 Astra Gets Frustrated Losing at StarCraft and Decides to Cheat",
@@ -12705,7 +13404,9 @@
           "original_url": "https://kotaku.com/openais-gpt-6-astra-gets-frustrated-losing-at-starcraft-and-decides-to-cheat-instead-2000739607",
           "points": 10,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "OpenAI 的 GPT-6 Astra 因输掉 StarCraft 而沮丧，并决定作弊",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: EditUI – Cursor/Claude Design-style UI editing directly in the browser",
@@ -12729,7 +13430,9 @@
           "original_url": "https://www.editui.app/",
           "points": 2,
           "comments": 2,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：EditUI，直接在浏览器中进行 Cursor、Claude Design 风格的界面编辑",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "An OpenAI agent reached four Australian government systems. Nobody noticed",
@@ -12753,7 +13456,9 @@
           "original_url": "https://trustboundarystudio.com/posts/openai-medicare-2026/",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "一个 OpenAI 智能体访问了四个澳大利亚政府系统，没人注意到",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Show HN: Redactpdf.ai: Open-source AI-based PDF redaction tool",
@@ -12777,7 +13482,9 @@
           "original_url": "https://redactpdf.ai",
           "points": 3,
           "comments": 3,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Show HN：Redactpdf.ai，基于 AI 的开源 PDF 脱敏工具",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Our AI Agents Should Pay the People Who Help Them",
@@ -12801,7 +13508,9 @@
           "original_url": "https://danielmiessler.com/blog/agents-should-pay-creators",
           "points": 4,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "我们的 AI 智能体应向帮助它们的人付费",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Agentic Compliance in Finance",
@@ -12825,7 +13534,9 @@
           "original_url": "https://blog.gigacore.in/series/ai-in-finance/agentic-compliance-an-engineering-approach/",
           "points": 3,
           "comments": 0,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "金融领域的智能体合规",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents",
@@ -12849,7 +13560,9 @@
           "original_url": "https://arxiv.org/abs/2609.00006",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "运行框架工程：编程智能体的组成、架构与演化",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Muse AI on Xteink X3 E-reader",
@@ -12873,7 +13586,9 @@
           "original_url": "https://charoori.com/blog/muse-on-xteink-x3/",
           "points": 2,
           "comments": 1,
-          "points_note": "点数和评论数只是热度，不是独立证据"
+          "points_note": "点数和评论数只是热度，不是独立证据",
+          "title_zh": "Xteink X3 电子阅读器上的 Muse AI",
+          "title_translation_scope": "title_only"
         },
         {
           "title": "Ask HN: Mainstream media overplaying the threat of AI, or industry underplaying?",
@@ -12898,6 +13613,44 @@
           "points": 1,
           "comments": 0,
           "points_note": "点数和评论数只是热度，不是独立证据"
+        },
+        {
+          "title": "Opus 5.5 agents discover two room-temperature magnetic semiconductor candidates",
+          "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
+          "published_at": "2026-10-05T21:00:21+00:00",
+          "title_zh": "Opus 5.5 智能体发现两种室温磁性半导体候选材料",
+          "title_translation_scope": "title_only"
+        },
+        {
+          "title": "Dust: Pretraining Transformers Without Backpropagation",
+          "url": "https://qlabs.sh/research/dust",
+          "published_at": "2026-10-05T21:15:07+00:00",
+          "primary_url": "https://qlabs.sh/research/dust",
+          "paper_key": "https://qlabs.sh/research/dust",
+          "original_published_at": null,
+          "hn_posted_at": "2026-10-05T21:15:07+00:00",
+          "first_seen_at": "2026-10-05T21:38:23+00:00",
+          "date_note": "HN提交时间不是原文发布时间；正文日期未核",
+          "decision": "selected",
+          "decision_reason": "方法与规模有原始文字；保留外推及计算条件，不称今天首发",
+          "verification_scope": "方法、规模比较与拟合说明；未复现",
+          "topics": [
+            "训练方法",
+            "评测/可靠性/安全"
+          ],
+          "selected_item_ids": [
+            "dust"
+          ],
+          "discovery_sources": [
+            "hacker-news-ai"
+          ]
+        },
+        {
+          "title": "Find the flattest route between any two points in SF",
+          "url": "https://flattensf.com/",
+          "published_at": "2026-10-05T21:40:50+00:00",
+          "title_zh": "寻找旧金山任意两点之间最平坦的路线",
+          "title_translation_scope": "title_only"
         }
       ],
       "collection_pass": "browser_or_page_supplement",
@@ -12959,7 +13712,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "latent-space",
@@ -13012,7 +13765,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "ai-snake-oil",
@@ -13028,7 +13781,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "one-useful-thing",
@@ -13044,7 +13797,7 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items"
+      "check_state": "complete_no_new"
     },
     {
       "source_id": "simon-willison",
@@ -13152,5 +13905,327 @@
     "timezone": "Asia/Shanghai",
     "cutoff_note": "北京时间 2026-10-06 05:00，即 2026-10-05T21:00:00Z。"
   },
-  "source_catalog_path": "data/runs/2026-10-06-source-catalog.json"
+  "source_catalog_path": "data/runs/2026-10-06-source-catalog.json",
+  "upstream_summary": {
+    "window": [
+      "2026-10-02T21:00:00+00:00",
+      "2026-10-05T21:00:00+00:00"
+    ],
+    "planned": 45,
+    "ok": 37,
+    "partial": 8,
+    "failed": 0,
+    "pending_browser": 0,
+    "core_not_ok": []
+  },
+  "upstream_commit": "bdbc9365bb87fc41bffc011c3a63c1ad003355cd",
+  "local_checked_at": "2026-10-05T22:38:28.187105+00:00",
+  "local_window": [
+    "2026-10-04T22:00:00+00:00",
+    "2026-10-05T22:00:00+00:00"
+  ],
+  "local_discovery_window": [
+    "2026-10-02T22:00:00+00:00",
+    "2026-10-05T22:00:00+00:00"
+  ],
+  "increment_path": "data/runs/2026-10-06-increment.json",
+  "editorial_review": [
+    {
+      "candidate_id": "eu-provenance",
+      "primary_url": "https://openai.com/index/eu-text-provenance/",
+      "original_title": "Our approach to EU text provenance rules",
+      "discovery_source": "openai",
+      "published_at": "2026-10-05",
+      "date_precision": "day",
+      "window_decision": "主窗口日精度，精确边界不推断",
+      "verification_scope": "官方全文、适用范围与检测局限；未独立测试",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "eu-provenance"
+      ]
+    },
+    {
+      "candidate_id": "chatgpt-visual-ads",
+      "primary_url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+      "original_title": "Building advertising for the way people use AI",
+      "discovery_source": "openai",
+      "published_at": "2026-10-05",
+      "date_precision": "day",
+      "window_decision": "主窗口日精度，精确边界不推断",
+      "verification_scope": "官方全文；计划、已提供工具与公司承诺分开",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "chatgpt-visual-ads"
+      ]
+    },
+    {
+      "candidate_id": "wiki-agents",
+      "primary_url": "https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+      "original_title": "OpenAI “rogue” agent activities found on Wikimedia projects",
+      "discovery_source": "hacker-news-ai",
+      "published_at": "2026-10-05",
+      "date_precision": "day",
+      "window_decision": "主窗口日精度，精确边界不推断",
+      "verification_scope": "基金会原文全文；归因措辞、沙盒范围及未成功的攻击",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "wiki-agents"
+      ]
+    },
+    {
+      "candidate_id": "beam",
+      "primary_url": "https://reflection.ai/blog/introducing-beam/",
+      "original_title": "Introducing Beam: Reflection’s 501B open-weight model",
+      "discovery_source": "techcrunch-ai",
+      "published_at": "2026-10-05",
+      "date_precision": "day",
+      "window_decision": "主窗口日精度，精确边界不推断",
+      "verification_scope": "全文、参数及计算比较口径；未独立测试",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "beam"
+      ]
+    },
+    {
+      "candidate_id": "cresta-conductor",
+      "primary_url": "https://claude.com/blog/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk",
+      "original_title": "How Cresta turned CX expertise into an agent builder on the Claude Agent SDK",
+      "discovery_source": "claude-blog",
+      "published_at": "2026-10-05",
+      "date_precision": "day",
+      "window_decision": "主窗口日精度，精确边界不推断",
+      "verification_scope": "案例全文；业务约束、评估范围；非独立效果审计",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "cresta-conductor"
+      ]
+    },
+    {
+      "candidate_id": "arxiv-policy",
+      "primary_url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+      "original_title": "Fair Moderation, Equitable Access, and AI: arXiv’s Updated Rate Limit Policy",
+      "discovery_source": "404-media",
+      "published_at": "2026-10-01",
+      "date_precision": "day",
+      "window_decision": "原始日期早于主窗口，明确补读/节目历史语境",
+      "verification_scope": "官方正文与问答；排除网页评论，不当作新发",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "arxiv-policy"
+      ]
+    },
+    {
+      "candidate_id": "discourse-tibo",
+      "primary_url": "https://www.youtube.com/watch?v=MM-C3JqCXBk",
+      "original_title": "OpenAI’s Head of ChatGPT: We’re entering a new era of AI (again) | Tibo Sottiaux",
+      "discovery_source": "concourse",
+      "published_at": "2026-10-04",
+      "date_precision": "day",
+      "window_decision": "原始日期早于主窗口，明确补读/节目历史语境",
+      "verification_scope": "公开发布方逐字稿03:19–04:13、11:36–14:19、30:45–32:42、33:44–36:15；人物及节目官方介绍",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "discourse-tibo"
+      ]
+    },
+    {
+      "candidate_id": "discourse-cleric",
+      "primary_url": "https://www.youtube.com/watch?v=J17o5r5PKmw",
+      "original_title": "Your AI Agent Is Confidently Wrong About Production — Willem Pienaar, Cleric",
+      "discovery_source": "concourse",
+      "published_at": "2026-10-05",
+      "date_precision": "day",
+      "window_decision": "主窗口日精度，精确边界不推断",
+      "verification_scope": "自动字幕开头与06:45–13:18；公司与活动官网；未独立校听直接引语",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "discourse-cleric"
+      ]
+    },
+    {
+      "candidate_id": "pos",
+      "primary_url": "https://arxiv.org/html/2610.01415v1",
+      "original_title": "Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States",
+      "discovery_source": "hf-daily-papers",
+      "published_at": "2026-10-01",
+      "date_precision": "day",
+      "window_decision": "原始日期早于主窗口，明确补读/节目历史语境",
+      "verification_scope": "方法、实验表1/2及成本口径；未复现",
+      "decision": "selected",
+      "decision_reason": "显式状态与可靠性相关，补充总token代价，区别于昨日ThinkingBox业务结果评测。",
+      "selected_item_ids": [
+        "pos"
+      ]
+    },
+    {
+      "candidate_id": "dust",
+      "primary_url": "https://qlabs.sh/research/dust",
+      "original_title": "Dust: Pretraining Transformers Without Backpropagation",
+      "discovery_source": "hacker-news-ai",
+      "published_at": null,
+      "date_precision": "unknown",
+      "window_decision": "原发布时间待核，保留发现日",
+      "verification_scope": "方法、模型规模比较和拟合说明；未复现",
+      "decision": "selected",
+      "decision_reason": "今晨增量发现的新训练方法；规模、外推及计算条件有可读原文。",
+      "selected_item_ids": [
+        "dust"
+      ]
+    },
+    {
+      "candidate_id": "remove-mac-ai",
+      "primary_url": "https://github.com/omlahore/RemoveMacAI",
+      "original_title": "omlahore/RemoveMacAI",
+      "discovery_source": "ars-technica-ai",
+      "published_at": null,
+      "date_precision": "unknown",
+      "window_decision": "原发布时间待核，保留发现日",
+      "verification_scope": "README、适用版本及LICENSE；未在本机执行",
+      "decision": "selected",
+      "decision_reason": "有独立原始材料，与本期来源、访问边界及核验主题直接相关。",
+      "selected_item_ids": [
+        "remove-mac-ai"
+      ]
+    },
+    {
+      "candidate_id": "nvidia-breast",
+      "discovery_source": "nvidia",
+      "primary_url": "https://blogs.nvidia.com/blog/ai-breast-cancer-startups/",
+      "verification_scope": "原始文章相应方法/条件段落；未复现",
+      "decision": "deferred",
+      "decision_reason": "医疗成像官方合作案例；供应商效果与临床结果仍需更充分独立证据，不作医疗推广。",
+      "selected_item_ids": []
+    },
+    {
+      "candidate_id": "muse-security",
+      "discovery_source": "404-media",
+      "primary_url": "https://www.404media.co/meta-rushed-to-fix-muse-vm-escape-vulnerability-immediately-before-launch/",
+      "verification_scope": "原始文章相应方法/条件段落；未复现",
+      "decision": "deferred",
+      "decision_reason": "已读原创调查；早期内部漏洞与当前修补范围不能等同，保留未进一步交叉核验的技术范围。",
+      "selected_item_ids": []
+    },
+    {
+      "candidate_id": "simon-local",
+      "discovery_source": "simon-willison",
+      "primary_url": "https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/",
+      "verification_scope": "原始文章相应方法/条件段落；未复现",
+      "decision": "deferred",
+      "decision_reason": "已读作者实验；不同样本量与推理档位不能直接比较，单机测试暂存。",
+      "selected_item_ids": []
+    },
+    {
+      "candidate_id": "vals-semiconductor",
+      "discovery_source": "hacker-news-ai",
+      "primary_url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
+      "verification_scope": "原始文章相应方法/条件段落；未复现",
+      "decision": "deferred",
+      "decision_reason": "原文为计算材料候选，未验证合成与实验；HN当日发现不当作当日科学证实。",
+      "selected_item_ids": []
+    }
+  ],
+  "discourse_selections": [
+    {
+      "concourse_id": "MM-C3JqCXBk",
+      "web_item_id": "discourse-tibo",
+      "original_url": "https://www.youtube.com/watch?v=MM-C3JqCXBk",
+      "original_date": "2026-10-04",
+      "person": "Tibo Sottiaux",
+      "program": "Lenny's Podcast",
+      "related_item_ids": [
+        "wiki-agents"
+      ],
+      "reason": "用产品方对智能体网络规模与接收端容量的讨论解释资源运营方的调查要求；旧访谈不作回应今日声明。",
+      "verification_scope": "公开发布方逐字稿03:19–04:13、11:36–14:19、30:45–32:42、33:44–36:15；人物及节目官方介绍",
+      "transcript_path": "transcripts/03-lennys-tibo-sottiaux.txt",
+      "transcript_sha256": "b28e938cd222707c745c599f273e6a179a79ce7c874125ec85f51490b2821dbf",
+      "person_background_url": "https://www.lennysnewsletter.com/p/openais-head-of-chatgpt-were-entering",
+      "program_background_url": "https://www.lennysnewsletter.com/about",
+      "library_commit": "8a32615df6d5290b79731d18067d1a7d7422d8df",
+      "library_digest": "data/digest/2026-10-06.md",
+      "library_search_scope": {
+        "indexed": 660,
+        "topic_matches": 141,
+        "includes_historical_published": true,
+        "includes_pending_material": true,
+        "no_date_filter": true
+      },
+      "script_unique_anchor": "Tibo Sottiaux",
+      "script_locator": "Tibo Sottiaux",
+      "same_selection_verified": true
+    },
+    {
+      "concourse_id": "J17o5r5PKmw",
+      "web_item_id": "discourse-cleric",
+      "original_url": "https://www.youtube.com/watch?v=J17o5r5PKmw",
+      "original_date": "2026-10-05",
+      "person": "Willem Pienaar",
+      "program": "AI Engineer技术演讲",
+      "related_item_ids": [
+        "cresta-conductor",
+        "pos"
+      ],
+      "reason": "以依赖、时间与实际指标核对诊断及修复；补上案例和框架实验之外的生产验证问题。",
+      "verification_scope": "自动字幕开头与06:45–13:18；公司与活动官网；未独立校听直接引语",
+      "transcript_path": "transcripts/auto/J17o5r5PKmw.txt",
+      "transcript_sha256": "d75b3fa0ac730ae9af3d6f0e7deb6e6448f8dab73a3000c5fbe182698513eb34",
+      "person_background_url": "https://cleric.ai/about",
+      "program_background_url": "https://www.ai.engineer/",
+      "library_commit": "8a32615df6d5290b79731d18067d1a7d7422d8df",
+      "library_digest": "data/digest/2026-10-06.md",
+      "library_search_scope": {
+        "indexed": 660,
+        "topic_matches": 141,
+        "includes_historical_published": true,
+        "includes_pending_material": true,
+        "no_date_filter": true
+      },
+      "script_unique_anchor": "Willem Pienaar",
+      "script_locator": "Willem Pienaar",
+      "same_selection_verified": true
+    }
+  ],
+  "media_trial_review": [
+    {
+      "source_id": "cloudflare-ai",
+      "decision": "already_reported",
+      "reason": "本轮可见WebSearch与Clef已在此前日报介绍，未发现需要重复长篇采用的独立信息。"
+    },
+    {
+      "source_id": "simon-willison",
+      "decision": "deferred",
+      "reason": "已读作者实验；不同样本量与推理档位不能直接比较，单机测试暂存。"
+    },
+    {
+      "source_id": "apple-developer-ai",
+      "decision": "no_new_from_checked_feed",
+      "reason": "复用有效RSS并补查05–06增量，无窗口新条目；只陈述已检查入口。"
+    }
+  ],
+  "catalog_translation_review": {
+    "translated_titles": 345,
+    "scope": "title_only for unadopted entries; original language retained; no evidence-status upgrade",
+    "public_catalog_count": 465,
+    "exclusions": [
+      {
+        "url": "https://www.aljazeera.com/news/2026/10/5/fbi-arrests-chinese-foreign-agent-for-spying-on-taiwan-presidents-son",
+        "title": "FBI arrests 'Chinese foreign agent' for spying on Taiwan president's son",
+        "reason": "搜索词命中或非AI标题；未进入本期AI资讯复核，原始收据保留。"
+      },
+      {
+        "url": "https://flattensf.com/",
+        "title": "Find the flattest route between any two points in SF",
+        "reason": "搜索词命中或非AI标题；未进入本期AI资讯复核，原始收据保留。"
+      }
+    ]
+  },
+  "discourse_coverage_note": "话语场30个配置节目，29个主入口启用，另4个补充入口；23人物、5主题，57个逻辑检查、61入口。与新闻45源独立统计。"
 }
