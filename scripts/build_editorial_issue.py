@@ -6,6 +6,7 @@ import html
 import json
 import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://yawnzhao.github.io/ai-daily'
@@ -97,6 +98,71 @@ def render_coverage(receipts, manuscript):
             f'<p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>')
 
 
+def catalog_entries_for_display(entries, issue, content):
+    """Keep discovery evidence intact; curate only the public presentation."""
+    if issue['date'] < '2026-10-05':
+        return entries
+    selected = {i['primary_url'].rstrip('/'): i for i in issue['items']}
+    positions = {item_id: n for n, item_id in enumerate(content)}
+
+    def is_selected(entry):
+        return entry['url'].rstrip('/') in selected
+
+    def kind(entry):
+        item = selected.get(entry['url'].rstrip('/'))
+        if item:
+            return {'featured': 0, 'briefs': 0, 'insight': 1, 'discourse': 1,
+                    'papers': 2, 'paper_briefs': 2, 'opensource': 3}[item['section']]
+        explicit = entry.get('catalog_kind')
+        if explicit in ('news', 'discourse', 'paper', 'code'):
+            return ('news', 'discourse', 'paper', 'code').index(explicit)
+        parsed = urlsplit(entry['url'])
+        host = (parsed.hostname or '').removeprefix('www.')
+        if entry.get('source_id') == 'concourse' or re.match(r'^Podcast\s*:', entry.get('title', ''), re.I):
+            return 1
+        if (host in ('arxiv.org', 'openreview.net', 'doi.org')
+                or (host == 'huggingface.co' and parsed.path.startswith('/papers/'))
+                or entry.get('source_id') in ('hf-daily-papers', 'arxiv', 'openreview')):
+            return 2
+        return 3 if host == 'github.com' else 0
+
+    def timestamp(entry):
+        try:
+            value = dt.datetime.fromisoformat(entry.get('published_at', '').replace('Z', '+00:00'))
+            return value.replace(tzinfo=value.tzinfo or dt.timezone(dt.timedelta(hours=8))).timestamp()
+        except (ValueError, TypeError, AttributeError):
+            return float('-inf')
+
+    visible = []
+    for entry in entries:
+        parsed = urlsplit(entry['url'])
+        routine_commit = ((parsed.hostname or '').removeprefix('www.') == 'github.com'
+                          and re.match(r'^/[^/]+/[^/]+/commits?(?:/|$)', parsed.path))
+        reviewed_exception = (entry.get('catalog_news_reason')
+                              and entry.get('verification_scope') not in
+                              (None, '', 'list', 'pending', 'pending_verification'))
+        if routine_commit and not (is_selected(entry) or reviewed_exception):
+            continue
+        visible.append(entry)
+    # event_key is assigned only after editorial review, never from a company name.
+    # Prefer adopted evidence or a version release over other links to that event.
+    representatives = {}
+    def event_priority(entry):
+        return (is_selected(entry), '/releases/' in urlsplit(entry['url']).path)
+    for entry in visible:
+        key = entry.get('event_key')
+        if key and (key not in representatives or event_priority(entry) > event_priority(representatives[key])):
+            representatives[key] = entry
+    visible = [e for e in visible if not e.get('event_key') or is_selected(e)
+               or representatives[e['event_key']] is e]
+    def order(entry):
+        item = selected.get(entry['url'].rstrip('/'))
+        if item:
+            return (kind(entry), 0, positions.get(item['id'], len(positions)))
+        return (kind(entry), 1, -timestamp(entry))
+    return sorted(visible, key=order)
+
+
 def render_source_catalog(issue, content):
     path = issue.get('source_catalog_path')
     if not path:
@@ -114,6 +180,12 @@ def render_source_catalog(issue, content):
         if not url.startswith('https://') or url in seen:
             raise ValueError('Invalid or duplicate catalog URL: ' + url)
         seen.add(url)
+    public_names = {}
+    if issue['date'] >= '2026-10-05':
+        config = json.loads((ROOT / 'config/sources.json').read_text())
+        public_names = {s['id']: s['display_name'] for s in config['sources'] if s.get('display_name')}
+    for entry in catalog_entries_for_display(catalog['items'], issue, content):
+        url = entry['url']
         item = selected.get(url.rstrip('/'))
         if item:
             original = entry.get('original_title')
@@ -124,9 +196,12 @@ def render_source_catalog(issue, content):
                 title += ('<span class="source-catalog-original">' + esc(original) + '</span>')
         else:
             title = esc(entry.get('original_title') or entry['title'])
+        name = entry['source']
+        if issue['date'] >= '2026-10-05':
+            name = public_names.get(entry.get('source_id'), re.sub(r'[（(]试用[）)]', '', name).strip())
         rows.append('<li><a href="' + esc(url) + '" target="_blank" rel="noopener">'
                     + title + '</a><span class="source-catalog-name">'
-                    + esc(entry['source']) + '</span></li>')
+                    + esc(name) + '</span></li>')
     return ('<details class="paper-observation source-catalog" id="source-catalog">'
             '<summary class="label">资讯源 <span class="source-catalog-count">'
             + str(len(rows)) + ' 条</span></summary><div class="content">'
