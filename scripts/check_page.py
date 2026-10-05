@@ -171,17 +171,17 @@ def check_translation(path):
             if f'<span class="num">{count}</span>{label}' not in t:
                 bad.append('英文页头统计与中文元数据不符：' + label)
         source_catalog = renderer.render_source_catalog(issue, zh)
-        match = re.search(r'<ul class="source-catalog-list"[^>]*>(.*?)</ul>', t, re.S)
-        if bool(source_catalog) != bool(match):
+        matches = re.findall(r'<ul class="source-catalog-list"[^>]*>(.*?)</ul>', t, re.S)
+        if bool(source_catalog) != bool(matches):
             bad.append('中英来源目录是否存在不一致')
-        elif match:
-            original = re.search(r'<ul class="source-catalog-list"[^>]*>(.*?)</ul>', source_catalog, re.S).group(1)
+        elif matches:
+            original = ''.join(re.findall(r'<ul class="source-catalog-list"[^>]*>(.*?)</ul>', source_catalog, re.S))
             names = json.loads((ROOT / 'config/glossary.en.json').read_text())['source_names']
             expected = re.sub(r'<span class="source-catalog-name">(.*?)</span>',
                               lambda m: '<span class="source-catalog-name">' + html.escape(names.get(html.unescape(m.group(1)), html.unescape(m.group(1))), quote=True) + '</span>', original)
-            if expected != match.group(1):
+            if expected != ''.join(matches):
                 bad.append('来源目录标题、链接、顺序或英文来源名称与中文版不一致')
-            labels = re.findall(r'<span class="source-catalog-name">(.*?)</span>', match.group(1))
+            labels = re.findall(r'<span class="source-catalog-name">(.*?)</span>', ''.join(matches))
             if any(re.search(r'[\u3400-\u9fff]', s) for s in labels):
                 bad.append('来源名称仍含未翻译中文')
         for nav in re.findall(r'<nav\b[^>]*>(.*?)</nav>', t, re.S):

@@ -141,6 +141,10 @@ def build(date):
                               catalog_html)
         catalog_html = catalog_html.replace('>资讯源 ', '>Sources &amp; discoveries ').replace(' 条</span>', ' links</span>')
         catalog_html = catalog_html.replace('aria-label="资讯标题与来源"', 'aria-label="Original titles and sources"')
+        for zh_label, en_label in zip(renderer.CATALOG_LABELS, ('News', 'Concourse', 'Papers', 'Open source and releases')):
+            catalog_html = catalog_html.replace('<h3 class="source-catalog-heading">' + zh_label,
+                                                '<h3 class="source-catalog-heading">' + en_label)
+        catalog_html = re.sub(r'(<h3 class="source-catalog-heading">.*? · \d+) 条</h3>', r'\1 links</h3>', catalog_html)
         catalog_html = catalog_html.replace('<div class="content">', '<div class="content"><p>Titles are retained from the Chinese edition; source names are shown in English. This discovery list includes material not read in full.</p>', 1)
         parts.append(catalog_html)
     filename = f'ai-daily-digest-{date}.html'

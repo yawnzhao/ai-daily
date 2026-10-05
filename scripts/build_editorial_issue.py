@@ -98,6 +98,24 @@ def render_coverage(receipts, manuscript):
             f'<p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>')
 
 
+def catalog_kind(entry, issue):
+    item = next((i for i in issue['items'] if i['primary_url'].rstrip('/') == entry['url'].rstrip('/')), None)
+    if item:
+        return {'featured': 0, 'briefs': 0, 'insight': 1, 'discourse': 1,
+                'papers': 2, 'paper_briefs': 2, 'opensource': 3}[item['section']]
+    explicit = entry.get('catalog_kind')
+    if explicit in ('news', 'discourse', 'paper', 'code'):
+        return ('news', 'discourse', 'paper', 'code').index(explicit)
+    parsed = urlsplit(entry['url'])
+    host = (parsed.hostname or '').removeprefix('www.')
+    if entry.get('source_id') == 'concourse' or re.match(r'^Podcast\s*:', entry.get('title', ''), re.I):
+        return 1
+    if (host in ('arxiv.org', 'openreview.net', 'doi.org')
+            or (host == 'huggingface.co' and parsed.path.startswith('/papers/'))
+            or entry.get('source_id') in ('hf-daily-papers', 'arxiv', 'openreview')):
+        return 2
+    return 3 if host == 'github.com' else 0
+
 def catalog_entries_for_display(entries, issue, content):
     """Keep discovery evidence intact; curate only the public presentation."""
     if issue['date'] < '2026-10-05':
@@ -108,23 +126,6 @@ def catalog_entries_for_display(entries, issue, content):
     def is_selected(entry):
         return entry['url'].rstrip('/') in selected
 
-    def kind(entry):
-        item = selected.get(entry['url'].rstrip('/'))
-        if item:
-            return {'featured': 0, 'briefs': 0, 'insight': 1, 'discourse': 1,
-                    'papers': 2, 'paper_briefs': 2, 'opensource': 3}[item['section']]
-        explicit = entry.get('catalog_kind')
-        if explicit in ('news', 'discourse', 'paper', 'code'):
-            return ('news', 'discourse', 'paper', 'code').index(explicit)
-        parsed = urlsplit(entry['url'])
-        host = (parsed.hostname or '').removeprefix('www.')
-        if entry.get('source_id') == 'concourse' or re.match(r'^Podcast\s*:', entry.get('title', ''), re.I):
-            return 1
-        if (host in ('arxiv.org', 'openreview.net', 'doi.org')
-                or (host == 'huggingface.co' and parsed.path.startswith('/papers/'))
-                or entry.get('source_id') in ('hf-daily-papers', 'arxiv', 'openreview')):
-            return 2
-        return 3 if host == 'github.com' else 0
 
     def timestamp(entry):
         try:
@@ -158,17 +159,20 @@ def catalog_entries_for_display(entries, issue, content):
     def order(entry):
         item = selected.get(entry['url'].rstrip('/'))
         if item:
-            return (kind(entry), 0, positions.get(item['id'], len(positions)))
-        return (kind(entry), 1, -timestamp(entry))
+            return (catalog_kind(entry, issue), 0, positions.get(item['id'], len(positions)))
+        return (catalog_kind(entry, issue), 1, -timestamp(entry))
     return sorted(visible, key=order)
 
 
-def render_source_catalog(issue, content):
+CATALOG_LABELS = ('新闻资讯', '话语场', '论文速递', '开源项目与版本更新')
+
+
+def source_catalog_rows(issue, content):
     path = issue.get('source_catalog_path')
     if not path:
         if issue['date'] >= '2026-10-04':
             raise ValueError('Missing source catalog; save discovered candidates before publishing')
-        return ''
+        return []
     catalog = json.loads((ROOT / path).read_text())
     if catalog['date'] != issue['date']:
         raise ValueError('Source catalog date mismatch')
@@ -191,22 +195,78 @@ def render_source_catalog(issue, content):
             original = entry.get('original_title')
             if not original:
                 raise ValueError('Missing original title for selected item: ' + item['id'])
-            title = esc(content[item['id']]['title'])
-            if original != content[item['id']]['title']:
-                title += ('<span class="source-catalog-original">' + esc(original) + '</span>')
+            title = content[item['id']]['title']
         else:
-            title = esc(entry.get('original_title') or entry['title'])
+            original = entry.get('original_title') or entry['title']
+            title = entry.get('title_zh') or original
+            if (issue['date'] >= '2026-10-05' and re.search(r'[A-Za-z]', original)
+                    and not re.search(r'[\u3400-\u9fff]', original)
+                    and not re.search(r'[\u3400-\u9fff]', entry.get('title_zh', ''))):
+                raise ValueError('Missing Chinese catalog title: ' + url)
         name = entry['source']
         if issue['date'] >= '2026-10-05':
             name = public_names.get(entry.get('source_id'), re.sub(r'[（(]试用[）)]', '', name).strip())
-        rows.append('<li><a href="' + esc(url) + '" target="_blank" rel="noopener">'
-                    + title + '</a><span class="source-catalog-name">'
-                    + esc(name) + '</span></li>')
+        rows.append(dict(entry=entry, title=title, original=original, source=name,
+                         adopted=bool(item), kind=catalog_kind(entry, issue)))
+    return rows
+
+
+def render_source_catalog(issue, content):
+    rows = source_catalog_rows(issue, content)
+    if not issue.get('source_catalog_path'):
+        return ''
+    blocks = []
+    grouped = issue['date'] >= '2026-10-05'
+    groups = range(4) if grouped else [None]
+    for group in groups:
+        entries = [r for r in rows if group is None or r['kind'] == group]
+        if not entries:
+            continue
+        if grouped:
+            blocks.append('<h3 class="source-catalog-heading">' + CATALOG_LABELS[group]
+                          + ' · ' + str(len(entries)) + ' 条</h3>')
+        blocks.append('<ul class="source-catalog-list" aria-label="资讯标题与来源">')
+        for row in entries:
+            title = esc(row['title'])
+            if row['original'] != row['title']:
+                title += '<span class="source-catalog-original">' + esc(row['original']) + '</span>'
+            blocks.append('<li><a href="' + esc(row['entry']['url']) + '" target="_blank" rel="noopener">'
+                          + title + '</a><span class="source-catalog-name">'
+                          + esc(row['source']) + '</span></li>')
+        blocks.append('</ul>')
     return ('<details class="paper-observation source-catalog" id="source-catalog">'
             '<summary class="label">资讯源 <span class="source-catalog-count">'
             + str(len(rows)) + ' 条</span></summary><div class="content">'
-            '<ul class="source-catalog-list" aria-label="资讯标题与来源">'
-            + ''.join(rows) + '</ul></div></details>')
+            + ''.join(blocks) + '</div></details>')
+
+
+def render_source_catalog_markdown(issue, content):
+    """Reading export of the same curated rows; JSON remains the machine input."""
+    rows = source_catalog_rows(issue, content)
+    def cell(value):
+        return str(value).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('|', '&#124;').replace('[', '&#91;').replace(']', '&#93;').replace('\n', ' ')
+    lines = ['# ' + issue['date'] + ' 资讯源', '',
+             '展示条目：' + str(len(rows)) + '。与当期网页共用筛选、分类和排序；每类正文采用项在前，其余按发布时间倒序。', '',
+             '本清单含未读全文的候选，收录或标题翻译不表示完成核验。跨日汇总应读取结构化数据并按规范原文链接或论文 ID 去重。', '',
+             '结构化数据：[' + issue['source_catalog_path'] + '](../../../' + issue['source_catalog_path'] + ')。', '']
+    for group, label in enumerate(CATALOG_LABELS):
+        entries = [r for r in rows if r['kind'] == group]
+        if not entries:
+            continue
+        lines += ['## ' + label + ' · ' + str(len(entries)) + ' 条', '',
+                  '| 标题（点击原文） | 来源 | 发布时间（原记录） | 日期精度 | 正文采用 |',
+                  '| --- | --- | --- | --- | --- |']
+        for row in entries:
+            entry = row['entry']
+            title = cell(row['title'])
+            if row['original'] != row['title']:
+                title += '<br>' + cell(row['original'])
+            lines.append('| [' + title + '](<' + entry['url'] + '>) | ' + cell(row['source'])
+                         + ' | ' + cell(entry.get('published_at') or '未知')
+                         + ' | ' + cell(entry.get('date_precision') or '未记录')
+                         + ' | ' + ('是' if row['adopted'] else '否') + ' |')
+        lines.append('')
+    return '\n'.join(lines)
 
 
 def build(date):
@@ -276,12 +336,23 @@ def build(date):
     output = ROOT / ('ai-daily-digest-' + date + '.html')
     if output.exists():
         previous = output.read_text()
+        # Preserve published episode details when rebuilding the same audio.
+        previous_audio = re.search(r'var AUDIO_SRC = "([^"]*)"', previous)
+        if audio and previous_audio and html.unescape(previous_audio.group(1)) == audio:
+            previous_meta = re.search(r'<div class="play-meta">.*?</div>', previous, re.S)
+            if previous_meta:
+                page = re.sub(r'<div class="play-meta">.*?</div>',
+                              lambda _: previous_meta.group(0), page, count=1, flags=re.S)
         for mark in ('top', 'bottom'):
             pattern = r'(<nav class="issue-nav[^"]*" aria-label="日报导航" data-nav="' + mark + r'">).*?(</nav>)'
             found = re.search(pattern, previous, re.S)
             if found:
                 page = re.sub(pattern, lambda _: found.group(0), page, flags=re.S)
     output.write_text(page)
+    if date >= '2026-10-05' and issue.get('source_catalog_path'):
+        catalog_output = ROOT / 'daily/sources' / date[:4] / (date + '.md')
+        catalog_output.parent.mkdir(parents=True, exist_ok=True)
+        catalog_output.write_text(render_source_catalog_markdown(issue, content))
     print(f'Built {output.name}: original daily UI; {len(issue["items"])} items; audio {"available" if audio else "pending"}')
 
 

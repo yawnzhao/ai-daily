@@ -82,6 +82,35 @@ class EditorialTrialTests(unittest.TestCase):
         self.assertNotIn('校', rules)
         self.assertNotIn('学校', rules)
 
+    def test_catalog_markdown_and_html_share_groups_adoption_and_safe_titles(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            (root / 'config/sources.json').write_text('{"sources":[]}')
+            entries = [
+                dict(url='https://arxiv.org/abs/example', title='A | B <C>', title_zh='甲 | 乙 <丙>',
+                     source='Research', selected=True),
+                dict(url='https://example.com/news', title='Original', original_title='Original',
+                     source='News', published_at='2026-10-05', date_precision='day')]
+            (root / 'catalog.json').write_text(json.dumps(dict(date='2026-10-05', items=entries)))
+            issue = dict(date='2026-10-05', source_catalog_path='catalog.json', items=[
+                dict(id='news', section='featured', primary_url='https://example.com/news')])
+            with patch.object(builder, 'ROOT', root):
+                page = builder.render_source_catalog(issue, dict(news=dict(title='新闻')))
+                markdown = builder.render_source_catalog_markdown(issue, dict(news=dict(title='新闻')))
+                for rendered in (page, markdown):
+                    self.assertLess(rendered.index('新闻资讯'), rendered.index('论文速递'))
+                    self.assertLess(rendered.index('https://example.com/news'), rendered.index('https://arxiv.org/abs/example'))
+                    self.assertNotIn('>话语场', rendered)
+                self.assertIn('2026-10-05 | day | 是 |', markdown)
+                self.assertIn('未知 | 未记录 | 否 |', markdown)  # Stale selected flag ignored.
+                self.assertIn('甲 &#124; 乙 &lt;丙&gt;', markdown)
+                self.assertIn('A &#124; B &lt;C&gt;', markdown)
+                del entries[0]['title_zh']
+                (root / 'catalog.json').write_text(json.dumps(dict(date='2026-10-05', items=entries)))
+                with self.assertRaisesRegex(ValueError, 'Missing Chinese catalog title'):
+                    builder.render_source_catalog(issue, dict(news=dict(title='新闻')))
+
     def test_partial_failed_pending_do_not_become_no_updates(self):
         receipt = {'summary': {'ok': 0, 'incomplete': True}, 'sources': [
             {'name': 'Microsoft', 'status': 'partial', 'evidence': '日期范围不足'},

@@ -70,6 +70,15 @@ class EditorialPagesTests(unittest.TestCase):
         self.assertEqual(page['vol'],'18')
         self.assertFalse(check_page.check_issue(ROOT/page['file']))
 
+    def test_translation_validator_checks_last_catalog_group(self):
+        original = (ROOT / 'en/ai-daily-digest-2026-10-05.html').read_text()
+        changed = original.replace('experientiallabs/experiential', 'unexpected-catalog-change')
+        self.assertNotEqual(changed, original)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'ai-daily-digest-2026-10-05.html'
+            path.write_text(changed)
+            self.assertTrue(any('来源目录标题' in e for e in check_page.check_translation(path)))
+
     def test_published_edition_counts_and_audio_are_read_correctly(self):
         page = build_site.read_page(ROOT/'ai-daily-digest-2026-09-25.html')
         self.assertEqual((page['news'],page['papers'],page['oss']),('4','3','4'))
