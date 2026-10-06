@@ -48,6 +48,21 @@ class EditorialTrialTests(unittest.TestCase):
         result = builder.catalog_entries_for_display([routine, release, story, other_release, adopted, reviewed, unreviewed], issue, {'chosen': {}})
         self.assertEqual(result, [adopted, other_release, reviewed])
 
+    def test_catalog_deferral_keeps_adopted_items_and_explicit_event_representative(self):
+        adopted = dict(url='https://example.com/adopted', catalog_review=dict(action='defer'))
+        pending = dict(url='https://example.com/landing', catalog_review=dict(
+            action='defer', reason='Landing page only', scope='metadata'))
+        short = dict(url='https://example.com/short', event_key='same-event')
+        original = dict(url='https://example.com/full', event_key='same-event', catalog_event_representative=True)
+        independent = dict(url='https://example.com/independent')
+        issue = dict(date='2026-10-06', items=[dict(id='adopted', section='featured', primary_url=adopted['url'])])
+        result = builder.catalog_entries_for_display([pending, short, original, independent, adopted], issue, {'adopted': {}})
+        self.assertEqual(result, [adopted, original, independent])
+        self.assertEqual(pending['catalog_review']['action'], 'defer')
+        pending['catalog_review'].pop('reason')
+        with self.assertRaisesRegex(ValueError, 'needs a reason'):
+            builder.catalog_entries_for_display([pending], issue, {})
+
     def test_public_catalog_labels_count_bilingual_titles_and_links(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

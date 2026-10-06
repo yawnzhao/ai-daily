@@ -136,6 +136,12 @@ def catalog_entries_for_display(entries, issue, content):
 
     visible = []
     for entry in entries:
+        review = entry.get('catalog_review', {})
+        # Public-list decisions do not delete discovery evidence or overrule adoption.
+        if review.get('action') == 'defer' and not is_selected(entry):
+            if not review.get('reason') or not review.get('scope'):
+                raise ValueError('Catalog deferral needs a reason and review scope: ' + entry['url'])
+            continue
         parsed = urlsplit(entry['url'])
         routine_commit = ((parsed.hostname or '').removeprefix('www.') == 'github.com'
                           and re.match(r'^/[^/]+/[^/]+/commits?(?:/|$)', parsed.path))
@@ -149,7 +155,8 @@ def catalog_entries_for_display(entries, issue, content):
     # Prefer adopted evidence or a version release over other links to that event.
     representatives = {}
     def event_priority(entry):
-        return (is_selected(entry), '/releases/' in urlsplit(entry['url']).path)
+        return (is_selected(entry), bool(entry.get('catalog_event_representative')),
+                '/releases/' in urlsplit(entry['url']).path)
     for entry in visible:
         key = entry.get('event_key')
         if key and (key not in representatives or event_priority(entry) > event_priority(representatives[key])):
