@@ -9,7 +9,14 @@
     "partial": 6,
     "failed": 0,
     "pending_browser": 0,
-    "core_not_ok": []
+    "core_not_ok": [],
+    "success_rate": 0.8666666666666667,
+    "incomplete": true,
+    "main_window": [
+      "2026-10-05T22:00:00Z",
+      "2026-10-06T22:00:00Z"
+    ],
+    "local_cutoff": "2026-10-07T06:00:00+08:00"
   },
   "sources": [
     {
@@ -49,7 +56,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "claude-blog",
@@ -152,7 +162,10 @@
         "配置博客 URL 跳到 resources/articles"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "旧/blog入口308；读取当前/resources/articles目录，最新10月6日Google文件工具及既有案例，逐条链接留存；日精度边界不推断。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "openai",
@@ -253,7 +266,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 1249 entries; delta hits 0; latest 2026-10-06T16:00:00+00:00; oldest 2015-12-11T08:00:00+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "google-ai",
@@ -313,7 +329,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-02T15:00:00+00:00; oldest 2026-08-25T16:00:00+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "xai",
@@ -329,8 +348,11 @@
         "日期无时分",
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机渲染完成后读取dated news卡片，最新日期早于窗口，完整DOM及链接留存；不使用dateModified作为文章日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "deepmind",
@@ -368,7 +390,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "已按gzip解压后解析100条RSS；无05–06新增，原始文件留存。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "nvidia",
@@ -427,7 +452,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-06T13:00:19+00:00; oldest 2026-09-21T10:00:35+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "huggingface",
@@ -486,7 +514,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 875 entries; delta hits 0; latest 2026-10-06T06:44:39+00:00; oldest 2020-02-14T00:00:00+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "cursor",
@@ -501,8 +532,11 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 50 entries; delta hits 0; latest 2026-09-23T00:00:00+00:00; oldest 2026-03-03T00:00:00+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "microsoft",
@@ -512,16 +546,16 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://blogs.microsoft.com/ai/",
       "status": "partial",
-      "evidence": "静态请求 https://blogs.microsoft.com/ai/ 最终落到 https://news.microsoft.com/source/topics/ai/ 。话题页抽出 source 链接约 44 条，多数没有可靠列表日期。配置 feed https://blogs.microsoft.com/ai/feed/ 失败：HTTPError: HTTP Error 410: Gone 替代 Source AI feed HTTP 200，10 条，最新 2026-09-10T13:08:37+00:00，最旧 2026-06-02T16:25:45+00:00，窗口内 0。该 feed 不是配置入口。两套入口不能互相代替。未读正文。",
+      "evidence": "静态请求 https://blogs.microsoft.com/ai/ 最终落到 https://news.microsoft.com/source/topics/ai/ 。话题页抽出 source 链接约 44 条，多数没有可靠列表日期。配置 feed https://blogs.microsoft.com/ai/feed/ 失败：HTTPError: HTTP Error 410: Gone 替代 Source AI feed HTTP 200，10 条，最新 2026-09-10T13:08:37+00:00，最旧 2026-06-02T16:25:45+00:00，窗口内 0。该 feed 不是配置入口。两套入口不能互相代替。未读正文。 本机：已读Source AI分类可见标题与链接，但发布日期尚未逐篇配对；旧RSS失效，备用RSS不足以覆盖当前AI页面，不能称无更新。",
       "items": [],
       "gaps": [
-        "配置 URL 跳到 news.microsoft.com/source/topics/ai/，话题卡多数没有列表日期",
-        "配置 feed https://blogs.microsoft.com/ai/feed/ 失败：HTTPError: HTTP Error 410: Gone",
-        "Source topic feed 不是配置入口，不能互相代替",
-        "未读正文"
+        "已读Source AI分类可见标题与链接，但发布日期尚未逐篇配对；旧RSS失效，备用RSS不足以覆盖当前AI页面，不能称无更新。"
       ],
-      "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "partial",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Rendered browser supplement required",
+      "upstream_status": "partial"
     },
     {
       "source_id": "qwen",
@@ -531,17 +565,16 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://qwenlm.github.io/",
       "status": "partial",
-      "evidence": "配置 URL https://qwenlm.github.io/ 仍是旧 GitHub 博客，页面日期最新 2025-09-23，不能据此判断无更新。另查 https://qwen.ai/api/page_config?code=research.research-list 60 篇，最新 2025-12-23T05:08:30.000Z（Qwen-Image-Edit-2511）；research.latest-advancements-list 19 篇，最新 2025-09-24T04:00:00.000Z；news.news-list 17 篇，最新 2025-04-28T20:00:00.000Z。GET /api/v2/article/retrieval 多种参数返回 articles 空数组。https://qwen.ai/research 的 HTML 是首页 CSR 壳，pageConfig 为空。headless Chrome dump 未见 2026-10 研究卡片；页内 2026-08-10T23:59:59+08:00 是开屏素材下架时间，不是论文发布时间。窗口内 0 条。未改 config。未读正文。",
+      "evidence": "配置 URL https://qwenlm.github.io/ 仍是旧 GitHub 博客，页面日期最新 2025-09-23，不能据此判断无更新。另查 https://qwen.ai/api/page_config?code=research.research-list 60 篇，最新 2025-12-23T05:08:30.000Z（Qwen-Image-Edit-2511）；research.latest-advancements-list 19 篇，最新 2025-09-24T04:00:00.000Z；news.news-list 17 篇，最新 2025-04-28T20:00:00.000Z。GET /api/v2/article/retrieval 多种参数返回 articles 空数组。https://qwen.ai/research 的 HTML 是首页 CSR 壳，pageConfig 为空。headless Chrome dump 未见 2026-10 研究卡片；页内 2026-08-10T23:59:59+08:00 是开屏素材下架时间，不是论文发布时间。窗口内 0 条。未改 config。未读正文。 本机：配置旧博客和上游当前research记录只覆盖可验证部分；旧博客浏览器本轮未加载，当前研究日期未完整核对。",
       "items": [],
       "gaps": [
-        "配置入口与现行官方入口不一致",
-        "page_config 与空的 retrieval 结果不能证明现行研究流已被完整列出",
-        "渲染页没有带出 2026 年 10 月的研究卡片",
-        "未改 config/sources.json",
-        "未逐篇打开正文"
+        "配置旧博客和上游当前research记录只覆盖可验证部分；旧博客浏览器本轮未加载，当前研究日期未完整核对。"
       ],
-      "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "partial",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Saved page text and links for independent date/boundary acceptance; HTTP success alone is not completion",
+      "upstream_status": "partial"
     },
     {
       "source_id": "tongyi",
@@ -551,15 +584,16 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://qianwen.aliyun.com/",
       "status": "partial",
-      "evidence": "通义/千问实验室页 https://qianwen.aliyun.com/ HTTP 200。抽出 2 条 /news 链接，周围 HTML 没有可配对的标题和发布时间。指向 qwen.ai/blog 的研究链接另计在 qwen 的 page_config，不在这里编造标题。不能写成无更新。",
+      "evidence": "通义/千问实验室页 https://qianwen.aliyun.com/ HTTP 200。抽出 2 条 /news 链接，周围 HTML 没有可配对的标题和发布时间。指向 qwen.ai/blog 的研究链接另计在 qwen 的 page_config，不在这里编造标题。不能写成无更新。 本机：官网产品与新闻链接已保存，新闻日期没有完整配对；与Qwen重叠不重复计算新闻。",
       "items": [],
       "gaps": [
-        "新闻卡无标题、无绝对日期",
-        "未证明窗口覆盖",
-        "可见 /news 链接：/news?id=pxwhvf/suodqg/lg29wnzv8vmi2h1o&amp;eId=pxwhvf/suodqg/rtgo7st53v06y1gh | /news?id=pxwhvf/suodqg/qkhh70wdrlgwogs2&amp;eId=pxwhvf/suodqg/zb8ufi86steu3s9v"
+        "官网产品与新闻链接已保存，新闻日期没有完整配对；与Qwen重叠不重复计算新闻。"
       ],
-      "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "partial",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Saved page text and links for independent date/boundary acceptance; HTTP success alone is not completion",
+      "upstream_status": "partial"
     },
     {
       "source_id": "deepseek",
@@ -569,15 +603,349 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://api-docs.deepseek.com/updates",
       "status": "ok",
-      "evidence": "API updates 页日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10'] 官网 /en/news 日期 ['2025-05-28', '2025-08-21', '2025-09-22', '2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10', '2026-09-29'] 官网 /zh/news 日期 ['2025-05-28', '2025-08-21', '2025-09-22', '2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10', '2026-09-29'] harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04', '2026-09-29'] GitHub org deepseek-ai 仓库 44 个，最新 push deepseek-ai/deepseek-harness 2026-10-03T06:02:48Z stars 244559（api.github.com）。窗口内 push 0。这些入口的可见日期都早于窗口起点 2026-10-03T21:00:00Z。commit 不是公告。未读 API changelog 全文。",
+      "evidence": "API updates 页日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10'] 官网 /en/news 日期 ['2025-05-28', '2025-08-21', '2025-09-22', '2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10', '2026-09-29'] 官网 /zh/news 日期 ['2025-05-28', '2025-08-21', '2025-09-22', '2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10', '2026-09-29'] harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04', '2026-09-29'] GitHub org deepseek-ai 仓库 44 个，最新 push deepseek-ai/deepseek-harness 2026-10-03T06:02:48Z stars 244559（api.github.com）。窗口内 push 0。这些入口的可见日期都早于窗口起点 2026-10-03T21:00:00Z。commit 不是公告。未读 API changelog 全文。 本机：API更新页、Harness当前产品卡和官方44仓库公开release均已检查；产品卡没有首发日期，只作发现。追溯Harness原始release最新2026-10-03T06:42:19Z，全部44仓库release列表无05–06新发布；不把演示日志或push当发布时间。",
       "items": [],
       "gaps": [
-        "未读 API changelog 全文",
-        "产品页日期未逐条打开成独立公告",
-        "窗口内没有 push，未再逐仓库列 commit"
+        "产品页未标首发日期，依据官方release日期判断版本增量；不从未标日期的功能展示推断新闻发布",
+        "旧release只核元数据，不作本期全文采用"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "API更新页、Harness当前产品卡和官方44仓库公开release均已检查；产品卡没有首发日期，只作发现。追溯Harness原始release最新2026-10-03T06:42:19Z，全部44仓库release列表无05–06新发布；不把演示日志或push当发布时间。",
+      "upstream_status": "ok",
+      "local_release_evidence": {
+        "checked_at": "2026-10-06T22:27:11.692894+00:00",
+        "scope": "仅官方44仓库release列表的05–06发布日期增量；保留push与发布不同",
+        "repos": [
+          {
+            "repo": "deepseek-ai/deepseek-harness",
+            "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [
+              "2026-10-03T06:42:19Z",
+              "2026-09-29T09:42:36Z",
+              "2026-09-28T12:36:21Z",
+              "2026-09-24T14:10:21Z",
+              "2026-09-23T13:30:24Z"
+            ],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/dsh-libreoffice-kit",
+            "url": "https://api.github.com/repos/deepseek-ai/dsh-libreoffice-kit/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/dsh-node-addon-require-builtin",
+            "url": "https://api.github.com/repos/deepseek-ai/dsh-node-addon-require-builtin/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepJIT",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepJIT/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/TileKernels",
+            "url": "https://api.github.com/repos/deepseek-ai/TileKernels/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/FlashMLA",
+            "url": "https://api.github.com/repos/deepseek-ai/FlashMLA/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSelect",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSelect/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepGEMM",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepGEMM/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [
+              "2026-07-20T08:52:06Z",
+              "2026-06-02T02:21:17Z",
+              "2026-05-13T02:47:37Z",
+              "2026-04-22T08:26:51Z",
+              "2026-01-05T09:31:57Z"
+            ],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepGEMM-Ascend",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepGEMM-Ascend/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepEP",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepEP/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [
+              "2025-09-16T01:48:40Z"
+            ],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepEP-Ascend",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepEP-Ascend/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/clangd-ascend",
+            "url": "https://api.github.com/repos/deepseek-ai/clangd-ascend/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/awesome-deepseek-agent",
+            "url": "https://api.github.com/repos/deepseek-ai/awesome-deepseek-agent/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/deepseek-recipe",
+            "url": "https://api.github.com/repos/deepseek-ai/deepseek-recipe/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSpec",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSpec/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/3FS",
+            "url": "https://api.github.com/repos/deepseek-ai/3FS/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/awesome-deepseek-integration",
+            "url": "https://api.github.com/repos/deepseek-ai/awesome-deepseek-integration/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-OCR-2",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-OCR-2/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-OCR",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-OCR/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DualPipe",
+            "url": "https://api.github.com/repos/deepseek-ai/DualPipe/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/Engram",
+            "url": "https://api.github.com/repos/deepseek-ai/Engram/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-Math-V2",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-Math-V2/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/LPLB",
+            "url": "https://api.github.com/repos/deepseek-ai/LPLB/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-V3.2-Exp",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-V3.2-Exp/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/awesome-deepseek-coder",
+            "url": "https://api.github.com/repos/deepseek-ai/awesome-deepseek-coder/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-Coder",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-Coder/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-Coder-V2",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-Coder-V2/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-V3",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-V3/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [
+              "2025-06-27T08:46:37Z"
+            ],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-Prover-V2",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-Prover-V2/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-R1",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-R1/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [
+              "2025-06-27T08:39:13Z"
+            ],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/ESFT",
+            "url": "https://api.github.com/repos/deepseek-ai/ESFT/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/open-infra-index",
+            "url": "https://api.github.com/repos/deepseek-ai/open-infra-index/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DreamCraft3D",
+            "url": "https://api.github.com/repos/deepseek-ai/DreamCraft3D/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/EPLB",
+            "url": "https://api.github.com/repos/deepseek-ai/EPLB/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/profile-data",
+            "url": "https://api.github.com/repos/deepseek-ai/profile-data/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/smallpond",
+            "url": "https://api.github.com/repos/deepseek-ai/smallpond/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-VL2",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-VL2/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/Janus",
+            "url": "https://api.github.com/repos/deepseek-ai/Janus/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-V2",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-V2/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-Prover-V1.5",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-Prover-V1.5/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-VL",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-VL/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-Math",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-Math/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-LLM",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-LLM/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          },
+          {
+            "repo": "deepseek-ai/DeepSeek-MoE",
+            "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-MoE/releases?per_page=5",
+            "http": 200,
+            "latest_release_dates": [],
+            "in_window": []
+          }
+        ]
+      }
     },
     {
       "source_id": "moonshot",
@@ -592,8 +960,11 @@
       "gaps": [
         "未逐篇打开 kimi 博客正文；列表日期已早于窗口"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "zhipu",
@@ -603,14 +974,46 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://www.zhipuai.cn/zh/news",
       "status": "ok",
-      "evidence": "https://www.zhipuai.cn/zh/news HTTP 200。新闻日期 ['2024/11/07', '2024/11/28', '2024/12/30', '2025/08/25', '2026/03/30', '2026/03/31']，最新早于窗口。https://www.zhipuai.cn/zh/research HTTP 200。研究页日期样本最晚到 ['2026/03/15', '2026/04/01', '2026/04/07', '2026/04/29', '2026/05/20', '2026/06/16', '2026/08/14', '2026/08/26']，没有 2026-10。窗口内 0 条。未读正文。模型导航时间不当作新闻发布日。",
+      "evidence": "https://www.zhipuai.cn/zh/news HTTP 200。新闻日期 ['2024/11/07', '2024/11/28', '2024/12/30', '2025/08/25', '2026/03/30', '2026/03/31']，最新早于窗口。https://www.zhipuai.cn/zh/research HTTP 200。研究页日期样本最晚到 ['2026/03/15', '2026/04/01', '2026/04/07', '2026/04/29', '2026/05/20', '2026/06/16', '2026/08/14', '2026/08/26']，没有 2026-10。窗口内 0 条。未读正文。模型导航时间不当作新闻发布日。 本机增量：补核研究页按时间排序的标题、日期与链接，最新2026/08/26；新闻页已核最新03/31。可复用上游截至05:00收据，05–06无合格新增；不读旧全文，不以导航日期作新闻日期。",
       "items": [],
       "gaps": [
         "未读新闻与论文正文",
         "模型导航时间不当发布日"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:24:50.742325+00:00",
+      "delta_evidence": "补核研究页按时间排序的标题、日期与链接，最新2026/08/26；新闻页已核最新03/31。可复用上游截至05:00收据，05–06无合格新增；不读旧全文，不以导航日期作新闻日期。",
+      "upstream_status": "ok",
+      "additional_entry_evidence": [
+        {
+          "key": "zhipu-research-delta",
+          "url": "https://www.zhipuai.cn/zh/research",
+          "checked_at": "2026-10-06T22:23:26.152340+00:00",
+          "http": 200,
+          "final_url": "https://www.zhipuai.cn/zh/research",
+          "sha256": "f9a29c56f36cc92f3d7867f8bf376f70f53361d1d4687bc2e299e141b16f641e",
+          "characters": 698,
+          "dates": [
+            "2025/12/09",
+            "2025/12/10",
+            "2026/01/13",
+            "2026/01/19",
+            "2026/02/02",
+            "2026/02/11",
+            "2026/02/21",
+            "2026/03/15",
+            "2026/04/01",
+            "2026/04/07",
+            "2026/04/29",
+            "2026/05/20",
+            "2026/06/16",
+            "2026/08/14",
+            "2026/08/26"
+          ],
+          "sample": "Z.ai - Inspiring AGI to Benefit Humanity\n全部基座模型多模态推理模型Agent代码模型时间排序基座模型\n2026/08/26GLM-5.3-Flash：前沿智能进入普惠时代基座模型\n2026/08/14GLM-5.3：前沿编程能力与涌现的网络安全能力基座模型\n2026/06/16GLM-5.2上线并开源：专注Coding与长程任务基座模型\n2026/05/20下一代大模型推理网络架构：ZCube如何有效破解网络瓶颈？ZCube：超大规模大模型推理的网络优化基座模型\n2026/04/29Scaling Pain：超大规模Coding Agent推理实践基座模型\n2026/04/07GLM-5.1开源：一个独立工作8小时的模型基座模型\n2026/04/01GLM-5V-Turbo发布：多模态Coding基座模型基座模型Agent\n2026/03/15GLM-5-Turbo：龙虾增强的基座模型基座模型\n2026/02/21GLM-5技术报告基座模型\n2026/02/11GLM-5开源：从代码到工程，Agentic Engineering时代最好的开源模型多模态\n2026/02/02GLM-OCR发布：性能SOTA，搞定复杂文档基座模型\n2026/01/19GLM-4.7-Flash开源、免费多模态\n2026/01/13智谱联合华为开源国产芯片训练的多模态SOTA模型多模态\n2025/12/10GLM-TTS：基于多奖励融合强化学习，实现工业级语音合成多模态\n2025/12/09GLM-ASR-Nano：面向真实世界的高鲁棒性语音识别查看更多"
+        }
+      ]
     },
     {
       "source_id": "stepfun",
@@ -620,14 +1023,16 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://www.stepfun.com/",
       "status": "partial",
-      "evidence": "静态 HTML 约 2KB，是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 后看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3，以及 “Open source release in 08 DAYS” 倒计时，没有绝对发布日。不把产品名或倒计时换成发布时间。窗口内 0 条。",
+      "evidence": "静态 HTML 约 2KB，是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 后看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3，以及 “Open source release in 08 DAYS” 倒计时，没有绝对发布日。不把产品名或倒计时换成发布时间。窗口内 0 条。 本机：官网显示Step 5 Preview与即将开源倒计时，缺可核的绝对发布日期；不能写已开源或从产品卡推断今天发布。",
       "items": [],
       "gaps": [
-        "无独立新闻流的绝对日期",
-        "未把开源倒计时当成已发布"
+        "官网显示Step 5 Preview与即将开源倒计时，缺可核的绝对发布日期；不能写已开源或从产品卡推断今天发布。"
       ],
-      "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "partial",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Saved page text and links for independent date/boundary acceptance; HTTP success alone is not completion",
+      "upstream_status": "partial"
     },
     {
       "source_id": "mistral",
@@ -666,7 +1071,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "eu-digital",
@@ -748,7 +1156,10 @@
         "栏目不只有人工智能，未按主题删除，留给下游"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "unesco",
@@ -763,8 +1174,11 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "oecd",
@@ -780,8 +1194,11 @@
         "内嵌 JSON 若不是全站，未注入首页的新文这次没看到",
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "arxiv",
@@ -24164,7 +24581,10 @@
         "只收 published 在窗口内的新提交，更早论文的替换版本没有另计"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 100 entries; delta hits 0; latest 2026-10-05T17:59:54+00:00; oldest 2026-10-05T15:39:08+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "hf-daily-papers",
@@ -27484,7 +27904,10 @@
         "未逐篇打开 abs 页核对提交日"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Daily API returned 50; listing day distinct from publication day",
+      "upstream_status": "ok"
     },
     {
       "source_id": "openreview",
@@ -27494,14 +27917,16 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://openreview.net/",
       "status": "partial",
-      "evidence": "打开 https://openreview.net/ 。可见日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。最新公告早于窗口，仍不能把首页可达写成各会场无新投稿。Active Venues / Open for Submissions 没有投稿时间。",
+      "evidence": "打开 https://openreview.net/ 。可见日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。最新公告早于窗口，仍不能把首页可达写成各会场无新投稿。Active Venues / Open for Submissions 没有投稿时间。 本机：首页三条公告日期与链接已保存；尚未遍历所有会议新论文，首页无新增不能代表全平台无新增。",
       "items": [],
       "gaps": [
-        "未按会场过滤窗口内新投稿",
-        "声明正文未单独打开"
+        "首页三条公告日期与链接已保存；尚未遍历所有会议新论文，首页无新增不能代表全平台无新增。"
       ],
-      "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "partial",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Rendered browser supplement required",
+      "upstream_status": "partial"
     },
     {
       "source_id": "github-trending",
@@ -28091,7 +28516,10 @@
         "sponsors/ 链接不是仓库，已剔除"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "36kr-ai",
@@ -28446,7 +28874,10 @@
         "sourceType 缺失或为 null 的条目没有编造体裁"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "cac-ai",
@@ -28462,8 +28893,11 @@
         "未打开每条正文确认发布主体与效力",
         "窗口内没有条目可回正文"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "bytedance-seed",
@@ -28473,15 +28907,149 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://seed.bytedance.com/research",
       "status": "ok",
-      "evidence": "核对栏目：en/research 日期样本 ['Aug 5, 2026', 'Jul 31, 2026', 'Jul 31, 2026', 'Jul 20, 2026']；foundation 日期样本 ['Jun 23, 2026', 'Jun 19, 2026', 'Feb 16, 2026', 'Feb 14, 2026']；visual 日期样本 ['Jul 31, 2026', 'Jul 8, 2026', 'Apr 23, 2026', 'Feb 13, 2026']；audio 日期样本 ['Aug 5, 2026', 'Jul 20, 2026', 'Apr 9, 2026', 'Jul 24, 2025']；ai-infra 日期样本 ['Aug 14, 2025', 'Mar 10, 2025', 'Feb 12, 2025']；frontier-research 日期样本 ['Jul 7, 2026', 'Dec 2, 2025', 'Jul 22, 2025', 'Jul 15, 2025']；public_papers 日期样本 ['Aug 18, 2026', 'Aug 12, 2026', 'Aug 6, 2026', 'Jul 23, 2026']。中文研究页月份/ISO 日期 未见。这些日期都早于窗口（infra 最新可见是 2025-08-14）。窗口内配对 0。未把首页推荐卡当作全站更新流。未读正文。",
+      "evidence": "核对栏目：en/research 日期样本 ['Aug 5, 2026', 'Jul 31, 2026', 'Jul 31, 2026', 'Jul 20, 2026']；foundation 日期样本 ['Jun 23, 2026', 'Jun 19, 2026', 'Feb 16, 2026', 'Feb 14, 2026']；visual 日期样本 ['Jul 31, 2026', 'Jul 8, 2026', 'Apr 23, 2026', 'Feb 13, 2026']；audio 日期样本 ['Aug 5, 2026', 'Jul 20, 2026', 'Apr 9, 2026', 'Jul 24, 2025']；ai-infra 日期样本 ['Aug 14, 2025', 'Mar 10, 2025', 'Feb 12, 2025']；frontier-research 日期样本 ['Jul 7, 2026', 'Dec 2, 2025', 'Jul 22, 2025', 'Jul 15, 2025']；public_papers 日期样本 ['Aug 18, 2026', 'Aug 12, 2026', 'Aug 6, 2026', 'Jul 23, 2026']。中文研究页月份/ISO 日期 未见。这些日期都早于窗口（infra 最新可见是 2025-08-14）。窗口内配对 0。未把首页推荐卡当作全站更新流。未读正文。 本机增量：渲染首页后补核五个博客分类与完整论文入口，标题日期链接均留存；各栏目最新不晚于2026/08/18。复用截至05:00逐源收据，本机只补05–06增量；未读旧内容全文。",
       "items": [],
       "gaps": [
         "中文研究页没有可解析的 2026-10 月份日期",
         "未打开每篇全文",
         "模型导航年份不当发布日"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:24:50.742325+00:00",
+      "delta_evidence": "渲染首页后补核五个博客分类与完整论文入口，标题日期链接均留存；各栏目最新不晚于2026/08/18。复用截至05:00逐源收据，本机只补05–06增量；未读旧内容全文。",
+      "upstream_status": "ok",
+      "additional_entry_evidence": [
+        {
+          "key": "seed-foundation-delta",
+          "url": "https://seed.bytedance.com/zh/blog_list/foundation",
+          "checked_at": "2026-10-06T22:23:26.152468+00:00",
+          "http": 200,
+          "final_url": "https://seed.bytedance.com/zh/blog_list/foundation",
+          "sha256": "7fce37b3af353df19639606604c1b41a5b423ba2537ce9c345dadd104cd462c8",
+          "characters": 757,
+          "dates": [
+            "2025.04.14",
+            "2025.05.12",
+            "2025.05.13",
+            "2025.05.19",
+            "2025.06.25",
+            "2025.06.28",
+            "2025.07.31",
+            "2025.08.21",
+            "2025.12.18",
+            "2025.12.24",
+            "2026.02.14",
+            "2026.06.23"
+          ],
+          "sample": "技术博客\n博客/基础模型搜索分类由近到远2026.06.23Seed2.1 正式发布，深入 AI 生产力Agent & Coding 能力全面提升，复杂场景交付稳定2026.02.14Seed2.0 正式发布突破真实世界复杂任务2025.12.24Seed Prover 1.5：全新 Agentic 架构，更强数学推理表现9 小时解决 11 道 2025 普特南竞赛题2025.12.18通用 Agent 模型 Seed1.8 正式发布集搜索、代码与 GUI Agent 能力与一体2025.08.21字节跳动 Seed 开源语言模型 Seed-OSS 系列支持原生 512K 上下文，灵活控制推理预算2025.07.31Seed Research￨每秒推理速度 2146 Tokens，扩散语言模型 Seed Diffusion Preview 发布1 秒可生成超百行代码2025.06.28Seed-1.6-Embedding：基于 Seed1.6-Flash 构建的多模态向量化模型支持多模态混合检索2025.06.25Seed1.6 系列模型技术介绍融合多模态，可“自适应思考”（含高考分数）2025.05.19Seed-Coder 开源代码模型发布，依托 LLM 构建代码数据数据流实现方法公开，BF16 精度版本开放下载2025.05.13Seed VLM 技术报告首次公开：图像、视频、GUI、Game 完全体在 38 个公开评测基准中达到 SOTA2025.05.12向量检索能力 SOTA，字节 Seed1.5-Embedding 模型训练细节公开API 接口已经开放2025.04.14字节跳动最新思考模型，Seed-Thinking-v1.5 技术细节公开4 月 17 日 API 正式上线"
+        },
+        {
+          "key": "seed-visual-delta",
+          "url": "https://seed.bytedance.com/zh/blog_list/visual",
+          "checked_at": "2026-10-06T22:23:26.152566+00:00",
+          "http": 200,
+          "final_url": "https://seed.bytedance.com/zh/blog_list/visual",
+          "sha256": "c55c323850acb6ed12abf25ff526fce4c42716202e4c4de2ef6aaecb82df2c84",
+          "characters": 735,
+          "dates": [
+            "2025.04.16",
+            "2025.06.06",
+            "2025.06.11",
+            "2025.09.09",
+            "2025.10.23",
+            "2025.11.27",
+            "2025.12.16",
+            "2026.02.12",
+            "2026.02.13",
+            "2026.04.23",
+            "2026.07.08",
+            "2026.07.31"
+          ],
+          "sample": "技术博客\n博客/视觉智能搜索分类由近到远2026.07.31一镜成片，随心参考｜Seedance 2.5 正式发布30 秒长叙事，多模态参考能力、编辑能力全面升级2026.07.08不止“生成”，更懂“设计”｜Seedream 5.0 Pro 发布具备智能思考、高效创作和生产的多模态图像生成模型2026.04.23Seed3D 2.0 发布，更高精度、更强可用性几何及纹理材质生成均达 SOTA 表现2026.02.13“思考”更深，生成更准｜Seedream 5.0 Lite 发布理解、推理和生成全面提升2026.02.12Seedance 2.0 正式发布统一多模态音视频联合生成，复杂运动表现 SOTA2025.12.16声画俱全，一镜入戏 | Seedance 1.5 pro 音视频创作模型正式发布开启视听新体验2025.11.27Depth Anything 3：单一 Transformer 架构实现任意视角空间重建突破单目深度估计和多视角重建的技术瓶颈2025.10.23Seed3D 1.0 发布，一张图生成高精度 3D 模型，纹理生成能力 SOTA可拓展至场景生成，为世界模拟器提供支撑2025.09.09不止会“画”，更会“想”｜Seedream 4.0 图像创作模型正式发布多模态生成全面升级2025.06.11Seedance 1.0 视频生成模型技术报告公开原生支持 2-3 个以上镜头生成，一分钟快速出片2025.06.06图像编辑模型 SeedEdit 3.0 发布！更强保持力，更高可用率已在即梦网页端开启测试，豆包 App 即将上线2025.04.16Seedream 3.0 文生图模型技术报告发布支持 2K 高清直出，小字更准"
+        },
+        {
+          "key": "seed-audio-delta",
+          "url": "https://seed.bytedance.com/zh/blog_list/audio",
+          "checked_at": "2026-10-06T22:23:26.152659+00:00",
+          "http": 200,
+          "final_url": "https://seed.bytedance.com/zh/blog_list/audio",
+          "sha256": "a376e553b10870b821f2518382ac4dd90d8281149bae6d9ad560b15c03e03407",
+          "characters": 399,
+          "dates": [
+            "2025.01.20",
+            "2025.07.24",
+            "2026.04.09",
+            "2026.07.20",
+            "2026.08.05"
+          ],
+          "sample": "技术博客\n博客/语音智能搜索分类由近到远2026.08.05SeedRealtime 音视频全双工大模型发布：走向全模态自然交互作为原生音视频全双工大模型，联合理解声音、画面与时序信息，带来边看、边听、边说的自然交互体验2026.07.20从“会说”走向“会创作”｜ Seed Audio 1.0 音频创作模型发布统一框架下联合建模人声、音效和环境声等音频要素2026.04.09Seed 全双工语音大模型发布：懂倾听、抗干扰，走向更自然的交互作为原生全双工语音大模型，实现精准抗干扰与动态判停，交互更自然2025.07.24Seed 端到端同声传译大模型发布：准确率接近真人，3s 延迟，实时声音复刻中英同传翻译质量达到业界 SOTA，同时实现了极低的语音延迟水平2025.01.20豆包实时语音大模型上线即开放！情商智商双高使用原生方法深度融合语音与文本模态，实现真正意义上的端到端语音对话模型"
+        },
+        {
+          "key": "seed-ai-infra-delta",
+          "url": "https://seed.bytedance.com/zh/blog_list/ai-infra",
+          "checked_at": "2026-10-06T22:23:26.433760+00:00",
+          "http": 200,
+          "final_url": "https://seed.bytedance.com/zh/blog_list/ai-infra",
+          "sha256": "20e86d7dd5db26e7e445cf6708b6634eb3882e6dd220736867f64599adbc42da",
+          "characters": 253,
+          "dates": [
+            "2025.02.12",
+            "2025.03.10",
+            "2025.08.14"
+          ],
+          "sample": "技术博客\n博客/AI Infra搜索分类由近到远2025.08.14解锁任意模态模型训练，字节跳动 Seed 开源 VeOmni 框架可将数周的工程开发时间缩短至几天2025.03.10万卡集群真实部署，已节省数百万 GPU 小时！MoE 通信优化技术 COMET 开源已开源！主流大模型均可接入，MLSys 2025 高分接收2025.02.12Seed Research | 全新超稀疏架构，推理成本较 MoE 最高可降 83%！推理速度较 MoE 提升 2-6 倍，论文已被 ICLR 2025 接收"
+        },
+        {
+          "key": "seed-frontier-research-delta",
+          "url": "https://seed.bytedance.com/zh/blog_list/frontier-research",
+          "checked_at": "2026-10-06T22:23:26.504953+00:00",
+          "http": 200,
+          "final_url": "https://seed.bytedance.com/zh/blog_list/frontier-research",
+          "sha256": "69a926a54ceb812b0d40788d763ead801b3aa25f3017e99e9af9f81a8502580c",
+          "characters": 682,
+          "dates": [
+            "2025.02.25",
+            "2025.03.04",
+            "2025.04.14",
+            "2025.04.17",
+            "2025.05.28",
+            "2025.07.15",
+            "2025.07.22",
+            "2025.12.02",
+            "2026.07.07"
+          ],
+          "sample": "技术博客\n博客/前沿研究搜索分类由近到远2026.07.07EdgeBench：衡量真实世界环境学习，发现新 Scaling LawAgent 在环境学习中表现出明显的 log-sigmoid 规律2025.12.02GR-RL 发布：突破 VLA 精细操作瓶颈，首次实现真机强化学习穿鞋带让 VLA 在真实环境中交互学习2025.07.22Seed Research ￨通用机器人模型 GR-3 发布！支持高泛化、长程任务、柔性物体双臂操作一个可泛化、支持长程以及复杂任务的机器人操作大模型2025.07.15Seed Research｜4B 模型数学推理接近 235B 表现，Seed 最新强化学习配方全面开源700 步 RL 训练，大幅提升小模型数学推理能力2025.05.28Seed Research｜理解与生成统一模型 BAGEL 开源，All-in-One Model！支持文本、图像、视频及多模态交错2025.04.17字节 Seed 智能体模型 UI-TARS-1.5 开源！多项 Benchmark 取得 SOTA 表现新增游戏场景，交互可达 1000 步2025.04.14Multi-SWE-bench：首个多语言代码修复基准开源数据均来自 GitHub issue，历时近一年构建2025.03.04285 学科全覆盖！豆包大模型团队开源基准测试集 SuperGPQA历时半年，填补长尾知识评估空白2025.02.25Seed Research | 形式化数学推理新 SOTA！BFS-Prover 模型最新开源化繁为简，鼓励机器深度思考"
+        },
+        {
+          "key": "seed-papers-delta",
+          "url": "https://seed.bytedance.com/zh/public_papers",
+          "checked_at": "2026-10-06T22:23:26.514127+00:00",
+          "http": 200,
+          "final_url": "https://seed.bytedance.com/zh/public_papers",
+          "sha256": "1d587170b1af8af8fb6e9386f0dc459ea6342d6542507d6e520b46bde34850bf",
+          "characters": 1573,
+          "dates": [
+            "2026.05.14",
+            "2026.05.15",
+            "2026.05.16",
+            "2026.05.26",
+            "2026.05.29",
+            "2026.06.03",
+            "2026.06.04",
+            "2026.06.11",
+            "2026.06.19",
+            "2026.06.30",
+            "2026.07.01",
+            "2026.07.06",
+            "2026.07.23",
+            "2026.08.06",
+            "2026.08.12",
+            "2026.08.18"
+          ],
+          "sample": "研究进展 - 字节跳动Seed\n公开论文搜索研究团队研究领域由近到远发布时间2026.08.18Chain-of-Experience for Continual LLM Improvement2026.08.12Harness-IF: Evaluating Instruction Following Across Instruction Surfaces in Coding Agents2026.08.06GST-Bench: Can VLMs Develop Global Spatial Awareness from Video?2026.07.23Sample-Efficient Learning from Agent Experience2026.07.06EdgeBench: Unveiling Scaling Laws of Learning from Real-World Environments2026.07.01MSQA: A Natively Sourced Multilingual and Multicultural SimpleQA Benchmark2026.06.30Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity2026.06.19A Unified Generative Framework for Scalable Chemical Reaction Network Exploration2026.06.11Analytic Nonadiabatic Derivative Couplings Using Noncollinear Spin-Flip TDDFT2026.06.04Towards stable and accurate electron dynamics via neural network based time-dependent variational Monte Carlo2026.06.03MetaPoint: Unlocking Precise Spatial Control in Agentic Visual Generation2026.05.29Task-Focused Memorization for Multimodal Agents2026.05.26More Expressive Feedforward Layers: Part I. Token-Adaptive Mixing of Acti"
+        }
+      ]
     },
     {
       "source_id": "minimax",
@@ -28499,8 +29067,11 @@
         "Speech/Music 产品名中的版本号不当日期",
         "本次渲染的是英文新闻页"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机渲染完成后读取dated news卡片，最新日期早于窗口，完整DOM及链接留存；不使用dateModified作为文章日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "techcrunch-ai",
@@ -29022,7 +29593,10 @@
         "原创/转述未判"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "ars-technica-ai",
@@ -29144,7 +29718,10 @@
         "未读正文，栏目可能含转载，original/relay 未判"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "mit-technology-review-ai",
@@ -29154,7 +29731,7 @@
       "checked_at": "2026-10-06T21:30:08+00:00",
       "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
       "status": "partial",
-      "evidence": "配置话题页 https://www.technologyreview.com/topic/artificial-intelligence/ 文章日期链接约 12 条，页面不是完整列表。topic feed HTTP 200，10 条，最新 2026-10-05T15:47:52+00:00，最旧 2026-09-28T17:03:16+00:00，窗口内 4。partial 是因为配置页不是完整列表，feed 不能代替配置入口。未读正文。",
+      "evidence": "配置话题页 https://www.technologyreview.com/topic/artificial-intelligence/ 文章日期链接约 12 条，页面不是完整列表。topic feed HTTP 200，10 条，最新 2026-10-05T15:47:52+00:00，最旧 2026-09-28T17:03:16+00:00，窗口内 4。partial 是因为配置页不是完整列表，feed 不能代替配置入口。未读正文。 本机配置主题页最终已加载；Newest to Oldest首屏十条卡片配对URL，最新10月5日，往下到9月23日；与feed部分条目不完全相同，故保留覆盖缺口。",
       "items": [
         {
           "title": "Connecting AI agents to enterprise knowledge",
@@ -29242,12 +29819,14 @@
         }
       ],
       "gaps": [
-        "配置话题页没有完整文章列表，另用官方 topic feed",
-        "feed 不能代替配置入口的页面检查",
+        "配置页首屏与官方主题feed并非相同全集，未核遍所有历史条目；不据单个首页断言整个来源无更新",
         "摘要/付费墙不当全文"
       ],
-      "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "partial",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "配置主题页已渲染，十条卡片标题、日期路径及链接留存于mit-browser-final.txt；未读全文；与feed条目差异保留。",
+      "upstream_status": "partial"
     },
     {
       "source_id": "404-media",
@@ -29413,7 +29992,10 @@
         "非 AI 标题未擅自删除，留给下游"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "本机页面文字、日期与链接已保存，复用上游逐条列表边界；日精度保留边界不确定，未从modified推断发布日期。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "wired-ai",
@@ -29535,7 +30117,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 10 entries; delta hits 0; latest 2026-10-06T18:45:39+00:00; oldest 2026-10-02T09:45:00+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "the-verge-ai",
@@ -30350,7 +30935,10 @@
         "未读正文，未区分评论、原创与转述"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 10 entries; delta hits 0; latest 2026-10-06T12:29:44-04:00; oldest 2026-10-05T12:44:21-04:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "cloudflare-ai",
@@ -30388,7 +30976,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-05T13:00:00+00:00; oldest 2026-09-25T13:00:00+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "apple-developer-ai",
@@ -30404,8 +30995,11 @@
         "未读被排除条目的正文",
         "试用，10 月 17 日回顾"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 150 entries; delta hits 0; latest 2026-10-06T08:00:23-07:00; oldest 2024-10-08T05:01:37-07:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "meta-engineering",
@@ -30420,8 +31014,11 @@
       "gaps": [
         "未读被排除条目"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 9 entries; delta hits 0; latest 2026-10-06T16:00:06+00:00; oldest 2026-08-12T13:00:28+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "hacker-news-ai",
@@ -48086,6 +48683,96 @@
           "points_note": "点数和评论数只是热度，不是独立证据",
           "title_translation_scope": "title_only",
           "title_zh": "ChatGPT Space：中心化上下文的反乌托邦"
+        },
+        {
+          "title": "Penguin Mail – open-source Rust email client for Linux with AI",
+          "url": "https://penguin-mail.com/",
+          "published_at": "2026-10-06T21:59:43Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "AI is going to run out of power",
+          "url": "https://www.transformernews.ai/p/ai-will-run-out-of-power",
+          "published_at": "2026-10-06T21:52:26Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "Sulcus – observe and control AI agents while they run",
+          "url": "https://sulcus.dev/",
+          "published_at": "2026-10-06T21:51:54Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "Italian PM files to trademark her voice against AI threats",
+          "url": "https://www.bbc.com/news/articles/ckly0g1ljq2yo",
+          "published_at": "2026-10-06T21:50:09Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "Meta open sources code to let you make Muse AI gadgets",
+          "url": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
+          "published_at": "2026-10-06T21:42:59Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "Mistral unveils new AI model it says rivals best open systems from China",
+          "url": "https://www.cnbc.com/2026/10/06/mistral-ai-model-le-chonk.html",
+          "published_at": "2026-10-06T21:32:18Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "Top Open Problems in Math by LLM-Assessed Importance",
+          "url": "https://www.proofatlas.ai/open-problems/",
+          "published_at": "2026-10-06T21:19:24Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "Show HN: Vibeconferencing, Bring Claude Code or Codex into Your Google Meet",
+          "url": "https://github.com/wanderingstan/vibeconf-app",
+          "published_at": "2026-10-06T21:15:01Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "Daniel Kokotajlo's senate testimony on AI risk [pdf]",
+          "url": "https://www.hsgac.senate.gov/wp-content/uploads/Daniel-Kokotajlo-Testimony.pdf",
+          "published_at": "2026-10-06T21:10:51Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
+        },
+        {
+          "title": "PolicyLM-1.7B: a small, fast, open model that reads content policy",
+          "url": "https://www.musubilabs.ai/blog/introducing-policylm-1-7b",
+          "published_at": "2026-10-06T21:04:37Z",
+          "date_precision": "second",
+          "date_note": "HN投稿时间，不是原文首次发表时间",
+          "first_seen_at": "2026-10-06T22:18:45.332852+00:00",
+          "verification_scope": "list"
         }
       ],
       "gaps": [
@@ -48096,7 +48783,10 @@
         "最后一秒 created_at_i=1791320400 未单独检索"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Algolia精确05–06小时共47条story，1页全部返回；标题筛选10项AI候选，原文发表时间分别待核。",
+      "upstream_status": "ok"
     },
     {
       "source_id": "import-ai",
@@ -48134,7 +48824,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-05T12:32:30+00:00; oldest 2026-05-11T12:46:12+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "bens-bites",
@@ -48172,7 +48865,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-06T13:01:18+00:00; oldest 2026-08-18T13:01:18+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "latent-space",
@@ -48211,7 +48907,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-06T06:28:43+00:00; oldest 2026-09-22T06:30:56+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "interconnects",
@@ -48249,7 +48948,10 @@
         "未读正文"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-06T14:22:41+00:00; oldest 2026-06-22T14:52:45+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "ai-snake-oil",
@@ -48264,8 +48966,11 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-01T16:34:51+00:00; oldest 2024-11-11T19:57:25+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "one-useful-thing",
@@ -48280,8 +48985,11 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement"
+      "check_state": "complete_no_new",
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 20 entries; delta hits 0; latest 2026-10-01T10:54:12+00:00; oldest 2025-09-11T20:37:39+00:00",
+      "upstream_status": "ok"
     },
     {
       "source_id": "simon-willison",
@@ -48376,6 +49084,11 @@
           "source_name": "Simon Willison's Weblog",
           "title_translation_scope": "title_only",
           "title_zh": "用文字做 Qwen3.8 27B 的加法"
+        },
+        {
+          "title": "llm-mistral 0.16",
+          "url": "https://simonwillison.net/2026/Oct/6/llm-mistral/",
+          "published_at": "2026-10-06T21:32:34+00:00"
         }
       ],
       "gaps": [
@@ -48383,7 +49096,10 @@
         "只按标题筛了 AI，未读被排除条目"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement"
+      "collection_pass": "browser_or_page_supplement",
+      "local_supplement_at": "2026-10-06T22:18:45.332852+00:00",
+      "delta_evidence": "Parsed 30 entries; delta hits 1; latest 2026-10-06T21:32:34+00:00; oldest 2026-09-24T23:31:08+00:00",
+      "upstream_status": "ok"
     }
   ],
   "config_commit": "f05682d099209db8ef0d374828eb7e6fa35d15de",
@@ -48537,5 +49253,328 @@
     "timezone": "Asia/Shanghai",
     "cutoff_note": "北京时间 2026-10-07 05:00，即 2026-10-06T21:00:00Z。不用北京时间 06:00 边界。"
   },
-  "source_catalog_path": "data/runs/2026-10-07-source-catalog.json"
+  "source_catalog_path": "data/runs/2026-10-07-source-catalog.json",
+  "upstream_commit": "4010ac962969e7e9316b20632fad62d6d162f73a",
+  "upstream_summary": {
+    "window": [
+      "2026-10-03T21:00:00+00:00",
+      "2026-10-06T21:00:00+00:00"
+    ],
+    "planned": 45,
+    "ok": 39,
+    "partial": 6,
+    "failed": 0,
+    "pending_browser": 0,
+    "core_not_ok": []
+  },
+  "local_checked_at": "2026-10-06T22:24:50.742325+00:00",
+  "local_cutoff": "2026-10-07T06:00:00+08:00",
+  "local_window": [
+    "2026-10-05T22:00:00Z",
+    "2026-10-06T22:00:00Z"
+  ],
+  "local_discovery_window": [
+    "2026-10-03T22:00:00Z",
+    "2026-10-06T22:00:00Z"
+  ],
+  "increment_path": "data/runs/2026-10-07-increment.json",
+  "discourse_selections": [
+    {
+      "concourse_id": "ZUZVNKFSmTM",
+      "web_item_id": "discourse-jim",
+      "original_url": "https://www.youtube.com/watch?v=ZUZVNKFSmTM",
+      "original_date": "2026-10-06",
+      "person": "Jim Clark",
+      "program": "AI Engineer技术演讲",
+      "related_item_ids": [
+        "pap",
+        "cyber"
+      ],
+      "reason": "解释授权、权限隔离或防守响应的工程问题；保留供应商商业立场，既有演讲/访谈不写成对当日新闻的回应",
+      "verification_scope": "00:00–17:36自动字幕全文",
+      "transcript_path": "transcripts/auto/ZUZVNKFSmTM.txt",
+      "transcript_sha256": "446c3a4d9e1c68ba40ce4ea5b8b8b8dbba5291cacca424feb6a144415c550d8d",
+      "person_background_url": "https://www.docker.com/contributors/jim-clark/",
+      "program_background_url": "https://www.ai.engineer/",
+      "library_commit": "a26b18758acbebdf8e20a05bf3bb92a5ceffa5c0",
+      "library_digest": "data/digest/2026-10-07.md",
+      "library_search_scope": {
+        "indexed": 692,
+        "topic_matches": 31,
+        "no_date_filter": true,
+        "includes_historical_published": true,
+        "includes_pending_material": true
+      },
+      "script_unique_anchor": "Jim Clark",
+      "script_locator": "Jim Clark",
+      "same_selection_verified": true
+    },
+    {
+      "concourse_id": "cJsHel27Z6M",
+      "web_item_id": "discourse-mandia",
+      "original_url": "https://www.youtube.com/watch?v=cJsHel27Z6M",
+      "original_date": "2026-10-06",
+      "person": "Kevin Mandia",
+      "program": "The a16z Show",
+      "related_item_ids": [
+        "cyber",
+        "mistral-large4"
+      ],
+      "reason": "解释授权、权限隔离或防守响应的工程问题；保留供应商商业立场，既有演讲/访谈不写成对当日新闻的回应",
+      "verification_scope": "04:25–09:55、15:59–22:31自动字幕",
+      "transcript_path": "transcripts/auto/cJsHel27Z6M.txt",
+      "transcript_sha256": "98c6224d97bd65d56534a28fc5e8124dd641d3028b18829657e5558fbc5bd912",
+      "person_background_url": "https://www.armadin.com/team-members/kevin-mandia",
+      "program_background_url": "https://a16z.simplecast.com/",
+      "library_commit": "a26b18758acbebdf8e20a05bf3bb92a5ceffa5c0",
+      "library_digest": "data/digest/2026-10-07.md",
+      "library_search_scope": {
+        "indexed": 692,
+        "topic_matches": 31,
+        "no_date_filter": true,
+        "includes_historical_published": true,
+        "includes_pending_material": true
+      },
+      "script_unique_anchor": "Kevin Mandia",
+      "script_locator": "Kevin Mandia",
+      "same_selection_verified": true
+    }
+  ],
+  "editorial_review": [
+    {
+      "candidate_id": "pap",
+      "primary_url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+      "original_title": "Introducing Personal Agent Protocol",
+      "discovery_source": "techcrunch-ai",
+      "published_at": "2026-10-06",
+      "verification_scope": "官方全文与记者原创采访；协议仍在开发",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "pap"
+      ]
+    },
+    {
+      "candidate_id": "cyber",
+      "primary_url": "https://www.anthropic.com/news/cyber-verification-program",
+      "original_title": "Expanding the Cyber Verification Program",
+      "discovery_source": "anthropic",
+      "published_at": "2026-10-06",
+      "verification_scope": "官方计划、分级条件、公司场景实验与数据留存",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "cyber"
+      ]
+    },
+    {
+      "candidate_id": "mistral-large4",
+      "primary_url": "https://mistral.ai/news/mistral-large-4/",
+      "original_title": "Introducing Mistral Large 4",
+      "discovery_source": "mistral",
+      "published_at": "2026-10-06",
+      "verification_scope": "官方全文；当前API、未来权重及公司评估分开",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "mistral-large4"
+      ]
+    },
+    {
+      "candidate_id": "ironclad",
+      "primary_url": "https://openai.com/index/advancing-computer-use-with-ironclad/",
+      "original_title": "Advancing computer use with Ironclad",
+      "discovery_source": "openai",
+      "published_at": "2026-10-06",
+      "verification_scope": "官方全文、实验表及脚注；11任务、不同推理设置、模拟时间",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "ironclad"
+      ]
+    },
+    {
+      "candidate_id": "claude-docs",
+      "primary_url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+      "original_title": "Claude now works in Google Docs, Sheets, and Slides",
+      "discovery_source": "claude-blog",
+      "published_at": "2026-10-06",
+      "verification_scope": "官方产品全文；管理员启用与文件权限",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "claude-docs"
+      ]
+    },
+    {
+      "candidate_id": "figma-agent",
+      "primary_url": "https://www.figma.com/blog/3-ways-product-designers-use-the-figma-agent/",
+      "original_title": "3 ways product designers use the Figma agent for craft, speed, and creative expression",
+      "discovery_source": "the-verge-ai",
+      "published_at": "2026-10-06",
+      "verification_scope": "官方全文；功能、公司评分与客户描述分开",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "figma-agent"
+      ]
+    },
+    {
+      "candidate_id": "hark",
+      "primary_url": "https://techcrunch.com/2026/10/06/hark-releases-an-ai-personal-assistant-with-a-focus-on-privacy/",
+      "original_title": "Hark releases an AI personal assistant with a focus on privacy",
+      "discovery_source": "techcrunch-ai",
+      "published_at": "2026-10-06",
+      "verification_scope": "记者原创采访；可见操作与隐私审计分开",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "hark"
+      ]
+    },
+    {
+      "candidate_id": "llm-mistral",
+      "primary_url": "https://simonwillison.net/2026/Oct/6/llm-mistral/",
+      "original_title": "llm-mistral 0.16",
+      "discovery_source": "simon-willison",
+      "published_at": "2026-10-06T21:32:34Z",
+      "verification_scope": "作者说明及0.16发布页；未运行插件",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "llm-mistral"
+      ]
+    },
+    {
+      "candidate_id": "hyperbrowse",
+      "primary_url": "https://arxiv.org/html/2610.03574v1",
+      "original_title": "HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents",
+      "discovery_source": "hf-daily-papers",
+      "published_at": "2026-10-02",
+      "verification_scope": "摘要、方法3.1–3.2、实验4.1–4.4、表2与局限；未复现",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "hyperbrowse"
+      ]
+    },
+    {
+      "candidate_id": "embeddinggemma2",
+      "primary_url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+      "original_title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+      "discovery_source": "google-ai",
+      "published_at": "2026-10-06T16:00:00Z",
+      "verification_scope": "官方全文、模型卡架构与许可；非部署实测",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "embeddinggemma2"
+      ]
+    },
+    {
+      "candidate_id": "atlassian",
+      "primary_url": "https://openai.com/index/atlassian-partnership/",
+      "verification_scope": "官方全文、已有插件与后续探索",
+      "decision": "deferred",
+      "decision_reason": "合作延续和组织上下文有价值，暂存为企业工作主题；本期用具体流程研究说明效果，不重复合作承诺。",
+      "selected_item_ids": []
+    },
+    {
+      "candidate_id": "judicial-video",
+      "primary_url": "https://www.404media.co/her-ai-generated-video-swayed-the-judge-the-court-said-it-carried-undue-emotional-weight/",
+      "verification_scope": "原创采访及报道全文，未取得法院原判决",
+      "decision": "deferred",
+      "decision_reason": "只可确认记者报道范围；涉及量刑效果且原判决尚未交叉核读，不作重点，暂存。",
+      "selected_item_ids": []
+    },
+    {
+      "candidate_id": "realcompanion",
+      "primary_url": "https://arxiv.org/html/2610.01780v1",
+      "verification_scope": "摘要、数据构建、标签采样与伦理说明；实验表未完整核读",
+      "decision": "deferred",
+      "decision_reason": "真实长期对话与隐私问题值得续读；样本仅10人且匿名化残留风险需谨慎展开，本期不仓促压成结论。",
+      "selected_item_ids": []
+    },
+    {
+      "candidate_id": "veriharness",
+      "primary_url": "https://arxiv.org/html/2610.00972v1",
+      "verification_scope": "摘要与方法开头；实验表未完整核读",
+      "decision": "deferred",
+      "decision_reason": "证据检验与共识挑战相关，但仍需检查详细实验与代价；暂存，不凭摘要上榜作效果证明。",
+      "selected_item_ids": []
+    },
+    {
+      "candidate_id": "mistral-wired",
+      "primary_url": "https://www.wired.com/story/mistral-new-model-le-chonk-open-source-china-us-frontier/",
+      "verification_scope": "记者原创采访文章全文",
+      "decision": "deferred",
+      "decision_reason": "采访补充部署自主性；关于现已开放的概括与官方月底计划需区分，本期以官方具体时序为准，不把采访当独立性能测试。",
+      "selected_item_ids": []
+    }
+  ],
+  "paper_candidate_review": [
+    {
+      "candidate_id": "hyperbrowse",
+      "primary_url": "https://arxiv.org/html/2610.03574v1",
+      "original_title": "HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents",
+      "discovery_source": "hf-daily-papers",
+      "published_at": "2026-10-02",
+      "verification_scope": "摘要、方法3.1–3.2、实验4.1–4.4、表2与局限；未复现",
+      "decision": "selected",
+      "decision_reason": "有可读原始依据，提供本期身份授权、操作权限或结果核验的具体增量；保留适用条件。",
+      "selected_item_ids": [
+        "hyperbrowse"
+      ]
+    },
+    {
+      "candidate_id": "realcompanion",
+      "primary_url": "https://arxiv.org/html/2610.01780v1",
+      "verification_scope": "摘要、数据构建、标签采样与伦理说明；实验表未完整核读",
+      "decision": "deferred",
+      "decision_reason": "真实长期对话与隐私问题值得续读；样本仅10人且匿名化残留风险需谨慎展开，本期不仓促压成结论。",
+      "selected_item_ids": []
+    },
+    {
+      "candidate_id": "veriharness",
+      "primary_url": "https://arxiv.org/html/2610.00972v1",
+      "verification_scope": "摘要与方法开头；实验表未完整核读",
+      "decision": "deferred",
+      "decision_reason": "证据检验与共识挑战相关，但仍需检查详细实验与代价；暂存，不凭摘要上榜作效果证明。",
+      "selected_item_ids": []
+    }
+  ],
+  "media_trial_review": [
+    {
+      "source_id": "simon-willison",
+      "decision": "selected",
+      "item_id": "llm-mistral",
+      "reason": "开发者新增发布说明，明确不是独立模型评测"
+    },
+    {
+      "source_id": "cloudflare-ai",
+      "decision": "not_repeated",
+      "reason": "有效RSS及增量没有本期新条目；原有回顾已报道，不重复。"
+    },
+    {
+      "source_id": "apple-developer-ai",
+      "decision": "no_ai_candidate_from_checked_feed",
+      "reason": "RSS新增条目非AI相关，保留原始发现而不硬凑。"
+    }
+  ],
+  "theme_tracking": {
+    "themes": [
+      "个人智能体接入身份",
+      "权限隔离与网络安全",
+      "完整业务流程核验",
+      "多模态检索证据"
+    ],
+    "previous_issue": "2026-10-06",
+    "increment": "从资源运营者的访问负担，推进到协议倡议、分级权限和内部隔离；避免重复昨日水印广告事实。",
+    "weekly_observation": {
+      "author": "Simon Willison",
+      "primary_url": "https://simonwillison.net/2026/Oct/6/llm-mistral/",
+      "type": "作者发布说明，非独立实测",
+      "discovery_time": "2026-10-06T21:32:34Z"
+    }
+  }
 }
