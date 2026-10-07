@@ -42,6 +42,10 @@ def validate_archive_provenance(issue):
 
 
 def build(date):
+    import check_names
+    errors = check_names.check_date(ROOT, date, lang='en', sources_only=True)
+    if errors:
+        raise ValueError('Original-source name review failed: ' + '; '.join(errors))
     issue = read_json(ROOT / f'data/issues/{date}.json')
     edition = read_json(ROOT / f'data/issues/en/{date}.json')
     validate_archive_provenance(issue)

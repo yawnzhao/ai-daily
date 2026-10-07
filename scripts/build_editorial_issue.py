@@ -277,6 +277,10 @@ def render_source_catalog_markdown(issue, content):
 
 
 def build(date):
+    import check_names
+    errors = check_names.check_date(ROOT, date, lang='zh-CN', sources_only=True)
+    if errors:
+        raise ValueError('名称核对未通过：' + '; '.join(errors))
     issue = json.loads((ROOT / 'data/issues' / (date + '.json')).read_text())
     receipts = json.loads((ROOT / 'data/runs' / (date + '-receipts.json')).read_text())
     manuscript = (ROOT / issue['canonical_markdown']).read_text()

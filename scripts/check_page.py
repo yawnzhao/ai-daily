@@ -109,6 +109,11 @@ def check_issue(path, lang='zh-CN'):
     if audio and audio.group(1) and not audio.group(1).startswith('https://'):
         bad.append('AUDIO_SRC 不是 https 直链')
 
+    import check_names
+    try:
+        bad.extend(check_names.check_date(ROOT, date, lang=lang))
+    except (KeyError, ValueError, TypeError, OSError) as error:
+        bad.append('名称检查无法完成：' + str(error))
     return bad
 
 
@@ -239,9 +244,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('dates', nargs='*')
     parser.add_argument('--lang', choices=['zh-CN', 'en', 'all'], default='all')
+    parser.add_argument('--name-report', help='名称核对收据的私有运行路径')
     args = parser.parse_args()
     problems = {}
     count = 0
+    checked_dates = set()
     languages = ['zh-CN', 'en'] if args.lang == 'all' else [args.lang]
     for lang in languages:
         base = ROOT / 'en' if lang == 'en' else ROOT
@@ -250,6 +257,7 @@ def main():
             pages = [p for p in pages if PAGE_RE.match(p.name).group(1) in args.dates]
         count += len(pages)
         for p in pages:
+            checked_dates.add(PAGE_RE.match(p.name).group(1))
             bad = check_issue(p, lang)
             if bad:
                 problems[str(p.relative_to(ROOT))] = bad
@@ -259,6 +267,10 @@ def main():
                 problems[str((base / 'index.html').relative_to(ROOT))] = bad
     if not count:
         sys.exit('没有对应语言或日期的页面')
+
+    if args.name_report:
+        import check_names
+        check_names.write_report(ROOT, sorted(checked_dates), args.name_report)
 
     if not problems:
         print(f'检查 {count} 个页面{"" if args.dates else " + 首页"}：全部通过')
