@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-08",
+  "status": "ready_to_publish",
+  "state": "ready_to_publish",
+  "source_commit": "d313d708cc7a70e7d2e7271352ddf29489984f2e",
+  "started_at": "2026-10-08T01:02:28.925Z",
+  "source_manuscript_sha256": "c1f30956aa4f65f0c3a25a71f679e5c4fc4c599a598a438e34a24548f65366e3",
+  "source_metadata_sha256": "fdf35fef75a6e9e1094916cd1619c90c4af80aa4d2b3ac140692c4e1b0fa49a1",
+  "translation_sha256": "f36cfb1550d1009f65b69b31c07bc29c2e19a6f3e71640da937372e1b2f21f51",
+  "source_receipts_sha256": "f96b06ef949e656172459dba76caff115bfc3958c6515a9d7aaa4b004d22a6ce",
+  "source_catalog_sha256": "0ae91c54ad0698ff251cab1b88a35422cd8cf24882eb398e6e498d1c3666efc0",
+  "item_ids": [
+    "gpt6-ui",
+    "haiku55",
+    "windows-spark",
+    "synthid",
+    "teen-safety",
+    "playground",
+    "wikimedia-agents",
+    "discourse-roost",
+    "discourse-painter",
+    "veriharness",
+    "open-d1"
+  ],
+  "corrections": [],
+  "chinese_publication": {
+    "url": "https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-08.html",
+    "http_status": 200,
+    "sha256": "3e798492e2742ce2fb0e2b3588a780a6204661b4413f92bb9f9eb2159dc788af",
+    "matches_local": true,
+    "checked_at": "2026-10-08T01:13:38.332832+00:00"
+  },
+  "reviewed_at": "2026-10-08T01:14:42.503436+00:00",
+  "editorial_review": {
+    "method": "Full paragraph-by-paragraph comparison against the published Chinese manuscript, plus actual original-source review of shared formal names. Numbers, dates, scope, licensing, and paraphrases manually checked; structural checks supplement editorial judgment.",
+    "full_translation": true,
+    "item_order_and_ids_match": true,
+    "paragraph_counts_match": true,
+    "manuscript_links_match": true,
+    "original_titles_preserved": true,
+    "new_facts_added": false,
+    "paraphrases_converted_to_direct_quotes": false,
+    "key_checks": {
+      "gpt6-ui": [
+        "Phased availability versus October 8 plan; paid Sol versus Free/Go Luna; Chat only; short WIRED trial not an accuracy test"
+      ],
+      "haiku55": [
+        "Per million tokens; 100,000-token threshold; $0.10/$0.50 versus $0.50/$2.50; 90%/50% tiers; limited 1.25x tokenizer observation"
+      ],
+      "windows-spark": [
+        "October 16 laptop versus November desktop plans; 128GB; 1 petaFLOP at FP4 is a peak configuration figure; MXC original name; no blanket offline/no-upload claim"
+      ],
+      "synthid": [
+        "Supported watermarks; global English entry point; Apple remains planned; missing watermark proves neither human origin nor truth"
+      ],
+      "teen-safety": [
+        "Future College Planner; US grades 10–12 and four-year colleges; more than 4,000 prompts; targeted scenarios and model-change confound; no voice/group/image coverage; company response attributed"
+      ],
+      "playground": [
+        "US 18+; subscription tiers; Unity Spark closed beta remains planned"
+      ],
+      "wikimedia-agents": [
+        "October 5 background rediscovered October 7; unsuccessful Etherpad exploit; no compromise; sandbox edits; May outage association not causation"
+      ],
+      "discourse-roost": [
+        "October 7 publication versus unknown UN-week recording date; publisher lightly edited AI-assisted transcript, paraphrases only; editorial linkage not guest response"
+      ],
+      "discourse-painter": [
+        "METR original expansion; September 30 written testimony, not oral Q&A; recommendations not adopted rules; predates October 5 investigation"
+      ],
+      "veriharness": [
+        "October 1 v1 versus October 5 HF discovery; five benchmarks, two models, ten fixed candidates; 6.2/6.4 score points rather than percent; no reproduction"
+      ],
+      "open-d1": [
+        "3B text/image versus experimental 600M text+image or audio; incomplete multimodal evaluation; LFM Open License v1.0 commercial revenue restriction; open weights"
+      ]
+    },
+    "coverage": {
+      "planned": 45,
+      "ok": 35,
+      "partial": 10,
+      "incomplete": true,
+      "concourse_channels": 29,
+      "concourse_people": 23,
+      "concourse_topics": 5,
+      "separate_denominator": true
+    },
+    "source_catalog": {
+      "displayed": 218,
+      "groups": {
+        "news": 193,
+        "concourse": 2,
+        "papers": 1,
+        "opensource_releases": 22
+      },
+      "titles_urls_order_and_groups_match_chinese": true,
+      "only_source_names_translated": true
+    },
+    "audio": "Published episode and media endpoints both returned HTTP 200; episode exposes the shared audio URL; English entry explicitly labels Chinese audio.",
+    "formal_names": {
+      "shared_registry_only": true,
+      "original_source_review": true,
+      "records": 27,
+      "private_proof": "english-daily-2026-10-08/original-name-review.json"
+    }
+  },
+  "validation": {
+    "commands": [
+      "python3 scripts/check_names.py 2026-10-08 --sources-only --report <private>/name-check-before-generation.json",
+      "python3 scripts/build_editorial_issue.py 2026-10-08 --lang en",
+      "python3 scripts/build_site.py",
+      "python3 scripts/check_page.py --name-report <private>/name-check-before-publish.json",
+      "python3 scripts/build_site.py --check"
+    ],
+    "result": "All passed: 64 issue pages plus indexes; no generation logic changed. Chinese main content unchanged.",
+    "browser": {
+      "bidirectional_language_switch": true,
+      "menu_only_language_all_issues_previous_next": true,
+      "source_catalog_expands": true,
+      "untranslated_source_names": 0,
+      "chinese_audio_entry_explicitly_labeled": true
+    }
+  },
+  "resume_note": "Source advanced during translation to d313d70 with published Chinese audio; manuscript and metadata fingerprints refreshed, new listening paragraph translated, public Chinese page and audio reverified."
+}
