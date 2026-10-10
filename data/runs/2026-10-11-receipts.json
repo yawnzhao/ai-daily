@@ -1,18 +1,18 @@
 {
   "summary": {
     "window": [
-      "2026-10-07T21:00:00+00:00",
-      "2026-10-10T21:00:00+00:00"
+      "2026-10-07T22:00:00+00:00",
+      "2026-10-10T22:00:00+00:00"
     ],
     "planned": 45,
-    "ok": 40,
-    "partial": 5,
+    "ok": 33,
+    "partial": 12,
     "failed": 0,
     "pending_browser": 0,
     "core_not_ok": [],
-    "success_rate": 0.8889,
+    "success_rate": 0.7333333333333333,
     "incomplete": true,
-    "incomplete_reason": "成功率 40/45=88.9% 低于 90%；partial 为 microsoft、qwen、tongyi、stepfun、openreview；核心源全部 ok。网页搜索不计入。"
+    "incomplete_reason": "独立验收保留实际05–06点增量缺口；不能用上游40/45代替本机截至06点的完整覆盖。"
   },
   "sources": [
     {
@@ -110,13 +110,16 @@
           "dedupe_key": "url:https://anthropic.com/news/anthropic-cyber-mission"
         }
       ],
-      "gaps": [
-        "卡片日期只有日精度",
-        "未读正文"
-      ],
-      "check_state": "candidates_found_not_adopted",
+      "gaps": [],
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器新闻列表最新10月8日，已覆盖到10月1日及更早；05–06点未发现该新闻入口新条目。另补读10月9日研究调查报告，新闻列表不代替研究全站。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "claude-blog",
@@ -235,15 +238,16 @@
           "dedupe_key": "url:https://claude.dev/blog/automating-eval-design-and-hillclimbing"
         }
       ],
-      "gaps": [
-        "日期只有日精度",
-        "未读正文",
-        "配置博客 URL 跳到 resources/articles",
-        "claude.dev 外链条目只从列表数据取标题"
-      ],
-      "check_state": "candidates_found_not_adopted",
+      "gaps": [],
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器实际重定向到资源文章列表；首批11条按时间最新10月8日至10月5日，覆盖窗口，未将280资源总数当全部逐篇阅读。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "openai",
@@ -386,9 +390,15 @@
         "未读正文",
         "仅 RSS 列表"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.142246+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "google-ai",
@@ -427,9 +437,15 @@
         "首页只展示约 20 个链接，更早被挤出首页但仍在窗口内的文章可能漏",
         "未读正文"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.142609+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "xai",
@@ -441,14 +457,16 @@
       "status": "ok",
       "evidence": "静态请求 https://x.ai/news HTTP 200（配置 note 称脚本 403，本次未被拦）。新闻链接去重约 85 条，月份日期最新 Sep 28, 2026，10 月日期 0 条，窗口日历日内 0。headless Chrome 渲染被 Cloudflare 'Attention Required' 拦截，未得到渲染版。未读正文。",
       "items": [],
-      "gaps": [
-        "日期无时分",
-        "headless 渲染被 Cloudflare 拦截，仅静态 HTML",
-        "未读正文"
-      ],
-      "check_state": "fully_checked_no_new_items",
+      "gaps": [],
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器已列出全新闻流到2023，最新9月28日，非静态403；05–06点未发现配置新闻入口新增。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "deepmind",
@@ -460,12 +478,16 @@
       "status": "ok",
       "evidence": "配置 feed 是 gzip 压缩体（magic 1f8b），解压后 100 条，带日期 100，最新 2026-10-06T19:57:04+00:00，最旧 2025-11-10T16:50:39+00:00，窗口内 0。未改用替代 feed。未读正文。",
       "items": [],
-      "gaps": [
-        "未读正文"
-      ],
-      "check_state": "fully_checked_no_new_items",
+      "gaps": [],
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:corrected-feed-deltas.json",
+      "local_acceptance_note": "已解析带日期完整feed快照，05–06点增量；仅列表，不替代正文阅读。",
+      "local_checked_at": "2026-10-10T22:20:28.272239+00:00"
     },
     {
       "source_id": "nvidia",
@@ -544,9 +566,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.142928+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "huggingface",
@@ -604,9 +632,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.143044+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "cursor",
@@ -621,9 +655,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.143152+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "microsoft",
@@ -742,14 +782,16 @@
         }
       ],
       "gaps": [
-        "配置页无列表日期",
-        "配置 feed HTTP 410",
-        "AI 话题 feed 与 Source 全站 feed 都只有 10 条，不能证明覆盖完整窗口",
-        "未读正文"
+        "上游覆盖复用至05:00；本机05:00–06:00入口快照已保存，尚未完整核完绝对日期流、翻页或访问限制。"
       ],
-      "check_state": "partially_checked",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "qwen",
@@ -785,14 +827,16 @@
         }
       ],
       "gaps": [
-        "配置入口为旧站，与现行官方入口不一致",
-        "qwen.ai/research 只看渲染首屏，未翻页",
-        "HF 模型创建时间不是公告时间；ModelScope/公众号未查",
-        "未改 config/sources.json"
+        "配置旧博客及现行研究入口可信列表复用；ModelScope/公众号和06点增量完整性未全部确认。"
       ],
-      "check_state": "partially_checked",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "tongyi",
@@ -805,14 +849,16 @@
       "evidence": "https://qianwen.aliyun.com/ 静态 HTML HTTP 200（127KB），页面日期最新 2025/9/16；抽出 2 条 /news 链接，周围没有可配对的标题和发布时间。headless Chrome 渲染已取得 DOM，但未解析出带日期的新闻卡。不能写成无更新。",
       "items": [],
       "gaps": [
-        "新闻卡无标题、无绝对日期",
-        "渲染页未解析出新闻日期",
-        "未证明窗口覆盖",
-        "/news 链接：/news?id=pxwhvf/suodqg/lg29wnzv8vmi2h1o&eId=pxwhvf/suodqg/rtgo7st53v06y1gh | /news?id=pxwhvf/suodqg/qkhh70wdrlgwogs2&eId=pxwhvf/suodqg/zb8ufi86steu3s9v"
+        "首页仅有产品/新闻入口，尚未取得完整可配对的绝对发布日期流。"
       ],
-      "check_state": "partially_checked",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "deepseek",
@@ -821,7 +867,7 @@
       "method": "browser",
       "checked_at": "2026-10-10T21:14:35+00:00",
       "checked_url": "https://api-docs.deepseek.com/updates",
-      "status": "ok",
+      "status": "partial",
       "evidence": "逐入口检查：API updates 页日期 ['2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10']；官网 /en/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']、/zh/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']；additional_urls harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04']（页面内 Next.js 'now' 渲染时间 ['2026-10-08'] 不是发布日期，已剔除）。页面窗口日历日内日期 0 个。additional_urls GitHub org deepseek-ai 经 api.github.com 列出 44 个仓库，窗口内 push 2（deepseek-ai/deepseek-harness, deepseek-ai/DeepJIT）、新建 0；对窗口内有 push 的仓库查 releases，窗口内发布 1 个，记为候选。commit 不是公告。",
       "items": [
         {
@@ -848,13 +894,16 @@
         }
       ],
       "gaps": [
-        "未读 API changelog 全文",
-        "release 未读正文",
-        "push 无 release 的仓库未逐条看 commit"
+        "已读官方release；上游三入口可信部分复用，06:00前各入口增量覆盖尚未全部确认。"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "部分检查",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "moonshot",
@@ -866,14 +915,16 @@
       "status": "ok",
       "evidence": "月之暗面首页日期最新 2026-07-17；Kimi 博客（https://www.kimi.com/blog/ 跳到 https://www.kimi.ai/blog/）日期最新 2026-07-31。窗口日历日内日期 无。未逐篇打开博客正文。",
       "items": [],
-      "gaps": [
-        "未逐篇打开博客正文",
-        "首页未必列出所有产品更新",
-        "未查 GitHub/HF"
-      ],
-      "check_state": "fully_checked_no_new_items",
+      "gaps": [],
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器本机主页及其研究链接Kimi博客最新7月16日，后续条目至2024；模型导航不当发布日。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "zhipu",
@@ -882,16 +933,20 @@
       "method": "page",
       "checked_at": "2026-10-10T21:14:35+00:00",
       "checked_url": "https://www.zhipuai.cn/news",
-      "status": "ok",
+      "status": "partial",
       "evidence": "配置 https://www.zhipuai.cn/news 与 /zh/news HTTP 200（/zh/news 首次 urllib SSL EOF，curl 重试成功），新闻日期最新 2026-09-10；/zh/research 日期最新 2026/08/26。窗口日历日内日期 无。未读正文；模型导航时间不当发布日。",
       "items": [],
       "gaps": [
-        "未读新闻与论文正文",
-        "未检查 z.ai 英文站与 GitHub/HF 发布"
+        "配置/news浏览器重定向至首页；首页最新动态与上游/zh/news列表不一致，不能据此确认全部当前新闻日期流。"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "部分检查",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "stepfun",
@@ -904,13 +959,16 @@
       "evidence": "静态 HTML 约 2KB 是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3 系列，以及 'Step 5 Preview Open source release in 04 DAYS' 倒计时（10-08 收据记 06 DAYS，10-10 收据记 04 DAYS，本轮仍为 04 DAYS：倒计时未随日期推进，目标时间可能被改动，更不能当发布时间），无绝对发布日、无独立新闻流。不把产品名或倒计时当作发布时间。窗口内 0 条。",
       "items": [],
       "gaps": [
-        "无独立新闻流与绝对日期",
-        "未把开源倒计时当成已发布",
-        "未查 GitHub/HF/公众号"
+        "前端产品页和倒计时不能证明真实发布日期；没有完整日期新闻流。"
       ],
-      "check_state": "partially_checked",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "mistral",
@@ -922,12 +980,16 @@
       "status": "ok",
       "evidence": "配置新闻页卡片只有日期、链接配对不稳；改用页面内同站 /news/rss，RSS 89 条，最新 2026-10-06T12:00:27+00:00，最旧 2023-09-27T08:00:00+00:00，窗口内 0 条。未读正文。",
       "items": [],
-      "gaps": [
-        "未读正文"
-      ],
-      "check_state": "fully_checked_no_new_items",
+      "gaps": [],
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:corrected-feed-deltas.json",
+      "local_acceptance_note": "已解析带日期完整feed快照，05–06点增量；仅列表，不替代正文阅读。",
+      "local_checked_at": "2026-10-10T22:20:28.272582+00:00"
     },
     {
       "source_id": "eu-digital",
@@ -961,14 +1023,16 @@
           "dedupe_key": "url:https://digital-strategy.ec.europa.eu/en/news/ecava-brings-europes-connected-and-autonomous-vehicle-ambitions-paris"
         }
       ],
-      "gaps": [
-        "日精度，无时分",
-        "未读正文",
-        "栏目不只有 AI，非 AI 标题未删除，留给下游"
-      ],
-      "check_state": "candidates_found_not_adopted",
+      "gaps": [],
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器News & Views实际列表最新10月9日，并延伸至10月1日；已分开Highlight与实际列表，按日期筛发现，不把12日活动当发布日期。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "unesco",
@@ -980,13 +1044,16 @@
       "status": "ok",
       "evidence": "UNESCO AI 页 data-date ['2026-10-02T17:59:39Z', '2026-09-28T22:27:24Z', '2026-09-28T16:16:48Z', '2026-09-25T16:44:44Z']，窗口内 0。页面上其他日期数字（如活动日期）没有对应 data-date 文章，不当新闻。未读正文。",
       "items": [],
-      "gaps": [
-        "未读正文",
-        "页面只列最新若干条 data-date"
-      ],
-      "check_state": "fully_checked_no_new_items",
+      "gaps": [],
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器News and stories最新10月2日，首批到9月25日；与HTML data-date一致，活动与执行委员会日期不作新闻日期。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "oecd",
@@ -998,13 +1065,16 @@
       "status": "ok",
       "evidence": "Wonk 页 ng-state 文章去重 16 篇，date_gmt 最新 2026-09-30T07:55:00+00:00，窗口内 0。页面上其他 2026-10 数字不是文章 date_gmt。未读正文。",
       "items": [],
-      "gaps": [
-        "内嵌 JSON 若不是全站，未注入首页的新文看不到",
-        "未读正文"
-      ],
-      "check_state": "fully_checked_no_new_items",
+      "gaps": [],
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器Latest posts最新9月30日与上游ng-state date_gmt一致，列表延伸至6月；特色推荐与最新流分开。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "arxiv",
@@ -18817,9 +18887,13 @@
         "只收窗口内首次提交的新论文，旧论文替换版本未另计",
         "published 为提交时间，不是 arXiv 公告时间"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_acceptance_note": "复用上游公告列表/翻页收据；本机保存增量入口。HF十月十日空列表不是没有论文，arXiv未公告内容不可见。"
     },
     {
       "source_id": "hf-daily-papers",
@@ -26191,9 +26265,13 @@
         "上榜日与 arXiv 提交日分开记",
         "未逐篇打开 abs 页核对提交日"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_acceptance_note": "复用上游公告列表/翻页收据；本机保存增量入口。HF十月十日空列表不是没有论文，arXiv未公告内容不可见。"
     },
     {
       "source_id": "openreview",
@@ -26206,12 +26284,16 @@
       "evidence": "打开 https://openreview.net/ （静态）。可见公告日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。首页可达不能代表各会场无新投稿；Active Venues / Open for Submissions 无投稿时间，未按会场过滤窗口内新投稿。",
       "items": [],
       "gaps": [
-        "未按会场检索窗口内新投稿",
-        "公告正文未打开"
+        "机构入口复用；各会场投稿与更新窗口未完全覆盖。"
       ],
-      "check_state": "partially_checked",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "github-trending",
@@ -26888,9 +26970,13 @@
         "快照不是窗口内新项目",
         "未按 AI 相关性筛选"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_acceptance_note": "复用上游公告列表/翻页收据；本机保存增量入口。HF十月十日空列表不是没有论文，arXiv未公告内容不可见。"
     },
     {
       "source_id": "36kr-ai",
@@ -26899,7 +26985,7 @@
       "method": "browser",
       "checked_at": "2026-10-10T21:14:35+00:00",
       "checked_url": "https://www.36kr.com/information/AI/",
-      "status": "ok",
+      "status": "partial",
       "evidence": "频道 SSR itemList 30 条，再用频道页 pageCallback 调 gateway.36kr.com subNav/flow 翻 7 页（与页面“加载更多”同一接口），合计 240 条，最新 2026-10-10T21:52:58.636000+08:00，最早 2026-10-03T15:03:38+08:00（已早于窗口起点）。窗口内 216 条，逐篇打开文章页取 publishTime、sourceType、userType、署名与正文首尾出处声明。分类：{\"入驻作者投稿（sourceType=contribution）\": 212, \"36氪原创（sourceType=original）\": 4}。未通读正文。",
       "items": [
         {
@@ -33177,14 +33263,16 @@
         }
       ],
       "gaps": [
-        "未通读正文",
-        "入驻作者条目未追溯首发平台（多为公众号）",
-        "推广判定只看正文首尾字样",
-        "未单开推广/活动频道"
+        "上游30+7页240条及当前SSR入口已保存，06点增量绝对日期配对未全部核完。"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "部分检查",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "cac-ai",
@@ -33193,17 +33281,20 @@
       "method": "page",
       "checked_at": "2026-10-10T21:14:35+00:00",
       "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
-      "status": "ok",
+      "status": "partial",
       "evidence": "网信发布列表第 1 页 20 条（URL 路径带日期），最新 2026-09-23《关于发布3款提供手机端侧生成式人工智能服务已备案信息的公告》，最旧 2026-07-24。窗口日历日内 0 条，按标题保留 AI 相关 0 条，其余记 excluded_hits。未打开正文。",
       "items": [],
       "gaps": [
-        "未打开正文确认发布主体与效力",
-        "列表日期取自 URL 路径",
-        "仅按标题判 AI 相关"
+        "上游覆盖复用至05:00；本机05:00–06:00入口快照已保存，尚未完整核完绝对日期流、翻页或访问限制。"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "部分检查",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "bytedance-seed",
@@ -33215,14 +33306,16 @@
       "status": "ok",
       "evidence": "核对栏目：en/research 最新 2026-08-05；blog foundation 最新 2026-06-23；blog visual 最新 2026-07-31；blog audio 最新 2026-08-05；blog ai-infra 最新 2025-08-14；blog frontier-research 最新 2026-07-07；public_papers 最新 2026-08-18；中文研究页渲染后日期最新 2026.08.05。窗口日历日内日期 无。未把推荐区当全站更新流。未读正文。",
       "items": [],
-      "gaps": [
-        "未打开每篇全文",
-        "论文列表只看第 1 页",
-        "模型导航年份不当发布日"
-      ],
-      "check_state": "fully_checked_no_new_items",
+      "gaps": [],
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器逐核五分类由近到远及全部论文入口首20条；最新博客8月5日、论文8月18日；排序及首批已跨过本期窗口，不把精选区当全站。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "minimax",
@@ -33234,14 +33327,16 @@
       "status": "ok",
       "evidence": "headless Chrome 渲染 https://www.minimax.io/news ，新闻卡日期 Aug. 26, 2026, Aug 26, 2026, Aug 03, 2026, May 21, 2026, Apr 24, 2026, Apr 16, 2026, Apr 14, 2026, Apr 09, 2026，最新 2026-08-26。窗口日历日内 0。未读正文。",
       "items": [],
-      "gaps": [
-        "未点 Load More",
-        "未读各篇正文",
-        "未查 minimax.cn 中文新闻与模型发布页"
-      ],
-      "check_state": "fully_checked_no_new_items",
+      "gaps": [],
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:verification/*-browser.*",
+      "local_acceptance_note": "浏览器新闻按新到旧最新8月26日，首批到3月25日已跨过查漏窗口；六个模型官方文章的绝对发布日期全部补核，均早于窗口。",
+      "local_checked_at": "2026-10-10T22:23:10.581323+00:00"
     },
     {
       "source_id": "techcrunch-ai",
@@ -33714,15 +33809,23 @@
           "source_name": "TechCrunch",
           "title_translation_scope": "title_only",
           "dedupe_key": "url:https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta"
+        },
+        {
+          "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+          "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+          "published_at": "2026-10-10T21:47:51+00:00",
+          "discovery_method": "local_delta_list_browser_verified"
         }
       ],
-      "gaps": [
-        "未读正文",
-        "原创/转述（In Brief 等）未判"
-      ],
-      "check_state": "candidates_found_not_adopted",
+      "gaps": [],
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "RSS增量另与列表最新条目交叉核验；发现纳德拉21:47:51UTC报道，原帖和报道全文已读。"
     },
     {
       "source_id": "ars-technica-ai",
@@ -33731,7 +33834,7 @@
       "method": "page",
       "checked_at": "2026-10-10T21:14:35+00:00",
       "checked_url": "https://arstechnica.com/ai/",
-      "status": "ok",
+      "status": "partial",
       "evidence": "AI 栏目第 1 页 time[datetime] 36 处，最新 2026-10-09T18:04:07-04:00，最旧 2026-09-28T12:43:18-04:00，覆盖窗口起点。窗口内 6 条。未读正文，未判定是否转载（FT/WIRED 等）。",
       "items": [
         {
@@ -33862,11 +33965,16 @@
         }
       ],
       "gaps": [
-        "未读正文，栏目可能含转载，original/relay 未判"
+        "本机列表/正文403，复用上游至05点，05–06点增量未完成。"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "部分检查",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "mit-technology-review-ai",
@@ -33875,7 +33983,7 @@
       "method": "browser",
       "checked_at": "2026-10-10T21:14:35+00:00",
       "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
-      "status": "ok",
+      "status": "partial",
       "evidence": "headless Chrome 渲染配置话题页，文章链接 12 个，URL 日期从 2026/10/09 到 2026/01/12。官方 topic feed 10 条，最新 2026-10-09T09:00:00+00:00，最旧 2026-10-02T08:00:00+00:00，窗口内 4 条；渲染页另有不在 feed 中的窗口日期链接 0 条（只有 URL 日期，标题未配对）。合计 4 条。未读正文。",
       "items": [
         {
@@ -33964,12 +34072,16 @@
         }
       ],
       "gaps": [
-        "未读正文，摘要/付费墙不当全文",
-        "疑似 Insights 赞助内容未打开确认"
+        "上游覆盖复用至05:00；本机05:00–06:00入口快照已保存，尚未完整核完绝对日期流、翻页或访问限制。"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "部分检查",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "404-media",
@@ -33978,7 +34090,7 @@
       "method": "page",
       "checked_at": "2026-10-10T21:14:35+00:00",
       "checked_url": "https://www.404media.co/",
-      "status": "ok",
+      "status": "partial",
       "evidence": "首页与 /page/2/、/page/3/ 用标题链接配对 time datetime。窗口日历日内 9 条，页面最旧可见日期 2026-09-26，已早于窗口起点。未读正文，未按 AI 过滤删除。",
       "items": [
         {
@@ -34172,14 +34284,16 @@
         }
       ],
       "gaps": [
-        "未读正文，不能判定哪些是 AI 相关调查",
-        "日精度，边界日时分未知",
-        "非 AI 标题未擅自删除，留给下游",
-        "部分文章需订阅/登录，未尝试"
+        "上游覆盖复用至05:00；本机05:00–06:00入口快照已保存，尚未完整核完绝对日期流、翻页或访问限制。"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "partial",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "部分检查",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:page-increment.json",
+      "local_acceptance_note": "部分检查，不把HTTP成功或页面日期片段当完整覆盖，不宣称无新增。"
     },
     {
       "source_id": "wired-ai",
@@ -34427,9 +34541,15 @@
         "未读正文，未判定 original/评论",
         "栏目页时间未标时区"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.143259+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "the-verge-ai",
@@ -35180,9 +35300,15 @@
       "gaps": [
         "未读正文，未区分评论、原创与转述"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.143366+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "cloudflare-ai",
@@ -35219,9 +35345,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.743714+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "apple-developer-ai",
@@ -35237,9 +35369,15 @@
         "被排除条目只看标题、未读正文",
         "试用，10-17 回顾"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.849546+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "meta-engineering",
@@ -35254,9 +35392,15 @@
       "gaps": [
         "被排除条目只看标题、未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.862745+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "hacker-news-ai",
@@ -57963,6 +58107,69 @@
           "points_note": "点数和评论数只是热度，不是独立证据",
           "title_translation_scope": "title_only",
           "dedupe_key": "url:https://sheetrelay.com/"
+        },
+        {
+          "title": "Arrival Mind (children's book about AI risk – narrated)",
+          "url": "https://www.youtube.com/watch?v=5GISvEfdbm4",
+          "published_at": "2026-10-10T21:40:54Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "Show HN: I built a macOS screensaver that reacts to AI coding agents",
+          "url": "https://www.ascendaflow.com/waterline",
+          "published_at": "2026-10-10T21:39:20Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "Show HN: Try Free Long-Term Memory for AI 50M-Token Window",
+          "url": "https://github.com/corbenicai/galahad",
+          "published_at": "2026-10-10T21:36:50Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "Hackers abuse Google Ads, Bing redirects to push Claude ClickFix attacks",
+          "url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-bing-redirects-to-push-claude-clickfix-attacks/",
+          "published_at": "2026-10-10T21:19:42Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "The Token Economy: Why Falling Token Prices Have Not Lowered AI Bills",
+          "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7562258",
+          "published_at": "2026-10-10T21:18:52Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "GPT-Astra NFL Player Video Analysis",
+          "url": "https://twitter.com/robsandhu/status/2108987321786007853",
+          "published_at": "2026-10-10T21:11:20Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "I bet AI would invent its own language; Claude Opus's survived every copy",
+          "url": "https://claude.ai/artifact/KNR1u48RyraRAy6hi64wc8",
+          "published_at": "2026-10-10T21:02:24Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
         }
       ],
       "gaps": [
@@ -57970,9 +58177,15 @@
         "关键词过滤会漏掉标题不写 AI 的帖子，也会误收碰巧含关键词的帖子",
         "HN 时间不是事件发布时间"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:07.231775+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "import-ai",
@@ -57987,9 +58200,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:05.942122+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "bens-bites",
@@ -58026,9 +58245,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:06.009978+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "latent-space",
@@ -58174,9 +58399,15 @@
         "未读正文",
         "非 AINews 条目是否为访谈原节目未核"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:06.040630+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "interconnects",
@@ -58213,9 +58444,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:06.083224+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "ai-snake-oil",
@@ -58230,9 +58467,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:06.305942+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "one-useful-thing",
@@ -58247,9 +58490,15 @@
       "gaps": [
         "未读正文"
       ],
-      "check_state": "fully_checked_no_new_items",
+      "check_state": "complete_no_new",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:06.527476+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     },
     {
       "source_id": "simon-willison",
@@ -58392,17 +58641,23 @@
         "未打开原文页",
         "按标题与 feed 正文关键词筛 AI，可能漏收或误收"
       ],
-      "check_state": "candidates_found_not_adopted",
+      "check_state": "complete_found",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "完整检查，发现条目",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-10T21:14:35+00:00",
+      "reused_upstream": true,
+      "local_delta_receipt": "private:news-increment.json",
+      "local_checked_at": "2026-10-10T22:07:06.531752+00:00",
+      "local_acceptance_note": "复用上游实际条目；已解析05:00–06:00日期增量。正文核验另记。"
     }
   ],
   "config_commit": "478dc888fc9a683e2be69a812cee9da9ff0dc6dc",
   "config_commit_note": "git fetch && git checkout main && git pull --ff-only 后，在 /workspace/ai-daily 读取 main HEAD 478dc888fc9a683e2be69a812cee9da9ff0dc6dc 的 AGENTS.md 与 config/sources.json。config/sources.json 最后改动提交为 41feb6b80760ad32849290a10d55905e8268d35c；AGENTS.md 最后改动提交为 c96c6d75f54115ff61a0694719d6942820890470（2026-10-10，只改第 4 节口播写法一行，不涉及采集）。来源数 45，discovery_window_hours 72，core 为 anthropic、openai、google-ai、xai、arxiv、github-trending。采集脚本 scripts/collect_sources.py 取自同一 SHA，在临时目录运行后由执行 agent 逐源补查。",
   "issue_date": "2026-10-11",
   "timezone": "Asia/Shanghai",
-  "until": "2026-10-10T21:00:00Z",
-  "collection_only": true,
+  "until": "2026-10-10T22:00:00Z",
+  "collection_only": false,
   "does_not_publish": true,
   "agents_role_conflict": {
     "conflicts": true,
@@ -58589,5 +58844,158 @@
     "done": "GitHub Trending 用“开源项目 + 仓库名”。",
     "not_done": "新闻/官方/通讯、Hacker News、HF Daily Papers、arXiv 英文标题本轮未补 title_zh，留给下游，不影响原题与链接。",
     "missing_news_zh": 131
+  },
+  "local_cutoff": "2026-10-10T22:00:00Z",
+  "local_checked_at": "2026-10-10T22:18:15.673203+00:00",
+  "editorial_review": [
+    {
+      "candidate_id": "anthropic-report",
+      "primary_url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+      "decision": "selected",
+      "decision_reason": "评测与行动边界与今日行动边界或实际应用相关",
+      "verification_scope": "全文四类案例、影响范围及防护；公司自述，非独立事故调查"
+    },
+    {
+      "candidate_id": "nadella-controls",
+      "primary_url": "https://x.com/satyanadella/status/2108931348857827686",
+      "decision": "selected",
+      "decision_reason": "独立控制与今日行动边界或实际应用相关",
+      "verification_scope": "原帖全文与报道全文；治理倡议，非已部署产品效果"
+    },
+    {
+      "candidate_id": "apple-huxe",
+      "primary_url": "https://digital-markets-act-cases.ec.europa.eu/acquisitions",
+      "decision": "selected",
+      "decision_reason": "个性化音频与今日行动边界或实际应用相关",
+      "verification_scope": "原始表格Apple/Huxe行、披露时间规则及报道全文"
+    },
+    {
+      "candidate_id": "privacy-agent",
+      "primary_url": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots",
+      "decision": "selected",
+      "decision_reason": "隐私边界与今日行动边界或实际应用相关",
+      "verification_scope": "报道全文及Meta Muse隔离、训练选择与未来计划说明；未独立审计"
+    },
+    {
+      "candidate_id": "anti-scam",
+      "primary_url": "https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/",
+      "decision": "selected",
+      "decision_reason": "反诈骗与今日行动边界或实际应用相关",
+      "verification_scope": "全文；六分钟角色扮演体验及受访企业表述，不作为独立总体有效率"
+    },
+    {
+      "candidate_id": "distrokid-removals",
+      "primary_url": "https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit",
+      "decision": "selected",
+      "decision_reason": "音乐分发与今日行动边界或实际应用相关",
+      "verification_scope": "全文；诉讼指控、创作者投诉与平台回应分别归属"
+    },
+    {
+      "candidate_id": "discourse-bigelow",
+      "primary_url": "https://www.cognitiverevolution.ai/how-agents-decide-goodfire-s-eric-bigelow-on-critical-tokens-phase-shifts-in-context-learning/",
+      "decision": "selected",
+      "decision_reason": "思维链与监控与今日行动边界或实际应用相关",
+      "verification_scope": "开场人物介绍与1:31:49至约1:45思维链可读性讨论；未读全场，不使用逐字引语"
+    },
+    {
+      "candidate_id": "discourse-garman",
+      "primary_url": "https://www.youtube.com/watch?v=rn_afJaPldg",
+      "decision": "selected",
+      "decision_reason": "细粒度权限与今日行动边界或实际应用相关",
+      "verification_scope": "14:08–16:51权限、网关及微型虚拟机段落，人物与节目介绍；未听全片"
+    },
+    {
+      "candidate_id": "stopping-decisions",
+      "primary_url": "https://arxiv.org/html/2610.06191v1",
+      "decision": "selected",
+      "decision_reason": "停止决策与今日行动边界或实际应用相关",
+      "verification_scope": "摘要、实验设定、主要结果、作者300道新题复核与局限；未独立复现"
+    },
+    {
+      "candidate_id": "skill-constellations",
+      "primary_url": "https://arxiv.org/html/2610.11169v1",
+      "decision": "selected",
+      "decision_reason": "技能供应链与今日行动边界或实际应用相关",
+      "verification_scope": "摘要、数据构建、来源归属、修复传播、审计模拟及局限"
+    },
+    {
+      "candidate_id": "deepseek-harness",
+      "primary_url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-alpha.2",
+      "decision": "selected",
+      "decision_reason": "执行框架与今日行动边界或实际应用相关",
+      "verification_scope": "版本说明及仓库MIT许可；未安装或运行，不报告性能效果"
+    },
+    {
+      "candidate_id": "cage",
+      "decision": "pending_verification",
+      "decision_reason": "仅取得二次报道部分内容；Guardian原始访谈未核，不采用其观点",
+      "verification_scope": "partial_secondary"
+    },
+    {
+      "candidate_id": "checkerbench",
+      "decision": "pending_verification",
+      "decision_reason": "摘要已读，方法和限制未完整阅读；不凭摘要宣称全篇质量",
+      "verification_scope": "abstract"
+    },
+    {
+      "candidate_id": "text-message-agents",
+      "decision": "pending_verification",
+      "decision_reason": "服务汇总候选与隐私主题重叠，未逐项核服务原文；不是质量否定",
+      "verification_scope": "metadata"
+    },
+    {
+      "candidate_id": "nyt-quote",
+      "decision": "pending_verification",
+      "decision_reason": "未取得完整原始报道，不从摘录扩写观点",
+      "verification_scope": "excerpt"
+    }
+  ],
+  "paper_candidates": [
+    {
+      "paper_key": "arxiv:2610.06191",
+      "primary_url": "https://arxiv.org/html/2610.06191v1",
+      "read_version": "v1",
+      "original_published_at": "2026-10-05",
+      "decision": "selected",
+      "decision_reason": "控制失败和停止策略与当日任务边界直接相关；注明模拟与阈值限制",
+      "verification_scope": "摘要、实验设定、主要结果、作者300道新题复核与局限；未独立复现"
+    },
+    {
+      "paper_key": "arxiv:2610.11169",
+      "primary_url": "https://arxiv.org/html/2610.11169v1",
+      "read_version": "v1",
+      "original_published_at": "2026-10-08",
+      "decision": "selected",
+      "decision_reason": "技能依赖传播补充工具授权问题；区分采用数量与独立技能",
+      "verification_scope": "摘要、数据构建、来源归属、修复传播、审计模拟及局限"
+    },
+    {
+      "paper_key": "CheckerBench",
+      "decision": "pending_verification",
+      "verification_scope": "摘要",
+      "decision_reason": "未读方法与限制，保留候选"
+    }
+  ],
+  "paper_review_summary": {
+    "editorially_reviewed_unique": 3,
+    "paper_section_selected_unique": 2,
+    "independent_replication_found": false,
+    "independent_search_scope": "停止决策相关定向查询未取得可读独立复现；不能据此断言不存在。"
+  },
+  "topic_tracking": {
+    "evaluation_reliability_safety": [
+      "anthropic-report",
+      "nadella-controls",
+      "stopping-decisions"
+    ],
+    "agent_tools_supply_chain": [
+      "skill-constellations",
+      "deepseek-harness"
+    ],
+    "privacy_personalization": [
+      "apple-huxe",
+      "privacy-agent"
+    ],
+    "weekly_review_note": "延续10月10日周检关注任务执行与证据；本期为周日新证据跟进"
   }
 }
