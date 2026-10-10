@@ -43,7 +43,11 @@ def main():
         parser.error('Supply date or both --text and --output')
     text_path = args.text or base / f'ai-daily-{args.date}-口播重写.txt'
     output = args.output or base / f'ai-daily-{args.date}-Cn1-speech-2.8-hd.mp3'
-    dictionary_path = args.dictionary or Path(__file__).resolve().parents[1] / 'config/tts-pronunciation.json'
+    script_dir = Path(__file__).resolve().parent
+    default_dictionary = script_dir / 'config/tts-pronunciation.json'
+    if not default_dictionary.exists():
+        default_dictionary = script_dir.parent / 'config/tts-pronunciation.json'
+    dictionary_path = args.dictionary or default_dictionary
     text = text_path.read_text()
     dictionary = load_dictionary(dictionary_path)
     if args.dry_run:
