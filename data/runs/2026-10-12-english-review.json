@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-12",
+  "status": "ready_to_publish",
+  "state": "ready_to_publish",
+  "source_commit": "e61608a0b5db8d23ab7843668095d9bdc5445368",
+  "started_at": "2026-10-12T15:56:23.973Z",
+  "published_at": null,
+  "corrections": [],
+  "reviewed_at": "2026-10-12T16:01:14.966759+00:00",
+  "item_ids": [
+    "voice-reliability",
+    "local-agent",
+    "amazon-transparency",
+    "discourse-gates",
+    "discourse-feifei",
+    "honeyval",
+    "runningtab",
+    "spool"
+  ],
+  "source_manuscript_sha256": "c61c7a4d20f18e06435250125ddb830b9209c31d9377563ec9bc6693b2adcf0f",
+  "source_metadata_sha256": "6a378d580fcc73a4225a81bac662d838dce64599d79b7950a69f4ce29cf1395b",
+  "translation_sha256": "b2c36f8f59e15d34b901bf340c3b48285b911cc2c09f98b4200f55aa099626a4",
+  "source_receipts_sha256": "2e6c069ebcc5fa9bba55a049c60f99023e5de2d40cb6b7c1ebec083af9790096",
+  "source_catalog_sha256": "b3d4ad24ae52d8e718171d4f3a875c6f2e9fbb3427b026d6ace9873c07fd4f43",
+  "chinese_publication": {
+    "url": "https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-12.html",
+    "http_status": 200,
+    "matches_local": true,
+    "sha256": "e658c873ef720ff8564013f68f0064e2f6660f8cf2e73975e5b843b6b56c2204"
+  },
+  "editorial_review": {
+    "full_translation": true,
+    "item_order_and_ids_match": true,
+    "paragraph_counts_match": true,
+    "original_titles_preserved": true,
+    "all_markdown_urls_and_order_preserved": true,
+    "new_facts_added": false,
+    "paraphrases_converted_to_direct_quotes": false,
+    "formal_names": {
+      "shared_registry_only": true,
+      "records": 13,
+      "private_proof": "english-daily-2026-10-12/original-name-review.json",
+      "original_sources_reviewed": true
+    },
+    "coverage": {
+      "window": [
+        "2026-10-08T21:00:00+00:00",
+        "2026-10-11T22:00:00+00:00"
+      ],
+      "planned": 45,
+      "ok": 18,
+      "partial": 27,
+      "failed": 0,
+      "pending_browser": 0,
+      "core_not_ok": [
+        "anthropic",
+        "xai",
+        "arxiv",
+        "github-trending"
+      ],
+      "success_rate": 0.4,
+      "incomplete": true,
+      "incomplete_reason": "真实增量覆盖缺口保留；HTTP可达不等于完整扫描。",
+      "pending": 0
+    },
+    "source_catalog": {
+      "displayed_rows": 1052,
+      "groups": {
+        "0": 759,
+        "1": 3,
+        "2": 157,
+        "3": 133
+      },
+      "titles_urls_order_preserved": true,
+      "source_names_english_only": true
+    },
+    "audio": "Published Chinese episode verified; English page labels it Chinese, with shared duration 854 seconds. No English audio.",
+    "key_checks": {
+      "voice-reliability": "Full-duplex and transcription claims attributed to interviewees, not standardized test; paraphrase only.",
+      "local-agent": "Sleeping Mac, later successes and failures, and preserved Steam collections; no all-data-local claim.",
+      "amazon-transparency": "Pre-existing commitments, government-agency NDA scope, no claim of resolved local impacts.",
+      "discourse-gates": "October 11 ET, segment 09:17:07; forecast and near-term misuse distinct from distant loss of control.",
+      "discourse-feifei": "February 2025 recording versus October 9, 2026 upload; caption ranges preserved; no claim of response to Gates or job guarantees.",
+      "honeyval": "16 environments, two controls, 82.6 versus 30.6 requests; AI attackers and information proxy, not scam-loss reduction.",
+      "runningtab": "Three benchmarks and three models; file/service subsets; read evidence versus factual truth distinguished.",
+      "spool": "Container/allowlist defaults; explicit bare mode uncontained; permission prompts bypassed, working directory not sandbox; pre-1.0, Apache-2.0, not run."
+    }
+  },
+  "validation": {
+    "checked_at": "2026-10-12T16:03:43.613945+00:00",
+    "commands": [
+      "python3 scripts/build_editorial_issue.py 2026-10-12 --lang en",
+      "python3 scripts/build_site.py",
+      "python3 scripts/check_page.py --name-report ../english-daily-2026-10-12/name-check-before-publish.json",
+      "python3 scripts/build_site.py --check"
+    ],
+    "result": "71 pages plus homepages passed; generated site current",
+    "browser_review": {
+      "language_switch": "English to Chinese and back clicked and verified",
+      "menu": "language/all issues/previous next only",
+      "source_catalog": "1052 same titles, links and order; News 759, Concourse 3, Papers 157, Open source 133; names in English",
+      "audio": "Published Chinese episode; 14 min 14 sec; explicitly Chinese",
+      "private_proof": "english-daily-2026-10-12/local-browser-review.txt"
+    }
+  }
+}
