@@ -1,7 +1,7 @@
 {
   "date": "2026-10-14",
-  "status": "published_with_pending_rss_deployment",
-  "state": "rss_deployment_fresh_build_requested",
+  "status": "published",
+  "state": "published",
   "source_commit": "8b8f2822178396ffbc7cab7ef99e8ff643666284",
   "started_at": "2026-10-14T15:59:03.018Z",
   "published_at": "2026-10-14T16:11:18.716824+00:00",
@@ -167,17 +167,52 @@
     ],
     "published_at_basis": "First public-content verification after successful GitHub Pages deployment; actual availability occurred no later than this timestamp."
   },
-  "pending_publication": {
-    "commit": "efc21edf5633e4c7870dfdc9cb3040695c9dec76",
-    "workflow_id": 38596072608,
-    "workflow_url": "https://github.com/yawnzhao/ai-daily/actions/runs/38596072608",
-    "failed_job_id": 115963124636,
+  "deployment_recovery": {
+    "failed_workflow_url": "https://github.com/yawnzhao/ai-daily/actions/runs/38596072608",
     "failure_reason": "Pages updating_pages did not complete within the ten-minute deployment timeout. No permission denial in logs.",
-    "failed_jobs_rerun_accepted": true,
-    "last_observed_status": "queued_without_jobs",
-    "last_observed_run_attempt": 1,
-    "checked_at": "2026-10-14T17:03:46.972207+00:00",
-    "remaining_work": "Confirm rerun succeeds, then verify en/feed.xml and five other public generated files against local bytes. Do not repeat translation or submit another commit.",
-    "recovery": "Persist verified failure checkpoint and trigger one fresh Pages build after the failed-job rerun remained queued for about forty minutes. Website and RSS content are unchanged; do not retranslate."
+    "failed_job_rerun": "remained queued without jobs",
+    "recovery": "Fresh Pages build after persisting recovery checkpoint",
+    "commit": "09b7df23cd7ba8f77aa9b3c17ad18d32f11f1af1",
+    "workflow_url": "https://github.com/yawnzhao/ai-daily/actions/runs/38603480778",
+    "workflow_conclusion": "success",
+    "verified_at": "2026-10-14T17:06:15.205389+00:00",
+    "checks": [
+      {
+        "path": "en/ai-daily-digest-2026-10-14.html",
+        "status": 200,
+        "matches_local": true,
+        "sha256": "f720c5c3187a30927aa8203cad8b1804fecbfd0bdd673e16edd21e8dc339cc66"
+      },
+      {
+        "path": "en/index.html",
+        "status": 200,
+        "matches_local": true,
+        "sha256": "b33eef59338ffe148e2ccad9bce7d714ffc3ca00713a83728736da66e4a8fdde"
+      },
+      {
+        "path": "en/feed.xml",
+        "status": 200,
+        "matches_local": true,
+        "sha256": "cff3c29932cd9e2af0d196554b826aa3ac8498d89ebb8da1cfd52acc8404e7ef"
+      },
+      {
+        "path": "sitemap.xml",
+        "status": 200,
+        "matches_local": true,
+        "sha256": "b2109faf40e28a8f2afce35d0b03e35bca7f314f0658b28cf0e4815eb226eabc"
+      },
+      {
+        "path": "ai-daily-digest-2026-10-14.html",
+        "status": 200,
+        "matches_local": true,
+        "sha256": "e6153cb8fb61f281b1ef82d0f3e4ef405e421ad127e7ba16f0ad768e67de8495"
+      },
+      {
+        "path": "en/ai-daily-digest-2026-10-13.html",
+        "status": 200,
+        "matches_local": true,
+        "sha256": "031498f2d6d3acc081f6c41ef3612cebb1ec840aff0b361b9bf6e824ef474c07"
+      }
+    ]
   }
 }
