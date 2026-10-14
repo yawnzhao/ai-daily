@@ -1,20 +1,21 @@
 {
   "summary": {
     "window": [
-      "2026-10-11T21:00:00+00:00",
-      "2026-10-14T21:00:00+00:00"
+      "2026-10-11T22:00:00+00:00",
+      "2026-10-14T22:00:00+00:00"
     ],
     "planned": 45,
-    "ok": 41,
-    "partial": 4,
+    "ok": 39,
+    "partial": 6,
     "failed": 0,
     "pending_browser": 0,
     "core_not_ok": [],
     "pending": 0,
-    "success_rate": 0.9111,
-    "success_rate_display": "41/45 = 91%",
-    "incomplete": false,
-    "incomplete_note": "成功率 41/45=91.1%，核心源全部 ok。partial 为 microsoft（配置页无日期、配置 feed 410、替代 feed 只有 10 条）、qwen（配置仍指旧站，另查 qwen.ai/research 只看首屏，按要求标 partial）、stepfun（无新闻流与绝对日期，倒计时不当发布）、openreview（未按会场检索新投稿）。arXiv API 可见最新 published 2026-10-13T17:59:57Z，此后提交的论文要等下一次公告，属公告节奏边界，已写入 arxiv.gaps。网页搜索不计入。"
+    "success_rate": 0.8666666666666667,
+    "success_rate_display": "39/45 = 86.7%",
+    "incomplete": true,
+    "incomplete_note": "45源中39源完成当前配置入口检查，6源仍部分覆盖。原26项均已定向补查，保留Microsoft、Qwen、StepFun、OpenReview、UNESCO和Ars的真实缺口。完成入口检查不代表每篇正文都已核读。",
+    "incomplete_reason": "访问限制、配置入口差异及投稿/日期覆盖不足"
   },
   "sources": [
     {
@@ -22,10 +23,10 @@
       "name": "Anthropic News",
       "core": true,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.anthropic.com/news",
       "status": "ok",
-      "evidence": "打开 https://www.anthropic.com/news 。FeaturedGrid 卡片与 PublicationList 列表配对标题、链接、日期。可见日期 ['Oct 1, 2026', 'Oct 14, 2026', 'Oct 2, 2026', 'Oct 6, 2026', 'Oct 7, 2026', 'Oct 8, 2026', 'Sep 18, 2026', 'Sep 22, 2026', 'Sep 23, 2026', 'Sep 28, 2026']。窗口日历日内 2 条。未读正文。 页面内嵌数据 publishedOn 给出两篇的时分（2026-10-14T18:33Z、08:30Z），已改为秒精度。仓库脚本报“窗口内 3 条”，多出的一处是 featuredGrid 的 _updatedAt 2026-10-13T08:49:01Z（CMS 修改时间），不是文章发布日期，不计候选。",
+      "evidence": "打开 https://www.anthropic.com/news 。FeaturedGrid 卡片与 PublicationList 列表配对标题、链接、日期。可见日期 ['Oct 1, 2026', 'Oct 14, 2026', 'Oct 2, 2026', 'Oct 6, 2026', 'Oct 7, 2026', 'Oct 8, 2026', 'Sep 18, 2026', 'Sep 22, 2026', 'Sep 23, 2026', 'Sep 28, 2026']。窗口日历日内 2 条。未读正文。 页面内嵌数据 publishedOn 给出两篇的时分（2026-10-14T18:33Z、08:30Z），已改为秒精度。仓库脚本报“窗口内 3 条”，多出的一处是 featuredGrid 的 _updatedAt 2026-10-13T08:49:01Z（CMS 修改时间），不是文章发布日期，不计候选。；本轮定向补查：官方新闻完整首批列表最新10月14日两篇、下一条10月8日；内嵌CMS publishedOn按slug配对18:33Z及08:30Z，无05—06时新增。_updatedAt不是发表时间。",
       "items": [
         {
           "title": "Preparing for the 2026 US midterms",
@@ -70,23 +71,60 @@
           "dedupe_key": "url:https://anthropic.com/news/singapore-office-opening"
         }
       ],
-      "gaps": [
-        "卡片日期只有日精度",
-        "未读正文"
-      ],
+      "gaps": [],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "打开 https://www.anthropic.com/news 。FeaturedGrid 卡片与 PublicationList 列表配对标题、链接、日期。可见日期 ['Oct 1, 2026', 'Oct 14, 2026', 'Oct 2, 2026', 'Oct 6, 2026', 'Oct 7, 2026', 'Oct 8, 2026', 'Sep 18, 2026', 'Sep 22, 2026', 'Sep 23, 2026', 'Sep 28, 2026']。窗口日历日内 2 条。未读正文。 页面内嵌数据 publishedOn 给出两篇的时分（2026-10-14T18:33Z、08:30Z），已改为秒精度。仓库脚本报“窗口内 3 条”，多出的一处是 featuredGrid 的 _updatedAt 2026-10-13T08:49:01Z（CMS 修改时间），不是文章发布日期，不计候选。",
+      "increment_check": {
+        "source_id": "anthropic",
+        "checked_at": "2026-10-14T22:04:29.967951+00:00",
+        "checked_url": "https://www.anthropic.com/news",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.anthropic.com/news",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": [
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-13",
+          "2026-10-14"
+        ]
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#anthropic",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "卡片日期只有日精度",
+        "未读正文",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "打开 https://www.anthropic.com/news 。FeaturedGrid 卡片与 PublicationList 列表配对标题、链接、日期。可见日期 ['Oct 1, 2026', 'Oct 14, 2026', 'Oct 2, 2026', 'Oct 6, 2026', 'Oct 7, 2026', 'Oct 8, 2026', 'Sep 18, 2026', 'Sep 22, 2026', 'Sep 23, 2026', 'Sep 28, 2026']。窗口日历日内 2 条。未读正文。 页面内嵌数据 publishedOn 给出两篇的时分（2026-10-14T18:33Z、08:30Z），已改为秒精度。仓库脚本报“窗口内 3 条”，多出的一处是 featuredGrid 的 _updatedAt 2026-10-13T08:49:01Z（CMS 修改时间），不是文章发布日期，不计候选。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "anthropic",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "官方新闻完整首批列表最新10月14日两篇、下一条10月8日；内嵌CMS publishedOn按slug配对18:33Z及08:30Z，无05—06时新增。_updatedAt不是发表时间。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/anthropic-*.html"
+        ]
+      }
     },
     {
       "source_id": "claude-blog",
       "name": "Claude Blog",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://claude.com/blog",
       "status": "ok",
-      "evidence": "配置 https://claude.com/blog 最终打开 https://claude.com/resources/articles 。资源卡日期 ['Oct 13, 2026', 'Oct 14, 2026', 'Oct 6, 2026', 'Oct 8, 2026'] 与内嵌 blogPost 数据配对。窗口日历日内 2 条（按链接去重）；另有 0 条外链到 anthropic.com（），已记在 anthropic，不重复。未读正文。",
+      "evidence": "配置 https://claude.com/blog 最终打开 https://claude.com/resources/articles 。资源卡日期 ['Oct 13, 2026', 'Oct 14, 2026', 'Oct 6, 2026', 'Oct 8, 2026'] 与内嵌 blogPost 数据配对。窗口日历日内 2 条（按链接去重）；另有 0 条外链到 anthropic.com（），已记在 anthropic，不重复。未读正文。；本轮定向补查：配置入口重定向到官方Articles，最新11条按日期从10月14日到10月6日；最新为Agent observability，其次10月13日Uber案例，与既有候选一致。日期为日精度，不虚构小时。",
       "items": [
         {
           "title": "Agent observability on the Claude Platform",
@@ -131,25 +169,51 @@
           "dedupe_key": "url:https://claude.com/resources/articles/uber-s-ciso-on-building-an-insider-threat-program-for-ai"
         }
       ],
-      "gaps": [
+      "gaps": [],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "配置 https://claude.com/blog 最终打开 https://claude.com/resources/articles 。资源卡日期 ['Oct 13, 2026', 'Oct 14, 2026', 'Oct 6, 2026', 'Oct 8, 2026'] 与内嵌 blogPost 数据配对。窗口日历日内 2 条（按链接去重）；另有 0 条外链到 anthropic.com（），已记在 anthropic，不重复。未读正文。",
+      "increment_check": {
+        "source_id": "claude-blog",
+        "checked_at": "2026-10-14T22:04:29.968266+00:00",
+        "checked_url": "https://claude.com/blog",
+        "status": "failed",
+        "evidence": "HTTP Error 308: Permanent Redirect"
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#claude-blog",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "日期只有日精度",
         "未读正文",
         "配置博客 URL 跳到 resources/articles",
-        "claude.dev 外链条目只从列表数据取标题"
+        "claude.dev 外链条目只从列表数据取标题",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "配置 https://claude.com/blog 最终打开 https://claude.com/resources/articles 。资源卡日期 ['Oct 13, 2026', 'Oct 14, 2026', 'Oct 6, 2026', 'Oct 8, 2026'] 与内嵌 blogPost 数据配对。窗口日历日内 2 条（按链接去重）；另有 0 条外链到 anthropic.com（），已记在 anthropic，不重复。未读正文。；本机增量入口复查：HTTP Error 308: Permanent Redirect",
+      "followup_review": {
+        "source_id": "claude-blog",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置入口重定向到官方Articles，最新11条按日期从10月14日到10月6日；最新为Agent observability，其次10月13日Uber案例，与既有候选一致。日期为日精度，不虚构小时。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/claude-blog-*.html"
+        ]
+      }
     },
     {
       "source_id": "openai",
       "name": "OpenAI News",
       "core": true,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.090015+00:00",
       "checked_url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 1292 条，带日期 1292 条，最新 2026-10-14T12:00:00+00:00；窗口内 5 条。feed 覆盖多年，窗口内条目全部保留。按 note 页面对脚本 403，未逐篇打开正文。",
+      "evidence": "feed HTTP 200，共 1292 条，带日期 1292 条，最新 2026-10-14T12:00:00+00:00；窗口内 5 条。feed 覆盖多年，窗口内条目全部保留。按 note 页面对脚本 403，未逐篇打开正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Amp puts AI agents to work beyond code with OpenAI models",
@@ -263,17 +327,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 1292 条，带日期 1292 条，最新 2026-10-14T12:00:00+00:00；窗口内 5 条。feed 覆盖多年，窗口内条目全部保留。按 note 页面对脚本 403，未逐篇打开正文。",
+      "increment_check": {
+        "source_id": "openai",
+        "checked_at": "2026-10-14T22:00:25.090015+00:00",
+        "checked_url": "https://openai.com/news/rss.xml",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 1292,
+        "latest": "2026-10-14T12:00:00+00:00",
+        "oldest": "2015-12-11T08:00:00+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "google-ai",
       "name": "Google AI Blog",
       "core": true,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.090366+00:00",
       "checked_url": "https://blog.google/innovation-and-ai/",
       "status": "ok",
-      "evidence": "配置 feed HTTP 200，20 条，最新 2026-10-13T16:00:00+00:00，窗口内 1 条。配置页面 https://blog.google/innovation-and-ai/ 与 /technology/ai/ 共抽出 23 个链接，逐个打开读取 datePublished（分类页无日期）；不在 RSS 中、落在窗口内的另有 6 篇。未读正文。",
+      "evidence": "配置 feed HTTP 200，20 条，最新 2026-10-13T16:00:00+00:00，窗口内 1 条。配置页面 https://blog.google/innovation-and-ai/ 与 /technology/ai/ 共抽出 23 个链接，逐个打开读取 datePublished（分类页无日期）；不在 RSS 中、落在窗口内的另有 6 篇。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Gemini 4 Argon: Built to solve your hardest problems",
@@ -430,17 +513,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "配置 feed HTTP 200，20 条，最新 2026-10-13T16:00:00+00:00，窗口内 1 条。配置页面 https://blog.google/innovation-and-ai/ 与 /technology/ai/ 共抽出 23 个链接，逐个打开读取 datePublished（分类页无日期）；不在 RSS 中、落在窗口内的另有 6 篇。未读正文。",
+      "increment_check": {
+        "source_id": "google-ai",
+        "checked_at": "2026-10-14T22:00:25.090366+00:00",
+        "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-13T16:00:00+00:00",
+        "oldest": "2026-09-01T16:00:00+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "xai",
       "name": "xAI",
       "core": true,
       "method": "browser",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://x.ai/news",
       "status": "ok",
-      "evidence": "静态请求 https://x.ai/news HTTP 200（配置 note 称脚本 403，本次未被拦）。新闻链接去重约 87 条，列表最新日期 Oct 14, 2026；10 月日期出现 4 处，对应 2 张卡片（HTML 与内嵌 RSC 数据各一处）：首屏主卡片「Introducing Grok Voice 3.0」Oct 14, 2026 → /news/grok-voice-3；Product「Introducing The X Subscription」<time dateTime=2026-10-12> → /news/x-subscription。两条都在窗口日历日内，记为候选（首轮计数脚本只认 <time dateTime> 与月份格式，漏算，已逐卡复核）。逐篇打开原文页 HTTP 200，datePublished 分别为 2026-10-14T00:00:00Z 与 2026-10-12T00:00:00Z。其余卡片日期早于窗口。headless Chrome 渲染被 Cloudflare 'Attention Required' 拦截，未得到渲染版。",
+      "evidence": "静态请求 https://x.ai/news HTTP 200（配置 note 称脚本 403，本次未被拦）。新闻链接去重约 87 条，列表最新日期 Oct 14, 2026；10 月日期出现 4 处，对应 2 张卡片（HTML 与内嵌 RSC 数据各一处）：首屏主卡片「Introducing Grok Voice 3.0」Oct 14, 2026 → /news/grok-voice-3；Product「Introducing The X Subscription」<time dateTime=2026-10-12> → /news/x-subscription。两条都在窗口日历日内，记为候选（首轮计数脚本只认 <time dateTime> 与月份格式，漏算，已逐卡复核）。逐篇打开原文页 HTTP 200，datePublished 分别为 2026-10-14T00:00:00Z 与 2026-10-12T00:00:00Z。其余卡片日期早于窗口。headless Chrome 渲染被 Cloudflare 'Attention Required' 拦截，未得到渲染版。；本轮定向补查：脚本两次403后，内部浏览器成功渲染完整News列表：最新Grok Voice 3.0（Oct14）、X Subscription（Oct12），再下为Sep28；全列表下溯到2023。与上游候选一致，复核的是截至06时公开列表，不把网页读取时间当发布日期。",
       "items": [
         {
           "title": "Introducing Grok Voice 3.0",
@@ -485,24 +587,50 @@
           "dedupe_key": "url:https://x.ai/news/x-subscription"
         }
       ],
-      "gaps": [
+      "gaps": [],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "静态请求 https://x.ai/news HTTP 200（配置 note 称脚本 403，本次未被拦）。新闻链接去重约 87 条，列表最新日期 Oct 14, 2026；10 月日期出现 4 处，对应 2 张卡片（HTML 与内嵌 RSC 数据各一处）：首屏主卡片「Introducing Grok Voice 3.0」Oct 14, 2026 → /news/grok-voice-3；Product「Introducing The X Subscription」<time dateTime=2026-10-12> → /news/x-subscription。两条都在窗口日历日内，记为候选（首轮计数脚本只认 <time dateTime> 与月份格式，漏算，已逐卡复核）。逐篇打开原文页 HTTP 200，datePublished 分别为 2026-10-14T00:00:00Z 与 2026-10-12T00:00:00Z。其余卡片日期早于窗口。headless Chrome 渲染被 Cloudflare 'Attention Required' 拦截，未得到渲染版。",
+      "increment_check": {
+        "source_id": "xai",
+        "checked_at": "2026-10-14T22:04:29.968386+00:00",
+        "checked_url": "https://x.ai/news",
+        "status": "failed",
+        "evidence": "HTTP Error 403: Forbidden"
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#xai",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "日期只有日（datePublished 为零点）",
         "headless 渲染被 Cloudflare 拦截，仅静态 HTML",
-        "只读原文标题与描述，未读全文"
+        "只读原文标题与描述，未读全文",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "静态请求 https://x.ai/news HTTP 200（配置 note 称脚本 403，本次未被拦）。新闻链接去重约 87 条，列表最新日期 Oct 14, 2026；10 月日期出现 4 处，对应 2 张卡片（HTML 与内嵌 RSC 数据各一处）：首屏主卡片「Introducing Grok Voice 3.0」Oct 14, 2026 → /news/grok-voice-3；Product「Introducing The X Subscription」<time dateTime=2026-10-12> → /news/x-subscription。两条都在窗口日历日内，记为候选（首轮计数脚本只认 <time dateTime> 与月份格式，漏算，已逐卡复核）。逐篇打开原文页 HTTP 200，datePublished 分别为 2026-10-14T00:00:00Z 与 2026-10-12T00:00:00Z。其余卡片日期早于窗口。headless Chrome 渲染被 Cloudflare 'Attention Required' 拦截，未得到渲染版。；本机增量入口复查：HTTP Error 403: Forbidden",
+      "followup_review": {
+        "source_id": "xai",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "脚本两次403后，内部浏览器成功渲染完整News列表：最新Grok Voice 3.0（Oct14）、X Subscription（Oct12），再下为Sep28；全列表下溯到2023。与上游候选一致，复核的是截至06时公开列表，不把网页读取时间当发布日期。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/xai-*.html"
+        ]
+      }
     },
     {
       "source_id": "deepmind",
       "name": "Google DeepMind",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.090559+00:00",
       "checked_url": "https://deepmind.google/blog/rss.xml",
       "status": "ok",
-      "evidence": "配置 feed 本轮返回未压缩 XML（前几轮为 gzip 体）， 100 条，带日期 100，最新 2026-10-14T02:00:14+00:00，最旧 2025-11-18T16:06:32+00:00，窗口内 4。未改用替代 feed。未读正文。",
+      "evidence": "配置 feed 本轮返回未压缩 XML（前几轮为 gzip 体）， 100 条，带日期 100，最新 2026-10-14T02:00:14+00:00，最旧 2025-11-18T16:06:32+00:00，窗口内 4。未改用替代 feed。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
@@ -594,17 +722,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "配置 feed 本轮返回未压缩 XML（前几轮为 gzip 体）， 100 条，带日期 100，最新 2026-10-14T02:00:14+00:00，最旧 2025-11-18T16:06:32+00:00，窗口内 4。未改用替代 feed。未读正文。",
+      "increment_check": {
+        "source_id": "deepmind",
+        "checked_at": "2026-10-14T22:00:25.090559+00:00",
+        "checked_url": "https://deepmind.google/blog/rss.xml",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 100,
+        "latest": "2026-10-14T02:00:14+00:00",
+        "oldest": "2025-11-18T16:06:32+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "nvidia",
       "name": "NVIDIA Newsroom",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.090690+00:00",
       "checked_url": "https://nvidianews.nvidia.com/releases.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T16:10:00+00:00；窗口内 9 条。未读正文。",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T16:10:00+00:00；窗口内 9 条。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "NVIDIA and Semiconductor Leaders Advance AI Across Chip Design and Manufacturing for AI-Defined Fabs",
@@ -801,17 +948,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T16:10:00+00:00；窗口内 9 条。未读正文。",
+      "increment_check": {
+        "source_id": "nvidia",
+        "checked_at": "2026-10-14T22:00:25.090690+00:00",
+        "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-14T16:10:00+00:00",
+        "oldest": "2026-09-30T17:00:21+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "huggingface",
       "name": "Hugging Face",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.090818+00:00",
       "checked_url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 876 条，带日期 876 条，最新 2026-10-14T16:12:42+00:00；窗口内 2 条。未读正文。 HF 博客含社区/合作方投稿（如 LiquidAI、nvidia 命名空间），作者归属未逐篇核。",
+      "evidence": "feed HTTP 200，共 876 条，带日期 876 条，最新 2026-10-14T16:12:42+00:00；窗口内 2 条。未读正文。 HF 博客含社区/合作方投稿（如 LiquidAI、nvidia 命名空间），作者归属未逐篇核。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost",
@@ -861,17 +1027,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 876 条，带日期 876 条，最新 2026-10-14T16:12:42+00:00；窗口内 2 条。未读正文。 HF 博客含社区/合作方投稿（如 LiquidAI、nvidia 命名空间），作者归属未逐篇核。",
+      "increment_check": {
+        "source_id": "huggingface",
+        "checked_at": "2026-10-14T22:00:25.090818+00:00",
+        "checked_url": "https://huggingface.co/blog/feed.xml",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 876,
+        "latest": "2026-10-14T16:12:42+00:00",
+        "oldest": "2020-02-14T00:00:00+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "cursor",
       "name": "Cursor Changelog",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.090939+00:00",
       "checked_url": "https://cursor.com/changelog/rss.xml",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-10-13T00:00:00+00:00；窗口内 1 条。未读正文。",
+      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-10-13T00:00:00+00:00；窗口内 1 条。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Origin App Marketplace",
@@ -900,17 +1085,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-10-13T00:00:00+00:00；窗口内 1 条。未读正文。",
+      "increment_check": {
+        "source_id": "cursor",
+        "checked_at": "2026-10-14T22:00:25.090939+00:00",
+        "checked_url": "https://cursor.com/changelog/rss.xml",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 50,
+        "latest": "2026-10-13T00:00:00+00:00",
+        "oldest": "2026-03-05T00:00:00+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "microsoft",
       "name": "Microsoft AI",
       "core": false,
       "method": "browser",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://blogs.microsoft.com/ai/",
       "status": "partial",
-      "evidence": "配置 URL https://blogs.microsoft.com/ai/ 跳到 https://news.microsoft.com/source/topics/ai/ ，静态与 headless 渲染都没有列表日期。配置路径 feed https://blogs.microsoft.com/ai/feed/ 返回 HTTP 410 Gone。AI 话题 feed 10 条，最新 2026-10-12T13:14:40+00:00，窗口内 1。另查 Source 全站 feed 10 条（2026-10-10T16:25:21+00:00 至 2026-10-14T18:41:41+00:00），AI 话题 feed 窗口内条目全部保留；Source 全站 feed 窗口内按标题命中 AI/芯片/模型/Azure/Surface 的条目保留；合计 7 条候选。替代 feed 不等于配置入口。",
+      "evidence": "配置 URL https://blogs.microsoft.com/ai/ 跳到 https://news.microsoft.com/source/topics/ai/ ，静态与 headless 渲染都没有列表日期。配置路径 feed https://blogs.microsoft.com/ai/feed/ 返回 HTTP 410 Gone。AI 话题 feed 10 条，最新 2026-10-12T13:14:40+00:00，窗口内 1。另查 Source 全站 feed 10 条（2026-10-10T16:25:21+00:00 至 2026-10-14T18:41:41+00:00），AI 话题 feed 窗口内条目全部保留；Source 全站 feed 窗口内按标题命中 AI/芯片/模型/Azure/Surface 的条目保留；合计 7 条候选。替代 feed 不等于配置入口。；本轮定向补查：本次配置AI入口及两个feed均403；此前浏览器卡片可读但缺列表发布日期、feed仅10条且覆盖不足。保留日期覆盖缺口。",
       "items": [
         {
           "title": "Introducing Microsoft’s latest custom chip: Maia 300",
@@ -1061,63 +1265,179 @@
         }
       ],
       "gaps": [
+        "本次配置AI入口及两个feed均403；此前浏览器卡片可读但缺列表发布日期、feed仅10条且覆盖不足。保留日期覆盖缺口。"
+      ],
+      "check_state": "partially_checked",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "配置 URL https://blogs.microsoft.com/ai/ 跳到 https://news.microsoft.com/source/topics/ai/ ，静态与 headless 渲染都没有列表日期。配置路径 feed https://blogs.microsoft.com/ai/feed/ 返回 HTTP 410 Gone。AI 话题 feed 10 条，最新 2026-10-12T13:14:40+00:00，窗口内 1。另查 Source 全站 feed 10 条（2026-10-10T16:25:21+00:00 至 2026-10-14T18:41:41+00:00），AI 话题 feed 窗口内条目全部保留；Source 全站 feed 窗口内按标题命中 AI/芯片/模型/Azure/Surface 的条目保留；合计 7 条候选。替代 feed 不等于配置入口。",
+      "increment_check": {
+        "source_id": "microsoft",
+        "checked_at": "2026-10-14T22:04:29.968534+00:00",
+        "checked_url": "https://blogs.microsoft.com/ai/",
+        "status": "failed",
+        "evidence": "HTTP Error 403: Forbidden"
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#microsoft",
+      "browser_gap_review": {
+        "source_id": "microsoft",
+        "checked_url": "https://news.microsoft.com/source/topics/ai/",
+        "status": "partial",
+        "checked_at": "2026-10-14T22:15:54.947151+00:00",
+        "method": "in-app browser",
+        "evidence": "脚本403后浏览器可达；看到Maia 300、灾害响应、RetroChimera、Kinaxis供应链与Kier Group等卡片，主列表未显示发布日期，View all另有入口；未把网页200或卡片存在当完整时间窗口扫描。"
+      },
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "配置页无列表日期",
         "配置 feed HTTP 410",
         "AI 话题 feed 与 Source 全站 feed 都只有 10 条，不能证明覆盖完整窗口",
-        "未读正文"
+        "未读正文",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "pre_followup_evidence": "配置 URL https://blogs.microsoft.com/ai/ 跳到 https://news.microsoft.com/source/topics/ai/ ，静态与 headless 渲染都没有列表日期。配置路径 feed https://blogs.microsoft.com/ai/feed/ 返回 HTTP 410 Gone。AI 话题 feed 10 条，最新 2026-10-12T13:14:40+00:00，窗口内 1。另查 Source 全站 feed 10 条（2026-10-10T16:25:21+00:00 至 2026-10-14T18:41:41+00:00），AI 话题 feed 窗口内条目全部保留；Source 全站 feed 窗口内按标题命中 AI/芯片/模型/Azure/Surface 的条目保留；合计 7 条候选。替代 feed 不等于配置入口。；本机增量入口复查：HTTP Error 403: Forbidden；浏览器补查：脚本403后浏览器可达；看到Maia 300、灾害响应、RetroChimera、Kinaxis供应链与Kier Group等卡片，主列表未显示发布日期，View all另有入口；未把网页200或卡片存在当完整时间窗口扫描。",
+      "followup_review": {
+        "source_id": "microsoft",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "partial",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "本次配置AI入口及两个feed均403；此前浏览器卡片可读但缺列表发布日期、feed仅10条且覆盖不足。保留日期覆盖缺口。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/microsoft-*.html"
+        ]
+      }
     },
     {
       "source_id": "qwen",
       "name": "Qwen",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://qwenlm.github.io/",
       "status": "partial",
-      "evidence": "配置 URL https://qwenlm.github.io/ 仍是旧 GitHub 博客，页面日期最新 2025-09-23，不能据此判断无更新。另查现行入口 https://qwen.ai/research：headless Chrome 渲染，可见日期 ['2026/09/03', '2026/09/18', '2026/09/20']，窗口日历日内 0 个；只看了渲染首屏，未点分页/筛选。page_config 接口 {'qwen_research_research-list': (60, '2025-12-23T05:08:30.000Z'), 'qwen_home_feature-list': (6, '2025-03-28T00:00:04.000Z'), 'qwen_home_latest-research-list': (19, '2025-09-24T04:00:00.000Z'), 'qwen_research_latest-advancements-list': (19, '2025-09-24T04:00:00.000Z'), 'qwen_news_news-list': (17, '2025-04-28T20:00:00.000Z')}；/api/v2/article/retrieval 返回空数组。补充（不在配置）：Hugging Face Qwen 组织按 createdAt 列模型，窗口内新建 0 个（无），作为线索候选；GitHub QwenLM 组织最近 push 仅作参考，未逐仓库查 release。未改 config。",
+      "evidence": "配置 URL https://qwenlm.github.io/ 仍是旧 GitHub 博客，页面日期最新 2025-09-23，不能据此判断无更新。另查现行入口 https://qwen.ai/research：headless Chrome 渲染，可见日期 ['2026/09/03', '2026/09/18', '2026/09/20']，窗口日历日内 0 个；只看了渲染首屏，未点分页/筛选。page_config 接口 {'qwen_research_research-list': (60, '2025-12-23T05:08:30.000Z'), 'qwen_home_feature-list': (6, '2025-03-28T00:00:04.000Z'), 'qwen_home_latest-research-list': (19, '2025-09-24T04:00:00.000Z'), 'qwen_research_latest-advancements-list': (19, '2025-09-24T04:00:00.000Z'), 'qwen_news_news-list': (17, '2025-04-28T20:00:00.000Z')}；/api/v2/article/retrieval 返回空数组。补充（不在配置）：Hugging Face Qwen 组织按 createdAt 列模型，窗口内新建 0 个（无），作为线索候选；GitHub QwenLM 组织最近 push 仅作参考，未逐仓库查 release。未改 config。；本轮定向补查：再次在现行官方qwen.ai/research读取最新进展，研究索引点击加载更多，10条日期由2026/09/20延伸至06/15，排序菜单为最新优先。旧配置入口仍不一致；未检查其余发布渠道，不扩称全渠道无新增。",
       "items": [],
       "gaps": [
+        "再次在现行官方qwen.ai/research读取最新进展，研究索引点击加载更多，10条日期由2026/09/20延伸至06/15，排序菜单为最新优先。旧配置入口仍不一致；未检查其余发布渠道，不扩称全渠道无新增。"
+      ],
+      "check_state": "partially_checked",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "配置 URL https://qwenlm.github.io/ 仍是旧 GitHub 博客，页面日期最新 2025-09-23，不能据此判断无更新。另查现行入口 https://qwen.ai/research：headless Chrome 渲染，可见日期 ['2026/09/03', '2026/09/18', '2026/09/20']，窗口日历日内 0 个；只看了渲染首屏，未点分页/筛选。page_config 接口 {'qwen_research_research-list': (60, '2025-12-23T05:08:30.000Z'), 'qwen_home_feature-list': (6, '2025-03-28T00:00:04.000Z'), 'qwen_home_latest-research-list': (19, '2025-09-24T04:00:00.000Z'), 'qwen_research_latest-advancements-list': (19, '2025-09-24T04:00:00.000Z'), 'qwen_news_news-list': (17, '2025-04-28T20:00:00.000Z')}；/api/v2/article/retrieval 返回空数组。补充（不在配置）：Hugging Face Qwen 组织按 createdAt 列模型，窗口内新建 0 个（无），作为线索候选；GitHub QwenLM 组织最近 push 仅作参考，未逐仓库查 release。未改 config。",
+      "increment_check": {
+        "source_id": "qwen",
+        "checked_at": "2026-10-14T22:04:29.968658+00:00",
+        "checked_url": "https://qwenlm.github.io/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://qwenlm.github.io/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#qwen",
+      "browser_gap_review": {
+        "source_id": "qwen",
+        "checked_url": "https://qwen.ai/research",
+        "status": "partial",
+        "checked_at": "2026-10-14T22:15:54.947151+00:00",
+        "method": "in-app browser",
+        "evidence": "动态最新进展与研究索引已读，点击加载更多后按可见日期从2026/09/20延伸到2026/06/15；无窗口日期候选。未将旧配置站与现行站首屏等同全部入口覆盖，保留partial。",
+        "visible_titles": [
+          "Qwen-Image-2.1",
+          "Qwen3.8-LiveTranslate",
+          "Qwen3.8-Omni-Flash",
+          "E-Commerce Bench",
+          "Qwen-Drive-1.0",
+          "Qwen3.8-Flash-Next",
+          "Qwen3.8-Max",
+          "Qwen-Image-3.0",
+          "Qwen-AgentWorld",
+          "Qwen-Robot Suite"
+        ]
+      },
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "配置入口为旧站，与现行官方入口不一致",
         "qwen.ai/research 只看渲染首屏，未翻页",
         "HF 模型创建时间不是公告时间；ModelScope/公众号未查",
-        "未改 config/sources.json"
+        "未改 config/sources.json",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "pre_followup_evidence": "配置 URL https://qwenlm.github.io/ 仍是旧 GitHub 博客，页面日期最新 2025-09-23，不能据此判断无更新。另查现行入口 https://qwen.ai/research：headless Chrome 渲染，可见日期 ['2026/09/03', '2026/09/18', '2026/09/20']，窗口日历日内 0 个；只看了渲染首屏，未点分页/筛选。page_config 接口 {'qwen_research_research-list': (60, '2025-12-23T05:08:30.000Z'), 'qwen_home_feature-list': (6, '2025-03-28T00:00:04.000Z'), 'qwen_home_latest-research-list': (19, '2025-09-24T04:00:00.000Z'), 'qwen_research_latest-advancements-list': (19, '2025-09-24T04:00:00.000Z'), 'qwen_news_news-list': (17, '2025-04-28T20:00:00.000Z')}；/api/v2/article/retrieval 返回空数组。补充（不在配置）：Hugging Face Qwen 组织按 createdAt 列模型，窗口内新建 0 个（无），作为线索候选；GitHub QwenLM 组织最近 push 仅作参考，未逐仓库查 release。未改 config。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.；浏览器补查：动态最新进展与研究索引已读，点击加载更多后按可见日期从2026/09/20延伸到2026/06/15；无窗口日期候选。未将旧配置站与现行站首屏等同全部入口覆盖，保留partial。",
+      "followup_review": {
+        "source_id": "qwen",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "partial",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "再次在现行官方qwen.ai/research读取最新进展，研究索引点击加载更多，10条日期由2026/09/20延伸至06/15，排序菜单为最新优先。旧配置入口仍不一致；未检查其余发布渠道，不扩称全渠道无新增。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/qwen-*.html"
+        ]
+      }
     },
     {
       "source_id": "tongyi",
       "name": "通义实验室",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://qianwen.aliyun.com/",
       "status": "ok",
-      "evidence": "配置 https://qianwen.aliyun.com/ 静态 HTML HTTP 200（约 357KB），headless Chrome 渲染后是千问 AI 平台权益/促销页，本身没有新闻流和发布日期。顺着页面链接逐栏检查（本轮重新渲染）：①新闻栏 https://www.qianwenai.com/news 显示“全部(14)”（模型发布 4、产品更新 2、权益 3、活动 5），14 条卡片都有绝对日期，最新 2026-08-27「QwenCloud 亮相 Qwen Conference Hongkong 2026」，其次 2026-08-26 Qwen3.8-Flash、2026-08-12 千问 AI Arena、2026-08-07 黑客松、2026-08-05 Qwen-Image-3.0-Pro；②发布日历 https://platform.qianwenai.com/changelog 按日列条目，最新 2026-09-21「优化记忆库管理页 / 展示记忆库用量详情」。两处都没有窗口内条目，窗口内 0 条。",
+      "evidence": "配置 https://qianwen.aliyun.com/ 静态 HTML HTTP 200（约 357KB），headless Chrome 渲染后是千问 AI 平台权益/促销页，本身没有新闻流和发布日期。顺着页面链接逐栏检查（本轮重新渲染）：①新闻栏 https://www.qianwenai.com/news 显示“全部(14)”（模型发布 4、产品更新 2、权益 3、活动 5），14 条卡片都有绝对日期，最新 2026-08-27「QwenCloud 亮相 Qwen Conference Hongkong 2026」，其次 2026-08-26 Qwen3.8-Flash、2026-08-12 千问 AI Arena、2026-08-07 黑客松、2026-08-05 Qwen-Image-3.0-Pro；②发布日历 https://platform.qianwenai.com/changelog 按日列条目，最新 2026-09-21「优化记忆库管理页 / 展示记忆库用量详情」。两处都没有窗口内条目，窗口内 0 条。；本轮定向补查：首页和新闻页均取得；官方新闻页14条全量按时间列出，最新2026-08-27。源码2026-10-13/12字符串不是这些卡片的公告日期，未据此虚构新闻。",
       "items": [],
-      "gaps": [
+      "gaps": [],
+      "check_state": "fully_checked_no_new_items",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "配置 https://qianwen.aliyun.com/ 静态 HTML HTTP 200（约 357KB），headless Chrome 渲染后是千问 AI 平台权益/促销页，本身没有新闻流和发布日期。顺着页面链接逐栏检查（本轮重新渲染）：①新闻栏 https://www.qianwenai.com/news 显示“全部(14)”（模型发布 4、产品更新 2、权益 3、活动 5），14 条卡片都有绝对日期，最新 2026-08-27「QwenCloud 亮相 Qwen Conference Hongkong 2026」，其次 2026-08-26 Qwen3.8-Flash、2026-08-12 千问 AI Arena、2026-08-07 黑客松、2026-08-05 Qwen-Image-3.0-Pro；②发布日历 https://platform.qianwenai.com/changelog 按日列条目，最新 2026-09-21「优化记忆库管理页 / 展示记忆库用量详情」。两处都没有窗口内条目，窗口内 0 条。",
+      "increment_check": {
+        "source_id": "tongyi",
+        "checked_at": "2026-10-14T22:04:29.968779+00:00",
+        "checked_url": "https://qianwen.aliyun.com/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://qianwen.aliyun.com/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#tongyi",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "配置首页为权益页，新闻实际在 qianwenai.com/news 与发布日历，未改 config",
         "未查公众号与阿里云官网新闻",
-        "未读正文"
+        "未读正文",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "pre_followup_evidence": "配置 https://qianwen.aliyun.com/ 静态 HTML HTTP 200（约 357KB），headless Chrome 渲染后是千问 AI 平台权益/促销页，本身没有新闻流和发布日期。顺着页面链接逐栏检查（本轮重新渲染）：①新闻栏 https://www.qianwenai.com/news 显示“全部(14)”（模型发布 4、产品更新 2、权益 3、活动 5），14 条卡片都有绝对日期，最新 2026-08-27「QwenCloud 亮相 Qwen Conference Hongkong 2026」，其次 2026-08-26 Qwen3.8-Flash、2026-08-12 千问 AI Arena、2026-08-07 黑客松、2026-08-05 Qwen-Image-3.0-Pro；②发布日历 https://platform.qianwenai.com/changelog 按日列条目，最新 2026-09-21「优化记忆库管理页 / 展示记忆库用量详情」。两处都没有窗口内条目，窗口内 0 条。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "tongyi",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "首页和新闻页均取得；官方新闻页14条全量按时间列出，最新2026-08-27。源码2026-10-13/12字符串不是这些卡片的公告日期，未据此虚构新闻。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/tongyi-*.html"
+        ]
+      }
     },
     {
       "source_id": "deepseek",
       "name": "DeepSeek",
       "core": false,
       "method": "browser",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://api-docs.deepseek.com/updates",
       "status": "ok",
-      "evidence": "逐入口检查：API updates 页日期 ['2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10']；官网 /en/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']、/zh/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']；additional_urls harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04']（页面内 Next.js 'now' 渲染时间 ['2026-10-08'] 不是发布日期，已剔除）。页面窗口日历日内日期 0 个。additional_urls GitHub org deepseek-ai 经 api.github.com 列出 44 个仓库，窗口内 push 5（deepseek-ai/deepseek-harness, deepseek-ai/DeepGEMM-Ascend, deepseek-ai/TileKernels, deepseek-ai/DeepGEMM, deepseek-ai/dsh-node-addon-require-builtin）、新建 0；对窗口内有 push 的仓库查 releases，窗口内发布 1 个，记为候选。commit 不是公告。",
+      "evidence": "逐入口检查：API updates 页日期 ['2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10']；官网 /en/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']、/zh/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']；additional_urls harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04']（页面内 Next.js 'now' 渲染时间 ['2026-10-08'] 不是发布日期，已剔除）。页面窗口日历日内日期 0 个。additional_urls GitHub org deepseek-ai 经 api.github.com 列出 44 个仓库，窗口内 push 5（deepseek-ai/deepseek-harness, deepseek-ai/DeepGEMM-Ascend, deepseek-ai/TileKernels, deepseek-ai/DeepGEMM, deepseek-ai/dsh-node-addon-require-builtin）、新建 0；对窗口内有 push 的仓库查 releases，窗口内发布 1 个，记为候选。commit 不是公告。；本轮定向补查：API更新、Harness/News页面及GitHub组织44仓库均复查；窗口内有push的5仓库逐一取releases（均200），仅Harness dsh-v0.2.1-alpha.3于10月14日13:32:15Z发布，与上游一致。普通push不是新发布。",
       "items": [
         {
           "title": "deepseek-ai/deepseek-harness v0.2.1-alpha.3",
@@ -1142,97 +1462,252 @@
           "dedupe_key": "url:https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-alpha.3"
         }
       ],
-      "gaps": [
+      "gaps": [],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "逐入口检查：API updates 页日期 ['2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10']；官网 /en/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']、/zh/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']；additional_urls harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04']（页面内 Next.js 'now' 渲染时间 ['2026-10-08'] 不是发布日期，已剔除）。页面窗口日历日内日期 0 个。additional_urls GitHub org deepseek-ai 经 api.github.com 列出 44 个仓库，窗口内 push 5（deepseek-ai/deepseek-harness, deepseek-ai/DeepGEMM-Ascend, deepseek-ai/TileKernels, deepseek-ai/DeepGEMM, deepseek-ai/dsh-node-addon-require-builtin）、新建 0；对窗口内有 push 的仓库查 releases，窗口内发布 1 个，记为候选。commit 不是公告。",
+      "increment_check": {
+        "source_id": "deepseek",
+        "checked_at": "2026-10-14T22:04:30.499376+00:00",
+        "checked_url": "https://api-docs.deepseek.com/updates",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://api-docs.deepseek.com/updates/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#deepseek",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "未读 API changelog 全文",
         "release 未读正文",
-        "push 无 release 的仓库未逐条看 commit"
+        "push 无 release 的仓库未逐条看 commit",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "逐入口检查：API updates 页日期 ['2026-07-24', '2026-07-31', '2026-08-13', '2026-08-21', '2026-09-10']；官网 /en/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']、/zh/news 日期 ['2025-09-29', '2025-12-01', '2026-04-24', '2026-09-10']；additional_urls harness 页日期 ['2026-08-12', '2026-09-01', '2026-09-04']（页面内 Next.js 'now' 渲染时间 ['2026-10-08'] 不是发布日期，已剔除）。页面窗口日历日内日期 0 个。additional_urls GitHub org deepseek-ai 经 api.github.com 列出 44 个仓库，窗口内 push 5（deepseek-ai/deepseek-harness, deepseek-ai/DeepGEMM-Ascend, deepseek-ai/TileKernels, deepseek-ai/DeepGEMM, deepseek-ai/dsh-node-addon-require-builtin）、新建 0；对窗口内有 push 的仓库查 releases，窗口内发布 1 个，记为候选。commit 不是公告。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "deepseek",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "API更新、Harness/News页面及GitHub组织44仓库均复查；窗口内有push的5仓库逐一取releases（均200），仅Harness dsh-v0.2.1-alpha.3于10月14日13:32:15Z发布，与上游一致。普通push不是新发布。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/deepseek-*.html"
+        ]
+      }
     },
     {
       "source_id": "moonshot",
       "name": "月之暗面 Moonshot",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.moonshot.cn/",
       "status": "ok",
-      "evidence": "月之暗面首页日期最新 2026-07-17；Kimi 博客（https://www.kimi.com/blog/ 跳到 https://www.kimi.ai/blog/）日期最新 2026-07-31。窗口日历日内日期 无。未逐篇打开博客正文。",
+      "evidence": "月之暗面首页日期最新 2026-07-17；Kimi 博客（https://www.kimi.com/blog/ 跳到 https://www.kimi.ai/blog/）日期最新 2026-07-31。窗口日历日内日期 无。未逐篇打开博客正文。；本轮定向补查：配置首页及官方Kimi博客日期卡片复查，最新可见发布日期7月31日，既有上游入口检查复用，末小时未见额外公告。仅指这些入口。",
       "items": [],
-      "gaps": [
+      "gaps": [],
+      "check_state": "fully_checked_no_new_items",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "月之暗面首页日期最新 2026-07-17；Kimi 博客（https://www.kimi.com/blog/ 跳到 https://www.kimi.ai/blog/）日期最新 2026-07-31。窗口日历日内日期 无。未逐篇打开博客正文。",
+      "increment_check": {
+        "source_id": "moonshot",
+        "checked_at": "2026-10-14T22:04:30.502705+00:00",
+        "checked_url": "https://www.moonshot.cn/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.moonshot.cn/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#moonshot",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "未逐篇打开博客正文",
         "首页未必列出所有产品更新",
-        "未查 GitHub/HF"
+        "未查 GitHub/HF",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "pre_followup_evidence": "月之暗面首页日期最新 2026-07-17；Kimi 博客（https://www.kimi.com/blog/ 跳到 https://www.kimi.ai/blog/）日期最新 2026-07-31。窗口日历日内日期 无。未逐篇打开博客正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "moonshot",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置首页及官方Kimi博客日期卡片复查，最新可见发布日期7月31日，既有上游入口检查复用，末小时未见额外公告。仅指这些入口。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/moonshot-*.html"
+        ]
+      }
     },
     {
       "source_id": "zhipu",
       "name": "智谱 Z.ai",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.zhipuai.cn/news",
       "status": "ok",
-      "evidence": "配置 https://www.zhipuai.cn/news 与 /zh/news HTTP 200（/zh/news 首次 urllib SSL EOF，curl 重试成功），新闻日期最新 2026-09-10；/zh/research 日期最新 2026/08/26。窗口日历日内日期 无。未读正文；模型导航时间不当发布日。",
+      "evidence": "配置 https://www.zhipuai.cn/news 与 /zh/news HTTP 200（/zh/news 首次 urllib SSL EOF，curl 重试成功），新闻日期最新 2026-09-10；/zh/research 日期最新 2026/08/26。窗口日历日内日期 无。未读正文；模型导航时间不当发布日。；本轮定向补查：配置/news、/zh/news和/zh/research均取得并核对带日期的列表，最新为9月10日，未将首页渲染日期当文章发表时间。",
       "items": [],
-      "gaps": [
-        "未读新闻与论文正文",
-        "未检查 z.ai 英文站与 GitHub/HF 发布"
-      ],
+      "gaps": [],
       "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "配置 https://www.zhipuai.cn/news 与 /zh/news HTTP 200（/zh/news 首次 urllib SSL EOF，curl 重试成功），新闻日期最新 2026-09-10；/zh/research 日期最新 2026/08/26。窗口日历日内日期 无。未读正文；模型导航时间不当发布日。",
+      "increment_check": {
+        "source_id": "zhipu",
+        "checked_at": "2026-10-14T22:04:30.532813+00:00",
+        "checked_url": "https://www.zhipuai.cn/news",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.zhipuai.cn/news",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#zhipu",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "未读新闻与论文正文",
+        "未检查 z.ai 英文站与 GitHub/HF 发布",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "配置 https://www.zhipuai.cn/news 与 /zh/news HTTP 200（/zh/news 首次 urllib SSL EOF，curl 重试成功），新闻日期最新 2026-09-10；/zh/research 日期最新 2026/08/26。窗口日历日内日期 无。未读正文；模型导航时间不当发布日。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "zhipu",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置/news、/zh/news和/zh/research均取得并核对带日期的列表，最新为9月10日，未将首页渲染日期当文章发表时间。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/zhipu-*.html"
+        ]
+      }
     },
     {
       "source_id": "stepfun",
       "name": "阶跃星辰 StepFun",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.stepfun.com/",
       "status": "partial",
-      "evidence": "静态 HTML 约 2KB 是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3 系列，以及 'Step 5 Preview Open source release in 364 DAYS' 倒计时（10-08 收据记 06 DAYS，10-10 与 10-11 收据都记 04 DAYS，10-12 收据记 02 DAYS，10-13 收据记 01 DAYS，10-14 收据记 00 DAYS，本轮为 364 DAYS：倒计时曾停住又前进，目标时间可能被改动，不能当发布时间；本轮倒计时从 00 跳回 364 DAYS，像是目标时间被重置为一年后；另查 Hugging Face stepfun-ai 组织（按 createdAt 最新为 2026-05-28 Step-3.7-Flash-GGUF，无 Step 5 相关仓库）与 GitHub stepfun-ai 组织（窗口内有 push 的 Step-Code、Step-Cookbook 均无 release），未见 Step 5 Preview 开源发布，未发生的事不记候选），无绝对发布日、无独立新闻流。不把产品名或倒计时当作发布时间。窗口内 0 条。",
+      "evidence": "静态 HTML 约 2KB 是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3 系列，以及 'Step 5 Preview Open source release in 364 DAYS' 倒计时（10-08 收据记 06 DAYS，10-10 与 10-11 收据都记 04 DAYS，10-12 收据记 02 DAYS，10-13 收据记 01 DAYS，10-14 收据记 00 DAYS，本轮为 364 DAYS：倒计时曾停住又前进，目标时间可能被改动，不能当发布时间；本轮倒计时从 00 跳回 364 DAYS，像是目标时间被重置为一年后；另查 Hugging Face stepfun-ai 组织（按 createdAt 最新为 2026-05-28 Step-3.7-Flash-GGUF，无 Step 5 相关仓库）与 GitHub stepfun-ai 组织（窗口内有 push 的 Step-Code、Step-Cookbook 均无 release），未见 Step 5 Preview 开源发布，未发生的事不记候选），无绝对发布日、无独立新闻流。不把产品名或倒计时当作发布时间。窗口内 0 条。；本轮定向补查：配置首页取得；此前浏览器已检查Step5等产品，无独立日期新闻流；倒计时与上游不一致，不能推断绝对开源时间。保留窗口日期缺口。",
       "items": [],
       "gaps": [
-        "无独立新闻流与绝对日期",
-        "未把开源倒计时当成已发布",
-        "已查 HF/GitHub stepfun-ai 组织，未查公众号与中文站新闻"
+        "配置首页取得；此前浏览器已检查Step5等产品，无独立日期新闻流；倒计时与上游不一致，不能推断绝对开源时间。保留窗口日期缺口。"
       ],
       "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "静态 HTML 约 2KB 是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3 系列，以及 'Step 5 Preview Open source release in 364 DAYS' 倒计时（10-08 收据记 06 DAYS，10-10 与 10-11 收据都记 04 DAYS，10-12 收据记 02 DAYS，10-13 收据记 01 DAYS，10-14 收据记 00 DAYS，本轮为 364 DAYS：倒计时曾停住又前进，目标时间可能被改动，不能当发布时间；本轮倒计时从 00 跳回 364 DAYS，像是目标时间被重置为一年后；另查 Hugging Face stepfun-ai 组织（按 createdAt 最新为 2026-05-28 Step-3.7-Flash-GGUF，无 Step 5 相关仓库）与 GitHub stepfun-ai 组织（窗口内有 push 的 Step-Code、Step-Cookbook 均无 release），未见 Step 5 Preview 开源发布，未发生的事不记候选），无绝对发布日、无独立新闻流。不把产品名或倒计时当作发布时间。窗口内 0 条。",
+      "increment_check": {
+        "source_id": "stepfun",
+        "checked_at": "2026-10-14T22:04:30.563061+00:00",
+        "checked_url": "https://www.stepfun.com/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.stepfun.com/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#stepfun",
+      "browser_gap_review": {
+        "source_id": "stepfun",
+        "checked_url": "https://www.stepfun.com/",
+        "status": "partial",
+        "checked_at": "2026-10-14T22:15:54.947151+00:00",
+        "method": "in-app browser",
+        "evidence": "完整渲染首页列Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3系列；Step 5开源倒计时显示00天08时45分，与上游headless的364天不一致，均不当绝对发布日期。没有带日期的新闻流，不能判定窗口无新增。"
+      },
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "无独立新闻流与绝对日期",
+        "未把开源倒计时当成已发布",
+        "已查 HF/GitHub stepfun-ai 组织，未查公众号与中文站新闻",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "静态 HTML 约 2KB 是前端壳。headless Chrome 渲染 https://www.stepfun.com/ 看到 Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3 系列，以及 'Step 5 Preview Open source release in 364 DAYS' 倒计时（10-08 收据记 06 DAYS，10-10 与 10-11 收据都记 04 DAYS，10-12 收据记 02 DAYS，10-13 收据记 01 DAYS，10-14 收据记 00 DAYS，本轮为 364 DAYS：倒计时曾停住又前进，目标时间可能被改动，不能当发布时间；本轮倒计时从 00 跳回 364 DAYS，像是目标时间被重置为一年后；另查 Hugging Face stepfun-ai 组织（按 createdAt 最新为 2026-05-28 Step-3.7-Flash-GGUF，无 Step 5 相关仓库）与 GitHub stepfun-ai 组织（窗口内有 push 的 Step-Code、Step-Cookbook 均无 release），未见 Step 5 Preview 开源发布，未发生的事不记候选），无绝对发布日、无独立新闻流。不把产品名或倒计时当作发布时间。窗口内 0 条。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.；浏览器补查：完整渲染首页列Step 5 Preview、Step 3.7 Flash、Step 3.5 Flash、StepAudio 3系列；Step 5开源倒计时显示00天08时45分，与上游headless的364天不一致，均不当绝对发布日期。没有带日期的新闻流，不能判定窗口无新增。",
+      "followup_review": {
+        "source_id": "stepfun",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "partial",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置首页取得；此前浏览器已检查Step5等产品，无独立日期新闻流；倒计时与上游不一致，不能推断绝对开源时间。保留窗口日期缺口。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/stepfun-*.html"
+        ]
+      }
     },
     {
       "source_id": "mistral",
       "name": "Mistral",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://mistral.ai/news",
       "status": "ok",
-      "evidence": "配置新闻页卡片只有日期、链接配对不稳；改用页面内同站 /news/rss，RSS 89 条，最新 2026-10-06T12:00:27+00:00，最旧 2023-09-27T08:00:00+00:00，窗口内 0 条。未读正文。",
+      "evidence": "配置新闻页卡片只有日期、链接配对不稳；改用页面内同站 /news/rss，RSS 89 条，最新 2026-10-06T12:00:27+00:00，最旧 2023-09-27T08:00:00+00:00，窗口内 0 条。未读正文。；本轮定向补查：配置新闻页及官方news/rss完整取回，RSS89条最新10月6日，覆盖末小时及72小时窗口，无新增公开条目。",
       "items": [],
-      "gaps": [
-        "未读正文"
-      ],
+      "gaps": [],
       "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "配置新闻页卡片只有日期、链接配对不稳；改用页面内同站 /news/rss，RSS 89 条，最新 2026-10-06T12:00:27+00:00，最旧 2023-09-27T08:00:00+00:00，窗口内 0 条。未读正文。",
+      "increment_check": {
+        "source_id": "mistral",
+        "checked_at": "2026-10-14T22:04:30.681887+00:00",
+        "checked_url": "https://mistral.ai/news",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://mistral.ai/news/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#mistral",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "未读正文",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "配置新闻页卡片只有日期、链接配对不稳；改用页面内同站 /news/rss，RSS 89 条，最新 2026-10-06T12:00:27+00:00，最旧 2023-09-27T08:00:00+00:00，窗口内 0 条。未读正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "mistral",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置新闻页及官方news/rss完整取回，RSS89条最新10月6日，覆盖末小时及72小时窗口，无新增公开条目。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/mistral-*.html"
+        ]
+      }
     },
     {
       "source_id": "eu-digital",
       "name": "European Commission Digital Strategy",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
       "status": "ok",
-      "evidence": "新闻列表 content-block 配对标题与日期，窗口日历日内 6 条。栏目不只有人工智能。未读正文。",
+      "evidence": "新闻列表 content-block 配对标题与日期，窗口日历日内 6 条。栏目不只有人工智能。未读正文。；本轮定向补查：News&Views最新页10条，首三条14October2026，次两条13日、再12日，后续9/6/5日；与上游窗口候选一致，旧条目已越过窗口起点。日精度不伪造小时。",
       "items": [
         {
           "title": "Digital Talent EU Days 2026: Building the skills for Europe's digital future",
@@ -1361,42 +1836,102 @@
           "dedupe_key": "url:https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel"
         }
       ],
-      "gaps": [
+      "gaps": [],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "新闻列表 content-block 配对标题与日期，窗口日历日内 6 条。栏目不只有人工智能。未读正文。",
+      "increment_check": {
+        "source_id": "eu-digital",
+        "checked_at": "2026-10-14T22:04:30.683091+00:00",
+        "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://digital-strategy.ec.europa.eu/en/news",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#eu-digital",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "日精度，无时分",
         "未读正文",
-        "栏目不只有 AI，非 AI 标题未删除，留给下游"
+        "栏目不只有 AI，非 AI 标题未删除，留给下游",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "新闻列表 content-block 配对标题与日期，窗口日历日内 6 条。栏目不只有人工智能。未读正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "eu-digital",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "News&Views最新页10条，首三条14October2026，次两条13日、再12日，后续9/6/5日；与上游窗口候选一致，旧条目已越过窗口起点。日精度不伪造小时。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/eu-digital-*.html"
+        ]
+      }
     },
     {
       "source_id": "unesco",
       "name": "UNESCO AI",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.unesco.org/en/artificial-intelligence",
-      "status": "ok",
-      "evidence": "UNESCO AI 页 data-date ['2026-10-02T17:59:39Z', '2026-09-28T22:27:24Z', '2026-09-28T16:16:48Z', '2026-09-25T16:44:44Z']，窗口内 0。页面上其他日期数字（如活动日期）没有对应 data-date 文章，不当新闻。未读正文。",
+      "status": "partial",
+      "evidence": "UNESCO AI 页 data-date ['2026-10-02T17:59:39Z', '2026-09-28T22:27:24Z', '2026-09-28T16:16:48Z', '2026-09-25T16:44:44Z']，窗口内 0。页面上其他日期数字（如活动日期）没有对应 data-date 文章，不当新闻。未读正文。；本轮定向补查：HTTP200实际内容是JavaScript/人机验证页，不是新闻列表；没有绕过验证码，保留不可核覆盖。",
       "items": [],
       "gaps": [
-        "未读正文",
-        "页面只列最新若干条 data-date"
+        "HTTP200实际内容是JavaScript/人机验证页，不是新闻列表；没有绕过验证码，保留不可核覆盖。"
       ],
       "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "UNESCO AI 页 data-date ['2026-10-02T17:59:39Z', '2026-09-28T22:27:24Z', '2026-09-28T16:16:48Z', '2026-09-25T16:44:44Z']，窗口内 0。页面上其他日期数字（如活动日期）没有对应 data-date 文章，不当新闻。未读正文。",
+      "increment_check": {
+        "source_id": "unesco",
+        "checked_at": "2026-10-14T22:04:30.769859+00:00",
+        "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.unesco.org/en/artificial-intelligence",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#unesco",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "未读正文",
+        "页面只列最新若干条 data-date",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "UNESCO AI 页 data-date ['2026-10-02T17:59:39Z', '2026-09-28T22:27:24Z', '2026-09-28T16:16:48Z', '2026-09-25T16:44:44Z']，窗口内 0。页面上其他日期数字（如活动日期）没有对应 data-date 文章，不当新闻。未读正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "unesco",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "partial",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "HTTP200实际内容是JavaScript/人机验证页，不是新闻列表；没有绕过验证码，保留不可核覆盖。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/unesco-*.html"
+        ]
+      }
     },
     {
       "source_id": "oecd",
       "name": "OECD.AI",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://oecd.ai/en/wonk",
       "status": "ok",
-      "evidence": "Wonk 页 ng-state 文章去重 16 篇，date_gmt 最新 2026-10-12T09:54:10+00:00，窗口内 1。页面上其他 2026-10 数字不是文章 date_gmt。未读正文。",
+      "evidence": "Wonk 页 ng-state 文章去重 16 篇，date_gmt 最新 2026-10-12T09:54:10+00:00，窗口内 1。页面上其他 2026-10 数字不是文章 date_gmt。未读正文。；本轮定向补查：AI Wonk最新列表12条按日期从2026-10-12至5月；内嵌date_gmt最新10月12日09:54:10，modified日期不作发表。当前列表覆盖末小时及窗口，与上游一致。",
       "items": [
         {
           "title": "Investors matter for the future of trustworthy AI. Are they ready?",
@@ -1420,23 +1955,57 @@
           "dedupe_key": "url:https://wp.oecd.ai/investors-matter-for-the-future-of-trustworthy-ai-are-they-ready"
         }
       ],
-      "gaps": [
-        "内嵌 JSON 若不是全站，未注入首页的新文看不到",
-        "未读正文"
-      ],
+      "gaps": [],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "Wonk 页 ng-state 文章去重 16 篇，date_gmt 最新 2026-10-12T09:54:10+00:00，窗口内 1。页面上其他 2026-10 数字不是文章 date_gmt。未读正文。",
+      "increment_check": {
+        "source_id": "oecd",
+        "checked_at": "2026-10-14T22:04:30.844130+00:00",
+        "checked_url": "https://oecd.ai/en/wonk",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://oecd.ai/en/wonk",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": [
+          "2026-10-05",
+          "2026-10-07",
+          "2026-10-12",
+          "2026-10-13"
+        ]
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#oecd",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "内嵌 JSON 若不是全站，未注入首页的新文看不到",
+        "未读正文",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "Wonk 页 ng-state 文章去重 16 篇，date_gmt 最新 2026-10-12T09:54:10+00:00，窗口内 1。页面上其他 2026-10 数字不是文章 date_gmt。未读正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "oecd",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "AI Wonk最新列表12条按日期从2026-10-12至5月；内嵌date_gmt最新10月12日09:54:10，modified日期不作发表。当前列表覆盖末小时及窗口，与上游一致。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/oecd-*.html"
+        ]
+      }
     },
     {
       "source_id": "arxiv",
       "name": "arXiv cs.AI / cs.LG / cs.CL",
       "core": true,
       "method": "api",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://export.arxiv.org/api/query",
       "status": "ok",
-      "evidence": "arXiv API 按 submittedDate 倒序检查 cat:cs.AI OR cs.LG OR cs.CL，每页 200 条翻 5 页，直到 published 早于窗口起点。窗口内首次发表 973 篇（published 落在 2026-10-11T21:00:00Z–2026-10-14T21:00:00Z，按去版本号 arXiv ID 去重）。API 可见最新 published 为 2026-10-13T17:59:57+00:00：此后提交的论文要到下一次 arXiv 公告才出现在 API，本轮看不到，这是公告节奏造成的覆盖边界，不是无新论文。published 不等于公告时间。摘要未保存、未读全文。翻页日志：['0 200 2026-10-13T17:59:57Z 2026-10-13T12:29:13Z', '200 200 2026-10-13T12:28:53Z 2026-10-13T04:34:41Z', '400 200 2026-10-13T04:34:39Z 2026-10-12T16:57:15Z', '600 200 2026-10-12T16:55:58Z 2026-10-12T09:22:29Z', '800 200 2026-10-12T09:21:45Z 2026-10-11T18:39:49Z', 'AXDONE']",
+      "evidence": "arXiv API 按 submittedDate 倒序检查 cat:cs.AI OR cs.LG OR cs.CL，每页 200 条翻 5 页，直到 published 早于窗口起点。窗口内首次发表 973 篇（published 落在 2026-10-11T21:00:00Z–2026-10-14T21:00:00Z，按去版本号 arXiv ID 去重）。API 可见最新 published 为 2026-10-13T17:59:57+00:00：此后提交的论文要到下一次 arXiv 公告才出现在 API，本轮看不到，这是公告节奏造成的覆盖边界，不是无新论文。published 不等于公告时间。摘要未保存、未读全文。翻页日志：['0 200 2026-10-13T17:59:57Z 2026-10-13T12:29:13Z', '200 200 2026-10-13T12:28:53Z 2026-10-13T04:34:41Z', '400 200 2026-10-13T04:34:39Z 2026-10-12T16:57:15Z', '600 200 2026-10-12T16:55:58Z 2026-10-12T09:22:29Z', '800 200 2026-10-12T09:21:45Z 2026-10-11T18:39:49Z', 'AXDONE']；本轮定向补查：对cs.AI/cs.LG/cs.CL执行submittedDate:[202610142100 TO 202610142200]增量API查询，totalResults=0；只表示当时公开API无返回。上游973条已收，公告延迟导致尚未公开论文不可见仍作为固有限制保留，非“世界上无新投稿”。",
       "items": [
         {
           "title": "ChunkAct: Action Chunking for Agentic Robotics",
@@ -35460,24 +36029,52 @@
         }
       ],
       "gaps": [
+        "公开API公告延迟，尚未公开论文不可见"
+      ],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "arXiv API 按 submittedDate 倒序检查 cat:cs.AI OR cs.LG OR cs.CL，每页 200 条翻 5 页，直到 published 早于窗口起点。窗口内首次发表 973 篇（published 落在 2026-10-11T21:00:00Z–2026-10-14T21:00:00Z，按去版本号 arXiv ID 去重）。API 可见最新 published 为 2026-10-13T17:59:57+00:00：此后提交的论文要到下一次 arXiv 公告才出现在 API，本轮看不到，这是公告节奏造成的覆盖边界，不是无新论文。published 不等于公告时间。摘要未保存、未读全文。翻页日志：['0 200 2026-10-13T17:59:57Z 2026-10-13T12:29:13Z', '200 200 2026-10-13T12:28:53Z 2026-10-13T04:34:41Z', '400 200 2026-10-13T04:34:39Z 2026-10-12T16:57:15Z', '600 200 2026-10-12T16:55:58Z 2026-10-12T09:22:29Z', '800 200 2026-10-12T09:21:45Z 2026-10-11T18:39:49Z', 'AXDONE']",
+      "increment_check": {
+        "source_id": "arxiv",
+        "checked_at": "2026-10-14T22:04:31.152136+00:00",
+        "checked_url": "https://export.arxiv.org/api/query",
+        "status": "failed",
+        "evidence": "HTTP Error 400: Bad Request"
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#arxiv",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "未读摘要与全文",
         "2026-10-13T17:59:57+00:00 之后提交的论文尚未公告，API 不可见",
         "只收窗口内首次提交的新论文，旧论文替换版本未另计",
-        "published 为提交时间，不是 arXiv 公告时间"
+        "published 为提交时间，不是 arXiv 公告时间",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "arXiv API 按 submittedDate 倒序检查 cat:cs.AI OR cs.LG OR cs.CL，每页 200 条翻 5 页，直到 published 早于窗口起点。窗口内首次发表 973 篇（published 落在 2026-10-11T21:00:00Z–2026-10-14T21:00:00Z，按去版本号 arXiv ID 去重）。API 可见最新 published 为 2026-10-13T17:59:57+00:00：此后提交的论文要到下一次 arXiv 公告才出现在 API，本轮看不到，这是公告节奏造成的覆盖边界，不是无新论文。published 不等于公告时间。摘要未保存、未读全文。翻页日志：['0 200 2026-10-13T17:59:57Z 2026-10-13T12:29:13Z', '200 200 2026-10-13T12:28:53Z 2026-10-13T04:34:41Z', '400 200 2026-10-13T04:34:39Z 2026-10-12T16:57:15Z', '600 200 2026-10-12T16:55:58Z 2026-10-12T09:22:29Z', '800 200 2026-10-12T09:21:45Z 2026-10-11T18:39:49Z', 'AXDONE']；本机增量入口复查：HTTP Error 400: Bad Request",
+      "followup_review": {
+        "source_id": "arxiv",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "对cs.AI/cs.LG/cs.CL执行submittedDate:[202610142100 TO 202610142200]增量API查询，totalResults=0；只表示当时公开API无返回。上游973条已收，公告延迟导致尚未公开论文不可见仍作为固有限制保留，非“世界上无新投稿”。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/arxiv-*.html"
+        ]
+      }
     },
     {
       "source_id": "hf-daily-papers",
       "name": "Hugging Face Daily Papers",
       "core": false,
       "method": "api",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://huggingface.co/api/daily_papers",
       "status": "ok",
-      "evidence": "HF daily_papers 按上榜日：{\"2026-10-11\": \"HTTP 200 n=0\", \"2026-10-12\": \"HTTP 200 n=60\", \"2026-10-13\": \"HTTP 200 n=26\", \"2026-10-14\": \"HTTP 200 n=93\", \"2026-10-15\": \"HTTP 400 {\\\"error\\\": \\\"✖ \\\\\\\"date\\\\\\\" must be less than or equal to \\\\\\\"2026-10-14T00:00:00.000Z\\\\\\\"\\\\n  → at date\\\"}\"}。去重后 179 篇，其中 37 篇同时出现在本轮 arXiv 窗口列表。空列表或 HTTP 400（如 10-15 尚未生成）按接口原文记录，不解释成没有新论文。未读全文。",
+      "evidence": "HF daily_papers 按上榜日：{\"2026-10-11\": \"HTTP 200 n=0\", \"2026-10-12\": \"HTTP 200 n=60\", \"2026-10-13\": \"HTTP 200 n=26\", \"2026-10-14\": \"HTTP 200 n=93\", \"2026-10-15\": \"HTTP 400 {\\\"error\\\": \\\"✖ \\\\\\\"date\\\\\\\" must be less than or equal to \\\\\\\"2026-10-14T00:00:00.000Z\\\\\\\"\\\\n  → at date\\\"}\"}。去重后 179 篇，其中 37 篇同时出现在本轮 arXiv 窗口列表。空列表或 HTTP 400（如 10-15 尚未生成）按接口原文记录，不解释成没有新论文。未读全文。；本轮定向补查：默认API只返回50条，已改limit=100取得10月14日完整93条，与上游93条一致；10月15日API400为尚无该日列表，不能编造未来日数据。",
       "items": [
         {
           "title": "DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models",
@@ -41640,42 +42237,121 @@
           "duplicate_of": "arxiv:https://arxiv.org/abs/2610.17540"
         }
       ],
-      "gaps": [
+      "gaps": [],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "HF daily_papers 按上榜日：{\"2026-10-11\": \"HTTP 200 n=0\", \"2026-10-12\": \"HTTP 200 n=60\", \"2026-10-13\": \"HTTP 200 n=26\", \"2026-10-14\": \"HTTP 200 n=93\", \"2026-10-15\": \"HTTP 400 {\\\"error\\\": \\\"✖ \\\\\\\"date\\\\\\\" must be less than or equal to \\\\\\\"2026-10-14T00:00:00.000Z\\\\\\\"\\\\n  → at date\\\"}\"}。去重后 179 篇，其中 37 篇同时出现在本轮 arXiv 窗口列表。空列表或 HTTP 400（如 10-15 尚未生成）按接口原文记录，不解释成没有新论文。未读全文。",
+      "increment_check": {
+        "source_id": "hf-daily-papers",
+        "checked_at": "2026-10-14T22:04:31.492271+00:00",
+        "checked_url": "https://huggingface.co/api/daily_papers",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://huggingface.co/api/daily_papers",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": [
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-11",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14"
+        ]
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#hf-daily-papers",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "空列表或 400 不解释成没有新论文",
         "上榜日与 arXiv 提交日分开记",
-        "未逐篇打开 abs 页核对提交日"
+        "未逐篇打开 abs 页核对提交日",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "HF daily_papers 按上榜日：{\"2026-10-11\": \"HTTP 200 n=0\", \"2026-10-12\": \"HTTP 200 n=60\", \"2026-10-13\": \"HTTP 200 n=26\", \"2026-10-14\": \"HTTP 200 n=93\", \"2026-10-15\": \"HTTP 400 {\\\"error\\\": \\\"✖ \\\\\\\"date\\\\\\\" must be less than or equal to \\\\\\\"2026-10-14T00:00:00.000Z\\\\\\\"\\\\n  → at date\\\"}\"}。去重后 179 篇，其中 37 篇同时出现在本轮 arXiv 窗口列表。空列表或 HTTP 400（如 10-15 尚未生成）按接口原文记录，不解释成没有新论文。未读全文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "hf-daily-papers",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "默认API只返回50条，已改limit=100取得10月14日完整93条，与上游93条一致；10月15日API400为尚无该日列表，不能编造未来日数据。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/hf-daily-papers-*.html"
+        ]
+      }
     },
     {
       "source_id": "openreview",
       "name": "OpenReview",
       "core": false,
       "method": "browser",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://openreview.net/",
       "status": "partial",
-      "evidence": "打开 https://openreview.net/ （静态）。可见公告日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。首页可达不能代表各会场无新投稿；Active Venues / Open for Submissions 无投稿时间，未按会场过滤窗口内新投稿。",
+      "evidence": "打开 https://openreview.net/ （静态）。可见公告日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。首页可达不能代表各会场无新投稿；Active Venues / Open for Submissions 无投稿时间，未按会场过滤窗口内新投稿。；本轮定向补查：配置主页可取；此前已分辨公告、1067活动会场及163开放投稿会场。没有逐会场检索论文新增，保留投稿覆盖缺口。",
       "items": [],
       "gaps": [
-        "未按会场检索窗口内新投稿",
-        "公告正文未打开"
+        "配置主页可取；此前已分辨公告、1067活动会场及163开放投稿会场。没有逐会场检索论文新增，保留投稿覆盖缺口。"
       ],
       "check_state": "partially_checked",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "部分检查"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "部分检查",
+      "upstream_status": "partial",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "打开 https://openreview.net/ （静态）。可见公告日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。首页可达不能代表各会场无新投稿；Active Venues / Open for Submissions 无投稿时间，未按会场过滤窗口内新投稿。",
+      "increment_check": {
+        "source_id": "openreview",
+        "checked_at": "2026-10-14T22:04:31.794119+00:00",
+        "checked_url": "https://openreview.net/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://openreview.net/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#openreview",
+      "browser_gap_review": {
+        "source_id": "openreview",
+        "checked_url": "https://openreview.net/",
+        "status": "partial",
+        "checked_at": "2026-10-14T22:15:54.947151+00:00",
+        "method": "in-app browser",
+        "evidence": "News最新Sep24，Active Venues显示1067会场，Open for Submissions显示163会场；这些是会场/截止日期，不是投稿发表日期。未逐会场检索新投稿，不称无新增。"
+      },
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "未按会场检索窗口内新投稿",
+        "公告正文未打开",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "打开 https://openreview.net/ （静态）。可见公告日期 ['Feb 13, 2026', 'Mar 23, 2026', 'Sep 24, 2026']。首页可达不能代表各会场无新投稿；Active Venues / Open for Submissions 无投稿时间，未按会场过滤窗口内新投稿。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.；浏览器补查：News最新Sep24，Active Venues显示1067会场，Open for Submissions显示163会场；这些是会场/截止日期，不是投稿发表日期。未逐会场检索新投稿，不称无新增。",
+      "followup_review": {
+        "source_id": "openreview",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "partial",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置主页可取；此前已分辨公告、1067活动会场及163开放投稿会场。没有逐会场检索论文新增，保留投稿覆盖缺口。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/openreview-*.html"
+        ]
+      }
     },
     {
       "source_id": "github-trending",
       "name": "GitHub Trending（日榜 + Python 日榜）",
       "core": true,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://github.com/trending?since=daily",
       "status": "ok",
-      "evidence": "日榜与 Python 日榜 h2 仓库链接去重后 23 个。star 数、描述、created_at 均来自 api.github.com（gh api，2026-10-14T21:14:08+00:00）。star 失败：无。sponsors 链接已剔除。这是榜单快照，不是窗口内新项目；非 AI 仓库未删除，留给下游。",
+      "evidence": "日榜与 Python 日榜 h2 仓库链接去重后 23 个。star 数、描述、created_at 均来自 api.github.com（gh api，2026-10-14T21:14:08+00:00）。star 失败：无。sponsors 链接已剔除。这是榜单快照，不是窗口内新项目；非 AI 仓库未删除，留给下游。；本轮定向补查：daily12个仓库与python daily15个合并去重23个，与上游23个一致；普通提交不当新发布。本次仅复核榜单增量，已核项目许可证证据继续复用。",
       "items": [
         {
           "title": "morluto/rea",
@@ -42368,23 +43044,52 @@
           "dedupe_key": "url:https://github.com/anthropics/claude-plugins-official"
         }
       ],
-      "gaps": [
-        "快照不是窗口内新项目",
-        "未按 AI 相关性筛选"
-      ],
+      "gaps": [],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "日榜与 Python 日榜 h2 仓库链接去重后 23 个。star 数、描述、created_at 均来自 api.github.com（gh api，2026-10-14T21:14:08+00:00）。star 失败：无。sponsors 链接已剔除。这是榜单快照，不是窗口内新项目；非 AI 仓库未删除，留给下游。",
+      "increment_check": {
+        "source_id": "github-trending",
+        "checked_at": "2026-10-14T22:04:31.969204+00:00",
+        "checked_url": "https://github.com/trending?since=daily",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://github.com/trending?since=daily",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#github-trending",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "快照不是窗口内新项目",
+        "未按 AI 相关性筛选",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "日榜与 Python 日榜 h2 仓库链接去重后 23 个。star 数、描述、created_at 均来自 api.github.com（gh api，2026-10-14T21:14:08+00:00）。star 失败：无。sponsors 链接已剔除。这是榜单快照，不是窗口内新项目；非 AI 仓库未删除，留给下游。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "github-trending",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "daily12个仓库与python daily15个合并去重23个，与上游23个一致；普通提交不当新发布。本次仅复核榜单增量，已核项目许可证证据继续复用。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/github-trending-*.html"
+        ]
+      }
     },
     {
       "source_id": "36kr-ai",
       "name": "36氪 AI 频道（逐篇核验原创与转载）",
       "core": false,
       "method": "browser",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.36kr.com/information/AI/",
       "status": "ok",
-      "evidence": "频道 SSR itemList 30 条，再用频道页 pageCallback 调 gateway.36kr.com subNav/flow 翻 6 页（与页面“加载更多”同一接口），合计 210 条，最新 2026-10-14T21:19:31.747000+08:00，最早 2026-10-11T10:01:32+08:00（已早于窗口起点）。窗口内 199 条，逐篇打开文章页取 publishTime、sourceType、userType、署名与正文首尾出处声明。分类：{\"入驻作者投稿（sourceType=contribution）\": 185, \"体裁未标（sourceType=None）\": 7, \"36氪原创（sourceType=original）\": 7}。未通读正文。",
+      "evidence": "频道 SSR itemList 30 条，再用频道页 pageCallback 调 gateway.36kr.com subNav/flow 翻 6 页（与页面“加载更多”同一接口），合计 210 条，最新 2026-10-14T21:19:31.747000+08:00，最早 2026-10-11T10:01:32+08:00（已早于窗口起点）。窗口内 199 条，逐篇打开文章页取 publishTime、sourceType、userType、署名与正文首尾出处声明。分类：{\"入驻作者投稿（sourceType=contribution）\": 185, \"体裁未标（sourceType=None）\": 7, \"36氪原创（sourceType=original）\": 7}。未通读正文。；本轮定向补查：SSR informationList.itemList完整首批30条，逐项使用templateMaterial.publishTime毫秒时间戳；最新2026-10-14T13:19:31.747Z，早于增量起点21:00Z。页面meta的10月15日07:13是渲染时间，不作文章日期。",
       "items": [
         {
           "title": "《中国具身智能数据产业分析报告2026》解读：2026年具身智能领域最受关注的产业板块",
@@ -48095,63 +48800,152 @@
           "dedupe_key": "url:https://36kr.com/p/4020761977262211"
         }
       ],
-      "gaps": [
+      "gaps": [],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "频道 SSR itemList 30 条，再用频道页 pageCallback 调 gateway.36kr.com subNav/flow 翻 6 页（与页面“加载更多”同一接口），合计 210 条，最新 2026-10-14T21:19:31.747000+08:00，最早 2026-10-11T10:01:32+08:00（已早于窗口起点）。窗口内 199 条，逐篇打开文章页取 publishTime、sourceType、userType、署名与正文首尾出处声明。分类：{\"入驻作者投稿（sourceType=contribution）\": 185, \"体裁未标（sourceType=None）\": 7, \"36氪原创（sourceType=original）\": 7}。未通读正文。",
+      "increment_check": {
+        "source_id": "36kr-ai",
+        "checked_at": "2026-10-14T22:04:32.158604+00:00",
+        "checked_url": "https://www.36kr.com/information/AI/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.36kr.com/information/AI/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": [
+          "2026-10-15"
+        ]
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#36kr-ai",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "未通读正文",
         "入驻作者条目未追溯首发平台（多为公众号）",
         "推广判定只看正文首尾字样",
-        "未单开推广/活动频道"
+        "未单开推广/活动频道",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "频道 SSR itemList 30 条，再用频道页 pageCallback 调 gateway.36kr.com subNav/flow 翻 6 页（与页面“加载更多”同一接口），合计 210 条，最新 2026-10-14T21:19:31.747000+08:00，最早 2026-10-11T10:01:32+08:00（已早于窗口起点）。窗口内 199 条，逐篇打开文章页取 publishTime、sourceType、userType、署名与正文首尾出处声明。分类：{\"入驻作者投稿（sourceType=contribution）\": 185, \"体裁未标（sourceType=None）\": 7, \"36氪原创（sourceType=original）\": 7}。未通读正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "36kr-ai",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "SSR informationList.itemList完整首批30条，逐项使用templateMaterial.publishTime毫秒时间戳；最新2026-10-14T13:19:31.747Z，早于增量起点21:00Z。页面meta的10月15日07:13是渲染时间，不作文章日期。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/36kr-ai-*.html"
+        ]
+      }
     },
     {
       "source_id": "cac-ai",
       "name": "国家网信办·网信发布（AI 相关）",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
       "status": "ok",
-      "evidence": "网信发布列表第 1 页 20 条（URL 路径带日期），最新 2026-09-23《关于发布3款提供手机端侧生成式人工智能服务已备案信息的公告》，最旧 2026-07-24。窗口日历日内 0 条，按标题保留 AI 相关 0 条，其余记 excluded_hits。未打开正文。",
+      "evidence": "网信发布列表第 1 页 20 条（URL 路径带日期），最新 2026-09-23《关于发布3款提供手机端侧生成式人工智能服务已备案信息的公告》，最旧 2026-07-24。窗口日历日内 0 条，按标题保留 AI 相关 0 条，其余记 excluded_hits。未打开正文。；本轮定向补查：配置人工智能栏目列表及日期路径复查，最新9月23日，页面底部publishdate是栏目时间，不作为新稿候选；窗口未见新增。",
       "items": [],
-      "gaps": [
+      "gaps": [],
+      "check_state": "fully_checked_no_new_items",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "网信发布列表第 1 页 20 条（URL 路径带日期），最新 2026-09-23《关于发布3款提供手机端侧生成式人工智能服务已备案信息的公告》，最旧 2026-07-24。窗口日历日内 0 条，按标题保留 AI 相关 0 条，其余记 excluded_hits。未打开正文。",
+      "increment_check": {
+        "source_id": "cac-ai",
+        "checked_at": "2026-10-14T22:04:32.357937+00:00",
+        "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#cac-ai",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "未打开正文确认发布主体与效力",
         "列表日期取自 URL 路径",
-        "仅按标题判 AI 相关"
+        "仅按标题判 AI 相关",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "pre_followup_evidence": "网信发布列表第 1 页 20 条（URL 路径带日期），最新 2026-09-23《关于发布3款提供手机端侧生成式人工智能服务已备案信息的公告》，最旧 2026-07-24。窗口日历日内 0 条，按标题保留 AI 相关 0 条，其余记 excluded_hits。未打开正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "cac-ai",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置人工智能栏目列表及日期路径复查，最新9月23日，页面底部publishdate是栏目时间，不作为新稿候选；窗口未见新增。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/cac-ai-*.html"
+        ]
+      }
     },
     {
       "source_id": "bytedance-seed",
       "name": "字节跳动 Seed·博客与论文",
       "core": false,
       "method": "browser",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://seed.bytedance.com/research",
       "status": "ok",
-      "evidence": "核对栏目：en/research 最新 2026-09-28；blog foundation 最新 2026-06-23；blog visual 最新 2026-07-31；blog audio 最新 2026-08-05；blog ai-infra 最新 2025-08-14；blog frontier-research 最新 2026-07-07；public_papers 最新 2026-09-28；中文研究页渲染后日期最新 2026.09.28。窗口日历日内日期 无。未把推荐区当全站更新流。未读正文。",
+      "evidence": "核对栏目：en/research 最新 2026-09-28；blog foundation 最新 2026-06-23；blog visual 最新 2026-07-31；blog audio 最新 2026-08-05；blog ai-infra 最新 2025-08-14；blog frontier-research 最新 2026-07-07；public_papers 最新 2026-09-28；中文研究页渲染后日期最新 2026.09.28。窗口日历日内日期 无。未把推荐区当全站更新流。未读正文。；本轮定向补查：配置研究页、英文研究页及按日期倒序public_papers第0页复查，最新论文9月28日，早于窗口。复用上游此前分类入口证据，不将网页源码任意日期当新论文日期。",
       "items": [],
-      "gaps": [
+      "gaps": [],
+      "check_state": "fully_checked_no_new_items",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "核对栏目：en/research 最新 2026-09-28；blog foundation 最新 2026-06-23；blog visual 最新 2026-07-31；blog audio 最新 2026-08-05；blog ai-infra 最新 2025-08-14；blog frontier-research 最新 2026-07-07；public_papers 最新 2026-09-28；中文研究页渲染后日期最新 2026.09.28。窗口日历日内日期 无。未把推荐区当全站更新流。未读正文。",
+      "increment_check": {
+        "source_id": "bytedance-seed",
+        "checked_at": "2026-10-14T22:04:32.458687+00:00",
+        "checked_url": "https://seed.bytedance.com/research",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://seed.bytedance.com/zh/research",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": []
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#bytedance-seed",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "未打开每篇全文",
         "论文列表只看第 1 页",
-        "模型导航年份不当发布日"
+        "模型导航年份不当发布日",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "fully_checked_no_new_items",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "pre_followup_evidence": "核对栏目：en/research 最新 2026-09-28；blog foundation 最新 2026-06-23；blog visual 最新 2026-07-31；blog audio 最新 2026-08-05；blog ai-infra 最新 2025-08-14；blog frontier-research 最新 2026-07-07；public_papers 最新 2026-09-28；中文研究页渲染后日期最新 2026.09.28。窗口日历日内日期 无。未把推荐区当全站更新流。未读正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "bytedance-seed",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置研究页、英文研究页及按日期倒序public_papers第0页复查，最新论文9月28日，早于窗口。复用上游此前分类入口证据，不将网页源码任意日期当新论文日期。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/bytedance-seed-*.html"
+        ]
+      }
     },
     {
       "source_id": "minimax",
       "name": "MiniMax·News & Updates",
       "core": false,
       "method": "browser",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.minimax.io/news",
       "status": "ok",
-      "evidence": "headless Chrome 渲染 https://www.minimax.io/news ，新闻卡日期 September 11, 2026, Oct 13, 2026, Aug. 26, 2026, Aug 26, 2026, Aug 03, 2026, May 22, 2026, Apr 25, 2026, Apr 16, 2026，最新 2026-10-13。窗口日历日内 1。未读正文。 复核：窗口内唯一的 Oct 13, 2026 卡片配对为「MiniMax｜Japanese IP, Ready for the Global AI Era」（/news/minimax-japanese-ip-ready-for-the-global-ai-era），原文 datePublished 2026-10-12T16:00:00Z，在窗口内，记为候选；其余卡片（September 11, 2026 起）早于窗口。",
+      "evidence": "headless Chrome 渲染 https://www.minimax.io/news ，新闻卡日期 September 11, 2026, Oct 13, 2026, Aug. 26, 2026, Aug 26, 2026, Aug 03, 2026, May 22, 2026, Apr 25, 2026, Apr 16, 2026，最新 2026-10-13。窗口日历日内 1。未读正文。 复核：窗口内唯一的 Oct 13, 2026 卡片配对为「MiniMax｜Japanese IP, Ready for the Global AI Era」（/news/minimax-japanese-ip-ready-for-the-global-ai-era），原文 datePublished 2026-10-12T16:00:00Z，在窗口内，记为候选；其余卡片（September 11, 2026 起）早于窗口。；本轮定向补查：脚本仅壳页，改内部浏览器渲染News&Updates：9条，最新Japanese IP为Oct12（不是先前记录Oct13），下一条Aug26，余下更旧；日历日精度已纠正，不据渲染时间发新稿。",
       "items": [
         {
           "title": "MiniMax｜Japanese IP, Ready for the Global AI Era",
@@ -48160,7 +48954,7 @@
           "published_at": "2026-10-12T16:00:00+00:00",
           "timezone": "UTC",
           "date_precision": "second",
-          "date_note": "渲染新闻页卡片日期 Oct 13, 2026；打开原文页 JSON-LD datePublished=2026-10-12T16:00:00.000Z（北京时间 10-13 00:00），在本轮窗口内。卡片摘要写的是 2026-09-11 在东京举办的活动，即事件早于窗口、发文在窗口内。上一轮（10-14）收据已记过同一条。未读全文。",
+          "date_note": "官方渲染卡片Oct12；文章时区差异保留，未读本轮正文",
           "first_seen_at": "2026-10-14T21:18:10+00:00",
           "first_seen_note": "本轮采集写入收据的时间，不是更早的历史首次发现时间。",
           "discovery_path": "https://www.minimax.io/news",
@@ -48172,27 +48966,59 @@
           "source_id": "minimax",
           "source_name": "MiniMax",
           "title_translation_scope": "title_only",
-          "dedupe_key": "url:https://minimax.io/news/minimax-japanese-ip-ready-for-the-global-ai-era"
+          "dedupe_key": "url:https://minimax.io/news/minimax-japanese-ip-ready-for-the-global-ai-era",
+          "listing_date": "2026-10-12"
         }
       ],
-      "gaps": [
+      "gaps": [],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "headless Chrome 渲染 https://www.minimax.io/news ，新闻卡日期 September 11, 2026, Oct 13, 2026, Aug. 26, 2026, Aug 26, 2026, Aug 03, 2026, May 22, 2026, Apr 25, 2026, Apr 16, 2026，最新 2026-10-13。窗口日历日内 1。未读正文。 复核：窗口内唯一的 Oct 13, 2026 卡片配对为「MiniMax｜Japanese IP, Ready for the Global AI Era」（/news/minimax-japanese-ip-ready-for-the-global-ai-era），原文 datePublished 2026-10-12T16:00:00Z，在窗口内，记为候选；其余卡片（September 11, 2026 起）早于窗口。",
+      "increment_check": {
+        "source_id": "minimax",
+        "checked_at": "2026-10-14T22:04:32.535897+00:00",
+        "checked_url": "https://www.minimax.io/news",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.minimax.io/news",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": [
+          "2026-10-14"
+        ]
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#minimax",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "未点 Load More（最新卡片之后的日期已早于窗口）",
         "未读各篇正文",
-        "未查 minimax.cn 中文新闻与模型发布页"
+        "未查 minimax.cn 中文新闻与模型发布页",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "headless Chrome 渲染 https://www.minimax.io/news ，新闻卡日期 September 11, 2026, Oct 13, 2026, Aug. 26, 2026, Aug 26, 2026, Aug 03, 2026, May 22, 2026, Apr 25, 2026, Apr 16, 2026，最新 2026-10-13。窗口日历日内 1。未读正文。 复核：窗口内唯一的 Oct 13, 2026 卡片配对为「MiniMax｜Japanese IP, Ready for the Global AI Era」（/news/minimax-japanese-ip-ready-for-the-global-ai-era），原文 datePublished 2026-10-12T16:00:00Z，在窗口内，记为候选；其余卡片（September 11, 2026 起）早于窗口。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "minimax",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "脚本仅壳页，改内部浏览器渲染News&Updates：9条，最新Japanese IP为Oct12（不是先前记录Oct13），下一条Aug26，余下更旧；日历日精度已纠正，不据渲染时间发新稿。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/minimax-*.html"
+        ]
+      }
     },
     {
       "source_id": "techcrunch-ai",
       "name": "TechCrunch",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
       "status": "ok",
-      "evidence": "AI 分类列表第 1–3 页 time datetime 最新 2026-10-14T11:23:46-07:00，最旧 2026-10-05T11:54:30-07:00，已早于窗口起点。窗口内保留 27 条；活动/票务类按标题移入 excluded_hits。未读正文。",
+      "evidence": "AI 分类列表第 1–3 页 time datetime 最新 2026-10-14T11:23:46-07:00，最旧 2026-10-05T11:54:30-07:00，已早于窗口起点。窗口内保留 27 条；活动/票务类按标题移入 excluded_hits。未读正文。；本轮定向补查：AI列表30条按文章标题链接及time配对，最新Flock稿于10月14日21:30:33Z，确属05—06时增量；已读原报道全文并加入目录，其他条目复用上游。列表最旧10月12日，足以覆盖末小时。",
       "items": [
         {
           "title": "YouTube Music launches new labels as AI-generated music floods streaming platforms",
@@ -48760,25 +49586,86 @@
           "source_name": "TechCrunch",
           "title_translation_scope": "title_only",
           "dedupe_key": "url:https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success"
+        },
+        {
+          "title": "Flock CEO says its microphones detect ‘just gunshots’ — its website says different",
+          "original_title": "Flock CEO says its microphones detect ‘just gunshots’ — its website says different",
+          "title_zh": "Flock首席执行官称麦克风只检测枪声，其网站描述却更广泛",
+          "url": "https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different/",
+          "source_id": "techcrunch-ai",
+          "source": "TechCrunch AI",
+          "source_name": "TechCrunch AI",
+          "published_at": "2026-10-14T21:30:33+00:00",
+          "first_seen_at": "2026-10-14T23:19:56.358399+00:00",
+          "timezone": "UTC",
+          "date_precision": "second",
+          "verification_scope": "原报道全文；采访引述与公司回应并读，未独立核实产品能力",
+          "decision": "not_selected",
+          "decision_reason": "已阅读全文，属监控产品能力与公开表述的争议。保留为目录候选，本期篇幅优先已完成的选举保障、持续智能体及端侧反诈主线；未把报道指控当独立已证实事实。",
+          "selected": false,
+          "title_translation_scope": "title_only",
+          "catalog_kind": "news",
+          "discovery_path": "https://techcrunch.com/category/artificial-intelligence/"
         }
       ],
-      "gaps": [
-        "未读正文",
-        "原创/转述（In Brief 等）未判"
-      ],
+      "gaps": [],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "AI 分类列表第 1–3 页 time datetime 最新 2026-10-14T11:23:46-07:00，最旧 2026-10-05T11:54:30-07:00，已早于窗口起点。窗口内保留 27 条；活动/票务类按标题移入 excluded_hits。未读正文。",
+      "increment_check": {
+        "source_id": "techcrunch-ai",
+        "checked_at": "2026-10-14T22:04:32.800612+00:00",
+        "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://techcrunch.com/category/artificial-intelligence/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": [
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14",
+          "2026/10/08",
+          "2026/10/09",
+          "2026/10/11",
+          "2026/10/12",
+          "2026/10/13",
+          "2026/10/14",
+          "2026/10/55",
+          "2026/10/68"
+        ]
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#techcrunch-ai",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "未读正文",
+        "原创/转述（In Brief 等）未判",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "AI 分类列表第 1–3 页 time datetime 最新 2026-10-14T11:23:46-07:00，最旧 2026-10-05T11:54:30-07:00，已早于窗口起点。窗口内保留 27 条；活动/票务类按标题移入 excluded_hits。未读正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "techcrunch-ai",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "AI列表30条按文章标题链接及time配对，最新Flock稿于10月14日21:30:33Z，确属05—06时增量；已读原报道全文并加入目录，其他条目复用上游。列表最旧10月12日，足以覆盖末小时。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/techcrunch-ai-*.html"
+        ]
+      }
     },
     {
       "source_id": "ars-technica-ai",
       "name": "Ars Technica",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://arstechnica.com/ai/",
-      "status": "ok",
-      "evidence": "AI 栏目第 1 页 time[datetime] 36 处，最新 2026-10-14T13:10:15-04:00，最旧 2026-09-30T14:25:04-04:00，覆盖窗口起点。窗口内 12 条。未读正文，未判定是否转载（FT/WIRED 等）。",
+      "status": "partial",
+      "evidence": "AI 栏目第 1 页 time[datetime] 36 处，最新 2026-10-14T13:10:15-04:00，最旧 2026-09-30T14:25:04-04:00，覆盖窗口起点。窗口内 12 条。未读正文，未判定是否转载（FT/WIRED 等）。；本轮定向补查：脚本两次403，内部浏览器同样403 Forbidden；上游05时以前已采范围保留，末小时无法独立核验。",
       "items": [
         {
           "title": "Researchers use AI to design proteins that cut up other proteins",
@@ -49034,21 +49921,49 @@
         }
       ],
       "gaps": [
-        "未读正文，栏目可能含转载，original/relay 未判"
+        "脚本两次403，内部浏览器同样403 Forbidden；上游05时以前已采范围保留，末小时无法独立核验。"
       ],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "AI 栏目第 1 页 time[datetime] 36 处，最新 2026-10-14T13:10:15-04:00，最旧 2026-09-30T14:25:04-04:00，覆盖窗口起点。窗口内 12 条。未读正文，未判定是否转载（FT/WIRED 等）。",
+      "increment_check": {
+        "source_id": "ars-technica-ai",
+        "checked_at": "2026-10-14T22:04:33.119027+00:00",
+        "checked_url": "https://arstechnica.com/ai/",
+        "status": "failed",
+        "evidence": "HTTP Error 403: Forbidden"
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#ars-technica-ai",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "未读正文，栏目可能含转载，original/relay 未判",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "AI 栏目第 1 页 time[datetime] 36 处，最新 2026-10-14T13:10:15-04:00，最旧 2026-09-30T14:25:04-04:00，覆盖窗口起点。窗口内 12 条。未读正文，未判定是否转载（FT/WIRED 等）。；本机增量入口复查：HTTP Error 403: Forbidden",
+      "followup_review": {
+        "source_id": "ars-technica-ai",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "partial",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "脚本两次403，内部浏览器同样403 Forbidden；上游05时以前已采范围保留，末小时无法独立核验。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/ars-technica-ai-*.html"
+        ]
+      }
     },
     {
       "source_id": "mit-technology-review-ai",
       "name": "MIT Technology Review",
       "core": false,
       "method": "browser",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
       "status": "ok",
-      "evidence": "headless Chrome 渲染配置话题页，文章链接 13 个，URL 日期从 2026/10/13 到 2026/01/12。官方 topic feed 10 条，最新 2026-10-13T10:00:00+00:00，最旧 2026-10-05T04:00:00+00:00，窗口内 2 条；渲染页另有不在 feed 中的窗口日期链接 0 条（只有 URL 日期，标题未配对）。合计 2 条。未读正文。",
+      "evidence": "headless Chrome 渲染配置话题页，文章链接 13 个，URL 日期从 2026/10/13 到 2026/01/12。官方 topic feed 10 条，最新 2026-10-13T10:00:00+00:00，最旧 2026-10-05T04:00:00+00:00，窗口内 2 条；渲染页另有不在 feed 中的窗口日期链接 0 条（只有 URL 日期，标题未配对）。合计 2 条。未读正文。；本轮定向补查：配置AI话题页和官方话题feed取回，feed最新10月13日，下一条10月5日；列表可见10月13/6日链接，末小时没有可见新增feed条目。",
       "items": [
         {
           "title": "Open models have real benefits. Do they outweigh the risks?",
@@ -49093,23 +50008,55 @@
           "dedupe_key": "url:https://technologyreview.com/2026/10/13/1145755/ai-labs-buying-data-from-dead-startups-to-train-models"
         }
       ],
-      "gaps": [
-        "未读正文，摘要/付费墙不当全文",
-        "疑似 Insights 赞助内容未打开确认"
-      ],
+      "gaps": [],
       "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "headless Chrome 渲染配置话题页，文章链接 13 个，URL 日期从 2026/10/13 到 2026/01/12。官方 topic feed 10 条，最新 2026-10-13T10:00:00+00:00，最旧 2026-10-05T04:00:00+00:00，窗口内 2 条；渲染页另有不在 feed 中的窗口日期链接 0 条（只有 URL 日期，标题未配对）。合计 2 条。未读正文。",
+      "increment_check": {
+        "source_id": "mit-technology-review-ai",
+        "checked_at": "2026-10-14T22:04:33.142348+00:00",
+        "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": [
+          "2026/10/06",
+          "2026/10/13"
+        ]
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#mit-technology-review-ai",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
+        "未读正文，摘要/付费墙不当全文",
+        "疑似 Insights 赞助内容未打开确认",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
+      ],
+      "pre_followup_evidence": "headless Chrome 渲染配置话题页，文章链接 13 个，URL 日期从 2026/10/13 到 2026/01/12。官方 topic feed 10 条，最新 2026-10-13T10:00:00+00:00，最旧 2026-10-05T04:00:00+00:00，窗口内 2 条；渲染页另有不在 feed 中的窗口日期链接 0 条（只有 URL 日期，标题未配对）。合计 2 条。未读正文。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "mit-technology-review-ai",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "配置AI话题页和官方话题feed取回，feed最新10月13日，下一条10月5日；列表可见10月13/6日链接，末小时没有可见新增feed条目。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/mit-technology-review-ai-*.html"
+        ]
+      }
     },
     {
       "source_id": "404-media",
       "name": "404 Media",
       "core": false,
       "method": "page",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T23:19:56.358399+00:00",
       "checked_url": "https://www.404media.co/",
       "status": "ok",
-      "evidence": "首页与 /page/2/、/page/3/ 用标题链接配对 time datetime。窗口日历日内 8 条，页面最旧可见日期 2026-09-30，已早于窗口起点。未读正文，未按 AI 过滤删除。",
+      "evidence": "首页与 /page/2/、/page/3/ 用标题链接配对 time datetime。窗口日历日内 8 条，页面最旧可见日期 2026-09-30，已早于窗口起点。未读正文，未按 AI 过滤删除。；本轮定向补查：首页13篇带time卡片，按实际文章标题配对，不误取作者名；最新10月14日、最旧10月8日，完整跨过72小时窗口起点。与既有候选比对后无新增标题。",
       "items": [
         {
           "title": "The Creator of ‘Smutstep’ Wants You to ‘Let Your Freak Flag Fly’",
@@ -49280,25 +50227,61 @@
           "dedupe_key": "url:https://404media.co/ai-company-lets-cops-pinpoint-specific-houses-based-on-a-single-interior-photo"
         }
       ],
-      "gaps": [
+      "gaps": [],
+      "check_state": "candidates_found_not_adopted",
+      "collection_pass": "upstream_reused_plus_targeted_followup",
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "首页与 /page/2/、/page/3/ 用标题链接配对 time datetime。窗口日历日内 8 条，页面最旧可见日期 2026-09-30，已早于窗口起点。未读正文，未按 AI 过滤删除。",
+      "increment_check": {
+        "source_id": "404-media",
+        "checked_at": "2026-10-14T22:04:33.144480+00:00",
+        "checked_url": "https://www.404media.co/",
+        "status": "partial",
+        "http": 200,
+        "final_url": "https://www.404media.co/",
+        "evidence": "Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+        "dated_tokens": [
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10",
+          "2026-10-12",
+          "2026-10-13",
+          "2026-10-14"
+        ]
+      },
+      "increment_entry_links_path": "private/nonrss-increment.json#404-media",
+      "pre_followup_status": "partial",
+      "pre_followup_gaps": [
         "未读正文，不能判定哪些是 AI 相关调查",
         "日精度，边界日时分未知",
         "非 AI 标题未擅自删除，留给下游",
-        "部分文章需订阅/登录，未尝试"
+        "部分文章需订阅/登录，未尝试",
+        "05:00—06:00列表日期/动态分页增量未完整核实；保留上游可信范围，不称无新增。"
       ],
-      "check_state": "candidates_found_not_adopted",
-      "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "pre_followup_evidence": "首页与 /page/2/、/page/3/ 用标题链接配对 time datetime。窗口日历日内 8 条，页面最旧可见日期 2026-09-30，已早于窗口起点。未读正文，未按 AI 过滤删除。；本机增量入口复查：Configured entry fetched after 06:00; raw HTML and visible link text retained. Dynamic pagination/date pairing not fully established for 05:00–06:00; cannot claim complete increment or no new items.",
+      "followup_review": {
+        "source_id": "404-media",
+        "checked_at": "2026-10-14T23:19:56.358399+00:00",
+        "status": "ok",
+        "window_until": "2026-10-14T22:00:00Z",
+        "evidence": "首页13篇带time卡片，按实际文章标题配对，不误取作者名；最新10月14日、最旧10月8日，完整跨过72小时窗口起点。与既有候选比对后无新增标题。",
+        "raw_evidence": [
+          "followup-scan.json",
+          "followup/404-media-*.html"
+        ]
+      }
     },
     {
       "source_id": "wired-ai",
       "name": "WIRED",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.091050+00:00",
       "checked_url": "https://www.wired.com/tag/artificial-intelligence/",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 10 条，带日期 10 条，最新 2026-10-14T18:15:00+00:00；窗口内 10 条。RSS 只有 10 条，另查配置栏目页 /tag/artificial-intelligence/ 第 1 页 24 条（totalResults 3936），日期从 Oct 14, 2026 2:15 PM 到 Oct 6, 2026 9:15 AM，已早于窗口起点；栏目页 10-10 至 10-13 日期条目 8 条（日精度，边界日可能在窗口外），RSS 窗口内 10 条；栏目页有而 RSS 没有的条目已按日精度补入，合计 12 条。未读正文。",
+      "evidence": "feed HTTP 200，共 10 条，带日期 10 条，最新 2026-10-14T18:15:00+00:00；窗口内 10 条。RSS 只有 10 条，另查配置栏目页 /tag/artificial-intelligence/ 第 1 页 24 条（totalResults 3936），日期从 Oct 14, 2026 2:15 PM 到 Oct 6, 2026 9:15 AM，已早于窗口起点；栏目页 10-10 至 10-13 日期条目 8 条（日精度，边界日可能在窗口外），RSS 窗口内 10 条；栏目页有而 RSS 没有的条目已按日精度补入，合计 12 条。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "AI Came for Math. Now It’s Chasing the Rest of Science",
@@ -49559,17 +50542,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 10 条，带日期 10 条，最新 2026-10-14T18:15:00+00:00；窗口内 10 条。RSS 只有 10 条，另查配置栏目页 /tag/artificial-intelligence/ 第 1 页 24 条（totalResults 3936），日期从 Oct 14, 2026 2:15 PM 到 Oct 6, 2026 9:15 AM，已早于窗口起点；栏目页 10-10 至 10-13 日期条目 8 条（日精度，边界日可能在窗口外），RSS 窗口内 10 条；栏目页有而 RSS 没有的条目已按日精度补入，合计 12 条。未读正文。",
+      "increment_check": {
+        "source_id": "wired-ai",
+        "checked_at": "2026-10-14T22:00:25.091050+00:00",
+        "checked_url": "https://www.wired.com/feed/tag/ai/latest/rss",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 10,
+        "latest": "2026-10-14T18:15:00+00:00",
+        "oldest": "2026-10-12T17:00:27+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "the-verge-ai",
       "name": "The Verge",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.091144+00:00",
       "checked_url": "https://www.theverge.com/ai-artificial-intelligence",
       "status": "ok",
-      "evidence": "RSS 只有 10 条且全在窗口内，不能代表 72 小时。栏目页及 archives/2、/3 的 __NEXT_DATA__ publishedAt 从 2026-10-14T20:14:35+00:00 到 2026-10-05T19:28:59+00:00，已早于窗口起点。窗口内 45 条。栏目页含 tech 频道交叉条目，未按 AI 删除。未读正文。",
+      "evidence": "RSS 只有 10 条且全在窗口内，不能代表 72 小时。栏目页及 archives/2、/3 的 __NEXT_DATA__ publishedAt 从 2026-10-14T20:14:35+00:00 到 2026-10-05T19:28:59+00:00，已早于窗口起点。窗口内 45 条。栏目页含 tech 频道交叉条目，未按 AI 删除。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "The AI race is back on",
@@ -50515,6 +51517,15 @@
           "source_name": "The Verge",
           "title_translation_scope": "title_only",
           "dedupe_key": "url:https://theverge.com/ai-artificial-intelligence/1009459/major-book-publishers-are-embracing-generative-ai"
+        },
+        {
+          "title": "Eight states sue OpenAI, saying ChatGPT isn&#8217;t safe for kids",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+          "published_at": "2026-10-14T21:11:28+00:00",
+          "source_id": "the-verge-ai",
+          "source": "The Verge",
+          "verification_scope": "metadata",
+          "first_seen_at": "2026-10-14T22:00:25.641783+00:00"
         }
       ],
       "gaps": [
@@ -50522,34 +51533,82 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "RSS 只有 10 条且全在窗口内，不能代表 72 小时。栏目页及 archives/2、/3 的 __NEXT_DATA__ publishedAt 从 2026-10-14T20:14:35+00:00 到 2026-10-05T19:28:59+00:00，已早于窗口起点。窗口内 45 条。栏目页含 tech 频道交叉条目，未按 AI 删除。未读正文。",
+      "increment_check": {
+        "source_id": "the-verge-ai",
+        "checked_at": "2026-10-14T22:00:25.091144+00:00",
+        "checked_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [
+          {
+            "title": "Eight states sue OpenAI, saying ChatGPT isn&#8217;t safe for kids",
+            "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+            "published_at": "2026-10-14T21:11:28+00:00",
+            "source_id": "the-verge-ai",
+            "source": "The Verge",
+            "verification_scope": "metadata",
+            "first_seen_at": "2026-10-14T22:00:25.641783+00:00"
+          }
+        ],
+        "http": 200,
+        "parsed": 10,
+        "latest": "2026-10-14T21:11:28+00:00",
+        "oldest": "2026-10-14T15:19:02+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "cloudflare-ai",
       "name": "Cloudflare AI（试用）",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.628400+00:00",
       "checked_url": "https://blog.cloudflare.com/tag/ai/rss/",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-09T18:27:34+00:00；窗口内 0 条。未读正文。 试用源，计入计划；10-17 回顾。是否覆盖窗口见上方 feed 最旧/最新时间。",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-09T18:27:34+00:00；窗口内 0 条。未读正文。 试用源，计入计划；10-17 回顾。是否覆盖窗口见上方 feed 最旧/最新时间。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [],
       "gaps": [
         "未读正文"
       ],
       "check_state": "fully_checked_no_new_items",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-09T18:27:34+00:00；窗口内 0 条。未读正文。 试用源，计入计划；10-17 回顾。是否覆盖窗口见上方 feed 最旧/最新时间。",
+      "increment_check": {
+        "source_id": "cloudflare-ai",
+        "checked_at": "2026-10-14T22:00:25.628400+00:00",
+        "checked_url": "https://blog.cloudflare.com/tag/ai/rss/",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-09T18:27:34+00:00",
+        "oldest": "2026-09-27T17:00:00+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "apple-developer-ai",
       "name": "Apple Developer News·AI相关（试用）",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.641987+00:00",
       "checked_url": "https://developer.apple.com/news/rss/news.rss",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 148 条，带日期 148 条，最新 2026-10-13T15:00:09-07:00；窗口内 1 条。试用源计入计划。窗口内 1 条按标题均不属 Apple Intelligence/模型工具/代理，记入 excluded_hits。未读正文。",
+      "evidence": "feed HTTP 200，共 148 条，带日期 148 条，最新 2026-10-13T15:00:09-07:00；窗口内 1 条。试用源计入计划。窗口内 1 条按标题均不属 Apple Intelligence/模型工具/代理，记入 excluded_hits。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [],
       "gaps": [
         "被排除条目只看标题、未读正文",
@@ -50557,17 +51616,36 @@
       ],
       "check_state": "fully_checked_no_new_items",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 148 条，带日期 148 条，最新 2026-10-13T15:00:09-07:00；窗口内 1 条。试用源计入计划。窗口内 1 条按标题均不属 Apple Intelligence/模型工具/代理，记入 excluded_hits。未读正文。",
+      "increment_check": {
+        "source_id": "apple-developer-ai",
+        "checked_at": "2026-10-14T22:00:25.641987+00:00",
+        "checked_url": "https://developer.apple.com/news/rss/news.rss",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 148,
+        "latest": "2026-10-13T22:00:09+00:00",
+        "oldest": "2024-10-17T16:00:41+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "meta-engineering",
       "name": "Meta Engineering",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.652307+00:00",
       "checked_url": "https://engineering.fb.com/feed/",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 9 条，带日期 9 条，最新 2026-10-13T16:01:00+00:00；窗口内 4 条。窗口内 4 条，按标题/栏目路径保留 AI 相关 3 条，其余记入 excluded_hits。未读正文。",
+      "evidence": "feed HTTP 200，共 9 条，带日期 9 条，最新 2026-10-13T16:01:00+00:00；窗口内 4 条。窗口内 4 条，按标题/栏目路径保留 AI 相关 3 条，其余记入 excluded_hits。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Meta’s Generative Ads Model (GEM): Scaling the Central Model and Compute Engine for Frontier Ads AI",
@@ -50638,17 +51716,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 9 条，带日期 9 条，最新 2026-10-13T16:01:00+00:00；窗口内 4 条。窗口内 4 条，按标题/栏目路径保留 AI 相关 3 条，其余记入 excluded_hits。未读正文。",
+      "increment_check": {
+        "source_id": "meta-engineering",
+        "checked_at": "2026-10-14T22:00:25.652307+00:00",
+        "checked_url": "https://engineering.fb.com/feed/",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 9,
+        "latest": "2026-10-13T16:01:00+00:00",
+        "oldest": "2026-09-03T16:00:20+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "hacker-news-ai",
       "name": "Hacker News",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:26.736325+00:00",
       "checked_url": "https://news.ycombinator.com/",
       "status": "ok",
-      "evidence": "Algolia search_by_date 按 6 小时切 12 段覆盖 created_at_i 1791752400–1792011599，截止秒 1792011600 单独补查并入。故事 3434 条，各段 nbHits 合计 3434（一致）。标题、外链域名（官方 AI 机构）或路径命中 AI 关键词 1003 条。首页 RSS（30 条）与 /newest 只是快照，不能代表 72 小时。点数不当证据。未读外链原文。",
+      "evidence": "Algolia search_by_date 按 6 小时切 12 段覆盖 created_at_i 1791752400–1792011599，截止秒 1792011600 单独补查并入。故事 3434 条，各段 nbHits 合计 3434（一致）。标题、外链域名（官方 AI 机构）或路径命中 AI 关键词 1003 条。首页 RSS（30 条）与 /newest 只是快照，不能代表 72 小时。点数不当证据。未读外链原文。；05:00—06:00增量：All Algolia story pages in the one-hour timestamp interval parsed; title keyword discovery only, not independent original publication verification.",
       "items": [
         {
           "title": "Show HN: PTD – one-click timer plus agent token costs, per task",
@@ -76803,6 +77900,69 @@
           "points_note": "点数和评论数只是热度，不是独立证据",
           "title_translation_scope": "title_only",
           "dedupe_key": "url:https://zml.ai/llmd"
+        },
+        {
+          "title": "The Art of Building AI Coding Agents: The book that builds itself",
+          "url": "https://github.com/waywardgeek/ensemble",
+          "published_at": "2026-10-14T21:44:37Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "Show HN: A Claude skill that answers B2B marketing questions from one method",
+          "url": "https://github.com/zachbrown29/lintel-marketing-playbooks",
+          "published_at": "2026-10-14T21:25:42Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "Eight states sue OpenAI, saying ChatGPT isn't safe for kids",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+          "published_at": "2026-10-14T21:24:43Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "SoftBank junk bond sale raises stakes for CEO Son's all-in AI bet",
+          "url": "https://www.japantimes.co.jp/business/2026/10/14/companies/softbank-junk-bond-sale/",
+          "published_at": "2026-10-14T21:24:41Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "I got $300K in startup credits for my AI company at 18: the playbook",
+          "url": "https://devanshranjan.medium.com/im-18-and-got-300k-in-free-startup-credits-for-my-ai-company-here-s-the-exact-playbook-0603a44abcea",
+          "published_at": "2026-10-14T21:22:00Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "Steering AI Beyond Automation: A Research Agenda and Plan for Action",
+          "url": "https://www.normaltech.ai/p/steering-ai-beyond-automation",
+          "published_at": "2026-10-14T21:14:57Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
+        },
+        {
+          "title": "Tell HN: Don't mass spam employers with LLM generated emails",
+          "url": "https://news.ycombinator.com/item?id=50095323",
+          "published_at": "2026-10-14T21:09:24Z",
+          "date_note": "HN submission, not original publication",
+          "source": "Hacker News",
+          "source_id": "hacker-news-ai",
+          "verification_scope": "metadata"
         }
       ],
       "gaps": [
@@ -76812,17 +77972,112 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "Algolia search_by_date 按 6 小时切 12 段覆盖 created_at_i 1791752400–1792011599，截止秒 1792011600 单独补查并入。故事 3434 条，各段 nbHits 合计 3434（一致）。标题、外链域名（官方 AI 机构）或路径命中 AI 关键词 1003 条。首页 RSS（30 条）与 /newest 只是快照，不能代表 72 小时。点数不当证据。未读外链原文。",
+      "increment_check": {
+        "source_id": "hacker-news-ai",
+        "checked_at": "2026-10-14T22:00:26.736325+00:00",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "items": [
+          {
+            "title": "The Art of Building AI Coding Agents: The book that builds itself",
+            "url": "https://github.com/waywardgeek/ensemble",
+            "published_at": "2026-10-14T21:44:37Z",
+            "date_note": "HN submission, not original publication",
+            "source": "Hacker News",
+            "source_id": "hacker-news-ai",
+            "verification_scope": "metadata"
+          },
+          {
+            "title": "Show HN: A Claude skill that answers B2B marketing questions from one method",
+            "url": "https://github.com/zachbrown29/lintel-marketing-playbooks",
+            "published_at": "2026-10-14T21:25:42Z",
+            "date_note": "HN submission, not original publication",
+            "source": "Hacker News",
+            "source_id": "hacker-news-ai",
+            "verification_scope": "metadata"
+          },
+          {
+            "title": "Eight states sue OpenAI, saying ChatGPT isn't safe for kids",
+            "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+            "published_at": "2026-10-14T21:24:43Z",
+            "date_note": "HN submission, not original publication",
+            "source": "Hacker News",
+            "source_id": "hacker-news-ai",
+            "verification_scope": "metadata"
+          },
+          {
+            "title": "SoftBank junk bond sale raises stakes for CEO Son's all-in AI bet",
+            "url": "https://www.japantimes.co.jp/business/2026/10/14/companies/softbank-junk-bond-sale/",
+            "published_at": "2026-10-14T21:24:41Z",
+            "date_note": "HN submission, not original publication",
+            "source": "Hacker News",
+            "source_id": "hacker-news-ai",
+            "verification_scope": "metadata"
+          },
+          {
+            "title": "I got $300K in startup credits for my AI company at 18: the playbook",
+            "url": "https://devanshranjan.medium.com/im-18-and-got-300k-in-free-startup-credits-for-my-ai-company-here-s-the-exact-playbook-0603a44abcea",
+            "published_at": "2026-10-14T21:22:00Z",
+            "date_note": "HN submission, not original publication",
+            "source": "Hacker News",
+            "source_id": "hacker-news-ai",
+            "verification_scope": "metadata"
+          },
+          {
+            "title": "Steering AI Beyond Automation: A Research Agenda and Plan for Action",
+            "url": "https://www.normaltech.ai/p/steering-ai-beyond-automation",
+            "published_at": "2026-10-14T21:14:57Z",
+            "date_note": "HN submission, not original publication",
+            "source": "Hacker News",
+            "source_id": "hacker-news-ai",
+            "verification_scope": "metadata"
+          },
+          {
+            "title": "Tell HN: Don't mass spam employers with LLM generated emails",
+            "url": "https://news.ycombinator.com/item?id=50095323",
+            "published_at": "2026-10-14T21:09:24Z",
+            "date_note": "HN submission, not original publication",
+            "source": "Hacker News",
+            "source_id": "hacker-news-ai",
+            "verification_scope": "metadata"
+          },
+          {
+            "title": "Man sentenced to 18 months for AI music scam",
+            "url": "https://www.justice.gov/usao-sdny/pr/north-carolina-man-sentenced-18-months-prison-super-intelligence-assisted-music",
+            "published_at": "2026-10-14T21:08:55Z",
+            "date_note": "HN submission, not original publication",
+            "source": "Hacker News",
+            "source_id": "hacker-news-ai",
+            "verification_scope": "metadata"
+          }
+        ],
+        "status": "ok",
+        "pages": [
+          {
+            "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=created_at_i%3E1792011600%2Ccreated_at_i%3C%3D1792015200&hitsPerPage=100&page=0",
+            "http": 200,
+            "hits": 46,
+            "nbPages": 1
+          }
+        ],
+        "evidence": "All Algolia story pages in the one-hour timestamp interval parsed; title keyword discovery only, not independent original publication verification."
+      }
     },
     {
       "source_id": "import-ai",
       "name": "Import AI",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.701598+00:00",
       "checked_url": "https://importai.substack.com/feed",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-12T12:30:39+00:00；窗口内 1 条。未读正文。",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-12T12:30:39+00:00；窗口内 1 条。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
@@ -76851,17 +78106,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-12T12:30:39+00:00；窗口内 1 条。未读正文。",
+      "increment_check": {
+        "source_id": "import-ai",
+        "checked_at": "2026-10-14T22:00:25.701598+00:00",
+        "checked_url": "https://importai.substack.com/feed",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-12T12:30:39+00:00",
+        "oldest": "2026-05-18T13:31:17+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "bens-bites",
       "name": "Ben's Bites",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.731155+00:00",
       "checked_url": "https://www.bensbites.com/feed",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-13T13:00:35+00:00；窗口内 1 条。未读正文。 聚合通讯，条目须追原始公告。",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-13T13:00:35+00:00；窗口内 1 条。未读正文。 聚合通讯，条目须追原始公告。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Zuck’s wonder...full",
@@ -76890,17 +78164,36 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-13T13:00:35+00:00；窗口内 1 条。未读正文。 聚合通讯，条目须追原始公告。",
+      "increment_check": {
+        "source_id": "bens-bites",
+        "checked_at": "2026-10-14T22:00:25.731155+00:00",
+        "checked_url": "https://www.bensbites.com/feed",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-13T13:00:35+00:00",
+        "oldest": "2026-08-21T14:08:34+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "latent-space",
       "name": "Latent Space",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.781016+00:00",
       "checked_url": "https://www.latent.space/feed",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T20:35:09+00:00；窗口内 5 条。未读正文。不建 Concourse 条目。",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T20:35:09+00:00；窗口内 5 条。未读正文。不建 Concourse 条目。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
@@ -77008,6 +78301,15 @@
           "source_name": "Latent Space",
           "title_translation_scope": "title_only",
           "dedupe_key": "url:https://latent.space/p/claude-dynamic-workflows"
+        },
+        {
+          "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+          "url": "https://www.latent.space/p/crossing-the-threshold",
+          "published_at": "2026-10-14T21:40:52+00:00",
+          "source_id": "latent-space",
+          "source": "Latent Space",
+          "verification_scope": "metadata",
+          "first_seen_at": "2026-10-14T22:00:26.332600+00:00"
         }
       ],
       "gaps": [
@@ -77016,34 +78318,82 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T20:35:09+00:00；窗口内 5 条。未读正文。不建 Concourse 条目。",
+      "increment_check": {
+        "source_id": "latent-space",
+        "checked_at": "2026-10-14T22:00:25.781016+00:00",
+        "checked_url": "https://www.latent.space/feed",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [
+          {
+            "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+            "url": "https://www.latent.space/p/crossing-the-threshold",
+            "published_at": "2026-10-14T21:40:52+00:00",
+            "source_id": "latent-space",
+            "source": "Latent Space",
+            "verification_scope": "metadata",
+            "first_seen_at": "2026-10-14T22:00:26.332600+00:00"
+          }
+        ],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-14T21:40:52+00:00",
+        "oldest": "2026-10-02T00:28:04+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "interconnects",
       "name": "Interconnects",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:25.791893+00:00",
       "checked_url": "https://www.interconnects.ai/feed",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-09T21:33:47+00:00；窗口内 0 条。未读正文。",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-09T21:33:47+00:00；窗口内 0 条。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [],
       "gaps": [
         "未读正文"
       ],
       "check_state": "fully_checked_no_new_items",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-09T21:33:47+00:00；窗口内 0 条。未读正文。",
+      "increment_check": {
+        "source_id": "interconnects",
+        "checked_at": "2026-10-14T22:00:25.791893+00:00",
+        "checked_url": "https://www.interconnects.ai/feed",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-09T21:33:47+00:00",
+        "oldest": "2026-06-28T17:03:07+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "ai-snake-oil",
       "name": "AI as Normal Technology",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:26.156219+00:00",
       "checked_url": "https://www.normaltech.ai/feed",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T19:56:44+00:00；窗口内 1 条。未读正文。",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T19:56:44+00:00；窗口内 1 条。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "Steering AI Beyond Automation",
@@ -77072,34 +78422,72 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-14T19:56:44+00:00；窗口内 1 条。未读正文。",
+      "increment_check": {
+        "source_id": "ai-snake-oil",
+        "checked_at": "2026-10-14T22:00:26.156219+00:00",
+        "checked_url": "https://www.normaltech.ai/feed",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-14T19:56:44+00:00",
+        "oldest": "2024-12-13T20:51:29+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "one-useful-thing",
       "name": "One Useful Thing",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:26.159737+00:00",
       "checked_url": "https://www.oneusefulthing.org/feed",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-01T10:54:12+00:00；窗口内 0 条。未读正文。",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-01T10:54:12+00:00；窗口内 0 条。未读正文。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [],
       "gaps": [
         "未读正文"
       ],
       "check_state": "fully_checked_no_new_items",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "完整检查且无新增"
+      "check_state_zh": "完整检查且无新增",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-01T10:54:12+00:00；窗口内 0 条。未读正文。",
+      "increment_check": {
+        "source_id": "one-useful-thing",
+        "checked_at": "2026-10-14T22:00:26.159737+00:00",
+        "checked_url": "https://www.oneusefulthing.org/feed",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 20,
+        "latest": "2026-10-01T10:54:12+00:00",
+        "oldest": "2025-09-11T20:37:39+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     },
     {
       "source_id": "simon-willison",
       "name": "Simon Willison's Weblog",
       "core": false,
       "method": "rss",
-      "checked_at": "2026-10-14T21:14:08+00:00",
+      "checked_at": "2026-10-14T22:00:26.220708+00:00",
       "checked_url": "https://simonwillison.net/atom/everything/",
       "status": "ok",
-      "evidence": "feed HTTP 200，共 30 条，带日期 30 条，最新 2026-10-14T16:26:53+00:00；窗口内 10 条。按标题或 atom feed 条目正文命中 AI 词保留 9 条，其余 1 条记入 excluded_hits（标题与 feed 正文都未见 AI 词）。正式来源，计入 planned。未打开原文页。",
+      "evidence": "feed HTTP 200，共 30 条，带日期 30 条，最新 2026-10-14T16:26:53+00:00；窗口内 10 条。按标题或 atom feed 条目正文命中 AI 词保留 9 条，其余 1 条记入 excluded_hits（标题与 feed 正文都未见 AI 词）。正式来源，计入 planned。未打开原文页。；05:00—06:00增量：RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification.",
       "items": [
         {
           "title": "AI is mass decompiling games. That's both awesome and scary.",
@@ -77297,14 +78685,33 @@
       ],
       "check_state": "candidates_found_not_adopted",
       "collection_pass": "browser_or_page_supplement",
-      "check_state_zh": "发现候选（待核）"
+      "check_state_zh": "发现候选（待核）",
+      "upstream_status": "ok",
+      "upstream_checked_at": "2026-10-14T21:14:08+00:00",
+      "upstream_evidence": "feed HTTP 200，共 30 条，带日期 30 条，最新 2026-10-14T16:26:53+00:00；窗口内 10 条。按标题或 atom feed 条目正文命中 AI 词保留 9 条，其余 1 条记入 excluded_hits（标题与 feed 正文都未见 AI 词）。正式来源，计入 planned。未打开原文页。",
+      "increment_check": {
+        "source_id": "simon-willison",
+        "checked_at": "2026-10-14T22:00:26.220708+00:00",
+        "checked_url": "https://simonwillison.net/atom/everything/",
+        "window": [
+          "2026-10-14T21:00:00+00:00",
+          "2026-10-14T22:00:00+00:00"
+        ],
+        "status": "ok",
+        "items": [],
+        "http": 200,
+        "parsed": 30,
+        "latest": "2026-10-14T16:26:53+00:00",
+        "oldest": "2026-10-06T19:07:31+00:00",
+        "evidence": "RSS/Atom dated entries parsed for only 05:00–06:00 increment; raw response retained. Listing is not article verification."
+      }
     }
   ],
   "config_commit": "364cff609fd91d5e2dcc9542cb5d40ee038584ed",
   "config_commit_note": "在 /workspace/ad1015/run（复制自上一轮工作树 /workspace/ad1014/run，main，git pull --ff-only 快进到 origin/main）读取 main HEAD 364cff609fd91d5e2dcc9542cb5d40ee038584ed 的 AGENTS.md 与 config/sources.json。与上一轮读取的 c6abe40 相比，config/sources.json（blob c79452939fbab751605ef9ad26f9f2323f8ad093）、AGENTS.md 与 scripts/collect_sources.py 均无改动（c6abe40..364cff6 只有下游发布 10-14 第 38 期、小宇宙音频同步、英文版与英文 RSS 部署记录，以及 config/glossary.en.json）。config/sources.json 最后改动提交为 8b9f9e0（2026-10-05）；AGENTS.md 最后改动提交为 c96c6d7（只改第 4 节口播写法，不涉及采集）。来源数 45，discovery_window_hours 72，core 为 anthropic、openai、google-ai、xai、arxiv、github-trending。采集脚本 scripts/collect_sources.py 取自同一 SHA，运行 --until 2026-10-14T21:00:00Z 后由执行 agent 逐源补查。",
   "issue_date": "2026-10-15",
   "timezone": "Asia/Shanghai",
-  "until": "2026-10-14T21:00:00Z",
+  "until": "2026-10-14T22:00:00Z",
   "collection_only": true,
   "does_not_publish": true,
   "agents_role_conflict": {
@@ -77337,7 +78744,7 @@
     "fabricated": false,
     "note": "AGENTS.md 2B 的 catalog_review（defer/keep/merge）是下游展示决策，本轮不编造。"
   },
-  "checked_at": "2026-10-14T21:14:08+00:00",
+  "checked_at": "2026-10-14T23:19:56.358399+00:00",
   "discovery": [
     {
       "query": "configured sources only",
@@ -77475,11 +78882,11 @@
     }
   ],
   "window": {
-    "since": "2026-10-11T21:00:00+00:00",
-    "until": "2026-10-14T21:00:00+00:00",
+    "since": "2026-10-11T22:00:00+00:00",
+    "until": "2026-10-14T22:00:00+00:00",
     "hours": 72,
     "timezone": "Asia/Shanghai",
-    "cutoff_note": "北京时间 2026-10-15 05:00，即 2026-10-14T21:00:00Z。日精度条目按日历日 2026-10-11 至 2026-10-14 收录，边界日待核。"
+    "cutoff_note": "本机北京时间06:00截止；上游05:00记录另存，非RSS末小时未完整。"
   },
   "source_catalog_path": "data/runs/2026-10-15-source-catalog.json",
   "candidate_counts": {
@@ -77552,5 +78959,185 @@
     "partial": "部分检查（partially_checked）",
     "failed": "访问失败（access_failed）",
     "pending": "尚未检查（not_yet_checked）"
+  },
+  "upstream_summary": {
+    "window": [
+      "2026-10-11T21:00:00+00:00",
+      "2026-10-14T21:00:00+00:00"
+    ],
+    "planned": 45,
+    "ok": 41,
+    "partial": 4,
+    "failed": 0,
+    "pending_browser": 0,
+    "core_not_ok": [],
+    "pending": 0,
+    "success_rate": 0.9111,
+    "success_rate_display": "41/45 = 91%",
+    "incomplete": false,
+    "incomplete_note": "成功率 41/45=91.1%，核心源全部 ok。partial 为 microsoft（配置页无日期、配置 feed 410、替代 feed 只有 10 条）、qwen（配置仍指旧站，另查 qwen.ai/research 只看首屏，按要求标 partial）、stepfun（无新闻流与绝对日期，倒计时不当发布）、openreview（未按会场检索新投稿）。arXiv API 可见最新 published 2026-10-13T17:59:57Z，此后提交的论文要等下一次公告，属公告节奏边界，已写入 arxiv.gaps。网页搜索不计入。"
+  },
+  "editorial_review": [
+    {
+      "item_id": "midterms",
+      "primary_url": "https://www.anthropic.com/news/2026-us-midterms",
+      "decision": "adopt",
+      "verification_scope": "公告全文；计划与现状分开",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "midterms"
+      ]
+    },
+    {
+      "item_id": "third",
+      "primary_url": "https://openai.com/index/third-moment-research",
+      "decision": "adopt",
+      "verification_scope": "案例全文，企业自述，非独立基准",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "third"
+      ]
+    },
+    {
+      "item_id": "scam",
+      "primary_url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+      "decision": "adopt",
+      "verification_scope": "公告全文；分阶段部署，无通用准确率",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "scam"
+      ]
+    },
+    {
+      "item_id": "nvidia",
+      "primary_url": "https://nvidianews.nvidia.com/news/nvidia-commits-250-million-to-advance-uk-agentic-safety-and-security-research-over-the-next-five-years",
+      "decision": "adopt",
+      "verification_scope": "公告全文，金额为算力访问承诺",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "nvidia"
+      ]
+    },
+    {
+      "item_id": "grok",
+      "primary_url": "https://x.ai/news/grok-voice-3",
+      "decision": "adopt",
+      "verification_scope": "公告全文，排名未向评测方独立核实故不采用",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "grok"
+      ]
+    },
+    {
+      "item_id": "observability",
+      "primary_url": "https://claude.com/resources/articles/agent-observability-on-the-claude-platform",
+      "decision": "adopt",
+      "verification_scope": "公告全文，公开测试",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "observability"
+      ]
+    },
+    {
+      "item_id": "sentinel",
+      "primary_url": "https://openai.com/index/sentinelone",
+      "decision": "adopt",
+      "verification_scope": "案例全文，客户陈述非统一提速基准",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "sentinel"
+      ]
+    },
+    {
+      "item_id": "discourse-chan",
+      "primary_url": "https://www.youtube.com/watch?v=SBlVJyoT3IM",
+      "decision": "adopt",
+      "verification_scope": "人物介绍；07:00—17:51、26:24—28:16转述",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "discourse-chan"
+      ]
+    },
+    {
+      "item_id": "discourse-possible",
+      "primary_url": "https://www.possible.fm/podcasts/riffs058/",
+      "decision": "adopt",
+      "verification_scope": "节目/人物介绍、社会收益、广告与问责段转述",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "discourse-possible"
+      ]
+    },
+    {
+      "item_id": "swe-misbehavior",
+      "primary_url": "https://arxiv.org/html/2610.18206v1",
+      "decision": "adopt",
+      "verification_scope": "摘要、实验4节、方法5节、局限，未复现",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "swe-misbehavior"
+      ]
+    },
+    {
+      "item_id": "runai",
+      "primary_url": "https://developer.nvidia.com/blog/nvidia-runai-is-now-open-source-as-part-of-nvidia-dsx-ai-factory-platform/",
+      "decision": "adopt",
+      "verification_scope": "正文、主仓库LICENSE，未部署",
+      "decision_reason": "原文支持本期部署边界、信任或工具主题，保留原始日期与条件",
+      "selected_item_ids": [
+        "runai"
+      ]
+    },
+    {
+      "candidate_id": "amp",
+      "primary_url": "https://openai.com/index/amp-beyond-coding",
+      "decision": "defer",
+      "verification_scope": "官方案例全文，web阅读",
+      "decision_reason": "客户案例可读，本期已有持续运行案例，暂存避免同类重复"
+    },
+    {
+      "candidate_id": "singapore",
+      "primary_url": "https://www.anthropic.com/news/singapore-office-opening",
+      "decision": "defer",
+      "verification_scope": "全文",
+      "decision_reason": "办公与合作公告已读，本期选更具体端侧部署"
+    },
+    {
+      "candidate_id": "apate",
+      "primary_url": "https://techcrunch.com/2026/10/14/apate-sends-ai-agents-undercover-to-get-scammed-so-they-can-gather-fraud-intelligence/",
+      "decision": "defer",
+      "verification_scope": "全文",
+      "decision_reason": "原创采访全文可读，活动参赛企业自述，本期反诈采用隐私机制更具体的官方方案"
+    }
+  ],
+  "paper_candidates": [
+    {
+      "paper_key": "arxiv:2610.18206",
+      "primary_url": "https://arxiv.org/html/2610.18206v1",
+      "version": "v1",
+      "original_submitted_at": "2026-10-13",
+      "discovery_date": "2026-10-14",
+      "discovery_sources": [
+        "hf-daily-papers"
+      ],
+      "topics": [
+        "Agent/工具使用",
+        "评测/可靠性/安全"
+      ],
+      "verification_scope": "摘要、实验、方法、局限",
+      "decision": "adopt",
+      "decision_reason": "区别任务完成与越界行为，实验条件可核",
+      "selected_item_ids": [
+        "swe-misbehavior"
+      ]
+    }
+  ],
+  "targeted_followup": {
+    "count": 26,
+    "resolved": 20,
+    "remaining_partial": 6,
+    "new_increment_items": 1,
+    "report": "local followup-resolution.json",
+    "checked_at": "2026-10-14T23:19:56.358399+00:00"
   }
 }
