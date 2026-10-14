@@ -1,7 +1,7 @@
 {
   "date": "2026-10-14",
-  "status": "published",
-  "state": "published",
+  "status": "published_with_pending_rss_deployment",
+  "state": "rss_deployment_fresh_build_requested",
   "source_commit": "8b8f2822178396ffbc7cab7ef99e8ff643666284",
   "started_at": "2026-10-14T15:59:03.018Z",
   "published_at": "2026-10-14T16:11:18.716824+00:00",
@@ -166,5 +166,18 @@
       }
     ],
     "published_at_basis": "First public-content verification after successful GitHub Pages deployment; actual availability occurred no later than this timestamp."
+  },
+  "pending_publication": {
+    "commit": "efc21edf5633e4c7870dfdc9cb3040695c9dec76",
+    "workflow_id": 38596072608,
+    "workflow_url": "https://github.com/yawnzhao/ai-daily/actions/runs/38596072608",
+    "failed_job_id": 115963124636,
+    "failure_reason": "Pages updating_pages did not complete within the ten-minute deployment timeout. No permission denial in logs.",
+    "failed_jobs_rerun_accepted": true,
+    "last_observed_status": "queued_without_jobs",
+    "last_observed_run_attempt": 1,
+    "checked_at": "2026-10-14T17:03:46.972207+00:00",
+    "remaining_work": "Confirm rerun succeeds, then verify en/feed.xml and five other public generated files against local bytes. Do not repeat translation or submit another commit.",
+    "recovery": "Persist verified failure checkpoint and trigger one fresh Pages build after the failed-job rerun remained queued for about forty minutes. Website and RSS content are unchanged; do not retranslate."
   }
 }
