@@ -126,6 +126,51 @@ class EditorialTrialTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'Missing Chinese catalog title'):
                     builder.render_source_catalog(issue, dict(news=dict(title='新闻')))
 
+    def test_later_catalog_omits_links_already_on_an_earlier_public_list(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            (root / 'config/sources.json').write_text('{"sources":[]}')
+            (root / 'data/runs').mkdir(parents=True)
+            (root / 'data/issues').mkdir(parents=True)
+            (root / 'daily/2026').mkdir(parents=True)
+            (root / 'daily/2026/2026-10-17.md').write_text('# 前日\n')
+            earlier = {
+                'date': '2026-10-17',
+                'canonical_markdown': 'daily/2026/2026-10-17.md',
+                'source_catalog_path': 'data/runs/2026-10-17-source-catalog.json',
+                'items': [],
+            }
+            (root / 'data/issues/2026-10-17.json').write_text(json.dumps(earlier))
+            (root / 'data/runs/2026-10-17-source-catalog.json').write_text(json.dumps({
+                'date': '2026-10-17',
+                'items': [{'url': 'https://example.com/old', 'title': 'Old', 'original_title': 'Old',
+                           'title_zh': '旧闻', 'source': 'News'}],
+            }))
+            (root / 'data/runs/2026-10-18-source-catalog.json').write_text(json.dumps({
+                'date': '2026-10-18',
+                'items': [
+                    {'url': 'https://example.com/old', 'title': 'Old', 'original_title': 'Old',
+                     'title_zh': '旧闻', 'source': 'News'},
+                    {'url': 'https://example.com/new', 'title': 'New', 'original_title': 'New',
+                     'title_zh': '新出现', 'source': 'News'},
+                ],
+            }))
+            issue = {
+                'date': '2026-10-18',
+                'source_catalog_path': 'data/runs/2026-10-18-source-catalog.json',
+                'items': [{'id': 'kept', 'section': 'featured', 'primary_url': 'https://example.com/new'}],
+            }
+            with patch.object(builder, 'ROOT', root):
+                builder._PRIOR_CATALOG_KEYS.clear()
+                page = builder.render_source_catalog(issue, {'kept': {'title': '新出现'}})
+                markdown = builder.render_source_catalog_markdown(issue, {'kept': {'title': '新出现'}})
+            self.assertIn('https://example.com/new', page)
+            self.assertNotIn('https://example.com/old', page)
+            self.assertIn('另外 1 条不放进本页', page)
+            self.assertIn('https://example.com/new', markdown)
+            self.assertNotIn('https://example.com/old', markdown)
+
     def test_partial_failed_pending_do_not_become_no_updates(self):
         receipt = {'summary': {'ok': 0, 'incomplete': True}, 'sources': [
             {'name': 'Microsoft', 'status': 'partial', 'evidence': '日期范围不足'},
