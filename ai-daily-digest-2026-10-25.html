@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-10-25 · AI应用重整入口 智能体走向真实交付</title>
+<meta name="description" content="从即梦整合与个人助手路线，到数据库评测、检索偏向和广告披露，跟踪AI应用走向实际交付。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-25.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-10-25 · AI应用重整入口 智能体走向真实交付">
+<meta property="og:description" content="从即梦整合与个人助手路线，到数据库评测、检索偏向和广告披露，跟踪AI应用走向实际交付。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-10-25.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-10-24.html">上一期 · 10-24</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-10-25">2026年10月25日 · 星期日 · 第 49 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">11</span>条资讯</div>
+    <div class="stat"><span class="num">0</span>篇论文</div>
+    <div class="stat"><span class="num">0</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年10月25日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">5 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">从即梦整合与个人助手路线，到数据库评测、检索偏向和广告披露，跟踪AI应用走向实际交付。</div></div><div class="news-item" id="jimeng-consolidation"><div class="news-head"><span class="badge badge-model">智能体与应用</span><h3>小云雀并入即梦：视频应用从铺入口转向整合资源</h3></div><p>《智能涌现》10月24日报道，剪映内部近期将小云雀并入即梦，仍保留小云雀独立入口；即梦已接入其短剧能力。报道援引知情人士称，此次主要整合资源，产品团队没有变化。</p><p>报道还称，即梦已缩减App端投入，资源将更多投向服务专业创作者的Web端，并加大海外版Dreamina及商业化投入。这里需要区分组织整合、产品入口和模型能力：并入不等于产品已经关闭，资源集中也不等于模型停止对外服务。</p><p>当大量视频应用都能接入同一模型，自有应用要证明的便不只是生成效果，还有获客、留存与付费上的额外价值。这是本次调整值得跟踪的主线。以上为原创报道中的消息及分析，并非字节官方公告。</p><p><a href="https://www.36kr.com/p/4039677577122946" target="_blank" rel="noopener">智能涌现｜2026-10-24</a></p><div class="source">来源：<a href="https://www.36kr.com/p/4039677577122946" target="_blank" rel="noopener">智能涌现</a> · 2026-10-24 · 智能涌现署名原创报道，36氪作者页同步；已读正文，组织调整来自匿名知情人士</div></div><div class="news-item" id="today-personal"><div class="news-head"><span class="badge badge-model">智能体与应用</span><h3>Today AI谈个人助手：长期记忆、主动性与独立应用的取舍</h3></div><p>《智能涌现》10月24日刊出的团队访谈，把个人助手的竞争拆成几个具体问题：持续记住用户、降低交代背景的成本，以及在主动提醒和过度打扰之间找到平衡。Today AI团队介绍，其产品采用持续单对话入口，通过授权连接和日常交流积累上下文；这是团队的产品路线，不能理解为效果已经得到普遍验证。</p><p>团队也解释了为何保留独立App：图形界面帮助普通用户发现能力，客户端还涉及设备权限。它与直接住在短信中的助手形成不同选择。访谈强调，先明确用户要完成的事，再决定是否操作某个应用；订票需求不必被限定为操作某一个订票App。</p><p>团队承认付费意愿、长期留存、运行成本与平台准入仍在探索。本期聚焦访谈新增的产品判断，不把此前宣布的融资再当今日融资新闻。</p><p><a href="https://www.36kr.com/p/4039749830120583" target="_blank" rel="noopener">智能涌现｜2026-10-24</a></p><div class="source">来源：<a href="https://www.36kr.com/p/4039749830120583" target="_blank" rel="noopener">智能涌现</a> · 2026-10-24 · 智能涌现原创团队访谈；企业自述，非独立产品测评</div></div><div class="news-item" id="ballot-retrieval"><div class="news-head"><span class="badge badge-model">评测与社会影响</span><h3>强制选边测试显示模型推荐分化，检索路径值得单独审视</h3></div><p>TechCrunch报道Convovo的一项研究：在开发者API中要求模型必须选出一位候选人、并启用搜索，GPT-6.1 Sol与Grok 4.7在近500场选举中的推荐明显分化。报道给出的比例分别为97%推荐民主党候选人和92%推荐共和党候选人。研究页面确认了模型名称、API与启用搜索的设置。</p><p>关键条件是“强制给出推荐”。消费级应用最初拒绝回答，不能把这一结果直接当成普通用户在聊天界面里的体验。报道还描述了两者选择搜索主题和引用来源的差异。关闭搜索后的小样本结果又有变化，说明模型、提示与检索链路应分别考察；这些结果不证明已经找到了偏向的唯一原因。</p><p>对使用检索型助手的人，这项研究提出一个实际问题：答案引用了资料，仍要看它决定检索什么、遗漏什么，而不只看有没有脚注。该研究不构成投票建议。</p><p><a href="https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/" target="_blank" rel="noopener">TechCrunch｜2026-10-24</a></p><p><a href="https://convovo.ai/ballot/" target="_blank" rel="noopener">Convovo研究入口</a></p><div class="source">来源：<a href="https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/" target="_blank" rel="noopener">TechCrunch</a> · 2026-10-24 · 已读TechCrunch原创采访及Convovo公开研究入口；比例来自报道，方法入口可见；未复现实验</div></div><div class="news-item" id="pa-ad-labels"><div class="news-head"><span class="badge badge-model">政策治理</span><h3>宾州AI广告披露要求：标签要跟着内容媒介走</h3></div><p>The Verge于10月24日报道，宾夕法尼亚州州长已于周四签署Artificial Intelligence Deceptive Advertising Act。报道链接的立法文本要求，在规定的合成内容广告情形下进行清晰醒目的披露，并以与内容相同的媒介呈现。</p><p>文本针对造成消费者对商品或服务性质、来源或真实性错误感知的情形；对显然虚构、戏仿、讽刺、评论和批评等另有例外。不能把它概括成所有AI生成内容一律禁用，也不宜忽略“显著修改”“错误感知”等适用条件。</p><p>值得跟踪的是广告流程：当文本、音频和视频由不同工具制作、在不同渠道分发时，披露本身也要成为交付的一部分。这里报道的是签署消息与所链接文本，不推断所有条款已经立即生效。</p><p><a href="https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act" target="_blank" rel="noopener">The Verge｜2026-10-24</a></p><p><a href="https://www.palegis.us/legislation/bills/text/PDF/2025/0/SB0806/PN1808" target="_blank" rel="noopener">宾州议会所链接文本</a></p><div class="source">来源：<a href="https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act" target="_blank" rel="noopener">The Verge</a> · 2026-10-24 · 已读The Verge报道及其链接的官方SB0806 PN1808文本；签署事实来自报道，非法律适用意见</div></div><div class="news-item" id="thinkingbox-training"><div class="news-head"><span class="badge badge-model">评测与可靠性</span><h3>ThinkingBox把数据库结果变成训练奖励：成功一次与稳定成功不同</h3></div><p>Microsoft与Hugging Face联合文章介绍，将数据库最终状态检查用作智能体强化学习奖励。研究团队在独立于评测集的任务上训练Qwen3.8-27B，再在507项任务上各测试20次。</p><p>作者报告，训练后平均成功率由51.70%升至60.78%，增加9.08个百分点；20次全部成功的任务从38项增至107项。但至少成功过一次的任务从453项降至446项，表明稳定性改善与任务覆盖并非同一个指标。</p><p>文章以需要经理批准的酒店降级任务解释差别：应当保留的订单和支付状态，没有因为智能体说“完成”就算正确。这个结果支持继续研究基于真实业务状态的训练，不等于已证明在所有生产场景可靠。此条为48小时补漏：沿用订阅精确时间，页面显示10月22日，保留原始日期差异，不计入24小时新增目录。</p><p><a href="https://huggingface.co/blog/microsoft/thinkingbox-training" target="_blank" rel="noopener">Hugging Face｜2026-10-22</a></p><div class="source">来源：<a href="https://huggingface.co/blog/microsoft/thinkingbox-training" target="_blank" rel="noopener">Hugging Face</a> · 2026-10-22 · 联合作者官方技术文章，核读方法和结果表；未运行训练或复现；48小时补漏</div></div><div class="paper-also"><div class="paper-also-title">其他动态</div><div class="paper-also-item" id="meta-sundial"><span class="paper-also-num">01</span><div><strong>Meta收购Sundial的消息指向数据分析与智能体工具</strong><p>The Verge转述Axios称，Meta正在收购AI数据分析公司Sundial，两名前Meta员工创办的团队将有成员加入Meta，相关工作涉及数据分析工具与智能体。本期仅保留收购方向，不补写未核实的交易金额，也不将消息扩大成产品已经全面并入。</p><p><a href="https://www.theverge.com/tech/1018103/meta-is-acquiring-an-ai-analytics-company" target="_blank" rel="noopener">The Verge｜2026-10-23</a></p><p>来源：<a href="https://www.theverge.com/tech/1018103/meta-is-acquiring-an-ai-analytics-company" target="_blank" rel="noopener">The Verge</a> · 2026-10-23 · 已读The Verge短讯；原始Axios页访问受限，仅作明确归属的转述快讯</p></div></div><div class="paper-also-item" id="messaging-agents"><span class="paper-also-num">02</span><div><strong>短信成为个人助手入口，但授权与交付仍是产品差异</strong><p>TechCrunch更新了可通过短信或消息应用使用的智能体目录。Caddy面向日历和对话中的待办，Fambot围绕家庭安排，Maverick强调行动前取得许可。目录显示，一条消息可以成为入口，但不同产品的连接范围、运行环境及审批方式并不相同。本文是产品盘点，不代表所有产品刚刚发布，也不是独立性能排名。</p><p><a href="https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/" target="_blank" rel="noopener">TechCrunch｜2026-10-24</a></p><p>来源：<a href="https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/" target="_blank" rel="noopener">TechCrunch</a> · 2026-10-24 · 原创产品盘点相关段落；未逐一试用</p></div></div><div class="paper-also-item" id="product-retrospective"><span class="paper-also-num">03</span><div><strong>AI产品回顾：关闭、并入与延期需要分开看</strong><p>TechCrunch发布AI产品与创业项目回顾，涉及停止运营、功能被整合、转向及发布延期等不同结果。作为延伸阅读，它提醒我们把独立入口的存续与底层功能的使用分开判断。不能把整份清单写成“今天一批公司倒闭”，其中大量事件发生在此前。</p><p><a href="https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/" target="_blank" rel="noopener">TechCrunch｜2026-10-24</a></p><p>来源：<a href="https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/" target="_blank" rel="noopener">TechCrunch</a> · 2026-10-24 · 核读原创回顾的分类与相关段落；历史事件不作今日新增事件</p></div></div><div class="paper-also-item" id="performing-productivity"><span class="paper-also-num">04</span><div><strong>职场采访提醒：AI使用量和净提效之间还有返工成本</strong><p>定焦的职场采访描述，一些受访者为了展示AI应用成果而包装流程或制作演示，后续仍需要同事返工；也有人在投诉分类、纪要等任务中获得实际帮助。个案提示考核应关注可用交付及总工时，不能据此推断整个职场的普遍比例。本期不采用未回到原始调查核实的百分比。</p><p><a href="https://www.36kr.com/p/4039272307856521" target="_blank" rel="noopener">36氪｜2026-10-24</a></p><p>来源：<a href="https://www.36kr.com/p/4039272307856521" target="_blank" rel="noopener">36氪</a> · 2026-10-24 · 36氪转载定焦采访；个案范围，非总体统计</p></div></div><div class="paper-also-item" id="battledrones-four"><span class="paper-also-num">05</span><div><strong>Battledrones新增四人地图：生成代码之后仍要处理联机状态</strong><p>Simon Willison公布Battledrones v14的Compass Rose地图，称使用Claude Opus 5.5增加四人玩法并修改WebSocket联机代码，玩家可通过分享链接或二维码加入，空位使用游戏AI角色。这是具体项目的迭代记录，不是通用无人机控制能力，也不是多人联机可靠性的基准测试。</p><p><a href="https://simonwillison.net/2026/Oct/24/battledrones/" target="_blank" rel="noopener">Simon Willison&#x27;s Weblog｜2026-10-24</a></p><p>来源：<a href="https://simonwillison.net/2026/Oct/24/battledrones/" target="_blank" rel="noopener">Simon Willison&#x27;s Weblog</a> · 2026-10-24 · 作者发布日志；未运行游戏或审计代码</p></div></div><div class="paper-also-item" id="quick-study"><span class="paper-also-num">06</span><div><strong>Quick Study：把照片画成笔触效果的小型编程实例</strong><p>Simon Willison分享Quick Study，使用Claude Opus 5.5创建画布工具，把输入照片转换为模拟画笔绘制效果。作者说明采用Sobel边缘检测，除字体外不依赖外部库。它展示了自然语言编程与传统图像算法的结合；不能据此把运行时效果说成新的图像生成模型。此条为48小时补漏，未计入当日严格24小时目录。</p><p><a href="https://simonwillison.net/2026/Oct/23/quick-study-painter/" target="_blank" rel="noopener">Simon Willison&#x27;s Weblog｜2026-10-23</a></p><p>来源：<a href="https://simonwillison.net/2026/Oct/23/quick-study-painter/" target="_blank" rel="noopener">Simon Willison&#x27;s Weblog</a> · 2026-10-23 · 作者工具说明及提示；未运行代码或验证兼容性</p></div></div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="jan-agent-payments"><div class="insight-banner"><div class="meta">2026-10-18</div><h3>Jan Curn：自主支付的对手可能是预先配置好的服务</h3></div><div class="insight-body"><p>话语场已上线页面收录Apify创始人Jan Curn在10月18日演讲中的讨论。00:10:05附近的摘录提出，智能体支付面对的便利性竞争来自预先配置好的API密钥，而不只是信用卡通道。00:13:05附近则强调交易双方能否按承诺交付与定价的信任问题。</p><p>这能与今天的个人助手新闻形成一个观察角度：能调用人已经订好的服务，和能自行寻找、比较、购买陌生服务，是不同阶段。此处是历史演讲观点的转述，不是今日市场交易量结论。公开页标明自动字幕文本匹配、原片及译文复核待核；本期只据可见摘录讨论，不宣称核读完整演讲。</p><p><a href="https://q.cxspace.com/talks/source-2b9c794f365d566b/" target="_blank" rel="noopener">AI话语场｜2026-10-18</a></p><p>来源：<a href="https://q.cxspace.com/talks/source-2b9c794f365d566b/" target="_blank" rel="noopener">AI话语场</a> · 2026-10-18 · 已核读q.cxspace.com具体公开页与所列摘录；历史观点，原片及译文复核待核</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">0 篇论文</span></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">0 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 18/45 个来源完成检查</summary><div class="content"><p>采集不完整。复用上游候选并按06:00截止补查配置中的全部来源；浏览器入口、受限页面和时间不明项保留具体缺口，不宣称全网完整覆盖。来源目录独立于正文选稿，保留窗口内相关延伸阅读；已出现的同一事件不因换标题再次收录。仅元数据或相关段落已读的条目不等于全文事实核验。</p><p>研究结果为作者报告；产品能力为发布者或采访自述，未进行独立实测。话语场只采用具体公开页可见摘录并保留其复核状态。</p><p><strong>检查尚未完成的来源</strong>：下列状态表示检查缺口，不能据此认定近期无更新；“已完整检查且无新增”另行记录。</p><ul><li><strong>Anthropic News</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 259 处，最新 2026-10-24；窗口内 2 条（按日期匹配，粒度到天）</li><li><strong>Claude Blog</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 31 处，最新 2026-10-23；窗口内 1 条（按日期匹配，粒度到天）</li><li><strong>xAI</strong>：已检查部分内容，覆盖或日期待核。脚本不处理，需浏览器补查</li><li><strong>Google DeepMind</strong>：已检查部分内容，覆盖或日期待核。ParseError: not well-formed (invalid token): line 1, column 0</li><li><strong>Microsoft AI</strong>：已检查部分内容，覆盖或日期待核。脚本不处理，需浏览器补查</li><li><strong>Qwen</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 10 处，最新 2025-09-23；窗口内 0 条（按日期匹配，粒度到天）</li><li><strong>通义实验室</strong>：已检查部分内容，覆盖或日期待核。RemoteDisconnected: Remote end closed connection without response</li><li><strong>DeepSeek</strong>：已检查部分内容，覆盖或日期待核。脚本不处理，需浏览器补查</li><li><strong>月之暗面 Moonshot</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 6 处，最新 2026-07-17；窗口内 0 条（按日期匹配，粒度到天）</li><li><strong>智谱 Z.ai</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 319 处，最新 2026-09-10；窗口内 0 条（按日期匹配，粒度到天）</li><li><strong>阶跃星辰 StepFun</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目</li><li><strong>Mistral</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 94 处，最新 2026-10-21；窗口内 0 条（按日期匹配，粒度到天）</li><li><strong>European Commission Digital Strategy</strong>：已检查部分内容，覆盖或日期待核。HTTPError: HTTP Error 403: Forbidden</li><li><strong>UNESCO AI</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 15 处，最新 2026-10-21；窗口内 0 条（按日期匹配，粒度到天）</li><li><strong>OECD.AI</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 176 处，最新 2026-10-13；窗口内 0 条（按日期匹配，粒度到天）</li><li><strong>arXiv cs.AI / cs.LG / cs.CL</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验</li><li><strong>Hugging Face Daily Papers</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验</li><li><strong>OpenReview</strong>：已检查部分内容，覆盖或日期待核。脚本不处理，需浏览器补查</li><li><strong>GitHub Trending（日榜 + Python 日榜）</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验</li><li><strong>36氪 AI 频道（逐篇核验原创与转载）</strong>：已检查部分内容，覆盖或日期待核。脚本不处理，需浏览器补查</li><li><strong>国家网信办·网信发布（AI 相关）</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 20 处，最新 2026-10-23；窗口内 1 条（按日期匹配，粒度到天）</li><li><strong>字节跳动 Seed·博客与论文</strong>：已检查部分内容，覆盖或日期待核。脚本不处理，需浏览器补查</li><li><strong>MiniMax·News &amp; Updates</strong>：已检查部分内容，覆盖或日期待核。脚本不处理，需浏览器补查</li><li><strong>TechCrunch</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 67 处，最新 2026-10-24；窗口内 6 条（按日期匹配，粒度到天）</li><li><strong>Ars Technica</strong>：已检查部分内容，覆盖或日期待核。HTTPError: HTTP Error 403: Forbidden</li><li><strong>MIT Technology Review</strong>：已检查部分内容，覆盖或日期待核。脚本不处理，需浏览器补查</li><li><strong>404 Media</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 36 处，最新 2026-10-24；窗口内 2 条（按日期匹配，粒度到天）</li></ul><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
+<details class="paper-observation source-catalog" id="source-catalog"><summary class="label">资讯源 <span class="source-catalog-count">14 条</span></summary><div class="content"><h3 class="source-catalog-heading">新闻资讯 · 14 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://www.36kr.com/p/4039677577122946" target="_blank" rel="noopener">小云雀并入即梦：视频应用从铺入口转向整合资源<span class="source-catalog-original">独家｜字节AI应用再整合：小云雀并入即梦</span></a><span class="source-catalog-name">智能涌现</span></li><li><a href="https://www.36kr.com/p/4039749830120583" target="_blank" rel="noopener">Today AI谈个人助手：长期记忆、主动性与独立应用的取舍<span class="source-catalog-original">拿到2亿美金融资，Today AI回答了Personal AI的十个核心问题</span></a><span class="source-catalog-name">智能涌现</span></li><li><a href="https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/" target="_blank" rel="noopener">强制选边测试显示模型推荐分化，检索路径值得单独审视<span class="source-catalog-original">Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act" target="_blank" rel="noopener">宾州AI广告披露要求：标签要跟着内容媒介走<span class="source-catalog-original">Pennsylvania will require labels on AI-generated ads</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.theverge.com/tech/1018103/meta-is-acquiring-an-ai-analytics-company" target="_blank" rel="noopener">Meta收购Sundial的消息指向数据分析与智能体工具<span class="source-catalog-original">Meta is acquiring an AI analytics company.</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/" target="_blank" rel="noopener">短信成为个人助手入口，但授权与交付仍是产品差异<span class="source-catalog-original">Here are the top AI agents that can live in your text messages</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/" target="_blank" rel="noopener">AI产品回顾：关闭、并入与延期需要分开看<span class="source-catalog-original">The AI graveyard: a running list of projects and startups that didn’t make it</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.36kr.com/p/4039272307856521" target="_blank" rel="noopener">职场采访提醒：AI使用量和净提效之间还有返工成本<span class="source-catalog-original">打工人，开始“表演”AI提效</span></a><span class="source-catalog-name">36氪</span></li><li><a href="https://simonwillison.net/2026/Oct/24/battledrones/" target="_blank" rel="noopener">Battledrones新增四人地图：生成代码之后仍要处理联机状态<span class="source-catalog-original">battledrones v14: Compass Rose, a four player map</span></a><span class="source-catalog-name">Simon Willison&#x27;s Weblog</span></li><li><a href="https://www.36kr.com/p/4039323119260546" target="_blank" rel="noopener">奥特曼预判AI三种终局：最坏能让对手GPU集体瘫痪</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4039315418829698" target="_blank" rel="noopener">孙正义的保险丝快断了</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4039260564853890" target="_blank" rel="noopener">“不烧心”的短剧公司，要上市了</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4039237422175872" target="_blank" rel="noopener">双11购物车里的AI暗战</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4039179185837190" target="_blank" rel="noopener">王虹和韦东奕们，也要被 AI「斩杀」了？</a><span class="source-catalog-name">36氪</span></li></ul></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-10-24.html">上一期 · 10-24</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
