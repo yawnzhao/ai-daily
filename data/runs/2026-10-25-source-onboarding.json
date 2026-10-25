@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-25",
+  "kind": "source-onboarding-verification",
+  "not_a_published_issue": true,
+  "historical_receipts_rewritten": false,
+  "baseline_commit": "aee11495112d50a66c78e2d5818ace79482a6a77",
+  "checked_at": "2026-10-25T02:15:00Z",
+  "before_source_count": 45,
+  "after_source_count": 51,
+  "added_count": 6,
+  "failed_candidate_count": 1,
+  "discovery_window_hours": 36,
+  "source_catalog_window_hours": 36,
+  "source_catalog_minimum_target": 20,
+  "collection_stage": "collection_only",
+  "policy_conflicts": [],
+  "lead_only_domains_checked": ["ainvest.com", "shattered.io", "thecodew.com", "cryptobriefing.com"],
+  "blocked_domains_checked": ["coindesk.cc"],
+  "window_wording": {
+    "config_notes_72_hour_discovery_remaining": false,
+    "hacker_news_note": "完整72小时窗口 changed to 完整36小时发现窗口"
+  },
+  "fixes": [
+    {
+      "id": "microsoft",
+      "result": "entrance_replaced_still_partial_if_feed_truncated_or_blocked",
+      "evidence": [
+        "https://blogs.microsoft.com/ai/ returned Cloudflare 403 to urllib on 2026-10-25; WebFetch rendered the Source AI topic list. 2026-10-24 receipt recorded https://blogs.microsoft.com/ai/feed/ as HTTP 410.",
+        "https://news.microsoft.com/source/tag/ai/ lists dated AI items from October 23, 2026 back through October 13, 2026.",
+        "https://news.microsoft.com/source/tag/ai/feed/ is RSS. On 2026-10-25 it had 10 items from 2026-10-13T23:08:00Z to 2026-10-23T15:56:30Z, including https://microsoft.ai/news/building-medical-superintelligence/ .",
+        "https://news.microsoft.com/source/topics/ai/feed/ newest item on the same check was 2026-10-21, so the topic feed misses the October 23 tag items.",
+        "https://news.microsoft.com/source/feed/ mixes non-AI items and LinkedIn posts."
+      ]
+    },
+    {
+      "id": "qwen",
+      "result": "primary_moved_to_qwen_ai_research_legacy_kept_as_backup_coverage_still_partial",
+      "evidence": [
+        "https://qwenlm.github.io/ HTTP 200, no redirect. Newest visible post is Qwen3Guard, September 23, 2025.",
+        "https://qwen.ai/research HTTP 200 SPA shell. /, /blog and /news returned the same shell. WebFetch did not render a research list. Page keywords include qwenlm; frontend is g.alicdn.com/qwenweb and calls same-origin /api/page_config and /api/v2/article.",
+        "Direct https://qwen.ai/api/page_config?code=qwen_research_research-list returned HTTP 500 from this environment, so a dated research item was not verified here."
+      ]
+    },
+    {
+      "id": "xai",
+      "result": "note_requires_browser_dated_proof_or_partial",
+      "evidence": [
+        "urllib to https://x.ai/news returned Cloudflare 403 on 2026-10-25.",
+        "WebFetch of https://x.ai/news showed dated cards including Company · Oct 22, 2026 and Oct 14, 2026. That reader view is not treated as static-HTML completeness. Method remains browser."
+      ]
+    },
+    {
+      "id": "arxiv",
+      "result": "note_unannounced_slice_is_partial",
+      "evidence": [
+        "2026-10-25 receipt already recorded API newest published 2026-10-22T17:59:51+00:00 while the window continued later, and kept the source partial for the unannounced slice."
+      ]
+    },
+    {
+      "id": "openreview",
+      "result": "note_requires_venue_and_time_range",
+      "evidence": [
+        "2026-10-25 receipt: homepage dates only, Active Venues without submission times, status partial. Note now requires the scanned venues and time range in the receipt."
+      ]
+    },
+    {
+      "id": "anthropic",
+      "result": "engineering_added_as_additional_url_not_a_new_source",
+      "evidence": [
+        "https://www.anthropic.com/engineering HTTP 200, canonical that URL. Hero date Oct 13, 2026 links to /research/redesigning-source-control.",
+        "https://www.anthropic.com/research/redesigning-source-control contains 2026-10-13. Not added as a separate counted source."
+      ]
+    },
+    {
+      "id": "deepseek",
+      "result": "trailing_slash_required",
+      "evidence": [
+        "https://api-docs.deepseek.com/updates HTTP 200 title Your First API Call.",
+        "https://api-docs.deepseek.com/updates/ HTTP 200 title Change Log, with heading Date: 2026-10-17 and DeepSeek-V4.1-Flash Release."
+      ]
+    },
+    {
+      "id": "hacker-news-ai",
+      "result": "discovery_window_wording_36h",
+      "evidence": ["config note no longer says 完整72小时窗口."]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "qbitai",
+      "decision": "pass",
+      "added": true,
+      "list_url": "https://www.qbitai.com/",
+      "feed": "https://www.qbitai.com/feed",
+      "article_url": "https://www.qbitai.com/2026/10/504901.html",
+      "article_date": "2026-10-23 15:35:51",
+      "window_coverage": "WordPress RSS returned 10 items from 2026-10-21T04:35:56+00:00 to 2026-10-23T07:35:51+00:00. https://www.qbitai.com/page/2/ returned HTTP 200. If the oldest of the 10 is still inside the discovery window, paginate and mark partial.",
+      "caveat": "Sample article byline is 量子位的朋友们 and the body relays a Baidu event plus registration. Per-article original/relay/sponsor judgment stays required."
+    },
+    {
+      "id": "jiqizhixin",
+      "decision": "fail",
+      "added": false,
+      "reason": "No verified direct original article URL with a visible publish date. Script HTML for the homepage, /articles, /feed and /rss is an anti-bot page titled 机器之心·数据服务 (/rss redirected to /data-service). WebFetch of https://www.jiqizhixin.com/industry and https://jigou.jiqizhixin.com/industry showed timestamps from 2026/10/24 23:05 through 2026/10/23 16:53 but did not expose article hrefs. https://www.jiqizhixin.com/articles/2026-10-18-alphafold-3 and a cover-image UUID URL both rendered only 文章库 | 机器之心. sitemap.xml was JSON 404 and articles.json was HTTP 500. Sina/ifeng reprints of the October 24 headline did not link back to jiqizhixin.com. No RSS URL was verified. Not in lead_only_domains or blocked_domains.",
+      "list_urls_seen": [
+        "https://www.jiqizhixin.com/industry",
+        "https://jigou.jiqizhixin.com/industry"
+      ]
+    },
+    {
+      "id": "aws-ml-blog",
+      "decision": "pass",
+      "added": true,
+      "list_url": "https://aws.amazon.com/blogs/machine-learning/",
+      "redirect_note": "English canonical stayed on https://aws.amazon.com/blogs/machine-learning/ and the page title was Artificial Intelligence. A request with Accept-Language zh-CN redirected to https://aws.amazon.com/cn/blogs/machine-learning/.",
+      "feed": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "article_url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-delivers-a-major-upgrade-to-its-generative-engine/",
+      "article_date": "page showed 2026-10-22; feed pubDate for that item was 2026-10-22T18:06:35+00:00",
+      "window_coverage": "Feed had 20 items from 2026-10-20T17:52:50+00:00 to 2026-10-23T17:48:54+00:00, which reaches behind a 36-hour window."
+    },
+    {
+      "id": "google-research",
+      "decision": "pass",
+      "added": true,
+      "list_url": "https://research.google/blog/",
+      "feed": "https://research.google/blog/rss/",
+      "article_url": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
+      "article_date": "October 23, 2026 on the article; feed pubDate Fri, 23 Oct 2026 18:51:33 +0000",
+      "window_coverage": "RSS on 2026-10-25 ran from 2026-10-23 back through November 2025. Year index https://research.google/blog/2026 is linked from the blog. Dedupe with google-ai and deepmind by article or event."
+    },
+    {
+      "id": "github-ai-ml",
+      "decision": "pass",
+      "added": true,
+      "list_url": "https://github.blog/ai-and-ml/",
+      "feed": "https://github.blog/ai-and-ml/feed/",
+      "article_url": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/",
+      "article_date": "2026-10-20 on the article time element; feed pubDate Tue, 20 Oct 2026 16:05:03 +0000",
+      "window_coverage": "Category feed had 10 items from 2026-09-24 through 2026-10-20, older than a 36-hour window ending 2026-10-25. Pagination https://github.blog/ai-and-ml/page/2/ is linked. Do not substitute the sitewide https://github.blog/feed/."
+    },
+    {
+      "id": "databricks-research",
+      "decision": "pass",
+      "added": true,
+      "list_url": "https://www.databricks.com/blog/category/research",
+      "feed": null,
+      "feed_rejected": "https://www.databricks.com/feed is the company blog. On 2026-10-25 its first items were platform and marketing posts dated October 21-23, not the research category.",
+      "article_url": "https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents",
+      "article_date": "October 20, 2026",
+      "window_coverage": "Category page listed research posts from October 20, 2026 back through April 2026. https://www.databricks.com/blog/category/research?page=2 returned HTTP 200 but still showed the October 20 item, so page number alone is not proof of an older slice.",
+      "caveat": "Filter generic data-engineering and product marketing even when it appears on the research category page."
+    },
+    {
+      "id": "amazon-science",
+      "decision": "pass",
+      "added": true,
+      "list_url": "https://www.amazon.science/blog",
+      "feed": "https://www.amazon.science/index.rss",
+      "article_url": "https://www.amazon.science/blog/better-speech-synthesis-for-audiobooks",
+      "article_date": "2026-10-23T15:20:02.552Z",
+      "window_coverage": "index.rss is linked from the blog. On 2026-10-25 it had 25 items from 2026-10-23T15:20:02Z back to 2026-06-08. Dedupe with aws-ml-blog by event."
+    }
+  ]
+}
