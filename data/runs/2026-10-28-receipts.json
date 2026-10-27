@@ -1,32 +1,22 @@
 {
   "summary": {
     "window": [
-      "2026-10-26T09:00:00+00:00",
-      "2026-10-27T21:00:00+00:00"
+      "2026-10-26T10:00:00+00:00",
+      "2026-10-27T22:00:00+00:00"
     ],
     "planned": 51,
-    "ok": 43,
-    "partial": 7,
+    "ok": 39,
+    "partial": 11,
     "failed": 1,
     "pending_browser": 0,
     "core_not_ok": [
+      "xai",
       "arxiv"
     ],
-    "pending": 0,
-    "success_rate": 0.8431372549019608,
+    "window_note": "06:00中文编辑终审窗口；05:00初采原汇总见upstream_0500_summary",
+    "success_rate": 0.7647058823529411,
     "incomplete": true,
-    "collection_incomplete": true,
-    "config_commit": "56842745dcbb650344aff79323bf3f9554f2141d",
-    "sources_count": 51,
-    "collection_stage": "collection_only",
-    "raw_records": 867,
-    "catalog_displayed": 396,
-    "catalog_news": 165,
-    "catalog_papers": 231,
-    "catalog_excluded": 46,
-    "below_catalog_target": false,
-    "sources_blob": "e33e0ecf908c24011f64a0e0a8a773d184b4544704f78bce4248d1ad9b5e2c50",
-    "deduped_catalog_candidates": 396
+    "pending": 0
   },
   "sources": [
     {
@@ -59,7 +49,10 @@
       "collection_pass": "agent_supplement_2026-10-28T05:00+08",
       "additional_urls_checked": [
         "https://www.anthropic.com/engineering"
-      ]
+      ],
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "claude-blog",
@@ -95,7 +88,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "openai",
@@ -158,7 +154,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "google-ai",
@@ -181,7 +180,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "xai",
@@ -190,8 +192,8 @@
       "method": "browser",
       "checked_at": "2026-10-27T21:27:46.929009+00:00",
       "checked_url": "https://x.ai/news",
-      "status": "ok",
-      "evidence": "静态 HTML 含 <time dateTime> 卡片，WebFetch 渲染结果一致。窗口内可见 Product · Oct 27, 2026《Your next sales teammate should be a Grok Bot》（https://x.ai/news/grok-bot-sales），只有日期。其后列表为 Oct 22 Partner Network、Oct 20 incident-sweep、Oct 14 Grok Voice 3.0，早于窗口起点。日精度 Oct 27 跨过 21:00Z 右边界，不计入严格目录。headless Chrome 被 Cloudflare 拦截，但静态时间标签与渲染列表一致。未读正文。",
+      "status": "partial",
+      "evidence": "静态 HTML 含 <time dateTime> 卡片，WebFetch 渲染结果一致。窗口内可见 Product · Oct 27, 2026《Your next sales teammate should be a Grok Bot》（https://x.ai/news/grok-bot-sales），只有日期。其后列表为 Oct 22 Partner Network、Oct 20 incident-sweep、Oct 14 Grok Voice 3.0，早于窗口起点。日精度 Oct 27 跨过 21:00Z 右边界，不计入严格目录。headless Chrome 被 Cloudflare 拦截，但静态时间标签与渲染列表一致。未读正文。；06:00终审：05:00初采ok；最后一小时本机pending",
       "items": [
         {
           "title": "Your next sales teammate should be a Grok Bot",
@@ -204,7 +206,10 @@
       ],
       "initial_script_status": "pending",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采ok；最后一小时本机pending",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "deepmind",
@@ -224,7 +229,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "nvidia",
@@ -263,7 +271,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "huggingface",
@@ -294,7 +305,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "cursor",
@@ -308,7 +322,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "microsoft",
@@ -350,7 +367,10 @@
       "collection_pass": "agent_supplement_2026-10-28T05:00+08",
       "additional_urls_checked": [
         "https://news.microsoft.com/source/topics/ai/feed/"
-      ]
+      ],
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "qwen",
@@ -359,8 +379,8 @@
       "method": "browser",
       "checked_at": "2026-10-27T21:27:46.929009+00:00",
       "checked_url": "https://qwen.ai/research",
-      "status": "ok",
-      "evidence": "浏览器渲染 https://qwen.ai/research。可见研究卡片最新为 2026/09/20 Qwen-Image-2.1（图文生成与编辑），其次 2026/09/18 Qwen3.8-LiveTranslate，2026/09/03 的智能体评测说明。页面无 2026/10 日期。/api/page_config 仍为 HTTP 500。旧站 qwenlm.github.io 最新 2025-09-23，不作为无更新证据。未读正文。",
+      "status": "partial",
+      "evidence": "浏览器渲染 https://qwen.ai/research。可见研究卡片最新为 2026/09/20 Qwen-Image-2.1（图文生成与编辑），其次 2026/09/18 Qwen3.8-LiveTranslate，2026/09/03 的智能体评测说明。页面无 2026/10 日期。/api/page_config 仍为 HTTP 500。旧站 qwenlm.github.io 最新 2025-09-23，不作为无更新证据。未读正文。；06:00终审：05:00初采ok；最后一小时本机pending",
       "items": [
         {
           "title": "Qwen-Image-2.1",
@@ -382,7 +402,10 @@
       "additional_urls_checked": [
         "https://qwenlm.github.io/",
         "https://qwen.ai/api/page_config"
-      ]
+      ],
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采ok；最后一小时本机pending",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "tongyi",
@@ -396,7 +419,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "deepseek",
@@ -470,7 +496,10 @@
       "collection_pass": "agent_supplement_2026-10-28T05:00+08",
       "additional_urls_checked": [
         "https://github.com/deepseek-ai"
-      ]
+      ],
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采partial；最后一小时本机pending",
+      "upstream_0500_status": "partial"
     },
     {
       "source_id": "moonshot",
@@ -484,7 +513,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "zhipu",
@@ -498,7 +530,10 @@
       "items": [],
       "initial_script_status": "failed",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "stepfun",
@@ -512,7 +547,10 @@
       "items": [],
       "initial_script_status": "partial",
       "check_state": "partial",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采partial；最后一小时本机partial",
+      "upstream_0500_status": "partial"
     },
     {
       "source_id": "mistral",
@@ -526,7 +564,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "eu-digital",
@@ -540,7 +581,10 @@
       "items": [],
       "initial_script_status": "failed",
       "check_state": "access_failed",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "failed",
+      "final_window_note": "05:00初采failed；最后一小时本机failed",
+      "upstream_0500_status": "failed"
     },
     {
       "source_id": "unesco",
@@ -554,7 +598,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "oecd",
@@ -568,7 +615,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "arxiv",
@@ -2200,7 +2250,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "partial",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采partial；最后一小时本机ok",
+      "upstream_0500_status": "partial"
     },
     {
       "source_id": "hf-daily-papers",
@@ -2975,7 +3028,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "openreview",
@@ -2989,7 +3045,10 @@
       "items": [],
       "initial_script_status": "pending",
       "check_state": "partial",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采partial；最后一小时本机pending",
+      "upstream_0500_status": "partial"
     },
     {
       "source_id": "github-trending",
@@ -3254,7 +3313,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "36kr-ai",
@@ -3927,7 +3989,10 @@
       ],
       "initial_script_status": "pending",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "cac-ai",
@@ -3941,7 +4006,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "bytedance-seed",
@@ -3963,7 +4031,10 @@
       ],
       "initial_script_status": "pending",
       "check_state": "partial",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采partial；最后一小时本机pending",
+      "upstream_0500_status": "partial"
     },
     {
       "source_id": "minimax",
@@ -3984,7 +4055,10 @@
       ],
       "initial_script_status": "pending",
       "check_state": "partial",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采partial；最后一小时本机pending",
+      "upstream_0500_status": "partial"
     },
     {
       "source_id": "techcrunch-ai",
@@ -4103,7 +4177,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "ars-technica-ai",
@@ -4112,8 +4189,8 @@
       "method": "page",
       "checked_at": "2026-10-27T21:27:46.929009+00:00",
       "checked_url": "https://arstechnica.com/ai/",
-      "status": "ok",
-      "evidence": "feed HTTP 200，共 20 条，最新 2026-10-27T18:49:08+00:00，最旧 2026-10-19T16:59:22+00:00，已越过窗口起点；窗口内 6 条。未读正文。",
+      "status": "partial",
+      "evidence": "feed HTTP 200，共 20 条，最新 2026-10-27T18:49:08+00:00，最旧 2026-10-19T16:59:22+00:00，已越过窗口起点；窗口内 6 条。未读正文。；06:00终审：05:00初采ok；最后一小时本机failed",
       "items": [
         {
           "title": "Vibe genes? Natural(ish) language comes to protein, genome design software",
@@ -4166,7 +4243,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采ok；最后一小时本机failed",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "mit-technology-review-ai",
@@ -4175,8 +4255,8 @@
       "method": "browser",
       "checked_at": "2026-10-27T21:27:46.929009+00:00",
       "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
-      "status": "ok",
-      "evidence": "feed HTTP 200，共 10 条，最新 2026-10-27T12:10:00+00:00，最旧 2026-10-22T18:48:04+00:00，已越过窗口起点；窗口内 6 条。话题 feed 10 条最旧 2026-10-20，也已越过窗口起点。以覆盖窗口的官方 feed 为证据。未读正文。",
+      "status": "partial",
+      "evidence": "feed HTTP 200，共 10 条，最新 2026-10-27T12:10:00+00:00，最旧 2026-10-22T18:48:04+00:00，已越过窗口起点；窗口内 6 条。话题 feed 10 条最旧 2026-10-20，也已越过窗口起点。以覆盖窗口的官方 feed 为证据。未读正文。；06:00终审：05:00初采ok；最后一小时本机pending",
       "items": [
         {
           "title": "The Download: Anthropic’s IPO, smarter power grids, and exercise pills",
@@ -4229,7 +4309,10 @@
       ],
       "initial_script_status": "pending",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采ok；最后一小时本机pending",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "404-media",
@@ -4300,7 +4383,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "wired-ai",
@@ -4387,7 +4473,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "the-verge-ai",
@@ -4482,7 +4571,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "cloudflare-ai",
@@ -4496,7 +4588,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "apple-developer-ai",
@@ -4510,7 +4605,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "meta-engineering",
@@ -4549,7 +4647,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "hacker-news-ai",
@@ -6636,7 +6737,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "partial",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "partial",
+      "final_window_note": "05:00初采partial；最后一小时本机ok",
+      "upstream_0500_status": "partial"
     },
     {
       "source_id": "import-ai",
@@ -6659,7 +6763,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "bens-bites",
@@ -6682,7 +6789,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "latent-space",
@@ -6729,7 +6839,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "interconnects",
@@ -6743,7 +6856,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "ai-snake-oil",
@@ -6757,7 +6873,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "one-useful-thing",
@@ -6771,7 +6890,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "simon-willison",
@@ -6818,7 +6940,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "qbitai",
@@ -6977,7 +7102,10 @@
       "additional_urls_checked": [
         "https://www.qbitai.com/page/2/",
         "https://www.qbitai.com/wp-json/wp/v2/posts"
-      ]
+      ],
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "aws-ml-blog",
@@ -7048,7 +7176,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "google-research",
@@ -7071,7 +7202,10 @@
       ],
       "initial_script_status": "ok",
       "check_state": "candidates_found_not_selected",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "github-ai-ml",
@@ -7085,7 +7219,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "databricks-research",
@@ -7099,7 +7236,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     },
     {
       "source_id": "amazon-science",
@@ -7113,7 +7253,10 @@
       "items": [],
       "initial_script_status": "ok",
       "check_state": "complete_no_new",
-      "collection_pass": "agent_supplement_2026-10-28T05:00+08"
+      "collection_pass": "agent_supplement_2026-10-28T05:00+08",
+      "final_window_status": "ok",
+      "final_window_note": "05:00初采ok且05:00—06:00复查ok",
+      "upstream_0500_status": "ok"
     }
   ],
   "config_commit": "56842745dcbb650344aff79323bf3f9554f2141d",
@@ -7141,5 +7284,118 @@
   "last_hour_handoff": {
     "note": "北京时间 2026-10-28 05:00–06:00 不在本次 --until 内，交给中文编辑。采集时刻附近各订阅未看到 published_at 落在 [2026-10-27T21:00:00Z, 2026-10-27T22:00:00Z) 的条目；这不证明该小时没有更新。",
     "items_observed": []
+  },
+  "chinese_editor_supplement": {
+    "checked_at": "2026-10-27T22:14:43.033933+00:00",
+    "config_commit": "a165133f4c3800a4866db85716707a2f90200e36",
+    "upstream_commit": "a165133f4c3800a4866db85716707a2f90200e36",
+    "local_collection": "本机私有收据 runs/2026-10-28/preparation/local-collection-0600.json（--until 2026-10-27T22:00:00Z --hours 36）",
+    "local_summary": {
+      "window": [
+        "2026-10-26T10:00:00+00:00",
+        "2026-10-27T22:00:00+00:00"
+      ],
+      "planned": 51,
+      "ok": 40,
+      "partial": 1,
+      "failed": 2,
+      "pending_browser": 8,
+      "core_not_ok": [
+        "xai"
+      ]
+    },
+    "last_hour": {
+      "checked_at": "2026-10-27T22:14:43.033933+00:00",
+      "window": [
+        "2026-10-27T21:00:00Z",
+        "2026-10-27T22:00:00Z"
+      ],
+      "method": "本机collect_sources.py --until 2026-10-27T22:00:00Z --hours 36；36氪AI频道接口与量子位wp-json单独复查",
+      "items_observed": [],
+      "note": "脚本可采源与36氪/量子位均未见该小时AI原文；xai、qwen、deepseek、openreview、bytedance-seed、minimax、MIT TR等浏览器源该小时未复查，不代表无更新"
+    },
+    "final_window_summary": {
+      "window": [
+        "2026-10-26T10:00:00Z",
+        "2026-10-27T22:00:00Z"
+      ],
+      "planned": 51,
+      "ok": 39,
+      "partial": 11,
+      "failed": 1,
+      "pending": 0,
+      "success_rate": 0.7647058823529411,
+      "incomplete": true,
+      "core_not_ok": [
+        "xai",
+        "arxiv"
+      ]
+    },
+    "editorial_review": {
+      "body_items": 16,
+      "read_originals": [
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
+        "https://www.anthropic.com/research/early-progress-drug-development",
+        "https://nvidianews.nvidia.com/news/nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-and-bring-nvidia-vera-cpu-to-oracle-cloud-infrastructure",
+        "https://www.wired.com/story/uk-home-office-may-face-investigation-over-use-of-openai-tools/",
+        "https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update",
+        "https://www.theverge.com/ai-artificial-intelligence/1019551/firefox-smart-window-ai-fill-forms",
+        "https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/",
+        "https://engineering.fb.com/2026/10/27/developer-tools/python-typing-survey-2026-ai-tools-checker-landscape/",
+        "https://techcrunch.com/2026/10/27/general-compute-raises-100-million-series-a-countering-the-neocloud-disaster-narrative/",
+        "https://techcrunch.com/2026/10/27/nvidia-backs-indian-startup-helping-companies-run-ai-models-with-fewer-gpus/",
+        "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+        "https://huggingface.co/blog/allenai/novelty-bench",
+        "https://arxiv.org/abs/2610.35596",
+        "https://q.cxspace.com/talks/machine-learning-edward-hughes-20260911/",
+        "https://q.cxspace.com/talks/bloomberg-tech-lisa-su-20260929/"
+      ]
+    },
+    "catalog_review": {
+      "raw_receipt_candidates": 867,
+      "local_0600_supplement_new_ai_items": 0,
+      "upstream_displayed": 396,
+      "moved_out_before_1800": 33,
+      "displayed": 364,
+      "displayed_news": 156,
+      "displayed_papers": 208,
+      "excluded": 82,
+      "pending_time_precision": 3,
+      "body_used": 14,
+      "displayed_not_body": 350,
+      "body_items_not_in_strict_catalog": [],
+      "below_catalog_target": false,
+      "target": 20
+    }
+  },
+  "upstream_0500_summary": {
+    "window": [
+      "2026-10-26T09:00:00+00:00",
+      "2026-10-27T21:00:00+00:00"
+    ],
+    "planned": 51,
+    "ok": 43,
+    "partial": 7,
+    "failed": 1,
+    "pending_browser": 0,
+    "core_not_ok": [
+      "arxiv"
+    ],
+    "pending": 0,
+    "success_rate": 0.8431372549019608,
+    "incomplete": true,
+    "collection_incomplete": true,
+    "config_commit": "56842745dcbb650344aff79323bf3f9554f2141d",
+    "sources_count": 51,
+    "collection_stage": "collection_only",
+    "raw_records": 867,
+    "catalog_displayed": 396,
+    "catalog_news": 165,
+    "catalog_papers": 231,
+    "catalog_excluded": 46,
+    "below_catalog_target": false,
+    "sources_blob": "e33e0ecf908c24011f64a0e0a8a773d184b4544704f78bce4248d1ad9b5e2c50",
+    "deduped_catalog_candidates": 396
   }
 }

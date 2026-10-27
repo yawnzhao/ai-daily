@@ -5,8 +5,8 @@
     "title",
     "source"
   ],
-  "count": 396,
-  "scope": "36小时资讯目录（05:00初采）；基于完整收据 items 去重；窗口 [2026-10-26 17:00, 2026-10-28 05:00) Asia/Shanghai；不覆盖至06:00。HN 时间为讨论帖时间，未计入本目录。",
+  "count": 364,
+  "scope": "36小时资讯目录（06:00中文编辑终审）：基于05:00初采完整收据items，补查05:00—06:00并按最终窗口重筛；HN讨论时间不作原文时间。",
   "raw_arxiv_backlog_not_displayed": false,
   "arxiv_metadata_count_in_receipt": 231,
   "hf_daily_papers_outside_original_publish_window": 95,
@@ -15,7 +15,6 @@
   "ordinary_commits_not_displayed": 1,
   "config_commit": "56842745dcbb650344aff79323bf3f9554f2141d",
   "gaps": [
-    "05:00 初采不覆盖 06:00；最后一小时交给中文编辑",
     "arxiv 最新公告停在 2026-10-26T17:59:44Z，至 until 的未公告切片为 partial",
     "eu-digital CloudFront 403",
     "openreview 浏览器验证页，TMLR 投稿时间未扫到",
@@ -25,17 +24,18 @@
     "minimax 新闻最新 Oct 12，模型页未逐一核日期",
     "HN Algolia 1000/1871",
     "话语场未配到 q.cxspace.com 上可核验的具体节目页",
-    "多数条目 verification_scope=metadata，未读全文"
+    "多数条目 verification_scope=metadata，未读全文",
+    "05:00—06:00仅脚本源及36氪/量子位完成复查；浏览器源最后一小时未复查",
+    "claude-blog与xAI 10月27日条目仅有日期，待核暂不展示"
   ],
   "curation_policy": "36h-min20-v1",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-10-26T17:00:00+08:00",
-    "end_shanghai": "2026-10-28T05:00:00+08:00",
-    "start_utc": "2026-10-26T09:00:00Z",
-    "end_utc": "2026-10-27T21:00:00Z",
-    "boundary": "left-closed right-open",
-    "note": "05:00 batch does not cover 06:00"
+    "start_shanghai": "2026-10-26T18:00:00+08:00",
+    "end_shanghai": "2026-10-28T06:00:00+08:00",
+    "start_utc": "2026-10-26T10:00:00Z",
+    "end_utc": "2026-10-27T22:00:00Z",
+    "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
     "start_shanghai": "2026-10-26T18:00:00+08:00",
@@ -45,8 +45,30 @@
     "boundary": "left_closed_right_open",
     "note": "中文编辑最终目录窗口；本次不声称已覆盖 05:00–06:00"
   },
-  "editorial_updated_at": "2026-10-27T21:27:46.929009+00:00",
+  "editorial_updated_at": "2026-10-27T22:14:43.033933+00:00",
   "items": [
+    {
+      "url": "https://www.anthropic.com/research/early-progress-drug-development",
+      "title": "Early progress on accelerating drug development with Claude",
+      "original_title": "Early progress on accelerating drug development with Claude",
+      "title_zh": "Anthropic披露用Claude加速药物研发的早期进展",
+      "title_translation_scope": "title_only",
+      "source": "Anthropic",
+      "source_id": "anthropic",
+      "published_at": "2026-10-27",
+      "date_precision": "day",
+      "time_basis": "页面publishedOn为2026-10-27；结构化数据另有2026-10-27T17:53:38Z与修改时间20:26:09Z，均在窗口内",
+      "catalog_kind": "news",
+      "selected": true,
+      "verification_scope": "原文全文",
+      "content_form": "original",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用；日期精度为日，页面时间戳落在36小时窗口内",
+        "scope": "full_text",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      }
+    },
     {
       "url": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics",
       "title": "Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
@@ -58,14 +80,14 @@
       "published_at": "2026-10-27T20:48:58+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "original",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -184,14 +206,14 @@
       "published_at": "2026-10-27T17:35:00+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "official",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -373,14 +395,14 @@
       "published_at": "2026-10-27T16:14:18+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "original",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -394,14 +416,14 @@
       "published_at": "2026-10-27T16:12:42+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "official",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -415,14 +437,14 @@
       "published_at": "2026-10-27T16:01:38+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "official",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -457,14 +479,14 @@
       "published_at": "2026-10-27T16:00:00+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "official",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -499,14 +521,14 @@
       "published_at": "2026-10-27T15:59:24+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "official",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -541,14 +563,14 @@
       "published_at": "2026-10-27T15:10:26+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "original",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -646,14 +668,14 @@
       "published_at": "2026-10-27T13:50:51+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "original",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -772,14 +794,14 @@
       "published_at": "2026-10-27T13:00:00+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "original",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -793,14 +815,14 @@
       "published_at": "2026-10-27T13:00:00+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "original",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -1108,14 +1130,14 @@
       "published_at": "2026-10-27T11:00:00+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "original",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -2508,7 +2530,7 @@
       "url": "https://simonwillison.net/2026/Oct/26/gpt-61-terra/",
       "title": "GPT-6.1 Terra",
       "original_title": "GPT-6.1 Terra",
-      "title_zh": "GPT-6.1 Terra",
+      "title_zh": "GPT-6.1 Terra（博客文章）",
       "title_translation_scope": "title_only",
       "source": "Simon Willison's Weblog",
       "source_id": "simon-willison",
@@ -3290,216 +3312,6 @@
       "source": "The Verge",
       "source_id": "the-verge-ai",
       "published_at": "2026-10-26T10:01:07+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "original",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.qbitai.com/2026/10/505539.html",
-      "title": "AI时代，一个人能有多大能量？天禧AI × 观猹大会现场实测个人AI跨端协同新体验",
-      "original_title": "AI时代，一个人能有多大能量？天禧AI × 观猹大会现场实测个人AI跨端协同新体验",
-      "title_zh": "AI时代，一个人能有多大能量？天禧AI × 观猹大会现场实测个人AI跨端协同新体验",
-      "title_translation_scope": "title_only",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-10-26T09:46:13+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "syndicated_column",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4042391812953220",
-      "title": "张益唐未竟难题被OpenAI攻破，人类联手GPT-6接力两周，证明只剩5页",
-      "original_title": "张益唐未竟难题被OpenAI攻破，人类联手GPT-6接力两周，证明只剩5页",
-      "title_zh": "张益唐未竟难题被OpenAI攻破，人类联手GPT-6接力两周，证明只剩5页",
-      "title_translation_scope": "title_only",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-10-26T09:39:10.006000+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "syndicated_column",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.qbitai.com/2026/10/505529.html",
-      "title": "OpenAI开始断网训练最强模型：“安全起见”",
-      "original_title": "OpenAI开始断网训练最强模型：“安全起见”",
-      "title_zh": "OpenAI开始断网训练最强模型：“安全起见”",
-      "title_translation_scope": "title_only",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-10-26T09:37:57+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "syndicated_column",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.qbitai.com/2026/10/505521.html",
-      "title": "A社联创演讲：AI奇点已来",
-      "original_title": "A社联创演讲：AI奇点已来",
-      "title_zh": "A社联创演讲：AI奇点已来",
-      "title_translation_scope": "title_only",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-10-26T09:35:14+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "syndicated_column",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.qbitai.com/2026/10/505478.html",
-      "title": "NeoLab第一个商业模式：转售GPU",
-      "original_title": "NeoLab第一个商业模式：转售GPU",
-      "title_zh": "NeoLab第一个商业模式：转售GPU",
-      "title_translation_scope": "title_only",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-10-26T09:31:47+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "syndicated_column",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4042194267444360",
-      "title": "马斯克：人类在ASI面前是黑猩猩，未来所有钱和工作都将清零",
-      "original_title": "马斯克：人类在ASI面前是黑猩猩，未来所有钱和工作都将清零",
-      "title_zh": "马斯克：人类在ASI面前是黑猩猩，未来所有钱和工作都将清零",
-      "title_translation_scope": "title_only",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-10-26T09:30:08.112000+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "syndicated_column",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4042355752425346",
-      "title": "近万亿参数大模型跑进桌面，苹果和英伟达一起掀了AI PC的桌",
-      "original_title": "近万亿参数大模型跑进桌面，苹果和英伟达一起掀了AI PC的桌",
-      "title_zh": "近万亿参数大模型跑进桌面，苹果和英伟达一起掀了AI PC的桌",
-      "title_translation_scope": "title_only",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-10-26T09:12:54.474000+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "syndicated_column",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1018414/marissa-mayer-made-an-ai-assistant-that-learns-from-your-camera-roll",
-      "title": "Marissa Mayer made an AI assistant that learns from your camera roll.",
-      "original_title": "Marissa Mayer made an AI assistant that learns from your camera roll.",
-      "title_zh": "Marissa Mayer 做了一个会从相册学习的人工智能助理",
-      "title_translation_scope": "title_only",
-      "source": "The Verge",
-      "source_id": "the-verge-ai",
-      "published_at": "2026-10-26T09:12:00+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "original",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.qbitai.com/2026/10/505454.html",
-      "title": "中国近50%的新云生意，竟被这家公司包揽！",
-      "original_title": "中国近50%的新云生意，竟被这家公司包揽！",
-      "title_zh": "中国近50%的新云生意，竟被这家公司包揽！",
-      "title_translation_scope": "title_only",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-10-26T09:02:44+00:00",
-      "date_precision": "second",
-      "catalog_kind": "news",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "syndicated_column",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00 初采 36 小时窗口内、有原文时间的 AI 相关条目；未入正文。scope=metadata，未读全文。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://www.technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms/",
-      "title": "The focus on AI safety disasters ignores everyday harms",
-      "original_title": "The focus on AI safety disasters ignores everyday harms",
-      "title_zh": "只盯着人工智能安全灾难，会忽略日常伤害",
-      "title_translation_scope": "title_only",
-      "source": "MIT Technology Review",
-      "source_id": "mit-technology-review-ai",
-      "published_at": "2026-10-26T09:01:00+00:00",
       "date_precision": "second",
       "catalog_kind": "news",
       "selected": false,
@@ -5156,16 +4968,16 @@
       "published_at": "2026-10-26T15:22:15+00:00",
       "date_precision": "second",
       "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "content_form": "paper",
       "paper_key": "2610.35596",
       "version": "v1",
       "catalog_review": {
         "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
       }
     },
     {
@@ -8295,538 +8107,9 @@
         "scope": "metadata",
         "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
       }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35114",
-      "title": "Quality over Quantity: Rethinking Data and Model Assumptions for Bengali Coreference Resolution",
-      "original_title": "Quality over Quantity: Rethinking Data and Model Assumptions for Bengali Coreference Resolution",
-      "title_zh": "质量重于数量：重新思考孟加拉语共指消解的数据与模型假设",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:53:02+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35114",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35113",
-      "title": "UTA: Universal Training Adaptive Learning Rate Decay",
-      "original_title": "UTA: Universal Training Adaptive Learning Rate Decay",
-      "title_zh": "UTA：通用的训练自适应学习率衰减",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:53:01+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35113",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35112",
-      "title": "Subspace Crystallization in Grokking: Rank Compression Tracks the Phase Transition",
-      "original_title": "Subspace Crystallization in Grokking: Rank Compression Tracks the Phase Transition",
-      "title_zh": "顿悟中的子空间结晶：秩压缩追踪相变",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:52:40+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35112",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35111",
-      "title": "Rethinking Evaluation for Principled Generalization Using a Kripkean Challenge to Meaning as Use",
-      "original_title": "Rethinking Evaluation for Principled Generalization Using a Kripkean Challenge to Meaning as Use",
-      "title_zh": "重新思考有原则泛化的评估：用克里普克式问题挑战“意义即使用”",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:52:01+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35111",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35108",
-      "title": "FlowGenesis: Representation-Driven Self-Organization of Neural Architectures",
-      "original_title": "FlowGenesis: Representation-Driven Self-Organization of Neural Architectures",
-      "title_zh": "FlowGenesis：神经网络架构由表示驱动的自组织",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:46:39+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35108",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35102",
-      "title": "Useful Diversity or Hallucinated Variety? Persona-Conditioned Synthetic Query Generation for E-Commerce Search",
-      "original_title": "Useful Diversity or Hallucinated Variety? Persona-Conditioned Synthetic Query Generation for E-Commerce Search",
-      "title_zh": "有用的多样性，还是幻觉出来的花样？面向电商搜索、按人设生成合成查询",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:43:29+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35102",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35101",
-      "title": "Spherical Brownian Diffusion for Language Modeling",
-      "original_title": "Spherical Brownian Diffusion for Language Modeling",
-      "title_zh": "用于语言建模的球面布朗扩散",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:40:42+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35101",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35094",
-      "title": "RAGing Against Misogyny: Improving Implicit Misogyny Explanations",
-      "original_title": "RAGing Against Misogyny: Improving Implicit Misogyny Explanations",
-      "title_zh": "反对厌女：改进对隐性厌女言论的解释",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:35:01+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35094",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35093",
-      "title": "Improving Instruction Hierarchy by Learning from Goal-Goal Conflicts",
-      "original_title": "Improving Instruction Hierarchy by Learning from Goal-Goal Conflicts",
-      "title_zh": "从目标与目标的冲突中学习，以改进指令层级",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:33:17+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35093",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35092",
-      "title": "Uncertainty Evaluation to Support Safety of the Intended Functionality Analysis for Determining the Applicability of Performance Targets Across Triggering Conditions in ML-Based LiDAR Object Detection",
-      "original_title": "Uncertainty Evaluation to Support Safety of the Intended Functionality Analysis for Determining the Applicability of Performance Targets Across Triggering Conditions in ML-Based LiDAR Object Detection",
-      "title_zh": "用不确定性评估支持预期功能安全分析，判断基于机器学习的激光雷达目标检测性能指标在不同触发条件下是否适用",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:32:55+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35092",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35084",
-      "title": "A JiT-Based Denoising Defense Method Against Adversarial Examples for Radio Signal Automatic Modulation Classification",
-      "original_title": "A JiT-Based Denoising Defense Method Against Adversarial Examples for Radio Signal Automatic Modulation Classification",
-      "title_zh": "面向无线电信号自动调制分类对抗样本、基于 JiT 的去噪防御",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:26:37+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35084",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35083",
-      "title": "Ask Before You Answer: A Question-Driven Evidence Reasoning Architecture (QERA) for In-Context Learning",
-      "original_title": "Ask Before You Answer: A Question-Driven Evidence Reasoning Architecture (QERA) for In-Context Learning",
-      "title_zh": "先问再答：用于上下文学习的问题驱动证据推理架构（QERA）",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:26:23+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35083",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35082",
-      "title": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
-      "original_title": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
-      "title_zh": "CoSA：真实世界大模型智能体生态中的技能冲突攻击",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:25:38+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35082",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35080",
-      "title": "Zero-Shot Multi-Class Wafer Map Classification with Rule-Ordered Prompts for Large Multimodal Models",
-      "original_title": "Zero-Shot Multi-Class Wafer Map Classification with Rule-Ordered Prompts for Large Multimodal Models",
-      "title_zh": "用按规则排序的提示，让大多模态模型做零样本多类晶圆图分类",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:24:24+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35080",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35079",
-      "title": "Toward Fast Human Reaction Modeling from High-Frequency Digital Interaction Data",
-      "original_title": "Toward Fast Human Reaction Modeling from High-Frequency Digital Interaction Data",
-      "title_zh": "从高频数字交互数据走向对人类快速反应的建模",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:24:10+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35079",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35077",
-      "title": "Improving VLMs on Scientific Chart Analysis via Autonomous Evolution",
-      "original_title": "Improving VLMs on Scientific Chart Analysis via Autonomous Evolution",
-      "title_zh": "通过自主演化改进视觉语言模型的科学图表分析",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:22:52+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35077",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35076",
-      "title": "Blendshape Generation for Models with Disconnected Parts: Adding ARKit/MediaPipe Blendshapes to Anime-Style Character Models",
-      "original_title": "Blendshape Generation for Models with Disconnected Parts: Adding ARKit/MediaPipe Blendshapes to Anime-Style Character Models",
-      "title_zh": "为部件不相连的模型生成混合形状：给动漫风格角色加上 ARKit/MediaPipe 混合形状",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:20:41+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35076",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35074",
-      "title": "A Diagnostic Protocol for GNNs in Electricity Load Forecasting: Separating Parameter Sharing from Neighborhood Access",
-      "original_title": "A Diagnostic Protocol for GNNs in Electricity Load Forecasting: Separating Parameter Sharing from Neighborhood Access",
-      "title_zh": "电网负荷预测中图神经网络的诊断规程：把参数共享和邻域访问分开",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:20:23+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35074",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35070",
-      "title": "Joint Dynamic Lane Reversal and Variable Speed Limit Control: A Graphormer-Based Approach",
-      "original_title": "Joint Dynamic Lane Reversal and Variable Speed Limit Control: A Graphormer-Based Approach",
-      "title_zh": "动态车道反转与可变限速的联合控制：基于 Graphormer 的方法",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:17:05+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35070",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35069",
-      "title": "Beyond Single-Attribute Auditing: A Configurable Multi-Attribute Benchmark for Intersectional Fairness in LLMs",
-      "original_title": "Beyond Single-Attribute Auditing: A Configurable Multi-Attribute Benchmark for Intersectional Fairness in LLMs",
-      "title_zh": "超越单一属性审计：面向大模型交叉公平的可配置多属性基准",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:14:28+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35069",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35059",
-      "title": "Reinforcement Learning Done Right for Explicit Confidence Targets",
-      "original_title": "Reinforcement Learning Done Right for Explicit Confidence Targets",
-      "title_zh": "为明确的信心目标把强化学习做对",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:05:29+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35059",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35054",
-      "title": "From Questions to Queries to Insights: A Schema-Grounded Agentic Workflow for Natural-Language Crash Data Analysis",
-      "original_title": "From Questions to Queries to Insights: A Schema-Grounded Agentic Workflow for Natural-Language Crash Data Analysis",
-      "title_zh": "从问题到查询再到洞见：面向自然语言交通事故数据分析、以数据库模式为根据的智能体工作流",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:01:57+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35054",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.35052",
-      "title": "Risk-Aware Output Control Should be the Focus of Machine Unlearning",
-      "original_title": "Risk-Aware Output Control Should be the Focus of Machine Unlearning",
-      "title_zh": "机器反学习的重点应是有风险意识的输出控制",
-      "title_translation_scope": "title_only",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-10-26T09:01:01+00:00",
-      "date_precision": "second",
-      "catalog_kind": "paper",
-      "selected": false,
-      "verification_scope": "metadata",
-      "content_form": "paper",
-      "paper_key": "2610.35052",
-      "version": "v1",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "arXiv 公告时间落在 05:00 发现窗口内的 cs.AI/cs.LG/cs.CL 论文；未读全文，不计入对 20 条新闻目标的凑数，但合格论文保留。",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-27T21:27:46.929009+00:00"
-      }
     }
   ],
-  "excluded_items_count": 46,
+  "excluded_items_count": 82,
   "excluded_items": [
     {
       "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
@@ -9149,22 +8432,847 @@
       "source_id": "36kr-ai",
       "published_at": "2026-10-26T09:28:36.537000+00:00",
       "reason": "not_ai_or_promo"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/10/505539.html",
+      "title": "AI时代，一个人能有多大能量？天禧AI × 观猹大会现场实测个人AI跨端协同新体验",
+      "original_title": "AI时代，一个人能有多大能量？天禧AI × 观猹大会现场实测个人AI跨端协同新体验",
+      "title_zh": "AI时代，一个人能有多大能量？天禧AI × 观猹大会现场实测个人AI跨端协同新体验",
+      "title_translation_scope": "title_only",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-10-26T09:46:13+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "syndicated_column",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.36kr.com/p/4042391812953220",
+      "title": "张益唐未竟难题被OpenAI攻破，人类联手GPT-6接力两周，证明只剩5页",
+      "original_title": "张益唐未竟难题被OpenAI攻破，人类联手GPT-6接力两周，证明只剩5页",
+      "title_zh": "张益唐未竟难题被OpenAI攻破，人类联手GPT-6接力两周，证明只剩5页",
+      "title_translation_scope": "title_only",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-10-26T09:39:10.006000+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "syndicated_column",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/10/505529.html",
+      "title": "OpenAI开始断网训练最强模型：“安全起见”",
+      "original_title": "OpenAI开始断网训练最强模型：“安全起见”",
+      "title_zh": "OpenAI开始断网训练最强模型：“安全起见”",
+      "title_translation_scope": "title_only",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-10-26T09:37:57+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "syndicated_column",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/10/505521.html",
+      "title": "A社联创演讲：AI奇点已来",
+      "original_title": "A社联创演讲：AI奇点已来",
+      "title_zh": "A社联创演讲：AI奇点已来",
+      "title_translation_scope": "title_only",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-10-26T09:35:14+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "syndicated_column",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/10/505478.html",
+      "title": "NeoLab第一个商业模式：转售GPU",
+      "original_title": "NeoLab第一个商业模式：转售GPU",
+      "title_zh": "NeoLab第一个商业模式：转售GPU",
+      "title_translation_scope": "title_only",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-10-26T09:31:47+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "syndicated_column",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.36kr.com/p/4042194267444360",
+      "title": "马斯克：人类在ASI面前是黑猩猩，未来所有钱和工作都将清零",
+      "original_title": "马斯克：人类在ASI面前是黑猩猩，未来所有钱和工作都将清零",
+      "title_zh": "马斯克：人类在ASI面前是黑猩猩，未来所有钱和工作都将清零",
+      "title_translation_scope": "title_only",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-10-26T09:30:08.112000+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "syndicated_column",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.36kr.com/p/4042355752425346",
+      "title": "近万亿参数大模型跑进桌面，苹果和英伟达一起掀了AI PC的桌",
+      "original_title": "近万亿参数大模型跑进桌面，苹果和英伟达一起掀了AI PC的桌",
+      "title_zh": "近万亿参数大模型跑进桌面，苹果和英伟达一起掀了AI PC的桌",
+      "title_translation_scope": "title_only",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-10-26T09:12:54.474000+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "syndicated_column",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1018414/marissa-mayer-made-an-ai-assistant-that-learns-from-your-camera-roll",
+      "title": "Marissa Mayer made an AI assistant that learns from your camera roll.",
+      "original_title": "Marissa Mayer made an AI assistant that learns from your camera roll.",
+      "title_zh": "Marissa Mayer 做了一个会从相册学习的人工智能助理",
+      "title_translation_scope": "title_only",
+      "source": "The Verge",
+      "source_id": "the-verge-ai",
+      "published_at": "2026-10-26T09:12:00+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/10/505454.html",
+      "title": "中国近50%的新云生意，竟被这家公司包揽！",
+      "original_title": "中国近50%的新云生意，竟被这家公司包揽！",
+      "title_zh": "中国近50%的新云生意，竟被这家公司包揽！",
+      "title_translation_scope": "title_only",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-10-26T09:02:44+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "syndicated_column",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://www.technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms/",
+      "title": "The focus on AI safety disasters ignores everyday harms",
+      "original_title": "The focus on AI safety disasters ignores everyday harms",
+      "title_zh": "只盯着人工智能安全灾难，会忽略日常伤害",
+      "title_translation_scope": "title_only",
+      "source": "MIT Technology Review",
+      "source_id": "mit-technology-review-ai",
+      "published_at": "2026-10-26T09:01:00+00:00",
+      "date_precision": "second",
+      "catalog_kind": "news",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35114",
+      "title": "Quality over Quantity: Rethinking Data and Model Assumptions for Bengali Coreference Resolution",
+      "original_title": "Quality over Quantity: Rethinking Data and Model Assumptions for Bengali Coreference Resolution",
+      "title_zh": "质量重于数量：重新思考孟加拉语共指消解的数据与模型假设",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:53:02+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35114",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35113",
+      "title": "UTA: Universal Training Adaptive Learning Rate Decay",
+      "original_title": "UTA: Universal Training Adaptive Learning Rate Decay",
+      "title_zh": "UTA：通用的训练自适应学习率衰减",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:53:01+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35113",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35112",
+      "title": "Subspace Crystallization in Grokking: Rank Compression Tracks the Phase Transition",
+      "original_title": "Subspace Crystallization in Grokking: Rank Compression Tracks the Phase Transition",
+      "title_zh": "顿悟中的子空间结晶：秩压缩追踪相变",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:52:40+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35112",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35111",
+      "title": "Rethinking Evaluation for Principled Generalization Using a Kripkean Challenge to Meaning as Use",
+      "original_title": "Rethinking Evaluation for Principled Generalization Using a Kripkean Challenge to Meaning as Use",
+      "title_zh": "重新思考有原则泛化的评估：用克里普克式问题挑战“意义即使用”",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:52:01+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35111",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35108",
+      "title": "FlowGenesis: Representation-Driven Self-Organization of Neural Architectures",
+      "original_title": "FlowGenesis: Representation-Driven Self-Organization of Neural Architectures",
+      "title_zh": "FlowGenesis：神经网络架构由表示驱动的自组织",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:46:39+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35108",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35102",
+      "title": "Useful Diversity or Hallucinated Variety? Persona-Conditioned Synthetic Query Generation for E-Commerce Search",
+      "original_title": "Useful Diversity or Hallucinated Variety? Persona-Conditioned Synthetic Query Generation for E-Commerce Search",
+      "title_zh": "有用的多样性，还是幻觉出来的花样？面向电商搜索、按人设生成合成查询",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:43:29+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35102",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35101",
+      "title": "Spherical Brownian Diffusion for Language Modeling",
+      "original_title": "Spherical Brownian Diffusion for Language Modeling",
+      "title_zh": "用于语言建模的球面布朗扩散",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:40:42+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35101",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35094",
+      "title": "RAGing Against Misogyny: Improving Implicit Misogyny Explanations",
+      "original_title": "RAGing Against Misogyny: Improving Implicit Misogyny Explanations",
+      "title_zh": "反对厌女：改进对隐性厌女言论的解释",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:35:01+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35094",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35093",
+      "title": "Improving Instruction Hierarchy by Learning from Goal-Goal Conflicts",
+      "original_title": "Improving Instruction Hierarchy by Learning from Goal-Goal Conflicts",
+      "title_zh": "从目标与目标的冲突中学习，以改进指令层级",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:33:17+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35093",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35092",
+      "title": "Uncertainty Evaluation to Support Safety of the Intended Functionality Analysis for Determining the Applicability of Performance Targets Across Triggering Conditions in ML-Based LiDAR Object Detection",
+      "original_title": "Uncertainty Evaluation to Support Safety of the Intended Functionality Analysis for Determining the Applicability of Performance Targets Across Triggering Conditions in ML-Based LiDAR Object Detection",
+      "title_zh": "用不确定性评估支持预期功能安全分析，判断基于机器学习的激光雷达目标检测性能指标在不同触发条件下是否适用",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:32:55+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35092",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35084",
+      "title": "A JiT-Based Denoising Defense Method Against Adversarial Examples for Radio Signal Automatic Modulation Classification",
+      "original_title": "A JiT-Based Denoising Defense Method Against Adversarial Examples for Radio Signal Automatic Modulation Classification",
+      "title_zh": "面向无线电信号自动调制分类对抗样本、基于 JiT 的去噪防御",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:26:37+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35084",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35083",
+      "title": "Ask Before You Answer: A Question-Driven Evidence Reasoning Architecture (QERA) for In-Context Learning",
+      "original_title": "Ask Before You Answer: A Question-Driven Evidence Reasoning Architecture (QERA) for In-Context Learning",
+      "title_zh": "先问再答：用于上下文学习的问题驱动证据推理架构（QERA）",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:26:23+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35083",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35082",
+      "title": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
+      "original_title": "CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems",
+      "title_zh": "CoSA：真实世界大模型智能体生态中的技能冲突攻击",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:25:38+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35082",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35080",
+      "title": "Zero-Shot Multi-Class Wafer Map Classification with Rule-Ordered Prompts for Large Multimodal Models",
+      "original_title": "Zero-Shot Multi-Class Wafer Map Classification with Rule-Ordered Prompts for Large Multimodal Models",
+      "title_zh": "用按规则排序的提示，让大多模态模型做零样本多类晶圆图分类",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:24:24+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35080",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35079",
+      "title": "Toward Fast Human Reaction Modeling from High-Frequency Digital Interaction Data",
+      "original_title": "Toward Fast Human Reaction Modeling from High-Frequency Digital Interaction Data",
+      "title_zh": "从高频数字交互数据走向对人类快速反应的建模",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:24:10+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35079",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35077",
+      "title": "Improving VLMs on Scientific Chart Analysis via Autonomous Evolution",
+      "original_title": "Improving VLMs on Scientific Chart Analysis via Autonomous Evolution",
+      "title_zh": "通过自主演化改进视觉语言模型的科学图表分析",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:22:52+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35077",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35076",
+      "title": "Blendshape Generation for Models with Disconnected Parts: Adding ARKit/MediaPipe Blendshapes to Anime-Style Character Models",
+      "original_title": "Blendshape Generation for Models with Disconnected Parts: Adding ARKit/MediaPipe Blendshapes to Anime-Style Character Models",
+      "title_zh": "为部件不相连的模型生成混合形状：给动漫风格角色加上 ARKit/MediaPipe 混合形状",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:20:41+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35076",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35074",
+      "title": "A Diagnostic Protocol for GNNs in Electricity Load Forecasting: Separating Parameter Sharing from Neighborhood Access",
+      "original_title": "A Diagnostic Protocol for GNNs in Electricity Load Forecasting: Separating Parameter Sharing from Neighborhood Access",
+      "title_zh": "电网负荷预测中图神经网络的诊断规程：把参数共享和邻域访问分开",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:20:23+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35074",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35070",
+      "title": "Joint Dynamic Lane Reversal and Variable Speed Limit Control: A Graphormer-Based Approach",
+      "original_title": "Joint Dynamic Lane Reversal and Variable Speed Limit Control: A Graphormer-Based Approach",
+      "title_zh": "动态车道反转与可变限速的联合控制：基于 Graphormer 的方法",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:17:05+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35070",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35069",
+      "title": "Beyond Single-Attribute Auditing: A Configurable Multi-Attribute Benchmark for Intersectional Fairness in LLMs",
+      "original_title": "Beyond Single-Attribute Auditing: A Configurable Multi-Attribute Benchmark for Intersectional Fairness in LLMs",
+      "title_zh": "超越单一属性审计：面向大模型交叉公平的可配置多属性基准",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:14:28+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35069",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35059",
+      "title": "Reinforcement Learning Done Right for Explicit Confidence Targets",
+      "original_title": "Reinforcement Learning Done Right for Explicit Confidence Targets",
+      "title_zh": "为明确的信心目标把强化学习做对",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:05:29+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35059",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35054",
+      "title": "From Questions to Queries to Insights: A Schema-Grounded Agentic Workflow for Natural-Language Crash Data Analysis",
+      "original_title": "From Questions to Queries to Insights: A Schema-Grounded Agentic Workflow for Natural-Language Crash Data Analysis",
+      "title_zh": "从问题到查询再到洞见：面向自然语言交通事故数据分析、以数据库模式为根据的智能体工作流",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:01:57+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35054",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.35052",
+      "title": "Risk-Aware Output Control Should be the Focus of Machine Unlearning",
+      "original_title": "Risk-Aware Output Control Should be the Focus of Machine Unlearning",
+      "title_zh": "机器反学习的重点应是有风险意识的输出控制",
+      "title_translation_scope": "title_only",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-10-26T09:01:01+00:00",
+      "date_precision": "second",
+      "catalog_kind": "paper",
+      "selected": false,
+      "verification_scope": "metadata",
+      "content_form": "paper",
+      "paper_key": "2610.35052",
+      "version": "v1",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "早于最终目录起点10月26日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://claude.com/resources/articles/how-to-manage-costs-and-demonstrate-roi-for-claude-code-on-google-cloud",
+      "title": "How to manage costs and demonstrate ROI for Claude Code on Google Cloud",
+      "source_id": "claude-blog",
+      "published_at": "2026-10-27",
+      "date_precision": "day",
+      "reason": "pending_time_precision",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "仅有日期，未核到可判断是否落入窗口的时间；待核，不计入严格目录",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      }
+    },
+    {
+      "url": "https://claude.com/resources/articles/claude-for-financial-advisors",
+      "title": "Claude for financial advisors",
+      "source_id": "claude-blog",
+      "published_at": "2026-10-27",
+      "date_precision": "day",
+      "reason": "pending_time_precision",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "仅有日期，未核到可判断是否落入窗口的时间；待核，不计入严格目录",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      }
+    },
+    {
+      "url": "https://x.ai/news/grok-bot-sales",
+      "title": "Your next sales teammate should be a Grok Bot",
+      "source_id": "xai",
+      "published_at": "2026-10-27",
+      "date_precision": "day",
+      "reason": "pending_time_precision",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "仅有日期，未核到可判断是否落入窗口的时间；待核，不计入严格目录",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-27T22:14:43.033933+00:00"
+      }
     }
   ],
   "review_summary": {
     "raw_receipt_candidates": 867,
-    "displayed": 396,
-    "displayed_news": 165,
-    "displayed_papers": 231,
-    "excluded": 46,
-    "target": 20,
+    "local_0600_supplement_new_ai_items": 0,
+    "upstream_displayed": 396,
+    "moved_out_before_1800": 33,
+    "displayed": 364,
+    "displayed_news": 156,
+    "displayed_papers": 208,
+    "excluded": 82,
+    "pending_time_precision": 3,
+    "body_used": 14,
+    "displayed_not_body": 350,
+    "body_items_not_in_strict_catalog": [],
     "below_catalog_target": false,
-    "pending_boundary_not_counted": [],
-    "all_raw_candidates_reviewed": true,
-    "pending_note": "严格目录只计有发布时间且落在左闭右开 36 小时内的条目。HN 提交时间、日精度边界、活动促销和非 AI 已排除。论文按公告时间收录，不用来把覆盖率改成完整。"
+    "target": 20
   },
   "last_hour_handoff": {
-    "note": "北京时间 2026-10-28 05:00–06:00 不在本次 --until 内，交给中文编辑。采集时刻附近各订阅未看到 published_at 落在 [2026-10-27T21:00:00Z, 2026-10-27T22:00:00Z) 的条目；这不证明该小时没有更新。",
-    "items_observed": []
-  }
+    "checked_at": "2026-10-27T22:14:43.033933+00:00",
+    "window": [
+      "2026-10-27T21:00:00Z",
+      "2026-10-27T22:00:00Z"
+    ],
+    "method": "本机collect_sources.py --until 2026-10-27T22:00:00Z --hours 36；36氪AI频道接口与量子位wp-json单独复查",
+    "items_observed": [],
+    "note": "脚本可采源与36氪/量子位均未见该小时AI原文；xai、qwen、deepseek、openreview、bytedance-seed、minimax、MIT TR等浏览器源该小时未复查，不代表无更新"
+  },
+  "chinese_editor_config_commit": "a165133f4c3800a4866db85716707a2f90200e36"
 }
