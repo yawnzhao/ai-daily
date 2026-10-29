@@ -5,38 +5,30 @@
     "title",
     "source"
   ],
-  "count": 113,
-  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-10-28 17:00, 2026-10-30 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度与午夜整点时间戳未计入严格展示。",
+  "count": 111,
+  "scope": "36小时资讯目录（06:00中文编辑终审）：复用05:00上游初采目录与收据，重筛至10月28日18:00—30日06:00，补入05:00—06:00本机采集与正文采用项；HN讨论时间不作原文时间。",
   "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-10-23 through 2026-10-29",
   "duplicates_dropped": 42,
   "config_commit": "d5d12a30d604122753eb7f252c991d9caeaf5e47",
   "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
   "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
-  "collection_stage": "collection_only",
+  "collection_stage": "chinese_editor_final_0600",
   "below_catalog_target": false,
   "gaps": [
-    "AGENTS.md第1节仍要求同次运行写成稿和发布；本轮按collection_only只交收据和目录",
-    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-10-28 18:00, 2026-10-30 06:00)交给中文编辑",
-    "xAI新闻页被Cloudflare拦截，无带日期卡片，核心源partial",
-    "arXiv cs.AI/cs.LG/cs.CL在窗口内已公告论文为0；最新公告停在2026-10-27T17:59:59Z，至until的未公告切片为partial",
-    "Qwen研究页API失败，旧博客最新2025-09-23，不能证明无更新",
-    "OpenReview接口403，未扫到带投稿时间的venue",
-    "StepFun首页是无日期SPA壳；MiniMax新闻页没有稿件日期；Seed研究列表最新Oct 25但模型分类未逐类打开",
-    "The Verge栏目RSS最旧约2026-10-28T18:36Z，早于该时点到窗口起点的切片未覆盖",
-    "HN Algolia取回600/1987，讨论时间不进严格目录",
-    "HF Daily Papers上榜日在窗口内的论文，原文publishedAt均早于窗口，不计入严格目录，也不用来凑20条",
-    "36氪与量子位多数只读列表元数据，未逐篇区分原创、转载和赞助",
-    "同事件跨媒体合并未做穷尽核对；只按规范URL和近7期目录去重，相似标题未自动合并",
-    "话语场未选q.cxspace.com具体节目页",
-    "多数条目verification_scope=metadata，未读全文"
+    "05:00上游收据覆盖至05:00；06:00本机补采（collect_sources.py --until 2026-10-29T22:00:00Z --hours 36）只覆盖RSS/页面类来源的最后一小时",
+    "xAI（Cloudflare拦截）、Qwen、StepFun、ByteDance Seed、MiniMax、OpenReview为上游partial；最后一小时未用浏览器补查",
+    "DeepMind、DeepSeek、36氪、Ars Technica、MIT Technology Review上游为ok，但本机最后一小时补查失败或需浏览器，最终窗口记partial",
+    "arXiv核心源上游为partial（export API未覆盖最新公告）；HF Daily Papers无落入原文发布窗口的论文，本期论文栏为Paper-Radar关联论文回顾",
+    "OpenAI《How we detect frontier model misalignment》原文为人机验证页，未能打开，仅元数据收录",
+    "上游38条仅日期精度条目待核，未计入严格目录"
   ],
   "curation_policy": "36h-min20-v1",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-10-28T17:00:00+08:00",
-    "end_shanghai": "2026-10-30T05:00:00+08:00",
-    "start_utc": "2026-10-28T09:00:00Z",
-    "end_utc": "2026-10-29T21:00:00Z",
+    "start_shanghai": "2026-10-28T18:00:00+08:00",
+    "end_shanghai": "2026-10-30T06:00:00+08:00",
+    "start_utc": "2026-10-28T10:00:00Z",
+    "end_utc": "2026-10-29T22:00:00Z",
     "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
@@ -45,8 +37,9 @@
     "start_utc": "2026-10-28T10:00:00Z",
     "end_utc": "2026-10-29T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "note": "交给中文编辑；本次不声称已覆盖",
+    "checked_at": "2026-10-29T22:31:35.413658+00:00"
   },
   "items": [
     {
@@ -82,15 +75,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "OpenAI支持的Thrive Holdings收购ADT",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "OpenAI参股的Thrive Holdings以约76亿美元股权价值收购ADT",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -104,15 +97,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Meta低调推出名为Style Sketch的AI时尚应用",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Meta在部分东南亚市场低调上线AI穿搭应用Style Sketch",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -126,15 +119,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "现在可以在Gemini对话里直接生成和编辑Google文档",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Gemini对话里可直接生成和编辑文档、表格与PDF",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -148,15 +141,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "一家国防承包商把个人AI智能体接进了五角大楼的安全系统",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "WIRED：国防承包商员工把个人AI编程智能体接入五角大楼系统",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -236,15 +229,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用自主的Fable级模型搭建多人游戏世界",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "多人游戏Spawn由智能体集群自主开发，每小时上线一次",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -258,15 +251,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "更新Model Spec，面向更有能力也更有益的AI",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "OpenAI更新Model Spec：以五项核心价值重组模型行为准则",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -280,15 +273,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "Mistral发布万亿参数AI模型权重，瞄准网络安全",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -390,15 +383,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "前Palantir高管创办Dream，获a16z 1700万美元，做建筑业AI世界模型",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "前Palantir高管创办Dream，获a16z领投1700万美元做建筑设计“世界模型”",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -434,15 +427,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "微软的AI未来里岗位更少",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "The Verge：微软向约6万名员工提出自愿离职方案",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -544,15 +537,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "能做小应用的AI智能体Wabi最新一轮后估值12.5亿美元",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "做小应用的AI智能体Wabi融资5500万美元，估值12.5亿美元",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -633,15 +626,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "Mistral称其AI模型Le Chonk在开源权重竞赛中超过中国",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -677,15 +670,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Granite Switch 4.1.1：像更新软件一样更新模型",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "IBM发布Granite Switch 4.1.1：用可插拔适配器给模型打补丁",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -721,15 +714,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Deepgram收购Pipecat开发方Daily，补强语音AI基础设施",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Deepgram收购Pipecat开发方Daily，承诺框架继续开源",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -1110,15 +1103,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "我们急需实时监视AI智能体的行动",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
       }
     },
     {
@@ -2483,28 +2476,6 @@
       }
     },
     {
-      "url": "https://www.qbitai.com/2026/10/506194.html",
-      "title": "【图片中转测试，未发布】工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
-      "original_title": "【图片中转测试，未发布】工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-10-28T11:09:10+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "【图片中转测试，未发布】工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
-      "title_translation_scope": "zh_source_title",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
-      }
-    },
-    {
       "url": "https://www.qbitai.com/2026/10/506098.html",
       "title": "工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
       "original_title": "工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
@@ -2550,6 +2521,54 @@
       }
     },
     {
+      "url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "title": "le chonk: built for coders, trusted by defenders.",
+      "source_id": "mistral",
+      "selected": true,
+      "catalog_kind": "news",
+      "content_form": "original",
+      "verification_scope": "原文相关段落",
+      "title_zh": "Mistral开放万亿参数Mistral Large 4权重，主打编程与网络防御",
+      "title_translation_scope": "title_only",
+      "original_title": "Mistral Large 4 (Le Chonk) is now open weight",
+      "source": "Mistral AI",
+      "published_at": "2026-10-29T12:00:07+00:00",
+      "date_precision": "second",
+      "time_basis": "页面结构化发布时间（06:00终审核读）",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用，06:00终审核到原文秒级发布时间并核读相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    }
+  ],
+  "excluded_items_count": 135,
+  "excluded_items": [
+    {
+      "url": "https://www.qbitai.com/2026/10/506194.html",
+      "title": "【图片中转测试，未发布】工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
+      "original_title": "【图片中转测试，未发布】工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-10-28T11:09:10+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "【图片中转测试，未发布】工程能力一键复用，专心卷新能力！轮子造一次就够了｜详解FluxVLA Engine技术报告",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "标题注明为未发布的测试页，与同题正式文章重复",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      },
+      "reason": "not_article"
+    },
+    {
       "url": "https://www.36kr.com/p/4045173461013376",
       "title": "Anthropic公布药物研发最新进展和案例：已覆盖多个研发环节",
       "original_title": "Anthropic公布药物研发最新进展和案例：已覆盖多个研发环节",
@@ -2566,11 +2585,12 @@
       "title_zh": "Anthropic公布药物研发最新进展和案例：已覆盖多个研发环节",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点10月28日18:00（05:00初采窗口自17:00起）",
         "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
-      }
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      },
+      "reason": "outside_final_window"
     },
     {
       "url": "https://www.qbitai.com/2026/10/506063.html",
@@ -2588,15 +2608,13 @@
       "title_zh": "威卡：用数据集链接具身智能和工程机械",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采36小时窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点10月28日18:00（05:00初采窗口自17:00起）",
         "scope": "metadata",
-        "reviewed_at": "2026-10-29T21:29:36+00:00"
-      }
-    }
-  ],
-  "excluded_items_count": 100,
-  "excluded_items": [
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      },
+      "reason": "outside_final_window"
+    },
     {
       "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
       "title": "AI for Science expands to foundations and research institutions",
@@ -2668,12 +2686,6 @@
       "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
       "reason": "prior_7_catalogs",
       "source_id": "huggingface"
-    },
-    {
-      "url": "https://mistral.ai/news/mistral-large-4-oss/",
-      "title": "le chonk: built for coders, trusted by defenders.",
-      "reason": "date_precision_pending",
-      "source_id": "mistral"
     },
     {
       "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act",
@@ -3196,9 +3208,620 @@
       "title": "Accelerating software delivery with agentic QA automation using Amazon Nova Act – Part 3",
       "reason": "prior_7_catalogs",
       "source_id": "aws-ml-blog"
+    },
+    {
+      "url": "https://techcrunch.com/author/sarah-perez/",
+      "title": "Sarah Perez",
+      "original_title": "Sarah Perez",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/marina-temkin/",
+      "title": "Marina Temkin",
+      "original_title": "Marina Temkin",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/lucas-ropek/",
+      "title": "Lucas Ropek",
+      "original_title": "Lucas Ropek",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/kirsten-korosec/",
+      "title": "Kirsten Korosec",
+      "original_title": "Kirsten Korosec",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/julie-bort/",
+      "title": "Julie Bort",
+      "original_title": "Julie Bort",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/ivan-mehta/",
+      "title": "Ivan Mehta",
+      "original_title": "Ivan Mehta",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/aisha-malik/",
+      "title": "Aisha Malik",
+      "original_title": "Aisha Malik",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/tim-fernholz/",
+      "title": "Tim Fernholz",
+      "original_title": "Tim Fernholz",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-28",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/theresa-loconsolo/",
+      "title": "Theresa Loconsolo",
+      "original_title": "Theresa Loconsolo",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-28",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/techcrunch-events/",
+      "title": "TechCrunch Events",
+      "original_title": "TechCrunch Events",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-28",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/rebecca-bellan/",
+      "title": "Rebecca Bellan",
+      "original_title": "Rebecca Bellan",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-28",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/lauren-forristal/",
+      "title": "Lauren Forristal",
+      "original_title": "Lauren Forristal",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-28",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/kate-park/",
+      "title": "Kate Park",
+      "original_title": "Kate Park",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-28",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/amanda-silberling/",
+      "title": "Amanda Silberling",
+      "original_title": "Amanda Silberling",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-28",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/aditya-mehta/",
+      "title": "Aditya Mehta",
+      "original_title": "Aditya Mehta",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-28",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://arkm.com/explorer/entity/21a94755-f604-45e5-9501-6542e23005e8",
+      "title": "Binance-hacker-1029 – $5.6B stolen from Binance",
+      "original_title": "Binance-hacker-1029 – $5.6B stolen from Binance",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T21:38:59+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://nypost.com/2026/10/29/business/alleged-chinese-spy-had-close-relationship-with-nvidia-boss-jensen-huang-report/",
+      "title": "Alleged Chinese spy had 'close relationship' with Nvidia boss Jensen Huang",
+      "original_title": "Alleged Chinese spy had 'close relationship' with Nvidia boss Jensen Huang",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T17:43:48+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://labs.ycombinator.com/projects/games/index.html",
+      "title": "We ran AI agent swarms in Minecraft and Mindustry",
+      "original_title": "We ran AI agent swarms in Minecraft and Mindustry",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T21:40:28+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://www.nytimes.com/2026/10/29/arts/television/patrick-stewart-dead.html",
+      "title": "Patrick Stewart has died",
+      "original_title": "Patrick Stewart has died",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T19:41:39+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://sidbala.com/h-264-is-magic/",
+      "title": "H.264 Is Magic (2016)",
+      "original_title": "H.264 Is Magic (2016)",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T15:53:03+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://github.com/johncassil/dontallow",
+      "title": "Show HN: Auto Dismiss Mac OS \"Allow <app> to find devices on local networks?\"",
+      "original_title": "Show HN: Auto Dismiss Mac OS \"Allow <app> to find devices on local networks?\"",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T19:27:44+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://projects.freehackers.org/sylphide-os/",
+      "title": "Sylphide OS: a general-purpose OS for microcontroller-based computers",
+      "original_title": "Sylphide OS: a general-purpose OS for microcontroller-based computers",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T20:59:55+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://lumi.codeberg.page/blog/software-community.html",
+      "title": "The importance of communities around software",
+      "original_title": "The importance of communities around software",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T19:27:47+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://about.doordash.com/en-us/news/doordash-to-acquire-instacart",
+      "title": "DoorDash to acquire Instacart",
+      "original_title": "DoorDash to acquire Instacart",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T12:33:05+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://elementary.codes",
+      "title": "ElementaryUI – Swift, in the Browser",
+      "original_title": "ElementaryUI – Swift, in the Browser",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T20:56:39+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers",
+      "title": "Chained PHP2Shell exploit roots 25 servers, including US Government servers",
+      "original_title": "Chained PHP2Shell exploit roots 25 servers, including US Government servers",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T10:42:41+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://github.com/emmilco/us-tax-model",
+      "title": "Show HN: A proof-of-concept formalization of the IRS federal tax forms",
+      "original_title": "Show HN: A proof-of-concept formalization of the IRS federal tax forms",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-28T18:30:53+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://16colo.rs/",
+      "title": "16colo.rs – ANSI/ASCII art archive",
+      "original_title": "16colo.rs – ANSI/ASCII art archive",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T16:14:28+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://iptrust.co/blog/if-ipv4-were-land",
+      "title": "If IPv4 were land",
+      "original_title": "If IPv4 were land",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T12:19:00+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://github.com/lonthq/overtone-captions",
+      "title": "Show HN: Overtone – Transcribe, correct and cut captions for any screen shape",
+      "original_title": "Show HN: Overtone – Transcribe, correct and cut captions for any screen shape",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T17:48:17+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://www.bbc.com/news/articles/cm8xz7pkd0jjo",
+      "title": "What we know so far about Spain train crash",
+      "original_title": "What we know so far about Spain train crash",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T08:55:08+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://www.vut.cz/en/but/news-f19528/two-but-graduates-received-state-honors-from-the-president-of-the-republic-d378468",
+      "title": "Tomáš Mikolov awarded the Medal of Merit by the President of the Czech Republic",
+      "original_title": "Tomáš Mikolov awarded the Medal of Merit by the President of the Czech Republic",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T16:56:54+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
+    },
+    {
+      "url": "https://mastodon.sdf.org/@netbsd/117518160563539748",
+      "title": "NetBSD adds a new text editor called atto",
+      "original_title": "NetBSD adds a new text editor called atto",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T11:59:01+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索待追溯原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-29T22:31:35.413658+00:00"
+      }
     }
   ],
   "review_summary": {
+    "raw_receipt_candidates": 628,
+    "upstream_0500_items": 511,
+    "local_0600_items": 117,
+    "unique": 527,
+    "reviewed": 246,
+    "pending": 37,
+    "displayed": 111,
+    "displayed_news": 111,
+    "displayed_papers": 0,
+    "excluded": 135,
+    "reasons": {
+      "not_article": 1,
+      "outside_final_window": 2,
+      "date_precision_pending": 37,
+      "prior_7_catalogs": 42,
+      "not_ai_or_promo": 20,
+      "outside_final_window_or_time_unknown": 15,
+      "hn_lead_time_not_original": 18
+    },
+    "body_used": 15,
+    "displayed_not_body": 96,
+    "below_catalog_target": false,
+    "target": 20,
+    "last_hour_new_titles": [
+      "Binance-hacker-1029 – $5.6B stolen from Binance",
+      "We ran AI agent swarms in Minecraft and Mindustry"
+    ]
+  },
+  "last_hour_handoff": {
+    "checked": true,
+    "window_shanghai": [
+      "2026-10-30T05:00:00+08:00",
+      "2026-10-30T06:00:00+08:00"
+    ],
+    "window_utc": [
+      "2026-10-29T21:00:00Z",
+      "2026-10-29T22:00:00Z"
+    ],
+    "final_catalog_window_shanghai": [
+      "2026-10-28T18:00:00+08:00",
+      "2026-10-30T06:00:00+08:00"
+    ],
+    "owner": "chinese_editor_agent",
+    "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
+    "checked_at": "2026-10-29T22:31:35.413658+00:00",
+    "result": "RSS/页面类最后一小时补采完成；浏览器类来源未补查"
+  },
+  "chinese_editor_config_commit": "ce51f7103fabf41ea60b75b4cfa6f70276b304f8",
+  "editorial_updated_at": "2026-10-29T22:31:35.413658+00:00",
+  "upstream_review_summary": {
     "raw_receipt_candidates": 511,
     "displayed": 113,
     "displayed_news": 113,
@@ -3216,22 +3839,5 @@
     "displayed_not_body": 113,
     "below_catalog_target": false,
     "target": 20
-  },
-  "last_hour_handoff": {
-    "checked": false,
-    "window_shanghai": [
-      "2026-10-30T05:00:00+08:00",
-      "2026-10-30T06:00:00+08:00"
-    ],
-    "window_utc": [
-      "2026-10-29T21:00:00Z",
-      "2026-10-29T22:00:00Z"
-    ],
-    "final_catalog_window_shanghai": [
-      "2026-10-28T18:00:00+08:00",
-      "2026-10-30T06:00:00+08:00"
-    ],
-    "owner": "chinese_editor_agent",
-    "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点"
   }
 }
