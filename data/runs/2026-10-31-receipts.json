@@ -1,0 +1,2377 @@
+{
+  "summary": {
+    "window": [
+      "2026-10-29T09:00:00+00:00",
+      "2026-10-30T21:00:00+00:00"
+    ],
+    "planned": 50,
+    "ok": 39,
+    "partial": 11,
+    "failed": 0,
+    "pending_browser": 0,
+    "core_not_ok": [
+      "xai",
+      "arxiv"
+    ],
+    "window_boundary": "left_closed_right_open",
+    "success_rate": 0.78,
+    "incomplete": true,
+    "pending": 0
+  },
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.anthropic.com/news",
+      "status": "ok",
+      "evidence": "新闻页与 /engineering 的 HTML 均打开。publishedOn 最新新闻为 2026-10-28，工程列表最新 2026-10-27，都早于窗口起点 2026-10-29T09:00:00Z。页眉 October 30, 2026 是页面日期，不是新稿 publishedOn。窗口内 0。未读全文。 收据条目 2。",
+      "items": [
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-10-30"
+        },
+        {
+          "title": "",
+          "url": "",
+          "published_at": "2026-10-29"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found_day_precision_outside"
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://claude.com/blog",
+      "status": "ok",
+      "evidence": "https://claude.com/blog 打开为 Articles | Claude by Anthropic。页面日期最新 2026-10-28，并有 10-21 至 10-27，早于窗口起点。窗口内 0。未读全文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "RSS 1340 条，最新 2026-10-30T09:30:00Z，订阅越过窗口起点。右开边界。未读全文。 收据条目 4。",
+      "items": [
+        {
+          "title": "Making it easier for websites to express AI training preferences",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+          "published_at": "2026-10-30T09:30:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Community safety report and new protections for teens",
+          "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+          "published_at": "2026-10-30T09:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "An updated Model Spec for more capable and beneficial AI",
+          "url": "https://openai.com/index/updated-model-spec",
+          "published_at": "2026-10-29T17:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "How we detect frontier model misalignment",
+          "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+          "published_at": "2026-10-29T09:00:00+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "RSS 20 条，最新 2026-10-26T16:00:00Z，早于窗口起点。窗口内 0。未读全文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://x.ai/news",
+      "status": "partial",
+      "evidence": "headless Chrome 打开 https://x.ai/news 得到 Cloudflare “Sorry, you have been blocked”（Ray ID a52da185dc5a20b2）。没有带日期的新闻卡片。静态拦截页不能证明窗口内无更新。核心源 partial。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "pending",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "access_blocked"
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "status": "ok",
+      "evidence": "RSS 100 条，最新 2026-10-28T17:00:58Z，早于窗口起点。窗口内 0。未读全文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "RSS 20 条，最旧 2026-10-21T10:30:41Z，已越过窗口起点。未读全文。 收据条目 2。",
+      "items": [
+        {
+          "title": "Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals",
+          "url": "https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/",
+          "published_at": "2026-10-30T15:00:10+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Slice Into GFN Thursday: ‘Phantom Blade Zero’ Launches on GeForce NOW",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/",
+          "published_at": "2026-10-29T13:00:16+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "evidence": "博客 RSS 含历史条目，最新 2026-10-30T17:57:24Z，已越过窗口起点。未读全文。 收据条目 2。",
+      "items": [
+        {
+          "title": "nemotron-halloween",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-halloween",
+          "published_at": "2026-10-30T17:57:24+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Granite Switch 4.1.1 — Update models like you update software",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+          "published_at": "2026-10-29T13:37:07+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "RSS 50 条，最新 2026-10-20T00:00:00Z，早于窗口起点。窗口内 0。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://news.microsoft.com/source/tag/ai/feed/",
+      "status": "ok",
+      "evidence": "标签 RSS https://news.microsoft.com/source/tag/ai/feed/ 在补查时 HTTP 200，10 条，最新 2026-10-30T17:50:45Z，最旧 2026-10-22T21:12:21Z，已越过窗口起点。话题页未单独当完整覆盖。未读全文。 收据条目 2。",
+      "items": [
+        {
+          "title": "Estée Lauder expands AI across its vast beauty business",
+          "url": "https://news.microsoft.com/source/features/digital-transformation/estee-lauder-expands-ai-across-beauty-business/",
+          "published_at": "2026-10-30T17:50:45+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Local know-how helps communities make the most of new technology and opportunities",
+          "url": "https://news.microsoft.com/source/features/ai/local-know-how-helps-communities-make-the-most-of-new-technology-and-opportunities/",
+          "published_at": "2026-10-29T14:59:36+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://qwen.ai/research",
+      "status": "ok",
+      "evidence": "浏览器渲染 https://qwen.ai/research 的 Latest Advancements：最新 Qwen-Image-2.1 日期 2026/09/20，其后 Qwen3.8-LiveTranslate 与 Qwen3.8-Omni-Flash 为 2026/09/18，早于窗口。备用站 qwenlm.github.io 最新 September 23, 2025。/api/page_config 返回 HTTP 500。窗口内 0。未读全文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "pending",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "tongyi",
+      "name": "通义实验室",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://qianwen.aliyun.com/",
+      "status": "ok",
+      "evidence": "脚本在页面抽到的最新日期 2026-09-08，早于窗口起点。窗口内 0。未逐篇打开正文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates/",
+      "status": "ok",
+      "evidence": "更新日志 https://api-docs.deepseek.com/updates/ 标题为 Change Log，最新 Date 2026-10-17，并有 2026-09-10 及更早，早于窗口。产品页 https://www.deepseek.com/en/harness/ 渲染后未见稿件发布日期，不把页面时钟当发布日期。GitHub deepseek-ai/deepseek-harness release dsh-v0.2.1-rc.5 的 published_at 为 2026-10-30T02:12:26Z，落在窗口内。三处入口都有范围证据。未读全文。 收据条目 1。",
+      "items": [
+        {
+          "title": "deepseek-harness dsh-v0.2.1-rc.5",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.5",
+          "published_at": "2026-10-30T02:12:26+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "pending",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "moonshot",
+      "name": "月之暗面 Moonshot",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.moonshot.cn/",
+      "status": "ok",
+      "evidence": "脚本在页面抽到的最新日期 2026-10-24，早于窗口起点。窗口内 0。未逐篇打开正文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "zhipu",
+      "name": "智谱 Z.ai",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.zhipuai.cn/news",
+      "status": "ok",
+      "evidence": "脚本在页面抽到 319 处日期，最新 2026-09-10，早于窗口起点。窗口内 0。未逐篇打开正文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.stepfun.com/",
+      "status": "partial",
+      "evidence": "https://www.stepfun.com/ HTTP 200，页面抽不到日期，不能判断窗口内有无更新。partial。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "partial",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "no_dates"
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "partial",
+      "evidence": "脚本在新闻页抽到最新日期 2026-10-29，但窗口命中的条目没有标题和可用链接。未打开对应正文，不能把空命中当成已覆盖。partial。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "date_link_unresolved"
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "新闻页 HTTP 200，可见日期最新 2026-10-30，并有更早日期。抽到的条目只有日精度，不进严格目录。未读全文。 收据条目 2。",
+      "items": [
+        {
+          "title": "EU and Canada team up in supercomputing and quantum",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/eu-and-canada-team-supercomputing-and-quantum",
+          "published_at": "2026-10-30",
+          "date_precision": "day"
+        },
+        {
+          "title": "Commission opens in-depth investigation into the proposed changes to Sweden's fixed-location wholesale local access",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-opens-depth-investigation-proposed-changes-swedens-fixed-location-wholesale-local-access",
+          "published_at": "2026-10-29",
+          "date_precision": "day"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found_day_precision"
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "partial",
+      "evidence": "页面抽到 2026-10-29 一处日期，但没有对应标题和链接。未打开正文。partial。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "date_link_unresolved"
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "ok",
+      "evidence": "脚本在页面抽到的最新日期 2026-10-13，早于窗口起点。窗口内 0。未逐篇打开正文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "status": "partial",
+      "evidence": "export.arxiv.org 按 submittedDate 倒序，最新 published 为 2026-10-29T17:59:53Z（Elucidating the Design Space of LM Data Attribution，2610.40655）。分类查询 submittedDate:[202610290900 TO 202610302100] 的 totalResults：cs.AI 111、cs.LG 110、cs.CL 55，彼此重叠，未逐页拉全量去重。这些已公告论文的 published 落在窗口内，但自 2026-10-29T17:59:53Z 至 --until 2026-10-30T21:00:00Z 的未公告切片 API 不可见。整源 partial，不能标 ok。公开目录不灌入该公告全量，只保留 HF Daily Papers 中 arXiv published 落入窗口的论文。未读全文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "announcement_boundary"
+    },
+    {
+      "source_id": "hf-daily-papers",
+      "name": "Hugging Face Daily Papers",
+      "core": false,
+      "method": "api",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://huggingface.co/api/daily_papers",
+      "status": "ok",
+      "evidence": "daily_papers 拉取 2026-10-29（17）与 2026-10-30（39）。其中 56 篇回 arXiv abs 核对 published。落入发现窗口的 3 篇。2026-10-31 的接口返回 HTTP 400，该 UTC 日不在本 until 之前需要覆盖的范围内。未读全文。 收据条目 3。",
+      "items": [
+        {
+          "title": "L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory",
+          "url": "https://arxiv.org/abs/2610.40614",
+          "published_at": "2026-10-29T17:54:42+00:00",
+          "date_precision": "second",
+          "paper_key": "2610.40614"
+        },
+        {
+          "title": "Training Foundation Models with a Single Algorithm",
+          "url": "https://arxiv.org/abs/2610.40564",
+          "published_at": "2026-10-29T17:42:05+00:00",
+          "date_precision": "second",
+          "paper_key": "2610.40564"
+        },
+        {
+          "title": "AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers",
+          "url": "https://arxiv.org/abs/2610.39663",
+          "published_at": "2026-10-29T09:15:39+00:00",
+          "date_precision": "second",
+          "paper_key": "2610.39663"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "openreview",
+      "name": "OpenReview",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://openreview.net/",
+      "status": "partial",
+      "evidence": "浏览器打开首页。新闻最新为 2026-09-24 的 ICLR 2027 投稿暴露声明，早于窗口。Active Venues 含 TMLR 等，Open for Submissions 只见截止日期（例如 AIAL Symposium 2026 Due 30 Oct 2026 22:00 UTC），没有投稿创建时间。api2 notes 查询返回 ChallengeRequiredError 403。未扫到带投稿时间的 venue 列表。partial。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "pending",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "no_submission_timestamps"
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
+      "status": "ok",
+      "evidence": "日榜与 Python 日榜静态 HTML 抽到 21 个仓库（去重后）。api.github.com 复核 created_at、pushed_at、stargazers_count。created_at 落在窗口内 0 个。pushed_at 不是版本发布。榜单快照不进公开目录。 收据条目 21。",
+      "items": [
+        {
+          "title": "thedotmack/claude-mem",
+          "url": "https://github.com/thedotmack/claude-mem",
+          "published_at": "2025-08-31T20:50:03Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T19:01:44Z",
+          "stargazers_count": 106091,
+          "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sess",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "milind-soni/OpenMausBot",
+          "url": "https://github.com/milind-soni/OpenMausBot",
+          "published_at": "2026-08-11T18:58:55Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T21:52:06Z",
+          "stargazers_count": 8511,
+          "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "pbakaus/impeccable",
+          "url": "https://github.com/pbakaus/impeccable",
+          "published_at": "2025-11-16T01:52:04Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T17:36:40Z",
+          "stargazers_count": 96936,
+          "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "CopilotKit/OpenBot",
+          "url": "https://github.com/CopilotKit/OpenBot",
+          "published_at": "2026-08-17T00:44:59Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T21:52:57Z",
+          "stargazers_count": 8722,
+          "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "Renhuai123/ziwei-doushu",
+          "url": "https://github.com/Renhuai123/ziwei-doushu",
+          "published_at": "2026-05-01T05:09:59Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-27T12:59:28Z",
+          "stargazers_count": 11151,
+          "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "expo/skills",
+          "url": "https://github.com/expo/skills",
+          "published_at": "2025-11-30T03:57:18Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T20:29:57Z",
+          "stargazers_count": 3866,
+          "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "macro-inc/macro",
+          "url": "https://github.com/macro-inc/macro",
+          "published_at": "2025-11-08T15:18:27Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T21:54:19Z",
+          "stargazers_count": 5835,
+          "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "mattpocock/skills",
+          "url": "https://github.com/mattpocock/skills",
+          "published_at": "2026-02-03T11:15:53Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T14:00:30Z",
+          "stargazers_count": 307409,
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "pingdotgg/t3code",
+          "url": "https://github.com/pingdotgg/t3code",
+          "published_at": "2026-02-08T23:46:22Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T21:54:39Z",
+          "stargazers_count": 32658,
+          "description": "",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "HKUDS/DeepTutor",
+          "url": "https://github.com/HKUDS/DeepTutor",
+          "published_at": "2025-12-28T15:35:54Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T14:15:04Z",
+          "stargazers_count": 51699,
+          "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "anthropics/skills",
+          "url": "https://github.com/anthropics/skills",
+          "published_at": "2025-09-22T15:53:31Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-28T19:20:39Z",
+          "stargazers_count": 185238,
+          "description": "Public repository for Agent Skills",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "JetBrains/thinkrail",
+          "url": "https://github.com/JetBrains/thinkrail",
+          "published_at": "2026-07-08T07:40:43Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T21:48:47Z",
+          "stargazers_count": 6524,
+          "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "togg53192-cmd/jailbreaks",
+          "url": "https://github.com/togg53192-cmd/jailbreaks",
+          "published_at": "2026-06-18T18:21:25Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-28T12:31:33Z",
+          "stargazers_count": 10827,
+          "description": "LIST OF ALL MY JAILBREAKS",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "obra/superpowers",
+          "url": "https://github.com/obra/superpowers",
+          "published_at": "2025-10-09T19:45:18Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-29T23:35:34Z",
+          "stargazers_count": 309369,
+          "description": "An agentic skills framework & software development methodology that works.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "lightpanda-io/browser",
+          "url": "https://github.com/lightpanda-io/browser",
+          "published_at": "2023-02-07T15:19:34Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T19:45:19Z",
+          "stargazers_count": 38279,
+          "description": "Lightpanda: the headless browser designed for AI and automation",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "MemPalace/mempalace",
+          "url": "https://github.com/MemPalace/mempalace",
+          "published_at": "2026-04-05T01:12:07Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T07:54:58Z",
+          "stargazers_count": 60157,
+          "description": "The best-benchmarked open-source AI memory system. And it's free.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "vectorize-io/hindsight",
+          "url": "https://github.com/vectorize-io/hindsight",
+          "published_at": "2025-10-30T11:49:48Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T21:07:15Z",
+          "stargazers_count": 56629,
+          "description": "Hindsight: Agent Memory That Learns",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "langchain-ai/deepagents",
+          "url": "https://github.com/langchain-ai/deepagents",
+          "published_at": "2025-07-27T23:07:53Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T21:20:52Z",
+          "stargazers_count": 30796,
+          "description": "The batteries-included agent harness.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "kirodotdev/KiroCrew",
+          "url": "https://github.com/kirodotdev/KiroCrew",
+          "published_at": "2026-07-16T21:21:54Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T21:52:36Z",
+          "stargazers_count": 4667,
+          "description": "A persistent workspace for development work that self-improves and continues beyond one session.",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "ethanplusai/harvey",
+          "url": "https://github.com/ethanplusai/harvey",
+          "published_at": "2026-03-12T01:24:50Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-27T09:27:08Z",
+          "stargazers_count": 3458,
+          "description": "Autonomous AI sales agent powered by Claude Code or Codex. Finds prospects, writes cold emails, sends campaigns, handles replies, books meetings. No API keys needed — runs on your ",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        },
+        {
+          "title": "NVIDIA-NeMo/Speech",
+          "url": "https://github.com/NVIDIA-NeMo/Speech",
+          "published_at": "2019-08-05T20:16:42Z",
+          "date_precision": "second",
+          "pushed_at": "2026-10-30T16:41:51Z",
+          "stargazers_count": 18655,
+          "description": "A scalable generative AI framework built for researchers and developers working on Large Language Models, Multimodal, and Speech AI (Automatic Speech Recognition and Text-to-Speech",
+          "catalog_news_reason": null,
+          "note": "trending snapshot; created_at is repo creation, not an event time"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "snapshot_checked"
+    },
+    {
+      "source_id": "36kr-ai",
+      "name": "36氪 AI 频道（逐篇核验原创与转载）",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.36kr.com/information/AI/",
+      "status": "ok",
+      "evidence": "浏览器打开栏目，顶部为相对时间“8小时前”，与列表接口最新 2026-10-30T12:55:23Z 一致，直到 until 没有更新的卡片。gateway subNav/flow subnavNick=AI，pageEvent=1 翻页直到早于窗口起点（最旧窗口内 2026-10-29T09:51:42Z）。author 来自列表接口，未逐篇打开正文，不把 36氪域名当成 original。 收据条目 62。",
+      "items": [
+        {
+          "title": "离开人类，AI能独自活下去么？从图灵测试到“鲁滨逊测试”",
+          "url": "https://www.36kr.com/p/4048324787698180",
+          "published_at": "2026-10-30T12:55:23.556000+00:00",
+          "date_precision": "millisecond",
+          "author": "新智元",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "GPT-6“看不懂 3D”实锤，250道题只拿0.53分，Claude没及格",
+          "url": "https://www.36kr.com/p/4048320092912129",
+          "published_at": "2026-10-30T12:55:14.029000+00:00",
+          "date_precision": "millisecond",
+          "author": "新智元",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "重磅，AI补全人类史上最大数学证明，数学家当场泪崩",
+          "url": "https://www.36kr.com/p/4048319038208262",
+          "published_at": "2026-10-30T12:55:02.574000+00:00",
+          "date_precision": "millisecond",
+          "author": "新智元",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "27 岁程序员获无限 Token，挑战两个月重写思科 98% 的遗留代码",
+          "url": "https://www.36kr.com/p/4048202469440004",
+          "published_at": "2026-10-30T12:34:34.116000+00:00",
+          "date_precision": "millisecond",
+          "author": "极客邦科技InfoQ",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "宇树王兴兴到底在“怕什么”？",
+          "url": "https://www.36kr.com/p/4048261375924101",
+          "published_at": "2026-10-30T11:50:12.625000+00:00",
+          "date_precision": "millisecond",
+          "author": "铑科技",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "Claude Code：别再给Claude过多提示词了...",
+          "url": "https://www.36kr.com/p/4048234121460233",
+          "published_at": "2026-10-30T11:48:13.771000+00:00",
+          "date_precision": "millisecond",
+          "author": "机器之心",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "伯克利团队“Agent Teams”新研究：持续自进化，突破GPU内核优化局部最优",
+          "url": "https://www.36kr.com/p/4048188893624840",
+          "published_at": "2026-10-30T11:47:04.310000+00:00",
+          "date_precision": "millisecond",
+          "author": "账号已注销",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "AI 硬件，别想绕过隐私",
+          "url": "https://www.36kr.com/p/4048208185349761",
+          "published_at": "2026-10-30T11:46:50.828000+00:00",
+          "date_precision": "millisecond",
+          "author": "具身研习社",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "桌面机器人火了，具身智能厂商发力新赛道，终局是物理Agent？",
+          "url": "https://www.36kr.com/p/4048166536812168",
+          "published_at": "2026-10-30T11:38:58.186000+00:00",
+          "date_precision": "millisecond",
+          "author": "雷科技",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "记者实测被AI气笑，双十一算账，人类还没疯，AI先疯了",
+          "url": "https://www.36kr.com/p/4048106199841025",
+          "published_at": "2026-10-30T11:32:08.975000+00:00",
+          "date_precision": "millisecond",
+          "author": "IT时报",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "月烧 1.5 万亿 token，年烧 1.32 亿美元？Cursor 工程师的账单，凡人只能仰望",
+          "url": "https://www.36kr.com/p/4048057227065609",
+          "published_at": "2026-10-30T11:29:53.175000+00:00",
+          "date_precision": "millisecond",
+          "author": "极客邦科技InfoQ",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "OpenAI重写大模型法则，第一条：忠于人类",
+          "url": "https://www.36kr.com/p/4048252672981248",
+          "published_at": "2026-10-30T11:27:08.686000+00:00",
+          "date_precision": "millisecond",
+          "author": "量子位",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "凛冬已至，AI正在抛弃手机和PC",
+          "url": "https://www.36kr.com/p/4048192204093959",
+          "published_at": "2026-10-30T11:05:48.625000+00:00",
+          "date_precision": "millisecond",
+          "author": "半导体产业纵横",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "72道工序、灵巧手进厂打螺丝：临界点数采手套发布，要补上触觉数据缺口｜最前线",
+          "url": "https://www.36kr.com/p/4048092462070017",
+          "published_at": "2026-10-30T10:57:32.897000+00:00",
+          "date_precision": "millisecond",
+          "author": "黄 楠",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "人类要关停，AI不能躲，OpenAI更新模型家法",
+          "url": "https://www.36kr.com/p/4048207466707456",
+          "published_at": "2026-10-30T10:53:45.330000+00:00",
+          "date_precision": "millisecond",
+          "author": "新智元",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "OpenAI又出数学大结果，陶哲轩：数学不该被AI“掠夺式开采”",
+          "url": "https://www.36kr.com/p/4048179014752133",
+          "published_at": "2026-10-30T10:27:43.873000+00:00",
+          "date_precision": "millisecond",
+          "author": "数智奔流",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "MaaS，成了",
+          "url": "https://www.36kr.com/p/4048184891308293",
+          "published_at": "2026-10-30T10:08:36.786000+00:00",
+          "date_precision": "millisecond",
+          "author": "硅星人Pro",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "王兴兴突然杀入资本圈，震惊行业",
+          "url": "https://www.36kr.com/p/4048156251978246",
+          "published_at": "2026-10-30T09:49:49.122000+00:00",
+          "date_precision": "millisecond",
+          "author": "电商天下",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "单人Codex游戏研发干货分享：如何100%用AI重制一款游戏？",
+          "url": "https://www.36kr.com/p/4048042922326279",
+          "published_at": "2026-10-30T08:55:48.032000+00:00",
+          "date_precision": "millisecond",
+          "author": "游戏葡萄",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "WTCC 2026｜第二届西岸国际科技消费嘉年华圆满收官，为“人工智能+消费创新”写下城市级注脚",
+          "url": "https://www.36kr.com/p/4048092463053320",
+          "published_at": "2026-10-30T08:23:52.988000+00:00",
+          "date_precision": "millisecond",
+          "author": "未来一氪",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "AI灭绝人类会怎样？“那会影响我司股价”",
+          "url": "https://www.36kr.com/p/4047853681408521",
+          "published_at": "2026-10-30T08:18:21.694000+00:00",
+          "date_precision": "millisecond",
+          "author": "果壳",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "AI红利究竟被谁吃了？",
+          "url": "https://www.36kr.com/p/4047862311982982",
+          "published_at": "2026-10-30T08:17:36.927000+00:00",
+          "date_precision": "millisecond",
+          "author": "字母AI",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "第一批用上WorkBuddy的乙方，已经提前下班了",
+          "url": "https://www.36kr.com/p/4048085285763584",
+          "published_at": "2026-10-30T08:12:08.149000+00:00",
+          "date_precision": "millisecond",
+          "author": "后浪研究所",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "“裁员根本不是必选项，”公司坚持101年从不裁员，CEO放话：我们也用AI，但绝不拿老员工“开刀”",
+          "url": "https://www.36kr.com/p/4048035350002184",
+          "published_at": "2026-10-30T07:44:56.861000+00:00",
+          "date_precision": "millisecond",
+          "author": "CSDN",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "谷歌暴跌背后的逻辑：AI烧穿了现金流，烧没了回购，还烧着了搜索",
+          "url": "https://www.36kr.com/p/4048034255862021",
+          "published_at": "2026-10-30T07:43:41.048000+00:00",
+          "date_precision": "millisecond",
+          "author": "36氪的朋友们",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "马斯克脑机接口最狠升级，Grok接入大脑，意念可操控AI了",
+          "url": "https://www.36kr.com/p/4048035636558087",
+          "published_at": "2026-10-30T07:43:08.721000+00:00",
+          "date_precision": "millisecond",
+          "author": "新智元",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "AI功能启动前，产品经理先把三件事问明白",
+          "url": "https://www.36kr.com/p/4047814557317382",
+          "published_at": "2026-10-30T04:37:15.253000+00:00",
+          "date_precision": "millisecond",
+          "author": "人人都是产品经理",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "ChatGPT Pro 额度翻倍：是让步，不是福利？",
+          "url": "https://www.36kr.com/p/4047841517484292",
+          "published_at": "2026-10-30T04:12:18.940000+00:00",
+          "date_precision": "millisecond",
+          "author": "极客邦科技InfoQ",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "净利暴涨169%，英特尔猛吃AI红利，内存还在拖后腿",
+          "url": "https://www.36kr.com/p/4047843835034117",
+          "published_at": "2026-10-30T04:03:39.022000+00:00",
+          "date_precision": "millisecond",
+          "author": "智东西",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "主打一个听劝，OpenAI把Pro额度翻倍了",
+          "url": "https://www.36kr.com/p/4047766370121986",
+          "published_at": "2026-10-30T04:01:26.375000+00:00",
+          "date_precision": "millisecond",
+          "author": "智东西",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "Coursera：把重点放在“能控制的事”上",
+          "url": "https://www.36kr.com/p/4047808070613504",
+          "published_at": "2026-10-30T03:59:35.321000+00:00",
+          "date_precision": "millisecond",
+          "author": "多知网",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "具身机器人，凛冬将至",
+          "url": "https://www.36kr.com/p/4047777107007113",
+          "published_at": "2026-10-30T03:36:00.079000+00:00",
+          "date_precision": "millisecond",
+          "author": "潮涌AI",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "一个模型，把企业的AI化程度算成了明账",
+          "url": "https://www.36kr.com/p/4047702714218755",
+          "published_at": "2026-10-30T03:28:01.608000+00:00",
+          "date_precision": "millisecond",
+          "author": "穆胜",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "老干妈用AI：省下了成本，留得住风味吗？",
+          "url": "https://www.36kr.com/p/4047687462730245",
+          "published_at": "2026-10-30T03:27:35.565000+00:00",
+          "date_precision": "millisecond",
+          "author": "中欧国际工商学院",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "“以前催着用AI，现在嫌Token烧太多”，亚马逊给程序员「泼冷水」：别把Token消耗量当成绩",
+          "url": "https://www.36kr.com/p/4047756659718404",
+          "published_at": "2026-10-30T02:52:57.655000+00:00",
+          "date_precision": "millisecond",
+          "author": "CSDN",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "字节GenAI研发负责人投奔具身智能，三大核心四个月内全离职",
+          "url": "https://www.36kr.com/p/4046842478171782",
+          "published_at": "2026-10-30T02:02:30.935000+00:00",
+          "date_precision": "millisecond",
+          "author": "ZAKER财经",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "龙虾尸骸，SaaS残梦，大厂焦虑：AI办公究竟是什么？",
+          "url": "https://www.36kr.com/p/4046972364421635",
+          "published_at": "2026-10-30T00:29:14.964000+00:00",
+          "date_precision": "millisecond",
+          "author": "脑极体",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "阿里AI双线战：阿里云守B端底仓，千问赌C端入口",
+          "url": "https://www.36kr.com/p/4046995399677829",
+          "published_at": "2026-10-30T00:25:26.179000+00:00",
+          "date_precision": "millisecond",
+          "author": "Tech商业",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "AGI 时代，中产全都完蛋了",
+          "url": "https://www.36kr.com/p/4047012606671104",
+          "published_at": "2026-10-30T00:25:06.866000+00:00",
+          "date_precision": "millisecond",
+          "author": "硬核看板",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "刚刚，奥特曼自曝OpenAI新模型：让我兴奋到两晚没睡",
+          "url": "https://www.36kr.com/p/4047595233098247",
+          "published_at": "2026-10-30T00:18:48.605000+00:00",
+          "date_precision": "millisecond",
+          "author": "新智元",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "即日起，ChatGPT Pro使用额度翻倍",
+          "url": "https://www.36kr.com/p/4047560652405000",
+          "published_at": "2026-10-30T00:09:05.816000+00:00",
+          "date_precision": "millisecond",
+          "author": "机器之心",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "部署态加速，智元要打通物理AI全链路",
+          "url": "https://www.36kr.com/p/4047032889800965",
+          "published_at": "2026-10-29T14:25:57.653000+00:00",
+          "date_precision": "millisecond",
+          "author": "周谣",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "OpenAI健康板块负责人：AI医疗健康的上限和下限",
+          "url": "https://www.36kr.com/p/4046866715154050",
+          "published_at": "2026-10-29T12:39:18.979000+00:00",
+          "date_precision": "millisecond",
+          "author": "数智奔流",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "双十一，要囤就囤Token？",
+          "url": "https://www.36kr.com/p/4046889002826243",
+          "published_at": "2026-10-29T12:09:53.438000+00:00",
+          "date_precision": "millisecond",
+          "author": "IT时报",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "谷歌一夜跌去 10%：AI 烧钱周期里，它还值不值得拿？",
+          "url": "https://www.36kr.com/p/4046826443871112",
+          "published_at": "2026-10-29T12:07:00.126000+00:00",
+          "date_precision": "millisecond",
+          "author": "RockFlow U",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "超20家机器人军团集体“下海”捞金",
+          "url": "https://www.36kr.com/p/4046782652306562",
+          "published_at": "2026-10-29T11:30:16.033000+00:00",
+          "date_precision": "millisecond",
+          "author": "亿欧网",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "谷歌Q3营收1276亿美元，AI烧钱更猛了 ，现金流亮红灯",
+          "url": "https://www.36kr.com/p/4046813256062080",
+          "published_at": "2026-10-29T11:19:00.661000+00:00",
+          "date_precision": "millisecond",
+          "author": "36氪的朋友们",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "获10亿美元A轮融资，Flapping Airplanes要破解AI的“数据饥渴”",
+          "url": "https://www.36kr.com/p/4046761437156489",
+          "published_at": "2026-10-29T11:09:17.385000+00:00",
+          "date_precision": "millisecond",
+          "author": "阿尔法公社",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "AI引发影视大迁徙：李世民下山、马景涛飞天、张艺兴远赴美国",
+          "url": "https://www.36kr.com/p/4046755496941448",
+          "published_at": "2026-10-29T10:58:32.238000+00:00",
+          "date_precision": "millisecond",
+          "author": "摩登AI",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "刚刚，机器人学习进入“全链路Scaling”时代",
+          "url": "https://www.36kr.com/p/4046793427866502",
+          "published_at": "2026-10-29T10:39:44.670000+00:00",
+          "date_precision": "millisecond",
+          "author": "机器之心",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "只有一个人的制药公司，被Anthropic在 IPO前收购了",
+          "url": "https://www.36kr.com/p/4046787920156297",
+          "published_at": "2026-10-29T10:39:10.978000+00:00",
+          "date_precision": "millisecond",
+          "author": "字母AI",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "AI云大厂股价剧烈分化，市场正在奖励克制、惩罚开支？",
+          "url": "https://www.36kr.com/p/4046762825946245",
+          "published_at": "2026-10-29T10:38:22.334000+00:00",
+          "date_precision": "millisecond",
+          "author": "36氪的朋友们",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "云厂商“三兄弟”业绩放榜，AI吞金兽继续发威",
+          "url": "https://www.36kr.com/p/4046729338705542",
+          "published_at": "2026-10-29T10:36:34.734000+00:00",
+          "date_precision": "millisecond",
+          "author": "一千二百字",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "攻克千禧年难题之后：斯坦福推出After42，让AI学会提出“值得研究”的问题",
+          "url": "https://www.36kr.com/p/4046713681990529",
+          "published_at": "2026-10-29T10:35:56.857000+00:00",
+          "date_precision": "millisecond",
+          "author": "账号已注销",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "月流水仅2万元，王祖贤、戚薇带火的“AI卖脸”生意，没那么好赚",
+          "url": "https://www.36kr.com/p/4046709773505408",
+          "published_at": "2026-10-29T10:33:20.029000+00:00",
+          "date_precision": "millisecond",
+          "author": "新榜",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "预制数据中心，突然火了",
+          "url": "https://www.36kr.com/p/4046774031078537",
+          "published_at": "2026-10-29T10:31:43.323000+00:00",
+          "date_precision": "millisecond",
+          "author": "半导体产业纵横",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "刚刚，国产模型拿下三大榜单第一，年底全面开源",
+          "url": "https://www.36kr.com/p/4046784076305283",
+          "published_at": "2026-10-29T10:30:10.941000+00:00",
+          "date_precision": "millisecond",
+          "author": "新智元",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "AI王座，一夜两度易主，神秘模型Obsidian 3泄露",
+          "url": "https://www.36kr.com/p/4046769826354050",
+          "published_at": "2026-10-29T10:07:55.192000+00:00",
+          "date_precision": "millisecond",
+          "author": "新智元",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "Astra冲击波与具身行业的50天",
+          "url": "https://www.36kr.com/p/4046710270989193",
+          "published_at": "2026-10-29T09:56:43.545000+00:00",
+          "date_precision": "millisecond",
+          "author": "数智前线",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "谷歌新模型拳打GPT脚踢Claude，却没打算让我们用",
+          "url": "https://www.36kr.com/p/4046712869672835",
+          "published_at": "2026-10-29T09:56:21.346000+00:00",
+          "date_precision": "millisecond",
+          "author": "蓝字计划",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "中国大模型训练如何突破算力瓶颈",
+          "url": "https://www.36kr.com/p/4046750431318918",
+          "published_at": "2026-10-29T09:53:22.381000+00:00",
+          "date_precision": "millisecond",
+          "author": "36氪的朋友们",
+          "content_form": "column_or_relay_unverified"
+        },
+        {
+          "title": "一家1800人的公司，为什么会有8000个AI员工？",
+          "url": "https://www.36kr.com/p/4046772355617924",
+          "published_at": "2026-10-29T09:51:42.816000+00:00",
+          "date_precision": "millisecond",
+          "author": "晓曦",
+          "content_form": "column_or_relay_unverified"
+        }
+      ],
+      "initial_script_status": "pending",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "cac-ai",
+      "name": "国家网信办·网信发布（AI 相关）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+      "status": "partial",
+      "evidence": "脚本把 2026-10-30 / 2026-10-29 配到“热点专题”导航链接，不是公告正文。本轮没有逐条打开网信发布正文核对 AI 相关公告。partial，不能当成无 AI 政策更新。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "date_link_unresolved"
+    },
+    {
+      "source_id": "bytedance-seed",
+      "name": "字节跳动 Seed·博客与论文",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://seed.bytedance.com/research",
+      "status": "partial",
+      "evidence": "浏览器渲染 https://seed.bytedance.com/research。博客最新 Aug 5, 2026（SeedRealtime），论文列表最新 Oct 25, 2026（Recycler）。都早于窗口。模型分类（Foundation / Visual / Audio 等）未逐类打开，按来源说明不能把研究列表当成全站完整更新流。partial。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "pending",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "model_tabs_not_opened"
+    },
+    {
+      "source_id": "minimax",
+      "name": "MiniMax·News & Updates",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.minimax.io/news",
+      "status": "partial",
+      "evidence": "浏览器渲染 https://www.minimax.io/news。新闻卡片按日期排列，最新 Oct 12, 2026（Japanese IP），其后 Aug 26 与更早，并可见到 Mar 26, 2026，新闻入口已越过窗口起点，窗口内 0。导航里的 M3.1 Flash、H3、Speech 2.8、Music 3.0 文章页未逐一打开，不能据此说全部产品无更新。partial。dateModified 不是稿件日期。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "pending",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "model_pages_not_opened"
+    },
+    {
+      "source_id": "techcrunch-ai",
+      "name": "TechCrunch",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "栏目 RSS 第1页加 ?paged=2。第2页最旧 2026-10-27T21:38:28Z，已越过窗口起点。晚于 until 的条目未计入。活动促销在目录层排除。未读全文。 收据条目 20。",
+      "items": [
+        {
+          "title": "Zest’s new AI agent finds restaurants and books reservations over text",
+          "url": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
+          "published_at": "2026-10-30T17:47:12+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Google’s first data center satellite is online and writing poetry",
+          "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/",
+          "published_at": "2026-10-30T17:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’",
+          "url": "https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/",
+          "published_at": "2026-10-30T16:03:45+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Skip the small talk: Make game-changing connections at TechCrunch Founder Summit with Braindate",
+          "url": "https://techcrunch.com/2026/10/30/skip-the-small-talk-make-game-changing-connections-at-techcrunch-founder-summit-with-braindate/",
+          "published_at": "2026-10-30T14:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "DoorDash said it’s only received ‘several hundred’ orders from AI agents",
+          "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+          "published_at": "2026-10-30T13:54:25+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "5 days left: Your last chance to connect, scale, and save at TechCrunch Founder Summit 2026",
+          "url": "https://techcrunch.com/2026/10/30/5-days-left-your-last-chance-to-connect-scale-and-save-at-techcrunch-founder-summit-2026/",
+          "published_at": "2026-10-30T13:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Can AI data centers be mass-produced like cars? This startup aims to find out",
+          "url": "https://techcrunch.com/2026/10/30/can-ai-data-centers-be-mass-produced-like-cars-and-online-in-48-hours-this-startup-aims-to-find-out/",
+          "published_at": "2026-10-30T13:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "You don’t need to believe in a god to get a religious exemption from using AI at work",
+          "url": "https://techcrunch.com/2026/10/29/you-dont-need-to-believe-in-a-god-to-get-a-religious-exemption-from-using-ai-at-work/",
+          "published_at": "2026-10-30T01:20:48+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "AWS will be a $1T business, Jassy says — but first, it will spend big",
+          "url": "https://techcrunch.com/2026/10/29/aws-will-be-a-1t-business-jassy-says-but-first-it-will-spend-big/",
+          "published_at": "2026-10-29T23:42:22+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "As search traffic dries up, Reddit announces it’s shifting to a logged-in experience",
+          "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/",
+          "published_at": "2026-10-29T20:08:31+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Rivian expands joint venture with VW to include AI assistant",
+          "url": "https://techcrunch.com/2026/10/29/rivian-expands-joint-venture-with-vw-to-include-ai-assistant/",
+          "published_at": "2026-10-29T20:05:47+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "OpenAI-backed Thrive Holdings acquires ADT",
+          "url": "https://techcrunch.com/2026/10/29/openai-backed-thrive-holdings-acquires-adt/",
+          "published_at": "2026-10-29T19:56:19+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Meta quietly launches an AI fashion app called Style Sketch",
+          "url": "https://techcrunch.com/2026/10/29/meta-quietly-launches-an-ai-fashion-app-called-style-sketch/",
+          "published_at": "2026-10-29T19:14:36+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Granola crunches up a dictation feature to compete with Wispr",
+          "url": "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr/",
+          "published_at": "2026-10-29T17:54:38+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity",
+          "url": "https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/",
+          "published_at": "2026-10-29T17:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "US investigated Chinese spy plot aimed at Nvidia CEO",
+          "url": "https://techcrunch.com/2026/10/29/u-s-investigated-chinese-spy-plot-aimed-at-nvidia-ceo/",
+          "published_at": "2026-10-29T16:42:32+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Ex-Palantir execs launch Dream with $17M from a16z to build AI world models for construction",
+          "url": "https://techcrunch.com/2026/10/29/ex-palantir-execs-launch-dream-with-17m-from-a16z-to-build-ai-world-models-for-construction/",
+          "published_at": "2026-10-29T16:21:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
+          "url": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/",
+          "published_at": "2026-10-29T14:35:26+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure",
+          "url": "https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure/",
+          "published_at": "2026-10-29T13:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Amazon updates Alexa to help you manage shopping lists and subscriptions and update delivery instructions",
+          "url": "https://techcrunch.com/2026/10/29/amazon-updates-alexa-to-help-you-manage-shopping-lists-and-subscriptions-and-update-delivery-instructions/",
+          "published_at": "2026-10-29T13:00:00+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "ars-technica-ai",
+      "name": "Ars Technica",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://arstechnica.com/ai/",
+      "status": "ok",
+      "evidence": "https://arstechnica.com/ai/feed/ 20 条，最旧 2026-10-22，已越过窗口起点。晚于 until 的一条未计入。未读全文。 收据条目 6。",
+      "items": [
+        {
+          "title": "Dartmouth's provost warned us about AI cheating—but his own AI use cost him his job",
+          "url": "https://arstechnica.com/tech-policy/2026/10/dartmouths-provost-warned-us-about-ai-cheating-but-his-own-ai-use-cost-him-his-job/",
+          "published_at": "2026-10-30T20:40:13+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Basically no one is using AI agents for their DoorDash orders",
+          "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/",
+          "published_at": "2026-10-30T19:30:52+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Fujifilm to boost tape production 5x as AI fuels archiving demand",
+          "url": "https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/",
+          "published_at": "2026-10-30T17:38:19+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Thousands of “ghost students” use AI to steal millions in student loans, DOJ says",
+          "url": "https://arstechnica.com/tech-policy/2026/10/doj-exposes-ghost-students-using-ai-to-complete-courses-steal-student-loans/",
+          "published_at": "2026-10-30T16:53:49+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Trump declares robot imports a national security threat",
+          "url": "https://arstechnica.com/gadgets/2026/10/trump-declares-robot-imports-a-national-security-threat/",
+          "published_at": "2026-10-29T19:07:53+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Google admits AI search makes less money, but it's fixing that with more ads",
+          "url": "https://arstechnica.com/gadgets/2026/10/google-admits-ai-search-makes-less-money-but-its-fixing-that-with-more-ads/",
+          "published_at": "2026-10-29T16:24:55+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "mit-technology-review-ai",
+      "name": "MIT Technology Review",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "浏览器打开话题页，列表可见但正文日期以官方话题 RSS 为准。RSS 10 条，最新 2026-10-29T10:11:12Z，最旧 2026-10-22，已越过窗口起点。未打开付费墙后的全文。 收据条目 1。",
+      "items": [
+        {
+          "title": "We urgently need to monitor AI agents’ actions in real time",
+          "url": "https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time/",
+          "published_at": "2026-10-29T10:11:12+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "pending",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "404-media",
+      "name": "404 Media",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.404media.co/",
+      "status": "ok",
+      "evidence": "https://www.404media.co/rss/ 15 条，最新 2026-10-30T18:51:02Z，最旧 2026-10-26，已越过窗口起点。非 AI 条目留在收据、不进目录。未读全文。 收据条目 9。",
+      "items": [
+        {
+          "title": "‘Wake Up Call:’ Fanfiction Writers and Readers React to AO3 Outage",
+          "url": "https://www.404media.co/ao3-down-outage-reactions/",
+          "published_at": "2026-10-30T18:51:02+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Scientists Analyzed Thousands of Psychedelic Trips. They Found Something Disturbing",
+          "url": "https://www.404media.co/fireside-project-psychedelic-support-line-study/",
+          "published_at": "2026-10-30T18:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Proton’s CEO Cancels AI ‘Re-Interviews’",
+          "url": "https://www.404media.co/protons-ceo-cancels-ai-re-interviews/",
+          "published_at": "2026-10-30T16:40:39+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Behind the Blog: Tech Support",
+          "url": "https://www.404media.co/behind-the-blog-tech-support/",
+          "published_at": "2026-10-30T15:48:18+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Apple Is Entering Its Slop Era",
+          "url": "https://www.404media.co/apple-is-entering-its-slop-era/",
+          "published_at": "2026-10-30T12:31:04+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Massive Fanfic Site Archive of Our Own Says It’s Going Down for 'Up to 4 Weeks'",
+          "url": "https://www.404media.co/archive-of-our-own-ao3-down-maintenance/",
+          "published_at": "2026-10-29T18:58:53+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Podcast: Flock CEO Says the Backlash Isn’t Real",
+          "url": "https://www.404media.co/podcast-flock-ceo-says-the-backlash-isnt-real/",
+          "published_at": "2026-10-29T17:34:52+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Manifestos, Fear, and ‘Loser Thinking’: Inside Proton’s AI Reckoning",
+          "url": "https://www.404media.co/manifestos-fear-and-loser-thinking-inside-protons-ai-reckoning/",
+          "published_at": "2026-10-29T14:21:49+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Senators Demand Meta Answer for 'Pervert Glasses' Following 404 Media Investigation",
+          "url": "https://www.404media.co/senators-wyden-markey-letter-to-meta-smart-glasses/",
+          "published_at": "2026-10-29T10:00:00+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "wired-ai",
+      "name": "WIRED",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.wired.com/feed/tag/ai/latest/rss",
+      "status": "ok",
+      "evidence": "标签 RSS 10 条，最旧 2026-10-27T19:39:04Z，已越过窗口起点。2026-10-30T21:19:26Z 的一条晚于 until，不计入本窗口。未读全文。 收据条目 4。",
+      "items": [
+        {
+          "title": "A Defense Contractor Gave Their Personal AI Agent Access to a Secure Pentagon System",
+          "url": "https://www.wired.com/story/a-defense-contractor-gave-their-personal-ai-agent-access-to-a-secure-pentagon-system/",
+          "published_at": "2026-10-29T18:39:43+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "The ‘Pain in the Ass’ Math That Could Save Vibe Coding From Itself",
+          "url": "https://www.wired.com/story/software-verification-is-the-hot-new-answer-to-the-ai-safety-crisis/",
+          "published_at": "2026-10-29T15:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Mistral Says Its AI Model ‘Le Chonk’ Has Leapfrogged China in the Open-Weight Race",
+          "url": "https://www.wired.com/story/mistral-says-le-chonk-surpasses-chinese-models-cybersecurity/",
+          "published_at": "2026-10-29T14:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "I Gave My Blood to the AI Death Clock",
+          "url": "https://www.wired.com/story/i-gave-an-ai-death-clock-my-blood/",
+          "published_at": "2026-10-29T10:00:00+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "the-verge-ai",
+      "name": "The Verge",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "status": "partial",
+      "evidence": "栏目 RSS 只有 10 条，最旧 2026-10-29T18:45:31Z，仍晚于窗口起点 2026-10-29T09:00:00Z。09:00Z 至 18:45Z 的切片未覆盖。已见条目按原文时间保留。未读全文。 收据条目 10。",
+      "items": [
+        {
+          "title": "Sam Altman says it’s better for RAM to be in a data center than on your desk",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
+          "published_at": "2026-10-30T16:48:43-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "The biggest names in AI are backing a new way to opt out of scraping",
+          "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+          "published_at": "2026-10-30T16:26:10-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Google’s satellite AI server transmits its first response to Earth",
+          "url": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+          "published_at": "2026-10-30T14:21:38-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
+          "published_at": "2026-10-30T13:38:04-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Pope Leo calls for the disarmament of AI: ‘Machines are tools, not persons’",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai",
+          "published_at": "2026-10-30T10:58:06-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Silicon Valley wants you to invest in miracles",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023070/anthropic-ipo-risk-factors-filing-miracles",
+          "published_at": "2026-10-30T09:11:05-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Sam Altman sympathizes with mathematicians, but says OpenAI’s math onslaught won’t stop",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1023054/altman-cheeky-pint-ai-math-interview",
+          "published_at": "2026-10-30T09:01:14-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Maine’s data center revolt will decide who controls the Senate",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1021080/maine-senate-race-susan-collins-ai-data-centers",
+          "published_at": "2026-10-30T07:00:00-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Wikipedia’s operator says a bad AI copyright ruling could threaten the open web",
+          "url": "https://www.theverge.com/policy/1022880/wikipedia-openai-new-york-times-copyright",
+          "published_at": "2026-10-30T05:00:00-04:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "You can generate and edit Google Docs files directly in Gemini chats now",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+          "published_at": "2026-10-29T14:45:31-04:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "feed_truncated"
+    },
+    {
+      "source_id": "cloudflare-ai",
+      "name": "Cloudflare AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://blog.cloudflare.com/tag/ai/rss/",
+      "status": "ok",
+      "evidence": "标签 RSS 20 条，最新 2026-10-21T13:00:00Z，早于窗口起点。窗口内 0。未读全文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "meta-engineering",
+      "name": "Meta Engineering",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://engineering.fb.com/feed/",
+      "status": "ok",
+      "evidence": "RSS 9 条，最旧 2026-10-15，已越过窗口起点。窗口内 1 条标题未表明 AI，目录未收。未读全文。 收据条目 1。",
+      "items": [
+        {
+          "title": "Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale",
+          "url": "https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/",
+          "published_at": "2026-10-29T16:00:12+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "hacker-news-ai",
+      "name": "Hacker News",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://news.ycombinator.com/rss",
+      "status": "partial",
+      "evidence": "首页 RSS 不能代表 36 小时。Algolia search_by_date tags=story 在窗口内 nbHits=1890，本轮只取了计数，没有把讨论时间核成原文发布时间，也没有读完其余命中。讨论时间不进严格目录。partial。 收据条目 27。",
+      "items": [
+        {
+          "title": "My favourite PowerMac is a Nintendo Wii",
+          "url": "https://virtuallyfun.com/2026/10/29/my-favourite-powermac-is-a-nintendo-wii/",
+          "published_at": "2026-10-30T17:25:15+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Bunny CDN Security Incident",
+          "url": "https://status.bunny.net/incidents/p6gf1by9kr7m",
+          "published_at": "2026-10-30T19:05:22+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Northflank Breached",
+          "url": "https://status.northflank.com",
+          "published_at": "2026-10-30T15:10:31+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Product Managers aren't safe either",
+          "url": "https://lucaskostka.com/posts/ai-challenges-more-than-devs",
+          "published_at": "2026-10-30T20:14:39+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Backdoor in Claude Code for VS Code extension on the Cursor Marketplace",
+          "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
+          "published_at": "2026-10-30T07:09:12+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
+          "url": "https://github.com/dbreunig/nesformer",
+          "published_at": "2026-10-30T16:40:22+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Jules Verne's Lost Novel",
+          "url": "https://blue-continuum.com/verne-paris",
+          "published_at": "2026-10-30T19:55:10+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Florilegium: Procedural Flowers in LaTeX",
+          "url": "https://github.com/kevinraymond/florilegium",
+          "published_at": "2026-10-30T15:48:12+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "The federated code forge",
+          "url": "https://tangled.org/blog/forge/",
+          "published_at": "2026-10-30T15:44:29+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Infinite Mac: BeOS",
+          "url": "https://blog.persistent.info/2026/10/infinite-mac-beos.html",
+          "published_at": "2026-10-30T19:30:09+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Building an AI-native engineering org",
+          "url": "https://twitter.com/sgondala2/status/2115832070274723875",
+          "published_at": "2026-10-29T21:58:34+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Anthropic may not secure investment-grade rating after IPO, Blackstone says",
+          "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f",
+          "published_at": "2026-10-30T17:27:25+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Through Captain Jean-Luc Picard, Patrick Stewart taught us the measure of a man",
+          "url": "https://www.bostonglobe.com/2026/10/29/metro/patrick-stewart-picard-star-trek-the-next-generation/",
+          "published_at": "2026-10-30T20:23:30+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Show HN: Automatic deduction of FlashAttention kernel from ~25 lines of SQL",
+          "url": "https://github.com/xqlsystems/xarray-sql/blob/6debe2495dcb4e8fac20ab97df5b89baae2a31a6/benchmarks/ml/01_attention.py",
+          "published_at": "2026-10-30T20:09:47+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "The oldest ice disappears and the Stone Age emerges from it",
+          "url": "https://www.sciencenorway.no/archaeology-climate-culture/the-oldest-ice-is-disappearing-the-stone-age-is-emerging-from-the-melting-ice/2713921",
+          "published_at": "2026-10-30T19:51:33+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "An Arrogant Way of Killing (2016)",
+          "url": "https://magazine.atavist.com/2016/an-arrogant-way-of-killing",
+          "published_at": "2026-10-30T20:08:52+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Azure's Weakest Link – Five Full Cross-Tenant Compromises",
+          "url": "https://www.binarysecurity.no/posts/2026/10/one-root-case",
+          "published_at": "2026-10-30T10:06:15+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Embraer's Atech aims to double in size by 2030 with drone traffic control",
+          "url": "https://www.bloomberglinea.com.br/negocios/atech-da-embraer-quer-dobrar-de-tamanho-ate-2030-com-controle-de-trafego-de-drones/",
+          "published_at": "2026-10-30T20:18:18+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Programming at Light Speed: Building the Gravity Query Engine",
+          "url": "https://pgrust.com/blog/programming-at-light-speed/",
+          "published_at": "2026-10-30T20:18:10+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "AI isn't replacing SREs, it's deskilling them",
+          "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
+          "published_at": "2026-10-30T15:52:18+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Show HN: Sketch Stadium – watch your agent play Pictionary",
+          "url": "https://sketch.wakeshift.ai/games/q5ucru",
+          "published_at": "2026-10-30T15:23:11+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "GitHub Incident with Actions, Pages, and Webhooks",
+          "url": "https://www.githubstatus.com/incidents/pwxsjgnvrk6b",
+          "published_at": "2026-10-30T17:57:35+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "French digital tax may kill VideoLan non-profit",
+          "url": "https://twitter.com/videolan/status/2116229135919919278",
+          "published_at": "2026-10-30T19:01:14+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "A Pickpocket's Guide to New York",
+          "url": "https://www.newyorker.com/magazine/2026/11/02/a-pickpockets-guide-to-new-york",
+          "published_at": "2026-10-30T19:26:39+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Blockchain intelligence firms link North Korea to $6.3B hack on Binance",
+          "url": "https://www.npr.org/2026/10/30/g-s1-150902/blockchain-intelligence-firms-link-north-korea-to-6-3b-hack-on-binance",
+          "published_at": "2026-10-30T15:39:05+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "How do you take a picture of a black hole?",
+          "url": "https://www.quantamagazine.org/how-do-you-take-a-picture-of-a-black-hole-20261029/",
+          "published_at": "2026-10-30T09:49:02+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        },
+        {
+          "title": "Show HN: I built a multiplayer game where you're an aerial fighter cat",
+          "url": "https://catcopter.com",
+          "published_at": "2026-10-30T15:29:40+00:00",
+          "time_role": "hn_index_time_not_publish",
+          "date_precision": "hn_submission"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "index_not_publish_time"
+    },
+    {
+      "source_id": "import-ai",
+      "name": "Import AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://importai.substack.com/feed",
+      "status": "ok",
+      "evidence": "RSS 20 条，最新 2026-10-26T12:31:52Z，早于窗口起点。窗口内 0。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "bens-bites",
+      "name": "Ben's Bites",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.bensbites.com/feed",
+      "status": "ok",
+      "evidence": "RSS 20 条，最旧 2026-09-03，已越过窗口起点。未读全文。 收据条目 1。",
+      "items": [
+        {
+          "title": "AI is overwhelming and I’m doing it wrong",
+          "url": "https://www.bensbites.com/p/ai-is-overwhelming-and-im-doing-it",
+          "published_at": "2026-10-29T14:03:54+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "latent-space",
+      "name": "Latent Space",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.latent.space/feed",
+      "status": "ok",
+      "evidence": "RSS 20 条，最旧 2026-10-20，已越过窗口起点。本轮条目是通讯，不是已在 q.cxspace.com 核过的原节目，目录按新闻而不是话语场。未读全文。 收据条目 2。",
+      "items": [
+        {
+          "title": "[AINews] Building AIE CODE: The top Coding Agent Conference",
+          "url": "https://latent.space/p/ainews-building-aie-code-the-top-coding-agent-conference/",
+          "published_at": "2026-10-30T08:24:29+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning",
+          "url": "https://latent.space/p/elorian/",
+          "published_at": "2026-10-29T16:00:00+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "interconnects",
+      "name": "Interconnects",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.interconnects.ai/feed",
+      "status": "ok",
+      "evidence": "RSS 20 条，最旧 2026-08-03，已越过窗口起点。未读全文。 收据条目 1。",
+      "items": [
+        {
+          "title": "Was I wrong about open models & cyber risks?",
+          "url": "https://www.interconnects.ai/p/was-i-wrong-about-open-models-and",
+          "published_at": "2026-10-30T17:36:56+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "ai-snake-oil",
+      "name": "AI as Normal Technology",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.normaltech.ai/feed",
+      "status": "ok",
+      "evidence": "RSS 20 条，最新 2026-10-19T20:11:55Z，早于窗口起点。窗口内 0。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "one-useful-thing",
+      "name": "One Useful Thing",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.oneusefulthing.org/feed",
+      "status": "ok",
+      "evidence": "RSS 20 条，最新 2026-10-20T15:57:59Z，早于窗口起点。窗口内 0。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "simon-willison",
+      "name": "Simon Willison's Weblog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://simonwillison.net/atom/everything/",
+      "status": "ok",
+      "evidence": "Atom 30 条，最旧 2026-10-15，已越过窗口起点。未读全文。 收据条目 3。",
+      "items": [
+        {
+          "title": "API credits benefit for eligible ChatGPT subscriptions",
+          "url": "https://simonwillison.net/2026/Oct/29/api-credits/",
+          "published_at": "2026-10-29T22:48:29+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Building a multiplayer game world with autonomous Fable-class models",
+          "url": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/",
+          "published_at": "2026-10-29T17:00:26+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Quoting Ben Hylak",
+          "url": "https://simonwillison.net/2026/Oct/29/ben-hylak/",
+          "published_at": "2026-10-29T14:06:27+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "qbitai",
+      "name": "量子位",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.qbitai.com/feed",
+      "status": "ok",
+      "evidence": "RSS 10 条，最旧 2026-10-29T06:53:19Z，早于窗口起点 09:00Z，窗口被这 10 条盖住。报名与汽车促销在目录层排除。未读全文。 收据条目 8。",
+      "items": [
+        {
+          "title": "英伟达团队基于 MiniMax H3 开源视频增强方案，最高支持 4K 重生成",
+          "url": "https://www.qbitai.com/2026/10/506743.html",
+          "published_at": "2026-10-30T07:31:11+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "RSI立大功！国产开源登顶全球第一，1.3B OXR重塑OCR",
+          "url": "https://www.qbitai.com/2026/10/506686.html",
+          "published_at": "2026-10-30T05:52:47+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Claude新模型曝光：新Fable，新Opus…",
+          "url": "https://www.qbitai.com/2026/10/506674.html",
+          "published_at": "2026-10-30T05:50:44+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "从学习人类到学习机器人同伴，清华大学联合无问芯穹、智元提出具身智能规模化落地新路径",
+          "url": "https://www.qbitai.com/2026/10/506662.html",
+          "published_at": "2026-10-30T03:48:04+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "前排围观！MEET2027报名通道正式开启，首批重磅嘉宾已就位",
+          "url": "https://www.qbitai.com/2026/10/506609.html",
+          "published_at": "2026-10-30T03:40:21+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "买车送终身AI？智己LS8纯电版25万起！全系线控底盘宁德时代标配",
+          "url": "https://www.qbitai.com/2026/10/506569.html",
+          "published_at": "2026-10-30T00:19:06+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "STEPX Neo 发布两周即迎首次升级，智能体能力持续释放",
+          "url": "https://www.qbitai.com/2026/10/506554.html",
+          "published_at": "2026-10-29T09:58:26+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "中国MaaS市场TOP2，商汤大装置再度蝉联",
+          "url": "https://www.qbitai.com/2026/10/506550.html",
+          "published_at": "2026-10-29T09:52:05+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "aws-ml-blog",
+      "name": "AWS AI Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "status": "ok",
+      "evidence": "RSS 20 条，最旧 2026-10-23，已越过窗口起点。未读全文。 收据条目 8。",
+      "items": [
+        {
+          "title": "How Worldwide Express automated freight exceptions with Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock/",
+          "published_at": "2026-10-30T17:32:20+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Configure the ChatGPT desktop app with Amazon Bedrock in AWS GovCloud (US)",
+          "url": "https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/",
+          "published_at": "2026-10-30T17:27:45+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "How the UK Amazon Quick User Group grew in 2026",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-the-uk-amazon-quick-user-group-grew-in-2026/",
+          "published_at": "2026-10-29T20:16:40+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Building intent-driven UI testing with Amazon Nova Act",
+          "url": "https://aws.amazon.com/blogs/machine-learning/building-intent-driven-ui-testing-with-amazon-nova-act/",
+          "published_at": "2026-10-29T18:20:27+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Build a repeatable PHP-to-Java migration engine with Kiro",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-a-repeatable-php-to-java-migration-engine-with-kiro/",
+          "published_at": "2026-10-29T18:14:17+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Lend and borrow resources across teams with AWS Batch’s quota management for SageMaker Training jobs",
+          "url": "https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/",
+          "published_at": "2026-10-29T16:58:57+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/",
+          "published_at": "2026-10-29T16:54:52+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Accelerate agentic AI with NVIDIA Nemotron models on Amazon EKS and SageMaker HyperPod EKS",
+          "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks/",
+          "published_at": "2026-10-29T16:11:08+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    },
+    {
+      "source_id": "google-research",
+      "name": "Google Research Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://research.google/blog/rss/",
+      "status": "ok",
+      "evidence": "RSS 100 条，最新 2026-10-27T17:35:00Z，早于窗口起点。窗口内 0。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "github-ai-ml",
+      "name": "GitHub Blog · AI & ML",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://github.blog/ai-and-ml/feed/",
+      "status": "ok",
+      "evidence": "RSS 10 条，最新 2026-10-20T16:05:03Z，早于窗口起点。窗口内 0。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "databricks-research",
+      "name": "Databricks Research",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.databricks.com/blog/category/research",
+      "status": "ok",
+      "evidence": "页面日期最新 2026-10-20，早于窗口起点。窗口内 0。未逐篇打开正文。 收据条目 0。",
+      "items": [],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "complete_no_new"
+    },
+    {
+      "source_id": "amazon-science",
+      "name": "Amazon Science Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-10-30T21:06:27+00:00",
+      "checked_url": "https://www.amazon.science/index.rss",
+      "status": "ok",
+      "evidence": "RSS 25 条，最旧早于窗口起点。未读全文。 收据条目 1。",
+      "items": [
+        {
+          "title": "Speeding up language models for travel applications",
+          "url": "https://www.amazon.science/blog/speeding-up-language-models-for-travel-applications",
+          "published_at": "2026-10-29T16:51:26+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "initial_script_status": "ok",
+      "collection_pass": "collection_only_2026-10-31T05:00+08",
+      "supplement_checked_at": "2026-10-30T21:57:29+00:00",
+      "check_state": "candidates_found"
+    }
+  ],
+  "config_commit": "6ed49b24692e0ab482590fe2f5375c2d7d6b84e5",
+  "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
+  "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
+  "collection_stage": "collection_only",
+  "division_of_labor_note": "采集只交收据与资讯源目录。成稿、网页、口播和音频由中文编辑阶段执行。",
+  "window_note": "05:00初采窗口 [2026-10-29 17:00, 2026-10-31 05:00) Asia/Shanghai，左闭右开。不覆盖 05:00–06:00。",
+  "final_catalog_window": {
+    "start_shanghai": "2026-10-29T18:00:00+08:00",
+    "end_shanghai": "2026-10-31T06:00:00+08:00",
+    "start_utc": "2026-10-29T10:00:00Z",
+    "end_utc": "2026-10-30T22:00:00Z",
+    "boundary": "left_closed_right_open",
+    "checked": false,
+    "note": "交给中文编辑；本次不声称已覆盖"
+  },
+  "source_catalog_path": "data/runs/2026-10-31-source-catalog.json",
+  "discovery": {
+    "script": "scripts/collect_sources.py --until 2026-10-30T21:00:00Z",
+    "browser": "headless Chrome CDP for xai, qwen.ai/research, seed, openreview, minimax, deepseek harness, MIT TR, 36kr",
+    "apis": [
+      "arxiv export",
+      "huggingface daily_papers",
+      "github api",
+      "36kr gateway",
+      "microsoft tag rss"
+    ]
+  },
+  "verification": {
+    "scope": "metadata and listing timestamps; full text not read",
+    "star_counts": "github trending stargazers_count from api.github.com",
+    "arxiv_announcement_boundary": "2026-10-29T17:59:53Z"
+  },
+  "excluded_hits": [],
+  "collection_incomplete": true,
+  "agents_md_section1_conflict": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则要求采集bot在收据和资讯源目录之后停止。本轮按collection_only执行，没有写daily Markdown、HTML、口播或音频。",
+  "last_hour_handoff": {
+    "checked": false,
+    "window_shanghai": [
+      "2026-10-31T05:00:00+08:00",
+      "2026-10-31T06:00:00+08:00"
+    ],
+    "window_utc": [
+      "2026-10-30T21:00:00Z",
+      "2026-10-30T22:00:00Z"
+    ],
+    "final_catalog_window_shanghai": [
+      "2026-10-29T18:00:00+08:00",
+      "2026-10-31T06:00:00+08:00"
+    ],
+    "owner": "chinese_editor_agent",
+    "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
+    "incidental_sightings_after_until": [
+      {
+        "source_id": "wired-ai",
+        "published_at": "2026-10-30T21:19:26+00:00",
+        "title": "How a Contractor’s Claude Agent Got Into the Pentagon",
+        "url": "https://www.wired.com/story/uncanny-valley-podcast-how-a-contractors-claude-agent-got-into-the-pentagon/"
+      },
+      {
+        "source_id": "ars-technica-ai",
+        "published_at": "2026-10-30T21:09:54+00:00",
+        "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+        "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/"
+      },
+      {
+        "source_id": "techcrunch-ai",
+        "published_at": "2026-10-30T21:17:40+00:00",
+        "title": "Cracks are emerging in the AI spending boom",
+        "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/"
+      },
+      {
+        "source_id": "techcrunch-ai",
+        "published_at": "2026-10-30T21:26:59+00:00",
+        "title": "Last-minute Halloween costumes for tech nerds",
+        "url": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/"
+      }
+    ]
+  },
+  "observed_after_until": [
+    {
+      "source_id": "wired-ai",
+      "published_at": "2026-10-30T21:19:26+00:00",
+      "title": "How a Contractor’s Claude Agent Got Into the Pentagon",
+      "url": "https://www.wired.com/story/uncanny-valley-podcast-how-a-contractors-claude-agent-got-into-the-pentagon/"
+    },
+    {
+      "source_id": "ars-technica-ai",
+      "published_at": "2026-10-30T21:09:54+00:00",
+      "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/"
+    },
+    {
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30T21:17:40+00:00",
+      "title": "Cracks are emerging in the AI spending boom",
+      "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/"
+    },
+    {
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30T21:26:59+00:00",
+      "title": "Last-minute Halloween costumes for tech nerds",
+      "url": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/"
+    }
+  ]
+}
