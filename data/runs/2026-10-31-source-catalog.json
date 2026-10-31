@@ -5,36 +5,30 @@
     "title",
     "source"
   ],
-  "count": 84,
-  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-10-29 17:00, 2026-10-31 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度不计入严格展示。",
+  "count": 93,
+  "scope": "36小时资讯目录（中文编辑终审）：复用05:00上游初采目录与收据，重筛至10月29日18:00—31日06:00，补入05:00—06:00本机采集与订阅源补查及正文采用项；HN讨论时间不作原文时间。",
   "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-10-24 through 2026-10-30",
   "duplicates_dropped": 53,
   "config_commit": "6ed49b24692e0ab482590fe2f5375c2d7d6b84e5",
   "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
   "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
-  "collection_stage": "collection_only",
+  "collection_stage": "chinese_editor_final_0600",
   "below_catalog_target": false,
   "gaps": [
-    "AGENTS.md第1节仍要求同次运行写成稿、网页和音频；本轮按2026-10-25 collection_only只交收据和目录",
-    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-10-29 18:00, 2026-10-31 06:00)交给中文编辑",
-    "xAI新闻页被Cloudflare拦截（Ray ID a52da185dc5a20b2），无带日期卡片，核心源partial",
-    "arXiv最新公告停在2026-10-29T17:59:53Z；至until的未公告切片为partial。目录只收HF日榜里原文公告时间落入窗口的3篇，不灌入cs.AI/cs.LG/cs.CL公告全量",
-    "OpenReview首页只有截止日期和2026-09-24的新闻，api notes为403，没有投稿时间",
-    "Seed研究列表最新论文Oct 25, 2026，模型分类未逐类打开",
-    "MiniMax新闻列表最新Oct 12, 2026；导航中的模型文章页未打开",
-    "The Verge栏目RSS最旧约2026-10-29T18:45:31Z，早于该时点到窗口起点的切片未覆盖",
-    "HN Algolia窗口内nbHits=1890，只取计数，讨论时间不进严格目录",
-    "StepFun、Mistral、UNESCO、网信办的页面日期没有核到可用正文链接",
-    "话语场未打开q.cxspace.com，本目录话语场为0，不表示没有新节目",
-    "补拉RSS时已过until，看见数条21:00Z之后的稿，未计入本目录，也不等于06:00已覆盖"
+    "本期准备阶段未在06:00按时启动，由07:00后的发布任务接续；采集截止仍为06:00，晚于截止的条目不计入",
+    "05:00上游收据（ai-daily 6cf7478）覆盖至05:00；本机补采（collect_sources.py --until 2026-10-30T22:00:00Z --hours 36）覆盖RSS/页面类来源的最后一小时，另用Ars Technica与TechCrunch订阅源补查最后一小时",
+    "xAI（Cloudflare拦截）、StepFun、Mistral、UNESCO、网信办、ByteDance Seed、MiniMax、OpenReview、The Verge、HN为上游partial；浏览器类来源最后一小时未补查",
+    "arXiv核心源上游为partial（最新公告停在10月29日）；论文栏取HF Daily Papers上榜、10月29日提交的预印本，仅读摘要",
+    "Ars Technica原文页脚本403、内置浏览器访问未获准，相关条目只读RSS摘要；OpenAI原文经内置浏览器读取",
+    "上游2条仅日期精度条目待核，未计入严格目录"
   ],
   "curation_policy": "36h-min20-v1",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-10-29T17:00:00+08:00",
-    "end_shanghai": "2026-10-31T05:00:00+08:00",
-    "start_utc": "2026-10-29T09:00:00Z",
-    "end_utc": "2026-10-30T21:00:00Z",
+    "start_shanghai": "2026-10-29T18:00:00+08:00",
+    "end_shanghai": "2026-10-31T06:00:00+08:00",
+    "start_utc": "2026-10-29T10:00:00Z",
+    "end_utc": "2026-10-30T22:00:00Z",
     "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
@@ -43,8 +37,9 @@
     "start_utc": "2026-10-29T10:00:00Z",
     "end_utc": "2026-10-30T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "note": "交给中文编辑；本次不声称已覆盖",
+    "checked_at": "2026-10-31T00:24:50.280441+00:00"
   },
   "items": [
     {
@@ -58,15 +53,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Sam Altman说，内存放在数据中心里比放在你的桌子上更好",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "奥特曼：把内存放在个人电脑里“相当糟糕”",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -80,15 +75,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "达特茅斯教务长警告过AI作弊，他自己使用AI却让他丢了职位",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "达特茅斯学院教务长因未披露AI使用辞职",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -102,16 +97,16 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "AI行业的主要公司在支持一种退出抓取的新方式",
       "title_translation_scope": "title_only",
       "event_key": "ai-content-training-preference-2026-10-30",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -148,16 +143,16 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "谷歌的卫星AI服务器向地球传回了第一份响应",
       "title_translation_scope": "title_only",
       "event_key": "google-orbital-ai-server-2026-10-30",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -173,7 +168,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "Nemotron Halloween",
+      "title_zh": "英伟达Hugging Face博客：Nemotron万圣节特辑",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
@@ -237,15 +232,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "富士胶片将把磁带产能提高到5倍，因为AI推高了归档需求",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "AI推高归档需求，富士胶片将磁带产能扩大五倍",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -347,16 +342,16 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "谷歌首颗数据中心卫星已上线，并且在写诗",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "谷歌首颗“太空数据中心”试验卫星上线，星上Gemma 4写出第一首俳句",
       "title_translation_scope": "title_only",
       "event_key": "google-orbital-ai-server-2026-10-30",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -370,15 +365,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "美国司法部称，数千名“幽灵学生”用AI骗取了数百万美元学生贷款",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "美国司法部起诉“幽灵学生”团伙，称其部分借助AI骗取助学贷款",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -392,15 +387,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Proton首席执行官取消了AI“复试”",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "404 Media：Proton CEO取消要求员工说明AI使用情况的“重新面试”",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -458,15 +453,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "利奥教皇呼吁给AI“裁军”：“机器是工具，不是人”",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "教宗良十四世呼吁“解除AI的武装”，敦促禁止致命自主武器",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -480,16 +475,16 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "DoorDash称，来自AI代理的订单只有“几百”单",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "DoorDash：来自第三方AI智能体的订单累计只有“几百单”",
       "title_translation_scope": "title_only",
       "event_key": "doordash-external-ai-agent-orders-2026-10-30",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -525,15 +520,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Sam Altman对数学家表示同情，但称OpenAI在数学上的推进不会停",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "奥特曼回应数学界批评：同情但不会停，OpenAI还有更多未公开结果",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1009,16 +1004,16 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "让网站更容易表达自己对AI训练的偏好",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "OpenAI、谷歌、微软与Anthropic将支持统一的“拒绝AI训练”网站信号",
       "title_translation_scope": "title_only",
       "event_key": "ai-content-training-preference-2026-10-30",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1032,15 +1027,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "维基百科运营方称，一项不利的AI版权裁决可能威胁开放网络",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1054,15 +1049,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "社区安全报告，以及对青少年的新保护措施",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "OpenAI将发布社区安全报告，并收紧暴力与未成年人武器相关回答",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1274,15 +1269,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "RSI立大功！国产开源登顶全球第一，1.3B OXR重塑OCR",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "1.3B开源文档解析模型OXR发布，称三项评测第一",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1428,15 +1423,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "从学习人类到学习机器人同伴，清华大学联合无问芯穹、智元提出具身智能规模化落地新路径",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "清华、无问芯穹与智元提出“群体经验学习”，96台机器人互相借鉴",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1538,15 +1533,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "字节GenAI研发负责人投奔具身智能，三大核心四个月内全离职",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "36氪：字节商业化GenAI研发负责人文石磊离职，加入具身智能公司",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1670,15 +1665,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "即日起，ChatGPT Pro使用额度翻倍",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "OpenAI把Pro用量翻倍，并向高价订阅用户赠送等额API额度",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1692,15 +1687,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "符合条件的ChatGPT订阅可以获得API额度福利",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1851,9 +1846,9 @@
       "discovery": "collection_0500",
       "catalog_kind": "paper",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用单一算法训练基础模型",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "论文：把预训练到强化学习统一成同一种训练算法",
       "title_translation_scope": "title_only",
       "paper_key": "2610.40564",
       "discovery_sources": [
@@ -1862,36 +1857,9 @@
       ],
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2610.39663",
-      "title": "AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers",
-      "original_title": "AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers",
-      "source": "Hugging Face Daily Papers",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-10-29T09:15:39+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "AB-Attention：用精确的块注意力加速视频扩散Transformer",
-      "title_translation_scope": "title_only",
-      "paper_key": "2610.39663",
-      "discovery_sources": [
-        "hf-daily-papers",
-        "arxiv"
-      ],
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-10-30T21:57:29+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
       }
     },
     {
@@ -1915,10 +1883,258 @@
         "scope": "metadata",
         "reviewed_at": "2026-10-30T21:57:29+00:00"
       }
+    },
+    {
+      "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
+      "title": "Official Claude Code Extension Compromise: Security Advisory",
+      "original_title": "Official Claude Code Extension Compromise: Security Advisory",
+      "source": "Phorion",
+      "source_id": "editor_supplement",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "chinese_editor_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Cursor插件市场上的官方Claude Code扩展被植入后门，最多约5000名用户受影响",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用；06:00后终审补入，原文时间取页面结构化时间或订阅源pubDate",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+      "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "original_title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "source": "Ars Technica",
+      "source_id": "editor_supplement",
+      "published_at": "2026-10-30T21:09:54+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Ars Technica：Cursor上的Anthropic VS Code扩展被植入后门近12小时",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文补充原始资料；终审补入",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://openai.com/index/fair-use-benefits-everyone",
+      "title": "Fair use benefits everyone",
+      "original_title": "Fair use benefits everyone",
+      "source": "OpenAI",
+      "source_id": "editor_supplement",
+      "published_at": "2026-10-30T00:00:00+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "OpenAI：合理使用惠及所有人",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文补充原始资料；终审补入",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
+      "title": "Cracks are emerging in the AI spending boom",
+      "original_title": "Cracks are emerging in the AI spending boom",
+      "source": "TechCrunch",
+      "source_id": "editor_supplement",
+      "published_at": "2026-10-30T21:17:40+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "AI基建开支遭市场质疑：科技股连续下挫，英特尔单日跌约28%",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用；06:00后终审补入，原文时间取页面结构化时间或订阅源pubDate",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+      "title": "Intel’s stock crashes, knocking $12B from government’s stake",
+      "original_title": "Intel’s stock crashes, knocking $12B from government’s stake",
+      "source": "TechCrunch",
+      "source_id": "editor_supplement",
+      "published_at": "2026-10-30T21:54:34+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "TechCrunch：英特尔股价暴跌，政府持股缩水120亿美元",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文补充原始资料；终审补入",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+      "title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
+      "original_title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
+      "source": "TechCrunch",
+      "source_id": "editor_supplement",
+      "published_at": "2026-10-30T21:52:03+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "TechCrunch：《金融时报》称Anthropic上市后预计获高收益级评级",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文补充原始资料；终审补入",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://fortune.com/2026/10/30/cisco-president-jeetu-patel-gen-z-27-year-old-unlimited-ai-tokens-rewrite-legacy-code-entry-level-jobs/",
+      "title": "Cisco is letting a 27-year-old refactor 98% of its legacy code with unlimited AI tokens: ‘Go nuts’",
+      "original_title": "Cisco is letting a 27-year-old refactor 98% of its legacy code with unlimited AI tokens: ‘Go nuts’",
+      "source": "Fortune",
+      "source_id": "editor_supplement",
+      "published_at": "2026-10-30T07:00:00+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "思科让一名27岁员工用“无限token”重写遗留代码",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用；06:00后终审补入，原文时间取页面结构化时间或订阅源pubDate",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
+      "title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
+      "original_title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
+      "source": "Ars Technica",
+      "source_id": "editor_supplement",
+      "published_at": "2026-10-30T21:41:54+00:00",
+      "date_precision": "second",
+      "discovery": "last_hour_feed_0600",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "超音速客机交付存疑，Boom转向为AI数据中心供电",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00—06:00最后一小时订阅源补查发现；只读元数据",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://simonwillison.net/2026/Oct/30/nesformer/",
+      "title": "dbreunig/nesformer",
+      "original_title": "dbreunig/nesformer",
+      "source": "Simon Willison's Weblog",
+      "source_id": "simon-willison",
+      "published_at": "2026-10-30T21:59:22+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Simon Willison：dbreunig/nesformer（约1GB千问权重实现的任天堂模拟）",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "06:00本机补采最后一小时，有原文时间戳的AI相关条目；只读元数据",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/",
+      "title": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
+      "original_title": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
+      "source": "AWS AI Blog",
+      "source_id": "aws-ml-blog",
+      "published_at": "2026-10-30T21:40:03+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "用Amazon Bedrock AgentCore运行时实时预览编码智能体构建中的网页应用",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "06:00本机补采最后一小时，有原文时间戳的AI相关条目；只读元数据",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
     }
   ],
-  "excluded_items_count": 67,
+  "excluded_items_count": 86,
   "excluded_items": [
+    {
+      "url": "https://arxiv.org/abs/2610.39663",
+      "title": "AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers",
+      "original_title": "AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers",
+      "source": "Hugging Face Daily Papers",
+      "source_id": "hf-daily-papers",
+      "published_at": "2026-10-29T09:15:39+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "AB-Attention：用精确的块注意力加速视频扩散Transformer",
+      "title_translation_scope": "title_only",
+      "paper_key": "2610.39663",
+      "discovery_sources": [
+        "hf-daily-papers",
+        "arxiv"
+      ],
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点10月29日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      },
+      "reason": "outside_final_window"
+    },
     {
       "url": "https://techcrunch.com/2026/10/30/skip-the-small-talk-make-game-changing-connections-at-techcrunch-founder-summit-with-braindate/",
       "title": "Skip the small talk: Make game-changing connections at TechCrunch Founder Summit with Braindate",
@@ -2387,28 +2603,346 @@
       "reason": "prior_7_catalogs",
       "source_id": "36kr-ai",
       "published_at": "2026-10-29T09:51:42.816000+00:00"
+    },
+    {
+      "url": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/",
+      "title": "Ollie, a privacy-focused AI assistant, is shutting down",
+      "source": "TechCrunch",
+      "published_at": "2026-10-30T22:56:13+00:00",
+      "date_precision": "second",
+      "reason": "outside_final_window",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "发布时间晚于目录截止06:00",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/tim-fernholz/",
+      "title": "Tim Fernholz",
+      "original_title": "Tim Fernholz",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/techcrunch-events/",
+      "title": "TechCrunch Events",
+      "original_title": "TechCrunch Events",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/sarah-perez/",
+      "title": "Sarah Perez",
+      "original_title": "Sarah Perez",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/rebecca-bellan/",
+      "title": "Rebecca Bellan",
+      "original_title": "Rebecca Bellan",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/lucas-ropek/",
+      "title": "Lucas Ropek",
+      "original_title": "Lucas Ropek",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/julie-bort/",
+      "title": "Julie Bort",
+      "original_title": "Julie Bort",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/ivan-mehta/",
+      "title": "Ivan Mehta",
+      "original_title": "Ivan Mehta",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/dominic-madori-davis/",
+      "title": "Dominic-Madori Davis",
+      "original_title": "Dominic-Madori Davis",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/amanda-silberling/",
+      "title": "Amanda Silberling",
+      "original_title": "Amanda Silberling",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-30",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/marina-temkin/",
+      "title": "Marina Temkin",
+      "original_title": "Marina Temkin",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/kirsten-korosec/",
+      "title": "Kirsten Korosec",
+      "original_title": "Kirsten Korosec",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/aisha-malik/",
+      "title": "Aisha Malik",
+      "original_title": "Aisha Malik",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-29",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "not_article",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "栏目页误抓的作者页，非文章",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://www.wired.com/story/uncanny-valley-podcast-how-a-contractors-claude-agent-got-into-the-pentagon/",
+      "title": "How a Contractor’s Claude Agent Got Into the Pentagon",
+      "original_title": "How a Contractor’s Claude Agent Got Into the Pentagon",
+      "source": "WIRED",
+      "source_id": "wired-ai",
+      "published_at": "2026-10-30T21:19:26+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "prior_7_catalogs",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "WIRED播客复述10月30日刊已收录的承包商智能体事件，无实质新增",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://www.firezone.dev/blog/introducing-sanstun",
+      "title": "sanstun: A sans-IO, parallel-friendly WireGuard implementation in Rust",
+      "original_title": "sanstun: A sans-IO, parallel-friendly WireGuard implementation in Rust",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-30T21:30:00+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索已追溯原文的另行收录",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://status.linode.com/incidents/nt58zhx3pmgm",
+      "title": "Linode Security Incident",
+      "original_title": "Linode Security Incident",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-30T21:57:40+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索已追溯原文的另行收录",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://arstechnica.com/science/2026/10/turning-a-solar-power-system-into-its-own-backup/",
+      "title": "Turning a solar power system into its own backup",
+      "original_title": "Turning a solar power system into its own backup",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-29T18:10:33+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索已追溯原文的另行收录",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
+    },
+    {
+      "url": "https://www.otwstatus.org",
+      "title": "AO3 Down for Maintenance",
+      "original_title": "AO3 Down for Maintenance",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-30T21:17:23+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题多与AI无关，AI相关线索已追溯原文的另行收录",
+        "scope": "metadata",
+        "reviewed_at": "2026-10-31T00:24:50.280441+00:00"
+      }
     }
   ],
   "review_summary": {
-    "raw_receipt_candidates": 203,
-    "displayed": 84,
-    "displayed_news": 80,
-    "displayed_discourse": 0,
-    "displayed_papers": 3,
-    "displayed_code": 1,
-    "excluded": 67,
-    "excluded_reasons": {
+    "raw_receipt_candidates": 309,
+    "upstream_0500_items": 203,
+    "local_0600_items": 104,
+    "last_hour_feed_items": 2,
+    "unique": 178,
+    "reviewed": 179,
+    "pending": 0,
+    "displayed": 93,
+    "displayed_news": 90,
+    "displayed_papers": 2,
+    "excluded": 86,
+    "reasons": {
+      "outside_final_window": 2,
       "not_ai_or_promo": 14,
-      "prior_7_catalogs": 53
+      "prior_7_catalogs": 54,
+      "not_article": 12,
+      "hn_lead_time_not_original": 4
     },
-    "pending_time_precision": 2,
-    "body_used": 0,
-    "displayed_not_body": 84,
+    "body_used": 27,
+    "displayed_not_body": 66,
     "below_catalog_target": false,
-    "target": 20
+    "target": 20,
+    "last_hour_new_titles": [
+      "How a Contractor’s Claude Agent Got Into the Pentagon",
+      "sanstun: A sans-IO, parallel-friendly WireGuard implementation in Rust",
+      "Linode Security Incident",
+      "AO3 Down for Maintenance",
+      "dbreunig/nesformer",
+      "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
+      "Supersonic airliner in doubt as company shifts to powering AI data centers"
+    ]
   },
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-10-31T05:00:00+08:00",
       "2026-10-31T06:00:00+08:00"
@@ -2448,6 +2982,28 @@
         "title": "Last-minute Halloween costumes for tech nerds",
         "url": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/"
       }
-    ]
+    ],
+    "checked_at": "2026-10-31T00:24:50.280441+00:00",
+    "result": "RSS/页面类最后一小时本机补采完成，Ars Technica、TechCrunch订阅源补查；浏览器类来源未补查"
+  },
+  "chinese_editor_config_commit": "6cf74788a9f9c395b67009f52f79b40c1ef26f18",
+  "editorial_updated_at": "2026-10-31T00:24:50.280441+00:00",
+  "upstream_review_summary": {
+    "raw_receipt_candidates": 203,
+    "displayed": 84,
+    "displayed_news": 80,
+    "displayed_discourse": 0,
+    "displayed_papers": 3,
+    "displayed_code": 1,
+    "excluded": 67,
+    "excluded_reasons": {
+      "not_ai_or_promo": 14,
+      "prior_7_catalogs": 53
+    },
+    "pending_time_precision": 2,
+    "body_used": 0,
+    "displayed_not_body": 84,
+    "below_catalog_target": false,
+    "target": 20
   }
 }
