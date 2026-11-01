@@ -5,35 +5,30 @@
     "title",
     "source"
   ],
-  "count": 24,
-  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-10-31 17:00, 2026-11-02 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度不计入严格展示。规则见 config/source-catalog-policy.txt。",
+  "count": 22,
+  "scope": "36小时资讯目录（中文编辑终审）：复用05:00上游初采目录与收据，重筛至10月31日18:00—11月2日06:00，补入05:00—06:00本机采集与订阅源补查及正文采用项；HN讨论时间不作原文时间。",
   "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-10-26 through 2026-11-01",
   "duplicates_dropped": 8,
   "config_commit": "7a89c30ddebc4e8ed78e0302d2c05e1628984a23",
   "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
   "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
-  "collection_stage": "collection_only",
+  "collection_stage": "chinese_editor_final_0600",
   "below_catalog_target": false,
   "gaps": [
-    "AGENTS.md第1节仍要求同次运行写成稿、网页和音频；本轮按2026-10-25 collection_only只交收据和目录",
-    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-10-31 18:00, 2026-11-02 06:00)交给中文编辑",
-    "xAI新闻页静态HTML只有4张早于窗口的日精度卡片，另有未标日期的/news/链接；headless Chrome超时，核心源partial",
-    "Qwen现行研究页没有读出带日期的列表：page_config HTTP 500，浏览器超时，旧站最新仍是2025-09-23",
-    "arXiv最新公告停在2026-10-29T17:59:53Z；窗口内 submittedDate 查询 cs.AI/cs.LG/cs.CL 均为 0。至 until 的未公告切片为 partial。HF Daily Papers 10月31日与11月1日均为空数组",
-    "OpenReview只扫了首页：新闻最新2026-09-24，Active Venues没有投稿创建时间，notes接口HTTP 403",
-    "MiniMax新闻页没有卡片日期，导航NEW条目的文章页未打开，页面生成时间不是稿件日期",
-    "StepFun渲染后仍无发布日期",
-    "HN Algolia窗口内 nbHits=1141，只取了首页RSS，讨论时间不进严格目录",
-    "话语场未打开 q.cxspace.com，本目录话语场为 0，不表示没有新节目"
+    "05:00上游收据（ai-daily 993a786）覆盖至05:00；本机补采（collect_sources.py --until 2026-11-01T22:00:00Z --hours 36，06:04运行）覆盖RSS/页面类来源的最后一小时：50源中39 ok、1 partial、2 failed、8待浏览器；DeepMind、Ars Technica、MIT Technology Review订阅源与36氪栏目列表另行补查最后一小时，无新条目；TechCrunch订阅源补查发现1条",
+    "xAI为核心源未完整（上游仅读出4张早于窗口的卡片）；Qwen、StepFun、MiniMax、OpenReview上游为partial；DeepSeek更新日志与ByteDance Seed最后一小时未补查；HN只取首页RSS",
+    "arXiv上游为partial（最新公告停在10月29日提交批次）；候选中两篇10月29日提交的论文早于正文补漏窗口未采用，论文栏改用Paper-Radar库中9月20日的预印本作关联论文回顾，仅读摘要",
+    "OpenAI帮助中心“ChatGPT与Codex额度”原文在浏览器中遇Cloudflare验证未能打开，该快讯依据机器之心转述",
+    "本期精选仅3条：周末窗口内有官方或媒体原创来源、且未在前7期报道过的重要新闻有限，未凑数"
   ],
   "curation_policy": "36h-min20-v1",
   "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。本次只审05:00初采窗口。",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-10-31T17:00:00+08:00",
-    "end_shanghai": "2026-11-02T05:00:00+08:00",
-    "start_utc": "2026-10-31T09:00:00Z",
-    "end_utc": "2026-11-01T21:00:00Z",
+    "start_shanghai": "2026-10-31T18:00:00+08:00",
+    "end_shanghai": "2026-11-02T06:00:00+08:00",
+    "start_utc": "2026-10-31T10:00:00Z",
+    "end_utc": "2026-11-01T22:00:00Z",
     "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
@@ -42,8 +37,9 @@
     "start_utc": "2026-10-31T10:00:00Z",
     "end_utc": "2026-11-01T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "note": "交给中文编辑；本次不声称已覆盖",
+    "checked_at": "2026-11-01T22:15:04.726358+00:00"
   },
   "items": [
     {
@@ -57,15 +53,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "人工智能可以让科技公司首席执行官过得更轻松。其他人呢？",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "TechCrunch Equity播客：AI高管谈AI育儿、AI约会，为何总显得脱离常人",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
       }
     },
     {
@@ -123,15 +119,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Claude紧急叫停！暗改Harness禁止逆向游戏",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "续报：Anthropic人员证实在Opus 5.5系统提示中加入“勿复刻现有游戏”的规则",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
       }
     },
     {
@@ -167,15 +163,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "汤道生谈WorkBuddy商业化：不靠收入数字催团队",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "汤道生谈WorkBuddy商业化：收入用来支撑产品与伙伴，不给团队压数字",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
       }
     },
     {
@@ -189,15 +185,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "聊天机器人正在把徒步者带偏路，并带来危险后果",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "WIRED：越来越多徒步者靠聊天机器人做规划，搜救人员看到新的风险",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
       }
     },
     {
@@ -343,37 +339,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Tibo 28连更后，OpenAI合并额度池，计费聊天开始了",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "据机器之心：ChatGPT与Codex额度将自12月起合并，统一按token计量",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4050660776317825",
-      "title": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
-      "original_title": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-01T05:01:58+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
-      "title_translation_scope": "zh_source_title",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
       }
     },
     {
@@ -390,50 +364,6 @@
       "selected": false,
       "verification_scope": "metadata",
       "title_zh": "Jev新成果，再次引爆开源",
-      "title_translation_scope": "zh_source_title",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4049789434156166",
-      "title": "史上首次！谷歌TPU在轨运行Gemma 4",
-      "original_title": "史上首次！谷歌TPU在轨运行Gemma 4",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-01T03:20:36+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "史上首次！谷歌TPU在轨运行Gemma 4",
-      "title_translation_scope": "zh_source_title",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4050382051005574",
-      "title": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
-      "original_title": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-01T02:00:25+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
       "title_translation_scope": "zh_source_title",
       "catalog_review": {
         "action": "keep",
@@ -497,15 +427,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "苹果首席执行官说，公司不想“为了有人工智能而发布人工智能”",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "苹果CEO特努斯：不想“为了AI而做AI”",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
       }
     },
     {
@@ -519,37 +449,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "法官允许NAACP就xAI数据中心污染提起的诉讼继续推进",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "法官驳回xAI撤诉动议，NAACP就数据中心燃气轮机污染的诉讼继续审理",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
-      }
-    },
-    {
-      "url": "https://www.qbitai.com/2026/10/506904.html",
-      "title": "刚刚，DeepSeek重磅开源：Agent底座架构！",
-      "original_title": "刚刚，DeepSeek重磅开源：Agent底座架构！",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-10-31T13:49:44+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "刚刚，DeepSeek重磅开源：Agent底座架构！",
-      "title_translation_scope": "zh_source_title",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-01T21:23:51+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
       }
     },
     {
@@ -573,10 +481,146 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-01T21:23:51+00:00"
       }
+    },
+    {
+      "url": "https://terrytao.wordpress.com/2026/11/01/mathematics-has-changed-lets-act-like-it/",
+      "title": "Mathematics has changed. Let’s act like it",
+      "original_title": "Mathematics has changed. Let’s act like it",
+      "source": "What’s new（陶哲轩博客）",
+      "source_id": "editor_supplement",
+      "published_at": "2026-11-01T18:28:00+00:00",
+      "date_precision": "second",
+      "discovery": "hn_lead_traced_to_original",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "数学家Calegari在陶哲轩博客撰文：数学已经改变，评价和招聘方式也要跟着改",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用；06:00终审补入，原文时间取页面结构化时间或订阅源pubDate（HN线索已追溯博客原文，原文日期2026-11-01）",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
+      "title": "OpenAI might rebrand its data centers as ‘AI compute campuses’",
+      "original_title": "OpenAI might rebrand its data centers as ‘AI compute campuses’",
+      "source": "TechCrunch",
+      "source_id": "editor_supplement",
+      "published_at": "2026-11-01T21:55:23+00:00",
+      "date_precision": "second",
+      "discovery": "last_hour_feed_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "据Axios：OpenAI准备在美国中期选举后发起公关攻势，考虑把数据中心改称“AI算力园区”",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用；06:00终审补入，原文时间取页面结构化时间或订阅源pubDate",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      }
     }
   ],
-  "excluded_items_count": 63,
+  "excluded_items_count": 71,
   "excluded_items": [
+    {
+      "url": "https://www.36kr.com/p/4050660776317825",
+      "title": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
+      "original_title": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T05:01:58+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（OpenAI下调融资目标）已在11月1日刊正文与资讯目录出现，本条36氪综述无实质新增",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      },
+      "reason": "prior_7_catalogs"
+    },
+    {
+      "url": "https://www.36kr.com/p/4049789434156166",
+      "title": "史上首次！谷歌TPU在轨运行Gemma 4",
+      "original_title": "史上首次！谷歌TPU在轨运行Gemma 4",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T03:20:36+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "史上首次！谷歌TPU在轨运行Gemma 4",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（谷歌在轨卫星运行Gemma 4）已在10月31日刊正文出现，本条无实质新增",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      },
+      "reason": "prior_7_catalogs"
+    },
+    {
+      "url": "https://www.36kr.com/p/4050382051005574",
+      "title": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
+      "original_title": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T02:00:25+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（Claude游戏复刻规则）与正文采用的量子位续报合并；本条为11月1日早间稿，独立新增未核读",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      },
+      "reason": "same_event_merged"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/10/506904.html",
+      "title": "刚刚，DeepSeek重磅开源：Agent底座架构！",
+      "original_title": "刚刚，DeepSeek重磅开源：Agent底座架构！",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-10-31T13:49:44+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "刚刚，DeepSeek重磅开源：Agent底座架构！",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（DeepSeek开源dsh-superagent原型）已在11月1日刊开源解读出现，本条无实质新增",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      },
+      "reason": "prior_7_catalogs"
+    },
     {
       "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
       "title": "deepseek-ai/dsh-superagent-prototype",
@@ -879,13 +923,6 @@
       "published_at": "2026-11-01T18:51:29+00:00"
     },
     {
-      "url": "https://terrytao.wordpress.com/2026/11/01/mathematics-has-changed-lets-act-like-it/",
-      "title": "Mathematics has changed. Let's act like it",
-      "reason": "hn_lead_time_not_original",
-      "source_id": "hacker-news-ai",
-      "published_at": "2026-11-01T18:28:42+00:00"
-    },
-    {
       "url": "https://www.vox.com/politics/508526/patrick-stewart-jean-luc-picard-star-trek-liberalism",
       "title": "Patrick Stewart taught us what good men do with power",
       "reason": "hn_lead_time_not_original",
@@ -1017,32 +1054,125 @@
       "reason": "prior_7_catalogs",
       "source_id": "latent-space",
       "published_at": "2026-10-31T16:05:00+00:00"
+    },
+    {
+      "url": "https://techcrunch.com/author/anthony-ha/",
+      "title": "Anthony Ha",
+      "original_title": "Anthony Ha",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-01",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/techcrunch-events/",
+      "title": "TechCrunch Events",
+      "original_title": "TechCrunch Events",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-31",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      }
+    },
+    {
+      "url": "https://asymco.com/2026/11/01/the-last-consumer-company/",
+      "title": "Apple captures 50% of consumer revenue of the top half of the S&P 500",
+      "original_title": "Apple captures 50% of consumer revenue of the top half of the S&P 500",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T21:20:20+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题与AI无关",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      }
+    },
+    {
+      "url": "https://www.doctorwhonews.net/2026/11/john_leeson_1943_2026.html",
+      "title": "John Leeson (the voice of K9) has died",
+      "original_title": "John Leeson (the voice of K9) has died",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T20:48:04+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题与AI无关",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      }
+    },
+    {
+      "url": "https://www.theregister.com/networks/2026/11/01/landline-phones-will-switch-off-across-britland-in-100-days-no-extensions-openreach/5306673",
+      "title": "Landline phones will switch off across Britland in 100 days, no extensions",
+      "original_title": "Landline phones will switch off across Britland in 100 days, no extensions",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T15:33:49+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_time_not_original",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "HN提交时间不作原文发布时间；标题与AI无关",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T22:15:04.726358+00:00"
+      }
     }
   ],
   "review_summary": {
-    "raw_receipt_candidates": 87,
-    "unique_canonical": 87,
-    "displayed": 24,
-    "displayed_news": 23,
-    "displayed_discourse": 0,
+    "raw_receipt_candidates": 128,
+    "upstream_0500_items": 87,
+    "local_0600_items": 40,
+    "last_hour_feed_items": 1,
+    "unique": 93,
+    "reviewed": 93,
+    "pending": 0,
+    "displayed": 22,
+    "displayed_news": 21,
     "displayed_papers": 0,
-    "displayed_code": 1,
-    "excluded": 63,
-    "excluded_reasons": {
-      "prior_7_catalogs": 8,
+    "excluded": 71,
+    "reasons": {
+      "prior_7_catalogs": 11,
+      "same_event_merged": 1,
       "trending_snapshot_not_release": 30,
       "relay_same_title_as_qbitai": 1,
       "not_ai_or_promo": 2,
-      "hn_lead_time_not_original": 22
+      "hn_lead_time_not_original": 24,
+      "outside_final_window_or_time_unknown": 2
     },
-    "pending_time_precision": 0,
-    "body_used": 0,
-    "displayed_not_body": 24,
+    "body_used": 9,
+    "displayed_not_body": 13,
     "below_catalog_target": false,
-    "target": 20
+    "target": 20,
+    "last_hour_new_titles": [
+      "Apple captures 50% of consumer revenue of the top half of the S&P 500",
+      "OpenAI might rebrand its data centers as ‘AI compute campuses’"
+    ]
   },
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-02T05:00:00+08:00",
       "2026-11-02T06:00:00+08:00"
@@ -1064,6 +1194,32 @@
         "value": "2026-11-01T21:13:08.199Z",
         "note": "页面生成时间，不是稿件发布时间"
       }
-    ]
+    ],
+    "checked_at": "2026-11-01T22:15:04.726358+00:00",
+    "result": "RSS/页面类最后一小时本机补采完成；DeepMind、Ars Technica、MIT Technology Review、TechCrunch订阅源与36氪列表补查；DeepSeek、ByteDance Seed等浏览器类来源未补查"
+  },
+  "chinese_editor_config_commit": "993a7868d3ad5e905ffba724848cedf75d2029f0",
+  "editorial_updated_at": "2026-11-01T22:15:04.726358+00:00",
+  "upstream_review_summary": {
+    "raw_receipt_candidates": 87,
+    "unique_canonical": 87,
+    "displayed": 24,
+    "displayed_news": 23,
+    "displayed_discourse": 0,
+    "displayed_papers": 0,
+    "displayed_code": 1,
+    "excluded": 63,
+    "excluded_reasons": {
+      "prior_7_catalogs": 8,
+      "trending_snapshot_not_release": 30,
+      "relay_same_title_as_qbitai": 1,
+      "not_ai_or_promo": 2,
+      "hn_lead_time_not_original": 22
+    },
+    "pending_time_precision": 0,
+    "body_used": 0,
+    "displayed_not_body": 24,
+    "below_catalog_target": false,
+    "target": 20
   }
 }
