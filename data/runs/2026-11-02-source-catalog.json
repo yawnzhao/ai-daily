@@ -1,0 +1,1069 @@
+{
+  "date": "2026-11-02",
+  "default_collapsed": true,
+  "fields_displayed": [
+    "title",
+    "source"
+  ],
+  "count": 24,
+  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-10-31 17:00, 2026-11-02 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度不计入严格展示。规则见 config/source-catalog-policy.txt。",
+  "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-10-26 through 2026-11-01",
+  "duplicates_dropped": 8,
+  "config_commit": "7a89c30ddebc4e8ed78e0302d2c05e1628984a23",
+  "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
+  "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
+  "collection_stage": "collection_only",
+  "below_catalog_target": false,
+  "gaps": [
+    "AGENTS.md第1节仍要求同次运行写成稿、网页和音频；本轮按2026-10-25 collection_only只交收据和目录",
+    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-10-31 18:00, 2026-11-02 06:00)交给中文编辑",
+    "xAI新闻页静态HTML只有4张早于窗口的日精度卡片，另有未标日期的/news/链接；headless Chrome超时，核心源partial",
+    "Qwen现行研究页没有读出带日期的列表：page_config HTTP 500，浏览器超时，旧站最新仍是2025-09-23",
+    "arXiv最新公告停在2026-10-29T17:59:53Z；窗口内 submittedDate 查询 cs.AI/cs.LG/cs.CL 均为 0。至 until 的未公告切片为 partial。HF Daily Papers 10月31日与11月1日均为空数组",
+    "OpenReview只扫了首页：新闻最新2026-09-24，Active Venues没有投稿创建时间，notes接口HTTP 403",
+    "MiniMax新闻页没有卡片日期，导航NEW条目的文章页未打开，页面生成时间不是稿件日期",
+    "StepFun渲染后仍无发布日期",
+    "HN Algolia窗口内 nbHits=1141，只取了首页RSS，讨论时间不进严格目录",
+    "话语场未打开 q.cxspace.com，本目录话语场为 0，不表示没有新节目"
+  ],
+  "curation_policy": "36h-min20-v1",
+  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。本次只审05:00初采窗口。",
+  "window_hours": 36,
+  "window": {
+    "start_shanghai": "2026-10-31T17:00:00+08:00",
+    "end_shanghai": "2026-11-02T05:00:00+08:00",
+    "start_utc": "2026-10-31T09:00:00Z",
+    "end_utc": "2026-11-01T21:00:00Z",
+    "boundary": "left_closed_right_open"
+  },
+  "final_catalog_window": {
+    "start_shanghai": "2026-10-31T18:00:00+08:00",
+    "end_shanghai": "2026-11-02T06:00:00+08:00",
+    "start_utc": "2026-10-31T10:00:00Z",
+    "end_utc": "2026-11-01T22:00:00Z",
+    "boundary": "left_closed_right_open",
+    "checked": false,
+    "note": "交给中文编辑；本次不声称已覆盖"
+  },
+  "items": [
+    {
+      "url": "https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/",
+      "title": "AI can make tech CEOs’ lives easier. What about everyone else?",
+      "original_title": "AI can make tech CEOs’ lives easier. What about everyone else?",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-01T20:57:58+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "人工智能可以让科技公司首席执行官过得更轻松。其他人呢？",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://simonwillison.net/2026/Nov/1/kyle-kingsbury/",
+      "title": "Quoting Kyle Kingsbury",
+      "original_title": "Quoting Kyle Kingsbury",
+      "source": "Simon Willison's Weblog",
+      "source_id": "simon-willison",
+      "published_at": "2026-11-01T16:49:04+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "引述 Kyle Kingsbury",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/507076.html",
+      "title": "三年前布局，今年爆火丨西湖大学成立新中心",
+      "original_title": "三年前布局，今年爆火丨西湖大学成立新中心",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-01T13:28:10+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "三年前布局，今年爆火丨西湖大学成立新中心",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/507038.html",
+      "title": "Claude紧急叫停！暗改Harness禁止逆向游戏",
+      "original_title": "Claude紧急叫停！暗改Harness禁止逆向游戏",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-01T13:09:55+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Claude紧急叫停！暗改Harness禁止逆向游戏",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4051143495603336",
+      "title": "新入口和旧城墙之下，“中国版Muse”有多远？",
+      "original_title": "新入口和旧城墙之下，“中国版Muse”有多远？",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T12:01:00.284000+00:00",
+      "date_precision": "millisecond",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "新入口和旧城墙之下，“中国版Muse”有多远？",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4051138782860421",
+      "title": "汤道生谈WorkBuddy商业化：不靠收入数字催团队",
+      "original_title": "汤道生谈WorkBuddy商业化：不靠收入数字催团队",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T12:00:00+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "汤道生谈WorkBuddy商业化：不靠收入数字催团队",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.wired.com/story/chatbots-are-leading-hikers-astray-with-dangerous-consequences/",
+      "title": "Chatbots Are Leading Hikers Astray, With Dangerous Consequences",
+      "original_title": "Chatbots Are Leading Hikers Astray, With Dangerous Consequences",
+      "source": "WIRED",
+      "source_id": "wired-ai",
+      "published_at": "2026-11-01T10:30:00+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "聊天机器人正在把徒步者带偏路，并带来危险后果",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4051001127687043",
+      "title": "2800万用户，养不活一个AI陪伴应用",
+      "original_title": "2800万用户，养不活一个AI陪伴应用",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T09:37:06.067000+00:00",
+      "date_precision": "millisecond",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "2800万用户，养不活一个AI陪伴应用",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4050845605156482",
+      "title": "Agent改写算力账本，CPU不再是AI服务器的配角？",
+      "original_title": "Agent改写算力账本，CPU不再是AI服务器的配角？",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T09:34:10.820000+00:00",
+      "date_precision": "millisecond",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Agent改写算力账本，CPU不再是AI服务器的配角？",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4050946312967297",
+      "title": "算力的尽头是电力？从第一性原理看AI基础设施",
+      "original_title": "算力的尽头是电力？从第一性原理看AI基础设施",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T09:10:08.738000+00:00",
+      "date_precision": "millisecond",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "算力的尽头是电力？从第一性原理看AI基础设施",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4050674386048132",
+      "title": "Meta拟筹近千亿美元，甲骨文报出了“最后一笔”",
+      "original_title": "Meta拟筹近千亿美元，甲骨文报出了“最后一笔”",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T08:16:37+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Meta拟筹近千亿美元，甲骨文报出了“最后一笔”",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/507031.html",
+      "title": "清华姚期智团队新作：代数世界模型，让AI像牛顿一样思考",
+      "original_title": "清华姚期智团队新作：代数世界模型，让AI像牛顿一样思考",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-01T08:02:37+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "清华姚期智团队新作：代数世界模型，让AI像牛顿一样思考",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/506990.html",
+      "title": "老牌便利店机器人售货折戟：实验室锤炼上万次，货架前还是摔瓶子",
+      "original_title": "老牌便利店机器人售货折戟：实验室锤炼上万次，货架前还是摔瓶子",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-01T07:50:57+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "老牌便利店机器人售货折戟：实验室锤炼上万次，货架前还是摔瓶子",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4050682558714755",
+      "title": "Tibo 28连更后，OpenAI合并额度池，计费聊天开始了",
+      "original_title": "Tibo 28连更后，OpenAI合并额度池，计费聊天开始了",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T06:00:59+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Tibo 28连更后，OpenAI合并额度池，计费聊天开始了",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4050660776317825",
+      "title": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
+      "original_title": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T05:01:58+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "AI“烧钱叙事”遇冷？OpenAI融资目标砍掉100亿！",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/506922.html",
+      "title": "Jev新成果，再次引爆开源",
+      "original_title": "Jev新成果，再次引爆开源",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-01T04:18:37+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Jev新成果，再次引爆开源",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4049789434156166",
+      "title": "史上首次！谷歌TPU在轨运行Gemma 4",
+      "original_title": "史上首次！谷歌TPU在轨运行Gemma 4",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T03:20:36+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "史上首次！谷歌TPU在轨运行Gemma 4",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4050382051005574",
+      "title": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
+      "original_title": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T02:00:25+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Claude Code悄悄更新：不让Opus 5.5复刻游戏",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4049629803665287",
+      "title": "跟AI谈恋爱，年轻人图什么？",
+      "original_title": "跟AI谈恋爱，年轻人图什么？",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T01:08:55.085000+00:00",
+      "date_precision": "millisecond",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "跟AI谈恋爱，年轻人图什么？",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
+      "title": "How We Took Over ChatGPT Accounts",
+      "original_title": "How We Took Over ChatGPT Accounts",
+      "source": "Simon Willison's Weblog",
+      "source_id": "simon-willison",
+      "published_at": "2026-10-31T23:15:22+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "我们如何接管了 ChatGPT 账户",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
+      "title": "Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’",
+      "original_title": "Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-31T21:41:00+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "苹果首席执行官说，公司不想“为了有人工智能而发布人工智能”",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+      "title": "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
+      "original_title": "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-31T21:17:03+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "法官允许NAACP就xAI数据中心污染提起的诉讼继续推进",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/10/506904.html",
+      "title": "刚刚，DeepSeek重磅开源：Agent底座架构！",
+      "original_title": "刚刚，DeepSeek重磅开源：Agent底座架构！",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-10-31T13:49:44+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "刚刚，DeepSeek重磅开源：Agent底座架构！",
+      "title_translation_scope": "zh_source_title",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    },
+    {
+      "url": "https://simonwillison.net/2026/Oct/31/datasette-llm/",
+      "title": "datasette-llm 0.1a9",
+      "original_title": "datasette-llm 0.1a9",
+      "source": "Simon Willison's Weblog",
+      "source_id": "simon-willison",
+      "published_at": "2026-10-31T22:10:01+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "code",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "开源项目 datasette-llm 0.1a9",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-01T21:23:51+00:00"
+      }
+    }
+  ],
+  "excluded_items_count": 63,
+  "excluded_items": [
+    {
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "title": "deepseek-ai/dsh-superagent-prototype",
+      "reason": "prior_7_catalogs",
+      "source_id": "deepseek",
+      "published_at": "2026-10-31T09:32:46Z"
+    },
+    {
+      "url": "https://github.com/thedotmack/claude-mem",
+      "title": "thedotmack/claude-mem",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2025-08-31T20:50:03Z"
+    },
+    {
+      "url": "https://github.com/lightpanda-io/browser",
+      "title": "lightpanda-io/browser",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2023-02-07T15:19:34Z"
+    },
+    {
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "title": "shiyu-coder/Kronos",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2025-07-01T02:54:32Z"
+    },
+    {
+      "url": "https://github.com/pingdotgg/t3code",
+      "title": "pingdotgg/t3code",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-02-08T23:46:22Z"
+    },
+    {
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "title": "milind-soni/OpenMausBot",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-08-11T18:58:55Z"
+    },
+    {
+      "url": "https://github.com/public-apis/public-apis",
+      "title": "public-apis/public-apis",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2016-03-20T23:49:42Z"
+    },
+    {
+      "url": "https://github.com/cjpais/Handy",
+      "title": "cjpais/Handy",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2025-02-13T02:42:29Z"
+    },
+    {
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "title": "Donchitos/Claude-Code-Game-Studios",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-02-12T05:21:38Z"
+    },
+    {
+      "url": "https://github.com/kornia/kornia",
+      "title": "kornia/kornia",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2018-08-22T10:31:37Z"
+    },
+    {
+      "url": "https://github.com/beenuar/AiSOC",
+      "title": "beenuar/AiSOC",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-05-02T03:30:19Z"
+    },
+    {
+      "url": "https://github.com/Renhuai123/ziwei-doushu",
+      "title": "Renhuai123/ziwei-doushu",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-05-01T05:09:59Z"
+    },
+    {
+      "url": "https://github.com/anomalyco/hex",
+      "title": "anomalyco/hex",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-07-17T23:48:56Z"
+    },
+    {
+      "url": "https://github.com/CopilotKit/OpenBot",
+      "title": "CopilotKit/OpenBot",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-08-17T00:44:59Z"
+    },
+    {
+      "url": "https://github.com/togg53192-cmd/jailbreaks",
+      "title": "togg53192-cmd/jailbreaks",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-06-18T18:21:25Z"
+    },
+    {
+      "url": "https://github.com/patchy631/ai-engineering-hub",
+      "title": "patchy631/ai-engineering-hub",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2024-10-21T10:43:24Z"
+    },
+    {
+      "url": "https://github.com/FlashML-org/FreeToken",
+      "title": "FlashML-org/FreeToken",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-07-20T20:44:11Z"
+    },
+    {
+      "url": "https://github.com/hyprwm/Hyprland",
+      "title": "hyprwm/Hyprland",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2022-03-16T19:49:13Z"
+    },
+    {
+      "url": "https://github.com/ifixai-ai/iFixAi",
+      "title": "ifixai-ai/iFixAi",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-04-27T13:02:34Z"
+    },
+    {
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "title": "D4Vinci/Scrapling",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2024-10-13T20:29:53Z"
+    },
+    {
+      "url": "https://github.com/paperless-ngx/paperless-ngx",
+      "title": "paperless-ngx/paperless-ngx",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2022-02-12T21:56:52Z"
+    },
+    {
+      "url": "https://github.com/ethanplusai/harvey",
+      "title": "ethanplusai/harvey",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-03-12T01:24:50Z"
+    },
+    {
+      "url": "https://github.com/calesthio/OpenMontage",
+      "title": "calesthio/OpenMontage",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-03-29T15:23:22Z"
+    },
+    {
+      "url": "https://github.com/scenario-labs/skills",
+      "title": "scenario-labs/skills",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2026-08-12T10:08:49Z"
+    },
+    {
+      "url": "https://github.com/andreavolpato/spektrafilm",
+      "title": "andreavolpato/spektrafilm",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2025-02-07T13:12:24Z"
+    },
+    {
+      "url": "https://github.com/bregman-arie/devops-exercises",
+      "title": "bregman-arie/devops-exercises",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2019-10-03T17:31:21Z"
+    },
+    {
+      "url": "https://github.com/bleachbit/bleachbit",
+      "title": "bleachbit/bleachbit",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2014-03-10T01:40:31Z"
+    },
+    {
+      "url": "https://github.com/oraios/serena",
+      "title": "oraios/serena",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2025-03-23T22:35:24Z"
+    },
+    {
+      "url": "https://github.com/anthropics/skills",
+      "title": "anthropics/skills",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2025-09-22T15:53:31Z"
+    },
+    {
+      "url": "https://github.com/eriklindernoren/ML-From-Scratch",
+      "title": "eriklindernoren/ML-From-Scratch",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2017-02-05T12:11:23Z"
+    },
+    {
+      "url": "https://github.com/python/cpython",
+      "title": "python/cpython",
+      "reason": "trending_snapshot_not_release",
+      "source_id": "github-trending",
+      "published_at": "2017-02-10T19:23:51Z"
+    },
+    {
+      "url": "https://www.36kr.com/p/4050722097828740",
+      "title": "Claude紧急叫停！暗改Harness禁止逆向游戏",
+      "reason": "relay_same_title_as_qbitai",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-01T07:35:54+00:00"
+    },
+    {
+      "url": "https://www.36kr.com/p/4049722853545097",
+      "title": "电科金仓发布KES AI数据库",
+      "reason": "prior_7_catalogs",
+      "source_id": "36kr-ai",
+      "published_at": "2026-10-31T11:52:14.975000+00:00"
+    },
+    {
+      "url": "https://techcrunch.com/2026/10/31/4-days-left-how-techcrunch-founder-summit-helps-you-make-more-useful-connections-to-scale/",
+      "title": "4 days left: How TechCrunch Founder Summit helps you make more useful connections to scale",
+      "reason": "not_ai_or_promo",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-31T21:36:07+00:00"
+    },
+    {
+      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+      "title": "OpenAI reportedly lowers funding target for new round",
+      "reason": "prior_7_catalogs",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-10-31T16:12:55+00:00"
+    },
+    {
+      "url": "https://www.404media.co/people-used-to-drink-wine-made-from-ground-up-mummies-now-scientists-are-studying-it/",
+      "title": "People Used to Drink Wine Made From Ground-Up Mummies. Now, Scientists Are Studying It",
+      "reason": "not_ai_or_promo",
+      "source_id": "404-media",
+      "published_at": "2026-10-31T11:00:00+00:00"
+    },
+    {
+      "url": "https://www.wired.com/story/kernel-panic-volta-autodoxer-ai-infostealer-malware/",
+      "title": "Spooky New Infostealer Malware Uses AI to ‘Autodox’ Victims",
+      "reason": "prior_7_catalogs",
+      "source_id": "wired-ai",
+      "published_at": "2026-10-31T12:00:00+00:00"
+    },
+    {
+      "url": "https://www.wired.com/story/metas-muse-could-upend-all-kinds-of-businesses-it-hasnt-yet/",
+      "title": "Meta’s Muse Could Upend All Kinds of Businesses. It Hasn’t Yet",
+      "reason": "prior_7_catalogs",
+      "source_id": "wired-ai",
+      "published_at": "2026-10-31T10:30:00+00:00"
+    },
+    {
+      "url": "https://www.wired.com/story/an-ai-agent-did-brain-surgery-on-live-mouse/",
+      "title": "An AI Agent Injected Drugs Into a Live Mouse’s Brain",
+      "reason": "prior_7_catalogs",
+      "source_id": "wired-ai",
+      "published_at": "2026-10-31T10:00:00+00:00"
+    },
+    {
+      "url": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
+      "title": "I built an AI Tamagotchi before Meta could",
+      "reason": "prior_7_catalogs",
+      "source_id": "the-verge-ai",
+      "published_at": "2026-10-31T12:05:00-04:00"
+    },
+    {
+      "url": "https://blog.raed.dev/posts/proton-loser-thinking/",
+      "title": "It wasn't AI that flipped Proton's charge",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T18:53:55+00:00"
+    },
+    {
+      "url": "https://nurse.org/news/uber-for-nursing-gig-apps-report/",
+      "title": "Nurses Sound Alarm as 'Uber for Nursing' Apps Push to Deregulate Healthcare",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T18:53:46+00:00"
+    },
+    {
+      "url": "https://www.bloomberg.com/news/articles/2026-10-31/us-jobs-pickup-may-keep-fed-on-track-to-hike-rates-again",
+      "title": "US Jobs Pickup May Keep Fed on Track to Hike Rates Again",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T18:51:29+00:00"
+    },
+    {
+      "url": "https://terrytao.wordpress.com/2026/11/01/mathematics-has-changed-lets-act-like-it/",
+      "title": "Mathematics has changed. Let's act like it",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T18:28:42+00:00"
+    },
+    {
+      "url": "https://www.vox.com/politics/508526/patrick-stewart-jean-luc-picard-star-trek-liberalism",
+      "title": "Patrick Stewart taught us what good men do with power",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T17:28:16+00:00"
+    },
+    {
+      "url": "https://www.reddit.com/r/frontierairlines/comments/1xl20e8/psa_email_scam/",
+      "title": "Frontier Airlines Likely Breached",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T16:46:33+00:00"
+    },
+    {
+      "url": "https://www.semiconductor-today.com/news_items/2026/oct/seoul-291026.shtml",
+      "title": "Seoul Viosys begins production of rare-earth-free white light emitter",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T16:23:26+00:00"
+    },
+    {
+      "url": "https://hackerbooks.org",
+      "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T15:58:28+00:00"
+    },
+    {
+      "url": "https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/",
+      "title": "Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T14:34:43+00:00"
+    },
+    {
+      "url": "https://movq.de/blog/postings/2026-10-31/0/POSTING-en.html",
+      "title": "Novellas with Groff",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T13:51:41+00:00"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.39302",
+      "title": "Proving and improving the Platonic Representation Hypothesis with JEPAs",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T13:24:49+00:00"
+    },
+    {
+      "url": "https://github.com/ivankovic/omnidiff",
+      "title": "Show HN: OmniDiff – Opensource, super fast, content aware Git difftool, in Rust",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T13:02:30+00:00"
+    },
+    {
+      "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
+      "title": "The AI cost of JavaScript frameworks",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T06:06:19+00:00"
+    },
+    {
+      "url": "https://jetstream.security/insights/brazilian-court-sanctions-prompt-injection-filing/",
+      "title": "Brazilian Court Sanctions Lawyers for Prompt Injection in Court Filing",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T02:19:53+00:00"
+    },
+    {
+      "url": "https://arxiv.org/abs/2409.02292",
+      "title": "Leaking Secrets from Air-Gap Computers by Spelling Radio Signals from RAM (2024)",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-01T01:46:29+00:00"
+    },
+    {
+      "url": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve",
+      "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-31T22:46:12+00:00"
+    },
+    {
+      "url": "https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/",
+      "title": "An Italian farmer found some unknown seeds in his attic and planted them",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-31T22:41:06+00:00"
+    },
+    {
+      "url": "https://www.jefftk.com/p/bidirectional-charging-during-grid-outages",
+      "title": "Bidirectional charging during grid outages",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-31T20:21:55+00:00"
+    },
+    {
+      "url": "https://karpathy.bearblog.dev/hacker-tube/",
+      "title": "HackerTube: YouTube built from videos recommended by HN",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-31T19:56:53+00:00"
+    },
+    {
+      "url": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
+      "title": "TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-31T19:16:30+00:00"
+    },
+    {
+      "url": "https://www.nature.com/articles/s41560-026-02144-0",
+      "title": "One-minute frequency disturbances from synchronization in power systems",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-31T10:14:08+00:00"
+    },
+    {
+      "url": "https://kevs3d.co.uk/phoria2/",
+      "title": "Show HN: I rebuilt my old canvas 3D library as a small WebGL 2 library – phoria2",
+      "reason": "hn_lead_time_not_original",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-10-31T09:49:42+00:00"
+    },
+    {
+      "url": "https://latent.space/p/arca/",
+      "title": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
+      "reason": "prior_7_catalogs",
+      "source_id": "latent-space",
+      "published_at": "2026-10-31T16:05:00+00:00"
+    }
+  ],
+  "review_summary": {
+    "raw_receipt_candidates": 87,
+    "unique_canonical": 87,
+    "displayed": 24,
+    "displayed_news": 23,
+    "displayed_discourse": 0,
+    "displayed_papers": 0,
+    "displayed_code": 1,
+    "excluded": 63,
+    "excluded_reasons": {
+      "prior_7_catalogs": 8,
+      "trending_snapshot_not_release": 30,
+      "relay_same_title_as_qbitai": 1,
+      "not_ai_or_promo": 2,
+      "hn_lead_time_not_original": 22
+    },
+    "pending_time_precision": 0,
+    "body_used": 0,
+    "displayed_not_body": 24,
+    "below_catalog_target": false,
+    "target": 20
+  },
+  "last_hour_handoff": {
+    "checked": false,
+    "window_shanghai": [
+      "2026-11-02T05:00:00+08:00",
+      "2026-11-02T06:00:00+08:00"
+    ],
+    "window_utc": [
+      "2026-11-01T21:00:00Z",
+      "2026-11-01T22:00:00Z"
+    ],
+    "final_catalog_window_shanghai": [
+      "2026-10-31T18:00:00+08:00",
+      "2026-11-02T06:00:00+08:00"
+    ],
+    "owner": "chinese_editor_agent",
+    "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
+    "incidental_sightings_after_until": [
+      {
+        "source_id": "minimax",
+        "field": "dateModified",
+        "value": "2026-11-01T21:13:08.199Z",
+        "note": "页面生成时间，不是稿件发布时间"
+      }
+    ]
+  }
+}
