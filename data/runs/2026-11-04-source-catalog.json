@@ -5,38 +5,33 @@
     "title",
     "source"
   ],
-  "count": 376,
-  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-11-02 17:00, 2026-11-04 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度不计入严格展示。规则见 config/source-catalog-policy.txt。",
+  "count": 331,
+  "scope": "36小时资讯目录（中文编辑终审）：复用05:00上游初采目录与收据，重筛至11月2日18:00—11月4日06:00，补入05:00—06:00本机采集、TechCrunch最后一小时订阅源及正文采用项；HN讨论时间不作原文时间。",
   "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-10-28 through 2026-11-03",
   "duplicates_dropped": 48,
   "config_commit": "e121d3985594aebc3c3ae6cd18a01ba4faf3554b",
   "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
   "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
-  "collection_stage": "collection_only",
+  "collection_stage": "chinese_editor_final_0600",
   "below_catalog_target": false,
   "gaps": [
-    "AGENTS.md第1节仍要求同次运行写成稿、网页和音频；本轮按2026-10-25 collection_only只交收据和目录",
-    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-11-02 18:00, 2026-11-04 06:00)交给中文编辑",
-    "xAI headless Chrome 被 Cloudflare 拦截；静态页只有 4 张日期卡片，最新是日精度 Nov 2 的 Grok Bot 数据科学家文章",
-    "Claude Blog 的 message threads 只有日期 2026-11-02，没有钟点，不计入严格目录",
-    "arXiv API published 最新 2026-11-02T18:59:32Z；11月3日 submittedDate 查询为 0。至 until 的未公告切片为 partial。www 新列表日期为 Tuesday, 3 November 2026，export 列表仍显示 10 月，二者不一致",
-    "OpenReview 只扫了首页：新闻最新 2026-09-24，Active Venues 没有投稿创建时间，notes 接口返回验证页",
-    "StepFun 渲染后仍无发布日期",
-    "通义落地页是双11活动，没有研究/新闻时间索引",
-    "MiniMax 新闻列表早于窗口，但导航 NEW 产品没有发布日期",
-    "字节 Seed 只读到置顶列表，最新 2026-10-24，不是全站流",
-    "HN Algolia 窗口内 nbHits=1938，只取了首页 RSS，讨论时间不进严格目录",
-    "话语场打开了 q.cxspace.com 首页。最近更新 2026-11-03 是站点戳记。精选条目没有落在本窗口的节目发布时间，未把历史节目算进严格目录",
-    "36氪翻页越过窗口起点，但未逐篇打开正文，署名只用来区分转载，不升为已核 original"
+    "05:00上游收据（ai-daily 8aef261）覆盖至05:00；本机补采（collect_sources.py --until 2026-11-03T22:00:00Z --hours 36，06:04运行）覆盖RSS/页面类来源的最后一小时：50源中39 ok、1 partial、2 failed、8待浏览器；另手动补查TechCrunch AI订阅源最后一小时，新增2条标题级条目",
+    "xAI、Qwen、DeepSeek、MiniMax、字节Seed、36氪、MIT Technology Review、OpenReview等浏览器类来源05:00—06:00最后一小时未补查；本机补采中DeepMind订阅源解析失败、Ars Technica HTTP 403、StepFun页面无日期（partial）",
+    "05:00—06:00新增的7条HN线索未追溯原文，记为待核（pending），不计入展示",
+    "Ars Technica单篇页面（谷歌学校、俄罗斯地下数据中心）HTTP 403未能打开，仅作资讯源标题级收录；OpenAI官网单篇（Jill Hazelbaker任命、安全冲刺）HTTP 403未读，未采用",
+    "权重空间编程研究者博客日期仅到日（11月2日），早于36小时目录起点的可判定性不足，不计入目录；正文按48小时补漏注明；批评博客两篇日期未知，只作补充资料",
+    "论文栏SelfImprove-Bench只读arXiv摘要页，提交于11月2日09:08 UTC，早于36小时目录起点，arXiv公告时间未单独核对；按48小时补漏用于正文，不计入目录",
+    "Anthropic S-1原文未直接打开，风险因素引文依据TechCrunch转引、财务数字依据TechCrunch与The Verge报道",
+    "Jack Clark话语场页尚未抽取原话，仅依据页面发布方说明概括；两档节目官方介绍未单独核读"
   ],
   "curation_policy": "36h-min20-v1",
   "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。本次只审05:00初采窗口。",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-11-02T17:00:00+08:00",
-    "end_shanghai": "2026-11-04T05:00:00+08:00",
-    "start_utc": "2026-11-02T09:00:00Z",
-    "end_utc": "2026-11-03T21:00:00Z",
+    "start_shanghai": "2026-11-02T18:00:00+08:00",
+    "end_shanghai": "2026-11-04T06:00:00+08:00",
+    "start_utc": "2026-11-02T10:00:00Z",
+    "end_utc": "2026-11-03T22:00:00Z",
     "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
@@ -45,8 +40,9 @@
     "start_utc": "2026-11-02T10:00:00Z",
     "end_utc": "2026-11-03T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "note": "交给中文编辑；本次不声称已覆盖",
+    "checked_at": "2026-11-03T22:15:09.994868+00:00"
   },
   "items": [
     {
@@ -104,15 +100,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "苹果开始让 Siri 的人工智能接入第三方应用",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "苹果iOS 27.3开发者预览：Siri AI可在第三方应用内执行操作，Apple Watch加入常开的“音频智能”",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -126,15 +122,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "人工智能推理初创公司 Fal 在需求上升中把估值翻倍至160亿美元",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "推理平台Fal融资13亿美元，估值较4月翻倍至160亿美元",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -148,15 +144,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Netflix 新的 AI Discover 标签按心情帮你找片看",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Netflix在电视端推出“AI Discover”标签页，按心情和可用时间推荐片单",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -170,15 +166,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "苹果最新 watchOS 测试版包含新的常开音频智能功能",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "watchOS测试版加入常开的“音频智能”功能",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -192,15 +188,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "OpenAI 称 ChatGPT 在搜索上正在赶上谷歌",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "OpenAI：ChatGPT上的搜索量已达谷歌的五分之一",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -280,15 +276,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Anthropic 仍在应对算力经济问题",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Anthropic仍在应对算力经济账：第三季度算力成本占收入58%",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -346,15 +342,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "谷歌将在不想要人工智能的学校整个关闭搜索",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "谷歌：中小学生账号的AI工具改为默认关闭，但学校若全面拒绝AI，学生也将用不了谷歌搜索",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -500,15 +496,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "在 Amazon Bedrock 上推出基于印度的 Kimi K3 推理",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "亚马逊云科技：Kimi K3在Bedrock上支持印度境内推理",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -522,15 +518,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "谷歌允许学校关闭其人工智能工具，但同时得放弃搜索",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "谷歌允许学校关闭AI工具，但代价是放弃搜索",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -544,15 +540,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "我笔记本上的 Qwen 3.8 27B 也能解读模型权重",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "笔记本上的Qwen 3.8 27B也能“读懂”模型权重",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -588,15 +584,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "苹果把约会应用和人工智能伴侣限制为18岁及以上用户",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "苹果：提供约会或恋爱关系功能的应用须标为18+，AI伴侣应用同样适用",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -698,15 +694,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "《魔兽世界：永恒》已经被人工智能劣质内容淹没",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "《魔兽世界：永恒》上线前，AI生成插件已泛滥，Warcraft Logs为此改接口",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -811,28 +807,6 @@
       "selected": false,
       "verification_scope": "metadata",
       "title_zh": "清华Nature子刊：上千智能体组网后自发站队，观点极化涌现",
-      "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4053977031464070",
-      "title": "GPT-6爆改模型权重，数学能力狂飙6倍，MIT博一新作破圈了",
-      "original_title": "GPT-6爆改模型权重，数学能力狂飙6倍，MIT博一新作破圈了",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-03T13:19:11.130000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "GPT-6爆改模型权重，数学能力狂飙6倍，MIT博一新作破圈了",
       "title_translation_scope": "original_zh",
       "catalog_review": {
         "action": "keep",
@@ -1138,15 +1112,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "OpenAI 任命前美国陆军部长担任国家安全职务",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "OpenAI任命前美国陆军部长Dan Driscoll负责“国家安全现代化”",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -1370,28 +1344,6 @@
       }
     },
     {
-      "url": "https://www.36kr.com/p/4053676489888902",
-      "title": "AI圈炸了，MIT 让 GPT-6 Astra直接改写神经网络权重，Qwen数学成绩暴涨6倍",
-      "original_title": "AI圈炸了，MIT 让 GPT-6 Astra直接改写神经网络权重，Qwen数学成绩暴涨6倍",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-03T09:11:00.959000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "AI圈炸了，MIT 让 GPT-6 Astra直接改写神经网络权重，Qwen数学成绩暴涨6倍",
-      "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
       "url": "https://www.404media.co/vibe-coded-ao3-clone-site-down-after-fanfic-authors-buried-it-with-2-000-takedown-notices-in-a-single-day/",
       "title": "Vibe Coded AO3 Clone Site Down After Fanfic Authors Buried It With 2,000 Takedown Notices in a Single Day",
       "original_title": "Vibe Coded AO3 Clone Site Down After Fanfic Authors Buried It With 2,000 Takedown Notices in a Single Day",
@@ -1402,15 +1354,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "氛围式编程的 AO3 克隆站在同人作者一天发出2000份删除通知后下线",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "趁AO3停机抓取同人作品卖AI有声书的网站，一天收到2000多份下架通知后关闭",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -1427,28 +1379,6 @@
       "selected": false,
       "verification_scope": "metadata",
       "title_zh": "2026年了，为什么还没有APP帮我找厕所？",
-      "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4053676712891526",
-      "title": "Anthropic 14万亿参数神级模型泄露，6个月内杀死视频、图像模型",
-      "original_title": "Anthropic 14万亿参数神级模型泄露，6个月内杀死视频、图像模型",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-03T08:13:49.107000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Anthropic 14万亿参数神级模型泄露，6个月内杀死视频、图像模型",
       "title_translation_scope": "original_zh",
       "catalog_review": {
         "action": "keep",
@@ -1744,28 +1674,6 @@
       }
     },
     {
-      "url": "https://www.qbitai.com/2026/11/507382.html",
-      "title": "A社紧急修改招股书！RSI我们快要控制不住了",
-      "original_title": "A社紧急修改招股书！RSI我们快要控制不住了",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-11-03T03:41:06+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "A社紧急修改招股书！RSI我们快要控制不住了",
-      "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
       "url": "https://www.36kr.com/p/4053440422860672",
       "title": "SpaceXSI开放全球大使招募：马斯克的AI生态，为什么越来越重视开发者社区？",
       "original_title": "SpaceXSI开放全球大使招募：马斯克的AI生态，为什么越来越重视开发者社区？",
@@ -2008,28 +1916,6 @@
       }
     },
     {
-      "url": "https://www.qbitai.com/2026/11/507322.html",
-      "title": "MIT：GPT-6 Astra能直接修改Qwen权重，数学能力暴涨6倍",
-      "original_title": "MIT：GPT-6 Astra能直接修改Qwen权重，数学能力暴涨6倍",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-11-03T01:57:30+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "MIT：GPT-6 Astra能直接修改Qwen权重，数学能力暴涨6倍",
-      "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
       "url": "https://www.36kr.com/p/4053311588553865",
       "title": "具身机器人即将进入资本整合期：谁来接盘？",
       "original_title": "具身机器人即将进入资本整合期：谁来接盘？",
@@ -2194,15 +2080,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Y Combinator 的 Garry Tan 大量使用人工智能智能体，一年 token 花费高达20万美元",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "YC负责人Garry Tan：自己一年在智能体token上花10万至20万美元",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -2382,28 +2268,6 @@
       }
     },
     {
-      "url": "https://www.36kr.com/p/4053239918728070",
-      "title": "MIT让GPT-6 Astra直接修改Qwen权重，数学成绩飙升",
-      "original_title": "MIT让GPT-6 Astra直接修改Qwen权重，数学成绩飙升",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-02T23:50:41+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "MIT让GPT-6 Astra直接修改Qwen权重，数学成绩飙升",
-      "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
       "url": "https://www.36kr.com/p/4052671124575367",
       "title": "从英伟达到 Pika，硅谷巨头为何“反向借力”这个国产模型？",
       "original_title": "从英伟达到 Pika，硅谷巨头为何“反向借力”这个国产模型？",
@@ -2439,28 +2303,6 @@
       "selected": false,
       "verification_scope": "metadata",
       "title_zh": "奥特曼：攻下千禧难题的GPT，即将上线",
-      "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4053181359723649",
-      "title": "Anthropic突然更新，AI自进化已突破红线，人类根本来不及反应",
-      "original_title": "Anthropic突然更新，AI自进化已突破红线，人类根本来不及反应",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-02T23:35:39+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Anthropic突然更新，AI自进化已突破红线，人类根本来不及反应",
       "title_translation_scope": "original_zh",
       "catalog_review": {
         "action": "keep",
@@ -2546,15 +2388,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Trajectory 融资4500万美元，想让非技术专家也能训练人工智能模型",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "持续学习初创公司Trajectory融资4500万美元，让律师、医生等专家自己“调教”模型",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -2612,15 +2454,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Anthropic 警告其已非常接近 RSI 能力，也就是能自我构建的人工智能",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Anthropic更新招股书：称可能“即将”达到“AI显著加速研发”的门槛，算力成本占收入升至58%",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -2659,72 +2501,6 @@
       "selected": false,
       "verification_scope": "metadata",
       "title_zh": "任天堂宫本茂谈人工智能与游戏",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
-      "title": "Anthropic clamps down on Claude’s AI video game clones",
-      "original_title": "Anthropic clamps down on Claude’s AI video game clones",
-      "source": "The Verge",
-      "source_id": "the-verge-ai",
-      "published_at": "2026-11-02T18:56:02+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Anthropic 收紧 Claude 对人工智能电子游戏克隆的限制",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1024679/openai-is-planning-to-combine-chatgpt-chat-and-work",
-      "title": "OpenAI is planning to combine ChatGPT chat and work.",
-      "original_title": "OpenAI is planning to combine ChatGPT chat and work.",
-      "source": "The Verge",
-      "source_id": "the-verge-ai",
-      "published_at": "2026-11-02T18:48:19+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "OpenAI 计划合并 ChatGPT 的聊天与工作",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/",
-      "title": "Claude’s new rules against game cloning won’t stop the AI copying boom",
-      "original_title": "Claude’s new rules against game cloning won’t stop the AI copying boom",
-      "source": "Ars Technica",
-      "source_id": "ars-technica-ai",
-      "published_at": "2026-11-02T18:05:31+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Claude 反对游戏克隆的新规则挡不住人工智能复制潮",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
@@ -2832,15 +2608,15 @@
       "discovery": "collection_0500",
       "catalog_kind": "news",
       "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Anthropic 更新后的 S-1 里有更多惊人数字",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "Anthropic更新版S-1：前九个月收入332.4亿美元",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
       }
     },
     {
@@ -2976,28 +2752,6 @@
       }
     },
     {
-      "url": "https://www.36kr.com/p/4052484771681158",
-      "title": "DeepSeek开源Super-agent，AI开始自己给AI派活，Agent竞争有了新方向",
-      "original_title": "DeepSeek开源Super-agent，AI开始自己给AI派活，Agent竞争有了新方向",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-02T11:22:46.571000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "DeepSeek开源Super-agent，AI开始自己给AI派活，Agent竞争有了新方向",
-      "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
       "url": "https://www.36kr.com/p/4052511128638336",
       "title": "实景实训推动应用落地 以赛促产赋能产业发展——人形机器人与具身智能实景实训挑战赛新闻发布会在京召开",
       "original_title": "实景实训推动应用落地 以赛促产赋能产业发展——人形机器人与具身智能实景实训挑战赛新闻发布会在京召开",
@@ -3034,28 +2788,6 @@
       "verification_scope": "metadata",
       "title_zh": "北美求职大踩踏，康奈尔博士亲历：没业界经验宛如裸奔",
       "title_translation_scope": "original_zh",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1024272/elon-musk-appears-to-have-throttled-grok-bot-for-being-unsustainably-expensive",
-      "title": "Elon Musk appears to have throttled Grok Bot for being “unsustainably” expensive.",
-      "original_title": "Elon Musk appears to have throttled Grok Bot for being “unsustainably” expensive.",
-      "source": "The Verge",
-      "source_id": "the-verge-ai",
-      "published_at": "2026-11-02T09:53:32+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "埃隆·马斯克似乎因为 Grok Bot「贵得不可持续」而限制了它",
-      "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
@@ -7508,776 +7240,6 @@
       }
     },
     {
-      "url": "https://arxiv.org/abs/2611.02856",
-      "title": "Kolmogorov-Arnold Networks vs. Multi-Layer Perceptrons: A Rigorous Statistical Benchmark on Clinical Tabular Data",
-      "original_title": "Kolmogorov-Arnold Networks vs. Multi-Layer Perceptrons: A Rigorous Statistical Benchmark on Clinical Tabular Data",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:58:53Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Kolmogorov-Arnold网络与多层感知机：临床表格数据上的严格统计基准",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02852",
-      "title": "Value-Conditioned Proposal Acquisition for Test-Time Reasoning",
-      "original_title": "Value-Conditioned Proposal Acquisition for Test-Time Reasoning",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:53:39Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "测试时推理的价值条件提议获取",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02849",
-      "title": "TLAPS-Bench: Formally Proving Correctness of Real-World System Specifications with TLA+ Proof System",
-      "original_title": "TLAPS-Bench: Formally Proving Correctness of Real-World System Specifications with TLA+ Proof System",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:51:18Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "TLAPS-Bench：用TLA+证明系统形式化证明真实系统规约的正确性",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02846",
-      "title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding",
-      "original_title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:47:06Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "SpecOPD：面向推测解码的分支并行同策略蒸馏",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02843",
-      "title": "Math Foundation Formalization Agent: A General-Purpose Approach to Formalizing Mathematical Foundations",
-      "original_title": "Math Foundation Formalization Agent: A General-Purpose Approach to Formalizing Mathematical Foundations",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:45:31Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "数学基础形式化智能体：形式化数学基础的通用方法",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02842",
-      "title": "NIR: Approximate Neural Instance Retrieval for ALCIQ",
-      "original_title": "NIR: Approximate Neural Instance Retrieval for ALCIQ",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:44:18Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "NIR：面向ALCIQ的近似神经实例检索",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02840",
-      "title": "Iterated Narrow Networks: Turing Completeness at Width 4 on Convex Input Spaces and the Complexity of Verification",
-      "original_title": "Iterated Narrow Networks: Turing Completeness at Width 4 on Convex Input Spaces and the Complexity of Verification",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:41:46Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "迭代窄网络：凸输入空间上宽度4的图灵完备性与验证复杂度",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02839",
-      "title": "CARE: Grounded Recursive Self-Improvement for Production Customer-Service Agents",
-      "original_title": "CARE: Grounded Recursive Self-Improvement for Production Customer-Service Agents",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:39:52Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "CARE：面向生产客服智能体的有依据递归自我改进",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02835",
-      "title": "Omni-Life: Benchmarking Omnimodal Real-Time AI Assistants in People's Daily Lives",
-      "original_title": "Omni-Life: Benchmarking Omnimodal Real-Time AI Assistants in People's Daily Lives",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:37:44Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Omni-Life：在日常生活中评测全模态实时人工智能助手",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02834",
-      "title": "Window-Aware Scheduling for Health Messaging under Platform Delivery Constraints: Evidence from an AI-Powered WhatsApp Maternal and Infant Health Chatbot in Nigeria",
-      "original_title": "Window-Aware Scheduling for Health Messaging under Platform Delivery Constraints: Evidence from an AI-Powered WhatsApp Maternal and Infant Health Chatbot in Nigeria",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:34:22Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "平台投递约束下的健康信息窗口感知调度：尼日利亚人工智能WhatsApp母婴健康聊天机器人的证据",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02833",
-      "title": "Reimagining computational quantum research with AI scientists",
-      "original_title": "Reimagining computational quantum research with AI scientists",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:32:13Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用人工智能科学家重新想象计算量子研究",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02830",
-      "title": "Think with Skills: Pseudocode Planning Before Execution for Advanced Reasoners",
-      "original_title": "Think with Skills: Pseudocode Planning Before Execution for Advanced Reasoners",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:29:30Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "先用技能思考：高级推理器在执行前做伪代码规划",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02827",
-      "title": "GraTED: Graph--Tensor EEG Decoding for Passenger Hazard Perception in Autonomous Vehicles",
-      "original_title": "GraTED: Graph--Tensor EEG Decoding for Passenger Hazard Perception in Autonomous Vehicles",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:25:03Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "GraTED：面向自动驾驶乘员危险感知的图-张量脑电解码",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02826",
-      "title": "RxnMiner: A Multimodal Agent for Structured Reaction Data Extraction from Chemistry Figures",
-      "original_title": "RxnMiner: A Multimodal Agent for Structured Reaction Data Extraction from Chemistry Figures",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:24:55Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "RxnMiner：从化学图中抽取结构化反应数据的多模态智能体",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02823",
-      "title": "Efficient Detailed Scheduling of Multiproduct Pipelines using Action-Decoupled Deep Reinforcement Learning",
-      "original_title": "Efficient Detailed Scheduling of Multiproduct Pipelines using Action-Decoupled Deep Reinforcement Learning",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:23:07Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用动作解耦深度强化学习对多产品管道做高效详细调度",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02822",
-      "title": "Disen-Forcing: Disentangling Semantic Anchoring from Motion for Autoregressive Video Diffusion",
-      "original_title": "Disen-Forcing: Disentangling Semantic Anchoring from Motion for Autoregressive Video Diffusion",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:22:39Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Disen-Forcing：把语义锚定与运动解耦，用于自回归视频扩散",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02817",
-      "title": "In-context learning of solution to simple linear regression task using transformer with masked linear self-attention",
-      "original_title": "In-context learning of solution to simple linear regression task using transformer with masked linear self-attention",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:19:47Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用带掩码线性自注意力的Transformer在上下文中学习简单线性回归的解",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02816",
-      "title": "Discovering hierarchical governing equations for community-structured complex network dynamics with LLM agents",
-      "original_title": "Discovering hierarchical governing equations for community-structured complex network dynamics with LLM agents",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:19:22Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用大语言模型智能体发现社区结构复杂网络动力学的层次控制方程",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02815",
-      "title": "Predictive Safety Guardrails Do Not Always Make LLM Agents Safer",
-      "original_title": "Predictive Safety Guardrails Do Not Always Make LLM Agents Safer",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:19:22Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "预测性安全护栏并不总让大语言模型智能体更安全",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02812",
-      "title": "When Is Tracking Affordable? A Movement-Budget Feasibility Threshold for Dynamic Regret",
-      "original_title": "When Is Tracking Affordable? A Movement-Budget Feasibility Threshold for Dynamic Regret",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:18:33Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "跟踪何时负担得起？动态遗憾的运动预算可行性阈值",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02810",
-      "title": "TRIO: Task Refinement with Individual Optimization for Retrieval-Augmented Generation",
-      "original_title": "TRIO: Task Refinement with Individual Optimization for Retrieval-Augmented Generation",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:17:22Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "TRIO：面向检索增强生成的任务细化与个体优化",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02809",
-      "title": "Offline Approximate Value Iteration: A Reinforcement Learning Approach for Satellite Constellation Deployment",
-      "original_title": "Offline Approximate Value Iteration: A Reinforcement Learning Approach for Satellite Constellation Deployment",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:17:21Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "离线近似值迭代：用于卫星星座部署的强化学习方法",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02807",
-      "title": "Creating Hybrid Interactive Narrative Systems with LLM: From Formal Description to Evaluation",
-      "original_title": "Creating Hybrid Interactive Narrative Systems with LLM: From Formal Description to Evaluation",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:15:01Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用大语言模型创建混合互动叙事系统：从形式描述到评估",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02806",
-      "title": "CARE: Contrastive Representation Learning with Environment-Invariance Regularization for Behavioural Intention Prediction",
-      "original_title": "CARE: Contrastive Representation Learning with Environment-Invariance Regularization for Behavioural Intention Prediction",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:13:09Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "CARE：带环境不变性正则的对比表征学习，用于行为意图预测",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02803",
-      "title": "OmniOPD: Stable On-Policy Distillation for Joint Audio-Video Generation",
-      "original_title": "OmniOPD: Stable On-Policy Distillation for Joint Audio-Video Generation",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:11:39Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "OmniOPD：面向音视频联合生成的稳定同策略蒸馏",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02802",
-      "title": "SynForecast: Controlled Synthetic Time Series for Forecasting Research",
-      "original_title": "SynForecast: Controlled Synthetic Time Series for Forecasting Research",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:10:56Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "SynForecast：用于预测研究的可控合成时间序列",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02801",
-      "title": "Analysing the Narrative Paradox through Formal Models and Properties in Interactive Narrative",
-      "original_title": "Analysing the Narrative Paradox through Formal Models and Properties in Interactive Narrative",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:10:17Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用形式模型与性质分析互动叙事中的叙事悖论",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02797",
-      "title": "SelfImprove-Bench: Evaluating Generalization in Self-Improving Agents",
-      "original_title": "SelfImprove-Bench: Evaluating Generalization in Self-Improving Agents",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:08:12Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "SelfImprove-Bench：评估自我改进智能体的泛化",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02794",
-      "title": "SomaAlign: Reliability-Aware Multimodal Representation Learning for Soft Robotic Grasping",
-      "original_title": "SomaAlign: Reliability-Aware Multimodal Representation Learning for Soft Robotic Grasping",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:06:11Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "SomaAlign：面向软体机器人抓取的可靠性感知多模态表征学习",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02793",
-      "title": "DrawOffer: Evidence-Grounded Longitudinal User-State Modeling for Career Support",
-      "original_title": "DrawOffer: Evidence-Grounded Longitudinal User-State Modeling for Career Support",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:05:03Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "DrawOffer：面向职业支持的证据锚定纵向用户状态建模",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02791",
-      "title": "PGuard: A Native, Streaming, and Plug-in Guardrail for Multimodal Large Language Models",
-      "original_title": "PGuard: A Native, Streaming, and Plug-in Guardrail for Multimodal Large Language Models",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:03:39Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "PGuard：面向多模态大语言模型的原生、流式、可插件化护栏",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02790",
-      "title": "MultiMental-IAS: A Multimodal Driver Mental State Analysis Dataset for Context-Aware Non-IID Evaluation",
-      "original_title": "MultiMental-IAS: A Multimodal Driver Mental State Analysis Dataset for Context-Aware Non-IID Evaluation",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:03:14Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "MultiMental-IAS：面向情境感知非独立同分布评估的多模态驾驶员心理状态数据集",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02788",
-      "title": "Rethinking Neural Decompilation: Candidate Selection as the Hidden Bottleneck",
-      "original_title": "Rethinking Neural Decompilation: Candidate Selection as the Hidden Bottleneck",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:02:54Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "重新思考神经反编译：候选选择才是隐藏瓶颈",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02787",
-      "title": "POD-CNF: reduced order modeling of parametrized stochastic PDEs via normalizing flows and proper orthogonal decomposition",
-      "original_title": "POD-CNF: reduced order modeling of parametrized stochastic PDEs via normalizing flows and proper orthogonal decomposition",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:02:36Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "POD-CNF：用归一化流与本征正交分解做参数化随机偏微分方程的降阶建模",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.02784",
-      "title": "HLSClaw: Bringing Vibe Coding to High-Level Synthesis through Skill-Based Agentic Harness",
-      "original_title": "HLSClaw: Bringing Vibe Coding to High-Level Synthesis through Skill-Based Agentic Harness",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-02T09:01:06Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "HLSClaw：用基于技能的智能体框架把氛围式编程带进高层次综合",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-03T21:26:46+00:00"
-      }
-    },
-    {
       "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-alpha.3",
       "title": "DeepSeek Harness dsh-v0.2.2-alpha.3",
       "original_title": "DeepSeek Harness dsh-v0.2.2-alpha.3",
@@ -8290,8 +7252,8 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "DeepSeek Harness dsh-v0.2.2-alpha.3",
-      "title_translation_scope": "title_only",
+      "title_zh": "DeepSeek Harness dsh-v0.2.2-alpha.3（版本发布）",
+      "title_translation_scope": "title_only_type_label",
       "catalog_review": {
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
@@ -8312,18 +7274,1143 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "llm 0.37",
-      "title_translation_scope": "title_only",
+      "title_zh": "llm 0.37（版本发布）",
+      "title_translation_scope": "title_only_type_label",
       "catalog_review": {
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
         "reviewed_at": "2026-11-03T21:26:46+00:00"
       }
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/03/ted-schleins-ballistic-ventures-seeks-490m-for-new-funds-amid-ai-driven-cybersecurity-boom/",
+      "title": "Ted Schlein’s Ballistic Ventures seeks $490M for new funds amid AI-driven cybersecurity boom",
+      "original_title": "Ted Schlein’s Ballistic Ventures seeks $490M for new funds amid AI-driven cybersecurity boom",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03T21:43:08+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_0600_last_hour_feed",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "AI推动网络安全投资热，Ted Schlein的Ballistic Ventures为新基金募资4.9亿美元",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00—06:00最后一小时TechCrunch AI订阅源补查发现，pubDate在窗口内；只读元数据",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/03/hiding-inside-palantirs-skyrocketing-quarter-is-a-foreboding-signal/",
+      "title": "Hiding inside Palantir’s skyrocketing quarter is a foreboding signal",
+      "original_title": "Hiding inside Palantir’s skyrocketing quarter is a foreboding signal",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03T21:05:55+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_0600_last_hour_feed",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Palantir季度业绩飙升背后藏着一个不祥信号",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "05:00—06:00最后一小时TechCrunch AI订阅源补查发现，pubDate在窗口内；只读元数据",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
     }
   ],
-  "excluded_items_count": 198,
+  "excluded_items_count": 255,
   "excluded_items": [
+    {
+      "url": "https://www.36kr.com/p/4053977031464070",
+      "title": "GPT-6爆改模型权重，数学能力狂飙6倍，MIT博一新作破圈了",
+      "original_title": "GPT-6爆改模型权重，数学能力狂飙6倍，MIT博一新作破圈了",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-03T13:19:11.130000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "GPT-6爆改模型权重，数学能力狂飙6倍，MIT博一新作破圈了",
+      "title_translation_scope": "original_zh",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（权重空间编程）已作本期正文精选，本条为中文转述，未见独立新增；代表链接为研究者原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.36kr.com/p/4053676489888902",
+      "title": "AI圈炸了，MIT 让 GPT-6 Astra直接改写神经网络权重，Qwen数学成绩暴涨6倍",
+      "original_title": "AI圈炸了，MIT 让 GPT-6 Astra直接改写神经网络权重，Qwen数学成绩暴涨6倍",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-03T09:11:00.959000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "AI圈炸了，MIT 让 GPT-6 Astra直接改写神经网络权重，Qwen数学成绩暴涨6倍",
+      "title_translation_scope": "original_zh",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（权重空间编程）已作本期正文精选，本条为中文转述，未见独立新增；代表链接为研究者原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.36kr.com/p/4053676712891526",
+      "title": "Anthropic 14万亿参数神级模型泄露，6个月内杀死视频、图像模型",
+      "original_title": "Anthropic 14万亿参数神级模型泄露，6个月内杀死视频、图像模型",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-03T08:13:49.107000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Anthropic 14万亿参数神级模型泄露，6个月内杀死视频、图像模型",
+      "title_translation_scope": "original_zh",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "传言类报道；同期社区分析指出所谓泄露权重部分与随机初始化完全一致，可能为假，未核实，不展示",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "unverified_rumor"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/507382.html",
+      "title": "A社紧急修改招股书！RSI我们快要控制不住了",
+      "original_title": "A社紧急修改招股书！RSI我们快要控制不住了",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-03T03:41:06+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "A社紧急修改招股书！RSI我们快要控制不住了",
+      "title_translation_scope": "original_zh",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（Anthropic更新S-1风险因素）已作本期正文精选，本条为中文转述；“已突破红线”与文件所写“现有模型未被认定超过门槛”不符，不展示",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/507322.html",
+      "title": "MIT：GPT-6 Astra能直接修改Qwen权重，数学能力暴涨6倍",
+      "original_title": "MIT：GPT-6 Astra能直接修改Qwen权重，数学能力暴涨6倍",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-03T01:57:30+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "MIT：GPT-6 Astra能直接修改Qwen权重，数学能力暴涨6倍",
+      "title_translation_scope": "original_zh",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（权重空间编程）已作本期正文精选，本条为中文转述，未见独立新增；代表链接为研究者原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.36kr.com/p/4053239918728070",
+      "title": "MIT让GPT-6 Astra直接修改Qwen权重，数学成绩飙升",
+      "original_title": "MIT让GPT-6 Astra直接修改Qwen权重，数学成绩飙升",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-02T23:50:41+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "MIT让GPT-6 Astra直接修改Qwen权重，数学成绩飙升",
+      "title_translation_scope": "original_zh",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（权重空间编程）已作本期正文精选，本条为中文转述，未见独立新增；代表链接为研究者原文",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.36kr.com/p/4053181359723649",
+      "title": "Anthropic突然更新，AI自进化已突破红线，人类根本来不及反应",
+      "original_title": "Anthropic突然更新，AI自进化已突破红线，人类根本来不及反应",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-02T23:35:39+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Anthropic突然更新，AI自进化已突破红线，人类根本来不及反应",
+      "title_translation_scope": "original_zh",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（Anthropic更新S-1风险因素）已作本期正文精选，本条为中文转述；“已突破红线”与文件所写“现有模型未被认定超过门槛”不符，不展示",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
+      "title": "Anthropic clamps down on Claude’s AI video game clones",
+      "original_title": "Anthropic clamps down on Claude’s AI video game clones",
+      "source": "The Verge",
+      "source_id": "the-verge-ai",
+      "published_at": "2026-11-02T18:56:02+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Anthropic 收紧 Claude 对人工智能电子游戏克隆的限制",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（Claude游戏复刻规则）已在11月1日、2日刊报道，本条无实质新增",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1024679/openai-is-planning-to-combine-chatgpt-chat-and-work",
+      "title": "OpenAI is planning to combine ChatGPT chat and work.",
+      "original_title": "OpenAI is planning to combine ChatGPT chat and work.",
+      "source": "The Verge",
+      "source_id": "the-verge-ai",
+      "published_at": "2026-11-02T18:48:19+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "OpenAI 计划合并 ChatGPT 的聊天与工作",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（ChatGPT合并Chat与Work标签）已在11月3日刊快讯出现，本条无实质新增",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/",
+      "title": "Claude’s new rules against game cloning won’t stop the AI copying boom",
+      "original_title": "Claude’s new rules against game cloning won’t stop the AI copying boom",
+      "source": "Ars Technica",
+      "source_id": "ars-technica-ai",
+      "published_at": "2026-11-02T18:05:31+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Claude 反对游戏克隆的新规则挡不住人工智能复制潮",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（Claude游戏复刻规则）已在11月1日、2日刊报道，本条无实质新增",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.36kr.com/p/4052484771681158",
+      "title": "DeepSeek开源Super-agent，AI开始自己给AI派活，Agent竞争有了新方向",
+      "original_title": "DeepSeek开源Super-agent，AI开始自己给AI派活，Agent竞争有了新方向",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-02T11:22:46.571000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "DeepSeek开源Super-agent，AI开始自己给AI派活，Agent竞争有了新方向",
+      "title_translation_scope": "original_zh",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一事件（DeepSeek开源dsh-superagent原型）已在11月1日刊开源解读出现，本条为评论/综述，未核读独立新增",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "same_event_prior_issue"
+    },
+    {
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1024272/elon-musk-appears-to-have-throttled-grok-bot-for-being-unsustainably-expensive",
+      "title": "Elon Musk appears to have throttled Grok Bot for being “unsustainably” expensive.",
+      "original_title": "Elon Musk appears to have throttled Grok Bot for being “unsustainably” expensive.",
+      "source": "The Verge",
+      "source_id": "the-verge-ai",
+      "published_at": "2026-11-02T09:53:32+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "埃隆·马斯克似乎因为 Grok Bot「贵得不可持续」而限制了它",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02856",
+      "title": "Kolmogorov-Arnold Networks vs. Multi-Layer Perceptrons: A Rigorous Statistical Benchmark on Clinical Tabular Data",
+      "original_title": "Kolmogorov-Arnold Networks vs. Multi-Layer Perceptrons: A Rigorous Statistical Benchmark on Clinical Tabular Data",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:58:53Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Kolmogorov-Arnold网络与多层感知机：临床表格数据上的严格统计基准",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02852",
+      "title": "Value-Conditioned Proposal Acquisition for Test-Time Reasoning",
+      "original_title": "Value-Conditioned Proposal Acquisition for Test-Time Reasoning",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:53:39Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "测试时推理的价值条件提议获取",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02849",
+      "title": "TLAPS-Bench: Formally Proving Correctness of Real-World System Specifications with TLA+ Proof System",
+      "original_title": "TLAPS-Bench: Formally Proving Correctness of Real-World System Specifications with TLA+ Proof System",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:51:18Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "TLAPS-Bench：用TLA+证明系统形式化证明真实系统规约的正确性",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02846",
+      "title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding",
+      "original_title": "SpecOPD: Branch-Parallel On-Policy Distillation for Speculative Decoding",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:47:06Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "SpecOPD：面向推测解码的分支并行同策略蒸馏",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02843",
+      "title": "Math Foundation Formalization Agent: A General-Purpose Approach to Formalizing Mathematical Foundations",
+      "original_title": "Math Foundation Formalization Agent: A General-Purpose Approach to Formalizing Mathematical Foundations",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:45:31Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "数学基础形式化智能体：形式化数学基础的通用方法",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02842",
+      "title": "NIR: Approximate Neural Instance Retrieval for ALCIQ",
+      "original_title": "NIR: Approximate Neural Instance Retrieval for ALCIQ",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:44:18Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "NIR：面向ALCIQ的近似神经实例检索",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02840",
+      "title": "Iterated Narrow Networks: Turing Completeness at Width 4 on Convex Input Spaces and the Complexity of Verification",
+      "original_title": "Iterated Narrow Networks: Turing Completeness at Width 4 on Convex Input Spaces and the Complexity of Verification",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:41:46Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "迭代窄网络：凸输入空间上宽度4的图灵完备性与验证复杂度",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02839",
+      "title": "CARE: Grounded Recursive Self-Improvement for Production Customer-Service Agents",
+      "original_title": "CARE: Grounded Recursive Self-Improvement for Production Customer-Service Agents",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:39:52Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "CARE：面向生产客服智能体的有依据递归自我改进",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02835",
+      "title": "Omni-Life: Benchmarking Omnimodal Real-Time AI Assistants in People's Daily Lives",
+      "original_title": "Omni-Life: Benchmarking Omnimodal Real-Time AI Assistants in People's Daily Lives",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:37:44Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Omni-Life：在日常生活中评测全模态实时人工智能助手",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02834",
+      "title": "Window-Aware Scheduling for Health Messaging under Platform Delivery Constraints: Evidence from an AI-Powered WhatsApp Maternal and Infant Health Chatbot in Nigeria",
+      "original_title": "Window-Aware Scheduling for Health Messaging under Platform Delivery Constraints: Evidence from an AI-Powered WhatsApp Maternal and Infant Health Chatbot in Nigeria",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:34:22Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "平台投递约束下的健康信息窗口感知调度：尼日利亚人工智能WhatsApp母婴健康聊天机器人的证据",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02833",
+      "title": "Reimagining computational quantum research with AI scientists",
+      "original_title": "Reimagining computational quantum research with AI scientists",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:32:13Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "用人工智能科学家重新想象计算量子研究",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02830",
+      "title": "Think with Skills: Pseudocode Planning Before Execution for Advanced Reasoners",
+      "original_title": "Think with Skills: Pseudocode Planning Before Execution for Advanced Reasoners",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:29:30Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "先用技能思考：高级推理器在执行前做伪代码规划",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02827",
+      "title": "GraTED: Graph--Tensor EEG Decoding for Passenger Hazard Perception in Autonomous Vehicles",
+      "original_title": "GraTED: Graph--Tensor EEG Decoding for Passenger Hazard Perception in Autonomous Vehicles",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:25:03Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "GraTED：面向自动驾驶乘员危险感知的图-张量脑电解码",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02826",
+      "title": "RxnMiner: A Multimodal Agent for Structured Reaction Data Extraction from Chemistry Figures",
+      "original_title": "RxnMiner: A Multimodal Agent for Structured Reaction Data Extraction from Chemistry Figures",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:24:55Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "RxnMiner：从化学图中抽取结构化反应数据的多模态智能体",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02823",
+      "title": "Efficient Detailed Scheduling of Multiproduct Pipelines using Action-Decoupled Deep Reinforcement Learning",
+      "original_title": "Efficient Detailed Scheduling of Multiproduct Pipelines using Action-Decoupled Deep Reinforcement Learning",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:23:07Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "用动作解耦深度强化学习对多产品管道做高效详细调度",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02822",
+      "title": "Disen-Forcing: Disentangling Semantic Anchoring from Motion for Autoregressive Video Diffusion",
+      "original_title": "Disen-Forcing: Disentangling Semantic Anchoring from Motion for Autoregressive Video Diffusion",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:22:39Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Disen-Forcing：把语义锚定与运动解耦，用于自回归视频扩散",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02817",
+      "title": "In-context learning of solution to simple linear regression task using transformer with masked linear self-attention",
+      "original_title": "In-context learning of solution to simple linear regression task using transformer with masked linear self-attention",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:19:47Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "用带掩码线性自注意力的Transformer在上下文中学习简单线性回归的解",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02816",
+      "title": "Discovering hierarchical governing equations for community-structured complex network dynamics with LLM agents",
+      "original_title": "Discovering hierarchical governing equations for community-structured complex network dynamics with LLM agents",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:19:22Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "用大语言模型智能体发现社区结构复杂网络动力学的层次控制方程",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02815",
+      "title": "Predictive Safety Guardrails Do Not Always Make LLM Agents Safer",
+      "original_title": "Predictive Safety Guardrails Do Not Always Make LLM Agents Safer",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:19:22Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "预测性安全护栏并不总让大语言模型智能体更安全",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02812",
+      "title": "When Is Tracking Affordable? A Movement-Budget Feasibility Threshold for Dynamic Regret",
+      "original_title": "When Is Tracking Affordable? A Movement-Budget Feasibility Threshold for Dynamic Regret",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:18:33Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "跟踪何时负担得起？动态遗憾的运动预算可行性阈值",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02810",
+      "title": "TRIO: Task Refinement with Individual Optimization for Retrieval-Augmented Generation",
+      "original_title": "TRIO: Task Refinement with Individual Optimization for Retrieval-Augmented Generation",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:17:22Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "TRIO：面向检索增强生成的任务细化与个体优化",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02809",
+      "title": "Offline Approximate Value Iteration: A Reinforcement Learning Approach for Satellite Constellation Deployment",
+      "original_title": "Offline Approximate Value Iteration: A Reinforcement Learning Approach for Satellite Constellation Deployment",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:17:21Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "离线近似值迭代：用于卫星星座部署的强化学习方法",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02807",
+      "title": "Creating Hybrid Interactive Narrative Systems with LLM: From Formal Description to Evaluation",
+      "original_title": "Creating Hybrid Interactive Narrative Systems with LLM: From Formal Description to Evaluation",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:15:01Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "用大语言模型创建混合互动叙事系统：从形式描述到评估",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02806",
+      "title": "CARE: Contrastive Representation Learning with Environment-Invariance Regularization for Behavioural Intention Prediction",
+      "original_title": "CARE: Contrastive Representation Learning with Environment-Invariance Regularization for Behavioural Intention Prediction",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:13:09Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "CARE：带环境不变性正则的对比表征学习，用于行为意图预测",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02803",
+      "title": "OmniOPD: Stable On-Policy Distillation for Joint Audio-Video Generation",
+      "original_title": "OmniOPD: Stable On-Policy Distillation for Joint Audio-Video Generation",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:11:39Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "OmniOPD：面向音视频联合生成的稳定同策略蒸馏",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02802",
+      "title": "SynForecast: Controlled Synthetic Time Series for Forecasting Research",
+      "original_title": "SynForecast: Controlled Synthetic Time Series for Forecasting Research",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:10:56Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "SynForecast：用于预测研究的可控合成时间序列",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02801",
+      "title": "Analysing the Narrative Paradox through Formal Models and Properties in Interactive Narrative",
+      "original_title": "Analysing the Narrative Paradox through Formal Models and Properties in Interactive Narrative",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:10:17Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "用形式模型与性质分析互动叙事中的叙事悖论",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02797",
+      "title": "SelfImprove-Bench: Evaluating Generalization in Self-Improving Agents",
+      "original_title": "SelfImprove-Bench: Evaluating Generalization in Self-Improving Agents",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:08:12Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "SelfImprove-Bench：评估自我改进智能体的泛化",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02794",
+      "title": "SomaAlign: Reliability-Aware Multimodal Representation Learning for Soft Robotic Grasping",
+      "original_title": "SomaAlign: Reliability-Aware Multimodal Representation Learning for Soft Robotic Grasping",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:06:11Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "SomaAlign：面向软体机器人抓取的可靠性感知多模态表征学习",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02793",
+      "title": "DrawOffer: Evidence-Grounded Longitudinal User-State Modeling for Career Support",
+      "original_title": "DrawOffer: Evidence-Grounded Longitudinal User-State Modeling for Career Support",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:05:03Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "DrawOffer：面向职业支持的证据锚定纵向用户状态建模",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02791",
+      "title": "PGuard: A Native, Streaming, and Plug-in Guardrail for Multimodal Large Language Models",
+      "original_title": "PGuard: A Native, Streaming, and Plug-in Guardrail for Multimodal Large Language Models",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:03:39Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "PGuard：面向多模态大语言模型的原生、流式、可插件化护栏",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02790",
+      "title": "MultiMental-IAS: A Multimodal Driver Mental State Analysis Dataset for Context-Aware Non-IID Evaluation",
+      "original_title": "MultiMental-IAS: A Multimodal Driver Mental State Analysis Dataset for Context-Aware Non-IID Evaluation",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:03:14Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "MultiMental-IAS：面向情境感知非独立同分布评估的多模态驾驶员心理状态数据集",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02788",
+      "title": "Rethinking Neural Decompilation: Candidate Selection as the Hidden Bottleneck",
+      "original_title": "Rethinking Neural Decompilation: Candidate Selection as the Hidden Bottleneck",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:02:54Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "重新思考神经反编译：候选选择才是隐藏瓶颈",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02787",
+      "title": "POD-CNF: reduced order modeling of parametrized stochastic PDEs via normalizing flows and proper orthogonal decomposition",
+      "original_title": "POD-CNF: reduced order modeling of parametrized stochastic PDEs via normalizing flows and proper orthogonal decomposition",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:02:36Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "POD-CNF：用归一化流与本征正交分解做参数化随机偏微分方程的降阶建模",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.02784",
+      "title": "HLSClaw: Bringing Vibe Coding to High-Level Synthesis through Skill-Based Agentic Harness",
+      "original_title": "HLSClaw: Bringing Vibe Coding to High-Level Synthesis through Skill-Based Agentic Harness",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-02T09:01:06Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "HLSClaw：用基于技能的智能体框架把氛围式编程带进高层次综合",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "原文时间早于最终目录窗口起点11月2日18:00（05:00初采窗口自17:00起）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      },
+      "reason": "outside_final_window"
+    },
     {
       "url": "https://claude.com/resources/articles/message-threads",
       "title": "Make long-running agents faster with message threads",
@@ -8661,20 +8748,6 @@
       "published_at": "2026-11-01T00:00:00.000Z"
     },
     {
-      "url": "https://arxiv.org/abs/2611.03126",
-      "title": "CUA-Master: Scaling Computer-use Agents through Open-World Recursive Improvements",
-      "reason": "outside_original_publish_window",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-11-02T13:41:14.000Z"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.03178",
-      "title": "CoworkOS:Scaling Agent Coworkers for Real-world Automation",
-      "reason": "outside_original_publish_window",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-11-02T14:15:11.000Z"
-    },
-    {
       "url": "https://arxiv.org/abs/2610.40191",
       "title": "Video Generation Meets Agent Harness: Agentic Video Generation, Agentic World Modeling and Recursive Self-Improvement",
       "reason": "outside_original_publish_window",
@@ -8752,32 +8825,11 @@
       "published_at": "2026-11-01T03:16:52.000Z"
     },
     {
-      "url": "https://arxiv.org/abs/2611.03424",
-      "title": "IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?",
-      "reason": "outside_original_publish_window",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-11-02T00:00:00.000Z"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.03344",
-      "title": "FLAMIA: FLAsh MIcroscaling Attention for Fast and Causally Safe Training on Blackwell",
-      "reason": "outside_original_publish_window",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-11-02T16:00:12.000Z"
-    },
-    {
       "url": "https://arxiv.org/abs/2610.39419",
       "title": "Diagnosing the Reference Gap: What Visual Scaffolds Can and Cannot Fix in Multimodal Reasoning",
       "reason": "outside_original_publish_window",
       "source_id": "hf-daily-papers",
       "published_at": "2026-10-29T06:00:35.000Z"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.03092",
-      "title": "Avatar Intelligence: Amplifying Human Agency Through Persistent Personal Agents",
-      "reason": "outside_original_publish_window",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-11-02T00:00:00.000Z"
     },
     {
       "url": "https://arxiv.org/abs/2610.42128",
@@ -8822,13 +8874,6 @@
       "published_at": "2026-10-27T00:00:00.000Z"
     },
     {
-      "url": "https://arxiv.org/abs/2611.03526",
-      "title": "Library of Layers (LoL): Adaptively Ordering Transformer Layers at Runtime",
-      "reason": "outside_original_publish_window",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-11-02T17:57:53.000Z"
-    },
-    {
       "url": "https://arxiv.org/abs/2610.40293",
       "title": "MAServeBench: Benchmarking Multi-Agent LLM Serving Systems with Hierarchical Collaboration Workloads",
       "reason": "outside_original_publish_window",
@@ -8864,13 +8909,6 @@
       "published_at": "2026-10-30T00:00:00.000Z"
     },
     {
-      "url": "https://arxiv.org/abs/2611.03097",
-      "title": "DR Pixel: Page-Native Deep Research with Vision-Language Models",
-      "reason": "outside_original_publish_window",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-11-02T00:00:00.000Z"
-    },
-    {
       "url": "https://arxiv.org/abs/2611.01460",
       "title": "Can Large Language Model Agents Learn by Watching Tutorial Videos?",
       "reason": "outside_original_publish_window",
@@ -8897,13 +8935,6 @@
       "reason": "outside_original_publish_window",
       "source_id": "hf-daily-papers",
       "published_at": "2026-10-29T00:00:00.000Z"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.03219",
-      "title": "Can Coding Agents Sustain Continual Evolution without Forgetting?",
-      "reason": "outside_original_publish_window",
-      "source_id": "hf-daily-papers",
-      "published_at": "2026-11-02T00:00:00.000Z"
     },
     {
       "url": "https://arxiv.org/abs/2611.02928",
@@ -9466,13 +9497,6 @@
       "published_at": "2026-11-02T16:29:19+00:00"
     },
     {
-      "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
-      "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-      "reason": "hn_lead_time_not_original",
-      "source_id": "hacker-news-ai",
-      "published_at": "2026-11-03T17:40:00+00:00"
-    },
-    {
       "url": "https://neufangled.com/",
       "title": "Stringman, an $800 open-source room scale gripper robot",
       "reason": "hn_lead_time_not_original",
@@ -9613,13 +9637,6 @@
       "published_at": "2026-11-02T15:23:02+00:00"
     },
     {
-      "url": "https://news.ycombinator.com/item?id=50352757",
-      "title": "OpenAI seems to be silently re-enabling model training on Codex chats",
-      "reason": "hn_lead_time_not_original",
-      "source_id": "hacker-news-ai",
-      "published_at": "2026-11-03T14:53:41+00:00"
-    },
-    {
       "url": "https://posthog.com/blog/comparison-content-guide",
       "title": "How to write comparison content that doesn't age like milk",
       "reason": "hn_lead_time_not_original",
@@ -9709,36 +9726,390 @@
       "reason": "prior_7_catalogs",
       "source_id": "aws-ml-blog",
       "published_at": "2026-11-02T17:00:58+00:00"
+    },
+    {
+      "url": "https://techcrunch.com/author/techcrunch-events/",
+      "title": "TechCrunch Events",
+      "original_title": "TechCrunch Events",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/sarah-perez/",
+      "title": "Sarah Perez",
+      "original_title": "Sarah Perez",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/russell-brandom/",
+      "title": "Russell Brandom",
+      "original_title": "Russell Brandom",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/marina-temkin/",
+      "title": "Marina Temkin",
+      "original_title": "Marina Temkin",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/julie-bort/",
+      "title": "Julie Bort",
+      "original_title": "Julie Bort",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/jagmeet-singh/",
+      "title": "Jagmeet Singh",
+      "original_title": "Jagmeet Singh",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/aisha-malik/",
+      "title": "Aisha Malik",
+      "original_title": "Aisha Malik",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-03",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/tim-fernholz/",
+      "title": "Tim Fernholz",
+      "original_title": "Tim Fernholz",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-02",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/rebecca-bellan/",
+      "title": "Rebecca Bellan",
+      "original_title": "Rebecca Bellan",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-02",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/ram-iyer/",
+      "title": "Ram Iyer",
+      "original_title": "Ram Iyer",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-02",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/lucas-ropek/",
+      "title": "Lucas Ropek",
+      "original_title": "Lucas Ropek",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-02",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/ivan-mehta/",
+      "title": "Ivan Mehta",
+      "original_title": "Ivan Mehta",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-02",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/author/amanda-silberling/",
+      "title": "Amanda Silberling",
+      "original_title": "Amanda Silberling",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-02",
+      "date_precision": "day",
+      "discovery": "local_0600",
+      "reason": "outside_final_window_or_time_unknown",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "不在最终窗口或无可判断时间",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode/",
+      "title": "Safari introduces Adaptive Dark Mode in 27.3",
+      "original_title": "Safari introduces Adaptive Dark Mode in 27.3",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-03T21:39:05+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_pending_trace",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00—06:00新增HN线索；HN提交时间不作原文发布时间，原文尚未追溯，记为待核线索（部分标题与AI无关）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2605.29713",
+      "title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+      "original_title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-03T21:40:53+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_pending_trace",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00—06:00新增HN线索；HN提交时间不作原文发布时间，原文尚未追溯，记为待核线索（部分标题与AI无关）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://wadetregaskis.com/macos-27-golden-gate-does-not-actually-support-corestorage-or-hfs-volumes/",
+      "title": "macOS 27 does not support CoreStorage volumes",
+      "original_title": "macOS 27 does not support CoreStorage volumes",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-03T19:27:53+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_pending_trace",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00—06:00新增HN线索；HN提交时间不作原文发布时间，原文尚未追溯，记为待核线索（部分标题与AI无关）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://github.com/finic-ai/kairos",
+      "title": "Show HN: Kairos – Open-source risk and fraud decisioning platform",
+      "original_title": "Show HN: Kairos – Open-source risk and fraud decisioning platform",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-03T21:16:48+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_pending_trace",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00—06:00新增HN线索；HN提交时间不作原文发布时间，原文尚未追溯，记为待核线索（部分标题与AI无关）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://www.bloomberg.com/opinion/articles/2026-11-03/ai-investment-boom-demands-stronger-financial-oversight",
+      "title": "The AI Boom May Be Sowing Seeds of Another Financial Crisis",
+      "original_title": "The AI Boom May Be Sowing Seeds of Another Financial Crisis",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-03T21:25:48+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_pending_trace",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00—06:00新增HN线索；HN提交时间不作原文发布时间，原文尚未追溯，记为待核线索（部分标题与AI无关）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://www.autodidacts.io/curiosity-traps/",
+      "title": "Curiosity Traps",
+      "original_title": "Curiosity Traps",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-02T15:40:04+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_pending_trace",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00—06:00新增HN线索；HN提交时间不作原文发布时间，原文尚未追溯，记为待核线索（部分标题与AI无关）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
+    },
+    {
+      "url": "https://ben.stolovitz.com/posts/how-use-ai-oct-2026/",
+      "title": "How I use AI (Oct 2026)",
+      "original_title": "How I use AI (Oct 2026)",
+      "source": "Hacker News",
+      "source_id": "hacker-news-ai",
+      "published_at": "2026-11-03T18:11:11+00:00",
+      "date_precision": "second",
+      "discovery": "local_0600",
+      "reason": "hn_lead_pending_trace",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00—06:00新增HN线索；HN提交时间不作原文发布时间，原文尚未追溯，记为待核线索（部分标题与AI无关）",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-03T22:15:09.994868+00:00"
+      }
     }
   ],
   "review_summary": {
-    "raw_receipt_candidates": 574,
-    "unique_canonical": 564,
-    "displayed": 376,
-    "displayed_news": 137,
-    "displayed_discourse": 0,
-    "displayed_papers": 237,
-    "displayed_code": 2,
-    "excluded": 198,
-    "excluded_reasons": {
+    "raw_receipt_candidates": 693,
+    "upstream_0500_items": 574,
+    "local_0600_items": 117,
+    "last_hour_feed_items": 2,
+    "unique": 586,
+    "reviewed": 579,
+    "pending": 10,
+    "displayed": 331,
+    "displayed_news": 127,
+    "displayed_papers": 202,
+    "excluded": 255,
+    "reasons": {
+      "same_event_prior_issue": 10,
+      "unverified_rumor": 1,
+      "outside_final_window": 36,
       "date_only_boundary_pending": 3,
       "prior_7_catalogs": 47,
-      "outside_original_publish_window": 82,
+      "outside_original_publish_window": 74,
       "trending_snapshot_not_release": 28,
       "same_article_relay": 1,
       "sponsored": 4,
       "not_ai_or_promo": 8,
-      "hn_lead_time_not_original": 25
+      "hn_lead_time_not_original": 23,
+      "outside_final_window_or_time_unknown": 13,
+      "hn_lead_pending_trace": 7
     },
-    "pending_time_precision": 3,
-    "body_used": 0,
-    "displayed_not_body": 376,
+    "body_used": 18,
+    "displayed_not_body": 313,
     "below_catalog_target": false,
     "target": 20,
-    "reviewed": 574
+    "last_hour_new_titles": [
+      "Safari introduces Adaptive Dark Mode in 27.3",
+      "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+      "Show HN: Kairos – Open-source risk and fraud decisioning platform",
+      "The AI Boom May Be Sowing Seeds of Another Financial Crisis",
+      "Ted Schlein’s Ballistic Ventures seeks $490M for new funds amid AI-driven cybersecurity boom",
+      "Hiding inside Palantir’s skyrocketing quarter is a foreboding signal"
+    ]
   },
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-04T05:00:00+08:00",
       "2026-11-04T06:00:00+08:00"
@@ -9798,6 +10169,36 @@
         "url": "https://digital-strategy.ec.europa.eu/en/news/digitaleu-web-summit-2026-supporting-businesses-and-startups-grow-and-innovate",
         "date_text": "03 November 2026"
       }
-    ]
+    ],
+    "checked_at": "2026-11-03T22:15:09.994868+00:00",
+    "result": "RSS/页面类最后一小时本机补采完成（脚本）并手动补查TechCrunch AI订阅源；浏览器类来源未补查"
+  },
+  "chinese_editor_config_commit": "8aef261a560d6c6ee9c43552fa871b650c2ce43a",
+  "editorial_updated_at": "2026-11-03T22:15:09.994868+00:00",
+  "upstream_review_summary": {
+    "raw_receipt_candidates": 574,
+    "unique_canonical": 564,
+    "displayed": 376,
+    "displayed_news": 137,
+    "displayed_discourse": 0,
+    "displayed_papers": 237,
+    "displayed_code": 2,
+    "excluded": 198,
+    "excluded_reasons": {
+      "date_only_boundary_pending": 3,
+      "prior_7_catalogs": 47,
+      "outside_original_publish_window": 82,
+      "trending_snapshot_not_release": 28,
+      "same_article_relay": 1,
+      "sponsored": 4,
+      "not_ai_or_promo": 8,
+      "hn_lead_time_not_original": 25
+    },
+    "pending_time_precision": 3,
+    "body_used": 0,
+    "displayed_not_body": 376,
+    "below_catalog_target": false,
+    "target": 20,
+    "reviewed": 574
   }
 }
