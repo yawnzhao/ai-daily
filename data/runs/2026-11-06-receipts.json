@@ -4922,8 +4922,8 @@
     "start_utc": "2026-11-04T10:00:00Z",
     "end_utc": "2026-11-05T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "checked_at": "2026-11-05T22:17:14.344899+00:00"
   },
   "source_catalog_path": "data/runs/2026-11-06-source-catalog.json",
   "discovery": {
@@ -4941,7 +4941,7 @@
   "collection_incomplete": true,
   "agents_md_section1_conflict": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-06T05:00:00+08:00",
       "2026-11-06T06:00:00+08:00"
@@ -4975,7 +4975,9 @@
         "published_at": "2026-11-05T21:01:55+00:00",
         "note": "RSS 时间晚于 until"
       }
-    ]
+    ],
+    "checked_at": "2026-11-05T22:17:14.344899+00:00",
+    "result": "06:04本机collect_sources.py --until 2026-11-05T22:00:00Z --hours 36，并逐一重取TechCrunch AI、The Verge AI、404 Media、WIRED AI、Simon Willison、OpenAI、HN首页、Google AI、量子位、Hugging Face、Cloudflare、Google Research、NVIDIA、Microsoft AI、AWS ML订阅源；05:00—06:00内原文时间的条目4条（WIRED、Microsoft、AWS、404 Media）已补入目录。浏览器类来源（xAI、Qwen、DeepSeek、MiniMax、字节Seed、OpenReview、MIT TR、36氪）与HN Algolia全站未重查最后一小时"
   },
   "observed_after_until": [
     {
@@ -4996,5 +4998,66 @@
       "published_at": "2026-11-05T21:01:55+00:00",
       "note": "RSS 时间晚于 until"
     }
-  ]
+  ],
+  "chinese_editor_supplement": {
+    "checked_at": "2026-11-05T22:17:14.344899+00:00",
+    "config_commit": "92d86ab1349e37787404e13dcbf53c620eff63a9",
+    "upstream_commit": "92d86ab1349e37787404e13dcbf53c620eff63a9",
+    "upstream_accepted": true,
+    "upstream_note": "05:00上游收据与目录（commit 92d86ab，21:34Z提交）按源复用：41 ok、9 partial；中文编辑未重做浏览器源，只补最后一小时并按最终窗口重筛",
+    "local_rerun": {
+      "command": "python3 scripts/collect_sources.py --until 2026-11-05T22:00:00Z --hours 36",
+      "started_at": "2026-11-05T22:04:46Z",
+      "summary_line": "计划50源：ok 38 / partial 1 / failed 3（deepmind解析错误、ars-technica 403、hacker-news SSL中断）/ 待浏览器8；本机重跑仅用于最后一小时补查，不替代上游逐源状态"
+    },
+    "unopened": [
+      {
+        "url": "https://openai.com/index/introducing-gpt-6-cyber",
+        "reason": "HTTP 403，未绕过；正文依据The Verge与TechCrunch"
+      },
+      {
+        "url": "https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/",
+        "reason": "HTTP 403"
+      },
+      {
+        "url": "https://www.36kr.com/p/4056162615350407",
+        "reason": "读取超时；Cat Wu加入OpenAI的报道未核读，未采用"
+      },
+      {
+        "url": "https://techcrunch.com/2026/11/05/dropbox-acquires-tigris-data-for-350m-to-bolster-its-ai-infrastructure/",
+        "reason": "HTTP 404（链接可能变更），未采用"
+      }
+    ],
+    "mojibake_fix": "上游目录中30条36氪标题为UTF-8被按Latin-1解码的乱码，终审按latin1→utf8还原；原始收据未改",
+    "catalog_review": {
+      "raw_receipt_candidates": 447,
+      "upstream_raw": 443,
+      "last_hour_added": 4,
+      "unique": 449,
+      "reviewed": 414,
+      "pending": 35,
+      "displayed": 324,
+      "displayed_news": 147,
+      "displayed_discourse": 2,
+      "displayed_papers": 169,
+      "displayed_code": 6,
+      "excluded": 125,
+      "reasons": {
+        "date_only_boundary_pending": 6,
+        "prior_7_catalogs": 35,
+        "not_ai_or_promo": 8,
+        "missing_title_or_url": 1,
+        "trending_snapshot_not_release": 27,
+        "hn_lead_time_not_original": 29,
+        "same_article_relay": 2,
+        "outside_final_window": 17
+      },
+      "moved_out_by_final_window": 17,
+      "mojibake_titles_fixed": 30,
+      "body_used": 21,
+      "displayed_not_body": 303,
+      "below_catalog_target": false,
+      "target": 20
+    }
+  }
 }

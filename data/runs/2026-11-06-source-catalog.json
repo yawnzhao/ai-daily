@@ -5,40 +5,34 @@
     "title",
     "source"
   ],
-  "count": 337,
-  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-11-04 17:00, 2026-11-06 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度不计入严格展示。规则见 config/source-catalog-policy.txt。",
+  "count": 324,
+  "scope": "36小时资讯目录（中文编辑终审，复用05:00上游初采并补最后一小时）：窗口[2026-11-04 18:00, 2026-11-06 06:00) Asia/Shanghai，左闭右开。HN讨论时间不作原文时间；日精度条目不计入严格目录。规则见 config/source-catalog-policy.txt。",
   "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-10-30 through 2026-11-05",
   "duplicates_dropped": 35,
-  "config_commit": "e2b842e43de1ee36e73ade9b7d0362eccae73262",
+  "config_commit": "92d86ab1349e37787404e13dcbf53c620eff63a9",
   "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
   "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
-  "collection_stage": "collection_only",
+  "collection_stage": "chinese_editor_final_0600",
   "below_catalog_target": false,
   "gaps": [
-    "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
-    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-11-04 18:00, 2026-11-06 06:00)交给中文编辑",
-    "xAI 浏览器被 Cloudflare 拦截；静态列表按日期排到 2023 年，最新内容日期是日精度 Nov 2 的 Grok Bot 数据科学家文章，早于窗口起点，仍按来源说明保持 partial",
-    "Claude Blog、Mistral Le Chonk、MIT Technology Review 11 月 4 日条目只有日期，不计入严格目录",
-    "arXiv API published 最新 2026-11-04T18:58:23Z；11月5日 submittedDate 查询 totalResults 为 0。至 until 的未公告切片为 partial。www 新列表日期为 Thursday, 5 November 2026",
-    "OpenReview 只扫了首页，Active Venues 没有投稿创建时间",
-    "StepFun 渲染后仍无发布日期",
-    "通义落地页是双11活动，没有研究/新闻时间索引",
-    "MiniMax 新闻列表早于窗口，但导航 NEW 产品没有发布日期",
-    "字节 Seed 可见博客卡片最新 Oct 25, 2026，不把置顶列表当成全站流",
-    "HN Algolia 窗口内 nbHits=1875，只取了首页 RSS，讨论时间不进严格目录",
-    "话语场打开了 q.cxspace.com 首页。可见日期最新到 2026-11-03，早于本窗口，未把历史节目算进严格目录",
-    "WIRED 订阅只有 10 条且最旧仍在窗口内，标签页不能证明已越过窗口起点",
-    "36氪翻页越过窗口起点，但未逐篇打开正文，署名只用来区分转载，不升为已核 original",
-    "量子位 https://www.qbitai.com/2026/11/507757.html 打开后没有文章标题"
+    "05:00上游收据与目录（92d86ab）按源复用：计划50源，41 ok、9 partial、0 failed；核心源未达完整：xai、arxiv",
+    "xAI浏览器被Cloudflare拦截；arXiv API公告切片止于11月4日18:58 UTC，11月5日提交未见；OpenReview只扫首页；StepFun、通义、MiniMax、字节Seed页面无可判定时间；HN只取首页RSS（Algolia全站1875条未逐条追溯）",
+    "最后一小时（05:00—06:00）只重查订阅源与脚本源，补入4条；浏览器类来源未重查最后一小时",
+    "上游目录30条36氪标题为乱码，终审已还原；17条原文时间早于最终窗口起点（11月4日18:00）的条目已移出",
+    "OpenAI官网GPT-6 Cyber页面HTTP 403未打开，正文依据The Verge与TechCrunch；Anthropic Personal Finance官方公告未打开",
+    "METR报告中Anthropic删改了METR认为最关键的大部分证据；正文仅转述METR公开结论，未独立核实",
+    "论文栏Glasswing（arXiv:2611.06629，econ.GN）提交于11月4日15:12 UTC，早于正文24小时主窗口，按48小时补漏；只读摘要",
+    "话语场两段为历史节目：Kokotajlo页为依据发布方字幕的自动提炼摘录，Brockman页未抽取原话",
+    "Cat Wu加入OpenAI（36氪）读取超时、Dropbox收购Tigris（TechCrunch）链接404，均未采用，保留在目录"
   ],
   "curation_policy": "36h-min20-v1",
-  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。本次只审05:00初采窗口。",
+  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。中文编辑终审按最终36小时窗口重筛。",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-11-04T17:00:00+08:00",
-    "end_shanghai": "2026-11-06T05:00:00+08:00",
-    "start_utc": "2026-11-04T09:00:00Z",
-    "end_utc": "2026-11-05T21:00:00Z",
+    "start_shanghai": "2026-11-04T18:00:00+08:00",
+    "end_shanghai": "2026-11-06T06:00:00+08:00",
+    "start_utc": "2026-11-04T10:00:00Z",
+    "end_utc": "2026-11-05T22:00:00Z",
     "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
@@ -47,8 +41,8 @@
     "start_utc": "2026-11-04T10:00:00Z",
     "end_utc": "2026-11-05T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "checked_at": "2026-11-05T22:17:14.344899+00:00"
   },
   "items": [
     {
@@ -83,16 +77,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Meta称美国用户现在可以与Muse人工智能化身视频聊天",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；Meta官方博客未单独打开",
+      "title_zh": "Meta向全美用户开放Muse Voice：可与AI智能体的卡通形象视频通话",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -127,16 +121,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "人工智能安全组织METR对Anthropic的一份风险评估已经发布。",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "METR报告原文的说明、执行摘要与风险结论部分，以及The Verge原文；完整报告附录与被删改证据未读，未独立核实",
+      "title_zh": "METR独立评估：Anthropic模型能力的进步速度约为此前两倍，主要来自用AI做研发",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -149,16 +143,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Meta警告，选举对数据中心的反弹可能使人工智能扩张更难",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；会议原始视频未看",
+      "title_zh": "Meta总裁：中期选举后建数据中心会更难，行业没把好处讲清楚",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -171,16 +165,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "OpenAI发布了新的网络安全模型。这够吗？",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文补充原始资料，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -237,16 +231,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "OpenAI总裁Greg Brockman说公司可能在2027年具备上市条件",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；会议原始视频未看；收入数字为高管口径",
+      "title_zh": "布罗克曼：OpenAI有望在2027年做好上市准备，企业业务已占收入多数",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -259,16 +253,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Claude现在可以用新的个人理财工具分析你的开支",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch与The Verge原文；Anthropic官方公告页未打开（直接地址404），引语依据两家报道转述",
+      "title_zh": "Claude推出“Personal Finance”：经Plaid只读连接银行和信用卡账户，美国付费用户先行测试",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -281,16 +275,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "title_zh": "Claude人工智能可以直接连上你的银行账户",
       "title_translation_scope": "title_only",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文补充原始资料，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -369,16 +363,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Gemini Omni 1.2 Flash：更快、更省，并能处理更长片段",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "谷歌官方博客原文",
+      "title_zh": "谷歌发布Gemini Omni 1.2 Flash：视频延长到15秒，价格降低30%",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -391,16 +385,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "OpenAI说它的新网络安全模型更擅长不去入侵其他公司",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge与TechCrunch原文；OpenAI官网页面HTTP 403未打开，仅读订阅源标题；成绩数字为OpenAI自报，未复现；Linux内核数字依据TechCrunch转述",
+      "title_zh": "OpenAI推出GPT-6 Cyber，按其框架定为“Critical”级网络安全能力，先向Daybreak Red部分成员开放",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -457,16 +451,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Axiom Math想把人工智能劣质内容挡在数学之外",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；Axiom公告与形式化代码未读",
+      "title_zh": "Axiom Math称已用AI智能体完成Stacks Project的形式化验证",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -567,16 +561,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "你可以从ElevenLabs把人工智能音乐直接发到SoundCloud",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge原文",
+      "title_zh": "SoundCloud接入ElevenLabs：AI生成的歌曲可一键发布，并标注AI来源",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -699,16 +693,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Box采用Nvidia的Nemotron，做以智能体为先的内容检索系统",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；性能数字为厂商预期",
+      "title_zh": "Box把英伟达Nemotron嵌入模型做进检索：面向智能体的Box Content Retrieval",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -735,8 +729,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056805855138688",
-      "title": "AIæ¯ç»ç¿»è½¦æ¨æ¡é¢åï¼è¿å±æ¶è´¹èå¼å§æµå¶âAIè®¾è®¡æ½®ç©âï¼",
-      "original_title": "AIæ¯ç»ç¿»è½¦æ¨æ¡é¢åï¼è¿å±æ¶è´¹èå¼å§æµå¶âAIè®¾è®¡æ½®ç©âï¼",
+      "title": "AI毛绒翻车惨案频发，这届消费者开始抵制“AI设计潮玩”？",
+      "original_title": "AI毛绒翻车惨案频发，这届消费者开始抵制“AI设计潮玩”？",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T13:24:54.114000+00:00",
@@ -746,7 +740,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "AIæ¯ç»ç¿»è½¦æ¨æ¡é¢åï¼è¿å±æ¶è´¹èå¼å§æµå¶âAIè®¾è®¡æ½®ç©âï¼",
+      "title_zh": "AI毛绒翻车惨案频发，这届消费者开始抵制“AI设计潮玩”？",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -757,8 +751,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056805875012737",
-      "title": "ShopifyCEOææ°å¤æ­ï¼AIæ­£å¨åç§»è´­ç©å³ç­ï¼ä¼ ç»å¹¿åæ¨¡å¼å¯è½ç©ä¸è½¬äº",
-      "original_title": "ShopifyCEOææ°å¤æ­ï¼AIæ­£å¨åç§»è´­ç©å³ç­ï¼ä¼ ç»å¹¿åæ¨¡å¼å¯è½ç©ä¸è½¬äº",
+      "title": "ShopifyCEO最新判断：AI正在前移购物决策，传统广告模式可能玩不转了",
+      "original_title": "ShopifyCEO最新判断：AI正在前移购物决策，传统广告模式可能玩不转了",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T13:20:48.574000+00:00",
@@ -768,7 +762,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "ShopifyCEOææ°å¤æ­ï¼AIæ­£å¨åç§»è´­ç©å³ç­ï¼ä¼ ç»å¹¿åæ¨¡å¼å¯è½ç©ä¸è½¬äº",
+      "title_zh": "ShopifyCEO最新判断：AI正在前移购物决策，传统广告模式可能玩不转了",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -779,8 +773,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056805917873029",
-      "title": "Gemini æ­£å¨æä¸ºç¾å½å¸çãä¸å¾ä¸ç¨ãç AI",
-      "original_title": "Gemini æ­£å¨æä¸ºç¾å½å¸çãä¸å¾ä¸ç¨ãç AI",
+      "title": "Gemini 正在成为美国师生「不得不用」的 AI",
+      "original_title": "Gemini 正在成为美国师生「不得不用」的 AI",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T13:16:59.877000+00:00",
@@ -790,7 +784,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "Gemini æ­£å¨æä¸ºç¾å½å¸çãä¸å¾ä¸ç¨ãç AI",
+      "title_zh": "Gemini 正在成为美国师生「不得不用」的 AI",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -809,16 +803,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "一家YC初创公司拿出100万美元，支持5个面向人工智能的未解材料科学问题",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；悬赏官方页面未单独打开",
+      "title_zh": "YC初创公司悬赏100万美元，征集AI解决五个材料科学难题",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -845,8 +839,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056617558332290",
-      "title": "æ½å´å¹¿åºé¿åæ¼è®¿è°ï¼AIè®©å¸åºçå¾è¶æ¥è¶ç­ï¼ä¸ºä½çå¥½å¾®è½¯ãMetaãäºé©¬é",
-      "original_title": "æ½å´å¹¿åºé¿åæ¼è®¿è°ï¼AIè®©å¸åºçå¾è¶æ¥è¶ç­ï¼ä¸ºä½çå¥½å¾®è½¯ãMetaãäºé©¬é",
+      "title": "潘兴广场阿克曼访谈：AI让市场看得越来越短，为何看好微软、Meta、亚马逊",
+      "original_title": "潘兴广场阿克曼访谈：AI让市场看得越来越短，为何看好微软、Meta、亚马逊",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T12:57:27.595000+00:00",
@@ -856,7 +850,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "æ½å´å¹¿åºé¿åæ¼è®¿è°ï¼AIè®©å¸åºçå¾è¶æ¥è¶ç­ï¼ä¸ºä½çå¥½å¾®è½¯ãMetaãäºé©¬é",
+      "title_zh": "潘兴广场阿克曼访谈：AI让市场看得越来越短，为何看好微软、Meta、亚马逊",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -867,8 +861,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056769986811014",
-      "title": "ä¸è¾¹PPTèç¾äº¿ï¼ä¸è¾¹è´¦ä¸åªå©ä¸¤ç¾ä¸ï¼2026å¹´åæåææ®é·çå¯¹ç§å®éª",
-      "original_title": "ä¸è¾¹PPTèç¾äº¿ï¼ä¸è¾¹è´¦ä¸åªå©ä¸¤ç¾ä¸ï¼2026å¹´åæåææ®é·çå¯¹ç§å®éª",
+      "title": "一边PPT融百亿，一边账上只剩两百万：2026年创投圈最残酷的对照实验",
+      "original_title": "一边PPT融百亿，一边账上只剩两百万：2026年创投圈最残酷的对照实验",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T12:45:14.999000+00:00",
@@ -878,7 +872,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "ä¸è¾¹PPTèç¾äº¿ï¼ä¸è¾¹è´¦ä¸åªå©ä¸¤ç¾ä¸ï¼2026å¹´åæåææ®é·çå¯¹ç§å®éª",
+      "title_zh": "一边PPT融百亿，一边账上只剩两百万：2026年创投圈最残酷的对照实验",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -889,8 +883,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056770966459268",
-      "title": "6ç§åºå¾ãä¸å¥è¯çæGIFï¼OpenAIè¦åç¾å¾ç§ç§ä»¬æ¢çæäº",
-      "original_title": "6ç§åºå¾ãä¸å¥è¯çæGIFï¼OpenAIè¦åç¾å¾ç§ç§ä»¬æ¢çæäº",
+      "title": "6秒出图、一句话生成GIF，OpenAI要和美图秀秀们抢生意了",
+      "original_title": "6秒出图、一句话生成GIF，OpenAI要和美图秀秀们抢生意了",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T12:43:06.324000+00:00",
@@ -900,7 +894,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "6ç§åºå¾ãä¸å¥è¯çæGIFï¼OpenAIè¦åç¾å¾ç§ç§ä»¬æ¢çæäº",
+      "title_zh": "6秒出图、一句话生成GIF，OpenAI要和美图秀秀们抢生意了",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -911,8 +905,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056787186881670",
-      "title": "OpenAIæ¶è´­ç¥ç§å¢éï¼å¥¥ç¹æ¼è¦å¨Codexéåé ä¸ä¸ªGitHub",
-      "original_title": "OpenAIæ¶è´­ç¥ç§å¢éï¼å¥¥ç¹æ¼è¦å¨Codexéåé ä¸ä¸ªGitHub",
+      "title": "OpenAI收购神秘团队，奥特曼要在Codex里再造一个GitHub",
+      "original_title": "OpenAI收购神秘团队，奥特曼要在Codex里再造一个GitHub",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T12:30:16.571000+00:00",
@@ -922,7 +916,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "OpenAIæ¶è´­ç¥ç§å¢éï¼å¥¥ç¹æ¼è¦å¨Codexéåé ä¸ä¸ªGitHub",
+      "title_zh": "OpenAI收购神秘团队，奥特曼要在Codex里再造一个GitHub",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -963,16 +957,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Agility是股票市场上第一家纯人形机器人公司。你会买吗？",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；SPAC申报文件未读；Ars Technica同题报道HTTP 403未打开",
+      "title_zh": "人形机器人公司Agility通过SPAC上市：上半年收入17.4万美元、亏损3.62亿美元，押注Digit 5",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -999,8 +993,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056615759680648",
-      "title": "ç­æéæ¸©ä¸æ¹é¿æè¶å¿ï¼å·èº«æºè½æèµæ´çéèµéåæ¯ä¸ä¼ä¸æé¿æ½å",
-      "original_title": "ç­æéæ¸©ä¸æ¹é¿æè¶å¿ï¼å·èº«æºè½æèµæ´çéèµéåæ¯ä¸ä¼ä¸æé¿æ½å",
+      "title": "短期降温不改长期趋势，具身智能投资更看重赛道前景与企业成长潜力",
+      "original_title": "短期降温不改长期趋势，具身智能投资更看重赛道前景与企业成长潜力",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T11:57:55.570000+00:00",
@@ -1010,7 +1004,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "ç­æéæ¸©ä¸æ¹é¿æè¶å¿ï¼å·èº«æºè½æèµæ´çéèµéåæ¯ä¸ä¼ä¸æé¿æ½å",
+      "title_zh": "短期降温不改长期趋势，具身智能投资更看重赛道前景与企业成长潜力",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1043,8 +1037,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056607874536578",
-      "title": "è°·æ­å¯å¨å¨çèªæ¿ç¦»èè®¡åï¼æé«è¡¥å¿12ä¸ªæå·¥èµï¼åè¨æ¯æ¯ï¼æªæ¥ä¸ä¸ªäººæè½å¹²åä¸ªäººçæ´»",
-      "original_title": "è°·æ­å¯å¨å¨çèªæ¿ç¦»èè®¡åï¼æé«è¡¥å¿12ä¸ªæå·¥èµï¼åè¨æ¯æ¯ï¼æªæ¥ä¸ä¸ªäººæè½å¹²åä¸ªäººçæ´»",
+      "title": "谷歌启动全球自愿离职计划，最高补偿12个月工资，哈萨比斯：未来一个人或能干十个人的活",
+      "original_title": "谷歌启动全球自愿离职计划，最高补偿12个月工资，哈萨比斯：未来一个人或能干十个人的活",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T11:41:12.691000+00:00",
@@ -1054,7 +1048,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "è°·æ­å¯å¨å¨çèªæ¿ç¦»èè®¡åï¼æé«è¡¥å¿12ä¸ªæå·¥èµï¼åè¨æ¯æ¯ï¼æªæ¥ä¸ä¸ªäººæè½å¹²åä¸ªäººçæ´»",
+      "title_zh": "谷歌启动全球自愿离职计划，最高补偿12个月工资，哈萨比斯：未来一个人或能干十个人的活",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1065,8 +1059,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056696667329667",
-      "title": "æåäºHintonç½²åçé£ç¯ RSIè®ºæï¼æªæ¥å å¹´ AI ç åå¯è½æéååï½SÃ¶ren Mindermann",
-      "original_title": "æåäºHintonç½²åçé£ç¯ RSIè®ºæï¼æªæ¥å å¹´ AI ç åå¯è½æéååï½SÃ¶ren Mindermann",
+      "title": "我写了Hinton署名的那篇 RSI论文，未来几年 AI 研发可能提速十倍｜Sören Mindermann",
+      "original_title": "我写了Hinton署名的那篇 RSI论文，未来几年 AI 研发可能提速十倍｜Sören Mindermann",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T11:19:28.404000+00:00",
@@ -1076,7 +1070,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "æåäºHintonç½²åçé£ç¯ RSIè®ºæï¼æªæ¥å å¹´ AI ç åå¯è½æéååï½SÃ¶ren Mindermann",
+      "title_zh": "我写了Hinton署名的那篇 RSI论文，未来几年 AI 研发可能提速十倍｜Sören Mindermann",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1087,8 +1081,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056583549392772",
-      "title": "AIå½±ååè½è¦æ¶è´¹äºï¼ææºååäºç«¯Tokenææ¬æåï¼å¼ºåç«¯ä¾§ç®åæ¯æ­£é",
-      "original_title": "AIå½±ååè½è¦æ¶è´¹äºï¼ææºååäºç«¯Tokenææ¬æåï¼å¼ºåç«¯ä¾§ç®åæ¯æ­£é",
+      "title": "AI影像功能要收费了？手机厂商云端Token成本攀升，强化端侧算力是正道",
+      "original_title": "AI影像功能要收费了？手机厂商云端Token成本攀升，强化端侧算力是正道",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T11:04:53.211000+00:00",
@@ -1098,7 +1092,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "AIå½±ååè½è¦æ¶è´¹äºï¼ææºååäºç«¯Tokenææ¬æåï¼å¼ºåç«¯ä¾§ç®åæ¯æ­£é",
+      "title_zh": "AI影像功能要收费了？手机厂商云端Token成本攀升，强化端侧算力是正道",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1131,8 +1125,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056674549830784",
-      "title": "çå´å´ä¸ç¨æåï¼å·èº«åéççæ­»åå²",
-      "original_title": "çå´å´ä¸ç¨æåï¼å·èº«åéççæ­»åå²",
+      "title": "王兴兴与稚晖君，具身双雄的生死分岔",
+      "original_title": "王兴兴与稚晖君，具身双雄的生死分岔",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T10:33:58.068000+00:00",
@@ -1142,7 +1136,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "çå´å´ä¸ç¨æåï¼å·èº«åéççæ­»åå²",
+      "title_zh": "王兴兴与稚晖君，具身双雄的生死分岔",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1153,8 +1147,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056508925432710",
-      "title": "Personal Agentçç«äºï¼å¼å§äºç¨æ·æ³æ¸æ¥ä¹å",
-      "original_title": "Personal Agentçç«äºï¼å¼å§äºç¨æ·æ³æ¸æ¥ä¹å",
+      "title": "Personal Agent的竞争，开始于用户想清楚之前",
+      "original_title": "Personal Agent的竞争，开始于用户想清楚之前",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T10:10:00.882000+00:00",
@@ -1164,7 +1158,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "Personal Agentçç«äºï¼å¼å§äºç¨æ·æ³æ¸æ¥ä¹å",
+      "title_zh": "Personal Agent的竞争，开始于用户想清楚之前",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1175,8 +1169,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056400168833929",
-      "title": "è£åçé±æAIï¼ç¾è¡å·¨å¤´å¶å®å¨ç®å¦ä¸æ¬è´¦",
-      "original_title": "è£åçé±æAIï¼ç¾è¡å·¨å¤´å¶å®å¨ç®å¦ä¸æ¬è´¦",
+      "title": "裁员省钱投AI，美股巨头其实在算另一本账",
+      "original_title": "裁员省钱投AI，美股巨头其实在算另一本账",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T09:36:05.248000+00:00",
@@ -1186,7 +1180,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "è£åçé±æAIï¼ç¾è¡å·¨å¤´å¶å®å¨ç®å¦ä¸æ¬è´¦",
+      "title_zh": "裁员省钱投AI，美股巨头其实在算另一本账",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1197,8 +1191,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056481264866438",
-      "title": "MITç¥ä½è¢«é¤çï¼Astraçæ¹Qwenæéï¼å°±å¹å§",
-      "original_title": "MITç¥ä½è¢«é¤çï¼Astraçæ¹Qwenæéï¼å°±å¹å§",
+      "title": "MIT神作被锤爆：Astra爆改Qwen权重？就吹吧",
+      "original_title": "MIT神作被锤爆：Astra爆改Qwen权重？就吹吧",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T09:32:29.249000+00:00",
@@ -1208,7 +1202,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "MITç¥ä½è¢«é¤çï¼Astraçæ¹Qwenæéï¼å°±å¹å§",
+      "title_zh": "MIT神作被锤爆：Astra爆改Qwen权重？就吹吧",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1219,8 +1213,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056585838515072",
-      "title": "Claudeè¾å©è§£æåæ ¸çç©Vaultç»æï¼AIè¿ä¸æ­¥èå¥çç©å­¦å®éªæµç¨",
-      "original_title": "Claudeè¾å©è§£æåæ ¸çç©Vaultç»æï¼AIè¿ä¸æ­¥èå¥çç©å­¦å®éªæµç¨",
+      "title": "Claude辅助解析原核生物Vault结构：AI进一步融入生物学实验流程",
+      "original_title": "Claude辅助解析原核生物Vault结构：AI进一步融入生物学实验流程",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T09:30:49.505000+00:00",
@@ -1230,7 +1224,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "Claudeè¾å©è§£æåæ ¸çç©Vaultç»æï¼AIè¿ä¸æ­¥èå¥çç©å­¦å®éªæµç¨",
+      "title_zh": "Claude辅助解析原核生物Vault结构：AI进一步融入生物学实验流程",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1241,8 +1235,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056534105183105",
-      "title": "æ¿ä¸æ°äº¿åæ­å·å½èµæèµï¼ æå¼å¤è¦æAIéè¿ä¼ä¸å³ç­å±",
-      "original_title": "æ¿ä¸æ°äº¿åæ­å·å½èµæèµï¼ æå¼å¤è¦æAIéè¿ä¼ä¸å³ç­å±",
+      "title": "拿下数亿元杭州国资投资， 李开复要把AI送进企业决策层",
+      "original_title": "拿下数亿元杭州国资投资， 李开复要把AI送进企业决策层",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T09:30:34.832000+00:00",
@@ -1252,7 +1246,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "æ¿ä¸æ°äº¿åæ­å·å½èµæèµï¼ æå¼å¤è¦æAIéè¿ä¼ä¸å³ç­å±",
+      "title_zh": "拿下数亿元杭州国资投资， 李开复要把AI送进企业决策层",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1263,8 +1257,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056597733021312",
-      "title": "æ°è§å¼çäºè®®ï¼å­¦æ ¡è¦æ³å³æAIåè½ï¼è°·æ­æç´¢å°åæ­¥ä¸çº¿",
-      "original_title": "æ°è§å¼çäºè®®ï¼å­¦æ ¡è¦æ³å³æAIåè½ï¼è°·æ­æç´¢å°åæ­¥ä¸çº¿",
+      "title": "新规引爆争议，学校要想关掉AI功能，谷歌搜索将同步下线",
+      "original_title": "新规引爆争议，学校要想关掉AI功能，谷歌搜索将同步下线",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T09:29:33.905000+00:00",
@@ -1274,7 +1268,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "æ°è§å¼çäºè®®ï¼å­¦æ ¡è¦æ³å³æAIåè½ï¼è°·æ­æç´¢å°åæ­¥ä¸çº¿",
+      "title_zh": "新规引爆争议，学校要想关掉AI功能，谷歌搜索将同步下线",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1285,8 +1279,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056550141433474",
-      "title": "AIå®å¨èåçå²å­¦ææ³ï¼ææå©ä»ä¸»ä¹å¦ä½å½±åç¡è°·ï¼",
-      "original_title": "AIå®å¨èåçå²å­¦ææ³ï¼ææå©ä»ä¸»ä¹å¦ä½å½±åç¡è°·ï¼",
+      "title": "AI安全背后的哲学思想，有效利他主义如何影响硅谷？",
+      "original_title": "AI安全背后的哲学思想，有效利他主义如何影响硅谷？",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T09:11:55.339000+00:00",
@@ -1296,7 +1290,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "AIå®å¨èåçå²å­¦ææ³ï¼ææå©ä»ä¸»ä¹å¦ä½å½±åç¡è°·ï¼",
+      "title_zh": "AI安全背后的哲学思想，有效利他主义如何影响硅谷？",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1324,13 +1318,15 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00",
+        "note": "与正文同一事件的相关报道/官方订阅源条目；含独立信息，单独保留展示，未作为正文主证据"
+      },
+      "related_body_item": "openai-gpt-6-cyber"
     },
     {
       "url": "https://www.36kr.com/p/4056520335316105",
-      "title": "ä»å¹´æå¾æå¤çAIå¤§åï¼ä¸æ¯è¾è®¯ï¼å±ç¶æ¯è±ä¼è¾¾",
-      "original_title": "ä»å¹´æå¾æå¤çAIå¤§åï¼ä¸æ¯è¾è®¯ï¼å±ç¶æ¯è±ä¼è¾¾",
+      "title": "今年投得最多的AI大厂，不是腾讯，居然是英伟达",
+      "original_title": "今年投得最多的AI大厂，不是腾讯，居然是英伟达",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T08:54:48.868000+00:00",
@@ -1340,7 +1336,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "ä»å¹´æå¾æå¤çAIå¤§åï¼ä¸æ¯è¾è®¯ï¼å±ç¶æ¯è±ä¼è¾¾",
+      "title_zh": "今年投得最多的AI大厂，不是腾讯，居然是英伟达",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1351,8 +1347,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056440899277699",
-      "title": "å±±å§å®å®é¥¼å¹²åå¡æãè¯å¾·åºç¸é¸¡åå°¸åï¼è¶æ¥è¶å¤çãAIé£ç©å¹¿åå¾ãçå¾äººç´åè",
-      "original_title": "å±±å§å®å®é¥¼å¹²åå¡æãè¯å¾·åºç¸é¸¡åå°¸åï¼è¶æ¥è¶å¤çãAIé£ç©å¹¿åå¾ãçå¾äººç´åè",
+      "title": "山姆宝宝饼干像塑料、肯德基炸鸡像尸块，越来越多的「AI食物广告图」看得人直反胃",
+      "original_title": "山姆宝宝饼干像塑料、肯德基炸鸡像尸块，越来越多的「AI食物广告图」看得人直反胃",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T08:40:00.266000+00:00",
@@ -1362,7 +1358,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "å±±å§å®å®é¥¼å¹²åå¡æãè¯å¾·åºç¸é¸¡åå°¸åï¼è¶æ¥è¶å¤çãAIé£ç©å¹¿åå¾ãçå¾äººç´åè",
+      "title_zh": "山姆宝宝饼干像塑料、肯德基炸鸡像尸块，越来越多的「AI食物广告图」看得人直反胃",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1373,8 +1369,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056440684434313",
-      "title": "Harness å·²ç»å¾åäºï¼ä¸ºä»ä¹è¿éè¦ä¸ä¸ª Agent Native Database",
-      "original_title": "Harness å·²ç»å¾åäºï¼ä¸ºä»ä¹è¿éè¦ä¸ä¸ª Agent Native Database",
+      "title": "Harness 已经很准了，为什么还需要一个 Agent Native Database",
+      "original_title": "Harness 已经很准了，为什么还需要一个 Agent Native Database",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T08:34:31.392000+00:00",
@@ -1384,7 +1380,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "Harness å·²ç»å¾åäºï¼ä¸ºä»ä¹è¿éè¦ä¸ä¸ª Agent Native Database",
+      "title_zh": "Harness 已经很准了，为什么还需要一个 Agent Native Database",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1395,8 +1391,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056341584925576",
-      "title": "AIç­å§æ²¡ææ¸å®«æï¼AIï¼è£å¦¾åä¸å°å",
-      "original_title": "AIç­å§æ²¡ææ¸å®«æï¼AIï¼è£å¦¾åä¸å°å",
+      "title": "AI短剧没有清宫戏？AI：臣妾做不到啊",
+      "original_title": "AI短剧没有清宫戏？AI：臣妾做不到啊",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T08:24:03.936000+00:00",
@@ -1406,7 +1402,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "AIç­å§æ²¡ææ¸å®«æï¼AIï¼è£å¦¾åä¸å°å",
+      "title_zh": "AI短剧没有清宫戏？AI：臣妾做不到啊",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1417,8 +1413,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056494372181124",
-      "title": "å·å±çãAstra æ¹é Qwen å¤§èãè·æä»¬æ³è¦çRSIæ²¡å¤å¤§å³ç³»",
-      "original_title": "å·å±çãAstra æ¹é Qwen å¤§èãè·æä»¬æ³è¦çRSIæ²¡å¤å¤§å³ç³»",
+      "title": "刷屏的「Astra 改造Qwen 大脑」跟我们想要的RSI没多大关系",
+      "original_title": "刷屏的「Astra 改造Qwen 大脑」跟我们想要的RSI没多大关系",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T08:04:08.662000+00:00",
@@ -1428,7 +1424,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "å·å±çãAstra æ¹é Qwen å¤§èãè·æä»¬æ³è¦çRSIæ²¡å¤å¤§å³ç³»",
+      "title_zh": "刷屏的「Astra 改造Qwen 大脑」跟我们想要的RSI没多大关系",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1439,8 +1435,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056380039435140",
-      "title": "Cat Wuå¥èOpenAIï¼Anthropicä¸å¸åçªç°æ ¸å¿ç¦»èæ½®",
-      "original_title": "Cat Wuå¥èOpenAIï¼Anthropicä¸å¸åçªç°æ ¸å¿ç¦»èæ½®",
+      "title": "Cat Wu入职OpenAI，Anthropic上市前突现核心离职潮",
+      "original_title": "Cat Wu入职OpenAI，Anthropic上市前突现核心离职潮",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T07:52:47.997000+00:00",
@@ -1450,7 +1446,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "Cat Wuå¥èOpenAIï¼Anthropicä¸å¸åçªç°æ ¸å¿ç¦»èæ½®",
+      "title_zh": "Cat Wu入职OpenAI，Anthropic上市前突现核心离职潮",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1461,8 +1457,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056394748597127",
-      "title": "è¿å°ä¸¤å¹´çè¹æAIï¼è®©ç¨æ·é«å´ä¸èµ·æ¥",
-      "original_title": "è¿å°ä¸¤å¹´çè¹æAIï¼è®©ç¨æ·é«å´ä¸èµ·æ¥",
+      "title": "迟到两年的苹果AI，让用户高兴不起来",
+      "original_title": "迟到两年的苹果AI，让用户高兴不起来",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T07:45:25.331000+00:00",
@@ -1472,7 +1468,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "è¿å°ä¸¤å¹´çè¹æAIï¼è®©ç¨æ·é«å´ä¸èµ·æ¥",
+      "title_zh": "迟到两年的苹果AI，让用户高兴不起来",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1483,8 +1479,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056481424233353",
-      "title": "å·å®¶äºï¼OpenAIç«éæèµ°Claude Codeäº§åä¸å§ï¼ç´æ¥æç®¡æ ¸å¿äº§åçº¿",
-      "original_title": "å·å®¶äºï¼OpenAIç«éæèµ°Claude Codeäº§åä¸å§ï¼ç´æ¥æç®¡æ ¸å¿äº§åçº¿",
+      "title": "偷家了，OpenAI火速挖走Claude Code产品一姐，直接掌管核心产品线",
+      "original_title": "偷家了，OpenAI火速挖走Claude Code产品一姐，直接掌管核心产品线",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T07:27:02.646000+00:00",
@@ -1494,7 +1490,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "å·å®¶äºï¼OpenAIç«éæèµ°Claude Codeäº§åä¸å§ï¼ç´æ¥æç®¡æ ¸å¿äº§åçº¿",
+      "title_zh": "偷家了，OpenAI火速挖走Claude Code产品一姐，直接掌管核心产品线",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1512,17 +1508,17 @@
       "published_at": "2026-11-05T07:15:13+00:00",
       "date_precision": "second",
       "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "百度开源文心5.5 Flash Base，多基准测试刷新同尺寸模型 SOTA",
-      "title_translation_scope": "original_chinese",
+      "catalog_kind": "code",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "量子位原文与Hugging Face模型API元数据（许可证other，lastModified 2026-11-05T06:33Z）；技术报告未读；基准为百度自报",
+      "title_zh": "百度开源文心5.5 Flash Base：2800亿参数MoE基座模型，每个词元激活140亿",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -1593,8 +1589,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056245955843716",
-      "title": "âææå³èªæè´£ä»»âçååå®éªï¼å¯å½é¶è¡é¦æ¬¡å°AIæºè½ä½è´£ä»»è½¬ç§»è³ç¨æ·",
-      "original_title": "âææå³èªæè´£ä»»âçååå®éªï¼å¯å½é¶è¡é¦æ¬¡å°AIæºè½ä½è´£ä»»è½¬ç§»è³ç¨æ·",
+      "title": "“授权即自担责任”的合同实验：富国银行首次将AI智能体责任转移至用户",
+      "original_title": "“授权即自担责任”的合同实验：富国银行首次将AI智能体责任转移至用户",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T04:44:18.888000+00:00",
@@ -1604,7 +1600,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "âææå³èªæè´£ä»»âçååå®éªï¼å¯å½é¶è¡é¦æ¬¡å°AIæºè½ä½è´£ä»»è½¬ç§»è³ç¨æ·",
+      "title_zh": "“授权即自担责任”的合同实验：富国银行首次将AI智能体责任转移至用户",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1615,8 +1611,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056226779976838",
-      "title": "å«ç­äºï¼äººå½¢æºå¨äººæ¿ä¸å°âå¤§ç»æâäºï¼",
-      "original_title": "å«ç­äºï¼äººå½¢æºå¨äººæ¿ä¸å°âå¤§ç»æâäºï¼",
+      "title": "别等了，人形机器人拿不到“大结果”了？",
+      "original_title": "别等了，人形机器人拿不到“大结果”了？",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T04:43:21.066000+00:00",
@@ -1626,7 +1622,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "å«ç­äºï¼äººå½¢æºå¨äººæ¿ä¸å°âå¤§ç»æâäºï¼",
+      "title_zh": "别等了，人形机器人拿不到“大结果”了？",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1637,8 +1633,8 @@
     },
     {
       "url": "https://www.36kr.com/p/4056281437214595",
-      "title": "ç¾å½äººå½¢æºå¨äººç¬¬ä¸è¡ä»æ¥æ²éï¼ä¼°å¼çº¦25äº¿ç¾å",
-      "original_title": "ç¾å½äººå½¢æºå¨äººç¬¬ä¸è¡ä»æ¥æ²éï¼ä¼°å¼çº¦25äº¿ç¾å",
+      "title": "美国人形机器人第一股今日敲钟，估值约25亿美元",
+      "original_title": "美国人形机器人第一股今日敲钟，估值约25亿美元",
       "source": "36氪 AI 频道（逐篇核验原创与转载）",
       "source_id": "36kr-ai",
       "published_at": "2026-11-05T03:53:27.684000+00:00",
@@ -1648,7 +1644,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "ç¾å½äººå½¢æºå¨äººç¬¬ä¸è¡ä»æ¥æ²éï¼ä¼°å¼çº¦25äº¿ç¾å",
+      "title_zh": "美国人形机器人第一股今日敲钟，估值约25亿美元",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -1720,8 +1716,10 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00",
+        "note": "与正文同一事件的相关报道/官方订阅源条目；含独立信息，单独保留展示，未作为正文主证据"
+      },
+      "related_body_item": "openai-gpt-6-cyber"
     },
     {
       "url": "https://www.36kr.com/p/4056244763513734",
@@ -1896,8 +1894,10 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00",
+        "note": "与正文同一事件的相关报道/官方订阅源条目；含独立信息，单独保留展示，未作为正文主证据"
+      },
+      "related_body_item": "openai-gpt-6-cyber"
     },
     {
       "url": "https://www.36kr.com/p/4056188657275785",
@@ -1975,16 +1975,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "据报道苹果正在削减内部人工智能使用预算",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文（援引彭博社）；彭博原文未打开",
+      "title_zh": "彭博：苹果下调工程团队每日AI花费上限，部分降至100美元",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -2019,16 +2019,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "据报道Anthropic与美联社达成了授权协议。",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge原文（援引Adweek）；Adweek原文未打开",
+      "title_zh": "Adweek：Anthropic与美联社达成首个新闻授权协议，用于选举报道",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
       }
     },
     {
@@ -3211,160 +3211,6 @@
       "selected": false,
       "verification_scope": "metadata",
       "title_zh": "建议先别更新国行 Apple 智能，纯差评",
-      "title_translation_scope": "original_chinese",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4055026862774150",
-      "title": "OpenAI用GPT-6 Astra做了一个可对话的Codex宠物",
-      "original_title": "OpenAI用GPT-6 Astra做了一个可对话的Codex宠物",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-04T09:51:07.668000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "OpenAI用GPT-6 Astra做了一个可对话的Codex宠物",
-      "title_translation_scope": "original_chinese",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4054988150478473",
-      "title": "阿里内测AI创作平台“Looogen”，一个阿里版即梦AI？",
-      "original_title": "阿里内测AI创作平台“Looogen”，一个阿里版即梦AI？",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-04T09:35:13.783000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "阿里内测AI创作平台“Looogen”，一个阿里版即梦AI？",
-      "title_translation_scope": "original_chinese",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4054964236588161",
-      "title": "双十一天猫卖Token火爆出圈，AI离“水电煤”还有多远？",
-      "original_title": "双十一天猫卖Token火爆出圈，AI离“水电煤”还有多远？",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-04T09:29:11.014000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "双十一天猫卖Token火爆出圈，AI离“水电煤”还有多远？",
-      "title_translation_scope": "original_chinese",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4055093839074185",
-      "title": "从数据智能到生物智能：一场人机协同的智能变革",
-      "original_title": "从数据智能到生物智能：一场人机协同的智能变革",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-04T09:24:26.291000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "从数据智能到生物智能：一场人机协同的智能变革",
-      "title_translation_scope": "original_chinese",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4055013525460868",
-      "title": "宇树机器狗夺冠泰山，但人形机器人却被担架抬下了山",
-      "original_title": "宇树机器狗夺冠泰山，但人形机器人却被担架抬下了山",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-04T09:22:11.310000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "宇树机器狗夺冠泰山，但人形机器人却被担架抬下了山",
-      "title_translation_scope": "original_chinese",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4054998109508738",
-      "title": "雷军最新发布：小米机器人生产小米汽车",
-      "original_title": "雷军最新发布：小米机器人生产小米汽车",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-04T09:17:50.178000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "雷军最新发布：小米机器人生产小米汽车",
-      "title_translation_scope": "original_chinese",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://www.36kr.com/p/4054959981990787",
-      "title": "Claude开始拒绝抄游戏，但可能已经太晚了",
-      "original_title": "Claude开始拒绝抄游戏，但可能已经太晚了",
-      "source": "36氪 AI 频道（逐篇核验原创与转载）",
-      "source_id": "36kr-ai",
-      "published_at": "2026-11-04T09:12:10.774000+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Claude开始拒绝抄游戏，但可能已经太晚了",
       "title_translation_scope": "original_chinese",
       "catalog_review": {
         "action": "keep",
@@ -5055,17 +4901,19 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "前沿人工智能会加强网络防御吗？来自 Project Glasswing 的证据",
-      "title_translation_scope": "title_only",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "arXiv摘要页（v1）；全文未读",
+      "title_zh": "论文：前沿AI会加强网络防御吗？来自Project Glasswing的证据",
+      "title_translation_scope": "editorial",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "paper_key": "2611.06629",
+      "time_evidence": "arXiv v1提交 2026-11-04T15:12:30Z（abs页）；公告时间未单独核对"
     },
     {
       "url": "https://arxiv.org/abs/2611.06628",
@@ -7136,226 +6984,6 @@
       }
     },
     {
-      "url": "https://arxiv.org/abs/2611.06244",
-      "title": "Rubric Curriculum RL: Exploiting the Generation-Verification Gap in Non-Verifiable Domains",
-      "original_title": "Rubric Curriculum RL: Exploiting the Generation-Verification Gap in Non-Verifiable Domains",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:51:06+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "量规课程强化学习：利用不可验证领域中的生成—核验缺口",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06238",
-      "title": "Zuse: A Decision Model for European Languages",
-      "original_title": "Zuse: A Decision Model for European Languages",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:45:24+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "Zuse：面向欧洲语言的决策模型",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06228",
-      "title": "Separation Is a Riesz Energy: How Many Environments Does ICA Need?",
-      "original_title": "Separation Is a Riesz Energy: How Many Environments Does ICA Need?",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:35:43+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "分离是一种 Riesz 能量：独立成分分析需要多少环境？",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06223",
-      "title": "Consistent Submodular Maximization with Full Foresight",
-      "original_title": "Consistent Submodular Maximization with Full Foresight",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:32:32+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "全预见下的一致次模最大化",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06219",
-      "title": "A Definition of Catastrophic Performance",
-      "original_title": "A Definition of Catastrophic Performance",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:30:13+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "灾难性表现的一个定义",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06206",
-      "title": "Loop Before You Leap: What Recurrent Depth Can and Cannot Buy in Data-Limited Pretraining",
-      "original_title": "Loop Before You Leap: What Recurrent Depth Can and Cannot Buy in Data-Limited Pretraining",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:21:38+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "先循环再跳跃：数据有限的预训练中循环深度能买到什么、不能买到什么",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06204",
-      "title": "CoSafe: Cooperative Runtime Safety Assurance for Mixed-Traffic Autonomous Driving",
-      "original_title": "CoSafe: Cooperative Runtime Safety Assurance for Mixed-Traffic Autonomous Driving",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:21:22+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "CoSafe：混合交通自动驾驶的协作运行时安全保障",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06194",
-      "title": "Cross-Asset Knowledge Transfer for Early Fault Detection of Data-Scarce Assets Without Target Fault Data",
-      "original_title": "Cross-Asset Knowledge Transfer for Early Fault Detection of Data-Scarce Assets Without Target Fault Data",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:08:30+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "在没有目标故障数据时，为数据稀缺资产的早期故障检测做跨资产知识迁移",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06191",
-      "title": "GPUMAP: GPU-Accelerated Progressive Uniform Manifold Approximation and Projection",
-      "original_title": "GPUMAP: GPU-Accelerated Progressive Uniform Manifold Approximation and Projection",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:05:00+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "GPUMAP：GPU 加速的渐进式均匀流形逼近与投影",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.06185",
-      "title": "Editing Large Language Models with Geometry-Aware Regularization",
-      "original_title": "Editing Large Language Models with Geometry-Aware Regularization",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-04T09:02:10+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "title_zh": "用几何感知正则编辑大语言模型",
-      "title_translation_scope": "title_only",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
-      }
-    },
-    {
       "url": "https://github.com/sandbox-quantum/switch/releases/tag/switch-agent-controller-v0.31.1-dev.342.gfb5780c",
       "title": "switch-agent-controller-v0.31.1-dev.342.gfb5780c",
       "original_title": "switch-agent-controller-v0.31.1-dev.342.gfb5780c",
@@ -7464,9 +7092,101 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
       }
+    },
+    {
+      "url": "https://www.wired.com/story/ads-in-chatbots-have-arrived-heres-whats-working-and-whats-not/",
+      "title": "Ads in Chatbots Have Arrived. Here’s What’s Working—and What’s Not",
+      "original_title": "Ads in Chatbots Have Arrived. Here’s What’s Working—and What’s Not",
+      "source": "WIRED",
+      "source_id": "wired-ai",
+      "published_at": "2026-11-05T21:37:18+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_last_hour_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "WIRED原文；效果数据为公司自述",
+      "title_zh": "《连线》：聊天机器人广告来了，AI参与写的广告点击率翻倍",
+      "title_translation_scope": "editorial",
+      "time_evidence": "订阅源pubDate与原文页面时间一致",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      }
+    },
+    {
+      "url": "https://blogs.windows.com/windowsexperience/2026/11/05/a-new-standard-for-vulnerability-management-in-the-ai-era/",
+      "title": "A new standard for vulnerability management in the AI era",
+      "original_title": "A new standard for vulnerability management in the AI era",
+      "source": "Windows Experience Blog",
+      "source_id": "microsoft",
+      "published_at": "2026-11-05T17:00:49+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_last_hour_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "Windows Experience Blog原文相关段落",
+      "title_zh": "微软：AI加快漏洞发现，Windows调整漏洞管理与补丁发布方式",
+      "title_translation_scope": "editorial",
+      "time_evidence": "原文页面article:published_time 2026-11-05T17:00:49Z；微软AI标签RSS时间为21:09:30Z（落在05:00—06:00），以原文页面时间为准",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      }
+    },
+    {
+      "url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/",
+      "title": "Getting started with Web Answer on Amazon Bedrock AgentCore",
+      "original_title": "Getting started with Web Answer on Amazon Bedrock AgentCore",
+      "source": "AWS Machine Learning Blog",
+      "source_id": "aws-ml-blog",
+      "published_at": "2026-11-05T21:04:24+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_last_hour_0600",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Amazon Bedrock AgentCore的Web Answer入门",
+      "title_translation_scope": "title_only",
+      "time_evidence": "订阅源pubDate与原文页面时间一致",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "06:00终审补查最后一小时发现（或05:00初采记为截止后的条目），原文时间在最终窗口内；只读元数据",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      }
+    },
+    {
+      "url": "https://www.404media.co/meta-generative-ai-commercial-terms-on-pause/",
+      "title": "Everyone Everywhere Hated Meta’s New AI Training Terms. Now, They’re On Pause",
+      "original_title": "Everyone Everywhere Hated Meta’s New AI Training Terms. Now, They’re On Pause",
+      "source": "404 Media",
+      "source_id": "404-media",
+      "published_at": "2026-11-05T21:01:55+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_last_hour_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "404 Media原文；Meta条款页、《洛杉矶时报》与Nieman Lab原文未单独打开",
+      "title_zh": "Meta暂停可抓取商家网站内容训练AI的新商业条款",
+      "title_translation_scope": "editorial",
+      "time_evidence": "订阅源pubDate与原文页面时间一致",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      }
     }
   ],
-  "excluded_items_count": 108,
+  "excluded_items_count": 125,
   "excluded_items": [
     {
       "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
@@ -8223,35 +7943,533 @@
       "reason": "same_article_relay",
       "source_id": "the-verge-ai",
       "published_at": "2026-11-05T17:56:03+00:00"
+    },
+    {
+      "url": "https://www.36kr.com/p/4055026862774150",
+      "title": "OpenAI用GPT-6 Astra做了一个可对话的Codex宠物",
+      "original_title": "OpenAI用GPT-6 Astra做了一个可对话的Codex宠物",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-04T09:51:07.668000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "OpenAI用GPT-6 Astra做了一个可对话的Codex宠物",
+      "title_translation_scope": "original_chinese",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4054988150478473",
+      "title": "阿里内测AI创作平台“Looogen”，一个阿里版即梦AI？",
+      "original_title": "阿里内测AI创作平台“Looogen”，一个阿里版即梦AI？",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-04T09:35:13.783000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "阿里内测AI创作平台“Looogen”，一个阿里版即梦AI？",
+      "title_translation_scope": "original_chinese",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4054964236588161",
+      "title": "双十一天猫卖Token火爆出圈，AI离“水电煤”还有多远？",
+      "original_title": "双十一天猫卖Token火爆出圈，AI离“水电煤”还有多远？",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-04T09:29:11.014000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "双十一天猫卖Token火爆出圈，AI离“水电煤”还有多远？",
+      "title_translation_scope": "original_chinese",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4055093839074185",
+      "title": "从数据智能到生物智能：一场人机协同的智能变革",
+      "original_title": "从数据智能到生物智能：一场人机协同的智能变革",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-04T09:24:26.291000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "从数据智能到生物智能：一场人机协同的智能变革",
+      "title_translation_scope": "original_chinese",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4055013525460868",
+      "title": "宇树机器狗夺冠泰山，但人形机器人却被担架抬下了山",
+      "original_title": "宇树机器狗夺冠泰山，但人形机器人却被担架抬下了山",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-04T09:22:11.310000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "宇树机器狗夺冠泰山，但人形机器人却被担架抬下了山",
+      "title_translation_scope": "original_chinese",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4054998109508738",
+      "title": "雷军最新发布：小米机器人生产小米汽车",
+      "original_title": "雷军最新发布：小米机器人生产小米汽车",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-04T09:17:50.178000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "雷军最新发布：小米机器人生产小米汽车",
+      "title_translation_scope": "original_chinese",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://www.36kr.com/p/4054959981990787",
+      "title": "Claude开始拒绝抄游戏，但可能已经太晚了",
+      "original_title": "Claude开始拒绝抄游戏，但可能已经太晚了",
+      "source": "36氪 AI 频道（逐篇核验原创与转载）",
+      "source_id": "36kr-ai",
+      "published_at": "2026-11-04T09:12:10.774000+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Claude开始拒绝抄游戏，但可能已经太晚了",
+      "title_translation_scope": "original_chinese",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06244",
+      "title": "Rubric Curriculum RL: Exploiting the Generation-Verification Gap in Non-Verifiable Domains",
+      "original_title": "Rubric Curriculum RL: Exploiting the Generation-Verification Gap in Non-Verifiable Domains",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:51:06+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "量规课程强化学习：利用不可验证领域中的生成—核验缺口",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06238",
+      "title": "Zuse: A Decision Model for European Languages",
+      "original_title": "Zuse: A Decision Model for European Languages",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:45:24+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "Zuse：面向欧洲语言的决策模型",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06228",
+      "title": "Separation Is a Riesz Energy: How Many Environments Does ICA Need?",
+      "original_title": "Separation Is a Riesz Energy: How Many Environments Does ICA Need?",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:35:43+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "分离是一种 Riesz 能量：独立成分分析需要多少环境？",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06223",
+      "title": "Consistent Submodular Maximization with Full Foresight",
+      "original_title": "Consistent Submodular Maximization with Full Foresight",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:32:32+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "全预见下的一致次模最大化",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06219",
+      "title": "A Definition of Catastrophic Performance",
+      "original_title": "A Definition of Catastrophic Performance",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:30:13+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "灾难性表现的一个定义",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06206",
+      "title": "Loop Before You Leap: What Recurrent Depth Can and Cannot Buy in Data-Limited Pretraining",
+      "original_title": "Loop Before You Leap: What Recurrent Depth Can and Cannot Buy in Data-Limited Pretraining",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:21:38+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "先循环再跳跃：数据有限的预训练中循环深度能买到什么、不能买到什么",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06204",
+      "title": "CoSafe: Cooperative Runtime Safety Assurance for Mixed-Traffic Autonomous Driving",
+      "original_title": "CoSafe: Cooperative Runtime Safety Assurance for Mixed-Traffic Autonomous Driving",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:21:22+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "CoSafe：混合交通自动驾驶的协作运行时安全保障",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06194",
+      "title": "Cross-Asset Knowledge Transfer for Early Fault Detection of Data-Scarce Assets Without Target Fault Data",
+      "original_title": "Cross-Asset Knowledge Transfer for Early Fault Detection of Data-Scarce Assets Without Target Fault Data",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:08:30+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "在没有目标故障数据时，为数据稀缺资产的早期故障检测做跨资产知识迁移",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06191",
+      "title": "GPUMAP: GPU-Accelerated Progressive Uniform Manifold Approximation and Projection",
+      "original_title": "GPUMAP: GPU-Accelerated Progressive Uniform Manifold Approximation and Projection",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:05:00+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "GPUMAP：GPU 加速的渐进式均匀流形逼近与投影",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.06185",
+      "title": "Editing Large Language Models with Geometry-Aware Regularization",
+      "original_title": "Editing Large Language Models with Geometry-Aware Regularization",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-04T09:02:10+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "用几何感知正则编辑大语言模型",
+      "title_translation_scope": "title_only",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月4日17:00起；原文时间早于最终目录窗口起点11月4日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T22:17:14.344899+00:00"
+      },
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-05T21:34:29.472639+00:00"
+      }
     }
   ],
   "review_summary": {
-    "raw_receipt_candidates": 443,
-    "unique_canonical": 337,
-    "displayed": 337,
-    "displayed_news": 151,
+    "raw_receipt_candidates": 447,
+    "upstream_raw": 443,
+    "last_hour_added": 4,
+    "unique": 449,
+    "reviewed": 414,
+    "pending": 35,
+    "displayed": 324,
+    "displayed_news": 147,
     "displayed_discourse": 2,
-    "displayed_papers": 179,
-    "displayed_code": 5,
-    "excluded": 108,
-    "excluded_reasons": {
+    "displayed_papers": 169,
+    "displayed_code": 6,
+    "excluded": 125,
+    "reasons": {
       "date_only_boundary_pending": 6,
       "prior_7_catalogs": 35,
       "not_ai_or_promo": 8,
       "missing_title_or_url": 1,
       "trending_snapshot_not_release": 27,
       "hn_lead_time_not_original": 29,
-      "same_article_relay": 2
+      "same_article_relay": 2,
+      "outside_final_window": 17
     },
-    "pending_time_precision": 6,
-    "body_used": 0,
-    "displayed_not_body": 337,
+    "moved_out_by_final_window": 17,
+    "mojibake_titles_fixed": 30,
+    "body_used": 21,
+    "displayed_not_body": 303,
     "below_catalog_target": false,
-    "target": 20,
-    "reviewed": 443
+    "target": 20
   },
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-06T05:00:00+08:00",
       "2026-11-06T06:00:00+08:00"
@@ -8285,6 +8503,11 @@
         "published_at": "2026-11-05T21:01:55+00:00",
         "note": "RSS 时间晚于 until"
       }
-    ]
-  }
+    ],
+    "checked_at": "2026-11-05T22:17:14.344899+00:00",
+    "result": "06:04本机collect_sources.py --until 2026-11-05T22:00:00Z --hours 36，并逐一重取TechCrunch AI、The Verge AI、404 Media、WIRED AI、Simon Willison、OpenAI、HN首页、Google AI、量子位、Hugging Face、Cloudflare、Google Research、NVIDIA、Microsoft AI、AWS ML订阅源；05:00—06:00内原文时间的条目4条（WIRED、Microsoft、AWS、404 Media）已补入目录。浏览器类来源（xAI、Qwen、DeepSeek、MiniMax、字节Seed、OpenReview、MIT TR、36氪）与HN Algolia全站未重查最后一小时"
+  },
+  "upstream_config_commit": "e2b842e43de1ee36e73ade9b7d0362eccae73262",
+  "chinese_editor_config_commit": "92d86ab1349e37787404e13dcbf53c620eff63a9",
+  "editorial_updated_at": "2026-11-05T22:17:14.344899+00:00"
 }
