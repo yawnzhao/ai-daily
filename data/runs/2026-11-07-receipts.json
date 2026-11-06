@@ -1,0 +1,4052 @@
+{
+  "summary": {
+    "window": [
+      "2026-11-05T09:00:00+00:00",
+      "2026-11-06T21:00:00+00:00"
+    ],
+    "planned": 50,
+    "ok": 42,
+    "partial": 8,
+    "failed": 0,
+    "pending_browser": 0,
+    "core_not_ok": [
+      "xai",
+      "arxiv"
+    ],
+    "window_boundary": "left_closed_right_open",
+    "success_rate": 0.84,
+    "incomplete": true,
+    "pending": 0,
+    "collection_stage_note": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。"
+  },
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.anthropic.com/news",
+      "status": "ok",
+      "evidence": "打开 https://www.anthropic.com/news 与 https://www.anthropic.com/engineering 。页眉 November 6, 2026 是栏目日期，不是稿件日期。新闻卡片最新为 Oct 28, 2026（AI for Science），列表继续到更早月份，已早于窗口起点 2026-11-05T09:00:00Z。工程页时间戳最新约 2026-10-18/10-13，早于窗口起点。窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://claude.com/resources/articles",
+      "status": "ok",
+      "evidence": "打开 https://claude.com/blog ，落到 https://claude.com/resources/articles 。可见 Article Nov 5、Nov 5、Nov 4、Nov 2，列表已越过窗口起点。日精度，不计入严格目录。未读全文。",
+      "items": [
+        {
+          "title": "Introducing Personal Finance in Claude",
+          "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
+          "published_at": "2026-11-05",
+          "date_precision": "day",
+          "window_membership": "pending_verification"
+        },
+        {
+          "title": "More visibility and control over Claude Enterprise for security teams",
+          "url": "https://claude.com/resources/articles/claude-enterprise-security-updates",
+          "published_at": "2026-11-05",
+          "date_precision": "day",
+          "window_membership": "pending_verification"
+        },
+        {
+          "title": "New agents and products for security, productivity, and creative work on Claude Marketplace",
+          "url": "https://claude.com/resources/articles/new-agents-and-products-claude-marketplace",
+          "published_at": "2026-11-04",
+          "date_precision": "day",
+          "window_membership": "outside_window"
+        },
+        {
+          "title": "Make long-running agents faster with message threads",
+          "url": "https://claude.com/resources/articles/message-threads",
+          "published_at": "2026-11-02",
+          "date_precision": "day",
+          "window_membership": "outside_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 5 条；原始脚本：feed HTTP 200，共 1368 条，带日期 1368 条，最新 2026-11-06T08:00:00+00:00；窗口内 5 条",
+      "items": [
+        {
+          "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+          "url": "https://openai.com/index/partnering-with-hacktron",
+          "published_at": "2026-11-06T08:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Measuring how AI agents handle everyday wet-lab science",
+          "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+          "published_at": "2026-11-06T00:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Australian universities are creating AI-native graduates",
+          "url": "https://openai.com/index/australian-universities-ai-native-graduates",
+          "published_at": "2026-11-05T17:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Cult.fit builds operational muscle with Codex",
+          "url": "https://openai.com/index/cultfit-builds-with-codex",
+          "published_at": "2026-11-05T20:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+          "url": "https://openai.com/index/introducing-gpt-6-cyber",
+          "published_at": "2026-11-05T09:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 1 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-05T17:00:00+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+          "published_at": "2026-11-05T17:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://x.ai/news",
+      "status": "partial",
+      "evidence": "无浏览器；curl 静态 HTML HTTP 200。静态列表按日期向过去排列，最新内容日期为 Nov 2, 2026《Giving every team a data scientist with Grok Bot》（https://x.ai/news/data-bot），其后 Oct 27、Oct 22、Oct 20，并继续列到更早。该最新日期早于窗口起点，但是日精度，且按来源说明静态页不能代替浏览器渲染。窗口内未能证明的动态条目仍可能存在。整源 partial。未读全文。",
+      "items": [
+        {
+          "title": "Giving every team a data scientist with Grok Bot",
+          "url": "https://x.ai/news/data-bot",
+          "published_at": "2026-11-02",
+          "date_precision": "day",
+          "window_membership": "outside_window"
+        }
+      ],
+      "check_state": "cloudflare_static_incomplete",
+      "initial_script_status": "pending",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 1 条；原始脚本：feed HTTP 200，共 100 条，带日期 100 条，最新 2026-11-05T17:05:16+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+          "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
+          "published_at": "2026-11-05T17:05:16+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 5 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-06T16:00:00+00:00；窗口内 5 条",
+      "items": [
+        {
+          "title": "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
+          "url": "https://blogs.nvidia.com/blog/telco-open-source-tools-research-6g-networks/",
+          "published_at": "2026-11-06T16:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents",
+          "url": "https://blogs.nvidia.com/blog/vera-cpu-highest-throughput-fastest-agents/",
+          "published_at": "2026-11-05T20:00:41+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "The Wizard of Open Weights: Chris Alexiuk Makes AI Easy With Open Models",
+          "url": "https://blogs.nvidia.com/blog/nvidia-life-chris-alexiuk/",
+          "published_at": "2026-11-05T16:00:05+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "More Performance From Every Byte: How Full-Stack Codesign Solves AI’s Memory Challenge",
+          "url": "https://blogs.nvidia.com/blog/memory-full-stack-codesign/",
+          "published_at": "2026-11-05T16:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "‘Hogwarts Legacy’ Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "published_at": "2026-11-05T14:00:34+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 3 条；原始脚本：feed HTTP 200，共 899 条，带日期 899 条，最新 2026-11-06T14:00:48+00:00；窗口内 3 条",
+      "items": [
+        {
+          "title": "ToyBlocks: A controlled world for robot learning and evaluation",
+          "url": "https://huggingface.co/blog/allenai/toyblocks",
+          "published_at": "2026-11-06T14:00:48+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
+          "url": "https://huggingface.co/blog/open-asr-leaderboard-liva",
+          "published_at": "2026-11-06T00:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
+          "url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+          "published_at": "2026-11-05T19:35:16+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 1 条；原始脚本：feed HTTP 200，共 50 条，带日期 50 条，最新 2026-11-06T00:00:00+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Voice Chat with Agents",
+          "url": "https://cursor.com/changelog/voice-chat",
+          "published_at": "2026-11-06T00:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://news.microsoft.com/source/tag/ai/feed/",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 1 条；原始脚本：feed HTTP 200，共 10 条，带日期 10 条，最新 2026-11-05T21:09:30+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "AI is speeding up how Windows security flaws are found and fixed",
+          "url": "https://blogs.windows.com/windowsexperience/2026/11/05/a-new-standard-for-vulnerability-management-in-the-ai-era/",
+          "published_at": "2026-11-05T21:09:30+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://qwen.ai/research",
+      "status": "partial",
+      "evidence": "无浏览器；curl https://qwen.ai/research 静态 HTML HTTP 200，页面几乎无 2026 研究日期（疑似客户端渲染）。不能用静态页证明无更新。整源 partial。未读全文。",
+      "items": [],
+      "check_state": "static_html_no_dates",
+      "initial_script_status": "pending",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "tongyi",
+      "name": "通义实验室",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://qianwen.aliyun.com/",
+      "status": "partial",
+      "evidence": "打开 https://qianwen.aliyun.com/ ，落地页是「千问AI双11」活动页，没有可判定的研究/新闻时间索引。页面可见 2026-11-06 等营销时间，不能当稿件发布。整源 partial。",
+      "items": [],
+      "check_state": "promo_landing_no_news_index",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "partial"
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates/",
+      "status": "ok",
+      "evidence": "curl 更新日志 https://api-docs.deepseek.com/updates/ 可见日期最新 2026-10-17，早于窗口起点。GitHub deepseek-ai/deepseek-harness 最新 release dsh-v0.2.2-rc.1 的 published_at 为 2026-11-04T13:07:14Z，早于窗口起点。窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "initial_script_status": "pending",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "moonshot",
+      "name": "月之暗面 Moonshot",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.moonshot.cn/",
+      "status": "ok",
+      "evidence": "页面日期最新 2026-10-24，早于窗口起点。窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "zhipu",
+      "name": "智谱 Z.ai",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.zhipuai.cn/news",
+      "status": "ok",
+      "evidence": "页面日期最新 2026-09-10，早于窗口起点。窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.stepfun.com/",
+      "status": "partial",
+      "evidence": "curl https://www.stepfun.com/ HTTP 200，页面几乎无正文（疑似客户端渲染），提取不到发布日期。整源 partial。",
+      "items": [],
+      "check_state": "rendered_no_dates",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "partial"
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "ok",
+      "evidence": "打开 https://mistral.ai/news ，卡片最新 November 5, 2026《Le Chonk brings the brains. Studio puts it to work.》（/news/build-with-studio/），其后 October 29 等，列表越过窗口起点。日精度。未读全文。",
+      "items": [
+        {
+          "title": "Le Chonk brings the brains. Studio puts it to work.",
+          "url": "https://mistral.ai/news/build-with-studio/",
+          "published_at": "2026-11-05",
+          "date_precision": "day",
+          "window_membership": "pending_verification"
+        },
+        {
+          "title": "Le Chonk: Built for Coders, Trusted by Defenders.",
+          "url": "https://mistral.ai/news/mistral-large-4-oss/",
+          "published_at": "2026-10-29",
+          "date_precision": "day",
+          "window_membership": "outside_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "打开数字战略新闻页，可见 06/05 November 2026 等多条，列表越过窗口起点。日精度。未读全文。",
+      "items": [
+        {
+          "title": "Commission preliminarily finds TikTok’s ‘For You’ feed breaches DSA",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-you-feed-breaches-dsa",
+          "published_at": "2026-11-06",
+          "date_precision": "day",
+          "window_membership": "pending_verification"
+        },
+        {
+          "title": "Commission opens negotiations to extend ‘Roam Like at Home’ to Western Balkans",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-opens-negotiations-extend-roam-home-western-balkans",
+          "published_at": "2026-11-06",
+          "date_precision": "day",
+          "window_membership": "pending_verification"
+        },
+        {
+          "title": "Commission launches Education and Skills package to tackle labour and skills shortages",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-launches-education-and-skills-package-tackle-labour-and-skills-shortages",
+          "published_at": "2026-11-05",
+          "date_precision": "day",
+          "window_membership": "pending_verification"
+        },
+        {
+          "title": "AI toolbox supports public administrations to put applications into practice",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/ai-toolbox-supports-public-administrations-put-applications-practice",
+          "published_at": "2026-11-05",
+          "date_precision": "day",
+          "window_membership": "pending_verification"
+        },
+        {
+          "title": "European Innovation Council launches €1.8 billion funding for 2027",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/european-innovation-council-launches-eu18-billion-funding-2027",
+          "published_at": "2026-11-05",
+          "date_precision": "day",
+          "window_membership": "pending_verification"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "ok",
+      "evidence": "初采 TimeoutError；补查 curl HTTP 200，页面未提取到窗口内可判定稿件日期。按可达且无窗口内更新记 complete_no_new。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "initial_script_status": "failed",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "ok",
+      "evidence": "页面日期最新 2026-10-13，早于窗口起点。窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "status": "partial",
+      "evidence": "export.arxiv.org API 按 submittedDate 降序检索 cat:cs.AI OR cs.LG OR cs.CL，翻到 published 早于窗口起点。窗口内已公告 204 篇，<published> 从 2026-11-05T09:03:09Z 到 2026-11-05T18:59:42Z。按本库约定 published 记为公告时间。www.arxiv.org/list/cs.AI/new 写明 Showing new listings for Friday, 6 November 2026。最新 published 2026-11-05T18:59:42Z 早于 until 2026-11-06T21:00:00Z，11月6日公告切片可能尚未进入 API。至 until 的未公告切片为 partial。未读全文。",
+      "items": [
+        {
+          "title": "User Embeddings are Superpositions of Interpretable Behavioral Modes",
+          "url": "https://arxiv.org/abs/2611.08487",
+          "published_at": "2026-11-05T18:59:42Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+          "url": "https://arxiv.org/abs/2611.08483",
+          "published_at": "2026-11-05T18:59:29Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Scientist World: Grow a Research World for AI-Scientists",
+          "url": "https://arxiv.org/abs/2611.08478",
+          "published_at": "2026-11-05T18:58:17Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "XStack: A Benchmark for ML Repo Migration",
+          "url": "https://arxiv.org/abs/2611.08472",
+          "published_at": "2026-11-05T18:55:54Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Same Behavior, Different Mechanism: What Finite Experiments Can Certify About Integrated Information",
+          "url": "https://arxiv.org/abs/2611.08469",
+          "published_at": "2026-11-05T18:55:31Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Towards interpreting any residual stream direction by scaling activation inversion",
+          "url": "https://arxiv.org/abs/2611.08465",
+          "published_at": "2026-11-05T18:54:40Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Adversarial Training with Large Step Sizes: Implicit Bias, Optimization, and Sharpness",
+          "url": "https://arxiv.org/abs/2611.08457",
+          "published_at": "2026-11-05T18:48:50Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Unpacking the Compute Efficiency of Strong-to-Weak OPD against GRPO",
+          "url": "https://arxiv.org/abs/2611.08453",
+          "published_at": "2026-11-05T18:47:05Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "ReproBridge: Building Reproducibility into ML Research Artifacts",
+          "url": "https://arxiv.org/abs/2611.08452",
+          "published_at": "2026-11-05T18:45:36Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "A Hidden Markov Preference Model for Online Prediction of Adversary Actions",
+          "url": "https://arxiv.org/abs/2611.08445",
+          "published_at": "2026-11-05T18:37:07Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Label-Wording Augmentation in a Typed-Decision Encoder: Gains on Unfamiliar Words, Not on Abbreviations or Codes",
+          "url": "https://arxiv.org/abs/2611.08439",
+          "published_at": "2026-11-05T18:31:24Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety",
+          "url": "https://arxiv.org/abs/2611.08438",
+          "published_at": "2026-11-05T18:30:54Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "MedGraph: Maintaining Patient State with Graph Memory for Long-Term Medical Dialogue",
+          "url": "https://arxiv.org/abs/2611.08433",
+          "published_at": "2026-11-05T18:27:20Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "The Power of Meta Access in the Software of the Future --- Demonstrated on LLM Chat UIs and Chat AI",
+          "url": "https://arxiv.org/abs/2611.08428",
+          "published_at": "2026-11-05T18:22:24Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing",
+          "url": "https://arxiv.org/abs/2611.08425",
+          "published_at": "2026-11-05T18:21:07Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Data-driven discovery of intrinsic Lie point symmetries of differential equation systems",
+          "url": "https://arxiv.org/abs/2611.08421",
+          "published_at": "2026-11-05T18:19:28Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "On the limitations of molecular representations",
+          "url": "https://arxiv.org/abs/2611.08420",
+          "published_at": "2026-11-05T18:19:19Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Benchmarks as Software: Terminal-Bench and the Case for Continuous Benchmarks",
+          "url": "https://arxiv.org/abs/2611.08417",
+          "published_at": "2026-11-05T18:18:39Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Spectral and Subspace Dynamics of LoRA in Supervised Fine-Tuning and Reinforcement Learning",
+          "url": "https://arxiv.org/abs/2611.08414",
+          "published_at": "2026-11-05T18:17:39Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "The Gold Rush in AI4Math, II: What are signatures of AI-assisted Proofs?",
+          "url": "https://arxiv.org/abs/2611.08412",
+          "published_at": "2026-11-05T18:17:18Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Conformal Prediction for Time-Dependent PDEs",
+          "url": "https://arxiv.org/abs/2611.08409",
+          "published_at": "2026-11-05T18:15:42Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Social Humanoid: Socially Responsive Human-Humanoid Interaction",
+          "url": "https://arxiv.org/abs/2611.08407",
+          "published_at": "2026-11-05T18:14:06Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "StepBack: Step-Level Error-Localized Resampling for Efficient Test-Time Reasoning",
+          "url": "https://arxiv.org/abs/2611.08403",
+          "published_at": "2026-11-05T18:12:49Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Synthesis of Ovarian Cancer Multi-Omics Datasets: A Biology-Informed Evaluation Framework",
+          "url": "https://arxiv.org/abs/2611.08394",
+          "published_at": "2026-11-05T18:07:06Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Learning a patient world model for health system simulation in intensive care",
+          "url": "https://arxiv.org/abs/2611.08392",
+          "published_at": "2026-11-05T18:06:42Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Hybrid Machine Learning for Imbalanced Landing-Phase Safety Event Prediction from Flight Data",
+          "url": "https://arxiv.org/abs/2611.08386",
+          "published_at": "2026-11-05T18:04:26Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "FedReason: Large Language Models as Weight-Space Meta-Aggregators for Heterogeneous Federated Learning",
+          "url": "https://arxiv.org/abs/2611.08383",
+          "published_at": "2026-11-05T18:00:58Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Module-Aware Optimization for Graph Neural Networks",
+          "url": "https://arxiv.org/abs/2611.08379",
+          "published_at": "2026-11-05T17:56:33Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout",
+          "url": "https://arxiv.org/abs/2611.08376",
+          "published_at": "2026-11-05T17:53:49Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
+          "url": "https://arxiv.org/abs/2611.08372",
+          "published_at": "2026-11-05T17:50:35Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "NPCBench: A Clinical Apprenticeship Benchmark for Multimodal Care-Pathway Reasoning in Nasopharyngeal Carcinoma",
+          "url": "https://arxiv.org/abs/2611.08369",
+          "published_at": "2026-11-05T17:48:55Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception",
+          "url": "https://arxiv.org/abs/2611.08368",
+          "published_at": "2026-11-05T17:48:00Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "SHORE: Stability-Hybrid On-Policy Reinforcement Learning for Online Bin Packing",
+          "url": "https://arxiv.org/abs/2611.08364",
+          "published_at": "2026-11-05T17:42:31Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "StrataFlux: Memory-Hierarchy-Native Low-Bit LLM Inference",
+          "url": "https://arxiv.org/abs/2611.08363",
+          "published_at": "2026-11-05T17:42:06Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "SpecCTMC: Exact Speculative Simulation of Diffusion Language Model Continuous-Time Markov Chains",
+          "url": "https://arxiv.org/abs/2611.08362",
+          "published_at": "2026-11-05T17:41:20Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Unifying Central Flow, Rod Flow, and the Edge Coupling",
+          "url": "https://arxiv.org/abs/2611.08358",
+          "published_at": "2026-11-05T17:37:58Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching",
+          "url": "https://arxiv.org/abs/2611.08352",
+          "published_at": "2026-11-05T17:34:53Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
+          "url": "https://arxiv.org/abs/2611.08342",
+          "published_at": "2026-11-05T17:27:29Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Enhancing Local and Global Structure in Compressed AI Agent Memory",
+          "url": "https://arxiv.org/abs/2611.08341",
+          "published_at": "2026-11-05T17:27:08Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Discovering Learning Rules that Shape Others",
+          "url": "https://arxiv.org/abs/2611.08335",
+          "published_at": "2026-11-05T17:23:34Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Cultural Adaptation within Repeated Social Interactions",
+          "url": "https://arxiv.org/abs/2611.08334",
+          "published_at": "2026-11-05T17:23:30Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Polarity Classification with Multitask Learning Syntax Augmentation",
+          "url": "https://arxiv.org/abs/2611.08323",
+          "published_at": "2026-11-05T17:19:09Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
+          "url": "https://arxiv.org/abs/2611.08318",
+          "published_at": "2026-11-05T17:14:37Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Benchmarking Large Language Models on Heterogeneous Cognitive and Biomedical Knowledge Graphs: The Role of Graph Grounding in Multi-Hop Reasoning and Hallucination Mitigation",
+          "url": "https://arxiv.org/abs/2611.08315",
+          "published_at": "2026-11-05T17:12:58Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Interpretable many-body interaction laws for collective motion from few trajectories",
+          "url": "https://arxiv.org/abs/2611.08314",
+          "published_at": "2026-11-05T17:12:40Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "LLM-Assisted Label Noise Correction for EEG-Based Sleep Stage Classification",
+          "url": "https://arxiv.org/abs/2611.08311",
+          "published_at": "2026-11-05T17:12:05Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "RM-VLM: From Natural-Language Task Descriptions to Vision-Grounded Reward Machines",
+          "url": "https://arxiv.org/abs/2611.08308",
+          "published_at": "2026-11-05T17:10:10Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Measured Coupling for Parallel Decoding in Diffusion Language Models",
+          "url": "https://arxiv.org/abs/2611.08307",
+          "published_at": "2026-11-05T17:10:03Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "First-Token Attraction in Mamba Dynamics",
+          "url": "https://arxiv.org/abs/2611.08303",
+          "published_at": "2026-11-05T17:06:17Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Dynamic Optimistic Constrained OCO with Memory via Delay Equivalence",
+          "url": "https://arxiv.org/abs/2611.08302",
+          "published_at": "2026-11-05T17:05:45Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Transformer-Based Trajectory Prescription for sEMG-Optimizing Robot-Mediated Rehabilitation",
+          "url": "https://arxiv.org/abs/2611.08295",
+          "published_at": "2026-11-05T16:55:55Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AutoCompress: Automated Hardware-Guided Model Compression",
+          "url": "https://arxiv.org/abs/2611.08290",
+          "published_at": "2026-11-05T16:53:48Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "A Generative Model of Contextual Integrity: Appropriate vs. Inappropriate Information Sharing",
+          "url": "https://arxiv.org/abs/2611.08284",
+          "published_at": "2026-11-05T16:48:31Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Multimodal-SEA: Benchmarking AI Agent Security under Multimodal Social Engineering Attacks",
+          "url": "https://arxiv.org/abs/2611.08281",
+          "published_at": "2026-11-05T16:46:31Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "LeanContext: Disentangling Mathematical Resources from Local Formal Context in Lean Whole-Proof Generation",
+          "url": "https://arxiv.org/abs/2611.08277",
+          "published_at": "2026-11-05T16:44:59Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Aligning Policy Encoders with a Shape Teacher",
+          "url": "https://arxiv.org/abs/2611.08275",
+          "published_at": "2026-11-05T16:44:24Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Accelerating Safe Reinforcement Learning with Massive Parallelism",
+          "url": "https://arxiv.org/abs/2611.08273",
+          "published_at": "2026-11-05T16:43:57Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "DART: Domain-Agnostic Residual Transfer for Generalist Anomaly Detection",
+          "url": "https://arxiv.org/abs/2611.08271",
+          "published_at": "2026-11-05T16:43:20Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Accepted but Wrong: Silent Failures of LLM Code Repairs after API Migrations",
+          "url": "https://arxiv.org/abs/2611.08269",
+          "published_at": "2026-11-05T16:41:32Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Scaling Neural Motor Decoding via Decoupled Behavioral Pretraining",
+          "url": "https://arxiv.org/abs/2611.08263",
+          "published_at": "2026-11-05T16:37:10Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "The Geometry of Simulated Perspectives: Dissociating Representation and Behaviour in a Multimodal Language Model",
+          "url": "https://arxiv.org/abs/2611.08262",
+          "published_at": "2026-11-05T16:36:49Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Nowcasting of Tropical Cyclone Wind Fields and Intensity from Geostationary Imagery",
+          "url": "https://arxiv.org/abs/2611.08255",
+          "published_at": "2026-11-05T16:31:38Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Series-wise Cross-validation for Global Time Series Forecasting",
+          "url": "https://arxiv.org/abs/2611.08252",
+          "published_at": "2026-11-05T16:28:08Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Geometric Relevance Is Not Sufficient: Evaluating Focused Post-Training Supervision in Diffusion Docking",
+          "url": "https://arxiv.org/abs/2611.08249",
+          "published_at": "2026-11-05T16:26:44Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Value-oriented policy distillation for interpretable wind farm power control",
+          "url": "https://arxiv.org/abs/2611.08245",
+          "published_at": "2026-11-05T16:22:55Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "FewStepRL: Fine-tuning Few-step Diffusion Models with Reinforcement Learning",
+          "url": "https://arxiv.org/abs/2611.08240",
+          "published_at": "2026-11-05T16:19:52Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Terminal-style Mathematical Modeling Bench: The First Agentic and Verifiable Benchmark for Mathematical Modeling",
+          "url": "https://arxiv.org/abs/2611.08237",
+          "published_at": "2026-11-05T16:18:35Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Beyond Quadratic Attention: Separable Gaussian Operators for ODE Vision Transformers",
+          "url": "https://arxiv.org/abs/2611.08236",
+          "published_at": "2026-11-05T16:17:48Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Signals, Evidence, and Context: User Scrutiny in Real-World LLM Conversations",
+          "url": "https://arxiv.org/abs/2611.08232",
+          "published_at": "2026-11-05T16:16:08Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "From Twisted Facts to Rogue Agents: Can LLMs Reliably Detect Multi-Dimensional Hallucinations?",
+          "url": "https://arxiv.org/abs/2611.08231",
+          "published_at": "2026-11-05T16:15:18Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "\"Blind Compliance\": Coercive Control in AI Jailbreaking",
+          "url": "https://arxiv.org/abs/2611.08226",
+          "published_at": "2026-11-05T16:11:08Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Agent-R$^2$: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis",
+          "url": "https://arxiv.org/abs/2611.08219",
+          "published_at": "2026-11-05T16:08:05Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "ProQuant: Progressive Quantization-aware Training for Edge MLLMs",
+          "url": "https://arxiv.org/abs/2611.08216",
+          "published_at": "2026-11-05T16:04:31Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Do sEMG Foundation Models Improve Cross-Subject Generalisation?",
+          "url": "https://arxiv.org/abs/2611.08199",
+          "published_at": "2026-11-05T15:53:37Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving",
+          "url": "https://arxiv.org/abs/2611.08196",
+          "published_at": "2026-11-05T15:51:39Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "BUMP: Brief Unexpected Mid-Interpolation Peak",
+          "url": "https://arxiv.org/abs/2611.08182",
+          "published_at": "2026-11-05T15:37:49Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Knowing When to Teach: Learning from Teachable Prefixes in Multilingual Reasoning Distillation",
+          "url": "https://arxiv.org/abs/2611.08179",
+          "published_at": "2026-11-05T15:34:23Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "BabyTheorist: A Benchmark for Learning to Theorize the World from Observation Alone",
+          "url": "https://arxiv.org/abs/2611.08177",
+          "published_at": "2026-11-05T15:33:32Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+          "url": "https://arxiv.org/abs/2611.08175",
+          "published_at": "2026-11-05T15:31:15Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Regret Bounds for Profit Maximization in Bilateral Trade: Learning the Best Posted-Price Mechanism",
+          "url": "https://arxiv.org/abs/2611.08173",
+          "published_at": "2026-11-05T15:30:25Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "RouteAlign: Aligning Task Requirements with Model Profiles for LLM Service Selection",
+          "url": "https://arxiv.org/abs/2611.08162",
+          "published_at": "2026-11-05T15:21:16Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Patch Attention Wisely: Understanding Patch Length in Attention-Based Forecasting",
+          "url": "https://arxiv.org/abs/2611.08160",
+          "published_at": "2026-11-05T15:18:11Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Improving Context-Shift Robustness of Convolutional Networks via Context-Regularized Cross-Entropy",
+          "url": "https://arxiv.org/abs/2611.08157",
+          "published_at": "2026-11-05T15:16:49Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "La-JEPA: Compact Robot Policies with Latent World Modeling",
+          "url": "https://arxiv.org/abs/2611.08156",
+          "published_at": "2026-11-05T15:16:38Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AI-Native Task-Oriented Semantic Communications over a Relay: Benefits and Vulnerabilities",
+          "url": "https://arxiv.org/abs/2611.08155",
+          "published_at": "2026-11-05T15:14:59Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Interpretable Multimodal MRI-Clinical Fusion for Functional Outcome Prediction After Acute Ischemic Stroke",
+          "url": "https://arxiv.org/abs/2611.08154",
+          "published_at": "2026-11-05T15:14:58Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "A Generative Foundation Model for Multimodal Tokamak Tasks",
+          "url": "https://arxiv.org/abs/2611.08153",
+          "published_at": "2026-11-05T15:13:48Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Detecting Weather Fronts from Satellite Observations: What Does Reanalysis Add?",
+          "url": "https://arxiv.org/abs/2611.08148",
+          "published_at": "2026-11-05T15:07:10Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Detecting Silent Faults at the Environment-Trainer Boundary in Reinforcement Learning",
+          "url": "https://arxiv.org/abs/2611.08144",
+          "published_at": "2026-11-05T15:05:07Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "How Far Can Untrained Neural Networks Go in Anomaly Detection? From Tables to Pixels",
+          "url": "https://arxiv.org/abs/2611.08136",
+          "published_at": "2026-11-05T15:01:17Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Who Can Evaluate AI Independently? A Framework for Analysing Evaluation Infrastructure",
+          "url": "https://arxiv.org/abs/2611.08134",
+          "published_at": "2026-11-05T15:00:51Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Beyond K/V Caches: Cross-Model State Handoff in Hybrid Linear-Attention LLMs",
+          "url": "https://arxiv.org/abs/2611.08133",
+          "published_at": "2026-11-05T15:00:50Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Create Your Own Work Stack: Deploying Self-hosted AI and Tooling in a Tech Startup",
+          "url": "https://arxiv.org/abs/2611.08116",
+          "published_at": "2026-11-05T14:49:11Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Identifying Neural Dynamics Using Nonlinear Interventional State Space Models",
+          "url": "https://arxiv.org/abs/2611.08113",
+          "published_at": "2026-11-05T14:48:35Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "PersonaAgent: Retrieval-Augmented Transaction Anomaly Scoring with Refreshable Multi-Entity Persona Memory",
+          "url": "https://arxiv.org/abs/2611.08094",
+          "published_at": "2026-11-05T14:37:16Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Gradient Boosting for Efficient Rank Discovery in Tensor Network Kernel Machines",
+          "url": "https://arxiv.org/abs/2611.08093",
+          "published_at": "2026-11-05T14:36:46Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Gabor Gabor: E-Gaborformer, a Strictly Causal Speech Recognizer with Gabor-Dictionary Convolutions and Delta-Rule Memory",
+          "url": "https://arxiv.org/abs/2611.08092",
+          "published_at": "2026-11-05T14:36:34Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "ATHAAR: A Medieval Scientific Arabic Manuscript Dataset for Handwritten Text Recognition",
+          "url": "https://arxiv.org/abs/2611.08091",
+          "published_at": "2026-11-05T14:36:16Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "SAE Interprets MoE: Sparse AutoEncoders Reveal That MoE Experts Exhibit Human-Interpretable Fine-Grained Specialization",
+          "url": "https://arxiv.org/abs/2611.08089",
+          "published_at": "2026-11-05T14:35:08Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Value or Attention: Investigating Layer-wise Relevance Propagation for Graph Attention Networks",
+          "url": "https://arxiv.org/abs/2611.08088",
+          "published_at": "2026-11-05T14:35:00Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "MUSS: A Multi-scale and Sequence-based Model for Single-cell Gene Regulation",
+          "url": "https://arxiv.org/abs/2611.08086",
+          "published_at": "2026-11-05T14:34:07Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Linguistic boundaries emerge from pressure-constrained processing dynamics",
+          "url": "https://arxiv.org/abs/2611.08085",
+          "published_at": "2026-11-05T14:33:00Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "DictLLM: Post-training Compression of Large Language Model with Dictionary Kernels",
+          "url": "https://arxiv.org/abs/2611.08082",
+          "published_at": "2026-11-05T14:31:12Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Optimal Competitive Ratios for Chasing Convex Functions with Quadratic Growth",
+          "url": "https://arxiv.org/abs/2611.08078",
+          "published_at": "2026-11-05T14:27:50Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Can an LLM Actually Reason and Program about Neural Network's Weights or is it just memorization on steroids? Exploring \"Weight-Space Programming\"",
+          "url": "https://arxiv.org/abs/2611.08070",
+          "published_at": "2026-11-05T14:23:07Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "NutriVisRAG: Multimodal Exemplar Grounding for Nutrient Estimation with Vision-Language Models",
+          "url": "https://arxiv.org/abs/2611.08054",
+          "published_at": "2026-11-05T14:10:35Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "When Imperfect Automated Fact-Checking Backfires: Social Learning in the Presence of Misinformation",
+          "url": "https://arxiv.org/abs/2611.08053",
+          "published_at": "2026-11-05T14:10:05Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Performance metrics in machine learning: a scenario-based guide from the confusion matrix to calibration, regression and uncertainty",
+          "url": "https://arxiv.org/abs/2611.08048",
+          "published_at": "2026-11-05T14:02:57Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "KeHoSu: Keyed Homoglyph Substitution for Authenticated Text Provenance over Copy-Paste Channels",
+          "url": "https://arxiv.org/abs/2611.08046",
+          "published_at": "2026-11-05T14:01:01Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Secure Formal Raising: Protecting the Development of AI through Executable Properties",
+          "url": "https://arxiv.org/abs/2611.08042",
+          "published_at": "2026-11-05T13:59:27Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Should We Pay This Much for Robustness? Efficient Proxy Certificates with Marginal Guarantees",
+          "url": "https://arxiv.org/abs/2611.08035",
+          "published_at": "2026-11-05T13:53:12Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Reproducing Kernel (Quasi-)Banach Spaces with the $\\ell^p$ Coefficient Norms",
+          "url": "https://arxiv.org/abs/2611.08032",
+          "published_at": "2026-11-05T13:52:28Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "GTAFL: Addressing Test-Agnostic Long-Tailed Federated Learning in Medical Image",
+          "url": "https://arxiv.org/abs/2611.08021",
+          "published_at": "2026-11-05T13:41:39Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Learning Dynamics of On-Policy Distillation",
+          "url": "https://arxiv.org/abs/2611.08016",
+          "published_at": "2026-11-05T13:38:26Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Automatic keyphrase extraction and annotation: modern theoretical approaches and practical solutions for text and speech",
+          "url": "https://arxiv.org/abs/2611.08006",
+          "published_at": "2026-11-05T13:31:35Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Towards Multiscale Molecular Representation Learning through Geometry-Based Fragmentation for Polymer Property Prediction",
+          "url": "https://arxiv.org/abs/2611.07998",
+          "published_at": "2026-11-05T13:25:23Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Compression Through a Context Lens: Evaluating Adaptation, Quantization, and Distillation in Arabic Legal LLMs",
+          "url": "https://arxiv.org/abs/2611.07988",
+          "published_at": "2026-11-05T13:15:55Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Technohybridism: Recursive Semantic Normalization in AI-Mediated Societies",
+          "url": "https://arxiv.org/abs/2611.07984",
+          "published_at": "2026-11-05T13:14:00Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "How Far Can Lightweight LLMs Go in Intent-to-SLO Translation?",
+          "url": "https://arxiv.org/abs/2611.07982",
+          "published_at": "2026-11-05T13:12:30Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents",
+          "url": "https://arxiv.org/abs/2611.07976",
+          "published_at": "2026-11-05T13:08:43Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Tight Asymptotic Bounds on the Maximum Number of Linear Regions of Piecewise-Linear Kolmogorov--Arnold networks",
+          "url": "https://arxiv.org/abs/2611.07973",
+          "published_at": "2026-11-05T13:05:28Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "TCSExam: Evaluating Frontier LLMs on the Full Range of TCS Research",
+          "url": "https://arxiv.org/abs/2611.07962",
+          "published_at": "2026-11-05T12:58:43Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation",
+          "url": "https://arxiv.org/abs/2611.07959",
+          "published_at": "2026-11-05T12:55:51Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "A Behavioural Framework for Predicting and Understanding Loss of Control in Frontier Artificial Intelligence Systems",
+          "url": "https://arxiv.org/abs/2611.07953",
+          "published_at": "2026-11-05T12:49:20Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Invariance before structure: two modes of emergent compression in representation learning",
+          "url": "https://arxiv.org/abs/2611.07952",
+          "published_at": "2026-11-05T12:49:05Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Leakage- and Label-Aware Benchmarking of Class-Imbalance Strategies for Multimodal Chest X-Ray and EHR Classification",
+          "url": "https://arxiv.org/abs/2611.07950",
+          "published_at": "2026-11-05T12:47:38Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Beyond the Keyword: A Human-Annotated Benchmark for Arabic Anxiety-Related Discourse",
+          "url": "https://arxiv.org/abs/2611.07949",
+          "published_at": "2026-11-05T12:45:49Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Circe: Training-Free LLM Self-Evaluation via Component Interaction Consistency",
+          "url": "https://arxiv.org/abs/2611.07948",
+          "published_at": "2026-11-05T12:45:40Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering",
+          "url": "https://arxiv.org/abs/2611.07947",
+          "published_at": "2026-11-05T12:45:28Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "tok: a textual concrete syntax of BPMN and DMN for humans and AI agents",
+          "url": "https://arxiv.org/abs/2611.07945",
+          "published_at": "2026-11-05T12:42:56Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "CardioLM: A multilingual suite of small language models for the cardiology domain",
+          "url": "https://arxiv.org/abs/2611.07940",
+          "published_at": "2026-11-05T12:41:19Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Joint Modeling of Conditional Mean and Variability in Multilevel Functional Data: Application to Postprandial Glucose Trajectories in the AEGIS Study",
+          "url": "https://arxiv.org/abs/2611.07937",
+          "published_at": "2026-11-05T12:38:52Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Towards Scalable Diagnostic-Driven Whole-Slide Image Retrieval for Pathology Archives",
+          "url": "https://arxiv.org/abs/2611.07935",
+          "published_at": "2026-11-05T12:38:23Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "The Blindfolded Controller: Decision Model-Guided Training for Reinforcement Learning",
+          "url": "https://arxiv.org/abs/2611.07934",
+          "published_at": "2026-11-05T12:38:10Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AttnSR: Attention Step Reward for Long-Horizon Agentic RL",
+          "url": "https://arxiv.org/abs/2611.07932",
+          "published_at": "2026-11-05T12:37:19Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Flux as a Codec: Zero-Shot Lossy Compression with Flux",
+          "url": "https://arxiv.org/abs/2611.07929",
+          "published_at": "2026-11-05T12:34:20Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "ZeroRAG: Adaptive Semantic Peer Routing for Decentralized Retrieval-Augmented Generation",
+          "url": "https://arxiv.org/abs/2611.07928",
+          "published_at": "2026-11-05T12:33:45Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AraEngage: Interpretable Linguistic Correlates of Engagement in Arabic Facebook News",
+          "url": "https://arxiv.org/abs/2611.07926",
+          "published_at": "2026-11-05T12:32:25Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "How Finite Brains Generalize Without Bound: Spatial Memory as a Universal Computer",
+          "url": "https://arxiv.org/abs/2611.07920",
+          "published_at": "2026-11-05T12:30:06Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Adaptive Semantic Branching: Disagreement-Localized Cross-Trajectory Regeneration for Reasoning Candidate Expansion",
+          "url": "https://arxiv.org/abs/2611.07918",
+          "published_at": "2026-11-05T12:29:57Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Same Answer, Different Future: Matched Predictions Do Not Imply Matched Belief Updating in Language Models",
+          "url": "https://arxiv.org/abs/2611.07913",
+          "published_at": "2026-11-05T12:27:53Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "GuidedWAM: Training-Free Energy Guidance for World Action Models in Autonomous Driving",
+          "url": "https://arxiv.org/abs/2611.07912",
+          "published_at": "2026-11-05T12:27:38Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "EDGAR: Efficient Diffusion-Driven Gaussian Avatar Refinement via Synthetic Failure",
+          "url": "https://arxiv.org/abs/2611.07909",
+          "published_at": "2026-11-05T12:25:51Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Structure from Collision via Hypothesis-Space Reasoning",
+          "url": "https://arxiv.org/abs/2611.07900",
+          "published_at": "2026-11-05T12:20:11Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Persistent Retrieval for Conversational Agents: A Study of Retrieval Efficiency",
+          "url": "https://arxiv.org/abs/2611.07899",
+          "published_at": "2026-11-05T12:19:39Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "DISCERN: Distributional Synthetic Replay for Retain-Free Incremental Machine Unlearning",
+          "url": "https://arxiv.org/abs/2611.07892",
+          "published_at": "2026-11-05T12:11:29Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "When Bigger Becomes Brittle: Why Compression Hurts More as Language Models Scale",
+          "url": "https://arxiv.org/abs/2611.07891",
+          "published_at": "2026-11-05T12:11:13Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "When, Where, How: Active In-Context Learning for Tabular Foundation Models",
+          "url": "https://arxiv.org/abs/2611.07886",
+          "published_at": "2026-11-05T12:04:48Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "InnerLogic-Surg: An Open Surgical Foundation Model via Continual Pretraining",
+          "url": "https://arxiv.org/abs/2611.07883",
+          "published_at": "2026-11-05T12:03:01Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Network Effect Decomposition for Causal Effect Estimation under Network Interference",
+          "url": "https://arxiv.org/abs/2611.07879",
+          "published_at": "2026-11-05T12:00:31Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Which Signals of Code Correctness Survive Distribution Shift? Hidden-State and Causal Predictors of Program and Verdict Correctness",
+          "url": "https://arxiv.org/abs/2611.07876",
+          "published_at": "2026-11-05T11:57:19Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Responsible GenAI Use During Active Armed Conflict: Evidence from Sudan's Emergency Response Rooms",
+          "url": "https://arxiv.org/abs/2611.07874",
+          "published_at": "2026-11-05T11:52:14Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "FARR: Forecast-Aware Residual Refinement with Matched Endpoint Evidence for Long-Horizon Time-Series Forecasting",
+          "url": "https://arxiv.org/abs/2611.07870",
+          "published_at": "2026-11-05T11:45:32Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "PlayGen2: Learning Real-Time Playable Worlds with Explicit 3D State",
+          "url": "https://arxiv.org/abs/2611.07867",
+          "published_at": "2026-11-05T11:45:25Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Do Recommenders Need to Think in Words? Latent Reasoning for Efficient LLM-Based Recommendation",
+          "url": "https://arxiv.org/abs/2611.07866",
+          "published_at": "2026-11-05T11:43:45Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "CORE: Coarse-to-Fine Search with Context Management for Deep Research",
+          "url": "https://arxiv.org/abs/2611.07859",
+          "published_at": "2026-11-05T11:36:19Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Towards Foundation Decision Models: Drex",
+          "url": "https://arxiv.org/abs/2611.07854",
+          "published_at": "2026-11-05T11:31:13Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Computation, not weight access: large language models as auditors of clinical prediction networks",
+          "url": "https://arxiv.org/abs/2611.07847",
+          "published_at": "2026-11-05T11:28:04Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Masked diffusion as random sequential adsorption: an exactly solvable model for parallel decoding",
+          "url": "https://arxiv.org/abs/2611.07845",
+          "published_at": "2026-11-05T11:23:40Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Enhanced MRI brain tumor detection using deep learning in conjunction with explainable AI SHAP based diverse and multi feature analysis",
+          "url": "https://arxiv.org/abs/2611.07843",
+          "published_at": "2026-11-05T11:20:24Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "THG-Omni: Traceable Human-Centric Graph Supervision for Video Reasoning",
+          "url": "https://arxiv.org/abs/2611.07836",
+          "published_at": "2026-11-05T11:15:34Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "STAG-Net: Structure-Aware Attention over Landmark Groups for Lightweight Head Pose Estimation",
+          "url": "https://arxiv.org/abs/2611.07828",
+          "published_at": "2026-11-05T11:09:34Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Instantiating the Knowledge Plane",
+          "url": "https://arxiv.org/abs/2611.07827",
+          "published_at": "2026-11-05T11:09:21Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Estimating Spectrum-Free Information Bounds for Generative Surrogates Beyond Conditional Collapse",
+          "url": "https://arxiv.org/abs/2611.07826",
+          "published_at": "2026-11-05T11:07:17Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Generate-then-Rank: Learning Symbolic Goal Interpretation for Embodied Agents",
+          "url": "https://arxiv.org/abs/2611.07825",
+          "published_at": "2026-11-05T11:05:53Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Axis-LoRA: Probing and Adapting Embedding Models for Personal-Memory Retrieval",
+          "url": "https://arxiv.org/abs/2611.07820",
+          "published_at": "2026-11-05T10:59:23Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Different Corpora, Different Skills? A Paired Study of Small Language Models",
+          "url": "https://arxiv.org/abs/2611.07812",
+          "published_at": "2026-11-05T10:50:54Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Decodability Is Not Validity: Evaluating Nuisance Sensitivity in Language Model Concept Probes",
+          "url": "https://arxiv.org/abs/2611.07805",
+          "published_at": "2026-11-05T10:47:17Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Dataset Collection and Fine-Tuning of NLLB for German--English Translation",
+          "url": "https://arxiv.org/abs/2611.07797",
+          "published_at": "2026-11-05T10:35:22Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "EnergyBench: a live, gate-aligned benchmark of day-ahead forecasts for European power markets",
+          "url": "https://arxiv.org/abs/2611.07784",
+          "published_at": "2026-11-05T10:26:36Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "PBPO: Prefix-Block Policy Optimization for Diffusion Language Models",
+          "url": "https://arxiv.org/abs/2611.07783",
+          "published_at": "2026-11-05T10:20:41Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Bridging Structure and Semantics: Knowledge Graph Verification via Triple-to-Text Alignment",
+          "url": "https://arxiv.org/abs/2611.07780",
+          "published_at": "2026-11-05T10:19:27Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "The Intrusion Pathway: How Non-Evidential Context Degrades Language Model Performance",
+          "url": "https://arxiv.org/abs/2611.07778",
+          "published_at": "2026-11-05T10:18:07Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Adapters as Data: The Latent Space of LoRAs",
+          "url": "https://arxiv.org/abs/2611.07775",
+          "published_at": "2026-11-05T10:13:21Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Optimal Learning in Games with Arbitrary Delays: Best-of-Both-Worlds for Self-Play and Adversarial Opponents",
+          "url": "https://arxiv.org/abs/2611.07773",
+          "published_at": "2026-11-05T10:11:38Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "RIVER: Evidence-guided multi-agent retrieval for enzyme--reaction discovery",
+          "url": "https://arxiv.org/abs/2611.07757",
+          "published_at": "2026-11-05T10:01:08Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Scaling Laws for SAE Training Data",
+          "url": "https://arxiv.org/abs/2611.07756",
+          "published_at": "2026-11-05T10:00:55Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Automated Video-to-QA Pipeline: End-to-End Question Generation and Verification Using Large Language Models",
+          "url": "https://arxiv.org/abs/2611.07755",
+          "published_at": "2026-11-05T10:00:50Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Neural Collapse on Imbalanced Datasets and Open-Set Scenario",
+          "url": "https://arxiv.org/abs/2611.07753",
+          "published_at": "2026-11-05T10:00:33Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Foresee to Trade: Forecast-Augmented Policy Optimization for Portfolio Management",
+          "url": "https://arxiv.org/abs/2611.07750",
+          "published_at": "2026-11-05T09:56:17Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "ConvPE: Convolutional Position Embedding Improves Transformers",
+          "url": "https://arxiv.org/abs/2611.07749",
+          "published_at": "2026-11-05T09:55:15Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Ordering Multivariate Time Series by Volatility Memory: A Temporal Convolutional Approach to Volatility Heredity",
+          "url": "https://arxiv.org/abs/2611.07746",
+          "published_at": "2026-11-05T09:52:02Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Comparing Classification and Feature Learning by Analyzing Their Loss Functions in Normalized Spaces with Different Scale Factors",
+          "url": "https://arxiv.org/abs/2611.07741",
+          "published_at": "2026-11-05T09:49:18Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Extending Reasoning in Typed Decision Models via Looping",
+          "url": "https://arxiv.org/abs/2611.07736",
+          "published_at": "2026-11-05T09:46:17Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Evaluating Token Probabilities as Confidence Estimators in Human Behavior Simulations: A Case Study in Luxembourgish Next Like Prediction",
+          "url": "https://arxiv.org/abs/2611.07735",
+          "published_at": "2026-11-05T09:45:49Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "O$^2$PD: Overlap-Gated On-Policy Distillation on Reliable Prefix",
+          "url": "https://arxiv.org/abs/2611.07731",
+          "published_at": "2026-11-05T09:43:03Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes",
+          "url": "https://arxiv.org/abs/2611.07730",
+          "published_at": "2026-11-05T09:42:12Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding",
+          "url": "https://arxiv.org/abs/2611.07723",
+          "published_at": "2026-11-05T09:38:23Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Reinforcing What the Student Has Learned: Teacher-Guided On-Policy Distillation",
+          "url": "https://arxiv.org/abs/2611.07722",
+          "published_at": "2026-11-05T09:38:19Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision",
+          "url": "https://arxiv.org/abs/2611.07721",
+          "published_at": "2026-11-05T09:38:06Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Evaluating Language Model Features for Zero-Shot Time-Series Anomaly Detection Under Isolation Assumption",
+          "url": "https://arxiv.org/abs/2611.07720",
+          "published_at": "2026-11-05T09:37:57Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Multimodal Information Interactions Bottleneck for Multimodal Self-Supervised Learning",
+          "url": "https://arxiv.org/abs/2611.07718",
+          "published_at": "2026-11-05T09:37:00Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Pediatric ECG foundation model via adult-to-pediatric fine-tuning: downstream tasks and clinical evaluation",
+          "url": "https://arxiv.org/abs/2611.07717",
+          "published_at": "2026-11-05T09:36:44Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays",
+          "url": "https://arxiv.org/abs/2611.07707",
+          "published_at": "2026-11-05T09:27:31Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Towards Generalist Graph-Level Anomaly Detection",
+          "url": "https://arxiv.org/abs/2611.07706",
+          "published_at": "2026-11-05T09:26:57Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning",
+          "url": "https://arxiv.org/abs/2611.07702",
+          "published_at": "2026-11-05T09:24:22Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Equivariant Deep Learning in Direct-Product Space for Electronic-Structure Hamiltonian Prediction",
+          "url": "https://arxiv.org/abs/2611.07695",
+          "published_at": "2026-11-05T09:19:07Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Non-Parametric Mutual Information Estimation with Vine Copulas",
+          "url": "https://arxiv.org/abs/2611.07693",
+          "published_at": "2026-11-05T09:18:29Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Randomized and Oracle-Based Feasible Directions Methods for Nonsmooth Nonconvex Constrained Optimization",
+          "url": "https://arxiv.org/abs/2611.07691",
+          "published_at": "2026-11-05T09:16:30Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents",
+          "url": "https://arxiv.org/abs/2611.07689",
+          "published_at": "2026-11-05T09:14:26Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "ReferClaw: Disambiguating User Intent for Egocentric Assistance",
+          "url": "https://arxiv.org/abs/2611.07683",
+          "published_at": "2026-11-05T09:10:14Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "$O(1/n)$ Convergence Rate for RVI $Q$-Learning",
+          "url": "https://arxiv.org/abs/2611.07676",
+          "published_at": "2026-11-05T09:05:45Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Randomized Parallel Complexity of Weakly Convex Optimization",
+          "url": "https://arxiv.org/abs/2611.07675",
+          "published_at": "2026-11-05T09:04:17Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Instrumental Variables in Continuous-Time Stochastic Processes",
+          "url": "https://arxiv.org/abs/2611.07674",
+          "published_at": "2026-11-05T09:03:09Z",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "announced_slice_partial",
+      "initial_script_status": "ok",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "hf-daily-papers",
+      "name": "Hugging Face Daily Papers",
+      "core": false,
+      "method": "api",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://huggingface.co/api/daily_papers",
+      "status": "ok",
+      "evidence": "按上榜日请求 huggingface.co/api/daily_papers?date=2026-11-05|06 （另参考 11-04）。与本次 arXiv 公告去重后额外窗口内条目 0。HF 上榜日不是原文发表时间。未读全文。",
+      "items": [],
+      "check_state": "complete",
+      "initial_script_status": "ok",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "openreview",
+      "name": "OpenReview",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://openreview.net/",
+      "status": "partial",
+      "evidence": "curl 首页 https://openreview.net/ ，标题 Venues。新闻日期可见 Sep 24, 2026、Mar 23, 2026、Feb 13, 2026，都早于窗口。Active Venues 列表没有投稿关闭时间。只扫了首页。partial。",
+      "items": [],
+      "check_state": "homepage_only",
+      "initial_script_status": "pending",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
+      "status": "ok",
+      "evidence": "日榜与 Python 日榜 HTML 去重后 36 个仓库。star、created_at、pushed_at 与最新 release 用 api.github.com 复核。榜单快照不进公开目录；仅窗口内、描述明确与人工智能相关的版本发布另记。",
+      "items": [
+        {
+          "title": "D4Vinci/Scrapling",
+          "url": "https://github.com/D4Vinci/Scrapling",
+          "board": "python",
+          "stars": 98780,
+          "created_at": "2024-10-13T20:29:53Z",
+          "pushed_at": "2026-11-05T18:01:47Z",
+          "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v0.5.1",
+            "published_at": "2026-11-04T20:29:16Z",
+            "url": "https://github.com/D4Vinci/Scrapling/releases/tag/v0.5.1",
+            "name": "Release v0.5.1"
+          }
+        },
+        {
+          "title": "NVIDIA/TensorRT-LLM",
+          "url": "https://github.com/NVIDIA/TensorRT-LLM",
+          "board": "python",
+          "stars": 15030,
+          "created_at": "2023-08-16T17:14:27Z",
+          "pushed_at": "2026-11-06T21:08:00Z",
+          "description": "TensorRT LLM provides users with an easy-to-use Python API to define Large Language Models (LLMs) and supports state-of-the-art optimizations to perform inference efficiently on NVIDIA GPUs. TensorRT LLM also contains components to create Python and C++ runtimes that orchestrate the inference execution in a performant way.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v1.4.0rc2",
+            "published_at": "2026-10-28T15:51:34Z",
+            "url": "https://github.com/NVIDIA/TensorRT-LLM/releases/tag/v1.4.0rc2",
+            "name": "v1.4.0rc2"
+          }
+        },
+        {
+          "title": "NVIDIA/auto-ontology",
+          "url": "https://github.com/NVIDIA/auto-ontology",
+          "board": "daily+python",
+          "stars": 8861,
+          "created_at": "2026-04-27T21:45:56Z",
+          "pushed_at": "2026-11-06T20:57:20Z",
+          "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot"
+        },
+        {
+          "title": "airbytehq/airbyte",
+          "url": "https://github.com/airbytehq/airbyte",
+          "board": "python",
+          "stars": 22329,
+          "created_at": "2020-07-27T23:55:54Z",
+          "pushed_at": "2026-11-06T21:09:46Z",
+          "description": "Open-source data movement for ELT pipelines and AI agents — from APIs, databases & files to warehouses, lakes, and AI applications. Both self-hosted and Cloud.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v2.0.0",
+            "published_at": "2025-10-15T21:21:41Z",
+            "url": "https://github.com/airbytehq/airbyte/releases/tag/v2.0.0",
+            "name": "Airbyte 2.0"
+          }
+        },
+        {
+          "title": "angular/angular",
+          "url": "https://github.com/angular/angular",
+          "board": "daily",
+          "stars": 101286,
+          "created_at": "2014-09-18T16:12:01Z",
+          "pushed_at": "2026-11-06T19:39:34Z",
+          "description": "Deliver web apps with confidence 🚀",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v22.2.5",
+            "published_at": "2026-11-06T19:37:09Z",
+            "url": "https://github.com/angular/angular/releases/tag/v22.2.5",
+            "name": "22.2.5"
+          },
+          "release_in_window": true
+        },
+        {
+          "title": "antoniaci/blackbird",
+          "url": "https://github.com/antoniaci/blackbird",
+          "board": "python",
+          "stars": 9857,
+          "created_at": "2022-05-06T14:25:44Z",
+          "pushed_at": "2026-11-03T19:14:38Z",
+          "description": "An OSINT tool to search for accounts by username and email in social networks.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot"
+        },
+        {
+          "title": "apache/airflow",
+          "url": "https://github.com/apache/airflow",
+          "board": "python",
+          "stars": 47399,
+          "created_at": "2015-04-13T18:04:58Z",
+          "pushed_at": "2026-11-06T20:59:19Z",
+          "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "3.4.0",
+            "published_at": "2026-11-06T13:08:22Z",
+            "url": "https://github.com/apache/airflow/releases/tag/3.4.0",
+            "name": "Apache Airflow 3.4.0"
+          },
+          "release_in_window": true
+        },
+        {
+          "title": "astral-sh/ruff",
+          "url": "https://github.com/astral-sh/ruff",
+          "board": "daily",
+          "stars": 50616,
+          "created_at": "2022-08-09T17:17:44Z",
+          "pushed_at": "2026-11-06T21:04:55Z",
+          "description": "An extremely fast Python linter and code formatter, written in Rust.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "0.17.4",
+            "published_at": "2026-11-05T18:53:24Z",
+            "url": "https://github.com/astral-sh/ruff/releases/tag/0.17.4",
+            "name": "0.17.4"
+          },
+          "release_in_window": true
+        },
+        {
+          "title": "cloudflare/security-audit-skill",
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "board": "daily",
+          "stars": 63730,
+          "created_at": "2026-06-18T14:08:44Z",
+          "pushed_at": "2026-09-14T19:29:02Z",
+          "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot"
+        },
+        {
+          "title": "dgtlmoon/changedetection.io",
+          "url": "https://github.com/dgtlmoon/changedetection.io",
+          "board": "python",
+          "stars": 35592,
+          "created_at": "2021-01-27T16:03:30Z",
+          "pushed_at": "2026-11-06T15:40:39Z",
+          "description": "Best and simplest tool for website change detection, web page monitoring, and website change alerts. Perfect for tracking content changes, price drops, restock alerts, and website defacement monitoring— MCP included! all for free or enjoy our SaaS plan!",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "0.70.2",
+            "published_at": "2026-11-05T22:55:35Z",
+            "url": "https://github.com/dgtlmoon/changedetection.io/releases/tag/0.70.2",
+            "name": "0.70.2"
+          },
+          "release_in_window": true
+        },
+        {
+          "title": "django/django",
+          "url": "https://github.com/django/django",
+          "board": "python",
+          "stars": 91635,
+          "created_at": "2012-04-28T02:47:18Z",
+          "pushed_at": "2026-11-06T14:41:04Z",
+          "description": "The Web framework for perfectionists with deadlines.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot"
+        },
+        {
+          "title": "etcd-io/etcd",
+          "url": "https://github.com/etcd-io/etcd",
+          "board": "daily",
+          "stars": 52571,
+          "created_at": "2013-07-06T21:57:21Z",
+          "pushed_at": "2026-11-06T12:29:27Z",
+          "description": "Distributed reliable key-value store for the most critical data of a distributed system",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v3.7.3",
+            "published_at": "2026-10-22T23:12:51Z",
+            "url": "https://github.com/etcd-io/etcd/releases/tag/v3.7.3",
+            "name": "v3.7.3"
+          }
+        },
+        {
+          "title": "google/skills",
+          "url": "https://github.com/google/skills",
+          "board": "daily+python",
+          "stars": 22787,
+          "created_at": "2026-03-31T19:02:20Z",
+          "pushed_at": "2026-11-06T20:28:13Z",
+          "description": "Agent Skills for Google products and technologies",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot"
+        },
+        {
+          "title": "lz4/lz4",
+          "url": "https://github.com/lz4/lz4",
+          "board": "daily",
+          "stars": 12626,
+          "created_at": "2014-03-25T15:52:21Z",
+          "pushed_at": "2026-11-06T17:53:27Z",
+          "description": "Extremely Fast Compression algorithm",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v1.11.0",
+            "published_at": "2026-11-04T15:55:56Z",
+            "url": "https://github.com/lz4/lz4/releases/tag/v1.11.0",
+            "name": "LZ4 v1.11.0"
+          }
+        },
+        {
+          "title": "mattpocock/skills",
+          "url": "https://github.com/mattpocock/skills",
+          "board": "daily",
+          "stars": 316585,
+          "created_at": "2026-02-03T11:15:53Z",
+          "pushed_at": "2026-11-05T10:40:01Z",
+          "description": "Skills for Real Engineers. Straight from my .agents directory.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v1.3.2",
+            "published_at": "2026-10-29T10:27:41Z",
+            "url": "https://github.com/mattpocock/skills/releases/tag/v1.3.2",
+            "name": "v1.3.2"
+          }
+        },
+        {
+          "title": "microsoft/VibeVoice",
+          "url": "https://github.com/microsoft/VibeVoice",
+          "board": "python",
+          "stars": 56435,
+          "created_at": "2025-08-25T13:24:01Z",
+          "pushed_at": "2026-10-08T05:29:29Z",
+          "description": "Open-Source Frontier Voice AI",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot"
+        },
+        {
+          "title": "microsoft/vscode",
+          "url": "https://github.com/microsoft/vscode",
+          "board": "daily",
+          "stars": 194957,
+          "created_at": "2015-09-03T20:23:38Z",
+          "pushed_at": "2026-11-06T21:13:34Z",
+          "description": "Visual Studio Code",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "1.145.2",
+            "published_at": "2026-11-06T10:21:07Z",
+            "url": "https://github.com/microsoft/vscode/releases/tag/1.145.2",
+            "name": "1.145.2"
+          },
+          "release_in_window": true
+        },
+        {
+          "title": "mlflow/mlflow",
+          "url": "https://github.com/mlflow/mlflow",
+          "board": "python",
+          "stars": 28700,
+          "created_at": "2018-06-05T16:05:58Z",
+          "pushed_at": "2026-11-06T18:53:39Z",
+          "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "model-catalog/latest",
+            "published_at": "2026-04-06T05:49:14Z",
+            "url": "https://github.com/mlflow/mlflow/releases/tag/model-catalog/latest",
+            "name": "Model Catalog"
+          }
+        },
+        {
+          "title": "mpv-player/mpv",
+          "url": "https://github.com/mpv-player/mpv",
+          "board": "daily",
+          "stars": 37849,
+          "created_at": "2012-10-13T08:08:44Z",
+          "pushed_at": "2026-11-05T15:31:49Z",
+          "description": "🎥 Command line media player",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v0.42.0",
+            "published_at": "2026-11-05T00:56:42Z",
+            "url": "https://github.com/mpv-player/mpv/releases/tag/v0.42.0",
+            "name": "v0.42.0"
+          }
+        },
+        {
+          "title": "numpy/numpy",
+          "url": "https://github.com/numpy/numpy",
+          "board": "python",
+          "stars": 33339,
+          "created_at": "2010-09-13T23:02:39Z",
+          "pushed_at": "2026-11-06T19:17:55Z",
+          "description": "The fundamental package for scientific computing with Python.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v2.5.4",
+            "published_at": "2026-10-10T21:30:10Z",
+            "url": "https://github.com/numpy/numpy/releases/tag/v2.5.4",
+            "name": "v2.5.4 (Oct 10,  2026)"
+          }
+        },
+        {
+          "title": "nushell/nushell",
+          "url": "https://github.com/nushell/nushell",
+          "board": "daily",
+          "stars": 40921,
+          "created_at": "2019-05-10T16:59:42Z",
+          "pushed_at": "2026-11-06T12:38:23Z",
+          "description": "A new type of shell",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "0.116.1",
+            "published_at": "2026-10-04T15:26:13Z",
+            "url": "https://github.com/nushell/nushell/releases/tag/0.116.1",
+            "name": "0.116.1"
+          }
+        },
+        {
+          "title": "onnx/onnx",
+          "url": "https://github.com/onnx/onnx",
+          "board": "python",
+          "stars": 21657,
+          "created_at": "2017-09-07T04:53:45Z",
+          "pushed_at": "2026-11-06T19:33:39Z",
+          "description": "Open standard for machine learning interoperability",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v1.23.2",
+            "published_at": "2026-10-06T01:30:11Z",
+            "url": "https://github.com/onnx/onnx/releases/tag/v1.23.2",
+            "name": "Release 1.23.2"
+          }
+        },
+        {
+          "title": "openssl/openssl",
+          "url": "https://github.com/openssl/openssl",
+          "board": "daily",
+          "stars": 31266,
+          "created_at": "2013-01-15T22:34:48Z",
+          "pushed_at": "2026-11-06T19:45:17Z",
+          "description": "General purpose TLS and crypto library",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "openssl-4.1.0",
+            "published_at": "2026-10-23T12:23:31Z",
+            "url": "https://github.com/openssl/openssl/releases/tag/openssl-4.1.0",
+            "name": "OpenSSL 4.1.0"
+          }
+        },
+        {
+          "title": "pandas-dev/pandas",
+          "url": "https://github.com/pandas-dev/pandas",
+          "board": "python",
+          "stars": 50469,
+          "created_at": "2010-08-24T01:37:33Z",
+          "pushed_at": "2026-11-06T19:40:00Z",
+          "description": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v3.1.1",
+            "published_at": "2026-11-04T15:46:25Z",
+            "url": "https://github.com/pandas-dev/pandas/releases/tag/v3.1.1",
+            "name": "pandas 3.1.1"
+          }
+        },
+        {
+          "title": "pipeshub-ai/pipeshub-ai",
+          "url": "https://github.com/pipeshub-ai/pipeshub-ai",
+          "board": "python",
+          "stars": 4024,
+          "created_at": "2025-03-06T18:51:10Z",
+          "pushed_at": "2026-11-06T21:10:49Z",
+          "description": "The open-source context layer for AI agents. PipesHub turns your company's knowledge (Slack, Drive, Jira, GitHub, Microsoft 365 and 50+ connectors) into a permission-aware workspace that agents can search, grep, navigate and cite. MCP, SDKs and built-in agents. Self-hosted.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v1.0.0",
+            "published_at": "2026-10-27T15:25:07Z",
+            "url": "https://github.com/pipeshub-ai/pipeshub-ai/releases/tag/v1.0.0",
+            "name": "1.0.0"
+          }
+        },
+        {
+          "title": "prometheus/prometheus",
+          "url": "https://github.com/prometheus/prometheus",
+          "board": "daily",
+          "stars": 67118,
+          "created_at": "2012-11-24T11:14:12Z",
+          "pushed_at": "2026-11-06T17:19:24Z",
+          "description": "The Prometheus monitoring system and time series database.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v3.16.0",
+            "published_at": "2026-11-05T16:06:52Z",
+            "url": "https://github.com/prometheus/prometheus/releases/tag/v3.16.0",
+            "name": "3.16.0 / 2026-11-04"
+          },
+          "release_in_window": true
+        },
+        {
+          "title": "psf/black",
+          "url": "https://github.com/psf/black",
+          "board": "python",
+          "stars": 42122,
+          "created_at": "2018-03-14T19:54:45Z",
+          "pushed_at": "2026-11-04T15:36:16Z",
+          "description": "The uncompromising Python code formatter",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "26.10.1",
+            "published_at": "2026-10-10T04:11:33Z",
+            "url": "https://github.com/psf/black/releases/tag/26.10.1",
+            "name": "26.10.1"
+          }
+        },
+        {
+          "title": "psf/requests",
+          "url": "https://github.com/psf/requests",
+          "board": "python",
+          "stars": 54675,
+          "created_at": "2011-02-13T18:38:17Z",
+          "pushed_at": "2026-11-02T16:55:12Z",
+          "description": "A simple, yet elegant, HTTP library.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v2.34.2",
+            "published_at": "2026-05-14T19:27:15Z",
+            "url": "https://github.com/psf/requests/releases/tag/v2.34.2",
+            "name": "v2.34.2"
+          }
+        },
+        {
+          "title": "pydantic/pydantic",
+          "url": "https://github.com/pydantic/pydantic",
+          "board": "python",
+          "stars": 29331,
+          "created_at": "2017-05-03T21:23:58Z",
+          "pushed_at": "2026-11-06T21:09:48Z",
+          "description": "Data validation using Python type hints",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v2.14.3",
+            "published_at": "2026-11-05T09:18:07Z",
+            "url": "https://github.com/pydantic/pydantic/releases/tag/v2.14.3",
+            "name": "v2.14.3 2026-11-04"
+          },
+          "release_in_window": true
+        },
+        {
+          "title": "python-poetry/poetry",
+          "url": "https://github.com/python-poetry/poetry",
+          "board": "python",
+          "stars": 34395,
+          "created_at": "2018-02-28T15:23:47Z",
+          "pushed_at": "2026-11-02T23:01:17Z",
+          "description": "Python packaging and dependency management made easy",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "2.5.1",
+            "published_at": "2026-09-20T07:16:50Z",
+            "url": "https://github.com/python-poetry/poetry/releases/tag/2.5.1",
+            "name": "2.5.1"
+          }
+        },
+        {
+          "title": "rails/rails",
+          "url": "https://github.com/rails/rails",
+          "board": "daily",
+          "stars": 58982,
+          "created_at": "2008-04-11T02:19:47Z",
+          "pushed_at": "2026-11-06T14:50:07Z",
+          "description": "Ruby on Rails",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v8.1.4.1",
+            "published_at": "2026-11-04T02:46:00Z",
+            "url": "https://github.com/rails/rails/releases/tag/v8.1.4.1",
+            "name": "8.1.4.1"
+          }
+        },
+        {
+          "title": "react/react",
+          "url": "https://github.com/react/react",
+          "board": "daily",
+          "stars": 252205,
+          "created_at": "2013-05-24T16:15:54Z",
+          "pushed_at": "2026-11-06T19:49:25Z",
+          "description": "The library for web and native user interfaces.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v19.3.1",
+            "published_at": "2026-10-14T17:06:15Z",
+            "url": "https://github.com/react/react/releases/tag/v19.3.1",
+            "name": "19.3.1 (October 14th, 2026)"
+          }
+        },
+        {
+          "title": "rust-lang/rust",
+          "url": "https://github.com/rust-lang/rust",
+          "board": "daily",
+          "stars": 121365,
+          "created_at": "2010-06-16T20:39:03Z",
+          "pushed_at": "2026-11-06T20:43:45Z",
+          "description": "Empowering everyone to build reliable and efficient software.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "1.99.1",
+            "published_at": "2026-10-16T04:47:44Z",
+            "url": "https://github.com/rust-lang/rust/releases/tag/1.99.1",
+            "name": "Rust 1.99.1"
+          }
+        },
+        {
+          "title": "sherlock-project/sherlock",
+          "url": "https://github.com/sherlock-project/sherlock",
+          "board": "python",
+          "stars": 98326,
+          "created_at": "2018-12-24T14:30:48Z",
+          "pushed_at": "2026-11-06T05:15:07Z",
+          "description": "Hunt down social media accounts by username across social networks",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v0.16.2",
+            "published_at": "2026-09-08T20:54:15Z",
+            "url": "https://github.com/sherlock-project/sherlock/releases/tag/v0.16.2",
+            "name": "v0.16.2"
+          }
+        },
+        {
+          "title": "symfony/symfony",
+          "url": "https://github.com/symfony/symfony",
+          "board": "daily",
+          "stars": 31382,
+          "created_at": "2010-01-04T14:21:21Z",
+          "pushed_at": "2026-11-06T20:50:53Z",
+          "description": "The Symfony PHP framework",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v8.2.0-BETA1",
+            "published_at": "2026-11-04T12:41:17Z",
+            "url": "https://github.com/symfony/symfony/releases/tag/v8.2.0-BETA1",
+            "name": "v8.2.0-BETA1"
+          }
+        },
+        {
+          "title": "zed-industries/zed",
+          "url": "https://github.com/zed-industries/zed",
+          "board": "daily",
+          "stars": 93484,
+          "created_at": "2021-02-20T03:01:06Z",
+          "pushed_at": "2026-11-06T20:00:38Z",
+          "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+          "date_precision": "second",
+          "window_membership": "trending_snapshot",
+          "latest_release": {
+            "tag": "v1.28.0-pre",
+            "published_at": "2026-11-04T17:02:18Z",
+            "url": "https://github.com/zed-industries/zed/releases/tag/v1.28.0-pre",
+            "name": "v1.28.0-pre"
+          }
+        }
+      ],
+      "check_state": "complete",
+      "initial_script_status": "ok",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "36kr-ai",
+      "name": "36氪 AI 频道（逐篇核验原创与转载）",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.36kr.com/information/AI/",
+      "status": "ok",
+      "evidence": "栏目页 initialState 解析，窗口内 27 条。未逐篇打开正文，不把 36氪域名当成 original。gateway API 返回导航类型为空。未读全文。",
+      "items": [
+        {
+          "title": "不如《牛来》，谁在期待AI电影？",
+          "url": "https://www.36kr.com/p/4058156403234691",
+          "published_at": "2026-11-06T13:31:44.937000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AI资本投入接近3000亿，互联网大厂抢着买“赛博永生的门票”",
+          "url": "https://www.36kr.com/p/4058151744132227",
+          "published_at": "2026-11-06T13:27:38.010000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "不抢商品抢 Token，阿里 AI 能翻盘吗？",
+          "url": "https://www.36kr.com/p/4058139995575430",
+          "published_at": "2026-11-06T13:26:20.613000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "扎克伯格29岁“接班人”的百亿朋友圈，藏着“硅谷新黑帮”",
+          "url": "https://www.36kr.com/p/4058178452034441",
+          "published_at": "2026-11-06T13:20:45.224000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "在AI战争中幸存的策划",
+          "url": "https://www.36kr.com/p/4058172995736709",
+          "published_at": "2026-11-06T12:46:51.179000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "重磅，Claude破解首个原核巨型蛋白，40年神秘结构现真身",
+          "url": "https://www.36kr.com/p/4058140924564361",
+          "published_at": "2026-11-06T12:43:57.202000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Tibo被调岗，GPT重置键换主了",
+          "url": "https://www.36kr.com/p/4058140742554502",
+          "published_at": "2026-11-06T12:40:56.301000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "美股一夜血洗2.8万亿，硅谷顶级VC曝光：开源模型支出九成流向中国",
+          "url": "https://www.36kr.com/p/4058110111978630",
+          "published_at": "2026-11-06T12:25:08.585000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Token卖爆双11，直播间真能撬动C端付费吗？",
+          "url": "https://www.36kr.com/p/4058099154572164",
+          "published_at": "2026-11-06T12:18:29.534000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "普林斯顿团队推出Scientist World：将1000篇论文变成AI可运行的科研实验场",
+          "url": "https://www.36kr.com/p/4058059476440707",
+          "published_at": "2026-11-06T12:16:41.168000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AI开始替我们花钱了",
+          "url": "https://www.36kr.com/p/4058165551502471",
+          "published_at": "2026-11-06T12:05:34.283000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "刚刚，Gemini Omini 1.2登顶了，360p视频每秒0.07美元，还能升4K",
+          "url": "https://www.36kr.com/p/4058140801373065",
+          "published_at": "2026-11-06T11:41:23.415000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "A\\\\三大内部模型曝光，领先Opus5.5三个月，RSI缩短80%实验时间",
+          "url": "https://www.36kr.com/p/4058015927621512",
+          "published_at": "2026-11-06T11:31:13.915000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "半年营收1739万，亏损1.52亿：一家视频AI独角兽的账",
+          "url": "https://www.36kr.com/p/4058013915468933",
+          "published_at": "2026-11-06T11:24:40.932000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Agent，“重做”数据库",
+          "url": "https://www.36kr.com/p/4057964128687234",
+          "published_at": "2026-11-06T11:20:33.204000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "掘金 AI for Science：“卖铲子”的机会，藏在模型之后",
+          "url": "https://www.36kr.com/p/4057812855527302",
+          "published_at": "2026-11-06T11:17:45.205000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "互联网大会第二天，巨头用防止“智能体作恶”公约给AI踩下“制动”",
+          "url": "https://www.36kr.com/p/4057768716899203",
+          "published_at": "2026-11-06T11:13:48.113000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "智元急忙落地",
+          "url": "https://www.36kr.com/p/4057965347869576",
+          "published_at": "2026-11-06T11:08:30.789000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "美的全屋智能锚定A2A：家电互联正从「接口对接」走向「Agent对话」｜最前线",
+          "url": "https://www.36kr.com/p/4057767992251523",
+          "published_at": "2026-11-06T11:08:17.054000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "三个哈佛女孩勇闯AI创业圈，她融资过亿美元",
+          "url": "https://www.36kr.com/p/4057773827117959",
+          "published_at": "2026-11-06T11:02:33.275000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "上海戴家小妹，31年前创立的公司市值1.8万亿",
+          "url": "https://www.36kr.com/p/4057759645308550",
+          "published_at": "2026-11-06T10:33:39.594000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "周畅庞天宇离职，多模态生成失宠了吗？",
+          "url": "https://www.36kr.com/p/4057942380451458",
+          "published_at": "2026-11-06T10:30:25.134000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Anthropic的IPO定价可能下调至1万亿美元",
+          "url": "https://www.36kr.com/p/4057954731857797",
+          "published_at": "2026-11-06T10:08:26.969000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "这届网友用AI搞机太离谱：红米能跑iOS、Mac运行安卓",
+          "url": "https://www.36kr.com/p/4057963796059017",
+          "published_at": "2026-11-06T10:03:35.974000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "腾讯阿里字节，最担心的事情发生了？",
+          "url": "https://www.36kr.com/p/4057963458974857",
+          "published_at": "2026-11-06T09:45:56.384000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "姚顺雨摇人",
+          "url": "https://www.36kr.com/p/4057974684292233",
+          "published_at": "2026-11-06T09:33:14.147000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "世界模型「云游戏」问世，李飞飞World Labs出品",
+          "url": "https://www.36kr.com/p/4057994854667395",
+          "published_at": "2026-11-06T09:31:29.605000+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "list_times_not_fulltext",
+      "initial_script_status": "pending",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "cac-ai",
+      "name": "国家网信办·网信发布（AI 相关）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+      "status": "ok",
+      "evidence": "页面日期最新 2026-10-30，早于窗口起点。窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "bytedance-seed",
+      "name": "字节跳动 Seed·博客与论文",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://seed.bytedance.com/research",
+      "status": "partial",
+      "evidence": "curl https://seed.bytedance.com/research HTTP 200。Blog & Publication 可见卡片日期多为 Jul/Aug 2026，未见窗口内新卡片。来源说明要求不能把推荐区或置顶列表当成全站更新流。整源 partial。未读全文。",
+      "items": [],
+      "check_state": "pinned_list_not_full_stream",
+      "initial_script_status": "pending",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "minimax",
+      "name": "MiniMax·News & Updates",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.minimax.io/news",
+      "status": "partial",
+      "evidence": "curl https://www.minimax.io/news HTTP 200。页面含 2026-11-06 一类生成/修改时间，但新闻稿件日期未证明落在窗口内；产品 NEW 标签无发布日期。新闻入口无新增不代表全部产品无更新。整源 partial。未读全文。",
+      "items": [],
+      "check_state": "news_before_window_products_undated",
+      "initial_script_status": "pending",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "techcrunch-ai",
+      "name": "TechCrunch",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "status": "ok",
+      "evidence": "分类 RSS HTTP 200，窗口内 20 条，最旧仍在窗口或列表已覆盖。初采页面误抽作者链，已用 RSS 替换。未读全文。",
+      "items": [
+        {
+          "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
+          "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+          "published_at": "2026-11-06T18:44:38+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+          "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+          "published_at": "2026-11-06T18:44:20+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "How a Blue Wave midterm might reshape the AI industry",
+          "url": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry/",
+          "published_at": "2026-11-06T18:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "After the midterms, is the AI industry in for a rough two years?",
+          "url": "https://techcrunch.com/video/after-the-midterms-is-the-ai-industry-in-for-a-rough-two-years/",
+          "published_at": "2026-11-06T17:23:52+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
+          "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
+          "published_at": "2026-11-06T15:54:47+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "After blocking Muse, Amazon now lets users text Alexa to help them shop",
+          "url": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop/",
+          "published_at": "2026-11-06T14:10:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Underdog shows off a 32MB speech model in new demo",
+          "url": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo/",
+          "published_at": "2026-11-06T13:02:16+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Physicl raises $10M to make the digital world real enough for robots",
+          "url": "https://techcrunch.com/2026/11/06/physicl-raises-10m-to-make-the-digital-world-real-enough-for-robots/",
+          "published_at": "2026-11-06T13:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M",
+          "url": "https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/",
+          "published_at": "2026-11-06T06:28:32+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
+          "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
+          "published_at": "2026-11-05T22:40:55+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Meta says US users can now video chat with their Muse AI avatar",
+          "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
+          "published_at": "2026-11-05T19:48:28+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Meta warns that election backlash against data centers could make AI expansion harder",
+          "url": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/",
+          "published_at": "2026-11-05T19:12:39+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "OpenAI released a new cybersecurity model. Is that enough?",
+          "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+          "published_at": "2026-11-05T19:06:12+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "OpenAI president Greg Brockman says company could be IPO ready in 2027",
+          "url": "https://techcrunch.com/2026/11/05/openai-president-greg-brockman-says-company-could-be-ipo-ready-in-2027/",
+          "published_at": "2026-11-05T18:02:27+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Claude can now analyze your spending with its new Personal Finance tool",
+          "url": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
+          "published_at": "2026-11-05T18:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Axiom Math wants to keep AI slop out of mathematics",
+          "url": "https://techcrunch.com/2026/11/05/axiom-math-wants-to-keep-ai-slop-out-of-mathematics/",
+          "published_at": "2026-11-05T16:16:45+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Dropbox acquires Tigris Data for $350M to bolster its AI infrastructure",
+          "url": "https://techcrunch.com/2026/11/05/dropbox-acquires-tigris-data-for-350m-to-bolster-its-ai-iinfrastructure/",
+          "published_at": "2026-11-05T15:19:05+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Aina’s smart ring has a screen, a joystick, and a mic so you can talk to AI agents",
+          "url": "https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/",
+          "published_at": "2026-11-05T14:42:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Box taps Nvidia’s Nemotron for new agent-first content retrieval system",
+          "url": "https://techcrunch.com/2026/11/05/box-taps-nvidias-nemotron-for-new-agent-first-content-retrieval-system/",
+          "published_at": "2026-11-05T14:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "A YC startup is putting $1M behind 5 unsolved materials science problems for AI",
+          "url": "https://techcrunch.com/2026/11/05/a-yc-startup-is-putting-1m-behind-five-unsolved-materials-science-problems-for-ai/",
+          "published_at": "2026-11-05T13:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "initial_script_status": "ok",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "ars-technica-ai",
+      "name": "Ars Technica",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://arstechnica.com/ai/",
+      "status": "ok",
+      "evidence": "AI 分类 RSS 窗口内 5 条。未读全文。",
+      "items": [
+        {
+          "title": "“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update.",
+          "url": "https://arstechnica.com/tech-policy/2026/11/does-meta-think-we-cant-read-meta-abandons-sketchy-commercial-terms-update/",
+          "published_at": "2026-11-06T17:43:02+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Could potential AI clones of GTA VI force a quicker official port?",
+          "url": "https://arstechnica.com/gaming/2026/11/could-potential-ai-clones-of-gta-vi-force-a-quicker-official-port/",
+          "published_at": "2026-11-06T16:19:12+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Google: Schools can keep search while skipping Gemini, but AI search is non-negotiable",
+          "url": "https://arstechnica.com/ai/2026/11/google-schools-can-keep-search-while-skipping-gemini-but-ai-search-is-non-negotiable/",
+          "published_at": "2026-11-05T21:40:36+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Lawsuit: Man introduced his wife to ChatGPT. She used it to plan his murder.",
+          "url": "https://arstechnica.com/tech-policy/2026/11/lawsuit-man-introduced-his-wife-to-chatgpt-she-used-it-to-plan-his-murder/",
+          "published_at": "2026-11-05T21:39:40+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Agility Robotics' Nasdaq debut invites scrutiny of humanoid robot market",
+          "url": "https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/",
+          "published_at": "2026-11-05T12:00:41+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "mit-technology-review-ai",
+      "name": "MIT Technology Review",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "无浏览器；curl 栏目页 + topic feed。feed 窗口内 1 条（含 Nov 6 人形机器人文章）。未读全文。",
+      "items": [
+        {
+          "title": "I watched a humanoid robot clean my apartment. It felt like a taste of the future.",
+          "url": "https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/",
+          "published_at": "2026-11-06T10:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "initial_script_status": "pending",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00"
+    },
+    {
+      "source_id": "404-media",
+      "name": "404 Media",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.404media.co/",
+      "status": "ok",
+      "evidence": "RSS 窗口内 9 条；初采误抽作者链已替换。未读全文。",
+      "items": [
+        {
+          "title": "Behind the Blog:  Dam's Bursting",
+          "url": "https://www.404media.co/behind-the-blog-dams-bursting/",
+          "published_at": "2026-11-06T17:12:55+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "UK Sex Workers Wake Up to Sites Purging Their Content Following Porn Ban",
+          "url": "https://www.404media.co/clips4sale-content-removed-uk-porn-law/",
+          "published_at": "2026-11-06T15:53:36+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Everyone Everywhere Hated Meta’s New AI Training Terms. Now, They’re On Pause",
+          "url": "https://www.404media.co/meta-generative-ai-commercial-terms-on-pause/",
+          "published_at": "2026-11-05T21:01:55+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Oldest Evidence of Getting High on Cannabis Discovered In 2,800-Year-Old Tomb: ‘Absolutely Crazy’",
+          "url": "https://www.404media.co/oldest-evidence-of-getting-high-on-cannabis-discovered-in-2800-year-old-tomb/",
+          "published_at": "2026-11-05T19:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "In the UK, Face Sitting Porn Might Land You in Jail",
+          "url": "https://www.404media.co/uk-crime-and-policing-act-pornography/",
+          "published_at": "2026-11-05T17:09:04+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Podcast: Proton’s CEO Is Putting AI Before Security",
+          "url": "https://www.404media.co/podcast-protons-ceo-is-putting-ai-before-security/",
+          "published_at": "2026-11-05T16:49:39+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Republicans Learn X Is the Echo Chamber",
+          "url": "https://www.404media.co/republicans-learn-x-is-an-echo-chamber/",
+          "published_at": "2026-11-05T14:52:50+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "An AI Fraud Kingpin’s Confessions",
+          "url": "https://www.404media.co/an-ai-fraud-kingpins-confessions/",
+          "published_at": "2026-11-05T14:30:59+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "The Confessions of an AI Fraud Kingpin",
+          "url": "https://www.404media.co/the-confessions-of-an-ai-fraud-kingpin-onlyfake-owner-nazarenko/",
+          "published_at": "2026-11-05T14:16:07+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "wired-ai",
+      "name": "WIRED",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.wired.com/feed/tag/ai/latest/rss",
+      "status": "ok",
+      "evidence": "订阅窗口内 8 条，最新 2026-11-06T18:43:43+00:00。订阅只有约 10 条且最旧仍可能在窗口内，标签页不能证明已越过窗口起点。未读全文。",
+      "items": [
+        {
+          "title": "Free Chinese AI Models Are Getting Scary Good at Hacking",
+          "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/",
+          "published_at": "2026-11-06T18:43:43+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AI Companies Really, Really Want to Buy Your Work Files and Emails",
+          "url": "https://www.wired.com/story/ai-companies-really-really-want-to-buy-your-work-files-and-emails/",
+          "published_at": "2026-11-06T16:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Ads in Chatbots Have Arrived. Here’s What’s Working—and What’s Not",
+          "url": "https://www.wired.com/story/ads-in-chatbots-have-arrived-heres-whats-working-and-whats-not/",
+          "published_at": "2026-11-05T21:37:18+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Reddit Founder Says Building Social Media Apps Is ‘Not Cool Anymore’",
+          "url": "https://www.wired.com/story/wired-world-fair-2026-alexis-ohanian/",
+          "published_at": "2026-11-05T16:26:57+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Exclusive: Aina’s Smart Ring Wants to Be a Remote Control for Your AI Agent",
+          "url": "https://www.wired.com/story/aina-smart-ring/",
+          "published_at": "2026-11-05T14:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Finding New Drugs Is Laborious. This AI Startup Is Skipping The Lab Work",
+          "url": "https://www.wired.com/story/finding-new-drugs-is-laborious-this-ai-startup-is-skipping-the-lab-work/",
+          "published_at": "2026-11-05T13:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AI’s Next Trick? Speaking Dolphin",
+          "url": "https://www.wired.com/story/wired-world-fair-2026-denise-herzing-wild-dolphin/",
+          "published_at": "2026-11-05T12:00:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "He Trolls AI Labs for a Living. Now They All Want to Work With Him",
+          "url": "https://www.wired.com/story/wired-world-fair-2026-evan-ratliff-and-husk/",
+          "published_at": "2026-11-05T11:45:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "feed_may_not_cover_start",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "the-verge-ai",
+      "name": "The Verge",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 10 条；原始脚本：feed HTTP 200，共 10 条，带日期 10 条，最新 2026-11-06T15:02:22-05:00；窗口内 10 条",
+      "items": [
+        {
+          "title": "All the latest updates on AI data centers",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
+          "published_at": "2026-11-06T15:02:22-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now",
+          "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
+          "published_at": "2026-11-06T13:10:10-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AI is the new dating dealbreaker",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity",
+          "published_at": "2026-11-06T12:00:00-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Big Tech lost big in the 2026 election",
+          "url": "https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast",
+          "published_at": "2026-11-06T11:38:02-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "How Akai and Moog are embracing vibe-coded mods",
+          "url": "https://www.theverge.com/tech/1028720/vibe-coding-open-source-inmusic-akai",
+          "published_at": "2026-11-06T11:34:39-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Amazon will let you text Alexa your shopping list",
+          "url": "https://www.theverge.com/tech/1028587/amazon-alexa-shopping-ai-text-orders",
+          "published_at": "2026-11-06T09:00:00-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Protesters break into Microsoft data center site in Amsterdam",
+          "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
+          "published_at": "2026-11-06T06:55:19-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "OpenAI is stepping back from NDAs for data center projects",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
+          "published_at": "2026-11-05T19:37:56-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Airbnb is working on an AI travel agent",
+          "url": "https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings",
+          "published_at": "2026-11-05T19:06:12-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Perplexity launches its own take on AI agents for work",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
+          "published_at": "2026-11-05T17:26:50-05:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "cloudflare-ai",
+      "name": "Cloudflare AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://blog.cloudflare.com/tag/ai/rss/",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 1 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-05T17:03:04+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Agents aren’t humans (but they kinda are)",
+          "url": "https://blog.cloudflare.com/trusted-agent-delegation/",
+          "published_at": "2026-11-05T17:03:04+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "meta-engineering",
+      "name": "Meta Engineering",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://engineering.fb.com/feed/",
+      "status": "ok",
+      "evidence": "订阅最新 2026-11-03T17:00:35+00:00，早于窗口起点。窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "hacker-news-ai",
+      "name": "Hacker News",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://news.ycombinator.com/rss",
+      "status": "ok",
+      "evidence": "首页 RSS 窗口内 30 条。HN 讨论时间不作原文时间，Algolia 全站未逐条追溯。未读全文。",
+      "items": [
+        {
+          "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
+          "url": "https://hightouch.com/blog/llm-judges-identity-resolution",
+          "published_at": "2026-11-06T19:48:51+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Firecracker VM Escape: PwnEscape Part 2",
+          "url": "https://pwn.ai/blog/firecracker-escape",
+          "published_at": "2026-11-06T19:33:38+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "US FAA says it will phase out floppy disks from air traffic control by 2028",
+          "url": "https://www.reuters.com/world/us/us-faa-says-it-will-phase-out-floppy-disks-air-traffic-control-by-2028-2026-11-05/",
+          "published_at": "2026-11-06T04:00:28+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Tesla to wind down Cybertruck production",
+          "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+          "published_at": "2026-11-06T12:13:51+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "First steps in bare-metal programming using UEFI",
+          "url": "https://kevinboone.me/efitest_index.html",
+          "published_at": "2026-11-06T16:50:29+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Blender's UI and Runtime: Much Faster Than GPUI",
+          "url": "https://github.com/ppmpreetham/BUI",
+          "published_at": "2026-11-06T07:40:35+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "My first and last telegram was from Rebecca West",
+          "url": "https://thelampmagazine.com/blog/rebecca-wests-nightingale",
+          "published_at": "2026-11-06T19:30:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Restaurant Delivery Payment-Skimming Campaign",
+          "url": "https://www.infohawk.com/news/2026-11-05-scamwich-restaurant-skimming",
+          "published_at": "2026-11-06T19:19:27+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Memorilla: Latent Semantic Memory for LLMs",
+          "url": "https://arxiv.org/abs/2610.21375",
+          "published_at": "2026-11-06T18:03:33+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Size-It-Up (Game)",
+          "url": "https://magnitudle.com/size-it-up",
+          "published_at": "2026-11-06T17:59:59+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Replit rebuilt its sandbox engine with microVMs",
+          "url": "https://frontier.replit.com/sandbox-engine-microvms-part-1/",
+          "published_at": "2026-11-06T19:06:10+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Devvm.dev: One VM for every project",
+          "url": "https://devvm.dev/",
+          "published_at": "2026-11-06T17:30:22+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Gemini Omni 1.2 Flash",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+          "published_at": "2026-11-06T13:35:27+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "UpCodes (YC S17) is hiring SDR's to sell AI compliance software",
+          "url": "https://up.codes/careers?utm_source=HN",
+          "published_at": "2026-11-06T17:03:33+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AI is dramatically accelerating AI research",
+          "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+          "published_at": "2026-11-06T20:27:23+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Show HN: Agents infer Lego mechanisms from sources, then animate them",
+          "url": "https://github.com/anteloc/ldraw-mecha/tree/v0.5.0",
+          "published_at": "2026-11-06T19:41:20+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Deus Ex",
+          "url": "https://www.filfre.net/2026/11/deus-ex/",
+          "published_at": "2026-11-06T15:44:36+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "We know 15k websites are infected. how do we tell them?",
+          "url": "https://scotthelme.co.uk/we-know-15-579-websites-are-infected-how-do-we-tell-them/",
+          "published_at": "2026-11-06T18:13:35+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "As the Japanese countryside empties out, wildlife is disappearing",
+          "url": "https://e360.yale.edu/digest/japan-depopulation-biodiversity",
+          "published_at": "2026-11-06T19:36:16+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "40C3 halfnarp – Submit talk preferences to aid scheduling",
+          "url": "https://halfnarp.events.ccc.de",
+          "published_at": "2026-11-06T18:16:43+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "How octopuses squeeze through too small gaps",
+          "url": "https://journals.biologists.com/jeb/article/229/21/jeb253615/373332/How-octopuses-squeeze-through-too-small-gaps",
+          "published_at": "2026-11-06T13:57:20+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Show HN: Waymark – A workflow engine that compiles jobs instead of replaying",
+          "url": "https://github.com/piercefreeman/waymark",
+          "published_at": "2026-11-05T14:06:31+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "PyLings: Solve Exercises and Learn Python",
+          "url": "https://github.com/thesayfulla/pylings",
+          "published_at": "2026-11-06T16:59:40+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Anthropic IPO buyers see valuation as low as $1.1T",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-06/anthropic-ipo-valuation-expectations-pressured-after-ai-rout",
+          "published_at": "2026-11-06T16:54:36+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Chomsky and the two cultures of statistical learning (2011)",
+          "url": "https://www.norvig.com/chomsky.html",
+          "published_at": "2026-11-06T08:18:36+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "SketchAgentBench – evaluate LLMs on 3D spatial reasoning",
+          "url": "https://sketchagent.dev/",
+          "published_at": "2026-11-06T20:28:24+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Rune: A native GPU-rendered Rust UI framework for macOS, Windows, Linux and web",
+          "url": "https://github.com/anomalyco/rune",
+          "published_at": "2026-11-06T16:31:32+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Zero Hour: Telling time was a matter of survival and strategy during WWI (2014)",
+          "url": "https://www.laphamsquarterly.org/roundtable/zero-hour",
+          "published_at": "2026-11-05T18:59:37+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "We've built an open-source feature flag server for 11 years",
+          "url": "https://github.com/Unleash/unleash",
+          "published_at": "2026-11-06T11:40:06+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Lippitt-Knoster in Practice (Field Notes for Managing Complex Projects)",
+          "url": "https://sharedphysics.com/lippitt-knoster-in-practice-field-notes-for-managing-complex-projects/",
+          "published_at": "2026-11-06T14:57:16+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "import-ai",
+      "name": "Import AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://importai.substack.com/feed",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 0 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-02T14:30:54+00:00；窗口内 0 条 最新早于窗口或窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "bens-bites",
+      "name": "Ben's Bites",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.bensbites.com/feed",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 1 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-05T14:02:12+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Craft and taste",
+          "url": "https://www.bensbites.com/p/craft-and-taste",
+          "published_at": "2026-11-05T14:02:12+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "latent-space",
+      "name": "Latent Space",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.latent.space/feed",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 2 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-06T15:10:53+00:00；窗口内 2 条",
+      "items": [
+        {
+          "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+          "url": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/",
+          "published_at": "2026-11-06T15:10:53+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark",
+          "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/",
+          "published_at": "2026-11-06T10:35:21+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "interconnects",
+      "name": "Interconnects",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.interconnects.ai/feed",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 0 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-04T16:35:44+00:00；窗口内 0 条 最新早于窗口或窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "ai-snake-oil",
+      "name": "AI as Normal Technology",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.normaltech.ai/feed",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 0 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-19T20:11:55+00:00；窗口内 0 条 最新早于窗口或窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "one-useful-thing",
+      "name": "One Useful Thing",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.oneusefulthing.org/feed",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 0 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-10-20T15:57:59+00:00；窗口内 0 条 最新早于窗口或窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "simon-willison",
+      "name": "Simon Willison's Weblog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://simonwillison.net/atom/everything/",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 2 条；原始脚本：feed HTTP 200，共 30 条，带日期 30 条，最新 2026-11-06T17:13:12+00:00；窗口内 2 条",
+      "items": [
+        {
+          "title": "Quoting Nilay Patel",
+          "url": "https://simonwillison.net/2026/Nov/6/nilay-patel/",
+          "published_at": "2026-11-06T17:13:12+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Quoting Paul Ford",
+          "url": "https://simonwillison.net/2026/Nov/5/paul-ford/",
+          "published_at": "2026-11-05T17:34:03+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "qbitai",
+      "name": "量子位",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.qbitai.com/feed",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 10 条；原始脚本：feed HTTP 200，共 10 条，带日期 10 条，最新 2026-11-06T07:00:29+00:00；窗口内 10 条",
+      "items": [
+        {
+          "title": "DeepSeek带火稀疏计算，国产芯片公司加速突围：这家公司又融近10亿",
+          "url": "https://www.qbitai.com/2026/11/508155.html",
+          "published_at": "2026-11-06T07:00:29+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "一边赛博修仙，一边卖家电！AI短剧开始冲双11业绩了？",
+          "url": "https://www.qbitai.com/2026/11/508118.html",
+          "published_at": "2026-11-06T06:54:17+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "从RSI、Agent、Physical AI到整个系统栈，2026 奇点智能技术大会最新日程公布！",
+          "url": "https://www.qbitai.com/2026/11/508143.html",
+          "published_at": "2026-11-06T06:43:14+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "99.4%登顶全球第一！这个中国AI师承世界冠军",
+          "url": "https://www.qbitai.com/2026/11/508107.html",
+          "published_at": "2026-11-06T05:01:47+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "香港金融科技周 x StartmeupHK 2026主论坛：以「金融+」、「AI+」及全球拓展开拓新机遇",
+          "url": "https://www.qbitai.com/2026/11/507988.html",
+          "published_at": "2026-11-06T03:36:34+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "AI短剧门槛降降降！实测即梦短剧工作室：剧本分镜预演一条龙，伙伴计划长期护航",
+          "url": "https://www.qbitai.com/2026/11/507972.html",
+          "published_at": "2026-11-06T03:20:05+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "腾讯 Hy4 调用激增已十倍扩容，Agent 能力开源模型第一",
+          "url": "https://www.qbitai.com/2026/11/507967.html",
+          "published_at": "2026-11-06T02:00:11+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "孩子的人生大事，你要怎样的AI？海亮科服把AI生涯规划带给更多家庭",
+          "url": "https://www.qbitai.com/2026/11/507919.html",
+          "published_at": "2026-11-05T13:17:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "三条AI技术路线终将合流？智象创始人梅涛提出智能体化的世界模型",
+          "url": "https://www.qbitai.com/2026/11/507834.html",
+          "published_at": "2026-11-05T09:37:40+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "拼多多让年轻人造草莓工厂，170天后“答案”熟了",
+          "url": "https://www.qbitai.com/2026/11/507823.html",
+          "published_at": "2026-11-05T09:00:18+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "aws-ml-blog",
+      "name": "AWS AI Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 10 条；原始脚本：feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-06T18:01:00+00:00；窗口内 10 条",
+      "items": [
+        {
+          "title": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
+          "url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/",
+          "published_at": "2026-11-06T18:01:00+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Taxonomy of agentic primitives in Amazon Quick",
+          "url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/",
+          "published_at": "2026-11-06T17:34:45+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Serverless MCP server for AI agent data lake access on Amazon ECS Fargate",
+          "url": "https://aws.amazon.com/blogs/machine-learning/serverless-mcp-server-for-ai-agent-data-lake-access-on-amazon-ecs-fargate/",
+          "published_at": "2026-11-06T17:13:13+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 2",
+          "url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2/",
+          "published_at": "2026-11-06T17:09:23+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 1",
+          "url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-1/",
+          "published_at": "2026-11-06T17:09:18+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "How Greenlight Financial built an autonomous SOC solution on Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-greenlight-financial-built-an-autonomous-soc-solution-on-amazon-bedrock-agentcore/",
+          "published_at": "2026-11-06T16:55:05+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Taxbit Assist: A grounded, role-aware AI agent on Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/taxbit-assist-a-grounded-role-aware-ai-agent-on-amazon-bedrock-agentcore/",
+          "published_at": "2026-11-06T16:49:42+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls",
+          "url": "https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls/",
+          "published_at": "2026-11-06T16:45:58+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "Getting started with Web Answer on Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/",
+          "published_at": "2026-11-05T21:04:24+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        },
+        {
+          "title": "How Amazon Marketplace evaluates content quality with Amazon SageMaker AI",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai/",
+          "published_at": "2026-11-05T18:06:43+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "google-research",
+      "name": "Google Research Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://research.google/blog/rss/",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 1 条；原始脚本：feed HTTP 200，共 100 条，带日期 100 条，最新 2026-11-05T16:01:08+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Detecting signs of hypertension using wearable sensors",
+          "url": "https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors/",
+          "published_at": "2026-11-05T16:01:08+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "github-ai-ml",
+      "name": "GitHub Blog · AI & ML",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://github.blog/ai-and-ml/feed/",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 0 条；原始脚本：feed HTTP 200，共 10 条，带日期 10 条，最新 2026-10-20T16:05:03+00:00；窗口内 0 条 最新早于窗口或窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "databricks-research",
+      "name": "Databricks Research",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.databricks.com/blog/category/research",
+      "status": "ok",
+      "evidence": "研究分类页可见日期最新 2026-10-20，早于窗口起点。窗口内 0。未读全文。",
+      "items": [],
+      "check_state": "complete_no_new",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    },
+    {
+      "source_id": "amazon-science",
+      "name": "Amazon Science Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-06T21:07:06+00:00",
+      "checked_url": "https://www.amazon.science/index.rss",
+      "status": "ok",
+      "evidence": "RSS 补注：窗口内严格时间戳 1 条；原始脚本：feed HTTP 200，共 25 条，带日期 25 条，最新 2026-11-05T14:57:23+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Hamed Karimi wins ECML PKDD Test-of-Time Award",
+          "url": "https://www.amazon.science/blog/hamed-karimi-wins-ecml-pkdd-test-of-time-award",
+          "published_at": "2026-11-05T14:57:23+00:00",
+          "date_precision": "second",
+          "window_membership": "in_window"
+        }
+      ],
+      "check_state": "complete",
+      "supplement_checked_at": "2026-11-06T21:18:12.211718+00:00",
+      "collection_pass": "05:00",
+      "initial_script_status": "ok"
+    }
+  ],
+  "config_commit": "60547d37ca47c8e7bbda3b342e76741e158fadbc",
+  "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
+  "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
+  "collection_stage": "collection_only",
+  "collection_stage_note": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
+  "division_of_labor_note": "采集只交收据与资讯源目录。成稿、网页、口播和音频由中文编辑阶段执行。",
+  "window_note": "05:00初采窗口 [2026-11-05 17:00, 2026-11-07 05:00) Asia/Shanghai，左闭右开。不覆盖 05:00–06:00。",
+  "final_catalog_window": {
+    "start_shanghai": "2026-11-05T18:00:00+08:00",
+    "end_shanghai": "2026-11-07T06:00:00+08:00",
+    "start_utc": "2026-11-05T10:00:00Z",
+    "end_utc": "2026-11-06T22:00:00Z",
+    "boundary": "left_closed_right_open",
+    "checked": false,
+    "note": "交给中文编辑；本次不声称已覆盖"
+  },
+  "source_catalog_path": "data/runs/2026-11-07-source-catalog.json",
+  "discovery": {
+    "script": "python3 scripts/collect_sources.py --until 2026-11-06T21:00:00Z",
+    "browser": "no browser in this executor; curl/static HTML + gh API for browser-method sources",
+    "apis": "arXiv export API, Hugging Face daily_papers by date, api.github.com, TechCrunch/Ars/404/MIT RSS"
+  },
+  "verification": {
+    "scope": "列表时间、RSS pubDate、arXiv published、GitHub release published_at 与 star 数；未读全文",
+    "star_counts": "github trending via api.github.com",
+    "arxiv_announcement_boundary": "latest published in-window slice ends before until; www new list Friday, 6 November 2026; partial",
+    "hn_algolia_nbHits": null
+  },
+  "excluded_hits": [],
+  "collection_incomplete": true,
+  "agents_md_section1_conflict": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
+  "last_hour_handoff": {
+    "checked": false,
+    "window_shanghai": [
+      "2026-11-07T05:00:00+08:00",
+      "2026-11-07T06:00:00+08:00"
+    ],
+    "window_utc": [
+      "2026-11-06T21:00:00Z",
+      "2026-11-06T22:00:00Z"
+    ],
+    "final_catalog_window_shanghai": [
+      "2026-11-05T18:00:00+08:00",
+      "2026-11-07T06:00:00+08:00"
+    ],
+    "owner": "chinese_editor_agent",
+    "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
+    "incidental_sightings_after_until": []
+  },
+  "observed_after_until": [],
+  "chinese_editor_supplement": {
+    "needed": true,
+    "owner": "chinese_editor_agent",
+    "tasks": [
+      "复查最后一小时 [05:00, 06:00) Asia/Shanghai",
+      "按最终目录窗口 [2026-11-05 18:00, 2026-11-07 06:00) 重筛",
+      "浏览器补查 xAI / Qwen / MiniMax / Seed / StepFun / OpenReview",
+      "成稿与发布不在本采集轮次"
+    ],
+    "final_catalog_window_shanghai": [
+      "2026-11-05T18:00:00+08:00",
+      "2026-11-07T06:00:00+08:00"
+    ],
+    "last_hour_window_shanghai": [
+      "2026-11-07T05:00:00+08:00",
+      "2026-11-07T06:00:00+08:00"
+    ],
+    "note": "上游 collection_only；06:00 未标记为已覆盖"
+  }
+}
