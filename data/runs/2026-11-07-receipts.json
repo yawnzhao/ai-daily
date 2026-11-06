@@ -3993,8 +3993,8 @@
     "start_utc": "2026-11-05T10:00:00Z",
     "end_utc": "2026-11-06T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "checked_at": "2026-11-06T22:17:54.116676+00:00"
   },
   "source_catalog_path": "data/runs/2026-11-07-source-catalog.json",
   "discovery": {
@@ -4012,7 +4012,7 @@
   "collection_incomplete": true,
   "agents_md_section1_conflict": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-07T05:00:00+08:00",
       "2026-11-07T06:00:00+08:00"
@@ -4027,26 +4027,86 @@
     ],
     "owner": "chinese_editor_agent",
     "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
-    "incidental_sightings_after_until": []
+    "incidental_sightings_after_until": [],
+    "checked_at": "2026-11-06T22:17:54.116676+00:00",
+    "result": "06:04本机collect_sources.py --until 2026-11-06T22:00:00Z --hours 36，并逐一重取TechCrunch AI、404 Media、The Verge AI、WIRED AI、OpenAI、HN首页、量子位、Google AI、Simon Willison、AWS ML、NVIDIA、Hugging Face、Cloudflare、Ars Technica AI订阅源（Microsoft AI订阅源HTTP 410）；05:00—06:00内无新的原文时间条目（The Verge一条订阅源更新时间21:51Z，原文时间17:00Z已在上游目录）。另补入上游遗漏的NVIDIA条目1条，并把HN线索Planned Obsolescence追溯到原文后补入。浏览器类来源（xAI、Qwen、MiniMax、字节Seed、StepFun、OpenReview）与HN Algolia全站未重查最后一小时"
   },
   "observed_after_until": [],
   "chinese_editor_supplement": {
-    "needed": true,
-    "owner": "chinese_editor_agent",
-    "tasks": [
-      "复查最后一小时 [05:00, 06:00) Asia/Shanghai",
-      "按最终目录窗口 [2026-11-05 18:00, 2026-11-07 06:00) 重筛",
-      "浏览器补查 xAI / Qwen / MiniMax / Seed / StepFun / OpenReview",
-      "成稿与发布不在本采集轮次"
+    "checked_at": "2026-11-06T22:17:54.116676+00:00",
+    "config_commit": "32addf2101fa2af68fd7f9de82a44c717dbf7166",
+    "upstream_commit": "32addf2101fa2af68fd7f9de82a44c717dbf7166",
+    "upstream_accepted": true,
+    "upstream_note": "05:00上游收据与目录（commit 32addf2，21:21Z提交）按源复用：42 ok、8 partial、0 failed；中文编辑未重做浏览器源，只补最后一小时、按最终窗口复核，并为255条英文目录标题补中文译题（上游title_zh仅为英文原题）",
+    "local_rerun": {
+      "command": "python3 scripts/collect_sources.py --until 2026-11-06T22:00:00Z --hours 36",
+      "started_at": "2026-11-06T22:04:57Z",
+      "summary_line": "计划50源：ok 40 / partial 1（stepfun）/ failed 1（ars-technica-ai 403；订阅源另行重取成功）/ 待浏览器8；本机重跑仅用于最后一小时补查，不替代上游逐源状态"
+    },
+    "supplemental_sources": [
+      {
+        "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+        "source": "Planned Obsolescence",
+        "published_at": "2026-11-06T20:23:40+00:00",
+        "discovery": "hacker_news_lead_traced_0600",
+        "replaced_excluded": true
+      },
+      {
+        "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+        "source": "NVIDIA Blog",
+        "published_at": "2026-11-05T17:00:35+00:00",
+        "discovery": "chinese_editor_feed_recheck_0600",
+        "replaced_excluded": false
+      }
     ],
-    "final_catalog_window_shanghai": [
-      "2026-11-05T18:00:00+08:00",
-      "2026-11-07T06:00:00+08:00"
+    "unopened": [
+      {
+        "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+        "reason": "HTTP 403，未绕过；未采用，保留在目录"
+      },
+      {
+        "url": "https://openai.com/index/partnering-with-hacktron",
+        "reason": "HTTP 403，未绕过；未采用，保留在目录"
+      },
+      {
+        "url": "https://arstechnica.com/tech-policy/2026/11/does-meta-think-we-cant-read-meta-abandons-sketchy-commercial-terms-update/",
+        "reason": "HTTP 403；Meta放弃商业条款更新未核读，未采用，保留在目录"
+      },
+      {
+        "url": "https://www.36kr.com/p/4057954731857797",
+        "reason": "读取超时；Anthropic IPO定价报道未核读，未采用"
+      }
     ],
-    "last_hour_window_shanghai": [
-      "2026-11-07T05:00:00+08:00",
-      "2026-11-07T06:00:00+08:00"
-    ],
-    "note": "上游 collection_only；06:00 未标记为已覆盖"
+    "title_translation": "上游目录255条英文条目的title_zh与英文原题相同，终审按标题逐条补中文译题（title_only，不代表全文核读）",
+    "catalog_review": {
+      "raw_receipt_candidates": 409,
+      "upstream_raw": 407,
+      "last_hour_added": 0,
+      "supplement_added": 2,
+      "unique": 413,
+      "reviewed": 372,
+      "pending": 41,
+      "displayed": 266,
+      "displayed_news": 85,
+      "displayed_discourse": 0,
+      "displayed_papers": 179,
+      "displayed_code": 2,
+      "excluded": 147,
+      "reasons": {
+        "date_only_boundary_pending": 12,
+        "outside_discovery_window": 4,
+        "prior_7_catalogs": 34,
+        "trending_snapshot_not_release": 36,
+        "not_ai_or_promo": 5,
+        "hn_lead_time_not_original": 29,
+        "outside_final_window": 27
+      },
+      "moved_out_by_final_window": 27,
+      "titles_translated": 255,
+      "body_used": 15,
+      "displayed_not_body": 251,
+      "below_catalog_target": false,
+      "target": 20
+    }
   }
 }

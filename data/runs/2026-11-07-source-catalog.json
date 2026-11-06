@@ -5,36 +5,36 @@
     "title",
     "source"
   ],
-  "count": 292,
-  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-11-05 17:00, 2026-11-07 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度不计入严格展示。规则见 config/source-catalog-policy.txt。",
+  "count": 266,
+  "scope": "36小时资讯目录（中文编辑终审，复用05:00上游初采并补最后一小时）：窗口[2026-11-05 18:00, 2026-11-07 06:00) Asia/Shanghai，左闭右开。HN讨论时间不作原文时间；日精度条目不计入严格目录。规则见 config/source-catalog-policy.txt。",
   "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-10-31 through 2026-11-06",
   "duplicates_dropped": 34,
-  "config_commit": "60547d37ca47c8e7bbda3b342e76741e158fadbc",
+  "config_commit": "32addf2101fa2af68fd7f9de82a44c717dbf7166",
   "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
   "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
-  "collection_stage": "collection_only",
+  "collection_stage": "chinese_editor_final_0600",
   "below_catalog_target": false,
   "gaps": [
-    "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
-    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-11-05 18:00, 2026-11-07 06:00)交给中文编辑",
-    "xAI 无浏览器；静态 HTML 最新内容日精度 Nov 2，早于窗口，按来源说明保持 partial",
-    "Qwen / StepFun / MiniMax / 字节 Seed 静态页无法完整证明更新流，记 partial",
-    "arXiv API published 最新 2026-11-05T18:59:42Z；www 新列表 Friday, 6 November 2026；至 until 未公告切片 partial",
-    "OpenReview 只扫了首页",
-    "通义落地页是双11活动，没有研究/新闻时间索引",
-    "HN 只取首页 RSS，讨论时间不进严格目录",
-    "话语场打开了 q.cxspace.com，可见 2026-11-05/06 条目，但日精度不进严格目录",
-    "36氪未逐篇打开正文，不升为已核 original",
-    "无浏览器环境下浏览器类来源用 curl/gh/WebFetch 补查"
+    "05:00上游收据与目录（32addf2）按源复用：计划50源，42 ok、8 partial、0 failed；核心源未达完整：xai、arxiv",
+    "xAI、Qwen、MiniMax、字节Seed、StepFun、OpenReview仍为静态页面或无可判定时间（partial），本期未用浏览器补查；arXiv接口切片止于11月5日约16:46 UTC提交，之后的提交未见；HN只取首页RSS，30条线索未逐条追溯（仅Planned Obsolescence一条追溯后补入）",
+    "最后一小时（05:00—06:00）只重查订阅源与脚本源，未发现新的原文时间条目；浏览器类来源未重查最后一小时",
+    "上游目录255条英文标题缺中文译题，终审已补；27条原文时间早于最终窗口起点（11月5日18:00）的条目已移出；1条与AI无关的404 Media条目移出；补入2条（NVIDIA上游遗漏、Planned Obsolescence追溯原文）",
+    "Vals网络入侵测试的原始报告未找到公开页面，正文依据WIRED转述；DeepSeek具体版本报道未写明",
+    "Ramp报告原文与彭博估值报道未单独打开，数字依据TechCrunch转述；Micro1的数据市场规模为其CEO口径，WIRED称无法核实",
+    "科特拉的“门槛已越过”与10倍提升推算为其个人观点与简化模型，正文按个人分析归因",
+    "Inkling 2 Small权重尚未发布（公司称下周以Apache 2.0开放），官方页面仅日精度（11月5日），按48小时补漏；评测为公司自报",
+    "论文栏Multimodal-SEA（arXiv:2611.08281）提交于11月5日，早于正文24小时主窗口，按48小时补漏；只读摘要",
+    "话语场两段为历史节目：Cotra页为依据发布方字幕的自动提炼摘录，Ghodsi页为依据自动字幕的提炼摘录，完整原片未核读",
+    "OpenAI湿实验评测与Hacktron合作两篇官网文章HTTP 403、Ars Technica关于Meta放弃商业条款的报道HTTP 403、36氪Anthropic IPO定价报道读取超时，均未采用，保留在目录"
   ],
   "curation_policy": "36h-min20-v1",
-  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。本次只审05:00初采窗口。",
+  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。中文编辑终审按最终36小时窗口复核。",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-11-05T17:00:00+08:00",
-    "end_shanghai": "2026-11-07T05:00:00+08:00",
-    "start_utc": "2026-11-05T09:00:00Z",
-    "end_utc": "2026-11-06T21:00:00Z",
+    "start_shanghai": "2026-11-05T18:00:00+08:00",
+    "end_shanghai": "2026-11-07T06:00:00+08:00",
+    "start_utc": "2026-11-05T10:00:00Z",
+    "end_utc": "2026-11-06T22:00:00Z",
     "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
@@ -43,8 +43,8 @@
     "start_utc": "2026-11-05T10:00:00Z",
     "end_utc": "2026-11-06T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "checked_at": "2026-11-06T22:17:54.116676+00:00"
   },
   "items": [
     {
@@ -66,7 +66,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "All the latest updates on AI data centers",
+      "title_zh": "AI数据中心最新动态汇总",
       "title_translation_scope": "title_only"
     },
     {
@@ -79,17 +79,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；Censys博客、CrowdStrike与微软原始报告未单独打开",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
-      "title_translation_scope": "title_only"
+      "title_zh": "Censys：800多个AI自动渗透工具Artex实例暴露在公网，无需密码即可访问",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
@@ -101,17 +101,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch与The Verge原文；Meta官方公告未单独打开",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
-      "title_translation_scope": "title_only"
+      "title_zh": "Meta为Muse智能体推出Spaces：说出需求，它会搭一个持续更新的专题工作区",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/",
@@ -123,17 +123,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "WIRED原文；Vals网络入侵测试的原始报告未找到公开页面（Vals官网cyber基准页为另一项CyberBench漏洞复现评测），数字依据WIRED转述；DeepSeek具体版本报道未写明",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Free Chinese AI Models Are Getting Scary Good at Hacking",
-      "title_translation_scope": "title_only"
+      "title_zh": "WIRED：Vals测试称开放权重模型的网络攻击能力已逼近最强封闭模型，成本只有零头",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
@@ -145,16 +145,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文补充原始资料，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now",
+      "title_zh": "Meta的Muse AI可按你当下需要创建定制“空间”",
       "title_translation_scope": "title_only"
     },
     {
@@ -176,7 +176,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
+      "title_zh": "SageMaker推理现支持多实例GPU，提高模型端点的GPU利用率",
       "title_translation_scope": "title_only"
     },
     {
@@ -198,7 +198,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "How a Blue Wave midterm might reshape the AI industry",
+      "title_zh": "中期选举“蓝色浪潮”可能如何重塑AI行业",
       "title_translation_scope": "title_only"
     },
     {
@@ -220,7 +220,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update.",
+      "title_zh": "“Meta以为我们看不懂吗？”Meta放弃有争议的商业条款更新",
       "title_translation_scope": "title_only"
     },
     {
@@ -242,7 +242,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Taxonomy of agentic primitives in Amazon Quick",
+      "title_zh": "Amazon Quick中的智能体基本组件分类",
       "title_translation_scope": "title_only"
     },
     {
@@ -264,7 +264,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "After the midterms, is the AI industry in for a rough two years?",
+      "title_zh": "中期选举之后，AI行业要迎来艰难的两年吗？",
       "title_translation_scope": "title_only"
     },
     {
@@ -286,7 +286,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Serverless MCP server for AI agent data lake access on Amazon ECS Fargate",
+      "title_zh": "在Amazon ECS Fargate上为AI智能体访问数据湖部署无服务器MCP服务器",
       "title_translation_scope": "title_only"
     },
     {
@@ -308,7 +308,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Quoting Nilay Patel",
+      "title_zh": "引用Nilay Patel",
       "title_translation_scope": "title_only"
     },
     {
@@ -330,7 +330,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 2",
+      "title_zh": "用Okta跨应用访问和Amazon Bedrock AgentCore管理AI智能体访问（第二部分）",
       "title_translation_scope": "title_only"
     },
     {
@@ -352,7 +352,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 1",
+      "title_zh": "用Okta跨应用访问和Amazon Bedrock AgentCore管理AI智能体访问（第一部分）",
       "title_translation_scope": "title_only"
     },
     {
@@ -374,7 +374,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "AI is the new dating dealbreaker",
+      "title_zh": "AI成了约会中新的“一票否决”",
       "title_translation_scope": "title_only"
     },
     {
@@ -396,7 +396,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "How Greenlight Financial built an autonomous SOC solution on Amazon Bedrock AgentCore",
+      "title_zh": "Greenlight Financial如何在Amazon Bedrock AgentCore上构建自主安全运营中心",
       "title_translation_scope": "title_only"
     },
     {
@@ -418,7 +418,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Taxbit Assist: A grounded, role-aware AI agent on Amazon Bedrock AgentCore",
+      "title_zh": "Taxbit Assist：基于Amazon Bedrock AgentCore、有据可依且区分角色的AI智能体",
       "title_translation_scope": "title_only"
     },
     {
@@ -440,7 +440,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls",
+      "title_zh": "在Amazon Bedrock AgentCore上把Claude Code扩展到远程会话并加入安全控制",
       "title_translation_scope": "title_only"
     },
     {
@@ -462,7 +462,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Big Tech lost big in the 2026 election",
+      "title_zh": "大型科技公司在2026年选举中大败",
       "title_translation_scope": "title_only"
     },
     {
@@ -484,7 +484,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "How Akai and Moog are embracing vibe-coded mods",
+      "title_zh": "Akai和Moog如何拥抱氛围编程做出的改装",
       "title_translation_scope": "title_only"
     },
     {
@@ -506,7 +506,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Could potential AI clones of GTA VI force a quicker official port?",
+      "title_zh": "可能出现的《GTA VI》AI仿制品会迫使官方更快推出移植版吗？",
       "title_translation_scope": "title_only"
     },
     {
@@ -528,7 +528,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
+      "title_zh": "英伟达开源工具如何帮助研究人员构建下一代6G网络",
       "title_translation_scope": "title_only"
     },
     {
@@ -541,17 +541,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "WIRED原文；市场规模数字为Micro1 CEO口径，WIRED称无法核实；Spirit Airlines资产出售细节依据WIRED",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "AI Companies Really, Really Want to Buy Your Work Files and Emails",
-      "title_translation_scope": "title_only"
+      "title_zh": "WIRED：AI公司想买你公司的旧邮件和文件，数据中介开价从35万美元到180万美元",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
@@ -563,17 +563,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；Ramp报告原文与彭博报道未单独打开；估值数字为彭博报道口径",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
-      "title_translation_scope": "title_only"
+      "title_zh": "Ramp数据：企业AI用量还在涨，花费却几乎停滞；彭博称Anthropic潜在估值降至1.2万亿至1.3万亿美元",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/",
@@ -594,7 +594,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+      "title_zh": "操控生物学——Helmholtz Munich的Fabian Theis",
       "title_translation_scope": "title_only"
     },
     {
@@ -607,17 +607,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；亚马逊官方公告未单独打开",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "After blocking Muse, Amazon now lets users text Alexa to help them shop",
-      "title_translation_scope": "title_only"
+      "title_zh": "屏蔽Muse之后，亚马逊让用户发短信给Alexa购物",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://huggingface.co/blog/allenai/toyblocks",
@@ -638,7 +638,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "ToyBlocks: A controlled world for robot learning and evaluation",
+      "title_zh": "ToyBlocks：用于机器人学习与评测的受控世界",
       "title_translation_scope": "title_only"
     },
     {
@@ -658,10 +658,12 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00",
+        "note": "与正文同一事件的相关报道；单独保留展示，未作为正文主证据"
       },
-      "title_zh": "Amazon will let you text Alexa your shopping list",
-      "title_translation_scope": "title_only"
+      "title_zh": "亚马逊将允许用户用短信把购物清单发给Alexa",
+      "title_translation_scope": "title_only",
+      "related_body_item": "amazon-alexa-text-shopping"
     },
     {
       "url": "https://www.36kr.com/p/4058156403234691",
@@ -764,7 +766,7 @@
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
-      "title_zh": "apache/airflow 3.4.0",
+      "title_zh": "apache/airflow 3.4.0（版本发布）",
       "title_translation_scope": "title_only"
     },
     {
@@ -777,17 +779,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；Woof模型页面未单独打开，参数与大小为公司口径",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Underdog shows off a 32MB speech model in new demo",
-      "title_translation_scope": "title_only"
+      "title_zh": "Underdog发布32MB语音合成模型Woof，可在浏览器离线运行",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://techcrunch.com/2026/11/06/physicl-raises-10m-to-make-the-digital-world-real-enough-for-robots/",
@@ -808,7 +810,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Physicl raises $10M to make the digital world real enough for robots",
+      "title_zh": "Physicl融资1000万美元，让数字世界对机器人来说足够真实",
       "title_translation_scope": "title_only"
     },
     {
@@ -975,17 +977,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge原文（援引路透社）；路透社原文未打开",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Protesters break into Microsoft data center site in Amsterdam",
-      "title_translation_scope": "title_only"
+      "title_zh": "约百名抗议者闯入微软阿姆斯特丹数据中心工地",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.36kr.com/p/4058140801373065",
@@ -1194,17 +1196,17 @@
       "published_at": "2026-11-06T10:35:21+00:00",
       "date_precision": "second",
       "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "catalog_kind": "code",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文补充原始资料，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark",
+      "title_zh": "[AINews] Inkling 2 Small：17B激活/594B总参数，用68小时在12T token上训练，超过Muse Spark",
       "title_translation_scope": "title_only"
     },
     {
@@ -1314,7 +1316,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "I watched a humanoid robot clean my apartment. It felt like a taste of the future.",
+      "title_zh": "我看着一台人形机器人打扫我的公寓，像是提前尝到了未来",
       "title_translation_scope": "title_only"
     },
     {
@@ -1402,7 +1404,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "title_zh": "与Hacktron合作查找OpenAI系统中的漏洞",
       "title_translation_scope": "title_only"
     },
     {
@@ -1481,17 +1483,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文（援引知情人士，The Information首报）；交易未确认",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M",
-      "title_translation_scope": "title_only"
+      "title_zh": "消息称Palo Alto Networks洽购AI智能体访问安全公司Clutch，作价5亿美元现金",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.qbitai.com/2026/11/508107.html",
@@ -1600,7 +1602,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "OpenAI is stepping back from NDAs for data center projects",
+      "title_zh": "OpenAI在数据中心项目上不再坚持保密协议",
       "title_translation_scope": "title_only"
     },
     {
@@ -1620,10 +1622,12 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00",
+        "note": "与正文同一事件的相关报道；单独保留展示，未作为正文主证据"
       },
-      "title_zh": "Airbnb is working on an AI travel agent",
-      "title_translation_scope": "title_only"
+      "title_zh": "Airbnb正在开发AI旅行智能体",
+      "title_translation_scope": "title_only",
+      "related_body_item": "airbnb-ai-travel-agent-2027"
     },
     {
       "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
@@ -1644,7 +1648,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Measuring how AI agents handle everyday wet-lab science",
+      "title_zh": "衡量AI智能体如何处理日常湿实验室科研工作",
       "title_translation_scope": "title_only"
     },
     {
@@ -1666,7 +1670,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Egyptian and Nigerian English join the Open ASR Leaderboard",
+      "title_zh": "埃及英语和尼日利亚英语加入Open ASR排行榜",
       "title_translation_scope": "title_only"
     },
     {
@@ -1679,17 +1683,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "Cursor官方更新日志原文",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Voice Chat with Agents",
-      "title_translation_scope": "title_only"
+      "title_zh": "Cursor上线与编程智能体实时语音通话，由Grok Voice驱动",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
@@ -1701,17 +1705,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；Airbnb致股东信原文未单独打开",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
-      "title_translation_scope": "title_only"
+      "title_zh": "Airbnb：自家AI旅行智能体将于2027年上半年上线",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
@@ -1732,7 +1736,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Perplexity launches its own take on AI agents for work",
+      "title_zh": "Perplexity推出自己的职场AI智能体",
       "title_translation_scope": "title_only"
     },
     {
@@ -1754,7 +1758,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Google: Schools can keep search while skipping Gemini, but AI search is non-negotiable",
+      "title_zh": "谷歌：学校可以保留搜索而不用Gemini，但AI搜索不可商量",
       "title_translation_scope": "title_only"
     },
     {
@@ -1776,7 +1780,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Lawsuit: Man introduced his wife to ChatGPT. She used it to plan his murder.",
+      "title_zh": "诉讼：男子把ChatGPT介绍给妻子，妻子用它策划谋杀他",
       "title_translation_scope": "title_only"
     },
     {
@@ -1798,7 +1802,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Cult.fit builds operational muscle with Codex",
+      "title_zh": "Cult.fit借助Codex增强运营能力",
       "title_translation_scope": "title_only"
     },
     {
@@ -1820,7 +1824,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "User Embeddings are Superpositions of Interpretable Behavioral Modes",
+      "title_zh": "用户嵌入是可解释行为模式的叠加",
       "title_translation_scope": "title_only"
     },
     {
@@ -1842,7 +1846,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+      "title_zh": "SwarmEvolve：用于进化式发现与优化的潜在智能体群",
       "title_translation_scope": "title_only"
     },
     {
@@ -1864,7 +1868,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Scientist World: Grow a Research World for AI-Scientists",
+      "title_zh": "Scientist World：为AI科学家培育一个研究世界",
       "title_translation_scope": "title_only"
     },
     {
@@ -1886,7 +1890,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "XStack: A Benchmark for ML Repo Migration",
+      "title_zh": "XStack：机器学习代码仓库迁移基准",
       "title_translation_scope": "title_only"
     },
     {
@@ -1908,7 +1912,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Same Behavior, Different Mechanism: What Finite Experiments Can Certify About Integrated Information",
+      "title_zh": "行为相同、机制不同：有限实验能证明关于整合信息的什么",
       "title_translation_scope": "title_only"
     },
     {
@@ -1930,7 +1934,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Towards interpreting any residual stream direction by scaling activation inversion",
+      "title_zh": "通过扩展激活反演来解释任意残差流方向",
       "title_translation_scope": "title_only"
     },
     {
@@ -1952,7 +1956,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Adversarial Training with Large Step Sizes: Implicit Bias, Optimization, and Sharpness",
+      "title_zh": "大步长对抗训练：隐式偏置、优化与尖锐度",
       "title_translation_scope": "title_only"
     },
     {
@@ -1974,7 +1978,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Unpacking the Compute Efficiency of Strong-to-Weak OPD against GRPO",
+      "title_zh": "剖析强到弱OPD相对GRPO的计算效率",
       "title_translation_scope": "title_only"
     },
     {
@@ -1996,7 +2000,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "ReproBridge: Building Reproducibility into ML Research Artifacts",
+      "title_zh": "ReproBridge：把可复现性构建进机器学习研究产物",
       "title_translation_scope": "title_only"
     },
     {
@@ -2018,7 +2022,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "A Hidden Markov Preference Model for Online Prediction of Adversary Actions",
+      "title_zh": "用于在线预测对手行动的隐马尔可夫偏好模型",
       "title_translation_scope": "title_only"
     },
     {
@@ -2040,7 +2044,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Label-Wording Augmentation in a Typed-Decision Encoder: Gains on Unfamiliar Words, Not on Abbreviations or Codes",
+      "title_zh": "类型化决策编码器中的标签措辞增强：提升体现在陌生词上，而非缩写或代码",
       "title_translation_scope": "title_only"
     },
     {
@@ -2062,7 +2066,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety",
+      "title_zh": "从内部理解AI：面向AI安全的机制可解释性现状",
       "title_translation_scope": "title_only"
     },
     {
@@ -2084,7 +2088,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "MedGraph: Maintaining Patient State with Graph Memory for Long-Term Medical Dialogue",
+      "title_zh": "MedGraph：用图记忆在长期医疗对话中维护患者状态",
       "title_translation_scope": "title_only"
     },
     {
@@ -2106,7 +2110,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "The Power of Meta Access in the Software of the Future --- Demonstrated on LLM Chat UIs and Chat AI",
+      "title_zh": "未来软件中“元访问”的力量——以LLM聊天界面和聊天AI为例",
       "title_translation_scope": "title_only"
     },
     {
@@ -2128,7 +2132,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing",
+      "title_zh": "通过校准的潜在探测预测并分类视觉-语言-动作模型的失败",
       "title_translation_scope": "title_only"
     },
     {
@@ -2150,7 +2154,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Data-driven discovery of intrinsic Lie point symmetries of differential equation systems",
+      "title_zh": "数据驱动发现微分方程组的内在李点对称性",
       "title_translation_scope": "title_only"
     },
     {
@@ -2172,7 +2176,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "On the limitations of molecular representations",
+      "title_zh": "论分子表示的局限",
       "title_translation_scope": "title_only"
     },
     {
@@ -2194,7 +2198,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Benchmarks as Software: Terminal-Bench and the Case for Continuous Benchmarks",
+      "title_zh": "基准即软件：Terminal-Bench与持续基准的理由",
       "title_translation_scope": "title_only"
     },
     {
@@ -2216,7 +2220,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Spectral and Subspace Dynamics of LoRA in Supervised Fine-Tuning and Reinforcement Learning",
+      "title_zh": "监督微调与强化学习中LoRA的谱与子空间动力学",
       "title_translation_scope": "title_only"
     },
     {
@@ -2238,7 +2242,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "The Gold Rush in AI4Math, II: What are signatures of AI-assisted Proofs?",
+      "title_zh": "AI4Math淘金热（二）：AI辅助证明有哪些特征？",
       "title_translation_scope": "title_only"
     },
     {
@@ -2260,7 +2264,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Conformal Prediction for Time-Dependent PDEs",
+      "title_zh": "面向时间相关偏微分方程的保形预测",
       "title_translation_scope": "title_only"
     },
     {
@@ -2282,7 +2286,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Social Humanoid: Socially Responsive Human-Humanoid Interaction",
+      "title_zh": "Social Humanoid：具备社交响应能力的人与人形机器人交互",
       "title_translation_scope": "title_only"
     },
     {
@@ -2304,7 +2308,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "StepBack: Step-Level Error-Localized Resampling for Efficient Test-Time Reasoning",
+      "title_zh": "StepBack：面向高效测试时推理的步骤级错误定位重采样",
       "title_translation_scope": "title_only"
     },
     {
@@ -2326,7 +2330,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Synthesis of Ovarian Cancer Multi-Omics Datasets: A Biology-Informed Evaluation Framework",
+      "title_zh": "卵巢癌多组学数据集的合成：一个基于生物学的评估框架",
       "title_translation_scope": "title_only"
     },
     {
@@ -2348,7 +2352,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Learning a patient world model for health system simulation in intensive care",
+      "title_zh": "学习患者世界模型以模拟重症监护医疗系统",
       "title_translation_scope": "title_only"
     },
     {
@@ -2370,7 +2374,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Hybrid Machine Learning for Imbalanced Landing-Phase Safety Event Prediction from Flight Data",
+      "title_zh": "用混合机器学习从飞行数据预测不平衡的着陆阶段安全事件",
       "title_translation_scope": "title_only"
     },
     {
@@ -2392,7 +2396,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "FedReason: Large Language Models as Weight-Space Meta-Aggregators for Heterogeneous Federated Learning",
+      "title_zh": "FedReason：大语言模型作为异构联邦学习的权重空间元聚合器",
       "title_translation_scope": "title_only"
     },
     {
@@ -2414,7 +2418,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Module-Aware Optimization for Graph Neural Networks",
+      "title_zh": "图神经网络的模块感知优化",
       "title_translation_scope": "title_only"
     },
     {
@@ -2436,7 +2440,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout",
+      "title_zh": "Muir：采用敏感度分配门控与匹配滤波读出的线性注意力",
       "title_translation_scope": "title_only"
     },
     {
@@ -2458,7 +2462,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
+      "title_zh": "MOMASPLAT：面向移动操作的动态新视角演示增强",
       "title_translation_scope": "title_only"
     },
     {
@@ -2480,7 +2484,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "NPCBench: A Clinical Apprenticeship Benchmark for Multimodal Care-Pathway Reasoning in Nasopharyngeal Carcinoma",
+      "title_zh": "NPCBench：鼻咽癌多模态诊疗路径推理的临床学徒式基准",
       "title_translation_scope": "title_only"
     },
     {
@@ -2502,7 +2506,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception",
+      "title_zh": "VisionSIM：超越理想化传感器的机器人感知多模态模拟器",
       "title_translation_scope": "title_only"
     },
     {
@@ -2524,7 +2528,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "SHORE: Stability-Hybrid On-Policy Reinforcement Learning for Online Bin Packing",
+      "title_zh": "SHORE：面向在线装箱问题的稳定性混合同策略强化学习",
       "title_translation_scope": "title_only"
     },
     {
@@ -2546,7 +2550,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "StrataFlux: Memory-Hierarchy-Native Low-Bit LLM Inference",
+      "title_zh": "StrataFlux：原生适配存储层次结构的低比特LLM推理",
       "title_translation_scope": "title_only"
     },
     {
@@ -2568,7 +2572,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "SpecCTMC: Exact Speculative Simulation of Diffusion Language Model Continuous-Time Markov Chains",
+      "title_zh": "SpecCTMC：扩散语言模型连续时间马尔可夫链的精确投机模拟",
       "title_translation_scope": "title_only"
     },
     {
@@ -2590,7 +2594,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Unifying Central Flow, Rod Flow, and the Edge Coupling",
+      "title_zh": "统一中心流、杆流与边缘耦合",
       "title_translation_scope": "title_only"
     },
     {
@@ -2612,7 +2616,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching",
+      "title_zh": "USB Gym：用于闭环超声视图匹配的Gymnasium测试平台",
       "title_translation_scope": "title_only"
     },
     {
@@ -2634,7 +2638,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Quoting Paul Ford",
+      "title_zh": "引用Paul Ford",
       "title_translation_scope": "title_only"
     },
     {
@@ -2656,7 +2660,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
+      "title_zh": "用于毫米波雷达微多普勒可微渲染的4D点溅射",
       "title_translation_scope": "title_only"
     },
     {
@@ -2678,7 +2682,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Enhancing Local and Global Structure in Compressed AI Agent Memory",
+      "title_zh": "增强压缩后AI智能体记忆中的局部与全局结构",
       "title_translation_scope": "title_only"
     },
     {
@@ -2700,7 +2704,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Discovering Learning Rules that Shape Others",
+      "title_zh": "发现能塑造他者的学习规则",
       "title_translation_scope": "title_only"
     },
     {
@@ -2722,7 +2726,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Cultural Adaptation within Repeated Social Interactions",
+      "title_zh": "重复社交互动中的文化适应",
       "title_translation_scope": "title_only"
     },
     {
@@ -2744,7 +2748,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Polarity Classification with Multitask Learning Syntax Augmentation",
+      "title_zh": "借助多任务学习句法增强的极性分类",
       "title_translation_scope": "title_only"
     },
     {
@@ -2766,7 +2770,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Learning the Task or Learning the Verifier? Rethinking Criteria Exposure in Embodied Self-Improvement",
+      "title_zh": "学任务还是学验证器？重新思考具身自我改进中的标准暴露",
       "title_translation_scope": "title_only"
     },
     {
@@ -2788,7 +2792,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Benchmarking Large Language Models on Heterogeneous Cognitive and Biomedical Knowledge Graphs: The Role of Graph Grounding in Multi-Hop Reasoning and Hallucination Mitigation",
+      "title_zh": "在异构认知与生物医学知识图谱上评测大语言模型：图谱支撑在多跳推理与缓解幻觉中的作用",
       "title_translation_scope": "title_only"
     },
     {
@@ -2810,7 +2814,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Interpretable many-body interaction laws for collective motion from few trajectories",
+      "title_zh": "从少量轨迹得出集体运动的可解释多体相互作用规律",
       "title_translation_scope": "title_only"
     },
     {
@@ -2832,7 +2836,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "LLM-Assisted Label Noise Correction for EEG-Based Sleep Stage Classification",
+      "title_zh": "用LLM辅助纠正基于脑电的睡眠分期标签噪声",
       "title_translation_scope": "title_only"
     },
     {
@@ -2854,7 +2858,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "RM-VLM: From Natural-Language Task Descriptions to Vision-Grounded Reward Machines",
+      "title_zh": "RM-VLM：从自然语言任务描述到基于视觉的奖励机",
       "title_translation_scope": "title_only"
     },
     {
@@ -2876,29 +2880,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Measured Coupling for Parallel Decoding in Diffusion Language Models",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://www.404media.co/uk-crime-and-policing-act-pornography/",
-      "title": "In the UK, Face Sitting Porn Might Land You in Jail",
-      "original_title": "In the UK, Face Sitting Porn Might Land You in Jail",
-      "source": "404 Media",
-      "source_id": "404-media",
-      "published_at": "2026-11-05T17:09:04+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "In the UK, Face Sitting Porn Might Land You in Jail",
+      "title_zh": "扩散语言模型并行解码的可度量耦合",
       "title_translation_scope": "title_only"
     },
     {
@@ -2920,7 +2902,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "First-Token Attraction in Mamba Dynamics",
+      "title_zh": "Mamba动力学中的首词元吸引",
       "title_translation_scope": "title_only"
     },
     {
@@ -2942,7 +2924,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Dynamic Optimistic Constrained OCO with Memory via Delay Equivalence",
+      "title_zh": "通过延迟等价实现带记忆的动态乐观约束在线凸优化",
       "title_translation_scope": "title_only"
     },
     {
@@ -2964,7 +2946,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "title_zh": "Gemini Omni 1.2 Flash：快速、低成本，片段更长",
       "title_translation_scope": "title_only"
     },
     {
@@ -2986,7 +2968,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Australian universities are creating AI-native graduates",
+      "title_zh": "澳大利亚高校正在培养AI原生毕业生",
       "title_translation_scope": "title_only"
     },
     {
@@ -3008,7 +2990,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Transformer-Based Trajectory Prescription for sEMG-Optimizing Robot-Mediated Rehabilitation",
+      "title_zh": "基于Transformer的轨迹规划，用于优化表面肌电的机器人辅助康复",
       "title_translation_scope": "title_only"
     },
     {
@@ -3030,7 +3012,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "AutoCompress: Automated Hardware-Guided Model Compression",
+      "title_zh": "AutoCompress：硬件引导的自动模型压缩",
       "title_translation_scope": "title_only"
     },
     {
@@ -3052,7 +3034,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "A Generative Model of Contextual Integrity: Appropriate vs. Inappropriate Information Sharing",
+      "title_zh": "情境完整性的生成模型：恰当与不恰当的信息共享",
       "title_translation_scope": "title_only"
     },
     {
@@ -3065,17 +3047,19 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "arXiv摘要页（v1）；全文未读",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
       },
-      "title_zh": "Multimodal-SEA: Benchmarking AI Agent Security under Multimodal Social Engineering Attacks",
-      "title_translation_scope": "title_only"
+      "title_zh": "论文：Multimodal-SEA——个人AI智能体面对图文并茂的社会工程骗局有多脆弱",
+      "title_translation_scope": "editorial",
+      "paper_key": "2611.08281",
+      "time_evidence": "arXiv v1提交 2026-11-05（abs页Submitted on 5 Nov 2026）；公告时间未单独核对"
     },
     {
       "url": "https://arxiv.org/abs/2611.08277",
@@ -3096,7 +3080,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "LeanContext: Disentangling Mathematical Resources from Local Formal Context in Lean Whole-Proof Generation",
+      "title_zh": "LeanContext：在Lean整体证明生成中区分数学资源与局部形式化上下文",
       "title_translation_scope": "title_only"
     },
     {
@@ -3118,7 +3102,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Aligning Policy Encoders with a Shape Teacher",
+      "title_zh": "用形状教师对齐策略编码器",
       "title_translation_scope": "title_only"
     },
     {
@@ -3140,7 +3124,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Accelerating Safe Reinforcement Learning with Massive Parallelism",
+      "title_zh": "用大规模并行加速安全强化学习",
       "title_translation_scope": "title_only"
     },
     {
@@ -3162,7 +3146,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "DART: Domain-Agnostic Residual Transfer for Generalist Anomaly Detection",
+      "title_zh": "DART：面向通用异常检测的领域无关残差迁移",
       "title_translation_scope": "title_only"
     },
     {
@@ -3184,7 +3168,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Accepted but Wrong: Silent Failures of LLM Code Repairs after API Migrations",
+      "title_zh": "被接受却是错的：API迁移后LLM代码修复的静默失败",
       "title_translation_scope": "title_only"
     },
     {
@@ -3206,7 +3190,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Scaling Neural Motor Decoding via Decoupled Behavioral Pretraining",
+      "title_zh": "通过解耦的行为预训练扩展神经运动解码",
       "title_translation_scope": "title_only"
     },
     {
@@ -3228,7 +3212,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "The Geometry of Simulated Perspectives: Dissociating Representation and Behaviour in a Multimodal Language Model",
+      "title_zh": "模拟视角的几何：在多模态语言模型中区分表征与行为",
       "title_translation_scope": "title_only"
     },
     {
@@ -3250,7 +3234,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Nowcasting of Tropical Cyclone Wind Fields and Intensity from Geostationary Imagery",
+      "title_zh": "基于静止卫星图像的热带气旋风场与强度临近预报",
       "title_translation_scope": "title_only"
     },
     {
@@ -3272,7 +3256,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Series-wise Cross-validation for Global Time Series Forecasting",
+      "title_zh": "面向全局时间序列预测的按序列交叉验证",
       "title_translation_scope": "title_only"
     },
     {
@@ -3294,7 +3278,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Geometric Relevance Is Not Sufficient: Evaluating Focused Post-Training Supervision in Diffusion Docking",
+      "title_zh": "几何相关性并不足够：评估扩散对接中的聚焦后训练监督",
       "title_translation_scope": "title_only"
     },
     {
@@ -3316,7 +3300,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Value-oriented policy distillation for interpretable wind farm power control",
+      "title_zh": "面向可解释风电场功率控制的价值导向策略蒸馏",
       "title_translation_scope": "title_only"
     },
     {
@@ -3338,7 +3322,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "FewStepRL: Fine-tuning Few-step Diffusion Models with Reinforcement Learning",
+      "title_zh": "FewStepRL：用强化学习微调少步扩散模型",
       "title_translation_scope": "title_only"
     },
     {
@@ -3360,7 +3344,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Terminal-style Mathematical Modeling Bench: The First Agentic and Verifiable Benchmark for Mathematical Modeling",
+      "title_zh": "终端式数学建模基准：首个面向数学建模的智能体化、可验证基准",
       "title_translation_scope": "title_only"
     },
     {
@@ -3382,7 +3366,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Beyond Quadratic Attention: Separable Gaussian Operators for ODE Vision Transformers",
+      "title_zh": "超越二次注意力：用于ODE视觉Transformer的可分离高斯算子",
       "title_translation_scope": "title_only"
     },
     {
@@ -3404,7 +3388,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Signals, Evidence, and Context: User Scrutiny in Real-World LLM Conversations",
+      "title_zh": "信号、证据与语境：真实LLM对话中的用户审视",
       "title_translation_scope": "title_only"
     },
     {
@@ -3426,7 +3410,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "From Twisted Facts to Rogue Agents: Can LLMs Reliably Detect Multi-Dimensional Hallucinations?",
+      "title_zh": "从扭曲事实到失控智能体：LLM能可靠检测多维幻觉吗？",
       "title_translation_scope": "title_only"
     },
     {
@@ -3448,7 +3432,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "\"Blind Compliance\": Coercive Control in AI Jailbreaking",
+      "title_zh": "“盲目服从”：AI越狱中的胁迫控制",
       "title_translation_scope": "title_only"
     },
     {
@@ -3470,7 +3454,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Agent-R$^2$: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis",
+      "title_zh": "Agent-R²：通过真实来源数据合成扩展面向真实生产力工作的智能体",
       "title_translation_scope": "title_only"
     },
     {
@@ -3492,7 +3476,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "ProQuant: Progressive Quantization-aware Training for Edge MLLMs",
+      "title_zh": "ProQuant：面向边缘多模态大模型的渐进式量化感知训练",
       "title_translation_scope": "title_only"
     },
     {
@@ -3514,7 +3498,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Do sEMG Foundation Models Improve Cross-Subject Generalisation?",
+      "title_zh": "表面肌电基础模型能改善跨受试者泛化吗？",
       "title_translation_scope": "title_only"
     },
     {
@@ -3536,7 +3520,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "SMART: State-based Multi Agent Reasoning Traces for Verification-oriented Problem-Solving",
+      "title_zh": "SMART：面向验证型问题求解的基于状态的多智能体推理轨迹",
       "title_translation_scope": "title_only"
     },
     {
@@ -3558,7 +3542,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "BUMP: Brief Unexpected Mid-Interpolation Peak",
+      "title_zh": "BUMP：插值中段的短暂意外峰值",
       "title_translation_scope": "title_only"
     },
     {
@@ -3580,7 +3564,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Knowing When to Teach: Learning from Teachable Prefixes in Multilingual Reasoning Distillation",
+      "title_zh": "知道何时教：在多语言推理蒸馏中从可教前缀学习",
       "title_translation_scope": "title_only"
     },
     {
@@ -3602,7 +3586,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "BabyTheorist: A Benchmark for Learning to Theorize the World from Observation Alone",
+      "title_zh": "BabyTheorist：仅凭观察学习理论化世界的基准",
       "title_translation_scope": "title_only"
     },
     {
@@ -3624,7 +3608,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+      "title_zh": "PCBRouteAgent：LLM智能体离成为PCB布线工程师还有多远？",
       "title_translation_scope": "title_only"
     },
     {
@@ -3646,7 +3630,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Regret Bounds for Profit Maximization in Bilateral Trade: Learning the Best Posted-Price Mechanism",
+      "title_zh": "双边交易利润最大化的遗憾界：学习最佳标价机制",
       "title_translation_scope": "title_only"
     },
     {
@@ -3668,7 +3652,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "RouteAlign: Aligning Task Requirements with Model Profiles for LLM Service Selection",
+      "title_zh": "RouteAlign：在LLM服务选择中对齐任务需求与模型画像",
       "title_translation_scope": "title_only"
     },
     {
@@ -3690,7 +3674,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Patch Attention Wisely: Understanding Patch Length in Attention-Based Forecasting",
+      "title_zh": "明智地做补丁注意力：理解基于注意力的预测中的补丁长度",
       "title_translation_scope": "title_only"
     },
     {
@@ -3712,7 +3696,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Improving Context-Shift Robustness of Convolutional Networks via Context-Regularized Cross-Entropy",
+      "title_zh": "用上下文正则化交叉熵提升卷积网络对上下文偏移的鲁棒性",
       "title_translation_scope": "title_only"
     },
     {
@@ -3734,7 +3718,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "La-JEPA: Compact Robot Policies with Latent World Modeling",
+      "title_zh": "La-JEPA：用潜在世界建模实现紧凑的机器人策略",
       "title_translation_scope": "title_only"
     },
     {
@@ -3756,7 +3740,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "AI-Native Task-Oriented Semantic Communications over a Relay: Benefits and Vulnerabilities",
+      "title_zh": "经中继的AI原生任务导向语义通信：收益与漏洞",
       "title_translation_scope": "title_only"
     },
     {
@@ -3778,7 +3762,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Interpretable Multimodal MRI-Clinical Fusion for Functional Outcome Prediction After Acute Ischemic Stroke",
+      "title_zh": "可解释的多模态MRI与临床数据融合，用于预测急性缺血性卒中后的功能结局",
       "title_translation_scope": "title_only"
     },
     {
@@ -3800,7 +3784,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "A Generative Foundation Model for Multimodal Tokamak Tasks",
+      "title_zh": "面向多模态托卡马克任务的生成式基础模型",
       "title_translation_scope": "title_only"
     },
     {
@@ -3822,7 +3806,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Detecting Weather Fronts from Satellite Observations: What Does Reanalysis Add?",
+      "title_zh": "从卫星观测中检测天气锋面：再分析数据带来了什么？",
       "title_translation_scope": "title_only"
     },
     {
@@ -3844,7 +3828,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Detecting Silent Faults at the Environment-Trainer Boundary in Reinforcement Learning",
+      "title_zh": "检测强化学习中环境与训练器边界处的静默故障",
       "title_translation_scope": "title_only"
     },
     {
@@ -3866,7 +3850,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "How Far Can Untrained Neural Networks Go in Anomaly Detection? From Tables to Pixels",
+      "title_zh": "未训练的神经网络在异常检测中能走多远？从表格到像素",
       "title_translation_scope": "title_only"
     },
     {
@@ -3888,7 +3872,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Who Can Evaluate AI Independently? A Framework for Analysing Evaluation Infrastructure",
+      "title_zh": "谁能独立评估AI？一个分析评估基础设施的框架",
       "title_translation_scope": "title_only"
     },
     {
@@ -3910,7 +3894,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Beyond K/V Caches: Cross-Model State Handoff in Hybrid Linear-Attention LLMs",
+      "title_zh": "超越K/V缓存：混合线性注意力LLM中的跨模型状态交接",
       "title_translation_scope": "title_only"
     },
     {
@@ -3932,7 +3916,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Create Your Own Work Stack: Deploying Self-hosted AI and Tooling in a Tech Startup",
+      "title_zh": "打造自己的工作栈：在科技初创公司部署自托管AI与工具",
       "title_translation_scope": "title_only"
     },
     {
@@ -3954,7 +3938,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Identifying Neural Dynamics Using Nonlinear Interventional State Space Models",
+      "title_zh": "用非线性干预状态空间模型识别神经动力学",
       "title_translation_scope": "title_only"
     },
     {
@@ -3976,7 +3960,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "PersonaAgent: Retrieval-Augmented Transaction Anomaly Scoring with Refreshable Multi-Entity Persona Memory",
+      "title_zh": "PersonaAgent：结合可刷新多实体画像记忆的检索增强交易异常评分",
       "title_translation_scope": "title_only"
     },
     {
@@ -3998,7 +3982,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Gradient Boosting for Efficient Rank Discovery in Tensor Network Kernel Machines",
+      "title_zh": "用梯度提升高效发现张量网络核机器的秩",
       "title_translation_scope": "title_only"
     },
     {
@@ -4020,7 +4004,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Gabor Gabor: E-Gaborformer, a Strictly Causal Speech Recognizer with Gabor-Dictionary Convolutions and Delta-Rule Memory",
+      "title_zh": "Gabor Gabor：E-Gaborformer，采用Gabor字典卷积和Delta规则记忆的严格因果语音识别器",
       "title_translation_scope": "title_only"
     },
     {
@@ -4042,7 +4026,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "ATHAAR: A Medieval Scientific Arabic Manuscript Dataset for Handwritten Text Recognition",
+      "title_zh": "ATHAAR：用于手写文字识别的中世纪阿拉伯科学手稿数据集",
       "title_translation_scope": "title_only"
     },
     {
@@ -4064,7 +4048,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "SAE Interprets MoE: Sparse AutoEncoders Reveal That MoE Experts Exhibit Human-Interpretable Fine-Grained Specialization",
+      "title_zh": "SAE解读MoE：稀疏自编码器显示MoE专家呈现人类可解释的细粒度分工",
       "title_translation_scope": "title_only"
     },
     {
@@ -4086,7 +4070,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Value or Attention: Investigating Layer-wise Relevance Propagation for Graph Attention Networks",
+      "title_zh": "价值还是注意力：研究图注意力网络的逐层相关性传播",
       "title_translation_scope": "title_only"
     },
     {
@@ -4108,7 +4092,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "MUSS: A Multi-scale and Sequence-based Model for Single-cell Gene Regulation",
+      "title_zh": "MUSS：用于单细胞基因调控的多尺度、基于序列的模型",
       "title_translation_scope": "title_only"
     },
     {
@@ -4130,7 +4114,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Linguistic boundaries emerge from pressure-constrained processing dynamics",
+      "title_zh": "语言边界源自受压力约束的加工动力学",
       "title_translation_scope": "title_only"
     },
     {
@@ -4152,7 +4136,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "DictLLM: Post-training Compression of Large Language Model with Dictionary Kernels",
+      "title_zh": "DictLLM：用字典核对大语言模型做训练后压缩",
       "title_translation_scope": "title_only"
     },
     {
@@ -4174,7 +4158,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Optimal Competitive Ratios for Chasing Convex Functions with Quadratic Growth",
+      "title_zh": "追逐二次增长凸函数的最优竞争比",
       "title_translation_scope": "title_only"
     },
     {
@@ -4196,7 +4180,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Can an LLM Actually Reason and Program about Neural Network's Weights or is it just memorization on steroids? Exploring \"Weight-Space Programming\"",
+      "title_zh": "LLM真能推理并编程神经网络权重，还是加强版死记硬背？探索“权重空间编程”",
       "title_translation_scope": "title_only"
     },
     {
@@ -4218,7 +4202,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "NutriVisRAG: Multimodal Exemplar Grounding for Nutrient Estimation with Vision-Language Models",
+      "title_zh": "NutriVisRAG：用视觉语言模型做营养估算的多模态示例支撑",
       "title_translation_scope": "title_only"
     },
     {
@@ -4240,7 +4224,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "When Imperfect Automated Fact-Checking Backfires: Social Learning in the Presence of Misinformation",
+      "title_zh": "当不完美的自动事实核查适得其反：存在错误信息时的社会学习",
       "title_translation_scope": "title_only"
     },
     {
@@ -4262,7 +4246,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Performance metrics in machine learning: a scenario-based guide from the confusion matrix to calibration, regression and uncertainty",
+      "title_zh": "机器学习中的性能指标：从混淆矩阵到校准、回归与不确定性的场景化指南",
       "title_translation_scope": "title_only"
     },
     {
@@ -4284,7 +4268,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "KeHoSu: Keyed Homoglyph Substitution for Authenticated Text Provenance over Copy-Paste Channels",
+      "title_zh": "KeHoSu：面向复制粘贴渠道、可认证文本来源的密钥同形字替换",
       "title_translation_scope": "title_only"
     },
     {
@@ -4306,7 +4290,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "‘Hogwarts Legacy’ Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW",
+      "title_zh": "《霍格沃茨之遗》在GeForce NOW上获得NVIDIA DLSS 5升级",
       "title_translation_scope": "title_only"
     },
     {
@@ -4328,7 +4312,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Secure Formal Raising: Protecting the Development of AI through Executable Properties",
+      "title_zh": "安全形式化提升：通过可执行属性保护AI开发",
       "title_translation_scope": "title_only"
     },
     {
@@ -4350,7 +4334,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Should We Pay This Much for Robustness? Efficient Proxy Certificates with Marginal Guarantees",
+      "title_zh": "为鲁棒性付出这么多值得吗？带边际保证的高效代理证书",
       "title_translation_scope": "title_only"
     },
     {
@@ -4372,7 +4356,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Reproducing Kernel (Quasi-)Banach Spaces with the $\\ell^p$ Coefficient Norms",
+      "title_zh": "带ℓ^p系数范数的再生核（拟）巴拿赫空间",
       "title_translation_scope": "title_only"
     },
     {
@@ -4394,7 +4378,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "GTAFL: Addressing Test-Agnostic Long-Tailed Federated Learning in Medical Image",
+      "title_zh": "GTAFL：解决医学影像中测试分布未知的长尾联邦学习",
       "title_translation_scope": "title_only"
     },
     {
@@ -4416,7 +4400,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Learning Dynamics of On-Policy Distillation",
+      "title_zh": "同策略蒸馏的学习动力学",
       "title_translation_scope": "title_only"
     },
     {
@@ -4438,7 +4422,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Automatic keyphrase extraction and annotation: modern theoretical approaches and practical solutions for text and speech",
+      "title_zh": "自动关键词提取与标注：面向文本和语音的现代理论方法与实践方案",
       "title_translation_scope": "title_only"
     },
     {
@@ -4460,7 +4444,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Towards Multiscale Molecular Representation Learning through Geometry-Based Fragmentation for Polymer Property Prediction",
+      "title_zh": "通过基于几何的分片实现多尺度分子表示学习，用于聚合物性质预测",
       "title_translation_scope": "title_only"
     },
     {
@@ -4504,7 +4488,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Compression Through a Context Lens: Evaluating Adaptation, Quantization, and Distillation in Arabic Legal LLMs",
+      "title_zh": "从语境看压缩：评估阿拉伯语法律LLM的适配、量化与蒸馏",
       "title_translation_scope": "title_only"
     },
     {
@@ -4526,7 +4510,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Technohybridism: Recursive Semantic Normalization in AI-Mediated Societies",
+      "title_zh": "技术混合主义：AI中介社会中的递归语义规范化",
       "title_translation_scope": "title_only"
     },
     {
@@ -4548,7 +4532,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "How Far Can Lightweight LLMs Go in Intent-to-SLO Translation?",
+      "title_zh": "轻量级LLM在意图到SLO转换上能走多远？",
       "title_translation_scope": "title_only"
     },
     {
@@ -4570,7 +4554,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents",
+      "title_zh": "QRAE：面向DeepSearch智能体上下文压缩的查询相关注意力熵",
       "title_translation_scope": "title_only"
     },
     {
@@ -4592,7 +4576,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Tight Asymptotic Bounds on the Maximum Number of Linear Regions of Piecewise-Linear Kolmogorov--Arnold networks",
+      "title_zh": "分段线性Kolmogorov-Arnold网络最大线性区域数的紧渐近界",
       "title_translation_scope": "title_only"
     },
     {
@@ -4614,7 +4598,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "TCSExam: Evaluating Frontier LLMs on the Full Range of TCS Research",
+      "title_zh": "TCSExam：在理论计算机科学全领域研究上评估前沿LLM",
       "title_translation_scope": "title_only"
     },
     {
@@ -4636,7 +4620,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation",
+      "title_zh": "CoRD：耦合采样填补同策略蒸馏的盲区",
       "title_translation_scope": "title_only"
     },
     {
@@ -4658,7 +4642,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "A Behavioural Framework for Predicting and Understanding Loss of Control in Frontier Artificial Intelligence Systems",
+      "title_zh": "预测并理解前沿AI系统失控的行为框架",
       "title_translation_scope": "title_only"
     },
     {
@@ -4680,7 +4664,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Invariance before structure: two modes of emergent compression in representation learning",
+      "title_zh": "先不变性后结构：表征学习中涌现压缩的两种模式",
       "title_translation_scope": "title_only"
     },
     {
@@ -4702,7 +4686,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Leakage- and Label-Aware Benchmarking of Class-Imbalance Strategies for Multimodal Chest X-Ray and EHR Classification",
+      "title_zh": "感知泄漏与标签的多模态胸片与电子病历分类类别不平衡策略基准",
       "title_translation_scope": "title_only"
     },
     {
@@ -4724,7 +4708,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Beyond the Keyword: A Human-Annotated Benchmark for Arabic Anxiety-Related Discourse",
+      "title_zh": "超越关键词：人工标注的阿拉伯语焦虑相关话语基准",
       "title_translation_scope": "title_only"
     },
     {
@@ -4746,7 +4730,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Circe: Training-Free LLM Self-Evaluation via Component Interaction Consistency",
+      "title_zh": "Circe：通过组件交互一致性实现免训练的LLM自我评估",
       "title_translation_scope": "title_only"
     },
     {
@@ -4768,7 +4752,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering",
+      "title_zh": "ChemE-as-Code：化学工程智能体AI的开源平台",
       "title_translation_scope": "title_only"
     },
     {
@@ -4790,7 +4774,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "tok: a textual concrete syntax of BPMN and DMN for humans and AI agents",
+      "title_zh": "tok：面向人类与AI智能体的BPMN和DMN文本具体语法",
       "title_translation_scope": "title_only"
     },
     {
@@ -4812,7 +4796,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "CardioLM: A multilingual suite of small language models for the cardiology domain",
+      "title_zh": "CardioLM：面向心脏病学领域的多语言小语言模型套件",
       "title_translation_scope": "title_only"
     },
     {
@@ -4834,7 +4818,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Joint Modeling of Conditional Mean and Variability in Multilevel Functional Data: Application to Postprandial Glucose Trajectories in the AEGIS Study",
+      "title_zh": "多层函数型数据中条件均值与变异的联合建模：应用于AEGIS研究的餐后血糖轨迹",
       "title_translation_scope": "title_only"
     },
     {
@@ -4856,7 +4840,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Towards Scalable Diagnostic-Driven Whole-Slide Image Retrieval for Pathology Archives",
+      "title_zh": "面向病理档案、可扩展的诊断驱动全切片图像检索",
       "title_translation_scope": "title_only"
     },
     {
@@ -4878,7 +4862,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "The Blindfolded Controller: Decision Model-Guided Training for Reinforcement Learning",
+      "title_zh": "蒙眼控制器：决策模型引导的强化学习训练",
       "title_translation_scope": "title_only"
     },
     {
@@ -4900,7 +4884,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "AttnSR: Attention Step Reward for Long-Horizon Agentic RL",
+      "title_zh": "AttnSR：面向长程智能体强化学习的注意力步骤奖励",
       "title_translation_scope": "title_only"
     },
     {
@@ -4922,7 +4906,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Flux as a Codec: Zero-Shot Lossy Compression with Flux",
+      "title_zh": "把Flux当编解码器：用Flux实现零样本有损压缩",
       "title_translation_scope": "title_only"
     },
     {
@@ -4944,7 +4928,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "ZeroRAG: Adaptive Semantic Peer Routing for Decentralized Retrieval-Augmented Generation",
+      "title_zh": "ZeroRAG：面向去中心化检索增强生成的自适应语义对等路由",
       "title_translation_scope": "title_only"
     },
     {
@@ -4966,7 +4950,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "AraEngage: Interpretable Linguistic Correlates of Engagement in Arabic Facebook News",
+      "title_zh": "AraEngage：阿拉伯语Facebook新闻互动度的可解释语言学关联",
       "title_translation_scope": "title_only"
     },
     {
@@ -4988,7 +4972,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "How Finite Brains Generalize Without Bound: Spatial Memory as a Universal Computer",
+      "title_zh": "有限的大脑如何无界泛化：空间记忆作为通用计算机",
       "title_translation_scope": "title_only"
     },
     {
@@ -5010,7 +4994,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Adaptive Semantic Branching: Disagreement-Localized Cross-Trajectory Regeneration for Reasoning Candidate Expansion",
+      "title_zh": "自适应语义分支：在分歧处定位的跨轨迹再生成，用于扩展推理候选",
       "title_translation_scope": "title_only"
     },
     {
@@ -5032,7 +5016,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Same Answer, Different Future: Matched Predictions Do Not Imply Matched Belief Updating in Language Models",
+      "title_zh": "答案相同、未来不同：预测一致并不意味着语言模型的信念更新一致",
       "title_translation_scope": "title_only"
     },
     {
@@ -5054,7 +5038,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "GuidedWAM: Training-Free Energy Guidance for World Action Models in Autonomous Driving",
+      "title_zh": "GuidedWAM：面向自动驾驶世界动作模型的免训练能量引导",
       "title_translation_scope": "title_only"
     },
     {
@@ -5076,7 +5060,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "EDGAR: Efficient Diffusion-Driven Gaussian Avatar Refinement via Synthetic Failure",
+      "title_zh": "EDGAR：通过合成失败实现高效的扩散驱动高斯头像精修",
       "title_translation_scope": "title_only"
     },
     {
@@ -5098,7 +5082,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Structure from Collision via Hypothesis-Space Reasoning",
+      "title_zh": "基于假设空间推理的碰撞结构恢复",
       "title_translation_scope": "title_only"
     },
     {
@@ -5120,7 +5104,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Persistent Retrieval for Conversational Agents: A Study of Retrieval Efficiency",
+      "title_zh": "对话智能体的持久检索：检索效率研究",
       "title_translation_scope": "title_only"
     },
     {
@@ -5142,7 +5126,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "DISCERN: Distributional Synthetic Replay for Retain-Free Incremental Machine Unlearning",
+      "title_zh": "DISCERN：无需保留数据的增量机器遗忘的分布式合成回放",
       "title_translation_scope": "title_only"
     },
     {
@@ -5164,7 +5148,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "When Bigger Becomes Brittle: Why Compression Hurts More as Language Models Scale",
+      "title_zh": "越大越脆：为什么语言模型规模越大，压缩伤害越大",
       "title_translation_scope": "title_only"
     },
     {
@@ -5186,7 +5170,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "When, Where, How: Active In-Context Learning for Tabular Foundation Models",
+      "title_zh": "何时、何处、如何：面向表格基础模型的主动上下文学习",
       "title_translation_scope": "title_only"
     },
     {
@@ -5208,7 +5192,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "InnerLogic-Surg: An Open Surgical Foundation Model via Continual Pretraining",
+      "title_zh": "InnerLogic-Surg：通过持续预训练得到的开放外科基础模型",
       "title_translation_scope": "title_only"
     },
     {
@@ -5230,7 +5214,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Network Effect Decomposition for Causal Effect Estimation under Network Interference",
+      "title_zh": "网络干扰下因果效应估计的网络效应分解",
       "title_translation_scope": "title_only"
     },
     {
@@ -5252,7 +5236,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Which Signals of Code Correctness Survive Distribution Shift? Hidden-State and Causal Predictors of Program and Verdict Correctness",
+      "title_zh": "哪些代码正确性信号能经受分布偏移？程序与判定正确性的隐状态与因果预测因子",
       "title_translation_scope": "title_only"
     },
     {
@@ -5274,7 +5258,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Responsible GenAI Use During Active Armed Conflict: Evidence from Sudan's Emergency Response Rooms",
+      "title_zh": "武装冲突期间负责任地使用生成式AI：来自苏丹紧急响应室的证据",
       "title_translation_scope": "title_only"
     },
     {
@@ -5296,7 +5280,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "FARR: Forecast-Aware Residual Refinement with Matched Endpoint Evidence for Long-Horizon Time-Series Forecasting",
+      "title_zh": "FARR：结合匹配端点证据的预测感知残差精修，用于长程时间序列预测",
       "title_translation_scope": "title_only"
     },
     {
@@ -5318,7 +5302,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "PlayGen2: Learning Real-Time Playable Worlds with Explicit 3D State",
+      "title_zh": "PlayGen2：学习带显式3D状态的实时可玩世界",
       "title_translation_scope": "title_only"
     },
     {
@@ -5340,7 +5324,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Do Recommenders Need to Think in Words? Latent Reasoning for Efficient LLM-Based Recommendation",
+      "title_zh": "推荐系统需要用文字思考吗？用于高效LLM推荐的潜在推理",
       "title_translation_scope": "title_only"
     },
     {
@@ -5362,7 +5346,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "CORE: Coarse-to-Fine Search with Context Management for Deep Research",
+      "title_zh": "CORE：面向深度研究、带上下文管理的由粗到细搜索",
       "title_translation_scope": "title_only"
     },
     {
@@ -5384,7 +5368,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Towards Foundation Decision Models: Drex",
+      "title_zh": "迈向基础决策模型：Drex",
       "title_translation_scope": "title_only"
     },
     {
@@ -5406,7 +5390,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Computation, not weight access: large language models as auditors of clinical prediction networks",
+      "title_zh": "关键在计算而非权重访问：大语言模型作为临床预测网络的审计者",
       "title_translation_scope": "title_only"
     },
     {
@@ -5428,7 +5412,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Masked diffusion as random sequential adsorption: an exactly solvable model for parallel decoding",
+      "title_zh": "把掩码扩散看作随机顺序吸附：一个可精确求解的并行解码模型",
       "title_translation_scope": "title_only"
     },
     {
@@ -5450,7 +5434,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Enhanced MRI brain tumor detection using deep learning in conjunction with explainable AI SHAP based diverse and multi feature analysis",
+      "title_zh": "结合可解释AI SHAP多特征分析、基于深度学习的MRI脑肿瘤检测增强",
       "title_translation_scope": "title_only"
     },
     {
@@ -5472,7 +5456,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "THG-Omni: Traceable Human-Centric Graph Supervision for Video Reasoning",
+      "title_zh": "THG-Omni：面向视频推理的可追溯以人为中心图监督",
       "title_translation_scope": "title_only"
     },
     {
@@ -5494,7 +5478,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "STAG-Net: Structure-Aware Attention over Landmark Groups for Lightweight Head Pose Estimation",
+      "title_zh": "STAG-Net：面向轻量级头部姿态估计的关键点组结构感知注意力",
       "title_translation_scope": "title_only"
     },
     {
@@ -5516,7 +5500,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Instantiating the Knowledge Plane",
+      "title_zh": "实例化知识平面",
       "title_translation_scope": "title_only"
     },
     {
@@ -5538,7 +5522,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Estimating Spectrum-Free Information Bounds for Generative Surrogates Beyond Conditional Collapse",
+      "title_zh": "在条件坍缩之外估计生成式代理模型的无谱信息界",
       "title_translation_scope": "title_only"
     },
     {
@@ -5560,7 +5544,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Generate-then-Rank: Learning Symbolic Goal Interpretation for Embodied Agents",
+      "title_zh": "先生成后排序：为具身智能体学习符号化目标解读",
       "title_translation_scope": "title_only"
     },
     {
@@ -5582,7 +5566,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Axis-LoRA: Probing and Adapting Embedding Models for Personal-Memory Retrieval",
+      "title_zh": "Axis-LoRA：为个人记忆检索探测并适配嵌入模型",
       "title_translation_scope": "title_only"
     },
     {
@@ -5604,7 +5588,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Different Corpora, Different Skills? A Paired Study of Small Language Models",
+      "title_zh": "不同语料、不同技能？一项小语言模型的配对研究",
       "title_translation_scope": "title_only"
     },
     {
@@ -5626,7 +5610,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Decodability Is Not Validity: Evaluating Nuisance Sensitivity in Language Model Concept Probes",
+      "title_zh": "可解码不等于有效：评估语言模型概念探针对干扰因素的敏感性",
       "title_translation_scope": "title_only"
     },
     {
@@ -5648,7 +5632,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Dataset Collection and Fine-Tuning of NLLB for German--English Translation",
+      "title_zh": "德英翻译的NLLB数据集收集与微调",
       "title_translation_scope": "title_only"
     },
     {
@@ -5670,7 +5654,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "EnergyBench: a live, gate-aligned benchmark of day-ahead forecasts for European power markets",
+      "title_zh": "EnergyBench：欧洲电力市场日前预测的实时、按关口对齐基准",
       "title_translation_scope": "title_only"
     },
     {
@@ -5692,7 +5676,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "PBPO: Prefix-Block Policy Optimization for Diffusion Language Models",
+      "title_zh": "PBPO：面向扩散语言模型的前缀块策略优化",
       "title_translation_scope": "title_only"
     },
     {
@@ -5714,7 +5698,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Bridging Structure and Semantics: Knowledge Graph Verification via Triple-to-Text Alignment",
+      "title_zh": "连接结构与语义：通过三元组到文本对齐验证知识图谱",
       "title_translation_scope": "title_only"
     },
     {
@@ -5736,7 +5720,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "The Intrusion Pathway: How Non-Evidential Context Degrades Language Model Performance",
+      "title_zh": "入侵路径：非证据性上下文如何降低语言模型表现",
       "title_translation_scope": "title_only"
     },
     {
@@ -5758,7 +5742,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Adapters as Data: The Latent Space of LoRAs",
+      "title_zh": "把适配器当数据：LoRA的潜在空间",
       "title_translation_scope": "title_only"
     },
     {
@@ -5780,7 +5764,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Optimal Learning in Games with Arbitrary Delays: Best-of-Both-Worlds for Self-Play and Adversarial Opponents",
+      "title_zh": "任意延迟博弈中的最优学习：自我对弈与对抗对手两全其美",
       "title_translation_scope": "title_only"
     },
     {
@@ -5802,7 +5786,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "RIVER: Evidence-guided multi-agent retrieval for enzyme--reaction discovery",
+      "title_zh": "RIVER：证据引导的多智能体检索，用于发现酶与反应",
       "title_translation_scope": "title_only"
     },
     {
@@ -5824,7 +5808,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Scaling Laws for SAE Training Data",
+      "title_zh": "SAE训练数据的扩展规律",
       "title_translation_scope": "title_only"
     },
     {
@@ -5846,7 +5830,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Automated Video-to-QA Pipeline: End-to-End Question Generation and Verification Using Large Language Models",
+      "title_zh": "自动视频到问答流水线：用大语言模型端到端生成并验证问题",
       "title_translation_scope": "title_only"
     },
     {
@@ -5868,605 +5852,57 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
       },
-      "title_zh": "Neural Collapse on Imbalanced Datasets and Open-Set Scenario",
+      "title_zh": "不平衡数据集与开放集场景下的神经坍缩",
       "title_translation_scope": "title_only"
     },
     {
-      "url": "https://arxiv.org/abs/2611.07750",
-      "title": "Foresee to Trade: Forecast-Augmented Policy Optimization for Portfolio Management",
-      "original_title": "Foresee to Trade: Forecast-Augmented Policy Optimization for Portfolio Management",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:56:17Z",
+      "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+      "title": "AI is dramatically accelerating AI research right now",
+      "original_title": "AI is dramatically accelerating AI research right now",
+      "source": "Planned Obsolescence",
+      "source_id": "planned-obsolescence-supplemental",
+      "published_at": "2026-11-06T20:23:40+00:00",
       "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "discovery": "hacker_news_lead_traced_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "Planned Obsolescence原文全文；作者系METR员工但声明未参与该项目、观点为个人；推算为作者个人模型，未独立核实；METR报告原文本期未重读",
+      "title_zh": "METR研究员阿杰亚·科特拉：按Anthropic自己的定义，“AI显著加速研发”的门槛很可能已经越过",
+      "title_translation_scope": "editorial",
+      "time_evidence": "HN首页线索（HN提交时间20:27:23Z不作原文时间）追溯至原文；原文页面article:published_time 2026-11-06T20:23:40Z",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Foresee to Trade: Forecast-Augmented Policy Optimization for Portfolio Management",
-      "title_translation_scope": "title_only"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      }
     },
     {
-      "url": "https://arxiv.org/abs/2611.07749",
-      "title": "ConvPE: Convolutional Position Embedding Improves Transformers",
-      "original_title": "ConvPE: Convolutional Position Embedding Improves Transformers",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:55:15Z",
+      "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+      "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+      "original_title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+      "source": "NVIDIA Blog",
+      "source_id": "nvidia",
+      "published_at": "2026-11-05T17:00:35+00:00",
       "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "ConvPE: Convolutional Position Embedding Improves Transformers",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07746",
-      "title": "Ordering Multivariate Time Series by Volatility Memory: A Temporal Convolutional Approach to Volatility Heredity",
-      "original_title": "Ordering Multivariate Time Series by Volatility Memory: A Temporal Convolutional Approach to Volatility Heredity",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:52:02Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Ordering Multivariate Time Series by Volatility Memory: A Temporal Convolutional Approach to Volatility Heredity",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07741",
-      "title": "Comparing Classification and Feature Learning by Analyzing Their Loss Functions in Normalized Spaces with Different Scale Factors",
-      "original_title": "Comparing Classification and Feature Learning by Analyzing Their Loss Functions in Normalized Spaces with Different Scale Factors",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:49:18Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Comparing Classification and Feature Learning by Analyzing Their Loss Functions in Normalized Spaces with Different Scale Factors",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07736",
-      "title": "Extending Reasoning in Typed Decision Models via Looping",
-      "original_title": "Extending Reasoning in Typed Decision Models via Looping",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:46:17Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Extending Reasoning in Typed Decision Models via Looping",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07735",
-      "title": "Evaluating Token Probabilities as Confidence Estimators in Human Behavior Simulations: A Case Study in Luxembourgish Next Like Prediction",
-      "original_title": "Evaluating Token Probabilities as Confidence Estimators in Human Behavior Simulations: A Case Study in Luxembourgish Next Like Prediction",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:45:49Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Evaluating Token Probabilities as Confidence Estimators in Human Behavior Simulations: A Case Study in Luxembourgish Next Like Prediction",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07731",
-      "title": "O$^2$PD: Overlap-Gated On-Policy Distillation on Reliable Prefix",
-      "original_title": "O$^2$PD: Overlap-Gated On-Policy Distillation on Reliable Prefix",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:43:03Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "O$^2$PD: Overlap-Gated On-Policy Distillation on Reliable Prefix",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07730",
-      "title": "Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes",
-      "original_title": "Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:42:12Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07723",
-      "title": "Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding",
-      "original_title": "Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:38:23Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07722",
-      "title": "Reinforcing What the Student Has Learned: Teacher-Guided On-Policy Distillation",
-      "original_title": "Reinforcing What the Student Has Learned: Teacher-Guided On-Policy Distillation",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:38:19Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Reinforcing What the Student Has Learned: Teacher-Guided On-Policy Distillation",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07721",
-      "title": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision",
-      "original_title": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:38:06Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07720",
-      "title": "Evaluating Language Model Features for Zero-Shot Time-Series Anomaly Detection Under Isolation Assumption",
-      "original_title": "Evaluating Language Model Features for Zero-Shot Time-Series Anomaly Detection Under Isolation Assumption",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:37:57Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Evaluating Language Model Features for Zero-Shot Time-Series Anomaly Detection Under Isolation Assumption",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://www.qbitai.com/2026/11/507834.html",
-      "title": "三条AI技术路线终将合流？智象创始人梅涛提出智能体化的世界模型",
-      "original_title": "三条AI技术路线终将合流？智象创始人梅涛提出智能体化的世界模型",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-11-05T09:37:40+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
+      "discovery": "chinese_editor_feed_recheck_0600",
       "catalog_kind": "news",
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
+      "title_zh": "走进Omniverse：开发者如何借助前沿AI智能体把想法变成仿真",
+      "title_translation_scope": "title_only",
+      "time_evidence": "06:00重取NVIDIA订阅源pubDate 2026-11-05T17:00:35Z；05:00上游目录未收录",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "reason": "06:00终审补查：原文时间在最终36小时窗口内；只读元数据",
         "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "三条AI技术路线终将合流？智象创始人梅涛提出智能体化的世界模型",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07718",
-      "title": "Multimodal Information Interactions Bottleneck for Multimodal Self-Supervised Learning",
-      "original_title": "Multimodal Information Interactions Bottleneck for Multimodal Self-Supervised Learning",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:37:00Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Multimodal Information Interactions Bottleneck for Multimodal Self-Supervised Learning",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07717",
-      "title": "Pediatric ECG foundation model via adult-to-pediatric fine-tuning: downstream tasks and clinical evaluation",
-      "original_title": "Pediatric ECG foundation model via adult-to-pediatric fine-tuning: downstream tasks and clinical evaluation",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:36:44Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Pediatric ECG foundation model via adult-to-pediatric fine-tuning: downstream tasks and clinical evaluation",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07707",
-      "title": "CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays",
-      "original_title": "CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:27:31Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07706",
-      "title": "Towards Generalist Graph-Level Anomaly Detection",
-      "original_title": "Towards Generalist Graph-Level Anomaly Detection",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:26:57Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Towards Generalist Graph-Level Anomaly Detection",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07702",
-      "title": "InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning",
-      "original_title": "InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:24:22Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07695",
-      "title": "Equivariant Deep Learning in Direct-Product Space for Electronic-Structure Hamiltonian Prediction",
-      "original_title": "Equivariant Deep Learning in Direct-Product Space for Electronic-Structure Hamiltonian Prediction",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:19:07Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Equivariant Deep Learning in Direct-Product Space for Electronic-Structure Hamiltonian Prediction",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07693",
-      "title": "Non-Parametric Mutual Information Estimation with Vine Copulas",
-      "original_title": "Non-Parametric Mutual Information Estimation with Vine Copulas",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:18:29Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Non-Parametric Mutual Information Estimation with Vine Copulas",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07691",
-      "title": "Randomized and Oracle-Based Feasible Directions Methods for Nonsmooth Nonconvex Constrained Optimization",
-      "original_title": "Randomized and Oracle-Based Feasible Directions Methods for Nonsmooth Nonconvex Constrained Optimization",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:16:30Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Randomized and Oracle-Based Feasible Directions Methods for Nonsmooth Nonconvex Constrained Optimization",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07689",
-      "title": "MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents",
-      "original_title": "MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:14:26Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07683",
-      "title": "ReferClaw: Disambiguating User Intent for Egocentric Assistance",
-      "original_title": "ReferClaw: Disambiguating User Intent for Egocentric Assistance",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:10:14Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "ReferClaw: Disambiguating User Intent for Egocentric Assistance",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07676",
-      "title": "$O(1/n)$ Convergence Rate for RVI $Q$-Learning",
-      "original_title": "$O(1/n)$ Convergence Rate for RVI $Q$-Learning",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:05:45Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "$O(1/n)$ Convergence Rate for RVI $Q$-Learning",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07675",
-      "title": "Randomized Parallel Complexity of Weakly Convex Optimization",
-      "original_title": "Randomized Parallel Complexity of Weakly Convex Optimization",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:04:17Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Randomized Parallel Complexity of Weakly Convex Optimization",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://arxiv.org/abs/2611.07674",
-      "title": "Instrumental Variables in Continuous-Time Stochastic Processes",
-      "original_title": "Instrumental Variables in Continuous-Time Stochastic Processes",
-      "source": "arXiv cs.AI / cs.LG / cs.CL",
-      "source_id": "arxiv",
-      "published_at": "2026-11-05T09:03:09Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "paper",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "Instrumental Variables in Continuous-Time Stochastic Processes",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://www.qbitai.com/2026/11/507823.html",
-      "title": "拼多多让年轻人造草莓工厂，170天后“答案”熟了",
-      "original_title": "拼多多让年轻人造草莓工厂，170天后“答案”熟了",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-11-05T09:00:18+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
-      },
-      "title_zh": "拼多多让年轻人造草莓工厂，170天后“答案”熟了",
-      "title_translation_scope": "title_only"
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      }
     }
   ],
-  "excluded_items_count": 120,
+  "excluded_items_count": 147,
   "excluded_items": [
     {
       "title": "Introducing Personal Finance in Claude",
@@ -7134,13 +6570,6 @@
       "reason": "hn_lead_time_not_original"
     },
     {
-      "title": "AI is dramatically accelerating AI research",
-      "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
-      "source_id": "hacker-news-ai",
-      "published_at": "2026-11-06T20:27:23+00:00",
-      "reason": "hn_lead_time_not_original"
-    },
-    {
       "title": "Show HN: Agents infer Lego mechanisms from sources, then animate them",
       "url": "https://github.com/anteloc/ldraw-mecha/tree/v0.5.0",
       "source_id": "hacker-news-ai",
@@ -7307,34 +6736,852 @@
       "source_id": "discourse",
       "published_at": "2026-11-05",
       "reason": "date_only_boundary_pending"
+    },
+    {
+      "url": "https://www.404media.co/uk-crime-and-policing-act-pornography/",
+      "title": "In the UK, Face Sitting Porn Might Land You in Jail",
+      "original_title": "In the UK, Face Sitting Porn Might Land You in Jail",
+      "source": "404 Media",
+      "source_id": "404-media",
+      "published_at": "2026-11-05T17:09:04+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "中文编辑终审：英国《犯罪与警务法》色情内容条款报道，标题与订阅源正文均与AI无直接关系",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "在英国，这类色情内容可能让你入狱",
+      "title_translation_scope": "title_only",
+      "reason": "not_ai_or_promo",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07750",
+      "title": "Foresee to Trade: Forecast-Augmented Policy Optimization for Portfolio Management",
+      "original_title": "Foresee to Trade: Forecast-Augmented Policy Optimization for Portfolio Management",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:56:17Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "预见而后交易：用于投资组合管理的预测增强策略优化",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07749",
+      "title": "ConvPE: Convolutional Position Embedding Improves Transformers",
+      "original_title": "ConvPE: Convolutional Position Embedding Improves Transformers",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:55:15Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "ConvPE：卷积位置嵌入改进Transformer",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07746",
+      "title": "Ordering Multivariate Time Series by Volatility Memory: A Temporal Convolutional Approach to Volatility Heredity",
+      "original_title": "Ordering Multivariate Time Series by Volatility Memory: A Temporal Convolutional Approach to Volatility Heredity",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:52:02Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "按波动记忆为多元时间序列排序：研究波动遗传的时间卷积方法",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07741",
+      "title": "Comparing Classification and Feature Learning by Analyzing Their Loss Functions in Normalized Spaces with Different Scale Factors",
+      "original_title": "Comparing Classification and Feature Learning by Analyzing Their Loss Functions in Normalized Spaces with Different Scale Factors",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:49:18Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "在不同尺度因子的归一化空间中分析损失函数，比较分类与特征学习",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07736",
+      "title": "Extending Reasoning in Typed Decision Models via Looping",
+      "original_title": "Extending Reasoning in Typed Decision Models via Looping",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:46:17Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "通过循环扩展类型化决策模型中的推理",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07735",
+      "title": "Evaluating Token Probabilities as Confidence Estimators in Human Behavior Simulations: A Case Study in Luxembourgish Next Like Prediction",
+      "original_title": "Evaluating Token Probabilities as Confidence Estimators in Human Behavior Simulations: A Case Study in Luxembourgish Next Like Prediction",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:45:49Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "在人类行为模拟中评估词元概率作为置信度估计：卢森堡语点赞预测案例研究",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07731",
+      "title": "O$^2$PD: Overlap-Gated On-Policy Distillation on Reliable Prefix",
+      "original_title": "O$^2$PD: Overlap-Gated On-Policy Distillation on Reliable Prefix",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:43:03Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "O²PD：基于可靠前缀的重叠门控同策略蒸馏",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07730",
+      "title": "Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes",
+      "original_title": "Seeing Beyond the Next Step: World-Model-Guided Human-Like Navigation in Multi-Agent Scenes",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:42:12Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "看得比下一步更远：多智能体场景中世界模型引导的类人导航",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07723",
+      "title": "Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding",
+      "original_title": "Static Recovery Is Not Dynamic Stability: Dynamics-Aware Benchmarking of Protein Motif Scaffolding",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:38:23Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "静态恢复不等于动态稳定：蛋白质基序支架设计的动力学感知基准",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07722",
+      "title": "Reinforcing What the Student Has Learned: Teacher-Guided On-Policy Distillation",
+      "original_title": "Reinforcing What the Student Has Learned: Teacher-Guided On-Policy Distillation",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:38:19Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "强化学生已学到的：教师引导的同策略蒸馏",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07721",
+      "title": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision",
+      "original_title": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:38:06Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "以词元身份平方监督继续训练连续语言流",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07720",
+      "title": "Evaluating Language Model Features for Zero-Shot Time-Series Anomaly Detection Under Isolation Assumption",
+      "original_title": "Evaluating Language Model Features for Zero-Shot Time-Series Anomaly Detection Under Isolation Assumption",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:37:57Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "在隔离假设下评估语言模型特征用于零样本时间序列异常检测",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/507834.html",
+      "title": "三条AI技术路线终将合流？智象创始人梅涛提出智能体化的世界模型",
+      "original_title": "三条AI技术路线终将合流？智象创始人梅涛提出智能体化的世界模型",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-05T09:37:40+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "三条AI技术路线终将合流？智象创始人梅涛提出智能体化的世界模型",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07718",
+      "title": "Multimodal Information Interactions Bottleneck for Multimodal Self-Supervised Learning",
+      "original_title": "Multimodal Information Interactions Bottleneck for Multimodal Self-Supervised Learning",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:37:00Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "面向多模态自监督学习的多模态信息交互瓶颈",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07717",
+      "title": "Pediatric ECG foundation model via adult-to-pediatric fine-tuning: downstream tasks and clinical evaluation",
+      "original_title": "Pediatric ECG foundation model via adult-to-pediatric fine-tuning: downstream tasks and clinical evaluation",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:36:44Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "通过成人到儿童微调构建儿科心电基础模型：下游任务与临床评估",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07707",
+      "title": "CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays",
+      "original_title": "CAMP: Context-Aware Mapping and Placement for LLMs on 3D-IMC Arrays",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:27:31Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "CAMP：在3D存内计算阵列上为LLM做上下文感知的映射与布局",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07706",
+      "title": "Towards Generalist Graph-Level Anomaly Detection",
+      "original_title": "Towards Generalist Graph-Level Anomaly Detection",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:26:57Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "迈向通用的图级异常检测",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07702",
+      "title": "InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning",
+      "original_title": "InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:24:22Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "InfMasking：协同多模态学习的统一变分框架",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07695",
+      "title": "Equivariant Deep Learning in Direct-Product Space for Electronic-Structure Hamiltonian Prediction",
+      "original_title": "Equivariant Deep Learning in Direct-Product Space for Electronic-Structure Hamiltonian Prediction",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:19:07Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "直积空间中的等变深度学习，用于预测电子结构哈密顿量",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07693",
+      "title": "Non-Parametric Mutual Information Estimation with Vine Copulas",
+      "original_title": "Non-Parametric Mutual Information Estimation with Vine Copulas",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:18:29Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "用藤Copula进行非参数互信息估计",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07691",
+      "title": "Randomized and Oracle-Based Feasible Directions Methods for Nonsmooth Nonconvex Constrained Optimization",
+      "original_title": "Randomized and Oracle-Based Feasible Directions Methods for Nonsmooth Nonconvex Constrained Optimization",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:16:30Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "非光滑非凸约束优化的随机化与基于预言机的可行方向法",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07689",
+      "title": "MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents",
+      "original_title": "MCPHallu: Benchmarking Reasoning, Execution, and Memory Hallucinations in MCP Agents",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:14:26Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "MCPHallu：MCP智能体中推理、执行与记忆幻觉的基准",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07683",
+      "title": "ReferClaw: Disambiguating User Intent for Egocentric Assistance",
+      "original_title": "ReferClaw: Disambiguating User Intent for Egocentric Assistance",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:10:14Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "ReferClaw：为第一人称视角辅助消除用户意图歧义",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07676",
+      "title": "$O(1/n)$ Convergence Rate for RVI $Q$-Learning",
+      "original_title": "$O(1/n)$ Convergence Rate for RVI $Q$-Learning",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:05:45Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "RVI Q学习的O(1/n)收敛速率",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07675",
+      "title": "Randomized Parallel Complexity of Weakly Convex Optimization",
+      "original_title": "Randomized Parallel Complexity of Weakly Convex Optimization",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:04:17Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "弱凸优化的随机并行复杂度",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.07674",
+      "title": "Instrumental Variables in Continuous-Time Stochastic Processes",
+      "original_title": "Instrumental Variables in Continuous-Time Stochastic Processes",
+      "source": "arXiv cs.AI / cs.LG / cs.CL",
+      "source_id": "arxiv",
+      "published_at": "2026-11-05T09:03:09Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "paper",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "连续时间随机过程中的工具变量",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/507823.html",
+      "title": "拼多多让年轻人造草莓工厂，170天后“答案”熟了",
+      "original_title": "拼多多让年轻人造草莓工厂，170天后“答案”熟了",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-05T09:00:18+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月5日17:00起；原文时间早于最终目录窗口起点11月5日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T22:17:54.116676+00:00"
+      },
+      "title_zh": "拼多多让年轻人造草莓工厂，170天后“答案”熟了",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-06T21:18:12.211718+00:00"
+      }
     }
   ],
   "review_summary": {
-    "raw_receipt_candidates": 407,
-    "unique_canonical": 292,
-    "displayed": 292,
-    "displayed_news": 87,
+    "raw_receipt_candidates": 409,
+    "upstream_raw": 407,
+    "last_hour_added": 0,
+    "supplement_added": 2,
+    "unique": 413,
+    "reviewed": 372,
+    "pending": 41,
+    "displayed": 266,
+    "displayed_news": 85,
     "displayed_discourse": 0,
-    "displayed_papers": 204,
-    "displayed_code": 1,
-    "excluded": 120,
-    "excluded_reasons": {
+    "displayed_papers": 179,
+    "displayed_code": 2,
+    "excluded": 147,
+    "reasons": {
       "date_only_boundary_pending": 12,
       "outside_discovery_window": 4,
       "prior_7_catalogs": 34,
       "trending_snapshot_not_release": 36,
-      "not_ai_or_promo": 4,
-      "hn_lead_time_not_original": 30
+      "not_ai_or_promo": 5,
+      "hn_lead_time_not_original": 29,
+      "outside_final_window": 27
     },
-    "pending_time_precision": 12,
-    "body_used": 0,
-    "displayed_not_body": 292,
+    "moved_out_by_final_window": 27,
+    "titles_translated": 255,
+    "body_used": 15,
+    "displayed_not_body": 251,
     "below_catalog_target": false,
-    "target": 20,
-    "reviewed": 407
+    "target": 20
   },
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-07T05:00:00+08:00",
       "2026-11-07T06:00:00+08:00"
@@ -7349,6 +7596,27 @@
     ],
     "owner": "chinese_editor_agent",
     "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
-    "incidental_sightings_after_until": []
-  }
+    "incidental_sightings_after_until": [],
+    "checked_at": "2026-11-06T22:17:54.116676+00:00",
+    "result": "06:04本机collect_sources.py --until 2026-11-06T22:00:00Z --hours 36，并逐一重取TechCrunch AI、404 Media、The Verge AI、WIRED AI、OpenAI、HN首页、量子位、Google AI、Simon Willison、AWS ML、NVIDIA、Hugging Face、Cloudflare、Ars Technica AI订阅源（Microsoft AI订阅源HTTP 410）；05:00—06:00内无新的原文时间条目（The Verge一条订阅源更新时间21:51Z，原文时间17:00Z已在上游目录）。另补入上游遗漏的NVIDIA条目1条，并把HN线索Planned Obsolescence追溯到原文后补入。浏览器类来源（xAI、Qwen、MiniMax、字节Seed、StepFun、OpenReview）与HN Algolia全站未重查最后一小时"
+  },
+  "upstream_config_commit": "60547d37ca47c8e7bbda3b342e76741e158fadbc",
+  "chinese_editor_config_commit": "32addf2101fa2af68fd7f9de82a44c717dbf7166",
+  "supplemental_sources": [
+    {
+      "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+      "source": "Planned Obsolescence",
+      "published_at": "2026-11-06T20:23:40+00:00",
+      "discovery": "hacker_news_lead_traced_0600",
+      "replaced_excluded": true
+    },
+    {
+      "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+      "source": "NVIDIA Blog",
+      "published_at": "2026-11-05T17:00:35+00:00",
+      "discovery": "chinese_editor_feed_recheck_0600",
+      "replaced_excluded": false
+    }
+  ],
+  "editorial_updated_at": "2026-11-06T22:17:54.116676+00:00"
 }
