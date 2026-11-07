@@ -6,7 +6,7 @@ import html
 import json
 import re
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import parse_qsl, urlsplit, urlunsplit, urlencode
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://yawnzhao.github.io/ai-daily'
@@ -218,8 +218,76 @@ def source_catalog_rows(issue, content):
     return rows
 
 
-def render_source_catalog(issue, content):
+# From this issue on, the public page lists links that were not already shown.
+# Earlier issues keep the lists they published. Raw discovery stays in the JSON.
+CATALOG_DEDUPE_FROM = '2026-10-18'
+_PRIOR_CATALOG_KEYS = {}
+
+
+def catalog_public_key(url):
+    parsed = urlsplit((url or '').strip())
+    host = (parsed.hostname or '').lower().removeprefix('www.')
+    parts = [part for part in parsed.path.split('/') if part]
+    if host == 'arxiv.org' and parts and parts[0] in {'abs', 'html', 'pdf'} and len(parts) > 1:
+        matched = re.match(r'(\d{4}\.\d+)', parts[1])
+        if matched:
+            return 'arxiv:' + matched.group(1)
+    if host == 'huggingface.co' and parsed.path.startswith('/papers/'):
+        return 'hf:' + parsed.path.rstrip('/').split('/')[-1]
+    path = parsed.path.rstrip('/') or '/'
+    query = [(key, value) for key, value in parse_qsl(parsed.query, keep_blank_values=True)
+             if key.lower() not in {'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'ref', 'ref_src'}]
+    return urlunsplit(('https', host, path, urlencode(query), ''))
+
+
+def previously_listed_catalog_keys(before_date):
+    cache_key = (str(ROOT.resolve()), before_date)
+    cached = _PRIOR_CATALOG_KEYS.get(cache_key)
+    if cached is not None:
+        return cached
+    keys = set()
+    runs = ROOT / 'data' / 'runs'
+    if runs.is_dir():
+        for path in sorted(runs.glob('20??-??-??-source-catalog.json')):
+            if 'upstream' in path.name:
+                continue
+            date = path.name[:10]
+            if date >= before_date:
+                continue
+            issue_path = ROOT / 'data' / 'issues' / f'{date}.json'
+            if not issue_path.exists():
+                continue
+            try:
+                prior_issue = json.loads(issue_path.read_text())
+                manuscript = ROOT / prior_issue['canonical_markdown']
+                prior_content = parse_manuscript(manuscript.read_text())
+                prior_rows = source_catalog_rows(prior_issue, prior_content)
+            except (OSError, ValueError, KeyError, json.JSONDecodeError, TypeError):
+                continue
+            keys.update(catalog_public_key(row['entry']['url']) for row in prior_rows)
+    _PRIOR_CATALOG_KEYS[cache_key] = keys
+    return keys
+
+
+def rows_for_publication(issue, content):
     rows = source_catalog_rows(issue, content)
+    if issue['date'] < CATALOG_DEDUPE_FROM:
+        return rows, 0
+    prior = previously_listed_catalog_keys(issue['date'])
+    adopted = {catalog_public_key(item['primary_url']) for item in issue['items']}
+    fresh = []
+    omitted = 0
+    for row in rows:
+        key = catalog_public_key(row['entry']['url'])
+        if key in adopted or key not in prior:
+            fresh.append(row)
+        else:
+            omitted += 1
+    return fresh, omitted
+
+
+def render_source_catalog(issue, content):
+    rows, omitted = rows_for_publication(issue, content)
     if not issue.get('source_catalog_path'):
         return ''
     blocks = []
@@ -241,20 +309,27 @@ def render_source_catalog(issue, content):
                           + title + '</a><span class="source-catalog-name">'
                           + esc(row['source']) + '</span></li>')
         blocks.append('</ul>')
+    note = ''
+    if omitted:
+        note = ('<p>按原文链接或论文 ID 去掉此前各期公开清单里已经出现过的条目。这一页只列新出现的 '
+                + str(len(rows)) + ' 条，另外 ' + str(omitted)
+                + ' 条不放进本页。完整 72 小时记录仍在采集清单里。</p>')
     return ('<details class="paper-observation source-catalog" id="source-catalog">'
             '<summary class="label">资讯源 <span class="source-catalog-count">'
             + str(len(rows)) + ' 条</span></summary><div class="content">'
-            + ''.join(blocks) + '</div></details>')
+            + note + ''.join(blocks) + '</div></details>')
 
 
 def render_source_catalog_markdown(issue, content):
     """Reading export of the same curated rows; JSON remains the machine input."""
-    rows = source_catalog_rows(issue, content)
+    rows, omitted = rows_for_publication(issue, content)
     def cell(value):
         return str(value).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('|', '&#124;').replace('[', '&#91;').replace(']', '&#93;').replace('\n', ' ')
     lines = ['# ' + issue['date'] + ' 资讯源', '',
-             '展示条目：' + str(len(rows)) + '。与当期网页共用筛选、分类和排序；每类正文采用项在前，其余按发布时间倒序。', '',
-             '本清单含未读全文的候选，收录或标题翻译不表示完成核验。跨日汇总应读取结构化数据并按规范原文链接或论文 ID 去重。', '',
+             '展示条目：' + str(len(rows)) + '。与当期网页共用筛选、分类和排序；每类正文采用项在前，其余按发布时间倒序。', '']
+    if omitted:
+        lines += ['按原文链接或论文 ID，已在此前各期公开清单出现过的 ' + str(omitted) + ' 条不列入本页。完整 72 小时记录仍在结构化数据里。', '']
+    lines += ['本清单含未读全文的候选，收录或标题翻译不表示完成核验。跨日汇总应读取结构化数据并按规范原文链接或论文 ID 去重。', '',
              '结构化数据：[' + issue['source_catalog_path'] + '](../../../' + issue['source_catalog_path'] + ')。', '']
     for group, label in enumerate(CATALOG_LABELS):
         entries = [r for r in rows if r['kind'] == group]
