@@ -5,35 +5,38 @@
     "title",
     "source"
   ],
-  "count": 27,
-  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-11-06 17:00, 2026-11-08 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度不计入严格展示。规则见 config/source-catalog-policy.txt。",
+  "count": 29,
+  "scope": "36小时资讯目录（中文编辑终审，复用05:00上游初采并补最后一小时）：窗口[2026-11-06 18:00, 2026-11-08 06:00) Asia/Shanghai，左闭右开。HN讨论时间不作原文时间；日精度条目不计入严格目录。规则见 config/source-catalog-policy.txt。",
   "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-11-01 through 2026-11-07",
   "duplicates_dropped": 52,
-  "config_commit": "ccd35f31a010dc0f535ce10981e010d79aef787c",
+  "config_commit": "538078d006b0472c5fa8dd6ac5563e17e16044d1",
   "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
   "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
-  "collection_stage": "collection_only",
+  "collection_stage": "chinese_editor_final_late",
   "below_catalog_target": false,
   "gaps": [
-    "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
-    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-11-06 18:00, 2026-11-08 06:00)交给中文编辑",
-    "xAI 无浏览器；静态 HTML 最新内容日精度 Nov 2，早于窗口，按来源说明保持 partial",
-    "Qwen / StepFun / MiniMax / 字节 Seed 静态页无法完整证明更新流，记 partial",
-    "arXiv API published 最新 2026-11-05T18:59:42Z；www 新列表 Friday, 6 November 2026；窗口内已公告 0；至 until 未公告切片 partial",
-    "OpenReview 只扫了首页",
-    "通义落地页偏营销，没有研究/新闻时间索引",
-    "HN 只取首页 RSS，讨论时间不进严格目录",
-    "36氪未逐篇打开正文，不升为已核 original",
-    "无浏览器环境下浏览器类来源用 curl/gh 补查"
+    "05:00上游收据与目录（538078d）按源复用：计划50源，42 ok、8 partial、0 failed；核心源未达完整：xai、arxiv",
+    "本期定时准备阶段未在06:00运行，准备与发布均由北京时间11:14起的发布任务接续完成；最后一小时补查在截止后约5小时进行，订阅源可能已滚动，不能证明05:00—06:00完整",
+    "xAI、Qwen、MiniMax、字节Seed、StepFun、OpenReview仍为静态页面或无可判定时间（partial），本期未用浏览器补查；arXiv周五公告之后至截止无新公告可见，HF Daily Papers窗口内0篇；HN首页线索只追溯了与AI相关的条目",
+    "上游目录12条英文标题缺中文译题，终审已补；3条原文时间早于最终窗口起点（11月6日18:00）的条目已移出；补入5条（TechCrunch最后一小时1条与上游遗漏1条、HN线索追溯原文2条、量子位缺标题条目1条）",
+    "英伟达一条依据The Verge与TechCrunch转述《纽约时报》《金融时报》，原报道付费未打开；情报备忘录内容未经独立核实",
+    "OpenAI融资与Anthropic估值为彭博援引知情人士口径，彭博原文未打开；本轮融资尚未完成",
+    "斯塔莫斯一条为访谈观点，数字为其口述，未独立核实",
+    "兰福德一条为当事人单方说法，按48小时补漏（11月6日）；Jeff Dean一条依据量子位整理，活动日期未知",
+    "HyperFlow H3 Flash仓库于11月6日发布，按48小时补漏；性能为项目自报，权重许可有地区限制",
+    "本期无合格新论文，论文栏为Paper-Radar关联论文回顾（arXiv 2609.25413，9月21日），已读全文PDF相关章节；不计入36小时目录",
+    "话语场两段为历史节目：黄仁勋页为“仅索引、局部转述”，希恩页为自动字幕提炼摘录，完整原片未核读",
+    "Forever Security的AGENTS.md投毒研究（原文10月22日）与Apiiro的Claude Code凭据泄露研究（11月5日）早于正文窗口，未进正文；量子位转述条目保留在目录",
+    "本期执行公开更正队列multimodal-sea-2026-11-07：快讯首条更正与口播开场更正"
   ],
   "curation_policy": "36h-min20-v1",
-  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。本次只审05:00初采窗口。",
+  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。中文编辑终审按最终36小时窗口复核。",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-11-06T17:00:00+08:00",
-    "end_shanghai": "2026-11-08T05:00:00+08:00",
-    "start_utc": "2026-11-06T09:00:00Z",
-    "end_utc": "2026-11-07T21:00:00Z",
+    "start_shanghai": "2026-11-06T18:00:00+08:00",
+    "end_shanghai": "2026-11-08T06:00:00+08:00",
+    "start_utc": "2026-11-06T10:00:00Z",
+    "end_utc": "2026-11-07T22:00:00Z",
     "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
@@ -42,8 +45,8 @@
     "start_utc": "2026-11-06T10:00:00Z",
     "end_utc": "2026-11-07T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "checked_at": "2026-11-08T03:28:51.639332+00:00"
   },
   "excluded_items_count": 105,
   "excluded_items": [
@@ -524,13 +527,6 @@
       "reason": "prior_7_catalogs"
     },
     {
-      "title": "The end of Microsoft Research's AI Frontiers group",
-      "url": "https://hunch.net/?p=13764006",
-      "source_id": "hacker-news-ai",
-      "published_at": "2026-11-07T18:02:17Z",
-      "reason": "hn_lead_time_not_original"
-    },
-    {
       "title": "What I run on my $10 USD OpenStick homelab",
       "url": "https://blog.bosscher.ch/posts/openstick/",
       "source_id": "hacker-news-ai",
@@ -650,13 +646,6 @@
       "reason": "hn_lead_time_not_original"
     },
     {
-      "title": "Show HN: We compressed a 31B video+audio diffusion model to 14B, 6 steps, INT8",
-      "url": "https://github.com/Video-Rebirth/hyperflow-h3-flash",
-      "source_id": "hacker-news-ai",
-      "published_at": "2026-11-07T15:16:01Z",
-      "reason": "hn_lead_time_not_original"
-    },
-    {
       "title": "They don't make 'em like that any more: Borland Turbo Pascal 7",
       "url": "https://kevinboone.me/tpwin.html",
       "source_id": "hacker-news-ai",
@@ -720,13 +709,6 @@
       "reason": "prior_7_catalogs"
     },
     {
-      "title": "",
-      "url": "https://www.qbitai.com/2026/11/508236.html",
-      "source_id": "qbitai",
-      "published_at": "2026-11-07T03:31:44Z",
-      "reason": "missing_title_or_url"
-    },
-    {
       "title": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
       "url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/",
       "source_id": "aws-ml-blog",
@@ -781,34 +763,127 @@
       "source_id": "aws-ml-blog",
       "published_at": "2026-11-06T16:45:58Z",
       "reason": "prior_7_catalogs"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/508174.html",
+      "title": "为什么每个 Personal Agent 背后，都必须配备一台“云电脑”？",
+      "original_title": "为什么每个 Personal Agent 背后，都必须配备一台“云电脑”？",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-06T09:25:59Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月6日17:00起；原文时间早于最终目录窗口起点11月6日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
+      },
+      "title_zh": "为什么每个 Personal Agent 背后，都必须配备一台“云电脑”？",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/508170.html",
+      "title": "阶跃终端 STEPX Neo 智能体手机亮相进博会高通展台，软硬模一体打造智能体新体验",
+      "original_title": "阶跃终端 STEPX Neo 智能体手机亮相进博会高通展台，软硬模一体打造智能体新体验",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-06T09:21:51Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月6日17:00起；原文时间早于最终目录窗口起点11月6日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
+      },
+      "title_zh": "阶跃终端 STEPX Neo 智能体手机亮相进博会高通展台，软硬模一体打造智能体新体验",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/508165.html",
+      "title": "阿里巴巴发布《2026 AI向善行动报告》 AI数据中心可持续发展成年度亮点",
+      "original_title": "阿里巴巴发布《2026 AI向善行动报告》 AI数据中心可持续发展成年度亮点",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-06T09:19:00Z",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月6日17:00起；原文时间早于最终目录窗口起点11月6日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
+      },
+      "title_zh": "阿里巴巴发布《2026 AI向善行动报告》 AI数据中心可持续发展成年度亮点",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+      }
     }
   ],
   "review_summary": {
-    "raw_receipt_candidates": 132,
-    "unique_canonical": 27,
-    "displayed": 27,
-    "displayed_news": 26,
+    "raw_receipt_candidates": 134,
+    "upstream_raw": 132,
+    "last_hour_added": 1,
+    "supplement_added": 5,
+    "unique": 134,
+    "reviewed": 107,
+    "pending": 27,
+    "displayed": 29,
+    "displayed_news": 27,
     "displayed_discourse": 0,
     "displayed_papers": 0,
-    "displayed_code": 1,
+    "displayed_code": 2,
     "excluded": 105,
-    "excluded_reasons": {
-      "missing_title_or_url": 5,
+    "reasons": {
+      "missing_title_or_url": 4,
       "date_only_boundary_pending": 4,
       "prior_7_catalogs": 52,
       "trending_snapshot_not_release": 18,
       "not_ai_or_promo": 1,
-      "hn_lead_time_not_original": 25
+      "hn_lead_time_not_original": 23,
+      "outside_final_window": 3
     },
-    "pending_time_precision": 4,
-    "body_used": 0,
-    "displayed_not_body": 27,
+    "moved_out_by_final_window": 3,
+    "titles_translated": 12,
+    "body_used": 12,
+    "displayed_not_body": 17,
     "below_catalog_target": false,
-    "target": 20,
-    "reviewed": 132
+    "target": 20
   },
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-08T05:00:00+08:00",
       "2026-11-08T06:00:00+08:00"
@@ -823,7 +898,9 @@
     ],
     "owner": "chinese_editor_agent",
     "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
-    "incidental_sightings_after_until": []
+    "incidental_sightings_after_until": [],
+    "checked_at": "2026-11-08T03:28:51.639332+00:00",
+    "result": "本期准备阶段未在06:00运行（定时准备未触发），由发布任务于北京时间11:14起接续：11:15本机collect_sources.py --until 2026-11-07T22:00:00Z --hours 36，并于11:20重取TechCrunch AI与全站、The Verge AI、WIRED AI、404 Media、HN首页、OpenAI、Google AI、Simon Willison、量子位、Hugging Face、NVIDIA、AWS ML、Latent Space、Ars Technica AI订阅源；05:00—06:00内新增1条AI相关原文（TechCrunch Megaspeed备忘录，21:17Z），HN最后一小时2条Show HN与AI无关。补查在截止后约5小时进行，订阅源只保留近期条目，不能证明当时最后一小时完整；浏览器类来源（xAI、Qwen、DeepSeek、MiniMax、字节Seed、StepFun、OpenReview、36氪、MIT Technology Review）未重查最后一小时"
   },
   "items": [
     {
@@ -836,17 +913,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge评测原文；NYT Cooking官方公告未单独打开",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake",
-      "title_translation_scope": "title_only"
+      "title_zh": "NYT Cooking上线AI助手：可按手头食材改写菜谱，评测中差点让蛋糕只放一半黄油",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
@@ -858,17 +935,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge两篇原文与TechCrunch原文；《纽约时报》《金融时报》原报道付费未打开，相关事实依据上述转述；情报备忘录内容未经独立核实",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "The US let Nvidia sell chips to an empty office in China",
-      "title_translation_scope": "title_only"
+      "title_zh": "《纽约时报》：获准购买英伟达H200的中国公司New Matrix办公室空无一人；情报备忘录称中国国安部招募Megaspeed高管接近黄仁勋",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos",
@@ -880,17 +957,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge发布的Decoder访谈文字稿全文；均为斯塔莫斯个人观点与转述，数字（900美元、补丁数量、1亿美元）为其口述，未独立核实",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "AI broke the cybersecurity world. What’s next?",
-      "title_translation_scope": "title_only"
+      "title_zh": "Alex Stamos：开放权重模型已能自动化大部分攻击链，网络安全正进入“黑暗时代”",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
@@ -902,17 +979,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge原文全文；METR报告原文、麦坎德利什X长文、博雷斯与科科塔伊洛的X帖子本期未单独打开，引述依据The Verge",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "Why a new report on Anthropic automating AI development is alarming researchers",
-      "title_translation_scope": "title_only"
+      "title_zh": "The Verge：METR报告余波——Anthropic取消算力分配核查，纽约州议员呼吁国会“禁止RSI”",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.wired.com/story/apps-for-caregivers-get-a-dose-of-ai-but-that-might-not-be-enough/",
@@ -933,7 +1010,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
       },
-      "title_zh": "Apps for Caregivers Get a Dose of AI, but That Might Not Be Enough",
+      "title_zh": "照护者应用加入AI，但这可能还不够",
       "title_translation_scope": "title_only"
     },
     {
@@ -1012,17 +1089,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "量子位中文整理稿；Stanford HAI原始视频未核读，活动日期未知；为演讲内容转述",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "Jeff Dean李飞飞最新对谈：全是RSI非共识",
-      "title_translation_scope": "title_only"
+      "title_zh": "Jeff Dean谈新公司Discovery Loop：约20个自动改进循环在运行，但RSI不可能无限快",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://latent.space/p/ainews-anthropic-ipo-whither-now/",
@@ -1043,7 +1120,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
       },
-      "title_zh": "[AINews] Anthropic IPO: Whither Now?",
+      "title_zh": "[AINews] Anthropic上市：何去何从？",
       "title_translation_scope": "title_only"
     },
     {
@@ -1056,17 +1133,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch原文；Crusoe确认声明与谷歌公告未单独打开",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "Crusoe sells troubled Wyoming data center project to Google",
-      "title_translation_scope": "title_only"
+      "title_zh": "Crusoe把未建成的怀俄明数据中心项目卖给谷歌，谷歌计划投资170亿美元开发",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.36kr.com/p/4052696726328452",
@@ -1129,10 +1206,12 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reviewed_at": "2026-11-07T21:16:45.787447+00:00",
+        "note": "与正文同一事件的相关报道；单独保留展示，未作为正文主证据"
       },
       "title_zh": "Anthropic最强Model 4首次曝光：RSI狂飙2倍速",
-      "title_translation_scope": "title_only"
+      "title_translation_scope": "title_only",
+      "related_body_item": "metr-report-backlash"
     },
     {
       "url": "https://www.36kr.com/p/4058879839359873",
@@ -1151,10 +1230,12 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reviewed_at": "2026-11-07T21:16:45.787447+00:00",
+        "note": "与正文同一事件的相关报道；单独保留展示，未作为正文主证据"
       },
       "title_zh": "刚刚，OpenAI被曝完成110亿美元融资，CFO：数据中心还会继续建",
-      "title_translation_scope": "title_only"
+      "title_translation_scope": "title_only",
+      "related_body_item": "openai-11b-anthropic-ipo"
     },
     {
       "url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
@@ -1166,16 +1247,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文补充原始资料，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
+      "title_zh": "OpenAI估值达1.25万亿美元，对手Anthropic临近上市",
       "title_translation_scope": "title_only"
     },
     {
@@ -1188,16 +1269,16 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文补充原始资料，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "China reportedly recruited AI exec to spy on Jensen Huang",
+      "title_zh": "报道称中国招募一名AI公司高管监视黄仁勋",
       "title_translation_scope": "title_only"
     },
     {
@@ -1210,17 +1291,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch与The Verge原文；彭博原报道未打开，融资与估值数字为彭博援引知情人士口径，本轮尚未完成",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
       },
-      "title_zh": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
-      "title_translation_scope": "title_only"
+      "title_zh": "彭博：OpenAI新一轮已融110亿美元、估值1.25万亿美元；潜在买家看低Anthropic上市估值，最低至1.1万亿美元",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
@@ -1241,7 +1322,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
       },
-      "title_zh": "Beyond code generation: A developer’s guide to agentic engineering",
+      "title_zh": "超越代码生成：开发者的智能体工程指南",
       "title_translation_scope": "title_only"
     },
     {
@@ -1261,10 +1342,12 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
         "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
+        "reviewed_at": "2026-11-07T21:16:45.787447+00:00",
+        "note": "与正文同一事件的相关报道；单独保留展示，未作为正文主证据"
       },
       "title_zh": "A\\三大内部模型曝光！领先Opus5.5三个月，RSI缩短80%实验时间",
-      "title_translation_scope": "title_only"
+      "title_translation_scope": "title_only",
+      "related_body_item": "metr-report-backlash"
     },
     {
       "url": "https://www.36kr.com/p/4058158924190592",
@@ -1333,72 +1416,6 @@
       "title_translation_scope": "title_only"
     },
     {
-      "url": "https://www.qbitai.com/2026/11/508174.html",
-      "title": "为什么每个 Personal Agent 背后，都必须配备一台“云电脑”？",
-      "original_title": "为什么每个 Personal Agent 背后，都必须配备一台“云电脑”？",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-11-06T09:25:59Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
-      },
-      "title_zh": "为什么每个 Personal Agent 背后，都必须配备一台“云电脑”？",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://www.qbitai.com/2026/11/508170.html",
-      "title": "阶跃终端 STEPX Neo 智能体手机亮相进博会高通展台，软硬模一体打造智能体新体验",
-      "original_title": "阶跃终端 STEPX Neo 智能体手机亮相进博会高通展台，软硬模一体打造智能体新体验",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-11-06T09:21:51Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
-      },
-      "title_zh": "阶跃终端 STEPX Neo 智能体手机亮相进博会高通展台，软硬模一体打造智能体新体验",
-      "title_translation_scope": "title_only"
-    },
-    {
-      "url": "https://www.qbitai.com/2026/11/508165.html",
-      "title": "阿里巴巴发布《2026 AI向善行动报告》 AI数据中心可持续发展成年度亮点",
-      "original_title": "阿里巴巴发布《2026 AI向善行动报告》 AI数据中心可持续发展成年度亮点",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-11-06T09:19:00Z",
-      "date_precision": "second",
-      "discovery": "collection_0500",
-      "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
-      "catalog_review": {
-        "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
-      },
-      "title_zh": "阿里巴巴发布《2026 AI向善行动报告》 AI数据中心可持续发展成年度亮点",
-      "title_translation_scope": "title_only"
-    },
-    {
       "url": "https://github.com/meta/astryx/releases/tag/v0.7.11",
       "title": "meta/astryx v0.7.11",
       "original_title": "meta/astryx v0.7.11",
@@ -1417,8 +1434,163 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-07T21:16:45.787447+00:00"
       },
-      "title_zh": "meta/astryx v0.7.11",
+      "title_zh": "meta/astryx v0.7.11：面向智能体的开源设计系统发布新版",
       "title_translation_scope": "title_only"
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
+      "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
+      "original_title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-07T21:17:08+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_last_hour_recheck",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文相关段落",
+      "title_zh": "美国情报备忘录称Megaspeed高管被招募以监视英伟达首席执行官",
+      "title_translation_scope": "title_only",
+      "time_evidence": "11:20本机重取TechCrunch AI订阅源pubDate 2026-11-07T21:17:08Z；页面Posted 1:17 PM PST · November 7, 2026；落在05:00—06:00最后一小时",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文补充原始资料，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/06/from-the-front-row-to-the-hot-seat-what-the-midterms-mean-for-big-tech/",
+      "title": "From the front row to the hot seat — what the midterms mean for Big Tech",
+      "original_title": "From the front row to the hot seat — what the midterms mean for Big Tech",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-07T04:16:43+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_feed_recheck_0600",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "从座上宾到被问责：中期选举对大型科技公司意味着什么",
+      "title_translation_scope": "title_only",
+      "time_evidence": "TechCrunch全站订阅源pubDate 2026-11-07T04:16:43Z（页面publish_date 2026-11-06 20:16 PT，标签AI）；05:00上游AI订阅源未收录",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "06:00终审补查：原文时间在最终36小时窗口内；只读元数据",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
+      }
+    },
+    {
+      "url": "https://hunch.net/?p=13764006",
+      "title": "The End of AI Frontiers",
+      "original_title": "The End of AI Frontiers",
+      "source": "hunch.net",
+      "source_id": "hunch-net-supplemental",
+      "published_at": "2026-11-06T16:59:51+00:00",
+      "date_precision": "second",
+      "discovery": "hacker_news_lead_traced_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "hunch.net原文全文；当事人单方面说法，微软未置评（本期未查询）",
+      "title_zh": "约翰·兰福德：微软研究院AI Frontiers小组已结束，并入微软AI后与“只做规模扩展”的理念不合，他已离开",
+      "title_translation_scope": "editorial",
+      "time_evidence": "HN首页线索（HN提交时间2026-11-07T18:02:17Z不作原文时间）追溯至原文；原文页面entry-date published 2026-11-06T10:59:51-06:00",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
+      }
+    },
+    {
+      "url": "https://github.com/Video-Rebirth/hyperflow-h3-flash",
+      "title": "HyperFlow H3 Flash 1.0.0",
+      "original_title": "HyperFlow H3 Flash 1.0.0",
+      "source": "GitHub · Video Rebirth",
+      "source_id": "github-supplemental",
+      "published_at": "2026-11-06T12:09:30+00:00",
+      "date_precision": "second",
+      "discovery": "hacker_news_lead_traced_0600",
+      "catalog_kind": "code",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "GitHub仓库README（含许可、架构与性能表）与api.github.com元数据；Hugging Face模型卡未单独打开；性能为项目自报，未复现",
+      "title_zh": "Video Rebirth开源HyperFlow H3 Flash：把MiniMax-H3压缩到约140亿参数，4到8步生成带立体声音轨的视频",
+      "title_translation_scope": "editorial",
+      "time_evidence": "HN Show HN线索（提交时间2026-11-07T15:16:01Z不作原文时间）追溯至GitHub仓库；api.github.com显示仓库创建2026-11-06T08:31:59Z、1.0.0提交2026-11-06T12:09:30Z",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
+      }
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/508236.html",
+      "title": "浙大00后博士生再交卷！把十几种物理要素装进一个世界模型｜华为昇腾原生",
+      "original_title": "浙大00后博士生再交卷！把十几种物理要素装进一个世界模型｜华为昇腾原生",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-07T03:31:44+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_feed_recheck_0600",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "title_zh": "浙大00后博士生再交卷！把十几种物理要素装进一个世界模型｜华为昇腾原生",
+      "title_translation_scope": "original_chinese",
+      "time_evidence": "量子位订阅源pubDate 2026-11-07T03:31:44Z；05:00上游因缺标题记missing_title_or_url，终审补全标题",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "06:00终审补查：原文时间在最终36小时窗口内；只读元数据",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T03:28:51.639332+00:00"
+      }
     }
-  ]
+  ],
+  "upstream_config_commit": "ccd35f31a010dc0f535ce10981e010d79aef787c",
+  "chinese_editor_config_commit": "538078d006b0472c5fa8dd6ac5563e17e16044d1",
+  "supplemental_sources": [
+    {
+      "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
+      "source": "TechCrunch",
+      "published_at": "2026-11-07T21:17:08+00:00",
+      "discovery": "chinese_editor_last_hour_recheck",
+      "replaced_excluded": false
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/06/from-the-front-row-to-the-hot-seat-what-the-midterms-mean-for-big-tech/",
+      "source": "TechCrunch",
+      "published_at": "2026-11-07T04:16:43+00:00",
+      "discovery": "chinese_editor_feed_recheck_0600",
+      "replaced_excluded": false
+    },
+    {
+      "url": "https://hunch.net/?p=13764006",
+      "source": "hunch.net",
+      "published_at": "2026-11-06T16:59:51+00:00",
+      "discovery": "hacker_news_lead_traced_0600",
+      "replaced_excluded": true
+    },
+    {
+      "url": "https://github.com/Video-Rebirth/hyperflow-h3-flash",
+      "source": "GitHub · Video Rebirth",
+      "published_at": "2026-11-06T12:09:30+00:00",
+      "discovery": "hacker_news_lead_traced_0600",
+      "replaced_excluded": true
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/508236.html",
+      "source": "量子位",
+      "published_at": "2026-11-07T03:31:44+00:00",
+      "discovery": "chinese_editor_feed_recheck_0600",
+      "replaced_excluded": true
+    }
+  ],
+  "editorial_updated_at": "2026-11-08T03:28:51.639332+00:00"
 }

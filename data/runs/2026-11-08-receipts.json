@@ -1826,8 +1826,8 @@
     "start_utc": "2026-11-06T10:00:00Z",
     "end_utc": "2026-11-07T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "最终目录窗口含最后一小时，由中文编辑在06:00阶段覆盖；本轮初采只覆盖至05:00。"
+    "checked": true,
+    "checked_at": "2026-11-08T03:28:51.639332+00:00"
   },
   "source_catalog_path": "data/runs/2026-11-08-source-catalog.json",
   "discovery": {
@@ -1845,7 +1845,7 @@
   "collection_incomplete": true,
   "agents_md_section1_conflict": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-08T05:00:00+08:00",
       "2026-11-08T06:00:00+08:00"
@@ -1860,26 +1860,99 @@
     ],
     "owner": "chinese_editor_agent",
     "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
-    "incidental_sightings_after_until": []
+    "incidental_sightings_after_until": [],
+    "checked_at": "2026-11-08T03:28:51.639332+00:00",
+    "result": "本期准备阶段未在06:00运行（定时准备未触发），由发布任务于北京时间11:14起接续：11:15本机collect_sources.py --until 2026-11-07T22:00:00Z --hours 36，并于11:20重取TechCrunch AI与全站、The Verge AI、WIRED AI、404 Media、HN首页、OpenAI、Google AI、Simon Willison、量子位、Hugging Face、NVIDIA、AWS ML、Latent Space、Ars Technica AI订阅源；05:00—06:00内新增1条AI相关原文（TechCrunch Megaspeed备忘录，21:17Z），HN最后一小时2条Show HN与AI无关。补查在截止后约5小时进行，订阅源只保留近期条目，不能证明当时最后一小时完整；浏览器类来源（xAI、Qwen、DeepSeek、MiniMax、字节Seed、StepFun、OpenReview、36氪、MIT Technology Review）未重查最后一小时"
   },
   "observed_after_until": [],
   "chinese_editor_supplement": {
-    "needed": true,
-    "owner": "chinese_editor_agent",
-    "tasks": [
-      "复查最后一小时 [05:00, 06:00) Asia/Shanghai",
-      "按最终目录窗口 [2026-11-06 18:00, 2026-11-08 06:00) 重筛",
-      "浏览器补查 xAI / Qwen / MiniMax / Seed / StepFun / OpenReview / Zhipu",
-      "成稿与发布不在本采集轮次"
+    "checked_at": "2026-11-08T03:28:51.639332+00:00",
+    "config_commit": "538078d006b0472c5fa8dd6ac5563e17e16044d1",
+    "upstream_commit": "538078d006b0472c5fa8dd6ac5563e17e16044d1",
+    "upstream_accepted": true,
+    "upstream_note": "05:00上游收据与目录（commit 538078d，21:17Z提交）按源复用：42 ok、8 partial、0 failed；中文编辑未重做浏览器源，补查最后一小时与上游遗漏、按最终窗口复核，并为英文目录标题补中文译题（上游title_zh仅为英文原题）",
+    "local_rerun": {
+      "command": "python3 scripts/collect_sources.py --until 2026-11-07T22:00:00Z --hours 36",
+      "started_at": "2026-11-08T03:15:05Z",
+      "summary_line": "计划50源：ok 40 / partial 1（stepfun）/ failed 1（ars-technica-ai 403；订阅源另行重取成功）/ 待浏览器8；本机重跑仅用于最后一小时补查，不替代上游逐源状态"
+    },
+    "supplemental_sources": [
+      {
+        "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
+        "source": "TechCrunch",
+        "published_at": "2026-11-07T21:17:08+00:00",
+        "discovery": "chinese_editor_last_hour_recheck",
+        "replaced_excluded": false
+      },
+      {
+        "url": "https://techcrunch.com/2026/11/06/from-the-front-row-to-the-hot-seat-what-the-midterms-mean-for-big-tech/",
+        "source": "TechCrunch",
+        "published_at": "2026-11-07T04:16:43+00:00",
+        "discovery": "chinese_editor_feed_recheck_0600",
+        "replaced_excluded": false
+      },
+      {
+        "url": "https://hunch.net/?p=13764006",
+        "source": "hunch.net",
+        "published_at": "2026-11-06T16:59:51+00:00",
+        "discovery": "hacker_news_lead_traced_0600",
+        "replaced_excluded": true
+      },
+      {
+        "url": "https://github.com/Video-Rebirth/hyperflow-h3-flash",
+        "source": "GitHub · Video Rebirth",
+        "published_at": "2026-11-06T12:09:30+00:00",
+        "discovery": "hacker_news_lead_traced_0600",
+        "replaced_excluded": true
+      },
+      {
+        "url": "https://www.qbitai.com/2026/11/508236.html",
+        "source": "量子位",
+        "published_at": "2026-11-07T03:31:44+00:00",
+        "discovery": "chinese_editor_feed_recheck_0600",
+        "replaced_excluded": true
+      }
     ],
-    "final_catalog_window_shanghai": [
-      "2026-11-06T18:00:00+08:00",
-      "2026-11-08T06:00:00+08:00"
+    "unopened": [
+      {
+        "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+        "reason": "脚本读取被拦截，内置浏览器仅见标题与日期（November 5, 2026，日精度，早于窗口），未采用"
+      },
+      {
+        "url": "https://www.nytimes.com/",
+        "reason": "《纽约时报》New Matrix与Megaspeed原报道付费未打开，正文依据The Verge与TechCrunch转述"
+      }
     ],
-    "last_hour_window_shanghai": [
-      "2026-11-08T05:00:00+08:00",
-      "2026-11-08T06:00:00+08:00"
-    ],
-    "note": "上游 collection_only；中文编辑拥有最后一小时与终审目录。"
+    "title_translation": "上游目录12条英文条目的title_zh与英文原题相同，终审按标题逐条补中文译题（title_only，不代表全文核读）",
+    "catalog_review": {
+      "raw_receipt_candidates": 134,
+      "upstream_raw": 132,
+      "last_hour_added": 1,
+      "supplement_added": 5,
+      "unique": 134,
+      "reviewed": 107,
+      "pending": 27,
+      "displayed": 29,
+      "displayed_news": 27,
+      "displayed_discourse": 0,
+      "displayed_papers": 0,
+      "displayed_code": 2,
+      "excluded": 105,
+      "reasons": {
+        "missing_title_or_url": 4,
+        "date_only_boundary_pending": 4,
+        "prior_7_catalogs": 52,
+        "trending_snapshot_not_release": 18,
+        "not_ai_or_promo": 1,
+        "hn_lead_time_not_original": 23,
+        "outside_final_window": 3
+      },
+      "moved_out_by_final_window": 3,
+      "titles_translated": 12,
+      "body_used": 12,
+      "displayed_not_body": 17,
+      "below_catalog_target": false,
+      "target": 20
+    }
   }
 }
