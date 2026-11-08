@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-11-09 · 追问</title>
+<meta name="description" content="英伟达董事会就黄仁勋成为外国情报目标的报道启动独立调查；猫王与埃米纳姆的版权方起诉Suno；投资人开始要求世界模型拿出证据；数据中心在美国地方政治中遇到阻力：热度之后，追问开始了。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-09.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-11-09 · 追问">
+<meta property="og:description" content="英伟达董事会就黄仁勋成为外国情报目标的报道启动独立调查；猫王与埃米纳姆的版权方起诉Suno；投资人开始要求世界模型拿出证据；数据中心在美国地方政治中遇到阻力：热度之后，追问开始了。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-09.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-11-08.html">上一期 · 11-08</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-11-09">2026年11月9日 · 星期一 · 第 64 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">8</span>条资讯</div>
+    <div class="stat"><span class="num">1</span>篇论文</div>
+    <div class="stat"><span class="num">1</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年11月9日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">4 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">英伟达董事会就黄仁勋成为外国情报目标的报道启动独立调查；猫王与埃米纳姆的版权方起诉Suno；投资人开始要求世界模型拿出证据；数据中心在美国地方政治中遇到阻力：热度之后，追问开始了。</div></div><div class="news-item" id="nvidia-board-huang-investigation"><div class="news-head"><span class="badge badge-model">英伟达董事会就黄仁勋成为外国情报目标的报道启动独立调查，黄仁勋致信员工道歉</span><h3>英伟达董事会就黄仁勋成为外国情报目标的报道启动独立调查，黄仁勋致信员工道歉</h3></div><p>英伟达（NVIDIA）董事会11月8日发表声明，鉴于近期报道称创始人兼首席执行官黄仁勋成为一项外国情报行动的目标，董事会启动独立调查。调查由独立董事组成的委员会监督，并由外部独立律师协助。声明说，董事会没有理由认为国家安全或英伟达的机密遭到泄露，但调查会审查所有可得信息；黄仁勋完全支持这次审查并承诺配合，董事会对他和管理团队仍有信心，之后会在适当时候通报进展。</p><p>同一天，英伟达公开了黄仁勋发给全体员工的一封邮件。他在信中承认对妻子不忠，向家人、同事、董事会、合作伙伴和股东道歉，说自己没有尽到应有的责任；关于报道提出的国家安全担忧，他表示支持董事会的调查并会全力配合，同时请求外界给家人隐私。邮件没有提到任何人的名字。</p><p>背景来自此前的媒体报道。据The Verge和TechCrunch梳理，《纽约时报》上月报道黄仁勋与新加坡芯片公司Megaspeed的一名高管关系密切；美国政策圈流传的一份备忘录称，这名高管被中国国家安全部招募，用来接近黄仁勋。Megaspeed是英伟达的客户，正接受美国商务部关于是否向中国走私AI芯片的调查。TechCrunch还提到，英伟达此前回应称两人的往来“并不异常”，公司不与客户分享机密信息。备忘录内容与情报指控均来自报道转述，未经独立核实。</p><p>这件事之所以重要，是因为英伟达的先进芯片是美国对华出口管制的核心，黄仁勋本人又与特朗普政府往来密切。接下来值得看的是：独立调查的范围和结论是否公开，以及商务部对Megaspeed的调查如何推进。</p><p><a href="https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors" target="_blank" rel="noopener">NVIDIA Newsroom｜2026-11-08（董事会声明与黄仁勋邮件，均为11月8日）</a></p><p><a href="https://nvidianews.nvidia.com/news/a-message-to-our-company" target="_blank" rel="noopener">补充原始资料</a></p><p><a href="https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy" target="_blank" rel="noopener">补充原始资料</a></p><p><a href="https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/" target="_blank" rel="noopener">补充原始资料</a></p><div class="source">来源：<a href="https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors" target="_blank" rel="noopener">NVIDIA Newsroom</a> · 2026-11-08（董事会声明与黄仁勋邮件，均为11月8日） · NVIDIA Newsroom董事会声明全文与黄仁勋致员工邮件全文；The Verge与TechCrunch原文；《纽约时报》原报道与所称备忘录未打开，相关背景依据上述两家媒体转述，情报指控未经独立核实</div></div><div class="news-item" id="suno-elvis-eminem-lawsuits"><div class="news-head"><span class="badge badge-model">猫王与埃米纳姆的版权方起诉Suno，猫王一案援引田纳西州ELVIS法案</span><h3>猫王与埃米纳姆的版权方起诉Suno，猫王一案援引田纳西州ELVIS法案</h3></div><p>AI音乐公司Suno又被起诉了两次。据The Verge 11月8日报道，猫王埃尔维斯·普雷斯利（Elvis Presley）音乐的一批权利人，以及埃米纳姆（Eminem）多张代表作的出版方，分别起诉Suno，指控它非法生成模仿这些艺人的音乐和歌词。猫王一案的律师援引田纳西州的《确保肖像、声音和形象安全法》（Ensuring Likeness Voice and Image Security Act，简称ELVIS法案），这部法律禁止AI公司克隆歌手的声音。起诉书指称，Suno把艺人的身份、劳动、创造力和时间都编码进了自己的系统，用来持续赚钱。</p><p>The Verge指出，这两起诉讼与杰森·伊斯贝尔（Jason Isbell）等人9月提起的诉讼思路相近：主张Suno制造了对原告的模仿，而没有直接提出版权侵权。也就是说，争议焦点正在从“训练用了谁的作品”，扩展到“生成结果像不像某个人”。</p><p>Suno发言人在给The Verge的回应中说，公司的目的是帮助人们创作原创音乐，不靠任何人的名字或肖像获利；平台不允许在提示词里写具体艺人的名字和歌名，并与第三方服务商合作，筛查上传的音频和歌词是否被滥用，还会继续增加保护措施。Suno目前还面对索尼、环球音乐、伊斯贝尔、Reservoir Media等多方的诉讼。本期论文栏的关联论文回顾，讨论的正是“听起来是不是同一个人”这件事本身有多难判断。</p><p><a href="https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit" target="_blank" rel="noopener">The Verge｜2026-11-08（The Verge 17:23 UTC）</a></p><div class="source">来源：<a href="https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit" target="_blank" rel="noopener">The Verge</a> · 2026-11-08（The Verge 17:23 UTC） · The Verge原文全文；两份起诉书原文未打开，诉讼内容与引语依据The Verge</div></div><div class="news-item" id="world-models-funding-cools"><div class="news-head"><span class="badge badge-model">量子位：资本正在撤离“世界模型”；WIRED：世界模型将悄悄进入日常生活</span><h3>量子位：资本正在撤离“世界模型”；WIRED：世界模型将悄悄进入日常生活</h3></div><p>同一天，两篇报道从两个方向讲世界模型。量子位11月8日的报道说，这个上半年最热的赛道，正在从“热钱汹涌”转向“一份投资意向书都难拿”。记者与多位一线投资人和世界模型公司的投融资负责人交流后发现，从今年夏天起，“不投世界模型了”成了常见说法；头部基金愿意出手的项目，一只手就数得过来，几位受访者给出的名单几乎一样。报道给出的解释包括：上半年资本出手过猛，有的人民币基金出手频率创下成立以来同期之最，有的美元基金上半年就花完了全年投AI的预算；一批美元基金进入新的募资周期；宇树科技上市后股价的大起大落，也给物理AI相关项目的定价提了醒。受访者并没有否定世界模型的技术前景，变化在于，靠概念融资的窗口在收窄，能拿出技术证据和实际进展的团队仍有人抢着投。</p><p>WIRED同日的解释文章则讲世界模型为什么会渗进日常生活。它把世界模型和大语言模型对比：语言模型预测下一个词，世界模型拿到一个画面，预测世界的下一个画面。文章采访了几家公司：Niantic Spatial想用多年积累的真实世界扫描数据重建现实环境，让机器人在模拟中先练上百万次；为汽车做世界模型的Wayve用行车记录仪画面重建危险路况，用来测试现实里不便测试的情况；专注世界模型的Odyssey称这些模拟“看起来、感觉起来都像真的”。文章还提到，李飞飞2024年创办的World Labs今年被AMD收购，杨立昆（Yann LeCun）离开Meta后也为新公司筹集了大笔资金。作者还提到，为了模拟真实世界，AI公司需要真人录下叠衣服、洗碗等日常动作，这类数据采集正在催生新的零工。</p><p>两篇放在一起看：技术方向没有被否定，但市场开始要求证据。本期话语场的两段节目，正好来自押注这条路线的研究者。</p><p><a href="https://www.qbitai.com/2026/11/508466.html" target="_blank" rel="noopener">量子位｜2026-11-08（量子位 12:09 北京时间；WIRED 10:00 UTC）</a></p><p><a href="https://www.wired.com/story/world-models-will-soon-be-inescapable-what-you-need-to-know/" target="_blank" rel="noopener">补充原始资料</a></p><div class="source">来源：<a href="https://www.qbitai.com/2026/11/508466.html" target="_blank" rel="noopener">量子位</a> · 2026-11-08（量子位 12:09 北京时间；WIRED 10:00 UTC） · 量子位原文全文（基于对投资人与公司的采访，受访者匿名）；WIRED解释文章全文；宇树股价等数字未写入正文</div></div><div class="news-item" id="midterms-data-centers"><div class="news-head"><span class="badge badge-model">TechCrunch Equity：中期选举后，数据中心建设可能面临更多阻力</span><h3>TechCrunch Equity：中期选举后，数据中心建设可能面临更多阻力</h3></div><p>美国中期选举后，TechCrunch的Equity播客11月7日专门讨论了选举结果对科技行业的影响，重点是数据中心。节目文字稿提到，在几十项地方投票议案中，选民对数据中心说了“不”：许多议案要求限制或暂停数据中心建设，几乎全部获得通过。即使没有直接投票，选民也选出了一批承诺限制数据中心的政治人物，比如击败现任州长格雷格·阿博特、当选得克萨斯州州长的吉娜·伊诺霍萨（Gina Hinojosa）。</p><p>主持人柯尔斯滕·科罗塞克（Kirsten Korosec）认为，数据中心大概不是这次“蓝色浪潮”的主因，但它正在变成一个基层议题，部分原因是大型云服务商推动项目审批的方式很不透明，经常要求官员签保密协议，也不公开项目规模；她说，已经能看到OpenAI这样的公司突然表示可以调整自己的政策。另一位主持人肖恩·奥凯恩（Sean O’Kane）则说，马斯克向共和党捐了约五亿美元，却几乎一无所获，他的公司总部所在州在选举中明显转向民主党。</p><p>这些都是节目里的观点和判断，不是选举结果的系统分析。对AI行业来说，值得关注的是算力扩张的地方阻力：电力、用水和审批透明度，可能会比芯片供应更早成为瓶颈。</p><p><a href="https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/" target="_blank" rel="noopener">TechCrunch · Equity｜2026-11-07（TechCrunch 22:07 UTC，北京时间11月8日06:07）</a></p><div class="source">来源：<a href="https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/" target="_blank" rel="noopener">TechCrunch · Equity</a> · 2026-11-07（TechCrunch 22:07 UTC，北京时间11月8日06:07） · TechCrunch Equity播客文字稿预览全文（含编辑更正）；均为主持人观点，地方投票结果未逐项核对</div></div><div class="paper-also"><div class="paper-also-title">其他动态</div><div class="paper-also-item" id="apple-siri-agentic"><span class="paper-also-num">01</span><div><strong>彭博：苹果加快Siri路线图，第三方应用控制预计明年春季到来</strong><p>The Verge 11月8日转述彭博记者马克·古尔曼（Mark Gurman）的报道：苹果首席执行官约翰·特努斯（John Ternus）正在催促负责AI的克雷格·费德里吉（Craig Federighi）加快Siri的路线图，做出能与其他公司智能体竞争的产品。按古尔曼的说法，iOS 27.3会让Siri更细致地操作苹果自带应用，比如在照片里旋转、裁剪图片，整理Safari标签页；更大的变化是接入第三方应用，可能在明年春季到来，例如通过Grubhub下单、通过OpenTable订餐厅。他还认为，苹果最快明年就可能让Siri执行持续性的任务。另据The Verge报道，iOS 27.3测试版代码中出现了“对话类应用”（Conversational Apps）分类标记，暗示聊天机器人可能进入苹果的智能家居中枢HomeView；苹果尚未正式宣布这两项功能。</p><p><a href="https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic" target="_blank" rel="noopener">The Verge（转述彭博）｜2026-11-08（The Verge 19:18 UTC；HomeView一条15:00 UTC）</a></p><p><a href="https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview" target="_blank" rel="noopener">补充原始资料</a></p><p>来源：<a href="https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic" target="_blank" rel="noopener">The Verge（转述彭博）</a> · 2026-11-08（The Verge 19:18 UTC；HomeView一条15:00 UTC） · The Verge两篇原文；彭博古尔曼原文未打开（Siri路线图依据The Verge转述）；HomeView代码标记依据The Verge转述X用户pdfu，苹果未宣布</p></div></div><div class="paper-also-item" id="minimax-yan-junjie-podcast"><span class="paper-also-num">02</span><div><strong>闫俊杰在英国播客谈追赶：最后5%的差距可能比前面95%更难</strong><p>据字母AI整理、36氪11月8日刊发的文章，MiniMax创始人闫俊杰在英国播客《Invest in Progress》中，与Scottish Mortgage投资经理劳伦斯·伯恩斯对谈。闫俊杰没有给出中美模型差距的新百分比，他认为最后一段差距可能比前面的大部分更难追，双方在通往通用人工智能的路上都还处于早期。他说，对中国AI公司而言，算力始终是约束，因此公司从模型架构、基础设施到推理优化都围绕效率设计；降下来的推理成本，还可以投入到强化学习等后训练环节。他也表示公司打算持续开源。播客的具体发布日期，文章只写了“最近”；以上为媒体整理的访谈内容。</p><p><a href="https://www.36kr.com/p/4060696576038533" target="_blank" rel="noopener">36氪 · 字母AI｜2026-11-08（36氪 15:57 北京时间；播客发布日期文章未写明）</a></p><p>来源：<a href="https://www.36kr.com/p/4060696576038533" target="_blank" rel="noopener">36氪 · 字母AI</a> · 2026-11-08（36氪 15:57 北京时间；播客发布日期文章未写明） · 36氪转载的字母AI文章全文；《Invest in Progress》原播客未收听，发布日期未知；为媒体整理的访谈内容</p></div></div><div class="paper-also-item" id="gpt61-sol-mouse-surgery"><span class="paper-also-num">03</span><div><strong>机器之心：生物科技初创公司称GPT-6.1 Sol在三轮小鼠脑部手术定位中逐次改进</strong><p>据机器之心整理、36氪11月8日刊发的文章，生物科技初创公司Exin Therapeutics联合创始人兼首席执行官加布里埃尔·奥卡尼亚-桑特罗在X上分享了一组结果：团队让GPT-6.1 Sol连续参与三轮小鼠脑部手术的颅骨标志点定位，每轮结束后由外科医生纠正，模型保存图像、测量数据和专家修正，供下一轮参考。按他公布的数字，到第三轮，找标志点的时间从169秒缩短到86秒，纠正动作从4次减到2次，定位误差从0.6毫米降到0.3毫米。文章同时指出，这只有3次操作，团队也没有披露这些经验记录如何接入模型、是否涉及权重更新，不能据此说模型已掌握稳定的手术能力。以上为当事人在社交媒体上的自述，未见论文或独立评估。</p><p><a href="https://www.36kr.com/p/4060588343825282" target="_blank" rel="noopener">36氪 · 机器之心｜2026-11-08（36氪 16:25 北京时间）</a></p><p>来源：<a href="https://www.36kr.com/p/4060588343825282" target="_blank" rel="noopener">36氪 · 机器之心</a> · 2026-11-08（36氪 16:25 北京时间） · 36氪转载的机器之心文章全文；Ocana-Santero的X原帖未打开；数字为当事人自述，无论文或独立评估</p></div></div><div class="paper-also-item" id="embodied-general-models"><span class="paper-also-num">04</span><div><strong>量子位：通用大模型冲击具身智能自研路线，部分公司传出裁撤算法岗</strong><p>量子位11月8日报道（36氪同日转载），GPT-6 Astra发布两个月来，具身智能行业感受到明显冲击：业内传出一些具身智能公司开始裁撤算法岗。RoboTwin/RoboDojo评测基准第一作者、香港大学博士生陈天行对量子位说，一些原本坚持训练原生具身基础模型的团队，开始提交借助通用大模型完成机器人任务的方案，原先只有二三十分的模型结合相关方案后能到五六十分。报道还说，这类通用模型在部分测试里不经任务专门训练、也没有示范，仅凭语言指令就能完成不少机器人操作，并能在物体被碰动后根据新画面调整动作。报道的核心问题是：通用模型在部分测试里不经任务专门训练就能完成不少操作，具身公司还要不要自研模型。裁员消息与评分变化均为报道转述的业内说法。</p><p><a href="https://www.36kr.com/p/4060707751826311" target="_blank" rel="noopener">36氪 · 量子位｜2026-11-08（36氪 16:26 北京时间）</a></p><p>来源：<a href="https://www.36kr.com/p/4060707751826311" target="_blank" rel="noopener">36氪 · 量子位</a> · 2026-11-08（36氪 16:26 北京时间） · 36氪转载的量子位文章全文；RoboDojo评估报告原文未打开；裁员与评分变化为报道转述</p></div></div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="feifei-li-spatial-intelligence"><div class="insight-banner"><div class="meta">2026-09-04（历史节目）</div><h3>李飞飞：为什么押注空间智能与世界模型</h3></div><div class="insight-body"><p>李飞飞是斯坦福大学计算机科学教授、AI研究者，2024年创办世界模型公司World Labs。这段内容来自a16z的访谈节目，a16z是硅谷风险投资机构安德森·霍洛维茨旗下的内容频道，常邀请创业者和研究者谈技术与创业。</p><p>在9月4日发布的这期访谈里，按话语场依据自动字幕整理的转述，李飞飞回顾创立World Labs时的两项核心信念：一是扩展定律不只适用于语言，也同样适用于物理和三维空间；二是通过“预测下一个视角”来建立三维世界模型，可以让模型获得几何上的一致性和对物理世界的把握。今天量子位说资本开始要求世界模型拿出证据，她的这套押注，正是这条路线需要被检验的地方。这是两个多月前的节目，话语场页面目前只有局部转述，不是对今天新闻的回应。</p><p><a href="https://q.cxspace.com/talks/a16z-fei-fei-li-20260904/" target="_blank" rel="noopener">AI话语场 · a16z｜2026-09-04（历史节目）</a></p><p>来源：<a href="https://q.cxspace.com/talks/a16z-fei-fei-li-20260904/" target="_blank" rel="noopener">AI话语场 · a16z</a> · 2026-09-04（历史节目） · 已上线话语场页的编辑导览与依据自动字幕自动提炼的转述（页面标注仅索引、完整提炼待补）；完整原片未核读</p></div></div><div class="insight-card" id="tian-keyu-world-model-path"><div class="insight-banner"><div class="meta">2026-10-12（历史节目）</div><h3>田柯宇：世界模型重要的是实现路线，而不是反复争论定义</h3></div><div class="insight-body"><p>田柯宇是视觉自回归与世界模型方向的研究者和创业者，量子位今天的报道提到，他的创业事件是世界模型降温前后的一个注脚。这段内容来自中文视频访谈节目elsewhere在10月12日发布的长访谈，节目以长篇对话为主。</p><p>按话语场选读段落的双语转述（已用独立音频转写交叉检查，非逐字引语），田柯宇把世界模型理解为对世界或视频未来演化的模拟与预测；他认为，与其反复讨论这个词怎么定义，更重要的是明确实现路径，一步步把模型做出来。话语场只收录了他的技术立场，没有采用访谈中关于领先性和性能的自述，也不涉及访谈中的争议事件判断，本刊同样不对该事件作判断。放在资本收紧的背景下听，“先把路线讲清楚、把东西做出来”，恰好是投资人现在要的证据。这是近一个月前的节目，不是对今天报道的回应。</p><p><a href="https://q.cxspace.com/talks/elsewhere-tian-keyu-20261012/" target="_blank" rel="noopener">AI话语场 · elsewhere｜2026-10-12（历史节目）</a></p><p>来源：<a href="https://q.cxspace.com/talks/elsewhere-tian-keyu-20261012/" target="_blank" rel="noopener">AI话语场 · elsewhere</a> · 2026-10-12（历史节目） · 已上线话语场页的选读段落双语转述（页面注明已用独立音频转写交叉检查，非逐字引语）；完整原片未核读</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇论文</span></div><div class="paper-item" id="vipbench-voice-identity"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">关联论文回顾：VIPBench——人耳判断“是不是同一个人”，和声音标签并不总一致</span></div><div class="paper-tags"><span class="paper-tag">关联论文回顾：VIPBench——人耳判断“是不是同一个人”，和声音标签并不总一致</span><span class="paper-tag">2026-11-03 arXiv v1提交（关联论文回顾）</span><span class="paper-tag">arXiv 2611.05638 v1 全文（HTML）：摘要、第1节、第3.1—3.4节（含表2说明）、第9.2节局限、第9.3节伦理、附录“Unfamiliar trials”与表9说明；第4—8节结果表未逐表核读，正文仅引用第3.3节与摘要/第1节/附录一致的数字</span></div><div class="paper-body"><p>为什么今天读：Suno被指控生成模仿猫王和埃米纳姆的作品，ELVIS法案保护的是歌手的声音。可“听起来像不像某个人”，是由谁来判断？美国西北大学的Xudong Tang和马修·格罗（Matthew Groh）11月3日提交的这篇预印本，研究的就是人耳如何判断声音身份。</p><p>作者从YouTube上公开的访谈和播客中，选了100位讲美式英语的公众人物，构造了9800组录音对：有同一人的两段真实录音、不同人的录音，也有用商业语音合成系统Cartesia Sonic 3生成的克隆声音，以及把两个人的声音混合起来的变声。1290名听众做了124876次“是不是同一个人”的判断。结果显示，听众判断与录音标签的分歧在克隆声音上最大：在同一说话人的“克隆对真实录音”组合里，41%的回答认为是两个不同的人；按录音对计算，这类组合中有26%多数听众判为“不同人”，另有16%票数打平。作者还用这组数据评测了11个公开的语音表示模型，表现最好的模型也只达到可解释部分的约61%。数据集已在Hugging Face公开，作者表示不会发布让克隆声音更容易被听众接受的方法，因为这类知识也可能被用来让诈骗电话更逼真。</p><p>范围要说清：样本只有讲美式英语的公众人物，主体实验的克隆和变声都来自同一个商业系统，作者也承认结论可能与该系统有关；约78%的判断来自听众没认出说话人的试次。这篇论文不讨论法律问题，它提醒的是：“像不像”本身就是一个因人而异的感知判断，法律和技术都要面对这一点。</p><p><a href="https://arxiv.org/abs/2611.05638" target="_blank" rel="noopener">arXiv｜2026-11-03 arXiv v1提交（关联论文回顾）</a></p></div><a class="paper-link" href="https://arxiv.org/abs/2611.05638" target="_blank" rel="noopener">arXiv →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="billion-context"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/ranxianglei/billion-context/releases/tag/v0.1.213" target="_blank" rel="noopener">billion-context v0.1.213：让编程智能体自己决定何时压缩上下文的开源插件</a></span><span class="oss-license">MIT</span></div><p>billion-context是一个上下文压缩插件，北京时间11月8日早上发布v0.1.213版本，本次更新主要是一批修复和文档补充。按仓库说明，它位于编程智能体和模型接口之间，改写Anthropic和OpenAI格式的数据流，借助acp-kernel压缩已经用过的对话。和简单截断不同，它向对话注入四个工具，由模型自己决定什么时候压缩、压缩哪一段：把一段消息折叠成详细摘要，需要细节时再还原，也可以在摘要里检索或查看上下文用量。项目希望借此让单个会话持续数天乃至更久，同时少用token。仓库支持Claude Code、Codex、OpenCode等多种客户端，代码采用MIT许可。仓库里的长期使用统计和评测结果均为项目方自报。</p><p><a href="https://github.com/ranxianglei/billion-context/releases/tag/v0.1.213" target="_blank" rel="noopener">GitHub · ranxianglei｜2026-11-07（GitHub v0.1.213发布 23:25 UTC，北京时间11月8日07:25）</a></p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 45/50 个来源完成检查</summary><div class="content"><p>采集不完整。本期复用05:00上游初采收据，北京时间06:06起补查最后一小时并用浏览器复查部分页面源：计划50源，45源完整、5源部分、0源失败；核心源未达完整：arxiv。arXiv周末无新公告，HF Daily Papers两天均为0篇；OpenReview、通义、字节Seed、StepFun页面无法判定窗口，不写成无更新；Hacker News只取首页线索并追溯原文。《纽约时报》与彭博原报道未打开，相关背景依据转述。</p><p>资讯源目录20条，按11月7日18:00起的36小时窗口筛选，并与前7期公开目录按规范链接去重；尚未追溯原文的HN线索和只有日期的条目未计入。目录多数为标题级收录，中文译题只翻译标题，不等于全文核验或事实背书；数量达标不代表来源覆盖完整。关联论文回顾及话语场注明原日期。</p><p><strong>检查尚未完成的来源</strong>：下列状态表示检查缺口，不能据此认定近期无更新；“已完整检查且无新增”另行记录。</p><ul><li><strong>通义实验室</strong>：已检查部分内容，覆盖或日期待核。打开 https://qianwen.aliyun.com/ ，标题为「千问AI双11，好价好AI」，落地页偏营销/产品，缺少可判定的研究/新闻时间索引。页面可见日期 2026-10-28、2026-11-06，不可当稿件发布索引。整源 partial。</li><li><strong>阶跃星辰 StepFun</strong>：已检查部分内容，覆盖或日期待核。北京时间06:23内置浏览器打开 https://www.stepfun.com/ ：首页只有Step 5 Preview等产品介绍，无带日期新闻列表，无法判定窗口内有无新条目，保留partial。 上游05:00记录：curl https://www.stepfun.com/ HTTP 200，约 10kB SPA 壳（标题「阶跃星辰」），页面几乎无正文日期（疑似客户端渲染），提取不到发布日期。整源 partial。</li><li><strong>arXiv cs.AI / cs.LG / cs.CL</strong>：已检查部分内容，覆盖或日期待核。export.arxiv.org API 按 submittedDate 降序检索 cat:cs.AI OR cs.LG OR cs.CL，max_results=50 即已越过窗口起点。窗口内已公告 0 篇：API 最新 &lt;published&gt; 为 2026-11-05T18:59:42Z《User Embeddings are Superpositions of Interpretable Behavioral Modes》，早于窗口起点 2026-11-07T09:00:00Z。www.arxiv.org/list/cs.AI/new 写明 Showing new listings for Friday, 6 November 2026（尚未滚动到周六/周日/周一公告）。按本库约定 published 记为公告时间。今日为周一；周一 mailing 通常在周日 20:00 ET（=周一 09:00 Asia/Shanghai）公告，晚于本次 until 05:00。周五 mailing 早于窗口起点。因此窗口内已公告集合为空，但周五公告之后至 until 的未公告切片为 partial。未读全文。</li><li><strong>OpenReview</strong>：已检查部分内容，覆盖或日期待核。curl 首页 https://openreview.net/ HTTP 200，标题 Venues | OpenReview；另打开 https://openreview.net/venues（Venue Directory）HTTP 200。两页均未见带投稿时间的 Active Venues 截止日期，也未指定具体会议/期刊 venue 并扫描其时间范围。只扫了首页与目录，整源 partial。</li><li><strong>字节跳动 Seed·博客与论文</strong>：已检查部分内容，覆盖或日期待核。北京时间06:22内置浏览器打开 https://seed.bytedance.com/en/research：博客卡片最新带日期 Jul 31, 2026，论文列表最新 Oct 25, 2026，均早于窗口；首张SeedRealtime卡片无日期，无法判定，保留partial。 上游05:00记录：curl https://seed.bytedance.com/research HTTP 200。可见 Blog 卡片日期最新 Aug 5, 2026《SeedRealtime Audio-Visual Full-Duplex LLM Released》；Publications 可见最新 Oct 25, 2026《Recycler: Cost-Free Latent Reasoning via Hidden State Recycling》，其后 Sep 28, 2026 等。窗口内可见卡片 0。来源说明要求不能把推荐区或置顶列表当成全站更新流。整源 partial。未读全文。</li></ul><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
+<details class="paper-observation source-catalog" id="source-catalog"><summary class="label">资讯源 <span class="source-catalog-count">20 条</span></summary><div class="content"><h3 class="source-catalog-heading">新闻资讯 · 17 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors" target="_blank" rel="noopener">英伟达董事会就黄仁勋成为外国情报目标的报道启动独立调查，黄仁勋致信员工道歉<span class="source-catalog-original">Statement from NVIDIA Board of Directors</span></a><span class="source-catalog-name">NVIDIA Newsroom</span></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit" target="_blank" rel="noopener">猫王与埃米纳姆的版权方起诉Suno，猫王一案援引田纳西州ELVIS法案<span class="source-catalog-original">Elvis and Eminem rights holders are suing Suno</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.qbitai.com/2026/11/508466.html" target="_blank" rel="noopener">量子位：资本正在撤离“世界模型”；WIRED：世界模型将悄悄进入日常生活<span class="source-catalog-original">资本正在撤离“世界模型”</span></a><span class="source-catalog-name">量子位</span></li><li><a href="https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/" target="_blank" rel="noopener">TechCrunch Equity：中期选举后，数据中心建设可能面临更多阻力<span class="source-catalog-original">After the midterms, things are looking rocky for Elon Musk and data centers</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic" target="_blank" rel="noopener">彭博：苹果加快Siri路线图，第三方应用控制预计明年春季到来<span class="source-catalog-original">Apple is racing to make Siri more agentic</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.36kr.com/p/4060696576038533" target="_blank" rel="noopener">闫俊杰在英国播客谈追赶：最后5%的差距可能比前面95%更难<span class="source-catalog-original">MiniMax怎样实现AGI？闫俊杰的办法是抄“后”路</span></a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4060588343825282" target="_blank" rel="noopener">机器之心：生物科技初创公司称GPT-6.1 Sol在三轮小鼠脑部手术定位中逐次改进<span class="source-catalog-original">GPT-6.1 Sol参与活体大脑手术！三轮定位，一次比一次准</span></a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4060707751826311" target="_blank" rel="noopener">量子位：通用大模型冲击具身智能自研路线，部分公司传出裁撤算法岗<span class="source-catalog-original">GPT-6之后，具身大模型画地为牢！明年自研预算估计悬了</span></a><span class="source-catalog-name">36氪</span></li><li><a href="https://nvidianews.nvidia.com/news/a-message-to-our-company" target="_blank" rel="noopener">致公司全体员工的信（黄仁勋）<span class="source-catalog-original">A Message to Our Company</span></a><span class="source-catalog-name">NVIDIA Newsroom</span></li><li><a href="https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/" target="_blank" rel="noopener">英伟达将调查首席执行官黄仁勋与可能的中国间谍之间的关系<span class="source-catalog-original">Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy" target="_blank" rel="noopener">NVIDIA 正在调查黄仁勋与一名中国间谍的关系<span class="source-catalog-original">Nvidia is investigating Jensen Huang’s relationship with a Chinese spy</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview" target="_blank" rel="noopener">聊天机器人可能将进入苹果HomeView<span class="source-catalog-original">Chatbots might be coming to Apple’s HomeView</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.wired.com/story/nyt-cooking-new-ai-powered-recipe-modifier-is-pretty-good/" target="_blank" rel="noopener">我试用了《纽约时报》Cooking 的新 AI 食谱修改器，其实还不错<span class="source-catalog-original">I Used NYT Cooking’s New AI-Powered Recipe Modifier, and It’s Actually Pretty Good</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://www.wired.com/story/world-models-will-soon-be-inescapable-what-you-need-to-know/" target="_blank" rel="noopener">世界模型即将无处不在：你需要知道的事<span class="source-catalog-original">World Models Will Soon Be Inescapable. Here’s What You Need to Know</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://www.36kr.com/p/4060672855757954" target="_blank" rel="noopener">九成代码AI写，谁来审？Claude Code亮出6道关卡！</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4060357426860936" target="_blank" rel="noopener">机器人大泡沫正在破裂：IPO关了，借壳堵死</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4059436619846784" target="_blank" rel="noopener">乌兰察布，才是AI数据中心的正确答案？</a><span class="source-catalog-name">36氪</span></li></ul><h3 class="source-catalog-heading">话语场 · 1 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://latent.space/p/cs146s/" target="_blank" rel="noopener">斯坦福如何教授AI原生工程——Mihail Eric（Monaco）<span class="source-catalog-original">How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco</span></a><span class="source-catalog-name">Latent Space</span></li></ul><h3 class="source-catalog-heading">开源项目与版本更新 · 2 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://github.com/ranxianglei/billion-context/releases/tag/v0.1.213" target="_blank" rel="noopener">billion-context v0.1.213：让编程智能体自己决定何时压缩上下文的开源插件<span class="source-catalog-original">ranxianglei/billion-context v0.1.213</span></a><span class="source-catalog-name">GitHub Trending（日榜 + Python 日榜）</span></li><li><a href="https://github.com/milind-soni/OpenMausBot/releases/tag/v0.1.149" target="_blank" rel="noopener">milind-soni/OpenMausBot v0.1.149（版本发布）<span class="source-catalog-original">milind-soni/OpenMausBot v0.1.149</span></a><span class="source-catalog-name">GitHub Trending（日榜 + Python 日榜）</span></li></ul></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-11-08.html">上一期 · 11-08</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>

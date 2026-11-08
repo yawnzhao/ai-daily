@@ -5,19 +5,19 @@
       "2026-11-08T21:00:00+00:00"
     ],
     "planned": 50,
-    "ok": 42,
-    "partial": 8,
+    "ok": 45,
+    "partial": 5,
     "failed": 0,
     "pending_browser": 0,
     "core_not_ok": [
-      "xai",
       "arxiv"
     ],
     "window_boundary": "left_closed_right_open",
-    "success_rate": 0.84,
+    "success_rate": 0.9,
     "incomplete": true,
     "pending": 0,
-    "collection_stage_note": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。"
+    "collection_stage_note": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
+    "recount_note": "06:00中文编辑浏览器复查后按各源status重算（xAI、Qwen、MiniMax由partial改为ok）"
   },
   "sources": [
     {
@@ -87,8 +87,8 @@
       "method": "browser",
       "checked_at": "2026-11-08T21:04:53+00:00",
       "checked_url": "https://x.ai/news",
-      "status": "partial",
-      "evidence": "无浏览器；curl https://x.ai/news 静态 HTML HTTP 200。抽查并打开前列稿件：/news/grok-voice-3《Introducing Grok Voice 3.0》datePublished 2026-10-14T00:00:00Z（列表第一但日期更早，故列表并非严格按日期降序）；/news/data-bot《Giving every team a data scientist with Grok Bot》2026-11-02T00:00:00Z（已核稿件中最新）；/news/grok-bot-sales 2026-10-27；/news/partnernetworkannouncement 2026-10-22；/news/incident-sweep 2026-10-20。静态页可见 ISO 日期 2026-11-02/10-27/10-22/10-20。因列表未按日期排列，且静态页不能代替浏览器渲染，不能证明窗口内无动态条目。整源 partial。未读全文。",
+      "status": "ok",
+      "evidence": "北京时间06:20内置浏览器打开 https://x.ai/news（页面标题SpaceXSI）：列表可见日期最新 Nov 2, 2026（Giving every team a data scientist with Grok Bot），早于窗口起点；窗口内0条。 上游05:00记录：无浏览器；curl https://x.ai/news 静态 HTML HTTP 200。抽查并打开前列稿件：/news/grok-voice-3《Introducing Grok Voice 3.0》datePublished 2026-10-14T00:00:00Z（列表第一但日期更早，故列表并非严格按日期降序）；/news/data-bot《Giving every team a data scientist with Grok Bot》2026-11-02T00:00:00Z（已核稿件中最新）；/news/grok-bot-sales 2026-10-27；/news/partnernetworkannouncement 2026-10-22；/news/incident-sweep 2026-10-20。静态页可见 ISO 日期 2026-11-02/10-27/10-22/10-20。因列表未按日期排列，且静态页不能代替浏览器渲染，不能证明窗口内无动态条目。整源 partial。未读全文。",
       "items": [
         {
           "title": "Giving every team a data scientist with Grok Bot",
@@ -100,8 +100,9 @@
       ],
       "initial_script_status": "pending",
       "collection_pass": "05:00",
-      "check_state": "cloudflare_static_incomplete",
-      "supplement_checked_at": "2026-11-08T21:14:37+00:00"
+      "check_state": "browser_rechecked_0600",
+      "supplement_checked_at": "2026-11-08T22:33:24.578388+00:00",
+      "upstream_status": "partial"
     },
     {
       "source_id": "deepmind",
@@ -193,13 +194,14 @@
       "method": "browser",
       "checked_at": "2026-11-08T21:04:53+00:00",
       "checked_url": "https://qwen.ai/research",
-      "status": "partial",
-      "evidence": "无浏览器；curl https://qwen.ai/research 静态 HTML HTTP 200，约 93kB，页面几乎无可用研究列表日期（疑似客户端渲染；壳页可见日期样例 2025-01-25、2026-08-10）。请求 https://qwen.ai/api/page_config 返回 HTTP 500。additional_urls https://qwenlm.github.io/ 为旧博客，可见最新文日期 2025-09-23，不能单独判无更新。整源 partial。未读全文。",
+      "status": "ok",
+      "evidence": "北京时间06:21内置浏览器打开 https://qwen.ai/research（客户端渲染后可见列表）：最新带日期条目 2026/09/20（Qwen-Image-2.1），早于窗口起点；窗口内0条。 上游05:00记录：无浏览器；curl https://qwen.ai/research 静态 HTML HTTP 200，约 93kB，页面几乎无可用研究列表日期（疑似客户端渲染；壳页可见日期样例 2025-01-25、2026-08-10）。请求 https://qwen.ai/api/page_config 返回 HTTP 500。additional_urls https://qwenlm.github.io/ 为旧博客，可见最新文日期 2025-09-23，不能单独判无更新。整源 partial。未读全文。",
       "items": [],
       "initial_script_status": "pending",
       "collection_pass": "05:00",
-      "check_state": "static_html_no_dates",
-      "supplement_checked_at": "2026-11-08T21:14:37+00:00"
+      "check_state": "browser_rechecked_0600",
+      "supplement_checked_at": "2026-11-08T22:33:24.578388+00:00",
+      "upstream_status": "partial"
     },
     {
       "source_id": "tongyi",
@@ -269,12 +271,13 @@
       "checked_at": "2026-11-08T21:04:53+00:00",
       "checked_url": "https://www.stepfun.com/",
       "status": "partial",
-      "evidence": "curl https://www.stepfun.com/ HTTP 200，约 10kB SPA 壳（标题「阶跃星辰」），页面几乎无正文日期（疑似客户端渲染），提取不到发布日期。整源 partial。",
+      "evidence": "北京时间06:23内置浏览器打开 https://www.stepfun.com/ ：首页只有Step 5 Preview等产品介绍，无带日期新闻列表，无法判定窗口内有无新条目，保留partial。 上游05:00记录：curl https://www.stepfun.com/ HTTP 200，约 10kB SPA 壳（标题「阶跃星辰」），页面几乎无正文日期（疑似客户端渲染），提取不到发布日期。整源 partial。",
       "items": [],
       "initial_script_status": "partial",
       "collection_pass": "05:00",
-      "check_state": "rendered_no_dates",
-      "supplement_checked_at": "2026-11-08T21:14:37+00:00"
+      "check_state": "browser_rechecked_0600",
+      "supplement_checked_at": "2026-11-08T22:33:24.578388+00:00",
+      "upstream_status": "partial"
     },
     {
       "source_id": "mistral",
@@ -826,12 +829,13 @@
       "checked_at": "2026-11-08T21:04:53+00:00",
       "checked_url": "https://seed.bytedance.com/research",
       "status": "partial",
-      "evidence": "curl https://seed.bytedance.com/research HTTP 200。可见 Blog 卡片日期最新 Aug 5, 2026《SeedRealtime Audio-Visual Full-Duplex LLM Released》；Publications 可见最新 Oct 25, 2026《Recycler: Cost-Free Latent Reasoning via Hidden State Recycling》，其后 Sep 28, 2026 等。窗口内可见卡片 0。来源说明要求不能把推荐区或置顶列表当成全站更新流。整源 partial。未读全文。",
+      "evidence": "北京时间06:22内置浏览器打开 https://seed.bytedance.com/en/research：博客卡片最新带日期 Jul 31, 2026，论文列表最新 Oct 25, 2026，均早于窗口；首张SeedRealtime卡片无日期，无法判定，保留partial。 上游05:00记录：curl https://seed.bytedance.com/research HTTP 200。可见 Blog 卡片日期最新 Aug 5, 2026《SeedRealtime Audio-Visual Full-Duplex LLM Released》；Publications 可见最新 Oct 25, 2026《Recycler: Cost-Free Latent Reasoning via Hidden State Recycling》，其后 Sep 28, 2026 等。窗口内可见卡片 0。来源说明要求不能把推荐区或置顶列表当成全站更新流。整源 partial。未读全文。",
       "items": [],
       "initial_script_status": "pending",
       "collection_pass": "05:00",
-      "check_state": "pinned_list_not_full_stream",
-      "supplement_checked_at": "2026-11-08T21:14:37+00:00"
+      "check_state": "browser_rechecked_0600",
+      "supplement_checked_at": "2026-11-08T22:33:24.578388+00:00",
+      "upstream_status": "partial"
     },
     {
       "source_id": "minimax",
@@ -840,13 +844,14 @@
       "method": "browser",
       "checked_at": "2026-11-08T21:04:53+00:00",
       "checked_url": "https://www.minimax.io/news",
-      "status": "partial",
-      "evidence": "curl https://www.minimax.io/news HTTP 200。静态 HTML 未见带日期的新闻卡片；页内 JSON-LD CollectionPage dateModified=2026-11-08T21:06:29.824Z 是页面修改时间且晚于 until，不是稿件发布日期。产品 NEW 标签无发布日期。新闻入口无法证明窗口内完整列表，也不代表全部产品无更新。整源 partial。未读全文。",
+      "status": "ok",
+      "evidence": "北京时间06:22内置浏览器打开 https://www.minimax.io/news：列表可见日期最新 Oct 13, 2026，早于窗口起点；窗口内0条。 上游05:00记录：curl https://www.minimax.io/news HTTP 200。静态 HTML 未见带日期的新闻卡片；页内 JSON-LD CollectionPage dateModified=2026-11-08T21:06:29.824Z 是页面修改时间且晚于 until，不是稿件发布日期。产品 NEW 标签无发布日期。新闻入口无法证明窗口内完整列表，也不代表全部产品无更新。整源 partial。未读全文。",
       "items": [],
       "initial_script_status": "pending",
       "collection_pass": "05:00",
-      "check_state": "news_cards_not_rendered",
-      "supplement_checked_at": "2026-11-08T21:14:37+00:00"
+      "check_state": "browser_rechecked_0600",
+      "supplement_checked_at": "2026-11-08T22:33:24.578388+00:00",
+      "upstream_status": "partial"
     },
     {
       "source_id": "techcrunch-ai",
@@ -1495,8 +1500,8 @@
     "start_utc": "2026-11-07T10:00:00Z",
     "end_utc": "2026-11-08T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "最终目录窗口含最后一小时，由中文编辑在06:00阶段覆盖；本轮初采只覆盖至05:00。"
+    "checked": true,
+    "checked_at": "2026-11-08T22:33:24.578388+00:00"
   },
   "source_catalog_path": "data/runs/2026-11-09-source-catalog.json",
   "discovery": {
@@ -1513,7 +1518,7 @@
   "excluded_hits": [],
   "agents_md_section1_conflict": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-09T05:00:00+08:00",
       "2026-11-09T06:00:00+08:00"
@@ -1536,7 +1541,9 @@
         "source_id": "techcrunch-ai",
         "note": "pubDate 比 until 2026-11-08T21:00:00Z 晚 11 秒，不计入初采窗口"
       }
-    ]
+    ],
+    "checked_at": "2026-11-08T22:33:24.578388+00:00",
+    "result": "北京时间06:06本机collect_sources.py --until 2026-11-08T22:00:00Z --hours 36，并于06:08重取OpenAI、Google AI、NVIDIA、Hugging Face、WIRED AI、The Verge AI与全站、HN首页、Simon Willison、量子位、AWS ML、Latent Space、TechCrunch AI与全站、404 Media、Ars Technica AI、MIT Technology Review AI、Microsoft、GitHub AI/ML、Cloudflare AI订阅源；05:00—06:00内新增3条AI相关原文（NVIDIA黄仁勋致员工邮件21:02Z、TechCrunch英伟达调查21:00Z、Latent Space斯坦福AI原生工程21:41Z），另补上游遗漏The Verge HomeView一条（15:00Z）；HN最后一小时仅Ask HN一条，与AI无关。06:20起用内置浏览器复查xAI、Qwen、MiniMax、字节Seed、StepFun；OpenReview、通义、36氪最后一小时未重查"
   },
   "observed_after_until": [
     {
@@ -1564,7 +1571,105 @@
       "2026-11-09T05:00:00+08:00",
       "2026-11-09T06:00:00+08:00"
     ],
-    "note": "上游 collection_only；中文编辑拥有最后一小时与终审目录。"
+    "note": "上游 collection_only；中文编辑拥有最后一小时与终审目录。",
+    "checked_at": "2026-11-08T22:33:24.578388+00:00",
+    "config_commit": "cfd96b5ae51b783c4951773e4a8f9eb82e1d7ace",
+    "upstream_commit": "cfd96b5ae51b783c4951773e4a8f9eb82e1d7ace",
+    "upstream_accepted": true,
+    "upstream_note": "05:00上游收据与目录（commit cfd96b5，21:15Z提交）按源复用：上游42 ok、8 partial、0 failed；中文编辑补查最后一小时与上游遗漏、浏览器复查5个页面源（xAI、Qwen、MiniMax改为ok，字节Seed、StepFun仍partial），并按最终窗口复核",
+    "local_rerun": {
+      "command": "python3 scripts/collect_sources.py --until 2026-11-08T22:00:00Z --hours 36",
+      "started_at": "2026-11-08T22:04:37Z",
+      "summary_line": "计划50源：ok 39 / partial 1 / failed 2 / 待浏览器8；本机重跑仅用于最后一小时补查，不替代上游逐源状态"
+    },
+    "supplemental_sources": [
+      {
+        "url": "https://nvidianews.nvidia.com/news/a-message-to-our-company",
+        "source": "NVIDIA Newsroom",
+        "published_at": "2026-11-08T21:02:00+00:00",
+        "discovery": "chinese_editor_last_hour_recheck",
+        "replaced_excluded": false
+      },
+      {
+        "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
+        "source": "TechCrunch",
+        "published_at": "2026-11-08T21:00:11+00:00",
+        "discovery": "chinese_editor_last_hour_recheck",
+        "replaced_excluded": false
+      },
+      {
+        "url": "https://latent.space/p/cs146s/",
+        "source": "Latent Space",
+        "published_at": "2026-11-08T21:41:44+00:00",
+        "discovery": "chinese_editor_last_hour_recheck",
+        "replaced_excluded": false
+      },
+      {
+        "url": "https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview",
+        "source": "The Verge",
+        "published_at": "2026-11-08T15:00:30+00:00",
+        "discovery": "chinese_editor_feed_recheck_0600",
+        "replaced_excluded": false
+      }
+    ],
+    "unopened": [
+      {
+        "url": "https://www.nytimes.com/",
+        "reason": "《纽约时报》关于黄仁勋与Megaspeed高管的原报道付费未打开，正文依据The Verge与TechCrunch转述"
+      },
+      {
+        "url": "https://www.bloomberg.com/",
+        "reason": "彭博古尔曼关于Siri路线图的原文未打开，正文依据The Verge转述"
+      }
+    ],
+    "excluded_after_review": [
+      {
+        "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+        "reason": "HN线索追溯原文：页面datePublished 2026-11-02T16:13Z，早于目录窗口；转述彭博报道，未采用"
+      },
+      {
+        "url": "https://github.com/synchopate/llama-modchip",
+        "reason": "HN线索：仓库创建于2026-10-29，最新版本v2.4.0发布于11月4日，窗口内无新版本"
+      },
+      {
+        "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+        "reason": "原文11月5日，早于窗口；第63期已记录"
+      }
+    ],
+    "catalog_review": {
+      "raw_receipt_candidates": 85,
+      "upstream_raw": 77,
+      "last_hour_added": 3,
+      "supplement_added": 4,
+      "unique": 85,
+      "reviewed": 82,
+      "pending": 3,
+      "displayed": 20,
+      "displayed_news": 17,
+      "displayed_discourse": 1,
+      "displayed_papers": 0,
+      "displayed_code": 2,
+      "excluded": 65,
+      "reasons": {
+        "outside_window": 1,
+        "trending_snapshot_not_release": 16,
+        "release_outside_window": 10,
+        "prior_7_catalogs": 8,
+        "not_ai_or_promo": 20,
+        "original_publish_outside_window": 4,
+        "date_only_boundary_pending": 2,
+        "duplicate_url_already_in_receipts": 1,
+        "hn_lead_time_not_original": 1,
+        "outside_final_window": 1,
+        "merged_same_episode": 1
+      },
+      "moved_out_by_final_window": 1,
+      "titles_translated": 2,
+      "body_used": 14,
+      "displayed_not_body": 6,
+      "below_catalog_target": false,
+      "target": 20
+    }
   },
   "collection_incomplete": true
 }

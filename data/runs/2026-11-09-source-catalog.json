@@ -5,38 +5,36 @@
     "title",
     "source"
   ],
-  "count": 17,
-  "scope": "36小时资讯目录（05:00初采，collection_only）：窗口[2026-11-07 17:00, 2026-11-09 05:00) Asia/Shanghai。不是06:00最终目录。HN讨论时间不作原文时间。日精度不计入严格展示。规则见 config/source-catalog-policy.txt。",
+  "count": 20,
+  "scope": "36小时资讯目录（中文编辑终审，复用05:00上游初采并补最后一小时）：窗口[2026-11-07 18:00, 2026-11-09 06:00) Asia/Shanghai，左闭右开。HN讨论时间不作原文时间；日精度条目不计入严格目录。规则见 config/source-catalog-policy.txt。",
   "duplicates_by": "canonical_url_or_paper_id; prior 7 public catalogs 2026-11-02 through 2026-11-08",
   "duplicates_dropped": 8,
-  "config_commit": "1ca90bf331ca39b9ad1d52a1a7d25f211908b6ec",
+  "config_commit": "cfd96b5ae51b783c4951773e4a8f9eb82e1d7ace",
   "sources_config_commit": "18a6ba7e79c05f3142e6a80710aab67f5917dcf0",
   "sources_json_blob": "2686c7c15287289cf69d81681bab292098a0feac",
-  "collection_stage": "collection_only",
-  "below_catalog_target": true,
+  "collection_stage": "chinese_editor_final",
+  "below_catalog_target": false,
   "gaps": [
-    "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
-    "不声称覆盖05:00–06:00，也不把目录终点写成06:00；最终窗口[2026-11-07 18:00, 2026-11-09 06:00)交给中文编辑",
-    "xAI 无浏览器；静态 HTML 已核前列稿件最新 2026-11-02，且列表并非严格按日期排序，按来源说明保持 partial",
-    "Qwen page_config HTTP 500，研究页为 SPA 壳；旧博客最新 2025-09-23，不能单独证无更新",
-    "StepFun / MiniMax 静态页无法完整证明更新流，记 partial",
-    "字节 Seed 可见 Blog 最新 Aug 5、Publications 最新 Oct 25，早于窗口，但不能把置顶/推荐列表当成全站更新流",
-    "arXiv API published 最新 2026-11-05T18:59:42Z；www 新列表 Friday, 6 November 2026；窗口内已公告 0；至 until 未公告切片 partial",
-    "OpenReview 只扫了首页与 Venue Directory，未指定 venue+时间范围",
-    "通义落地页偏营销（千问AI双11），没有研究/新闻时间索引",
-    "HN 取首页 RSS + newest；讨论时间不进严格目录；已追溯部分外链原文时间",
-    "36氪未逐篇打开正文，不升为已核 original",
-    "无浏览器环境下浏览器类来源用 curl/gh 补查",
-    "严格展示 17 条，低于目标 20 条；已复查完整候选池、分页与核心源，不放宽 36 小时窗口、不用旧闻或无关条目凑数"
+    "05:00上游收据与目录（cfd96b5）按源复用，06:00补查后计划50源：45 ok、5 partial、0 failed；核心源未达完整：arxiv",
+    "arXiv周末无新公告（核心源保持partial），HF Daily Papers 11月7日、8日均0篇；OpenReview、通义仍无法判定窗口；字节Seed首卡无日期、StepFun无日期列表，保持partial",
+    "上游目录1条原文时间早于最终窗口起点（11月7日18:00）已移出；补入4条（最后一小时3条：NVIDIA黄仁勋邮件、TechCrunch调查报道、Latent Space节目；上游遗漏The Verge HomeView 1条）；补查后目录20条",
+    "英伟达一条：董事会声明与黄仁勋邮件为一手原文；与Megaspeed高管相关的背景依据The Verge与TechCrunch转述《纽约时报》及备忘录，情报指控未经独立核实",
+    "Suno两起诉讼依据The Verge，起诉书原文未打开",
+    "苹果Siri一条转述彭博古尔曼，彭博原文未打开；HomeView代码标记苹果未宣布",
+    "闫俊杰、GPT-6.1 Sol小鼠手术、具身智能三条快讯均依据36氪转载的媒体整理稿（字母AI、机器之心、量子位），原播客、X原帖与评估报告未打开",
+    "billion-context为修复类小版本，作为工具发现收录；评测为项目自报",
+    "本期无合格新论文，论文栏为Paper-Radar关联论文回顾（arXiv 2611.05638 v1，11月3日），已读全文相关章节；不计入36小时目录",
+    "话语场两段为历史节目：李飞飞页为“仅索引、局部转述”，田柯宇页为选读段落转述，完整原片均未核读",
+    "公开更正队列无待执行条目"
   ],
   "curation_policy": "36h-min20-v1",
-  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。本次只审05:00初采窗口。",
+  "curation_policy_note": "规则文件 config/source-catalog-policy.txt。20条是补查触发线，不是展示上限。中文编辑终审按最终36小时窗口复核。",
   "window_hours": 36,
   "window": {
-    "start_shanghai": "2026-11-07T17:00:00+08:00",
-    "end_shanghai": "2026-11-09T05:00:00+08:00",
-    "start_utc": "2026-11-07T09:00:00Z",
-    "end_utc": "2026-11-08T21:00:00Z",
+    "start_shanghai": "2026-11-07T18:00:00+08:00",
+    "end_shanghai": "2026-11-09T06:00:00+08:00",
+    "start_utc": "2026-11-07T10:00:00Z",
+    "end_utc": "2026-11-08T22:00:00Z",
     "boundary": "left_closed_right_open"
   },
   "final_catalog_window": {
@@ -45,10 +43,10 @@
     "start_utc": "2026-11-07T10:00:00Z",
     "end_utc": "2026-11-08T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "checked_at": "2026-11-08T22:33:24.578388+00:00"
   },
-  "excluded_items_count": 60,
+  "excluded_items_count": 65,
   "excluded_items": [
     {
       "title": "Giving every team a data scientist with Grok Bot",
@@ -469,37 +467,126 @@
       "source_id": "simon-willison",
       "published_at": "2026-11-07T23:57:46+00:00",
       "reason": "not_ai_or_promo"
+    },
+    {
+      "url": "https://www.qbitai.com/2026/11/508449.html",
+      "title": "GitHub不堪重负！OpenAI收购替代品，A社原地自研，马斯克也要搞",
+      "original_title": "GitHub不堪重负！OpenAI收购替代品，A社原地自研，马斯克也要搞",
+      "source": "量子位",
+      "source_id": "qbitai",
+      "published_at": "2026-11-07T09:38:56+00:00",
+      "date_precision": "second",
+      "discovery": "collection_0500",
+      "catalog_kind": "news",
+      "content_form": "unverified",
+      "selected": false,
+      "verification_scope": "metadata",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "05:00初采窗口从11月7日17:00起；原文时间早于最终目录窗口起点11月7日18:00（北京时间），终审移出",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      },
+      "title_zh": "GitHub不堪重负！OpenAI收购替代品，A社原地自研，马斯克也要搞",
+      "title_translation_scope": "title_only",
+      "reason": "outside_final_window",
+      "upstream_catalog_review": {
+        "action": "keep",
+        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+      }
+    },
+    {
+      "url": "https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco/",
+      "title": "[One Million AI Engineer Special] How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+      "source_id": "latent-space",
+      "published_at": "2026-11-08T21:23:52+00:00",
+      "reason": "merged_same_episode",
+      "catalog_review": {
+        "action": "merge",
+        "reason": "同一期Latent Space节目的特别版链接，与https://latent.space/p/cs146s/合并",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      },
+      "merged_into": "https://latent.space/p/cs146s/"
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/08/coordinated-disturbances-haunt-grids-worldwide-heres-how-researchers-solved-the-mystery/",
+      "title": "Coordinated disturbances haunt grids worldwide. Here’s how researchers solved the mystery.",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-08T20:30:00+00:00",
+      "reason": "not_ai_or_promo",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "全站订阅源补查：电网频率波动研究，正文涉及数据中心UPS但未涉及AI；按AI相关性未收录",
+        "scope": "full_text_skim",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/08/if-snaps-specs-are-still-ridiculously-expensive-theyre-also-a-lot-more-comfortable-than-they-used-to-be/",
+      "title": "If Snap’s Specs are still ridiculously expensive, they’re also a lot more comfortable than they used to be",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-08T21:00:00+00:00",
+      "reason": "not_ai_or_promo",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "全站订阅源补查：硬件评测/网络安全风投人物报道，标题与导语未涉及AI；未收录",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/08/the-ex-secret-service-agent-who-flipped-a-hacker-is-now-raising-a-second-250m-cybersecurity-fund/",
+      "title": "He arrested a hacker, then spent 18 months clearing his own name. Now he’s a cybersecurity VC.",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-08T17:30:00+00:00",
+      "reason": "not_ai_or_promo",
+      "catalog_review": {
+        "action": "defer",
+        "reason": "全站订阅源补查：硬件评测/网络安全风投人物报道，标题与导语未涉及AI；未收录",
+        "scope": "metadata",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      }
     }
   ],
   "review_summary": {
-    "raw_receipt_candidates": 77,
-    "unique_canonical": 17,
-    "displayed": 17,
-    "displayed_news": 15,
-    "displayed_discourse": 0,
+    "raw_receipt_candidates": 85,
+    "upstream_raw": 77,
+    "last_hour_added": 3,
+    "supplement_added": 4,
+    "unique": 85,
+    "reviewed": 82,
+    "pending": 3,
+    "displayed": 20,
+    "displayed_news": 17,
+    "displayed_discourse": 1,
     "displayed_papers": 0,
     "displayed_code": 2,
-    "excluded": 60,
-    "excluded_reasons": {
+    "excluded": 65,
+    "reasons": {
       "outside_window": 1,
       "trending_snapshot_not_release": 16,
       "release_outside_window": 10,
       "prior_7_catalogs": 8,
-      "not_ai_or_promo": 17,
+      "not_ai_or_promo": 20,
       "original_publish_outside_window": 4,
       "date_only_boundary_pending": 2,
       "duplicate_url_already_in_receipts": 1,
-      "hn_lead_time_not_original": 1
+      "hn_lead_time_not_original": 1,
+      "outside_final_window": 1,
+      "merged_same_episode": 1
     },
-    "pending_time_precision": 2,
-    "body_used": 0,
-    "displayed_not_body": 17,
-    "below_catalog_target": true,
-    "target": 20,
-    "reviewed": 77
+    "moved_out_by_final_window": 1,
+    "titles_translated": 2,
+    "body_used": 14,
+    "displayed_not_body": 6,
+    "below_catalog_target": false,
+    "target": 20
   },
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-09T05:00:00+08:00",
       "2026-11-09T06:00:00+08:00"
@@ -522,7 +609,9 @@
         "source_id": "techcrunch-ai",
         "note": "pubDate 比 until 2026-11-08T21:00:00Z 晚 11 秒，不计入初采窗口"
       }
-    ]
+    ],
+    "checked_at": "2026-11-08T22:33:24.578388+00:00",
+    "result": "北京时间06:06本机collect_sources.py --until 2026-11-08T22:00:00Z --hours 36，并于06:08重取OpenAI、Google AI、NVIDIA、Hugging Face、WIRED AI、The Verge AI与全站、HN首页、Simon Willison、量子位、AWS ML、Latent Space、TechCrunch AI与全站、404 Media、Ars Technica AI、MIT Technology Review AI、Microsoft、GitHub AI/ML、Cloudflare AI订阅源；05:00—06:00内新增3条AI相关原文（NVIDIA黄仁勋致员工邮件21:02Z、TechCrunch英伟达调查21:00Z、Latent Space斯坦福AI原生工程21:41Z），另补上游遗漏The Verge HomeView一条（15:00Z）；HN最后一小时仅Ask HN一条，与AI无关。06:20起用内置浏览器复查xAI、Qwen、MiniMax、字节Seed、StepFun；OpenReview、通义、36氪最后一小时未重查"
   },
   "items": [
     {
@@ -535,14 +624,14 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文全文",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文补充原始资料，已核读原文",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
       "title_zh": "NVIDIA 正在调查黄仁勋与一名中国间谍的关系",
       "title_translation_scope": "title_only"
@@ -557,17 +646,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "NVIDIA Newsroom董事会声明全文与黄仁勋致员工邮件全文；The Verge与TechCrunch原文；《纽约时报》原报道与所称备忘录未打开，相关背景依据上述两家媒体转述，情报指控未经独立核实",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "NVIDIA 董事会声明",
-      "title_translation_scope": "title_only"
+      "title_zh": "英伟达董事会就黄仁勋成为外国情报目标的报道启动独立调查，黄仁勋致信员工道歉",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
@@ -579,17 +668,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "relay",
+      "selected": true,
+      "verification_scope": "The Verge两篇原文；彭博古尔曼原文未打开（Siri路线图依据The Verge转述）；HomeView代码标记依据The Verge转述X用户pdfu，苹果未宣布",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "苹果正加紧让 Siri 更具智能体能力",
-      "title_translation_scope": "title_only"
+      "title_zh": "彭博：苹果加快Siri路线图，第三方应用控制预计明年春季到来",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
@@ -601,17 +690,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "The Verge原文全文；两份起诉书原文未打开，诉讼内容与引语依据The Verge",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "埃尔维斯与埃米纳姆版权方起诉 Suno",
-      "title_translation_scope": "title_only"
+      "title_zh": "猫王与埃米纳姆的版权方起诉Suno，猫王一案援引田纳西州ELVIS法案",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://github.com/milind-soni/OpenMausBot/releases/tag/v0.1.149",
@@ -632,7 +721,7 @@
         "scope": "metadata",
         "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
       },
-      "title_zh": "milind-soni/OpenMausBot v0.1.149",
+      "title_zh": "milind-soni/OpenMausBot v0.1.149（版本发布）",
       "title_translation_scope": "title_only"
     },
     {
@@ -667,14 +756,14 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文全文",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文补充原始资料，已核读原文",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
       "title_zh": "世界模型即将无处不在：你需要知道的事",
       "title_translation_scope": "title_only"
@@ -689,17 +778,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "relay",
+      "selected": true,
+      "verification_scope": "36氪转载的量子位文章全文；RoboDojo评估报告原文未打开；裁员与评分变化为报道转述",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书；36氪未打开正文，不升为已核 original",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "GPT-6之后，具身大模型画地为牢！明年自研预算估计悬了",
-      "title_translation_scope": "title_only"
+      "title_zh": "量子位：通用大模型冲击具身智能自研路线，部分公司传出裁撤算法岗",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.36kr.com/p/4060588343825282",
@@ -711,17 +800,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "relay",
+      "selected": true,
+      "verification_scope": "36氪转载的机器之心文章全文；Ocana-Santero的X原帖未打开；数字为当事人自述，无论文或独立评估",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书；36氪未打开正文，不升为已核 original",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "GPT-6.1 Sol参与活体大脑手术！三轮定位，一次比一次准",
-      "title_translation_scope": "title_only"
+      "title_zh": "机器之心：生物科技初创公司称GPT-6.1 Sol在三轮小鼠脑部手术定位中逐次改进",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.36kr.com/p/4060696576038533",
@@ -733,17 +822,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "relay",
+      "selected": true,
+      "verification_scope": "36氪转载的字母AI文章全文；《Invest in Progress》原播客未收听，发布日期未知；为媒体整理的访谈内容",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书；36氪未打开正文，不升为已核 original",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "MiniMax怎样实现AGI？闫俊杰的办法是抄“后”路",
-      "title_translation_scope": "title_only"
+      "title_zh": "闫俊杰在英国播客谈追赶：最后5%的差距可能比前面95%更难",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.36kr.com/p/4060672855757954",
@@ -777,17 +866,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "量子位原文全文（基于对投资人与公司的采访，受访者匿名）；WIRED解释文章全文；宇树股价等数字未写入正文",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "资本正在撤离“世界模型”",
-      "title_translation_scope": "title_only"
+      "title_zh": "量子位：资本正在撤离“世界模型”；WIRED：世界模型将悄悄进入日常生活",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://www.36kr.com/p/4060357426860936",
@@ -806,10 +895,12 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书；36氪未打开正文，不升为已核 original",
         "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reviewed_at": "2026-11-08T21:15:07.134167+00:00",
+        "note": "与正文主题相关的报道；单独保留展示，未作为正文证据"
       },
       "title_zh": "机器人大泡沫正在破裂：IPO关了，借壳堵死",
-      "title_translation_scope": "title_only"
+      "title_translation_scope": "title_only",
+      "related_body_item": "world-models-funding-cools"
     },
     {
       "url": "https://www.36kr.com/p/4059436619846784",
@@ -828,10 +919,12 @@
         "action": "keep",
         "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书；36氪未打开正文，不升为已核 original",
         "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reviewed_at": "2026-11-08T21:15:07.134167+00:00",
+        "note": "与正文主题相关的报道；单独保留展示，未作为正文证据"
       },
       "title_zh": "乌兰察布，才是AI数据中心的正确答案？",
-      "title_translation_scope": "title_only"
+      "title_translation_scope": "title_only",
+      "related_body_item": "midterms-data-centers"
     },
     {
       "url": "https://github.com/ranxianglei/billion-context/releases/tag/v0.1.213",
@@ -843,17 +936,17 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "code",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "GitHub v0.1.213发布说明、README（英文）与LICENSE（MIT）；api.github.com元数据（星标5085、发布时间）；未部署实测，项目自报评测未复核",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "ranxianglei/billion-context v0.1.213",
-      "title_translation_scope": "title_only"
+      "title_zh": "billion-context v0.1.213：让编程智能体自己决定何时压缩上下文的开源插件",
+      "title_translation_scope": "editorial"
     },
     {
       "url": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
@@ -865,39 +958,142 @@
       "date_precision": "second",
       "discovery": "collection_0500",
       "catalog_kind": "news",
-      "content_form": "unverified",
-      "selected": false,
-      "verification_scope": "metadata",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "TechCrunch Equity播客文字稿预览全文（含编辑更正）；均为主持人观点，地方投票结果未逐项核对",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
-        "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
+        "reason": "正文采用，已核读原文相关段落",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
       },
-      "title_zh": "中期选举之后，马斯克与数据中心的前景变得严峻",
-      "title_translation_scope": "title_only"
+      "title_zh": "TechCrunch Equity：中期选举后，数据中心建设可能面临更多阻力",
+      "title_translation_scope": "editorial"
     },
     {
-      "url": "https://www.qbitai.com/2026/11/508449.html",
-      "title": "GitHub不堪重负！OpenAI收购替代品，A社原地自研，马斯克也要搞",
-      "original_title": "GitHub不堪重负！OpenAI收购替代品，A社原地自研，马斯克也要搞",
-      "source": "量子位",
-      "source_id": "qbitai",
-      "published_at": "2026-11-07T09:38:56+00:00",
-      "date_precision": "second",
-      "discovery": "collection_0500",
+      "url": "https://nvidianews.nvidia.com/news/a-message-to-our-company",
+      "title": "A Message to Our Company",
+      "original_title": "A Message to Our Company",
+      "source": "NVIDIA Newsroom",
+      "source_id": "nvidia",
+      "published_at": "2026-11-08T21:02:00+00:00",
+      "date_precision": "minute",
+      "discovery": "chinese_editor_last_hour_recheck",
       "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文全文",
+      "title_zh": "致公司全体员工的信（黄仁勋）",
+      "title_translation_scope": "title_only",
+      "time_evidence": "北京时间06:10本机重取NVIDIA Newsroom订阅源pubDate 2026-11-08T21:02Z；页面日期November 8, 2026；落在05:00—06:00最后一小时",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文补充原始资料，已核读原文",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      }
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
+      "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
+      "original_title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
+      "source": "TechCrunch",
+      "source_id": "techcrunch-ai",
+      "published_at": "2026-11-08T21:00:11+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_last_hour_recheck",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文全文",
+      "title_zh": "英伟达将调查首席执行官黄仁勋与可能的中国间谍之间的关系",
+      "title_translation_scope": "title_only",
+      "time_evidence": "TechCrunch AI订阅源pubDate 2026-11-08T21:00Z，页面article:published_time 2026-11-08T21:00:11Z；落在05:00—06:00最后一小时",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文补充原始资料，已核读原文",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      }
+    },
+    {
+      "url": "https://latent.space/p/cs146s/",
+      "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+      "original_title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+      "source": "Latent Space",
+      "source_id": "latent-space",
+      "published_at": "2026-11-08T21:41:44+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_last_hour_recheck",
+      "catalog_kind": "discourse",
       "content_form": "unverified",
       "selected": false,
       "verification_scope": "metadata",
+      "title_zh": "斯坦福如何教授AI原生工程——Mihail Eric（Monaco）",
+      "title_translation_scope": "title_only",
+      "time_evidence": "Latent Space订阅源pubDate 2026-11-08T21:41Z，页面article:published_time 2026-11-08T21:41:44Z；同一期节目另有特别版链接（21:23Z，one_million_ai_engineer_special_…）合并为一条；落在最后一小时",
       "catalog_review": {
         "action": "keep",
-        "reason": "05:00初采窗口内、有原文时间戳的AI相关条目；只读元数据，不代表全文核验或事实背书",
+        "reason": "06:00终审补查：原文时间在最终36小时窗口内；只读元数据",
         "scope": "metadata",
-        "reviewed_at": "2026-11-08T21:15:07.134167+00:00"
-      },
-      "title_zh": "GitHub不堪重负！OpenAI收购替代品，A社原地自研，马斯克也要搞",
-      "title_translation_scope": "title_only"
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      }
+    },
+    {
+      "url": "https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview",
+      "title": "Chatbots might be coming to Apple’s HomeView",
+      "original_title": "Chatbots might be coming to Apple’s HomeView",
+      "source": "The Verge",
+      "source_id": "the-verge-ai",
+      "published_at": "2026-11-08T15:00:30+00:00",
+      "date_precision": "second",
+      "discovery": "chinese_editor_feed_recheck_0600",
+      "catalog_kind": "news",
+      "content_form": "original",
+      "selected": true,
+      "verification_scope": "原文全文",
+      "title_zh": "聊天机器人可能将进入苹果HomeView",
+      "title_translation_scope": "title_only",
+      "time_evidence": "The Verge全站订阅源与页面article:published_time 2026-11-08T15:00:30Z；05:00上游AI栏目订阅源未收录（文章归Tech栏目）",
+      "catalog_review": {
+        "action": "keep",
+        "reason": "正文补充原始资料，已核读原文",
+        "scope": "full_text_relevant_sections",
+        "reviewed_at": "2026-11-08T22:33:24.578388+00:00"
+      }
     }
-  ]
+  ],
+  "upstream_config_commit": "1ca90bf331ca39b9ad1d52a1a7d25f211908b6ec",
+  "chinese_editor_config_commit": "cfd96b5ae51b783c4951773e4a8f9eb82e1d7ace",
+  "supplemental_sources": [
+    {
+      "url": "https://nvidianews.nvidia.com/news/a-message-to-our-company",
+      "source": "NVIDIA Newsroom",
+      "published_at": "2026-11-08T21:02:00+00:00",
+      "discovery": "chinese_editor_last_hour_recheck",
+      "replaced_excluded": false
+    },
+    {
+      "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
+      "source": "TechCrunch",
+      "published_at": "2026-11-08T21:00:11+00:00",
+      "discovery": "chinese_editor_last_hour_recheck",
+      "replaced_excluded": false
+    },
+    {
+      "url": "https://latent.space/p/cs146s/",
+      "source": "Latent Space",
+      "published_at": "2026-11-08T21:41:44+00:00",
+      "discovery": "chinese_editor_last_hour_recheck",
+      "replaced_excluded": false
+    },
+    {
+      "url": "https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview",
+      "source": "The Verge",
+      "published_at": "2026-11-08T15:00:30+00:00",
+      "discovery": "chinese_editor_feed_recheck_0600",
+      "replaced_excluded": false
+    }
+  ],
+  "editorial_updated_at": "2026-11-08T22:33:24.578388+00:00"
 }
