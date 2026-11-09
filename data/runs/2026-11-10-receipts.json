@@ -5,19 +5,19 @@
       "2026-11-09T21:00:00+00:00"
     ],
     "planned": 50,
-    "ok": 41,
-    "partial": 9,
+    "ok": 43,
+    "partial": 7,
     "failed": 0,
     "pending_browser": 0,
     "core_not_ok": [
-      "xai",
       "arxiv"
     ],
     "window_boundary": "left_closed_right_open",
-    "success_rate": 0.82,
+    "success_rate": 0.86,
     "incomplete": true,
     "pending": 0,
-    "collection_stage_note": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。"
+    "collection_stage_note": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
+    "recount_note": "06:00中文编辑浏览器复查后按各源status重算（xAI、Qwen由partial改为ok；MiniMax、字节Seed仍partial；StepFun、OpenReview未复查）"
   },
   "sources": [
     {
@@ -32,7 +32,8 @@
       "items": [],
       "check_state": "complete",
       "collection_pass": "05:00",
-      "initial_script_status": "ok"
+      "initial_script_status": "ok",
+      "chinese_editor_note": "上游页面源未列出11月9日发布的Claude Fable 5.2与Mythos 5.2官方页；中文编辑经TechCrunch链接追溯至官方页 https://www.anthropic.com/claude-fable-and-mythos-5-2 并补入目录。状态保持上游ok，但该源页面解析存在漏项"
     },
     {
       "source_id": "claude-blog",
@@ -93,12 +94,14 @@
       "method": "browser",
       "checked_at": "2026-11-09T21:13:08+00:00",
       "checked_url": "https://x.ai/news",
-      "status": "partial",
-      "evidence": "curl 静态 HTML HTTP 200。解析 time+h3 卡片 3 条，最新 2026-11-02；窗口内 0。静态 HTML≠完整覆盖 → partial。",
+      "status": "ok",
+      "evidence": "北京时间06:15内置浏览器打开 https://x.ai/news（页面标题SpaceXSI）：列表最新带日期条目 Nov 2, 2026（Giving every team a data scientist with Grok Bot），早于窗口起点；窗口内0条。 上游05:00记录：curl 静态 HTML HTTP 200。解析 time+h3 卡片 3 条，最新 2026-11-02；窗口内 0。静态 HTML≠完整覆盖 → partial。",
       "items": [],
-      "check_state": "static_html_incomplete",
+      "check_state": "browser_rechecked_0600",
       "collection_pass": "05:00",
-      "initial_script_status": "pending"
+      "initial_script_status": "pending",
+      "upstream_status": "partial",
+      "supplement_checked_at": "2026-11-09T22:22:48.800297+00:00"
     },
     {
       "source_id": "deepmind",
@@ -254,12 +257,14 @@
       "method": "browser",
       "checked_at": "2026-11-09T21:13:08+00:00",
       "checked_url": "https://qwen.ai/research",
-      "status": "partial",
-      "evidence": "curl https://qwen.ai/research 与旧博客 qwenlm.github.io：研究入口为 SPA 壳，静态 HTML 无带日期研究列表；旧博客不能单独判断无更新。无浏览器渲染/page_config → 整源 partial。",
+      "status": "ok",
+      "evidence": "北京时间06:16内置浏览器打开 https://qwen.ai/research（渲染后可见列表）：最新带日期条目 2026/09/20（Qwen-Image-2.1），早于窗口起点；窗口内0条。 上游05:00记录：curl https://qwen.ai/research 与旧博客 qwenlm.github.io：研究入口为 SPA 壳，静态 HTML 无带日期研究列表；旧博客不能单独判断无更新。无浏览器渲染/page_config → 整源 partial。",
       "items": [],
-      "check_state": "spa_shell_incomplete",
+      "check_state": "browser_rechecked_0600",
       "collection_pass": "05:00",
-      "initial_script_status": "pending"
+      "initial_script_status": "pending",
+      "upstream_status": "partial",
+      "supplement_checked_at": "2026-11-09T22:22:48.800297+00:00"
     },
     {
       "source_id": "tongyi",
@@ -399,7 +404,8 @@
       "items": [],
       "check_state": "announced_slice_partial",
       "initial_script_status": "ok",
-      "collection_pass": "05:00"
+      "collection_pass": "05:00",
+      "chinese_editor_note": "北京时间06:17核对cs.AI/cs.CL/cs.LG new列表均为Monday, 9 November 2026；2611.09113见于cs.LG列表。上游partial保留（未逐类全量审阅）"
     },
     {
       "source_id": "hf-daily-papers",
@@ -932,11 +938,13 @@
       "checked_at": "2026-11-09T21:13:08+00:00",
       "checked_url": "https://seed.bytedance.com/en/research",
       "status": "partial",
-      "evidence": "curl /research HTTP 200、/en/research HTTP 200。静态页日期样本 ['Nov', 'Aug', 'Aug', 'Jul', 'Jul']；首卡/论文列表未用浏览器完整渲染证明窗口覆盖 → partial。",
+      "evidence": "北京时间06:16内置浏览器打开 https://seed.bytedance.com/en/research：博客列表首张Seedream 5.5卡片无日期，其后带日期卡片最新 Aug 5, 2026，论文列表最新 Oct 25, 2026；首卡无法判定窗口，保留partial。 上游05:00记录：curl /research HTTP 200、/en/research HTTP 200。静态页日期样本 ['Nov', 'Aug', 'Aug', 'Jul', 'Jul']；首卡/论文列表未用浏览器完整渲染证明窗口覆盖 → partial。",
       "items": [],
-      "check_state": "static_incomplete",
+      "check_state": "browser_rechecked_0600",
       "collection_pass": "05:00",
-      "initial_script_status": "pending"
+      "initial_script_status": "pending",
+      "upstream_status": "partial",
+      "supplement_checked_at": "2026-11-09T22:22:48.800297+00:00"
     },
     {
       "source_id": "minimax",
@@ -946,11 +954,13 @@
       "checked_at": "2026-11-09T21:14:17+00:00",
       "checked_url": "https://www.minimax.io/news",
       "status": "partial",
-      "evidence": "curl https://www.minimax.io/news HTTP 200，静态 HTML 未见带日期新闻卡片（疑似需渲染）。无浏览器 → partial。",
+      "evidence": "北京时间06:16内置浏览器打开 https://www.minimax.io/news：页面文本只提取到首张卡片（9月11日东京活动），未能读到完整带日期列表，保留partial。 上游05:00记录：curl https://www.minimax.io/news HTTP 200，静态 HTML 未见带日期新闻卡片（疑似需渲染）。无浏览器 → partial。",
       "items": [],
-      "check_state": "needs_browser_render",
+      "check_state": "browser_rechecked_0600",
       "collection_pass": "05:00",
-      "initial_script_status": "pending"
+      "initial_script_status": "pending",
+      "upstream_status": "partial",
+      "supplement_checked_at": "2026-11-09T22:22:48.800297+00:00"
     },
     {
       "source_id": "techcrunch-ai",
@@ -2013,8 +2023,8 @@
     "start_utc": "2026-11-08T10:00:00Z",
     "end_utc": "2026-11-09T22:00:00Z",
     "boundary": "left_closed_right_open",
-    "checked": false,
-    "note": "交给中文编辑；本次不声称已覆盖"
+    "checked": true,
+    "checked_at": "2026-11-09T22:22:48.800297+00:00"
   },
   "source_catalog_path": "data/runs/2026-11-10-source-catalog.json",
   "discovery": {
@@ -2030,7 +2040,7 @@
   "excluded_hits": [],
   "agents_md_section1_conflict": "AGENTS.md第1节第5–7步仍写同次运行要成稿、生成网页并提交发布。2026-10-25采集规则与 config/sources.json 的 collection_stage=collection_only 要求采集bot在收据和资讯源目录之后停止。本轮按 collection_only 执行，没有写 daily Markdown、HTML、口播或音频，也没有新建定时任务。",
   "last_hour_handoff": {
-    "checked": false,
+    "checked": true,
     "window_shanghai": [
       "2026-11-10T05:00:00+08:00",
       "2026-11-10T06:00:00+08:00"
@@ -2045,8 +2055,95 @@
     ],
     "owner": "chinese_editor_agent",
     "note": "05:00初采未复查最后一小时，也不把06:00写成已覆盖终点",
-    "incidental_sightings_after_until": []
+    "incidental_sightings_after_until": [],
+    "checked_at": "2026-11-09T22:22:48.800297+00:00",
+    "result": "北京时间06:12本机collect_sources.py --until 2026-11-09T22:00:00Z --hours 36（计划50源：ok 40 / partial 1 / failed 1 / 待浏览器8；Ars Technica AI本机403）；与05:00上游目录按规范链接比对，05:00—06:00仅新增HN线索1条（Qubole供应链攻击，sentra.io，原文时间未追溯，暂存）；其余订阅源最后一小时无新增AI相关原文。06:15起内置浏览器复查xAI、Qwen、MiniMax、字节Seed；StepFun、OpenReview、通义未复查。Ars Technica原文页在内置浏览器中访问未获批准"
   },
   "observed_after_until": [],
-  "collection_incomplete": true
+  "collection_incomplete": true,
+  "chinese_editor_supplement": {
+    "checked_at": "2026-11-09T22:22:48.800297+00:00",
+    "config_commit": "dfad804dfcda5cb0a7e213148a70ca2c597c70cc",
+    "upstream_commit": "dfad804dfcda5cb0a7e213148a70ca2c597c70cc",
+    "upstream_accepted": true,
+    "upstream_note": "05:00上游收据与目录（commit dfad804，21:16Z提交）按源复用：上游41 ok、9 partial、0 failed；中文编辑补查最后一小时、浏览器复查4个页面源（xAI、Qwen改为ok）、逐篇核对The Verge发布时间并更正（上游把美东时间记为UTC），并按最终窗口复核",
+    "local_rerun": {
+      "command": "python3 scripts/collect_sources.py --until 2026-11-09T22:00:00Z --hours 36",
+      "started_at": "2026-11-09T22:10:46Z",
+      "summary_line": "计划50源：ok 40 / partial 1 / failed 1 / 待浏览器8；本机重跑仅用于最后一小时补查，不替代上游逐源状态"
+    },
+    "supplemental_sources": [
+      {
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+        "source": "Anthropic",
+        "published_at": "2026-11-09T19:00:00+00:00",
+        "discovery": "chinese_editor_official_trace"
+      },
+      {
+        "url": "https://arxiv.org/abs/2611.09113",
+        "source": "arXiv",
+        "published_at": "2026-11-09",
+        "discovery": "chinese_editor_paper_check"
+      }
+    ],
+    "unopened": [
+      {
+        "url": "https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/",
+        "reason": "本机403，内置浏览器访问未获批准；仅作标题级目录收录"
+      },
+      {
+        "url": "https://www.ft.com/",
+        "reason": "《金融时报》关于黄仁勋与Anthropic燃气轮机的原报道未打开，正文依据TechCrunch转述"
+      },
+      {
+        "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+        "reason": "本机403，未打开；仅作标题级目录收录"
+      }
+    ],
+    "excluded_after_review": [
+      {
+        "url": "https://www.36kr.com/p/4062202785125250",
+        "reason": "GPT-6.2 Sol“灰度上线”为新智元汇总的网友实测与传闻，未见OpenAI正式公告；未进正文，目录按标题保留"
+      },
+      {
+        "url": "https://www.qbitai.com/2026/11/508694.html",
+        "reason": "千问办公2.0：署名“量子位的朋友们”，疑似合作稿；未进正文，目录按标题保留"
+      },
+      {
+        "url": "https://www.36kr.com/p/4062230230488961",
+        "reason": "扣子企业版下线公告为10月29日，早于正文窗口；当日文章为分析稿，未进正文"
+      }
+    ],
+    "catalog_review": {
+      "raw_receipt_candidates": 199,
+      "upstream_raw": 196,
+      "last_hour_added": 1,
+      "supplement_added": 2,
+      "unique": 199,
+      "reviewed": 152,
+      "pending": 47,
+      "displayed": 82,
+      "displayed_news": 77,
+      "displayed_discourse": 0,
+      "displayed_papers": 1,
+      "displayed_code": 4,
+      "excluded": 117,
+      "reasons": {
+        "not_ai_or_promo": 42,
+        "prior_7_catalogs": 6,
+        "missing_title_or_url": 1,
+        "trending_snapshot_not_release": 21,
+        "date_only_boundary_pending": 1,
+        "hn_lead_time_not_original": 45,
+        "hn_lead_pending_trace": 1
+      },
+      "moved_out_by_final_review": 1,
+      "verge_times_corrected": 8,
+      "titles_translated": 48,
+      "body_used": 17,
+      "displayed_not_body": 65,
+      "below_catalog_target": false,
+      "target": 20
+    }
+  }
 }
