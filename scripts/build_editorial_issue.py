@@ -44,7 +44,8 @@ TOPIC_MAX_CHARS = 8
 LINK_HOSTS = {'techcrunch.com': 'TechCrunch', 'theverge.com': 'The Verge', 'wired.com': 'WIRED',
               'technologyreview.com': '《麻省理工科技评论》', 'aws.amazon.com': 'AWS 博客',
               'arxiv.org': 'arXiv', 'github.com': 'GitHub', 'qbitai.com': '量子位', '36kr.com': '36氪',
-              'q.cxspace.com': 'AI话语场', 'latent.space': 'Latent Space', 'arstechnica.com': 'Ars Technica'}
+              'q.cxspace.com': 'AI话语场', 'latent.space': 'Latent Space', 'arstechnica.com': 'Ars Technica',
+              'anthropic.com': 'Anthropic', 'claude.com': 'Claude'}
 
 
 def link_label(url):
