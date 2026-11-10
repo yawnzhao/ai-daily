@@ -38,13 +38,42 @@ def source(item):
             f' · {esc(item["verification_scope"])}')
 
 
-def paragraphs(content):
-    return ''.join('<p>' + inline(p) + '</p>' for p in content['paragraphs'])
+# From this issue on, link-only lines get readable labels and topics must be short tags.
+TIDY_LINKS_FROM = '2026-11-10'
+TOPIC_MAX_CHARS = 8
+LINK_HOSTS = {'techcrunch.com': 'TechCrunch', 'theverge.com': 'The Verge', 'wired.com': 'WIRED',
+              'technologyreview.com': '《麻省理工科技评论》', 'aws.amazon.com': 'AWS 博客',
+              'arxiv.org': 'arXiv', 'github.com': 'GitHub', 'qbitai.com': '量子位', '36kr.com': '36氪',
+              'q.cxspace.com': 'AI话语场', 'latent.space': 'Latent Space', 'arstechnica.com': 'Ars Technica'}
 
 
-def render_item(item, content, number):
+def link_label(url):
+    host = (urlsplit(url).hostname or '').removeprefix('www.')
+    return next((name for key, name in LINK_HOSTS.items() if host == key or host.endswith('.' + key)), host)
+
+
+def tidy_link_line(text, primary_url):
+    """Relabel a paragraph that is only a link: '原文：来源' / '延伸阅读：来源'."""
+    match = re.fullmatch(r'\[([^\]]+)\]\((https://[^\s)]+)\)', text.strip())
+    if not match:
+        return text
+    label, url = match.groups()
+    if url.rstrip('/') == primary_url.rstrip('/'):
+        name = re.split(r'[｜|]', label, maxsplit=1)[0].strip()
+        return f'[原文：{name}]({url})'
+    return f'[延伸阅读：{link_label(url)}]({url})'
+
+
+def paragraphs(content, item=None, date=''):
+    texts = content['paragraphs']
+    if item and date >= TIDY_LINKS_FROM:
+        texts = [tidy_link_line(p, item['primary_url']) for p in texts]
+    return ''.join('<p>' + inline(p) + '</p>' for p in texts)
+
+
+def render_item(item, content, number, date=''):
     title = inline(content['title'])
-    body = paragraphs(content)
+    body = paragraphs(content, item, date)
     item_id = esc(item['id'])
     section = item['section']
     if section == 'featured':
@@ -294,6 +323,9 @@ def build(date):
     for item in issue['items']:
         if item['verified_primary_url'] != item['primary_url'] or not item['primary_url'].startswith('https://'):
             raise ValueError('Unverified source: ' + item['id'])
+        if date >= TIDY_LINKS_FROM and item['section'] in ('featured', 'papers') and (
+                item.get('topic') == item['title'] or len(item.get('topic') or '') > TOPIC_MAX_CHARS):
+            raise ValueError(f'topic must be a short tag (<= {TOPIC_MAX_CHARS} chars), not the title: ' + item['id'])
     checked = sum(s['status'] == 'ok' for s in receipts['sources'])
     if checked != receipts['summary']['ok'] or checked / len(receipts['sources']) != receipts['summary']['success_rate']:
         raise ValueError('Coverage summary differs from source records')
@@ -315,10 +347,10 @@ def build(date):
             block += ('<div class="focus-box"><div class="label">阅读说明</div>'
                       '<div class="content">依据官方仓库说明整理，未进行部署实测。'
                       '本期作为工具发现，不表示项目在当日首次发布。</div></div>')
-        block += ''.join(render_item(item, content[item['id']], n + 1) for n, item in enumerate(groups[key]))
+        block += ''.join(render_item(item, content[item['id']], n + 1, date) for n, item in enumerate(groups[key]))
         if key == 'featured' and groups['briefs']:
             block += '<div class="paper-also"><div class="paper-also-title">其他动态</div>'
-            block += ''.join(render_item(item, content[item['id']], n + 1) for n, item in enumerate(groups['briefs']))
+            block += ''.join(render_item(item, content[item['id']], n + 1, date) for n, item in enumerate(groups['briefs']))
             block += '</div>'
         sections.append(block + '</div>')
     day = dt.date.fromisoformat(date)
