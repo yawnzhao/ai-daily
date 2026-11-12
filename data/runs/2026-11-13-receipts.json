@@ -1,0 +1,1733 @@
+{
+  "summary": {
+    "window": [
+      "2026-11-11T10:00:00+00:00",
+      "2026-11-12T22:00:00+00:00"
+    ],
+    "planned": 50,
+    "ok": 39,
+    "partial": 10,
+    "failed": 0,
+    "pending_browser": 1,
+    "core_not_ok": [
+      "anthropic",
+      "arxiv",
+      "github-trending"
+    ],
+    "pending": 1,
+    "success_rate": 0.78,
+    "window_boundary": "left_closed_right_open",
+    "incomplete": true,
+    "recount_note": "今日未见05:00上游收据；06:00中文编辑本机采集后，按逐源补查结果重算（RSS替代、本机抓取页面逐条核对；本轮未用内置浏览器）"
+  },
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.anthropic.com/news",
+      "status": "partial",
+      "evidence": "脚本只匹配到日期；中文编辑打开新闻列表页：页面顶部“Latest news”处显示 November 12, 2026，但静态页面未能解析出该日期对应的条目标题与链接；带标题的最新条目为11月10日IPO路演公告（第66期已收）与11月9日Fable/Mythos 5.2（第65期已收）。11月12日条目未核实，保留partial，不写成无更新。",
+      "items": [],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，页面日期 261 处，最新 2026-11-12；窗口内 1 条（按日期匹配，粒度到天）",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://claude.com/blog",
+      "status": "partial",
+      "evidence": "脚本只匹配到日期；中文编辑打开博客列表：Nov 12, 2026有多篇（自托管Claude Managed Agents、J. Crew案例、Claude Meetings介绍等），静态页面未解析出文章链接，只有日精度，未收入目录；保留partial。",
+      "items": [],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，页面日期 32 处，最新 2026-11-19；窗口内 1 条（按日期匹配，粒度到天）",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 1384 条，带日期 1384 条，最新 2026-11-12T20:00:00+00:00；窗口内 4 条",
+      "items": [
+        {
+          "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+          "url": "https://openai.com/index/amplitude",
+          "published_at": "2026-11-12T20:00:00+00:00"
+        },
+        {
+          "title": "Holiday Extras is rethinking what it can build with Codex",
+          "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+          "published_at": "2026-11-12T09:30:00+00:00"
+        },
+        {
+          "title": "Supporting research on AI and children’s safety",
+          "url": "https://openai.com/index/children-first-declaration",
+          "published_at": "2026-11-12T00:00:00+00:00"
+        },
+        {
+          "title": "Gilbert + Tobin rethinks the business of law with AI",
+          "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+          "published_at": "2026-11-12T00:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-12T18:00:00+00:00；窗口内 3 条",
+      "items": [
+        {
+          "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+          "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+          "published_at": "2026-11-12T18:00:00+00:00"
+        },
+        {
+          "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+          "published_at": "2026-11-11T18:00:00+00:00"
+        },
+        {
+          "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+          "published_at": "2026-11-11T16:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://x.ai/news",
+      "status": "ok",
+      "evidence": "北京时间06:05本机抓取 https://x.ai/news（HTTP 200，页面含带日期的文章列表）：最新条目 Nov 2, 2026，早于窗口起点；窗口内0条。本轮未用内置浏览器复查。",
+      "items": [],
+      "script_status": "pending",
+      "script_evidence": "脚本不处理，需浏览器补查",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "status": "ok",
+      "evidence": "脚本解析RSS失败（ParseError）；北京时间06:05本机重新抓取官方RSS https://deepmind.google/blog/rss.xml 并解析成功：100条，窗口内2条（Gemini 4 Hydrogen，与谷歌博客同文；AlphaGenome 2，第67期已收）。",
+      "items": [
+        {
+          "title": "Introducing Gemini 4 Hydrogen",
+          "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+          "published_at": "2026-11-12T18:00:50+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+          "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+          "published_at": "2026-11-11T15:00:15+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "script_status": "failed",
+      "script_evidence": "ParseError: not well-formed (invalid token): line 1, column 0",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-12T14:00:59+00:00；窗口内 2 条",
+      "items": [
+        {
+          "title": "A New Dawn in the Cloud: ‘Warhammer 40,000: Dawn of War IV’ Is Coming to GeForce NOW",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/",
+          "published_at": "2026-11-12T14:00:59+00:00"
+        },
+        {
+          "title": "NVIDIA Announces CEO Transition",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+          "published_at": "2026-11-12T13:48:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 906 条，带日期 906 条，最新 2026-11-12T19:07:35+00:00；窗口内 2 条",
+      "items": [
+        {
+          "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+          "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+          "published_at": "2026-11-12T19:07:35+00:00"
+        },
+        {
+          "title": "The Definitive Fine-Tuning Guide for 3D Generation Models",
+          "url": "https://huggingface.co/blog/3d-lora-finetuning",
+          "published_at": "2026-11-12T00:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 50 条，带日期 50 条，最新 2026-11-06T00:00:00+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://news.microsoft.com/source/tag/ai/feed/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 10 条，带日期 10 条，最新 2026-11-12T16:00:02+00:00；窗口内 3 条",
+      "items": [
+        {
+          "title": "How a new AI model could help crushed rock fight climate change",
+          "url": "https://news.microsoft.com/source/features/ai/how-a-new-ai-model-could-help-crushed-rock-fight-climate-change/",
+          "published_at": "2026-11-12T16:00:02+00:00"
+        },
+        {
+          "title": "What it takes to bring an AI research assistant to thousands of medical experts",
+          "url": "https://commandline.microsoft.com/from-custom-infrastructure-to-hosted-agents/",
+          "published_at": "2026-11-11T21:40:16+00:00"
+        },
+        {
+          "title": "KT ‘Meisters’ and Microsoft engineers build AI agents to spot network issues before customers do",
+          "url": "https://news.microsoft.com/source/features/digital-transformation/kt-meisters-and-microsoft-engineers-build-ai-agents-to-spot-network-issues-before-customers-do/",
+          "published_at": "2026-11-11T16:00:09+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://qwen.ai/research",
+      "status": "partial",
+      "evidence": "北京时间06:05本机抓取 https://qwen.ai/research：页面为脚本渲染，静态内容只有站名，未读到带日期的文章列表，无法判定窗口，保留partial。",
+      "items": [],
+      "script_status": "pending",
+      "script_evidence": "脚本不处理，需浏览器补查",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "tongyi",
+      "name": "通义实验室",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://qianwen.aliyun.com/",
+      "status": "partial",
+      "evidence": "脚本匹配到1处窗口内日期；中文编辑抓取首页未能定位到具体带日期条目，保留partial。",
+      "items": [],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，页面日期 2 处，最新 2026-11-12；窗口内 1 条（按日期匹配，粒度到天）",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://api-docs.deepseek.com/updates/",
+      "status": "partial",
+      "evidence": "北京时间06:05本机打开 https://api-docs.deepseek.com/updates/ ：更新日志最新条目 2026-10-17，早于窗口；配置要求的其他官网与项目入口未逐一检查，保留partial。",
+      "items": [],
+      "script_status": "pending",
+      "script_evidence": "脚本不处理，需浏览器补查",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "moonshot",
+      "name": "月之暗面 Moonshot",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.moonshot.cn/",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 5 处，最新 2026-10-24；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "zhipu",
+      "name": "智谱 Z.ai",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.zhipuai.cn/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 319 处，最新 2026-09-10；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.stepfun.com/",
+      "status": "partial",
+      "evidence": "页面为脚本渲染，静态内容只有站名，无法判断窗口，保留partial。",
+      "items": [],
+      "script_status": "partial",
+      "script_evidence": "HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://mistral.ai/news",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 96 处，最新 2026-11-05；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "status": "ok",
+      "evidence": "中文编辑打开新闻列表页：11月11—12日条目为COP31绿色与数字转型、无人机探测能力征集、欧盟—埃及电子签名合作、欧乌无人机联盟会议；窗口内无新的AI相关条目。",
+      "items": [],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，页面日期 14 处，最新 2026-11-12；窗口内 2 条（按日期匹配，粒度到天）",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 15 处，最新 2026-11-10；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 176 处，最新 2026-10-13；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "status": "partial",
+      "evidence": "北京时间06:05抓取cs.AI、cs.CL、cs.CY new列表，三个列表仍显示 Wednesday, 11 November 2026（与上一期抓取时相同），未见11月12日批次，原因未核实；未逐类全量审阅；本期无窗口内新论文采用，保留partial。",
+      "items": [],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "hf-daily-papers",
+      "name": "Hugging Face Daily Papers",
+      "core": false,
+      "method": "api",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://huggingface.co/api/daily_papers",
+      "status": "ok",
+      "evidence": "北京时间06:05读取 https://huggingface.co/api/daily_papers?date=2026-11-12 ：20篇，逐条看过标题与提交日期，提交日期均不晚于11月10日，不在本期窗口内；未采用。",
+      "items": [],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "openreview",
+      "name": "OpenReview",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://openreview.net/",
+      "status": "pending",
+      "evidence": "本轮只抓取了首页（HTTP 200），未打开具体venue检查新投稿；不写成无更新。",
+      "items": [],
+      "script_status": "pending",
+      "script_evidence": "脚本不处理，需浏览器补查",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://github.com/trending?since=daily",
+      "status": "partial",
+      "evidence": "北京时间06:05抓取 https://github.com/trending?since=daily（HTTP 200），读取了榜单前10个仓库的名称，未逐项核对仓库发布时间，未从中采用条目，保留partial。",
+      "items": [],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，可达；条目由主线程另行核验",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "36kr-ai",
+      "name": "36氪 AI 频道（逐篇核验原创与转载）",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.36kr.com/information/AI/",
+      "status": "partial",
+      "evidence": "北京时间06:05本机打开 https://www.36kr.com/information/AI/ 并解析页面内嵌列表：首屏带日期15条，覆盖北京时间11月12日13:33—20:10；更早的窗口部分（11月11日18:00—11月12日13:33）未翻页，保留partial。逐条仅标题级收录，未区分原创与转载。",
+      "items": [
+        {
+          "title": "当李佳琦卖起“算力”，双十一玩法变了",
+          "url": "https://www.36kr.com/p/4066724043216007",
+          "published_at": "2026-11-12T12:10:00.038000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "普林斯顿、Anthropic揭示“Agent记忆陷阱”：一句“不用确认”，损失120万美元",
+          "url": "https://www.36kr.com/p/4066497415926665",
+          "published_at": "2026-11-12T11:41:48.931000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "AI代码暴涨30%，现实交付却为0？SoduWork要给脱缰的Agent立规矩",
+          "url": "https://www.36kr.com/p/4066625614271360",
+          "published_at": "2026-11-12T11:33:57.556000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "AI能从DNA锁定致病细胞了，谷歌AlphaGenome 2帮助糖尿病癌症寻找新药靶点",
+          "url": "https://www.36kr.com/p/4066677385515911",
+          "published_at": "2026-11-12T11:31:38.908000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "WorkBuddy、Codex把AI竞争推向任务交付，可靠性成为硬门槛",
+          "url": "https://www.36kr.com/p/4066315172009090",
+          "published_at": "2026-11-12T11:18:35.202000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "AI生产力革命，为什么需要一座「新厂房」？",
+          "url": "https://www.36kr.com/p/4066629010576514",
+          "published_at": "2026-11-12T10:27:34.367000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "机器人泡沫在老股市场漏了气",
+          "url": "https://www.36kr.com/p/4066532522956420",
+          "published_at": "2026-11-12T09:07:17.861000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "从Vibe Video到Vibe World，Claude、GPT与视频模型争当“造物主”？",
+          "url": "https://www.36kr.com/p/4066370987300485",
+          "published_at": "2026-11-12T08:34:27.575000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "马斯克给黄仁勋留了个工位",
+          "url": "https://www.36kr.com/p/4066274942571652",
+          "published_at": "2026-11-12T08:19:15.392000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "AI算力“收租生意\"正在变天",
+          "url": "https://www.36kr.com/p/4066443963913096",
+          "published_at": "2026-11-12T08:16:48.945000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "0.66港元的“仙股”公司，要砸七千万买优必选机器人？",
+          "url": "https://www.36kr.com/p/4066444633265031",
+          "published_at": "2026-11-12T08:11:51.126000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "谷歌发布首个决策模型，输出全免费，百万Token低至0.1美元",
+          "url": "https://www.36kr.com/p/4066443558491008",
+          "published_at": "2026-11-12T08:00:04.398000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "第六镜科技携工业智能体亮相ADIPEC 2026",
+          "url": "https://www.36kr.com/p/4066370025575303",
+          "published_at": "2026-11-12T05:33:36.342000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Python之禅作者Tim Peters逝世，Guido发文悼念：没有他，就没有今天的Python",
+          "url": "https://www.36kr.com/p/4066641444820100",
+          "published_at": "2026-11-12T11:59:18.023000+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "《Python之禅》作者去世，Python之父：没有他就没有今天的Python",
+          "url": "https://www.36kr.com/p/4066607732495493",
+          "published_at": "2026-11-12T10:54:20.395000+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "script_status": "pending",
+      "script_evidence": "脚本不处理，需浏览器补查",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "cac-ai",
+      "name": "国家网信办·网信发布（AI 相关）",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+      "status": "ok",
+      "evidence": "中文编辑打开列表页：最新条目2026-11-09，早于窗口；窗口内0条。",
+      "items": [],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，页面日期 20 处，最新 2026-11-09；窗口内 0 条（按日期匹配，粒度到天）",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "bytedance-seed",
+      "name": "字节跳动 Seed·博客与论文",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://seed.bytedance.com/research",
+      "status": "ok",
+      "evidence": "北京时间06:05本机抓取 https://seed.bytedance.com/en/research：页面最新日期 Nov 9, 2026，早于窗口起点（11月11日18:00北京时间）；窗口内0条。",
+      "items": [],
+      "script_status": "pending",
+      "script_evidence": "脚本不处理，需浏览器补查",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "minimax",
+      "name": "MiniMax·News & Updates",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.minimax.io/news",
+      "status": "partial",
+      "evidence": "北京时间06:05本机抓取 https://www.minimax.io/news：静态内容未读到带日期的新闻条目，无法判定窗口，保留partial。另经量子位报道与Hugging Face API发现H3-Image（仓库创建于11月3日），官方发布说明未打开。",
+      "items": [],
+      "script_status": "pending",
+      "script_evidence": "脚本不处理，需浏览器补查",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "techcrunch-ai",
+      "name": "TechCrunch",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "脚本只匹配到页面日期与作者链接；北京时间06:05改用官方RSS https://techcrunch.com/category/artificial-intelligence/feed/ 第1、2页：共40条，最早一条为11月10日15:29 UTC，覆盖整个窗口；窗口内30条。",
+      "items": [
+        {
+          "title": "The unfolding Jensen Huang scandal: a timeline",
+          "url": "https://techcrunch.com/2026/11/12/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+          "published_at": "2026-11-12T21:35:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Nebius tests the neocloud playbook with $40 billion in planned spending",
+          "url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/",
+          "published_at": "2026-11-12T21:27:10+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Jensen Huang was having a third affair, Reuters reports",
+          "url": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/",
+          "published_at": "2026-11-12T20:26:47+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Google’s latest Search upgrade promises better answers to your most complicated questions",
+          "url": "https://techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions/",
+          "published_at": "2026-11-12T19:27:45+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Nectar launches an AI agent to automate creator discovery and outreach for brands",
+          "url": "https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/",
+          "published_at": "2026-11-12T19:11:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Jensen Huang’s exit puts Nvidia’s support for open source in question",
+          "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+          "published_at": "2026-11-12T18:39:23+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Hugging Face CEO vows to keep fighting for open source AI after Jensen Huang’s exit",
+          "url": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit/",
+          "published_at": "2026-11-12T17:36:40+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+          "url": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+          "published_at": "2026-11-12T17:17:58+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions",
+          "url": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/",
+          "published_at": "2026-11-12T17:00:52+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Phota Labs uses AI to turn everyday photos into professional-looking shots",
+          "url": "https://techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots/",
+          "published_at": "2026-11-12T17:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Jensen Huang agrees to testify before Congress",
+          "url": "https://techcrunch.com/2026/11/12/jensen-huang-agrees-to-testify-before-congress/",
+          "published_at": "2026-11-12T16:36:37+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Five ways Jensen Huang’s ouster from Nvidia could damage the AI industry",
+          "url": "https://techcrunch.com/2026/11/12/five-ways-jensen-huangs-ouster-from-nvidia-could-damage-the-ai-industry/",
+          "published_at": "2026-11-12T16:32:33+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Trump floats Apple chairman Tim Cook as Jensen Huang’s successor",
+          "url": "https://techcrunch.com/2026/11/12/trump-floats-apple-chairman-tim-cook-as-jensen-huangs-successor/",
+          "published_at": "2026-11-12T16:12:44+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Jensen Huang is out at Nvidia — who is Colette Kress, his interim replacement?",
+          "url": "https://techcrunch.com/2026/11/12/jensen-huang-is-out-at-nvidia-who-is-colette-kress-his-interim-replacement/",
+          "published_at": "2026-11-12T15:37:29+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Norwest pushes deeper into AI with new $4B fund",
+          "url": "https://techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund/",
+          "published_at": "2026-11-12T15:18:14+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Cyberattack on Fireworks AI allowed hackers to access Notion customers’ chat transcripts",
+          "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
+          "published_at": "2026-11-12T15:02:28+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Who could replace Jensen Huang? A highly unscientific list of possible successors",
+          "url": "https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/",
+          "published_at": "2026-11-12T03:13:10+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
+          "url": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
+          "published_at": "2026-11-11T23:28:45+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Jensen Huang accused of having another affair — with an Nvidia exec",
+          "url": "https://techcrunch.com/2026/11/11/jensen-huang-accused-of-having-another-affair-with-a-nvidia-exec/",
+          "published_at": "2026-11-11T23:17:05+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Nine Korean startups vie for a spot in Disrupt 2027’s Startup Battlefield 200 competition",
+          "url": "https://techcrunch.com/2026/11/12/nine-korean-startups-vie-for-a-spot-in-disrupt-2027s-startup-battlefield-200-competition/",
+          "published_at": "2026-11-12T13:26:25+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Why the data center you dread might never even be built",
+          "url": "https://techcrunch.com/video/why-the-data-center-you-dread-might-never-even-be-built/",
+          "published_at": "2026-11-11T20:15:15+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Meta is losing its longtime head of  infrastructure",
+          "url": "https://techcrunch.com/2026/11/11/meta-is-losing-its-longtime-head-of-infrastructure/",
+          "published_at": "2026-11-11T20:12:01+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "How backlash and red tape continue to slow data centers post-Blue Wave",
+          "url": "https://techcrunch.com/podcast/how-backlash-and-red-tape-continue-to-slow-data-centers-post-blue-wave/",
+          "published_at": "2026-11-11T20:02:14+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
+          "url": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
+          "published_at": "2026-11-11T19:54:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "With $720M round, Britain’s Fractile gets a leg up in the race for AI chips",
+          "url": "https://techcrunch.com/2026/11/11/with-720m-round-britains-fractile-gets-a-leg-up-in-the-race-for-ai-chips/",
+          "published_at": "2026-11-11T19:34:55+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Congress to call Jensen Huang in to answer for alleged Chinese spy affair",
+          "url": "https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/",
+          "published_at": "2026-11-11T19:22:22+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Is Jensen Huang’s bad behavior more commonplace than it seems?",
+          "url": "https://techcrunch.com/2026/11/11/is-jensen-huangs-bad-behavior-more-commonplace-than-it-seems/",
+          "published_at": "2026-11-11T16:16:07+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "OpenAI’s quarterly revenue reportedly crosses $10B for the first time",
+          "url": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/",
+          "published_at": "2026-11-11T16:14:44+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Databricks’ new AI agent tells CEO Ali Ghodsi the unvarnished truth",
+          "url": "https://techcrunch.com/2026/11/11/databricks-new-ai-agent-tells-ceo-ali-ghodsi-the-unvarnished-truth/",
+          "published_at": "2026-11-11T15:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Plurai wants to help AI agents work better using the same approach that helped get self-driving cars to roads",
+          "url": "https://techcrunch.com/2026/11/11/plurai-wants-to-help-ai-agents-work-better-using-the-same-approach-that-helped-get-self-driving-cars-to-roads/",
+          "published_at": "2026-11-11T14:00:00+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，页面日期 33 处，最新 2026-11-12；窗口内 21 条（按日期匹配，粒度到天）",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "ars-technica-ai",
+      "name": "Ars Technica",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://arstechnica.com/ai/",
+      "status": "ok",
+      "evidence": "脚本抓取列表页403；北京时间06:05改用官方RSS https://arstechnica.com/ai/feed/ ：20条，最早11月4日，覆盖整个窗口；窗口内7条。文章页本机403，均为标题级收录。",
+      "items": [
+        {
+          "title": "Google rolls out Gemini 4 Hydrogen, finally replacing 3.8 Flash",
+          "url": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/",
+          "published_at": "2026-11-12T19:23:03+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Google faces calls for AI moratoriums in schools after Gemini pilot backlash",
+          "url": "https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/",
+          "published_at": "2026-11-12T18:57:45+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395",
+          "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
+          "published_at": "2026-11-12T14:50:17+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Ars Live: What drone attacks on data centers mean for modern life in the cloud",
+          "url": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
+          "published_at": "2026-11-12T19:59:59+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI",
+          "url": "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/",
+          "published_at": "2026-11-11T18:16:40+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning.",
+          "url": "https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/",
+          "published_at": "2026-11-11T17:37:32+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Google DeepMind just mathematically verified key parts of Signal",
+          "url": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
+          "published_at": "2026-11-11T14:08:57+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "script_status": "failed",
+      "script_evidence": "HTTPError: HTTP Error 403: Forbidden",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "mit-technology-review-ai",
+      "name": "MIT Technology Review",
+      "core": false,
+      "method": "browser",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "status": "ok",
+      "evidence": "北京时间06:05改用官方RSS https://www.technologyreview.com/topic/artificial-intelligence/feed ：10条，最早11月2日，覆盖整个窗口；窗口内1条（英伟达芯片追踪），已读全文并进快讯。",
+      "items": [
+        {
+          "title": "Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility",
+          "url": "https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/",
+          "published_at": "2026-11-12T20:16:24+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "script_status": "pending",
+      "script_evidence": "脚本不处理，需浏览器补查",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "404-media",
+      "name": "404 Media",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.404media.co/",
+      "status": "ok",
+      "evidence": "脚本只匹配到页面日期；北京时间06:05改用官方RSS https://www.404media.co/rss/ ：15条，最早11月5日，覆盖整个窗口；窗口内5条。",
+      "items": [
+        {
+          "title": "'No One Is Like This:' Muse Sexts While Roleplaying as Real People",
+          "url": "https://www.404media.co/muse-sexts-roleplaying-real-people/",
+          "published_at": "2026-11-12T16:25:29+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "'Way more terrifying than I expected'",
+          "url": "https://www.404media.co/way-more-terrifying-than-i-expected/",
+          "published_at": "2026-11-12T16:46:42+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Scientists Discovered An ‘Invisible’ Object In Space. It’s Challenging Our Understanding of the Cosmos",
+          "url": "https://www.404media.co/scientists-discovered-an-invisible-object-in-space/",
+          "published_at": "2026-11-11T19:00:00+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "It's One Banana Michael, What Could It Cost?",
+          "url": "https://www.404media.co/its-one-banana-michael-what-could-it-cost/",
+          "published_at": "2026-11-11T16:11:40+00:00",
+          "date_precision": "second"
+        },
+        {
+          "title": "Silicon Valley Podcast Hosts Try to Understand Why Regular People Are Mad",
+          "url": "https://www.404media.co/silicon-valley-podcast-hosts-try-to-understand-why-regular-people-are-mad/",
+          "published_at": "2026-11-11T15:12:05+00:00",
+          "date_precision": "second"
+        }
+      ],
+      "script_status": "ok",
+      "script_evidence": "HTTP 200，页面日期 46 处，最新 2026-11-12；窗口内 5 条（按日期匹配，粒度到天）",
+      "supplement_checked_at": "2026-11-12T22:18:54.160100+00:00",
+      "check_state": "chinese_editor_checked_0600"
+    },
+    {
+      "source_id": "wired-ai",
+      "name": "WIRED",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.wired.com/feed/tag/ai/latest/rss",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 10 条，带日期 10 条，最新 2026-11-12T20:35:11+00:00；窗口内 10 条",
+      "items": [
+        {
+          "title": "Jensen Huang Didn’t Name His Own Replacement as One of Tech’s Most Powerful Women",
+          "url": "https://www.wired.com/story/jensen-huang-colette-kress-replacement-powerful-women-in-tech/",
+          "published_at": "2026-11-12T20:35:11+00:00"
+        },
+        {
+          "title": "Jensen Huang’s $470 Billion Affair",
+          "url": "https://www.wired.com/story/uncanny-valley-podcast-jensen-huangs-dollar470-billion-affair/",
+          "published_at": "2026-11-12T18:59:58+00:00"
+        },
+        {
+          "title": "Google DeepMind Staff Tap the UK Government to Escalate Their Unionization Fight",
+          "url": "https://www.wired.com/story/google-deepmind-staff-escalate-their-union-fight/",
+          "published_at": "2026-11-12T18:05:41+00:00"
+        },
+        {
+          "title": "Jensen Huang Basically Lit More Than $1 Trillion on Fire in Less Than a Month",
+          "url": "https://www.wired.com/story/jensen-huang-tanked-a-trillion-dollars-in-less-than-a-month/",
+          "published_at": "2026-11-12T17:59:15+00:00"
+        },
+        {
+          "title": "Meet Colette Kress, Nvidia’s New Interim CEO",
+          "url": "https://www.wired.com/story/who-is-colette-kress-the-woman-who-could-succeed-jensen-huang/",
+          "published_at": "2026-11-12T14:14:33+00:00"
+        },
+        {
+          "title": "Jensen Huang Resigns as Nvidia CEO",
+          "url": "https://www.wired.com/story/nvidia-ceo-jensen-huang-steps-down/",
+          "published_at": "2026-11-12T13:58:06+00:00"
+        },
+        {
+          "title": "Alex Karp Said He’s a ‘Progressive.’ OK! Here’s Some Other Stuff He’s Said Recently",
+          "url": "https://www.wired.com/story/alex-karp-said-hes-a-progressive-ok-heres-some-other-stuff-hes-said-recently/",
+          "published_at": "2026-11-12T10:30:00+00:00"
+        },
+        {
+          "title": "Google Wanted Spirit Airlines Data. Flight Attendants Found a Way to Opt Out",
+          "url": "https://www.wired.com/story/google-wanted-spirit-airlines-data-flight-attendants-found-a-way-to-opt-out/",
+          "published_at": "2026-11-12T10:15:00+00:00"
+        },
+        {
+          "title": "I Saw the Future of Robotics in a Virtual Duck That Chases My Cat",
+          "url": "https://www.wired.com/story/i-trained-a-microduck-to-be-my-cats-butler/",
+          "published_at": "2026-11-11T19:55:54+00:00"
+        },
+        {
+          "title": "A Startup Wants to Fight AI Bioweapons With AI",
+          "url": "https://www.wired.com/story/startup-fights-ai-bioweapons-with-ai/",
+          "published_at": "2026-11-11T17:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "the-verge-ai",
+      "name": "The Verge",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 10 条，带日期 10 条，最新 2026-11-12T16:55:32-05:00；窗口内 10 条",
+      "items": [
+        {
+          "title": "Google’s new Gemini model is better at understanding complicated questions",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen",
+          "published_at": "2026-11-12T16:55:32-05:00"
+        },
+        {
+          "title": "No, AI agents did not discover a previously unknown Maya site",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery",
+          "published_at": "2026-11-12T14:42:40-05:00"
+        },
+        {
+          "title": "Oh, Palantir is ‘progressive’ now, is it?",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1032126/alex-baby-you-were-recorded-on-video",
+          "published_at": "2026-11-12T13:06:54-05:00"
+        },
+        {
+          "title": "The Jensen Huang scandal is hardly over",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1032069/jensen-huang-resignation-affair-chips-smuggling",
+          "published_at": "2026-11-12T12:44:33-05:00"
+        },
+        {
+          "title": "AI chatbots are recommending fake retail websites, study finds",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
+          "published_at": "2026-11-12T12:00:00-05:00"
+        },
+        {
+          "title": "More game developers are starting to use generative AI",
+          "url": "https://www.theverge.com/games/1032085/gdc-festival-of-gaming-annual-survey-ai-layoffs",
+          "published_at": "2026-11-12T12:00:00-05:00"
+        },
+        {
+          "title": "Jensen Huang is out. What did China want from him?",
+          "url": "https://www.theverge.com/podcast/1031260/nvidia-jensen-huang-resign-china-spy-scandal-ai-chips-trump",
+          "published_at": "2026-11-12T11:30:00-05:00"
+        },
+        {
+          "title": "Read Nvidia’s internal emails about the ‘extraordinarily difficult period’ amid CEO shakeup",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1032028/read-nvidias-internal-emails-jensen-huang",
+          "published_at": "2026-11-12T10:48:12-05:00"
+        },
+        {
+          "title": "Nvidia CEO Jensen Huang has resigned. What happens next?",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
+          "published_at": "2026-11-12T10:01:31-05:00"
+        },
+        {
+          "title": "I reviewed the Apple HomeView, ask me anything",
+          "url": "https://www.theverge.com/tech/1031868/i-reviewed-the-apple-homeview-ask-me-anything",
+          "published_at": "2026-11-12T09:10:00-05:00"
+        }
+      ]
+    },
+    {
+      "source_id": "cloudflare-ai",
+      "name": "Cloudflare AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://blog.cloudflare.com/tag/ai/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-05T17:03:04+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "meta-engineering",
+      "name": "Meta Engineering",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://engineering.fb.com/feed/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 9 条，带日期 9 条，最新 2026-11-11T17:00:38+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Intelligent Delivery: Making Every Unit of Compute Serve Better Ads",
+          "url": "https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/",
+          "published_at": "2026-11-11T17:00:38+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "hacker-news-ai",
+      "name": "Hacker News",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://news.ycombinator.com/rss",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 30 条，带日期 30 条，最新 2026-11-12T21:13:26+00:00；窗口内 27 条",
+      "items": [
+        {
+          "title": "Jensen Huang resigns",
+          "url": "https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f",
+          "published_at": "2026-11-12T13:52:29+00:00"
+        },
+        {
+          "title": "Rust 1.100",
+          "url": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
+          "published_at": "2026-11-12T18:39:05+00:00"
+        },
+        {
+          "title": "Gemini 4 Hydrogen and Orchestrator",
+          "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+          "published_at": "2026-11-12T18:52:01+00:00"
+        },
+        {
+          "title": "Dwarf planet candidate appears which takes roughly 280 years to orbit our sun",
+          "url": "https://www.smithsonianmag.com/smart-news/astronomers-found-a-mysterious-object-orbiting-far-beyond-pluto-it-could-be-a-new-dwarf-planet-hidden-in-our-solar-system-180989857/",
+          "published_at": "2026-11-12T19:05:33+00:00"
+        },
+        {
+          "title": "Foundation Models Framework (macOS)",
+          "url": "https://developer.apple.com/foundation-models-framework/",
+          "published_at": "2026-11-12T21:13:26+00:00"
+        },
+        {
+          "title": "Show HN: My $300 embroidery machine needed a subscription, so I built my own app",
+          "url": "https://github.com/simpsoka/zigzag",
+          "published_at": "2026-11-12T17:02:42+00:00"
+        },
+        {
+          "title": "Service degradation on Microsoft 365",
+          "url": "https://status.cloud.microsoft/",
+          "published_at": "2026-11-12T18:20:48+00:00"
+        },
+        {
+          "title": "Anthropic IPO",
+          "url": "https://ipo.anthropic.com/us/",
+          "published_at": "2026-11-12T11:46:41+00:00"
+        },
+        {
+          "title": "22-Year-Old PostgreSQL Bug Turned into Remote Code Execution",
+          "url": "https://mehmetince.net/part-3-6-how-i-ended-up-turning-a-22-year-old-postgresql-type-confusion-primitive-into-rce-cve-2026-6460/",
+          "published_at": "2026-11-12T18:22:22+00:00"
+        },
+        {
+          "title": "I'm making LLMs work on small and old devices",
+          "url": "https://github.com/hyperionaidev/smolmaxxing/",
+          "published_at": "2026-11-12T15:23:10+00:00"
+        },
+        {
+          "title": "Abandoned Quake 4 expansion finished by modders and now playable",
+          "url": "https://www.moddb.com/mods/openq4/downloads/openq4-0141-windows-x64",
+          "published_at": "2026-11-12T14:18:49+00:00"
+        },
+        {
+          "title": "Relax: JIT compiler for Rust to reduce build times",
+          "url": "https://makepad.github.io/relax/",
+          "published_at": "2026-11-11T21:20:01+00:00"
+        },
+        {
+          "title": "Data centers need power – lower income, rural residents pay the price",
+          "url": "https://news.cornell.edu/stories/2026/11/data-centers-need-power-lower-income-rural-residents-pay-price",
+          "published_at": "2026-11-12T19:53:54+00:00"
+        },
+        {
+          "title": "Gemini 4 Hydrogen",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+          "published_at": "2026-11-12T18:01:48+00:00"
+        },
+        {
+          "title": "Talking Zen 6 with Mike Clark at AMD In-Depth",
+          "url": "https://chipsandcheese.com/p/talking-zen-6-with-mike-clark-at",
+          "published_at": "2026-11-12T14:12:37+00:00"
+        },
+        {
+          "title": "Adapting CPython for Yk",
+          "url": "https://tratt.net/laurie/blog/2026/adapting_cpython_for_yk.html",
+          "published_at": "2026-11-12T12:51:38+00:00"
+        },
+        {
+          "title": "Distributed Ray Tracer",
+          "url": "https://ray.hatchet.run",
+          "published_at": "2026-11-12T19:06:23+00:00"
+        },
+        {
+          "title": "Show HN: Kapso – Iterative learning from enterprise data",
+          "url": "https://news.ycombinator.com/item?id=50471281",
+          "published_at": "2026-11-12T17:51:23+00:00"
+        },
+        {
+          "title": "Why Writing Correct Software Is Hard",
+          "url": "https://pron.github.io/posts/correctness-and-complexity",
+          "published_at": "2026-11-12T10:28:26+00:00"
+        },
+        {
+          "title": "Words of warning about radiocarbon dating medieval human bones",
+          "url": "https://www.nature.com/articles/s40494-026-02958-x",
+          "published_at": "2026-11-11T22:18:37+00:00"
+        },
+        {
+          "title": "Show HN: AgentRun – open-source, Self-improving Managed Agents",
+          "url": "https://github.com/Parcha-ai/agentrun/blob/main/README.md",
+          "published_at": "2026-11-12T18:15:48+00:00"
+        },
+        {
+          "title": "ExcalidrawZ: Local Native Excalidraw on macOS/iOS",
+          "url": "https://github.com/chocoford/ExcalidrawZ",
+          "published_at": "2026-11-12T15:25:52+00:00"
+        },
+        {
+          "title": "Our software engineering interviews are changing a little",
+          "url": "https://blog.janestreet.com/software-engineering-interviews-are-changing-a-little/",
+          "published_at": "2026-11-12T14:05:28+00:00"
+        },
+        {
+          "title": "Singapore Says U.S. Not Helpful on Investigation into Suspected Spy's Company",
+          "url": "https://www.nytimes.com/2026/11/12/business/nvidia-megaspeed-alice-huang.html",
+          "published_at": "2026-11-12T18:14:18+00:00"
+        },
+        {
+          "title": "Libreagi – Save OSS Models",
+          "url": "https://libreagi.com/",
+          "published_at": "2026-11-12T14:11:58+00:00"
+        },
+        {
+          "title": "Nintendo Takes Down Emulators and Firmware in Massive GitHub DMCA Sweep",
+          "url": "https://www.ign.com/articles/nintendo-takes-down-switch-emulators-and-mod-chip-firmware-in-massive-github-dmca-sweep",
+          "published_at": "2026-11-12T16:29:13+00:00"
+        },
+        {
+          "title": "Vibes Don't Maintain",
+          "url": "https://roll.bybacon.com/2026/10/14/vibes-dont-maintain.html",
+          "published_at": "2026-11-12T19:06:29+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "import-ai",
+      "name": "Import AI",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://importai.substack.com/feed",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-09T13:31:34+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "bens-bites",
+      "name": "Ben's Bites",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.bensbites.com/feed",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-12T14:03:11+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "To the man with AI, everything looks like a task",
+          "url": "https://www.bensbites.com/p/to-the-man-with-ai-everything-looks",
+          "published_at": "2026-11-12T14:03:11+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "latent-space",
+      "name": "Latent Space",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.latent.space/feed",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-12T05:26:54+00:00；窗口内 2 条",
+      "items": [
+        {
+          "title": "[AINews] D-Day (Decision Models Day)",
+          "url": "https://latent.space/p/ainews-d-day-decision-models-day/",
+          "published_at": "2026-11-12T05:26:54+00:00"
+        },
+        {
+          "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+          "url": "https://latent.space/p/jev-revolution/",
+          "published_at": "2026-11-12T05:08:20+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "interconnects",
+      "name": "Interconnects",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.interconnects.ai/feed",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-04T16:35:44+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "ai-snake-oil",
+      "name": "AI as Normal Technology",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.normaltech.ai/feed",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-10T18:37:42+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "one-useful-thing",
+      "name": "One Useful Thing",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.oneusefulthing.org/feed",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-09T19:04:26+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "simon-willison",
+      "name": "Simon Willison's Weblog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://simonwillison.net/atom/everything/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 30 条，带日期 30 条，最新 2026-11-11T22:03:25+00:00；窗口内 5 条",
+      "items": [
+        {
+          "title": "Gemini Decisions API",
+          "url": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+          "published_at": "2026-11-11T22:03:25+00:00"
+        },
+        {
+          "title": "aws-emulator",
+          "url": "https://simonwillison.net/2026/Nov/11/aws-emulator/",
+          "published_at": "2026-11-11T21:18:30+00:00"
+        },
+        {
+          "title": "Browse tools.simonwillison.net by tag",
+          "url": "https://simonwillison.net/2026/Nov/11/tools-tags/",
+          "published_at": "2026-11-11T18:42:50+00:00"
+        },
+        {
+          "title": "llm 0.37.2",
+          "url": "https://simonwillison.net/2026/Nov/11/llm/",
+          "published_at": "2026-11-11T17:19:52+00:00"
+        },
+        {
+          "title": "Anthropic's IPO roadshow video",
+          "url": "https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/",
+          "published_at": "2026-11-11T15:11:59+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "qbitai",
+      "name": "量子位",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.qbitai.com/feed",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 10 条，带日期 10 条，最新 2026-11-12T11:36:20+00:00；窗口内 10 条",
+      "items": [
+        {
+          "title": "多模态“源神”！MiniMax开源SOTA生图模型，原生4K，一张两毛",
+          "url": "https://www.qbitai.com/2026/11/509440.html",
+          "published_at": "2026-11-12T11:36:20+00:00"
+        },
+        {
+          "title": "从通用大模型到学习过程智能，AI如何真正进入课堂？",
+          "url": "https://www.qbitai.com/2026/11/509404.html",
+          "published_at": "2026-11-12T10:45:33+00:00"
+        },
+        {
+          "title": "Anthropic启动IPO路演，估值已缩水6000亿美元",
+          "url": "https://www.qbitai.com/2026/11/509381.html",
+          "published_at": "2026-11-12T10:11:29+00:00"
+        },
+        {
+          "title": "马斯克Grok泄露自家机密！SpaceX特斯拉工资绩效全曝光",
+          "url": "https://www.qbitai.com/2026/11/509355.html",
+          "published_at": "2026-11-12T10:08:24+00:00"
+        },
+        {
+          "title": "让AI真正懂业务：璇玑如何成为企业AI的语义基础设施",
+          "url": "https://www.qbitai.com/2026/11/509349.html",
+          "published_at": "2026-11-12T09:34:06+00:00"
+        },
+        {
+          "title": "马斯克已准备好聘请黄仁勋",
+          "url": "https://www.qbitai.com/2026/11/509334.html",
+          "published_at": "2026-11-12T08:16:11+00:00"
+        },
+        {
+          "title": "Anthropic玻璃翼计划被质疑！近4万个候补漏洞，只修了217条",
+          "url": "https://www.qbitai.com/2026/11/509291.html",
+          "published_at": "2026-11-12T07:55:11+00:00"
+        },
+        {
+          "title": "百曜科技入选全球 The Information 50！",
+          "url": "https://www.qbitai.com/2026/11/509285.html",
+          "published_at": "2026-11-12T06:13:22+00:00"
+        },
+        {
+          "title": "“双十一”机器人在物流仓“埋头苦干”：昆腾动力开启具身智能规模化获客与交付阶段",
+          "url": "https://www.qbitai.com/2026/11/509281.html",
+          "published_at": "2026-11-12T01:45:04+00:00"
+        },
+        {
+          "title": "纯代码造《后室》，116秒切20种画风！文心新模型玩嗨了",
+          "url": "https://www.qbitai.com/2026/11/509224.html",
+          "published_at": "2026-11-11T12:43:54+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "aws-ml-blog",
+      "name": "AWS AI Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 20 条，带日期 20 条，最新 2026-11-12T22:03:34+00:00；窗口内 19 条",
+      "items": [
+        {
+          "title": "How Natera designed an agentic AI system for lab ops with Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-natera-designed-an-agentic-ai-system-for-lab-ops-with-amazon-bedrock-agentcore/",
+          "published_at": "2026-11-12T21:47:07+00:00"
+        },
+        {
+          "title": "Four Amazon Bedrock inference choices that affect cost",
+          "url": "https://aws.amazon.com/blogs/machine-learning/four-amazon-bedrock-inference-choices-that-affect-cost/",
+          "published_at": "2026-11-12T20:51:55+00:00"
+        },
+        {
+          "title": "Tokenomics at scale: Track and cap Amazon Bedrock spend per IAM principal with CUR 2.0 and AWS Budgets",
+          "url": "https://aws.amazon.com/blogs/machine-learning/tokenomics-at-scale-track-and-cap-amazon-bedrock-spend-per-iam-principal-with-cur-2-0-and-aws-budgets/",
+          "published_at": "2026-11-12T19:29:55+00:00"
+        },
+        {
+          "title": "Optimizing cost per task and proving agent ROI on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/optimizing-cost-per-task-and-proving-agent-roi-on-amazon-bedrock/",
+          "published_at": "2026-11-12T18:43:19+00:00"
+        },
+        {
+          "title": "Building a self-service LLM gateway with Amazon Bedrock and LiteLLM",
+          "url": "https://aws.amazon.com/blogs/machine-learning/building-a-self-service-llm-gateway-with-amazon-bedrock-and-litellm/",
+          "published_at": "2026-11-12T18:41:12+00:00"
+        },
+        {
+          "title": "Run agents securely and efficiently with the next generation AgentCore runtime",
+          "url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime/",
+          "published_at": "2026-11-12T17:59:59+00:00"
+        },
+        {
+          "title": "Migrate to Amazon Bedrock Managed Knowledge Base with your coding agent",
+          "url": "https://aws.amazon.com/blogs/machine-learning/migrate-to-amazon-bedrock-managed-knowledge-base-with-your-coding-agent/",
+          "published_at": "2026-11-12T16:16:45+00:00"
+        },
+        {
+          "title": "Build composable, interoperable multi-agent systems with A2A on AWS",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-composable-interoperable-multi-agent-systems-with-a2a-on-aws/",
+          "published_at": "2026-11-12T15:42:21+00:00"
+        },
+        {
+          "title": "Fine-grained access control for Amazon Bedrock Managed Knowledge Base tools",
+          "url": "https://aws.amazon.com/blogs/machine-learning/fine-grained-access-control-for-amazon-bedrock-managed-knowledge-base-tools/",
+          "published_at": "2026-11-12T15:40:24+00:00"
+        },
+        {
+          "title": "From prototype to production: Engineering agents with Agent DLC",
+          "url": "https://aws.amazon.com/blogs/machine-learning/from-prototype-to-production-engineering-agents-with-agent-dlc/",
+          "published_at": "2026-11-12T15:38:47+00:00"
+        },
+        {
+          "title": "Build autonomous AI agents with Amazon Bedrock and Spring AI",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-autonomous-ai-agents-with-amazon-bedrock-and-spring-ai/",
+          "published_at": "2026-11-12T01:18:23+00:00"
+        },
+        {
+          "title": "OpenAI Codex on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/openai-codex-on-amazon-bedrock/",
+          "published_at": "2026-11-11T23:35:47+00:00"
+        },
+        {
+          "title": "Semantic diffing of formal policies with anti-unification",
+          "url": "https://aws.amazon.com/blogs/machine-learning/semantic-diffing-of-formal-policies-with-anti-unification/",
+          "published_at": "2026-11-11T23:33:03+00:00"
+        },
+        {
+          "title": "Detecting and recovering from silent data corruption on Amazon SageMaker HyperPod",
+          "url": "https://aws.amazon.com/blogs/machine-learning/detecting-and-recovering-from-silent-data-corruption-on-amazon-sagemaker-hyperpod/",
+          "published_at": "2026-11-11T23:30:03+00:00"
+        },
+        {
+          "title": "Introducing the Web Search API on Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/",
+          "published_at": "2026-11-11T23:13:16+00:00"
+        },
+        {
+          "title": "ICYMI: What landed for AI builders in October 2026",
+          "url": "https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-october-2026/",
+          "published_at": "2026-11-11T22:26:40+00:00"
+        },
+        {
+          "title": "The attendee’s guide to the AWS re:Invent 2026 AI/ML track",
+          "url": "https://aws.amazon.com/blogs/machine-learning/the-attendees-guide-to-the-aws-reinvent-2026-ai-ml-track/",
+          "published_at": "2026-11-11T21:05:59+00:00"
+        },
+        {
+          "title": "Automating AWS Agent Registry updates with push-based architecture",
+          "url": "https://aws.amazon.com/blogs/machine-learning/automating-aws-agent-registry-updates-with-push-based-architecture/",
+          "published_at": "2026-11-11T20:52:48+00:00"
+        },
+        {
+          "title": "How DXC Technology built a multi-model AI substrate on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-dxc-technology-built-a-multi-model-ai-substrate-on-amazon-bedrock/",
+          "published_at": "2026-11-11T20:45:45+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "google-research",
+      "name": "Google Research Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://research.google/blog/rss/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 100 条，带日期 100 条，最新 2026-11-11T19:54:00+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Using wearables to enable cardiovascular-kidney-metabolic (CKM) risk profiling for personalized coaching",
+          "url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+          "published_at": "2026-11-11T19:54:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "github-ai-ml",
+      "name": "GitHub Blog · AI & ML",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://github.blog/ai-and-ml/feed/",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 10 条，带日期 10 条，最新 2026-11-06T22:15:59+00:00；窗口内 0 条",
+      "items": []
+    },
+    {
+      "source_id": "databricks-research",
+      "name": "Databricks Research",
+      "core": false,
+      "method": "page",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.databricks.com/blog/category/research",
+      "status": "ok",
+      "evidence": "HTTP 200，页面日期 13 处，最新 2026-10-20；窗口内 0 条（按日期匹配，粒度到天）",
+      "items": []
+    },
+    {
+      "source_id": "amazon-science",
+      "name": "Amazon Science Blog",
+      "core": false,
+      "method": "rss",
+      "checked_at": "2026-11-12T22:04:00+00:00",
+      "checked_url": "https://www.amazon.science/index.rss",
+      "status": "ok",
+      "evidence": "feed HTTP 200，共 25 条，带日期 25 条，最新 2026-11-11T17:02:01+00:00；窗口内 1 条",
+      "items": [
+        {
+          "title": "Using mathematics to validate network configurations",
+          "url": "https://www.amazon.science/blog/using-mathematics-to-validate-network-configurations",
+          "published_at": "2026-11-11T17:02:01+00:00"
+        }
+      ]
+    }
+  ],
+  "config_commit": "6694b8d32075d332bea52fde6b543d9671e78cae",
+  "collection_stage": "chinese_editor_final",
+  "collection_stage_note": "今日05:00上游初采收据未出现在ai-daily main（北京时间06:04查询，main为6694b8d，data/runs最新为2026-11-12）；本收据由06:00中文准备任务本机采集并补查生成，不是上游收据。",
+  "final_catalog_window": {
+    "start_shanghai": "2026-11-11T18:00:00+08:00",
+    "end_shanghai": "2026-11-13T06:00:00+08:00",
+    "start_utc": "2026-11-11T10:00:00Z",
+    "end_utc": "2026-11-12T22:00:00Z",
+    "boundary": "left_closed_right_open",
+    "checked": true,
+    "checked_at": "2026-11-12T22:18:54.160100+00:00"
+  },
+  "source_catalog_path": "data/runs/2026-11-13-source-catalog.json",
+  "collection_incomplete": true,
+  "last_hour_handoff": {
+    "checked": true,
+    "checked_at": "2026-11-12T22:18:54.160100+00:00",
+    "result": "本机collect_sources.py --until 2026-11-12T22:00:00Z --hours 36于北京时间06:04启动，截止即为06:00，最后一小时已包含在同一次采集内；TechCrunch、Ars Technica、404 Media、MIT科技评论、DeepMind改用官方RSS补齐条目"
+  },
+  "discovery": [
+    {
+      "channel": "hacker-news-ai",
+      "note": "25条线索未追溯，暂存；另有Gemini 4 Hydrogen（追溯到谷歌博客原文并补入）、Gemini 4 Hydrogen and Orchestrator（追溯到Antigravity博客原文并补入）两条已追溯；黄仁勋辞职一条的美联社原文本机403未打开，正文改用英伟达官方公告"
+    }
+  ],
+  "verification": [
+    {
+      "item": "nvidia-jensen-huang-resigns-kress-interim-ceo",
+      "primary_url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+      "scope": "英伟达官方公告全文；《连线》原文前部（至公司历史背景）；The Verge刊出的两封内部邮件全文；TechCrunch简讯全文；《纽约时报》《金融时报》、彭博社与NBC新闻原文未打开，相关内容为《连线》与TechCrunch转述；“与下属关系及Megaspeed往来影响更大”为《连线》单一匿名信源"
+    },
+    {
+      "item": "google-gemini-4-hydrogen-orchestrator",
+      "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "scope": "谷歌官方博客全文（至安全部分）；谷歌搜索官方博客；Google Antigravity博客；The Verge原文全文；Ars Technica原文本机403未打开；基准成绩、速度与安全评测为谷歌自述；Orchestrator一项的基准版本两篇官方博客写法不一（4.0与4.1），正文已注明；未实际试用"
+    },
+    {
+      "item": "podqi-study-chatbots-risky-shopping-sites",
+      "primary_url": "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
+      "scope": "The Verge原文全文；Podqi研究报告原文未打开，数字依据The Verge；Podqi为品牌保护公司，被测品牌含其客户"
+    },
+    {
+      "item": "nebius-2027-capex-prepayments-delays",
+      "primary_url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/",
+      "scope": "TechCrunch原文全文；Nebius财报、电话会记录与合同概述原文未打开；彭博社与Floodlight报道未打开，相关内容为TechCrunch转述"
+    },
+    {
+      "item": "fireworks-ai-breach-notion-ai-transcripts",
+      "primary_url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
+      "scope": "TechCrunch原文全文；Fireworks AI安全公告与Notion披露原文未打开，内容依据TechCrunch"
+    },
+    {
+      "item": "nvidia-privately-confirmed-chip-tracking-feasible",
+      "primary_url": "https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/",
+      "scope": "《麻省理工科技评论》原文全文；众议员Foster的说法未得到英伟达确认；法案文本与半导体行业协会信函未打开"
+    },
+    {
+      "item": "deepmind-uk-staff-union-cac-application",
+      "primary_url": "https://www.wired.com/story/google-deepmind-staff-escalate-their-union-fight/",
+      "scope": "《连线》原文大部（至员工引语）；提交给Central Arbitration Committee的申请文件未打开"
+    },
+    {
+      "item": "softbank-turbine-deposit-writeoff",
+      "primary_url": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/",
+      "scope": "TechCrunch原文全文（分析文章）；软银财报与《金融时报》等报道未打开"
+    },
+    {
+      "item": "maya-site-ai-agents-already-documented",
+      "primary_url": "https://www.theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery",
+      "scope": "The Verge原文大部（至Graham教授引语）；Miotti博客原文与已发表的期刊论文未打开"
+    },
+    {
+      "item": "minimax-h3-image-open-weights-report",
+      "primary_url": "https://www.qbitai.com/2026/11/509440.html",
+      "scope": "量子位原文大部（媒体试用文章）；MiniMax官方发布说明未打开，许可证未核对；Hugging Face API核对MiniMaxAI/MiniMax-H3-Image仓库创建时间（2026-11-03T06:34:36Z）；未实际试用"
+    },
+    {
+      "item": "ibm-granite-llmon-preview",
+      "primary_url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+      "scope": "Hugging Face博客原文前部（发布说明、能力说明、与JSON和聊天模板的关系、示例）；GitHub仓库与模型卡未打开，许可证未核对；攻击成功率说法为作者自述且未给出具体数字；未实际运行"
+    },
+    {
+      "item": "paper-ai-overviews-health-citations",
+      "primary_url": "https://arxiv.org/abs/2610.39339",
+      "scope": "arXiv 2610.39339 v1 全文（HTML）：摘要、引言、第2.1—2.3节（问题来源、筛选、采集时间与设置）、第3.1节与表A5（引用重合与域名分布）、第3.2节（来源质量效应量）、第3.3节（陈述支持率与校正）、第3.4节与表3（医生评分标准）、讨论部分的局限说明、附录自动编码局限；第2.4—2.7节方法细节与第3.5节稳健性检验未逐段核读；只有v1"
+    },
+    {
+      "item": "discourse-dylan-patel-compute-concentration",
+      "primary_url": "https://q.cxspace.com/talks/dwarkesh-dylan-20260825/",
+      "scope": "已上线话语场页的编辑导览、讲者信息与2条依据自动字幕自动提炼的原话摘录（章节起点01:07:52）及语境说明；完整节目未核读；正文为转述，非逐字引语"
+    },
+    {
+      "item": "discourse-matt-garman-agent-first-cloud",
+      "primary_url": "https://q.cxspace.com/talks/source-8afa853a350658b4/",
+      "scope": "已上线话语场页的编辑导览（依据发布方说明，页面标注完整内容待核读）与2条依据自动字幕自动提炼的原话摘录（00:08:46、00:54:02）；完整节目未核读；正文为转述，非逐字引语"
+    }
+  ],
+  "excluded_hits": [],
+  "chinese_editor_supplement": {
+    "checked_at": "2026-11-12T22:18:54.160100+00:00",
+    "config_commit": "6694b8d32075d332bea52fde6b543d9671e78cae",
+    "upstream_commit": null,
+    "upstream_accepted": false,
+    "upstream_note": "upstream_0500_receipt_absent：北京时间06:04查询yawnzhao/ai-daily main（6694b8d）与yawnzhao/ai-concourse-library（最近提交2026-11-05），均无2026-11-13采集提交；按“没有可靠结果才重新采集”本机完整采集。上游若迟到，按手册第6节走资讯目录补充流程",
+    "local_rerun": {
+      "command": "python3 scripts/collect_sources.py --until 2026-11-12T22:00:00Z --hours 36",
+      "started_at": "2026-11-12T22:04:00Z",
+      "summary_line": "脚本初始：计划50源：ok 39 / partial 1 / failed 2 / 待浏览器8"
+    },
+    "supplemental_sources": [
+      {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+        "source_id": "google-ai",
+        "published_at": "2026-11-12T18:00:50+00:00",
+        "discovery": "chinese_editor_trace"
+      },
+      {
+        "url": "https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/",
+        "source_id": "google-antigravity",
+        "published_at": "2026-11-12",
+        "discovery": "chinese_editor_trace"
+      }
+    ],
+    "unopened": [
+      {
+        "url": "https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f",
+        "reason": "本机403，未打开；未收入目录"
+      },
+      {
+        "url": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/",
+        "reason": "本机403，未打开；仅标题级收录"
+      },
+      {
+        "url": "https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/",
+        "reason": "本机403，未打开；仅标题级收录，未进正文"
+      },
+      {
+        "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
+        "reason": "本机403，未打开；仅标题级收录，未进正文"
+      },
+      {
+        "url": "https://openai.com/index/children-first-declaration",
+        "reason": "本机403，未打开；仅标题级收录"
+      }
+    ],
+    "excluded_after_review": [
+      {
+        "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+        "reason": "篇幅与时间所限未读全文，未进正文，目录保留"
+      },
+      {
+        "url": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/",
+        "reason": "转述路透社的个人关系细节，与行业影响关系不大，未进正文，目录保留"
+      },
+      {
+        "url": "https://www.qbitai.com/2026/11/509291.html",
+        "reason": "量子位关于Project Glasswing的报道未核对原始出处，未进正文，目录保留"
+      }
+    ],
+    "catalog_review": {
+      "raw_receipt_candidates": 163,
+      "upstream_raw": 0,
+      "script_page_date_matches_without_links": 31,
+      "supplement_added": 2,
+      "unique": 160,
+      "reviewed": 136,
+      "pending": 27,
+      "displayed": 95,
+      "displayed_news": 91,
+      "displayed_discourse": 3,
+      "displayed_papers": 0,
+      "displayed_code": 1,
+      "excluded": 68,
+      "reasons": {
+        "prior_7_catalogs": 29,
+        "not_ai_related": 9,
+        "hn_lead_pending_trace": 25,
+        "duplicate_within_run": 3,
+        "pending_review": 2
+      },
+      "titles_translated": 62,
+      "body_used": 17,
+      "displayed_not_body": 78,
+      "below_catalog_target": false,
+      "target": 20
+    }
+  }
+}
