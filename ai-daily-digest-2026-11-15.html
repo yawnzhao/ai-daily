@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-11-15 · 先看哪张成绩单</title>
+<meta name="description" content="韩国重申英伟达供货计划，研究人员追踪 AI 在勒索软件中的实际用途。今天还看湿实验预测、编程智能体每做成一件事的成本，以及一段药物研发访谈。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-15.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-11-15 · 先看哪张成绩单">
+<meta property="og:description" content="韩国重申英伟达供货计划，研究人员追踪 AI 在勒索软件中的实际用途。今天还看湿实验预测、编程智能体每做成一件事的成本，以及一段药物研发访谈。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-15.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-11-14.html">上一期 · 11-14</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-11-15">2026年11月15日 · 星期日 · 第 70 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">5</span>条资讯</div>
+    <div class="stat"><span class="num">1</span>篇论文</div>
+    <div class="stat"><span class="num">1</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年11月15日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">3 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">韩国重申英伟达供货计划，研究人员追踪 AI 在勒索软件中的实际用途。今天还看湿实验预测、编程智能体每做成一件事的成本，以及一段药物研发访谈。</div></div><div class="news-item" id="korea-gpu-supply-after-huang"><div class="news-head"><span class="badge badge-model">算力与能源</span><h3>英伟达换帅后，韩国确认供货计划，台北市关注总部项目</h3></div><p>英伟达管理层更替后，与它做生意的各方关心的是手里那份承诺。TechCrunch 11 月 14 日汇总当地政府回应。按报道，韩国科学部门表示，英伟达已重申向韩国供应 26 万块先进 GPU 的计划，也会继续双方的 AI 合作项目。当地政府召开会议评估影响。这个数字是计划供货量，尚不能当作已经交付的设备。</p><p>台北市政府关注的是另一件事。按 TechCrunch 引述的说法，英伟达在当地筹建海外总部的项目按计划进行，公司迄今履行了合同义务。日本方面表示会密切观察，现阶段判断此次人事变化对全球 AI 产业的影响为时尚早。供货计划、建设项目和对产业的判断，各自有不同的查验时间点。</p><p>北京时间 11 月 15 日 05:41，TechCrunch 又报道了一封要求董事会恢复黄仁勋职务的请愿。报道援引请愿网站列出的支持者，包括马斯克等科技企业负责人。联署人呼吁在独立调查厘清事实期间让黄仁勋复职；董事会是否采纳，仍是另一个问题。</p><p><a href="https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/" target="_blank" rel="noopener">原文：TechCrunch</a></p><p><a href="https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/" target="_blank" rel="noopener">延伸阅读：TechCrunch</a></p><div class="source">来源：<a href="https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/" target="_blank" rel="noopener">TechCrunch</a> · 2026-11-14 原文 · TechCrunch 对各地政府回应的报道</div></div><div class="news-item" id="ransomware-language-and-negotiation"><div class="news-head"><span class="badge badge-model">平台安全</span><h3>勒索软件团伙用 AI 写钓鱼邮件、协助谈判，研究者提醒区分认领与实案</h3></div><p>《连线》采访了长期跟踪勒索软件的研究人员。Recorded Future 的 Allan Liska 观察到，攻击者更多地把语言模型用于制作钓鱼邮件和谈判，主要团伙的行动仍由人主导。曾在美国联邦调查局任职、现负责 Halcyon 研究的 Cynthia Kaiser 说，近来的增量更多来自国际案件；她认为更自然的本地语言内容降低了跨语言行骗的门槛。</p><p>研究人员监测团伙在泄露网站上声称攻击了哪些组织。这种记录有两个相反方向的偏差：有受害者不披露，有团伙夸大或重复认领。同一报道所列的夏季近三千起是部分研究者统计的认领量。它可以帮助观察攻击活动，却不能直接当作三千起独立核实案件，也不能从这条曲线算出多少增量由 AI 导致。</p><p><a href="https://www.wired.com/story/beware-the-new-ai-fueled-ransomware-boom/" target="_blank" rel="noopener">原文：WIRED</a></p><div class="source">来源：<a href="https://www.wired.com/story/beware-the-new-ai-fueled-ransomware-boom/" target="_blank" rel="noopener">WIRED</a> · 2026-11-14 原文 · WIRED 对安全研究人员的采访，未独立核查团伙认领</div></div><div class="news-item" id="bedrock-coding-agent-cost"><div class="news-head"><span class="badge badge-model">智能体</span><h3>给编程智能体选模型，AWS 建议把失败尝试也算进每道做对的题</h3></div><p>AWS 发布了一个在 Amazon Bedrock 上试验模型路由的示例。NVIDIA NeMo Switchyard 插件读取智能体近期的工具调用和返回结果，在两个候选模型之间选择。另一种随机分流方式可以给候选模型设权重，用于对照测试。示例使用 LiteLLM 作为网关，要求客户端随请求发来支持的会话历史。</p><p>这个示例最具体的地方是账单。基准脚本分别对路由组和单模型组跑任务，用测试是否通过判定完成。把一组全部尝试的估算费用除以通过测试的任务数，就得到每个成功任务的成本。一个模型每次调用便宜，如果多走好几轮、反复重试，或最终没做成，算出来的结果可能更贵。AWS 明确把这套集成标为实验性示例；文档提供测量方法，不能据此给所有工作负载选出最省钱的模型。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/" target="_blank" rel="noopener">原文：AWS AI Blog</a></p><div class="source">来源：<a href="https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/" target="_blank" rel="noopener">AWS AI Blog</a> · 2026-11-13 原文 · AWS 发布方工程博客与基准说明，未运行</div></div><div class="paper-also"><div class="paper-also-title">其他动态</div><div class="paper-also-item" id="nvidia-venture-capital-followup"><span class="paper-also-num">01</span><div><strong>初创企业担心英伟达换帅后，更难为第一批算力筹资</strong><p>TechCrunch 直接采访了投资人和创始人。Seligman Ventures 的 Umesh Padval 说，过去不少重大投资决定来自黄仁勋本人。一位风险投资人举例，初创公司需要购置大量 GPU 时，英伟达先出资会让其他投资人更愿意跟进。Battery Ventures 的 Dharmesh Thakker 认为，大型云厂商可能会投资已经较成熟的公司，但未必同样愿意承担尚无收入的基础设施项目。报道反映的是投资人的判断；英伟达并未在该报道中公布新的创投限额。</p><p><a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank" rel="noopener">原文：TechCrunch</a></p><p>来源：<a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank" rel="noopener">TechCrunch</a> · 2026-11-13 原文 · TechCrunch 采访投资人和创始人的报道</p></div></div><div class="paper-also-item" id="helen-toner-policy-research"><span class="paper-also-num">02</span><div><strong>Helen Toner 谈政策研究怎样把技术细节交到决策者手里</strong><p>在 The Verge 的 Decoder 访谈中，前 OpenAI 董事 Helen Toner 回顾了她与同事在 2019 年筹建政策研究团队时遇到的问题：政策制定者要判断新兴技术，却未必有时间和专业背景跟踪进展。团队既写长报告，也把结果做成面向忙碌决策者的简报。她把了解技术和了解国家安全决策环境同时列为研究工作的要求。这里采用的是受访者对工作方法的说明。</p><p><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview" target="_blank" rel="noopener">原文：The Verge</a></p><p>来源：<a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview" target="_blank" rel="noopener">The Verge</a> · 2026-11-14 原文 · Decoder 访谈逐字稿中关于政策研究的问答</p></div></div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="jaderberg-experiment-feedback"><div class="insight-banner"><div class="meta">2026-11-12 历史访谈，11 月 13 日收录</div><h3>Max Jaderberg 谈药物研发：一次实验之后，哪些信息值得带进下一轮？</h3></div><div class="insight-body"><p>Max Jaderberg 是 Isomorphic Labs 总裁。11 月 12 日发布的 No Priors 访谈中，Elad Gil 请他回顾药物研发中对作用机理的认识怎样逐步形成。话语场收录了原片 00:07:14–00:08:00 的编辑转述。Jaderberg 描述了一个反复出现的过程：先提出解释或设计，拿去做实验，再根据反馈修正；实验本身很慢，从结果里辨认真正有用的信息也有难度。</p><p>这段话给今天的实验排序论文补上了下一步。一场评测在公布实测排序时可以结束，研发者还得判断该改哪个假设、下一笔实验预算该花在哪里。这个联系是本刊的分析。节目页保留了来源和时间段。</p><p><a href="https://q.cxspace.com/talks/source-da6d82eaad9440c9/" target="_blank" rel="noopener">原文：话语场 · No Priors</a></p><p>来源：<a href="https://q.cxspace.com/talks/source-da6d82eaad9440c9/" target="_blank" rel="noopener">话语场 · No Priors</a> · 2026-11-12 历史访谈，11 月 13 日收录 · 话语场已上线节目页及所标片段的编辑转述，未逐字核验原片</p></div></div><div class="insight-card" id="lauren-tan-verifying-agent-code"><div class="insight-banner"><div class="meta">2026-11-14 原片日期；11 月 15 日收录</div><h3>Lauren Tan 怎样给编程智能体写的代码设检查？</h3></div><div class="insight-body"><p>AI Engineer 发布了 Lauren Tan 关于团队使用编程智能体的演讲。发布方的节目说明把检查分成几个环节：用架构约束缩小智能体可以修改的范围，把能自动执行的规则交给静态检查，再通过测试、运行时检查和形式化方法核对代码行为。原片章节在 06:56 转到用检查规则代替注释，在 09:40 转到运行时验证。</p><p>这场演讲与 AWS 的模型路由示例追问的是同一次交付的两个环节。路由示例关心做成一个任务花多少钱，Tan 的节目提醒读者还要看工程团队用什么条件来判断「做成」。此处依据发布方说明和章节表转述，未把演讲者的自报指标当作行业基准。</p><p><a href="https://q.cxspace.com/talks/source-87dd31e7fa6155e8/" target="_blank" rel="noopener">原文：话语场 · AI Engineer</a></p><p><a href="https://www.youtube.com/watch?v=O_zcc6Xl12g" target="_blank" rel="noopener">延伸阅读：youtube.com</a></p><p>来源：<a href="https://q.cxspace.com/talks/source-87dd31e7fa6155e8/" target="_blank" rel="noopener">话语场 · AI Engineer</a> · 2026-11-14 原片日期；11 月 15 日收录 · 发布方节目说明和原片章节表，未逐句听审</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇论文</span></div><div class="paper-item" id="spu-predict-hidden-experiments"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">实验结果先封存，再请 AI 排序：哪些预测经得住湿实验？</span></div><div class="paper-tags"><span class="paper-tag">研究进展</span><span class="paper-tag">2026-11-11 原预印本；11 月 14 日报道</span><span class="paper-tag">arXiv v1 正文的方法、表 1、结果讨论及局限；未复现实验</span></div><div class="paper-body"><p>11 月 14 日，量子位报道了湿实验预测基准 Science Prediction Universe。原预印本于 11 月 11 日提交。研究者把候选材料、实验条件和测量方法交给智能体，请它在看到实测结果之前，对候选项排序。比如同一反应改变条件，哪组产率更高？样品顺序交给独立评分程序，与实验室的测量排序对照。</p><p>基准涵盖化学、材料科学、生物和医学，包括从已发表论文整理的 100 项公开任务，以及来自四组未发表实验的 16 项私有任务。每次运行有八小时预算，可检索资料、安装工具、运行计算。公开任务存在见过文献答案的可能，因此研究者匿名化任务，筛查工具输出，并单列私有任务结果。</p><p>论文表 1 中，公开任务最高的任务调整均分为 0.478，来自 Opus 5.5。该配置只有 44 道题得到评分，其中 23 道超过该题的随机阈值。部分生物安全过滤导致若干配置拒答。0.478 是排序指标的调整均值，不能读作答对 47.8%。在 GPT-6 Astra 的两档推理强度对照中，最高档运行时长的中位倍数为 4.8，研究者未测到排序分数随之提高。</p><p>研究者复盘部分轨迹时发现，智能体有时会认真计算一个容易取得的替代指标，而它并不主导题目所问的实测结果。限制也很具体：私有任务只有四组实验，区间较宽；每个配置包含模型、推理设置和执行工具，跨配置差异不能全部归因于模型自身。论文尚未经过同行评审。</p><p><a href="https://arxiv.org/html/2611.15049v1" target="_blank" rel="noopener">原文：arXiv</a></p><p><a href="https://www.qbitai.com/2026/11/510232.html" target="_blank" rel="noopener">延伸阅读：量子位</a></p><p><a href="https://arxiv.org/abs/2611.15049" target="_blank" rel="noopener">延伸阅读：arXiv</a></p></div><a class="paper-link" href="https://arxiv.org/html/2611.15049v1" target="_blank" rel="noopener">arXiv →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="langchain-openai-python-support"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.8.0" target="_blank" rel="noopener">langchain-openai 升级到 1.8.0，项目需先核对 Python 和核心包版本</a></span><span class="oss-license">MIT</span></div><p>LangChain 的 OpenAI 集成包将最低 Python 版本提高到 3.11，要求 langchain-core 至少为 1.8.0。发布说明指出，使用 Python 3.10 的项目仍会解析到 langchain-openai 1.7.x。两套环境即使使用相同的无版本安装命令，拿到的版本也可能不同。</p><p>这次更新还加入面向 Decisions API 的 OpenAIClassifier。要在现有项目中用到新接口，可以先查看实际安装的集成包、核心包和 Python 版本，再决定是否迁移环境。依据仓库发行说明整理，未安装实测。</p><p><a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.8.0" target="_blank" rel="noopener">原文：GitHub · LangChain</a></p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 35/50 个来源完成检查</summary><div class="content"><p>正文以北京时间 11 月 14 日 06:00 至 15 日 06:00 为主，另标注补漏与历史材料。资讯源目录按 11 月 13 日 18:00 至 15 日 06:00 的 36 小时窗口去重。</p><p>逐源收据记录访问或解析缺口。按小时可核的订阅流单独补查，只有日期的网页无法确认最后一小时是否有更新。</p><p><strong>检查尚未完成的来源</strong>：下列状态表示检查缺口，不能据此认定近期无更新；“已完整检查且无新增”另行记录。</p><ul><li><strong>Anthropic News</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>Claude Blog</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>xAI</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>Qwen</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>通义实验室</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>DeepSeek</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>阶跃星辰 StepFun</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目</li><li><strong>UNESCO AI</strong>：访问或抓取失败。TimeoutError: The read operation timed out</li><li><strong>arXiv cs.AI / cs.LG / cs.CL</strong>：已检查部分内容，覆盖或日期待核。已核实际采用的研究或发现入口；未完成全窗口逐条审核。</li><li><strong>Hugging Face Daily Papers</strong>：已检查部分内容，覆盖或日期待核。已核实际采用的研究或发现入口；未完成全窗口逐条审核。</li><li><strong>OpenReview</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>GitHub Trending（日榜 + Python 日榜）</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>36氪 AI 频道（逐篇核验原创与转载）</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>字节跳动 Seed·博客与论文</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li><li><strong>MiniMax·News &amp; Updates</strong>：已检查部分内容，覆盖或日期待核。已查看发布方网页／元数据；未能确认完整窗口。</li></ul><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
+<details class="paper-observation source-catalog" id="source-catalog"><summary class="label">资讯源 <span class="source-catalog-count">43 条</span></summary><div class="content"><h3 class="source-catalog-heading">新闻资讯 · 20 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/" target="_blank" rel="noopener">英伟达换帅后，韩国确认供货计划，台北市关注总部项目<span class="source-catalog-original">Asian governments react to Nvidia CEO Jensen Huang’s exit</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.wired.com/story/beware-the-new-ai-fueled-ransomware-boom/" target="_blank" rel="noopener">勒索软件团伙用 AI 写钓鱼邮件、协助谈判，研究者提醒区分认领与实案<span class="source-catalog-original">Beware the New AI-Fueled Ransomware Boom</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/" target="_blank" rel="noopener">给编程智能体选模型，AWS 建议把失败尝试也算进每道做对的题<span class="source-catalog-original">Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard</span></a><span class="source-catalog-name">AWS AI Blog</span></li><li><a href="https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/" target="_blank" rel="noopener">初创企业担心英伟达换帅后，更难为第一批算力筹资<span class="source-catalog-original">Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview" target="_blank" rel="noopener">Helen Toner 谈政策研究怎样把技术细节交到决策者手里<span class="source-catalog-original">The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/" target="_blank" rel="noopener">马斯克等科技公司负责人联署请愿，要求英伟达董事会恢复黄仁勋职务<span class="source-catalog-original">Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/" target="_blank" rel="noopener">那些没能走下去的 AI 项目和创业公司<span class="source-catalog-original">The AI graveyard: a running list of projects and startups that didn’t make it</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.interconnects.ai/p/open-source-ai-without-jensen" target="_blank" rel="noopener">黄仁勋离任后的开源 AI<span class="source-catalog-original">Open-source AI without Jensen</span></a><span class="source-catalog-name">Interconnects</span></li><li><a href="https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo" target="_blank" rel="noopener">黄仁勋与擅长舞台演说的创始人 CEO 的式微<span class="source-catalog-original">Jensen Huang and the decline of the visionary showman founder CEO</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.wired.com/story/no-pilots-few-air-traffic-controllers-what-could-go-wrong/" target="_blank" rel="noopener">没有飞行员、空管人员也很少，航空运行面临哪些风险？<span class="source-catalog-original">No Pilots. Few Air Traffic Controllers. What Could Go Wrong?</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://www.qbitai.com/2026/11/510232.html" target="_blank" rel="noopener">湿实验预测基准研究<span class="source-catalog-original">「史上最严」湿实验预测基准发布！推理拉满、算力翻5倍也白搭</span></a><span class="source-catalog-name">量子位</span></li><li><a href="https://latent.space/p/ainews-the-no-ai-slop-manifesto/" target="_blank" rel="noopener">反对低质 AI 内容的宣言<span class="source-catalog-original">[AINews] The No AI Slop Manifesto</span></a><span class="source-catalog-name">Latent Space</span></li><li><a href="https://www.qbitai.com/2026/11/510013.html" target="_blank" rel="noopener">海外关注的 AI 短片创作<span class="source-catalog-original">中专生拍出《哈利·波特》爆款！欧美明星、好莱坞制片人集体点赞</span></a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search" target="_blank" rel="noopener">亚马逊计划为全球网络购物数据建立索引<span class="source-catalog-original">Amazon has a plan to index the world’s online shopping data</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1/" target="_blank" rel="noopener">GS Caltex 如何用 Amazon SageMaker Canvas 运行生产级机器学习（上）<span class="source-catalog-original">Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1</span></a><span class="source-catalog-name">AWS AI Blog</span></li><li><a href="https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">让 Amazon Bedrock AgentCore 会话更快启动的架构方法<span class="source-catalog-original">Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime</span></a><span class="source-catalog-name">AWS AI Blog</span></li><li><a href="https://www.eff.org/deeplinks/2026/11/tech-companies-are-trying-shift-entire-concept-privacy-again" target="_blank" rel="noopener">电子前线基金会谈 AI 眼镜等产品如何影响旁人的隐私<span class="source-catalog-original">Tech Companies Are Trying to Shift the Entire Concept of Privacy (Again)</span></a><span class="source-catalog-name">电子前线基金会</span></li><li><a href="https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/" target="_blank" rel="noopener">美国联邦航空管理局扩大 AI 辅助空域拥堵管理的应用范围<span class="source-catalog-original">FAA expands AI advice to manage air traffic congestion across entire US airspace</span></a><span class="source-catalog-name">Ars Technica</span></li><li><a href="https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/" target="_blank" rel="noopener">OpenAI 董事谈 AI 接管社会的风险及时间判断<span class="source-catalog-original">OpenAI board member worries an AI &quot;takeover&quot; of society could be months away</span></a><span class="source-catalog-name">Ars Technica</span></li><li><a href="https://www.wired.com/story/black-roles-are-disappearing-in-hollywood-this-startup-is-using-ai-microdramas-to-fight-back/" target="_blank" rel="noopener">一家创业公司用 AI 微短剧为好莱坞带去更多黑人故事<span class="source-catalog-original">This Startup Is Betting on AI Microdramas to Get More Black Stories in Hollywood</span></a><span class="source-catalog-name">WIRED</span></li></ul><h3 class="source-catalog-heading">话语场 · 1 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://www.cognitiverevolution.ai/ai-the-modern-enigma-nathan-s-keynote-at-it-revolution-s-enterprise-ai-summit-at-bletchley-park-newsletter/" target="_blank" rel="noopener">Nathan Labenz 在布莱切利园谈前沿 AI 的能力与控制<span class="source-catalog-original">AI, the Modern Enigma: Nathan&#x27;s Keynote at IT Revolution&#x27;s Enterprise AI Summit at Bletchley Park</span></a><span class="source-catalog-name">Cognitive Revolution</span></li></ul><h3 class="source-catalog-heading">开源项目与版本更新 · 22 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.8.0" target="_blank" rel="noopener">langchain-openai 升级到 1.8.0，项目需先核对 Python 和核心包版本<span class="source-catalog-original">langchain langchain-openai==1.8.0</span></a><span class="source-catalog-name">GitHub · langchain-ai/langchain</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12387" target="_blank" rel="noopener">llama.cpp b12387：修复 32 位平台的尾零计数<span class="source-catalog-original">llama.cpp b12387</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12386" target="_blank" rel="noopener">llama.cpp b12386：修复 Hexagon 的注意力计算边界<span class="source-catalog-original">llama.cpp b12386</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12385" target="_blank" rel="noopener">llama.cpp b12385：修复 Qwen2VL 前馈网络的权重缩放<span class="source-catalog-original">llama.cpp b12385</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12383" target="_blank" rel="noopener">llama.cpp b12383：调整不兼容权重的后端拆分<span class="source-catalog-original">llama.cpp b12383</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12381" target="_blank" rel="noopener">llama.cpp b12381：修复视频像素宽高比与旋转<span class="source-catalog-original">llama.cpp b12381</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12380" target="_blank" rel="noopener">llama.cpp b12380：允许接入自定义视频解码器<span class="source-catalog-original">llama.cpp b12380</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12379" target="_blank" rel="noopener">llama.cpp b12379：降低模板渲染开销<span class="source-catalog-original">llama.cpp b12379</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12378" target="_blank" rel="noopener">llama.cpp b12378：避开仅含填充的 Whisper 音频块<span class="source-catalog-original">llama.cpp b12378</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12377" target="_blank" rel="noopener">llama.cpp b12377：重整 DFlash 推测解码实现<span class="source-catalog-original">llama.cpp b12377</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12376" target="_blank" rel="noopener">llama.cpp b12376：Hexagon 增加对两种量化格式的支持<span class="source-catalog-original">llama.cpp b12376</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12375" target="_blank" rel="noopener">llama.cpp b12375：移除对 Mistral 的旧兼容处理<span class="source-catalog-original">llama.cpp b12375</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/BerriAI/litellm/releases/tag/v1.106.10" target="_blank" rel="noopener">litellm v1.106.10：维护版本更新<span class="source-catalog-original">litellm v1.106.10</span></a><span class="source-catalog-name">GitHub · BerriAI/litellm</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12374" target="_blank" rel="noopener">llama.cpp b12374：修复 Metal 矩阵向量运算的目标偏移溢出<span class="source-catalog-original">llama.cpp b12374</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12373" target="_blank" rel="noopener">llama.cpp b12373：Hexagon 增加 SSM_SCAN 运算<span class="source-catalog-original">llama.cpp b12373</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12370" target="_blank" rel="noopener">llama.cpp b12370：调优两类 AMD 显卡的矩阵乘配置<span class="source-catalog-original">llama.cpp b12370</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li><li><a href="https://github.com/openai/openai-python/releases/tag/v3.51.0" target="_blank" rel="noopener">openai-python v3.51.0：扩充智能体、图像和实时 API 支持<span class="source-catalog-original">openai-python v3.51.0</span></a><span class="source-catalog-name">GitHub · openai/openai-python</span></li><li><a href="https://github.com/BerriAI/litellm/releases/tag/v1.108.8" target="_blank" rel="noopener">litellm v1.108.8：长期支持分支维护更新<span class="source-catalog-original">litellm v1.108.8</span></a><span class="source-catalog-name">GitHub · BerriAI/litellm</span></li><li><a href="https://github.com/BerriAI/litellm/releases/tag/v1.111.0-dev.2" target="_blank" rel="noopener">litellm v1.111.0-dev.2：开发预览版本<span class="source-catalog-original">litellm v1.111.0-dev.2</span></a><span class="source-catalog-name">GitHub · BerriAI/litellm</span></li><li><a href="https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax" target="_blank" rel="noopener">用 JAX 实现 DeepSeek V3 的小型演示<span class="source-catalog-original">deepseek-v3-jax</span></a><span class="source-catalog-name">GitHub · Vaibhaav-Tiwari</span></li><li><a href="https://github.com/huggingface/transformers/releases/tag/v5.23.0" target="_blank" rel="noopener">transformers v5.23.0：增加 Inkling 2 等模型支持<span class="source-catalog-original">transformers v5.23.0</span></a><span class="source-catalog-name">GitHub · huggingface/transformers</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0" target="_blank" rel="noopener">llama.cpp v1.0.0：更新公共接口、本地推理服务与网页界面<span class="source-catalog-original">llama.cpp v1.0.0</span></a><span class="source-catalog-name">GitHub · ggml-org/llama.cpp</span></li></ul></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-11-14.html">上一期 · 11-14</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
