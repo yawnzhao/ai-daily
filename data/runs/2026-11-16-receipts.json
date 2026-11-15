@@ -1,0 +1,1239 @@
+{
+  "summary": {
+    "window": [
+      "2026-11-14T10:00:00Z",
+      "2026-11-15T22:00:00Z"
+    ],
+    "planned": 50,
+    "ok": 29,
+    "partial": 21,
+    "failed": 0,
+    "pending": 0,
+    "pending_browser": 0,
+    "core_not_ok": [
+      "anthropic",
+      "xai",
+      "arxiv",
+      "github-trending"
+    ],
+    "incomplete": true,
+    "success_rate": 0.58
+  },
+  "sources": [
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic News",
+      "core": true,
+      "method": "page",
+      "checked_url": "https://www.anthropic.com/news",
+      "checked_at": "2026-11-15T21:06:37.916Z",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:50.549424+08:00",
+      "increment_checked_url": "https://www.anthropic.com/news",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://www.anthropic.com/engineering",
+          "http": 200,
+          "title": "Engineering \\ Anthropic",
+          "checked_at": "2026-11-15T22:02:52.606Z"
+        },
+        {
+          "url": "https://www.anthropic.com/news",
+          "http": 200,
+          "title": "Newsroom \\ Anthropic",
+          "checked_at": "2026-11-15T22:02:52.606Z"
+        }
+      ]
+    },
+    {
+      "source_id": "claude-blog",
+      "name": "Claude Blog",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://claude.com/blog",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:50.549574+08:00",
+      "increment_checked_url": "https://claude.com/blog",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI News",
+      "core": true,
+      "method": "rss",
+      "checked_url": "https://openai.com/news/rss.xml",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:50.549652+08:00",
+      "increment_checked_url": "https://openai.com/news/rss.xml",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "google-ai",
+      "name": "Google AI Blog",
+      "core": true,
+      "method": "rss",
+      "checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:50.549696+08:00",
+      "increment_checked_url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "xai",
+      "name": "xAI",
+      "core": true,
+      "method": "browser",
+      "checked_url": "https://x.ai/news",
+      "checked_at": "2026-11-15T21:06:37.916Z",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:50.549740+08:00",
+      "increment_checked_url": "https://x.ai/news",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://x.ai/news",
+          "http": null,
+          "title": "",
+          "checked_at": "2026-11-15T22:02:52.605Z"
+        }
+      ]
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://deepmind.google/blog/rss.xml",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "补查官方 RSS 的 100 条时间记录，最近一条为 2026-11-12。",
+      "upstream_status": "failed",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:50.549777+08:00",
+      "increment_checked_url": "https://deepmind.google/blog/rss.xml",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "nvidia",
+      "name": "NVIDIA Newsroom",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:50.549816+08:00",
+      "increment_checked_url": "https://nvidianews.nvidia.com/releases.xml",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "huggingface",
+      "name": "Hugging Face",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://huggingface.co/blog/feed.xml",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:50.549848+08:00",
+      "increment_checked_url": "https://huggingface.co/blog/feed.xml",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "cursor",
+      "name": "Cursor Changelog",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://cursor.com/changelog/rss.xml",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:50.962631+08:00",
+      "increment_checked_url": "https://cursor.com/changelog/rss.xml",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "microsoft",
+      "name": "Microsoft AI",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://news.microsoft.com/source/tag/ai/feed/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:50.987408+08:00",
+      "increment_checked_url": "https://news.microsoft.com/source/tag/ai/feed/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "qwen",
+      "name": "Qwen",
+      "core": false,
+      "method": "browser",
+      "checked_url": "https://qwen.ai/research",
+      "checked_at": "2026-11-15T21:06:39.286Z",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.005711+08:00",
+      "increment_checked_url": "https://qwen.ai/research",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://qwenlm.github.io/",
+          "http": 200,
+          "title": "Qwen",
+          "checked_at": "2026-11-15T22:02:53.724Z"
+        },
+        {
+          "url": "https://qwen.ai/research",
+          "http": 200,
+          "title": "Qwen",
+          "checked_at": "2026-11-15T22:02:53.725Z"
+        }
+      ]
+    },
+    {
+      "source_id": "tongyi",
+      "name": "通义实验室",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://qianwen.aliyun.com/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.013252+08:00",
+      "increment_checked_url": "https://qianwen.aliyun.com/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "deepseek",
+      "name": "DeepSeek",
+      "core": false,
+      "method": "browser",
+      "checked_url": "https://api-docs.deepseek.com/updates/",
+      "checked_at": "2026-11-15T21:06:40.078Z",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.019956+08:00",
+      "increment_checked_url": "https://api-docs.deepseek.com/updates/",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://api-docs.deepseek.com/updates/",
+          "http": 200,
+          "title": "Change Log | DeepSeek API Docs",
+          "checked_at": "2026-11-15T22:02:54.600Z"
+        },
+        {
+          "url": "https://www.deepseek.com/en/harness/",
+          "http": 200,
+          "title": "DeepSeek Harness | Explore the limits of intelligence",
+          "checked_at": "2026-11-15T22:02:54.891Z"
+        },
+        {
+          "url": "https://github.com/deepseek-ai",
+          "http": 200,
+          "title": "DeepSeek · GitHub",
+          "checked_at": "2026-11-15T22:02:54.966Z"
+        }
+      ]
+    },
+    {
+      "source_id": "moonshot",
+      "name": "月之暗面 Moonshot",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://www.moonshot.cn/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.063057+08:00",
+      "increment_checked_url": "https://www.moonshot.cn/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "zhipu",
+      "name": "智谱 Z.ai",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://www.zhipuai.cn/news",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.085540+08:00",
+      "increment_checked_url": "https://www.zhipuai.cn/news",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "stepfun",
+      "name": "阶跃星辰 StepFun",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://www.stepfun.com/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.086185+08:00",
+      "increment_checked_url": "https://www.stepfun.com/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "mistral",
+      "name": "Mistral",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://mistral.ai/news",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.228430+08:00",
+      "increment_checked_url": "https://mistral.ai/news",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "eu-digital",
+      "name": "European Commission Digital Strategy",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.323921+08:00",
+      "increment_checked_url": "https://digital-strategy.ec.europa.eu/en/news",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "unesco",
+      "name": "UNESCO AI",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.362992+08:00",
+      "increment_checked_url": "https://www.unesco.org/en/artificial-intelligence",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "oecd",
+      "name": "OECD.AI",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://oecd.ai/en/wonk",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.379520+08:00",
+      "increment_checked_url": "https://oecd.ai/en/wonk",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "arxiv",
+      "name": "arXiv cs.AI / cs.LG / cs.CL",
+      "core": true,
+      "method": "api",
+      "checked_url": "https://export.arxiv.org/api/query",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "API 增量请求超时。另读 cs.AI、cs.LG 原始公告页，最新批次为 11 月 13 日；其余分类未逐项确认。",
+      "upstream_status": "partial",
+      "increment_status": "failed",
+      "increment_checked_at": "2026-11-16T06:02:51.457970+08:00",
+      "increment_checked_url": "https://export.arxiv.org/api/query",
+      "increment_count": 0,
+      "items": [],
+      "supplement_urls": [
+        "https://arxiv.org/list/cs.AI/recent",
+        "https://arxiv.org/list/cs.LG/recent"
+      ]
+    },
+    {
+      "source_id": "hf-daily-papers",
+      "name": "Hugging Face Daily Papers",
+      "core": false,
+      "method": "api",
+      "checked_url": "https://huggingface.co/api/daily_papers",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "复查论文入口及 11 月 15 日每日论文 API；后者当次返回空列表，其他日期与逐时覆盖未确认。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.601910+08:00",
+      "increment_checked_url": "https://huggingface.co/api/daily_papers",
+      "increment_count": 0,
+      "items": [],
+      "supplement_urls": [
+        "https://huggingface.co/api/daily_papers?date=2026-11-15"
+      ]
+    },
+    {
+      "source_id": "openreview",
+      "name": "OpenReview",
+      "core": false,
+      "method": "browser",
+      "checked_url": "https://openreview.net/",
+      "checked_at": "2026-11-15T21:06:40.204Z",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.659873+08:00",
+      "increment_checked_url": "https://openreview.net/",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://openreview.net/",
+          "http": 200,
+          "title": "Venues | OpenReview",
+          "checked_at": "2026-11-15T22:02:55.310Z"
+        }
+      ]
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending（日榜 + Python 日榜）",
+      "core": true,
+      "method": "page",
+      "checked_url": "https://github.com/trending?since=daily",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:51.833700+08:00",
+      "increment_checked_url": "https://github.com/trending?since=daily",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "36kr-ai",
+      "name": "36氪 AI 频道（逐篇核验原创与转载）",
+      "core": false,
+      "method": "browser",
+      "checked_url": "https://www.36kr.com/information/AI/",
+      "checked_at": "2026-11-15T21:06:40.347Z",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:52.110413+08:00",
+      "increment_checked_url": "https://www.36kr.com/information/AI/",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://www.36kr.com/information/AI/",
+          "http": 200,
+          "title": "36氪_让一部分人先看到未来",
+          "checked_at": "2026-11-15T22:02:56.361Z"
+        }
+      ]
+    },
+    {
+      "source_id": "cac-ai",
+      "name": "国家网信办·网信发布（AI 相关）",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:52.119348+08:00",
+      "increment_checked_url": "https://www.cac.gov.cn/wxzw/wxfb/A093702index_1.htm",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "bytedance-seed",
+      "name": "字节跳动 Seed·博客与论文",
+      "core": false,
+      "method": "browser",
+      "checked_url": "https://seed.bytedance.com/research",
+      "checked_at": "2026-11-15T21:06:41.180Z",
+      "status": "ok",
+      "evidence": "两次核对 Seed Research 的发布入口，最新列示日期为 11 月 9 日。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:52.200040+08:00",
+      "increment_checked_url": "https://seed.bytedance.com/research",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://seed.bytedance.com/research",
+          "http": 200,
+          "title": "Seed Research",
+          "checked_at": "2026-11-15T22:02:56.494Z"
+        }
+      ]
+    },
+    {
+      "source_id": "minimax",
+      "name": "MiniMax·News & Updates",
+      "core": false,
+      "method": "browser",
+      "checked_url": "https://www.minimax.io/news",
+      "checked_at": "2026-11-15T21:06:41.597Z",
+      "status": "partial",
+      "evidence": "上游或增量的公开入口未能确认整个窗口。",
+      "upstream_status": "partial",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:52.227089+08:00",
+      "increment_checked_url": "https://www.minimax.io/news",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://www.minimax.io/news",
+          "http": 200,
+          "title": "MiniMax AI | AGI Research, Product Updates & Partner News | MiniMax",
+          "checked_at": "2026-11-15T22:02:57.089Z"
+        }
+      ]
+    },
+    {
+      "source_id": "techcrunch-ai",
+      "name": "TechCrunch",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+      "checked_at": "2026-11-15T21:06:06.018170+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:52.391008+08:00",
+      "increment_checked_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "increment_count": 1,
+      "items": [
+        {
+          "url": "https://techcrunch.com/2026/11/15/snl-gathers-all-the-tech-tycoons-for-a-lesson-in-dating-and-spycraft/",
+          "title": "SNL gathers all the tech tycoons for a lesson in dating and spycraft",
+          "published_at": "2026-11-15T20:20:57+00:00"
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
+          "title": "Where was Nvidia’s security team?",
+          "published_at": "2026-11-15T00:08:07+00:00"
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+          "title": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+          "published_at": "2026-11-14T21:41:22+00:00"
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+          "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+          "published_at": "2026-11-14T17:30:00+00:00"
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+          "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+          "published_at": "2026-11-14T16:34:15+00:00"
+        },
+        {
+          "url": "https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/",
+          "title": "Is bad news for Jensen Huang also bad news for the AI industry?",
+          "published_at": "2026-11-15T21:56:35+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "ars-technica-ai",
+      "name": "Ars Technica",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://arstechnica.com/ai/",
+      "checked_at": "2026-11-15T21:06:06.625906+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:52.719662+08:00",
+      "increment_checked_url": "https://arstechnica.com/ai/feed/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "mit-technology-review-ai",
+      "name": "MIT Technology Review",
+      "core": false,
+      "method": "browser",
+      "checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+      "checked_at": "2026-11-15T21:06:41.630Z",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:52.727424+08:00",
+      "increment_checked_url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+      "increment_count": 0,
+      "items": [],
+      "increment_browser": [
+        {
+          "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+          "http": 200,
+          "title": "Artificial intelligence | MIT Technology Review",
+          "checked_at": "2026-11-15T22:02:57.439Z"
+        }
+      ]
+    },
+    {
+      "source_id": "404-media",
+      "name": "404 Media",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://www.404media.co/",
+      "checked_at": "2026-11-15T21:06:06.022588+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:52.844844+08:00",
+      "increment_checked_url": "https://www.404media.co/rss/",
+      "increment_count": 0,
+      "items": [
+        {
+          "url": "https://www.404media.co/this-comic-kills-technofascists/",
+          "title": "This Comic Kills Technofascists",
+          "published_at": "2026-11-15T13:00:00+00:00"
+        },
+        {
+          "url": "https://www.404media.co/scientists-made-monkeys-watch-minions-to-study-their-brains/",
+          "title": "Scientists Made Monkeys Watch Minions to Study Their Brains",
+          "published_at": "2026-11-14T13:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "wired-ai",
+      "name": "WIRED",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.wired.com/feed/tag/ai/latest/rss",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.051578+08:00",
+      "increment_checked_url": "https://www.wired.com/feed/tag/ai/latest/rss",
+      "increment_count": 0,
+      "items": [
+        {
+          "url": "https://www.wired.com/story/ai-djs-completely-kill-my-groove/",
+          "title": "AI DJs Completely Kill My Groove",
+          "published_at": "2026-11-15T12:00:00+00:00"
+        },
+        {
+          "url": "https://www.wired.com/story/this-ai-tamagotchi-oats-turns-everyday-objects-into-needy-virtual-pets/",
+          "title": "This AI Tamagotchi Turns Everyday Objects Into Needy Virtual Pets",
+          "published_at": "2026-11-15T11:00:00+00:00"
+        },
+        {
+          "url": "https://www.wired.com/story/beware-the-new-ai-fueled-ransomware-boom/",
+          "title": "Beware the New AI-Fueled Ransomware Boom",
+          "published_at": "2026-11-14T13:00:00+00:00"
+        },
+        {
+          "url": "https://www.wired.com/story/no-pilots-few-air-traffic-controllers-what-could-go-wrong/",
+          "title": "No Pilots. Few Air Traffic Controllers. What Could Go Wrong?",
+          "published_at": "2026-11-14T11:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "the-verge-ai",
+      "name": "The Verge",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.168090+08:00",
+      "increment_checked_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "increment_count": 0,
+      "items": [
+        {
+          "url": "https://www.theverge.com/tech/1033999/jensen-huang-return-nvidia-megaspeed",
+          "title": "Jensen Huang might be plotting a return and more of the latest Nvidia drama",
+          "published_at": "2026-11-15T15:43:49-05:00"
+        },
+        {
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+          "title": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+          "published_at": "2026-11-15T14:15:43-05:00"
+        },
+        {
+          "url": "https://www.theverge.com/column/1033943/jensen-huang-nvidia-china-spying-scandal-resignation",
+          "title": "An overview of Jensen Huang’s messy days",
+          "published_at": "2026-11-15T08:00:00-05:00"
+        },
+        {
+          "url": "https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
+          "title": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
+          "published_at": "2026-11-14T10:00:00-05:00"
+        },
+        {
+          "url": "https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo",
+          "title": "Jensen Huang and the decline of the visionary showman founder CEO",
+          "published_at": "2026-11-14T07:00:00-05:00"
+        }
+      ]
+    },
+    {
+      "source_id": "cloudflare-ai",
+      "name": "Cloudflare AI",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://blog.cloudflare.com/tag/ai/rss/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.242841+08:00",
+      "increment_checked_url": "https://blog.cloudflare.com/tag/ai/rss/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "meta-engineering",
+      "name": "Meta Engineering",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://engineering.fb.com/feed/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.323192+08:00",
+      "increment_checked_url": "https://engineering.fb.com/feed/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "hacker-news-ai",
+      "name": "Hacker News",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://news.ycombinator.com/rss",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.404337+08:00",
+      "increment_checked_url": "https://news.ycombinator.com/rss",
+      "increment_count": 1,
+      "items": [
+        {
+          "url": "https://www.youtube.com/watch?v=7_JF3etiAv8",
+          "title": "A short explainer on how El Niño works [video]",
+          "published_at": "2026-11-15T18:23:21+00:00"
+        },
+        {
+          "url": "https://arkanumdata.com/research/house-trades",
+          "title": "Do House members' stock trades beat the market? A test of 8,900 trades",
+          "published_at": "2026-11-15T19:46:02+00:00"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/11/15/science/birdbrain-crows-birds-research-decision.html",
+          "title": "'Birdbrain' Is a Misnomer. Crows Make Decisions Faster Than We Can",
+          "published_at": "2026-11-15T17:53:31+00:00"
+        },
+        {
+          "url": "https://macanorak.com/the-macbook-pros-oled-pwm-problem-when-a-better-display-becomes-worse-to-use/",
+          "title": "The MacBook Pro's OLED PWM problem",
+          "published_at": "2026-11-15T13:15:22+00:00"
+        },
+        {
+          "url": "https://github.com/eclipse-mosquitto/mosquitto",
+          "title": "Eclipse Mosquitto – An open source MQTT broker",
+          "published_at": "2026-11-15T18:36:40+00:00"
+        },
+        {
+          "url": "https://prog21.dadgum.com/116.html",
+          "title": "Things That Turbo Pascal Is Smaller Than (2011)",
+          "published_at": "2026-11-15T13:44:16+00:00"
+        },
+        {
+          "url": "https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html",
+          "title": "Microsoft 365 outage leads to chlorine gas poisoning of 15 hotel guests",
+          "published_at": "2026-11-15T18:36:10+00:00"
+        },
+        {
+          "url": "https://joshblais.com/blog/emacs-as-my-browser/",
+          "title": "Emacs Is My Browser",
+          "published_at": "2026-11-15T15:21:21+00:00"
+        },
+        {
+          "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+          "title": "Understanding Positional Embeddings in Modern LLMs",
+          "published_at": "2026-11-15T12:14:06+00:00"
+        },
+        {
+          "url": "https://ykiko.me/en/articles/2105384023094834022/",
+          "title": "Clice v1.0 Released: Welcome to Modern C++",
+          "published_at": "2026-11-15T17:22:32+00:00"
+        },
+        {
+          "url": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+          "title": "All AI-generated code should be Open Source",
+          "published_at": "2026-11-15T14:46:58+00:00"
+        },
+        {
+          "url": "https://www.ft.com/content/45383d86-33c4-4d99-86e5-5e058d3567c1",
+          "title": "Jensen Huang discusses comeback as Nvidia CEO with allies",
+          "published_at": "2026-11-15T19:31:11+00:00"
+        },
+        {
+          "url": "https://fortune.com/2026/11/14/alpha-school-ai-students-tuition-learning-goals/",
+          "title": "Parents pay $75k for Alpha's AI school. Half of its students missed math target",
+          "published_at": "2026-11-15T19:39:46+00:00"
+        },
+        {
+          "url": "https://litnews.ai/articles/garciaguirre-samsung-sk-hynix-micron-dram-conspiracy-suit-survives-dismissal",
+          "title": "Court denies motion to dismiss DRAM price fixing case",
+          "published_at": "2026-11-15T01:18:36+00:00"
+        },
+        {
+          "url": "https://lucypero.com/lucynes.html",
+          "title": "A NES emulator written in Odin",
+          "published_at": "2026-11-15T12:51:47+00:00"
+        },
+        {
+          "url": "https://space.stackexchange.com/questions/37775",
+          "title": "Why did some Apollo missions carry a grenade launcher?",
+          "published_at": "2026-11-15T09:06:43+00:00"
+        },
+        {
+          "url": "https://www.spacex.com/launches/starship-flight-15",
+          "title": "SpaceX catches the Starship to end Flight 15",
+          "published_at": "2026-11-14T21:22:24+00:00"
+        },
+        {
+          "url": "https://www.nytimes.com/2026/11/15/us/politics/lutnick-pushed-to-weaken-chip-rules-that-overlap-with-his-family-business.html",
+          "title": "Lutnick Pushed to Weaken Chip Rules That Overlap with His Family Business",
+          "published_at": "2026-11-15T11:40:51+00:00"
+        },
+        {
+          "url": "https://bruceroettgers.eu/blog/protomaps/",
+          "title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
+          "published_at": "2026-11-15T19:26:22+00:00"
+        },
+        {
+          "url": "https://lithub.com/how-the-telephone-changed-the-world/",
+          "title": "The Telephone Changed the World",
+          "published_at": "2026-11-14T22:56:09+00:00"
+        },
+        {
+          "url": "https://retrocomputing.stackexchange.com/questions/17957",
+          "title": "How did Woz write the Apple 1 BASIC before building the computer?",
+          "published_at": "2026-11-14T22:22:49+00:00"
+        },
+        {
+          "url": "https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/",
+          "title": "Your Agent Will Pick the Hackable One",
+          "published_at": "2026-11-15T21:10:39+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "import-ai",
+      "name": "Import AI",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://importai.substack.com/feed",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.404683+08:00",
+      "increment_checked_url": "https://importai.substack.com/feed",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "bens-bites",
+      "name": "Ben's Bites",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.bensbites.com/feed",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.589651+08:00",
+      "increment_checked_url": "https://www.bensbites.com/feed",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "latent-space",
+      "name": "Latent Space",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.latent.space/feed",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.626631+08:00",
+      "increment_checked_url": "https://www.latent.space/feed",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "interconnects",
+      "name": "Interconnects",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.interconnects.ai/feed",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.652091+08:00",
+      "increment_checked_url": "https://www.interconnects.ai/feed",
+      "increment_count": 0,
+      "items": [
+        {
+          "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+          "title": "Open-source AI without Jensen",
+          "published_at": "2026-11-14T12:23:15+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "ai-snake-oil",
+      "name": "AI as Normal Technology",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.normaltech.ai/feed",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.653492+08:00",
+      "increment_checked_url": "https://www.normaltech.ai/feed",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "one-useful-thing",
+      "name": "One Useful Thing",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.oneusefulthing.org/feed",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.762011+08:00",
+      "increment_checked_url": "https://www.oneusefulthing.org/feed",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "simon-willison",
+      "name": "Simon Willison's Weblog",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://simonwillison.net/atom/everything/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.798066+08:00",
+      "increment_checked_url": "https://simonwillison.net/atom/everything/",
+      "increment_count": 0,
+      "items": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+          "title": "datasette-llm 0.1a11",
+          "published_at": "2026-11-14T23:59:28+00:00"
+        },
+        {
+          "url": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+          "title": "datasette-vega 0.7",
+          "published_at": "2026-11-14T17:09:09+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "qbitai",
+      "name": "量子位",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.qbitai.com/feed",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:53.955791+08:00",
+      "increment_checked_url": "https://www.qbitai.com/feed",
+      "increment_count": 0,
+      "items": [
+        {
+          "url": "https://www.qbitai.com/2026/11/510297.html",
+          "title": "英伟达上演“奥特曼2.0”，员工集体请愿：让老黄回家！",
+          "published_at": "2026-11-14T10:08:08+00:00"
+        },
+        {
+          "url": "https://www.qbitai.com/2026/11/510232.html",
+          "title": "「史上最严」湿实验预测基准发布！推理拉满、算力翻5倍也白搭",
+          "published_at": "2026-11-14T09:58:22+00:00"
+        },
+        {
+          "url": "https://www.qbitai.com/2026/11/510150.html",
+          "title": "程序员集体沉迷折纸飞机！最长滞空31.2秒",
+          "published_at": "2026-11-14T09:48:34+00:00"
+        },
+        {
+          "url": "https://www.qbitai.com/2026/11/510094.html",
+          "title": "绿电进Token出！联想重新定义词元工厂",
+          "published_at": "2026-11-14T09:41:02+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "aws-ml-blog",
+      "name": "AWS AI Blog",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:54.003063+08:00",
+      "increment_checked_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "google-research",
+      "name": "Google Research Blog",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://research.google/blog/rss/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:54.030691+08:00",
+      "increment_checked_url": "https://research.google/blog/rss/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "github-ai-ml",
+      "name": "GitHub Blog · AI & ML",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://github.blog/ai-and-ml/feed/",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:54.069567+08:00",
+      "increment_checked_url": "https://github.blog/ai-and-ml/feed/",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "databricks-research",
+      "name": "Databricks Research",
+      "core": false,
+      "method": "page",
+      "checked_url": "https://www.databricks.com/blog/category/research",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "partial",
+      "evidence": "已查上游及增量入口；最后一小时缺少可验证的逐条时间。",
+      "upstream_status": "ok",
+      "increment_status": "partial",
+      "increment_checked_at": "2026-11-16T06:02:54.134025+08:00",
+      "increment_checked_url": "https://www.databricks.com/blog/category/research",
+      "increment_count": 0,
+      "items": []
+    },
+    {
+      "source_id": "amazon-science",
+      "name": "Amazon Science Blog",
+      "core": false,
+      "method": "rss",
+      "checked_url": "https://www.amazon.science/index.rss",
+      "checked_at": "2026-11-15T21:05:38+00:00",
+      "status": "ok",
+      "evidence": "已核对上游时间窗口及 05:00 至 06:00 的发布方或配置订阅流。",
+      "upstream_status": "ok",
+      "increment_status": "ok",
+      "increment_checked_at": "2026-11-16T06:02:54.139130+08:00",
+      "increment_checked_url": "https://www.amazon.science/index.rss",
+      "increment_count": 0,
+      "items": []
+    }
+  ],
+  "issue_date": "2026-11-16",
+  "config_commit": "b7a0a1268550b2cfa99374042e50711c170bf013",
+  "collection_stage": "initial_plus_incremental",
+  "collection_incomplete": true,
+  "final_catalog_window": {
+    "start_shanghai": "2026-11-14T18:00:00+08:00",
+    "end_shanghai": "2026-11-16T06:00:00+08:00",
+    "start_utc": "2026-11-14T10:00:00Z",
+    "end_utc": "2026-11-15T22:00:00Z",
+    "boundary": "left_closed_right_open"
+  },
+  "increment_window": [
+    "2026-11-16T05:00:00+08:00",
+    "2026-11-16T06:00:00+08:00"
+  ],
+  "supplemental_sources": [
+    {
+      "source": "Guardian AI",
+      "url": "https://www.theguardian.com/technology/artificialintelligenceai/rss",
+      "checked_at": "2026-11-16T06:10:07.817584+08:00",
+      "window_candidates": 6,
+      "status": "checked"
+    },
+    {
+      "source": "Ars Technica",
+      "url": "https://feeds.arstechnica.com/arstechnica/index",
+      "checked_at": "2026-11-16T06:10:07.817698+08:00",
+      "window_candidates": 4,
+      "status": "checked"
+    },
+    {
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/feed/",
+      "checked_at": "2026-11-16T06:10:07.817774+08:00",
+      "window_candidates": 12,
+      "status": "checked"
+    },
+    {
+      "source": "The Guardian Technology",
+      "url": "https://www.theguardian.com/technology/rss",
+      "checked_at": "2026-11-16T06:10:07.817846+08:00",
+      "window_candidates": 8,
+      "status": "checked"
+    },
+    {
+      "source": "IEEE Spectrum",
+      "url": "https://spectrum.ieee.org/feeds/feed.rss",
+      "checked_at": "2026-11-16T06:10:07.817944+08:00",
+      "window_candidates": 0,
+      "status": "failed"
+    },
+    {
+      "source": "MIT News AI",
+      "url": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+      "checked_at": "2026-11-16T06:10:07.817994+08:00",
+      "window_candidates": 0,
+      "status": "checked"
+    },
+    {
+      "source": "The Register AI",
+      "url": "https://www.theregister.com/software/ai_ml/headlines.atom",
+      "checked_at": "2026-11-16T06:10:07.818035+08:00",
+      "window_candidates": 0,
+      "status": "checked"
+    },
+    {
+      "source": "CNBC Technology",
+      "url": "https://www.cnbc.com/id/19854910/device/rss/rss.html",
+      "checked_at": "2026-11-16T06:10:07.818071+08:00",
+      "window_candidates": 0,
+      "status": "failed"
+    }
+  ],
+  "upstream_commit": "06b0496ff74dbb4f1a9170a96a7174f0e0a5e92b"
+}
