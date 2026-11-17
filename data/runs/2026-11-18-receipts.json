@@ -145,7 +145,7 @@
       "checked_url": "https://x.ai/news",
       "checked_at": "2026-11-17T21:00:10+00:00",
       "status": "partial",
-      "evidence": "已复用上游及末小时检查；动态入口、日期或完整分页尚不足以确认整段覆盖。",
+      "evidence": "已复用上游及末小时检查；动态入口、日期或完整分页尚不足以确认整段覆盖。 后续逐条核读11月16日会计案例，日期精度不足；未作为窗口内条目。",
       "upstream_status": "partial",
       "increment_status": "partial",
       "increment_checked_at": "2026-11-18T06:05:24.919102+08:00",
@@ -1893,5 +1893,127 @@
         "vllm034-cache-upgrade"
       ]
     }
-  ]
+  ],
+  "catalog_supplement_review": {
+    "reviewed_at": "2026-11-18T07:17:02.021262+08:00",
+    "reviewed": 15,
+    "added": 2,
+    "merged": 4,
+    "excluded": 2,
+    "unresolved": 7,
+    "catalog_before": 84,
+    "catalog_count": 86,
+    "decisions": [
+      {
+        "candidate_url": "https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/",
+        "action": "merge",
+        "reason": "全文核对：同一Gemini任务开放，新增背景是此前Spark试用，当前发布以Google原文为代表。",
+        "scope": "原文全文及代表链接比较",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00",
+        "merged_into": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+      },
+      {
+        "candidate_url": "https://techcrunch.com/2026/11/17/nvidias-first-big-move-after-jensen-huangs-exit-targets-national-security/",
+        "action": "merge",
+        "reason": "全文对照英伟达委员会公告：职责、成员与汇报关系相同；其余为已报道背景，保留官方公告。",
+        "scope": "原文全文及代表链接比较",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00",
+        "merged_into": "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee"
+      },
+      {
+        "candidate_url": "https://www.technologyreview.com/2026/11/16/1146070/building-ai-that-can-work-across-the-enterprise/",
+        "action": "exclude",
+        "reason": "页面明确标记SPONSORED及In partnership with Infosys，属于赞助内容。",
+        "scope": "原始页面与可见元数据；受限部分如实保留",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://www.404media.co/ai-powered-copyright-hell/",
+        "action": "defer",
+        "reason": "待核：原页仅显示会员登录墙，未能判定相对既有版权报道的独立增量。",
+        "scope": "原始页面与可见元数据；受限部分如实保留",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://www.404media.co/breaking-everything/",
+        "action": "keep",
+        "reason": "已读原创评论全文，讨论AI辅助软件更新、服务中断与基础设施；保留为评论，不作为事件因果的事实结论。",
+        "scope": "原文正文、日期元数据",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://www.theverge.com/tech/1035756/google-spark-ai-tasks-free",
+        "action": "merge",
+        "reason": "全文核对：与Google原文相同的Gemini任务免费开放、地区和授权安排，合并至已采用官方发布。",
+        "scope": "原文全文及代表链接比较",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00",
+        "merged_into": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+      },
+      {
+        "candidate_url": "https://www.theverge.com/tech/1035420/jensen-huang-nvidia-return-as-ceo-statement",
+        "action": "merge",
+        "reason": "对照已展示TechCrunch全文：同一黄仁勋声明及董事会立场背景，未见独立实质新增。",
+        "scope": "原文全文及代表链接比较",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00",
+        "merged_into": "https://techcrunch.com/2026/11/17/jensen-huang-says-he-would-be-honored-if-allowed-to-return-as-nvidia-ceo/"
+      },
+      {
+        "candidate_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+        "action": "keep",
+        "reason": "原始Microsoft AI页面time元素为2026-11-17T13:15:16-05:00；已核正文与可用范围，非HN提交时间。",
+        "scope": "原文正文、日期元数据",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://runta.com/blog/introducing-frontierharness-eval-v1-1/",
+        "action": "defer",
+        "reason": "待核：原文只有2026-11-17日期，无时区及精确发布时间，无法严格确认截止前的原始时间。",
+        "scope": "原始页面与可见元数据；受限部分如实保留",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://starsling.dev",
+        "action": "defer",
+        "reason": "待核：产品落地页无原始发布日；不使用HN提交时间。",
+        "scope": "原始页面与可见元数据；受限部分如实保留",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+        "action": "defer",
+        "reason": "待核：原文和BlogPosting元数据均只有2026-11-16日期，无法确认是否晚于本期窗口起点。",
+        "scope": "原始页面与可见元数据；受限部分如实保留",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://www.ft.com/content/dbde7a30-548c-4f9d-a4be-7898a0c24dcf",
+        "action": "defer",
+        "reason": "待核：原始FT文章受403安全检查阻挡，无法确认原始发布时间。",
+        "scope": "原始页面与可见元数据；受限部分如实保留",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://github.com/RunanywhereAI/trnrt",
+        "action": "exclude",
+        "reason": "GitHub API确认v0.1.0发布于2026-11-08T19:59:47Z、最新推送11月11日，均早于窗口；HN热议不作新发布。",
+        "scope": "原始页面与可见元数据；受限部分如实保留",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://www.cs.cmu.edu/learn/",
+        "action": "defer",
+        "reason": "待核：课程页列出各课程首播日期，但页面本身无原始公告时间；不以课程排期替代发布日。",
+        "scope": "原始页面与可见元数据；受限部分如实保留",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      },
+      {
+        "candidate_url": "https://x.ai/news/grok-bot-accounting",
+        "action": "defer",
+        "reason": "待核：已核发布方会计流程案例全文，原页仅标2026-11-16，无时区及精确时间，不能确认落入严格窗口。",
+        "scope": "发布方正文及日期",
+        "reviewed_at": "2026-11-18T07:17:02.021262+08:00"
+      }
+    ],
+    "coverage_note": "补充复核不代表初采整段来源覆盖已完整；保留原始50源收据的28完整、22部分。"
+  }
 }
