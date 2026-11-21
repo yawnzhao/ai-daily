@@ -149,6 +149,10 @@ def build(date):
             catalog_html = catalog_html.replace('<h3 class="source-catalog-heading">' + zh_label,
                                                 '<h3 class="source-catalog-heading">' + en_label)
         catalog_html = re.sub(r'(<h3 class="source-catalog-heading">.*? · \d+) 条</h3>', r'\1 links</h3>', catalog_html)
+        catalog_html = re.sub(
+            r'<p>按原文链接或论文 ID 去掉此前各期公开清单里已经出现过的条目。这一页只列新出现的 (\d+) 条，另外 (\d+) 条不放进本页。完整 72 小时记录仍在采集清单里。</p>',
+            r'<p>Links already shown in an earlier public catalog are omitted. This page lists \1 new links. \2 previously listed links are not included. The full 72-hour record remains in the collection file.</p>',
+            catalog_html, count=1)
         catalog_html = catalog_html.replace('<div class="content">', '<div class="content"><p>Titles are retained from the Chinese edition; source names are shown in English. This discovery list includes material not read in full.</p>', 1)
         parts.append(catalog_html)
     filename = f'ai-daily-digest-{date}.html'
