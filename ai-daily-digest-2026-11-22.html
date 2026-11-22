@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-11-22 · 这通电话，谁替谁接？</title>
+<meta name="description" content="Google Duplex 开始替 Gemini 用户打给商家；一位演员授权平台用自己的脸主演短剧；屏幕共享研究考察观众如何理解被替换的画面。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-22.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-11-22 · 这通电话，谁替谁接？">
+<meta property="og:description" content="Google Duplex 开始替 Gemini 用户打给商家；一位演员授权平台用自己的脸主演短剧；屏幕共享研究考察观众如何理解被替换的画面。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-22.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-11-21.html">上一期 · 11-21</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-11-22">2026年11月22日 · 星期日 · 第 77 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">5</span>条资讯</div>
+    <div class="stat"><span class="num">1</span>篇论文</div>
+    <div class="stat"><span class="num">1</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年11月22日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">2 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">Google Duplex 开始替 Gemini 用户打给商家；一位演员授权平台用自己的脸主演短剧；屏幕共享研究考察观众如何理解被替换的画面。</div></div><div class="news-item" id="duplex-business-calls"><div class="news-head"><span class="badge badge-model">语音</span><h3>Gemini 替人打电话，难在听懂店员的半句话</h3></div><p>Google Research 11 月 20 日回顾了电话系统 Google Duplex 接入 Tasks in Gemini 的过程。用户可以用自然语言交代安排，系统代表用户致电商家。例如，订座时要给婴儿车留空间，或者修车时得避开日历里的会议。过去团队要为每种业务单独训练对话系统。现在，同一套模型可以把任务说明、接线员给出的备选时间和用户原来的限制放在一起处理。</p><p>真实电话有两头。咖啡机可能盖住店员的话，对方说到一半停顿，也可能只是在翻预订簿。Google 把声音识别和对话节奏一起处理。按公司说明，系统开场会说明自己是 Google 的自动来电，商家可以在后台退出，也可以在电话里直接要求停止。此次文章介绍架构和产品边界，没有给出各类任务的独立成功率。</p><p><a href="https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/" target="_blank" rel="noopener">原文：Google Research</a></p><div class="source">来源：<a href="https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/" target="_blank" rel="noopener">Google Research</a> · 原始发布于 2026-11-20 · Google Research 工程文章，核对架构、商家退出及电话披露</div></div><div class="news-item" id="shortical-likeness"><div class="news-head"><span class="badge badge-model">影视制作</span><h3>演员授权自己的脸，在短剧里扮演授权的自己</h3></div><p>据 TechCrunch 11 月 21 日对演员及制作方的采访，短剧平台 Shortical 在《Inevitable》中使用演员 Aki Avni 授权的肖像制作数字角色。剧中他扮演自己，把脸授权给一家电影公司。这一层戏中戏，也点出了真正需要谈判的东西：一名演员可以出现在屏幕上，拍摄和表演的过程却不再等同于过去的现场演出。</p><p>这次合作是公司与演员直接签约。Shortical 也上线了征集入口，让有意者先提交社交账号，再决定是否谈合同。公司告诉记者，截至受访时，这个入口还没有促成签约。报道没有披露该演员的具体报酬或完整授权条款，不能把这个特例当成已经形成的行业价格。</p><p><a href="https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/" target="_blank" rel="noopener">原文：TechCrunch</a></p><div class="source">来源：<a href="https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/" target="_blank" rel="noopener">TechCrunch</a> · 原始发布于 2026-11-21 · 记者采访与制作方回应，区分直接签约与平台征集</div></div><div class="paper-also"><div class="paper-also-title">其他动态</div><div class="paper-also-item" id="text-agents"><span class="paper-also-num">01</span><div><strong>短信里的 AI 助手，区别在于它能替你做到哪一步</strong><p>TechCrunch 11 月 21 日梳理了一批通过短信或即时通讯使用的助手。Caddy 可以关联日历和对话，识别需要处理的事项；Fambot 给家庭整理第二天的安排；另有产品在操作需要决定或批准时把结果交回用户。对使用者而言，同一个聊天框里的提醒、写入日历和对外办事，分别需要不同的数据和权限。报道列举的是各产品的功能描述。</p><p><a href="https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/" target="_blank" rel="noopener">原文：TechCrunch</a></p><p>来源：<a href="https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/" target="_blank" rel="noopener">TechCrunch</a> · 原始发布于 2026-11-21 · 核读产品综述，区分报道所列功能与独立测评</p></div></div><div class="paper-also-item" id="shared-kv"><span class="paper-also-num">02</span><div><strong>自建模型续聊时，哪些计算可以接着用</strong><p>AWS 的工程文章以恢复长对话为例。新请求落到另一台服务器时，原来保存在前一台机器上的键值缓存可能用不上，模型就得重新处理前文。AWS 介绍了分布式缓存工具，让多台服务器共享可复用的中间状态。工作负载中有多少重复前缀、请求怎样分配，都会影响收益。单次没有重复内容的请求无法照搬长会话的节省幅度。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/" target="_blank" rel="noopener">原文：AWS</a></p><p>来源：<a href="https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/" target="_blank" rel="noopener">AWS</a> · 原始发布于 2026-11-21 · AWS 工程说明，核对缓存复用及负载边界</p></div></div><div class="paper-also-item" id="quick-monthly"><span class="paper-also-num">03</span><div><strong>AWS Quick 把团队月报拆成可检查的步骤</strong><p>AWS Quick 更新了通过聊天搭建工作流的方式。公司用零售财务月报举例：先取各区域数据，用固定规则计算与计划的差异，再由智能体起草说明，由负责人决定哪些内容可进入终稿。流程图使同事可以核对取数、计算、草拟和审批的顺序。这个例子演示了产品的分工，并非一家零售商公开的部署成效。</p><p><a href="https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/" target="_blank" rel="noopener">原文：AWS</a></p><p>来源：<a href="https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/" target="_blank" rel="noopener">AWS</a> · 原始发布于 2026-11-21 · 发布方月报示例，区分演示与客户实绩</p></div></div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="osman-inference"><div class="insight-banner"><div class="meta">原始发布于 2026-11-21</div><h3>Ahmad Osman 谈本地模型怎样选硬件和推理引擎</h3></div><div class="insight-body"><p>AI Engineer 于 11 月 21 日发布 Ahmad Osman 的演讲。发布方的章节将预填充与逐步生成、批处理与推理引擎、实际任务记录以及租用或持有计算卡的成本分别列出。放在今天的缓存新闻旁边读，可以看清同一个等待时间背后可能是完全不同的工作。话语场已提供原片和章节索引，本条依据发布方介绍整理。</p><p><a href="https://q.cxspace.com/talks/source-9efe654e1f038afd/" target="_blank" rel="noopener">原文：AI Engineer</a></p><p><a href="https://www.youtube.com/watch?v=GKSQYbELDzw" target="_blank" rel="noopener">延伸阅读：youtube.com</a></p><p>来源：<a href="https://q.cxspace.com/talks/source-9efe654e1f038afd/" target="_blank" rel="noopener">AI Engineer</a> · 原始发布于 2026-11-21 · 原发布方节目介绍和章节，未引用演讲原话</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇论文</span></div><div class="paper-item" id="screen-recompose"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">屏幕共享时，遮掉姓名和换一个姓名，会让观众看到什么</span></div><div class="paper-tags"><span class="paper-tag">屏幕隐私</span><span class="paper-tag">原始发布于 2026-11-20</span><span class="paper-tag">出版社提交至 Crossref 的原始摘要及书目信息，未核读全文</span></div><div class="paper-body"><p>11 月 20 日发表的 ScreenRecompose 研究比较了遮盖、模糊和两种生成式替换方法。作者让参与者看录像，分别从分享者和观看者视角评价信息是否容易辨认、画面是否自然。相较于直接遮盖，较少保留原语义的替换更不容易被看出来；相较于模糊和另一种替换，观看者自评识别原信息的可能性较低。替换也让参与者更容易理解画面。</p><p>这些结果衡量的是观看感受。录像研究把延迟影响隔离开来，无法据此保证真实会议中的响应速度或隐私安全。作者还指出，越像真的替换内容，越容易让观看者误以为它就是原资料。这与昨天报道的屏幕隐私、今天短剧里的肖像使用构成同一个具体问题：观看者怎样知道画面中的哪部分经过了处理？</p><p><a href="https://doi.org/10.1145/3859318" target="_blank" rel="noopener">原文：ACM</a></p><p><a href="https://api.crossref.org/works/10.1145/3859318" target="_blank" rel="noopener">延伸阅读：api.crossref.org</a></p></div><a class="paper-link" href="https://doi.org/10.1145/3859318" target="_blank" rel="noopener">ACM →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="transformers-loop"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/huggingface/transformers/releases/tag/v5.24.0" target="_blank" rel="noopener">Transformers 新版支持可以调整循环次数的模型</a></span><span class="oss-license">Apache-2.0</span></div><p>Hugging Face 的 Transformers v5.24.0 发布说明新增了多种模型支持。以 Dory 为例，同一组层可以在推理时反复使用，同一个检查点可以调整循环次数，权衡速度与输出质量。新版还列出对 Inkling 2 Mini 的支持；它有可变循环次数的研究检查点，应与普通版本区分。这里记录的是软件库的适配，具体设备上的速度与质量仍需按任务测试。</p><p><a href="https://github.com/huggingface/transformers/releases/tag/v5.24.0" target="_blank" rel="noopener">原文：Hugging Face</a></p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 28/50 个来源完成检查</summary><div class="content"><p>新闻主窗口为北京时间 11 月 21 日 06:00 至 22 日 06:00，资讯目录从 20 日 18:00 起。论文仅有日级日期，按原始发布日期标明。部分动态入口仅取得栏目或日期，无法确认完整的逐小时更新；社区提交时间不能替代原始发布时间。已核读的正文与仅有题录的目录条目分别标注。</p><p><strong>检查尚未完成的来源</strong>：下列状态表示检查缺口，不能据此认定近期无更新；“已完整检查且无新增”另行记录。</p><ul><li><strong>Anthropic News</strong>：已检查部分内容，覆盖或日期待核。05:00：补查发布方页面成功；记录入口与链接，完整文章级覆盖待核。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200, 200。</li><li><strong>Claude Blog</strong>：已检查部分内容，覆盖或日期待核。05:00：补查发布方页面成功；记录入口与链接，完整文章级覆盖待核。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>xAI</strong>：已检查部分内容，覆盖或日期待核。05:00：&lt;urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)&gt; 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>Qwen</strong>：已检查部分内容，覆盖或日期待核。05:00：浏览器取得入口和部分链接，不能确认整个时间窗。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200, 未取得。</li><li><strong>通义实验室</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>DeepSeek</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200, 未取得, 未取得。</li><li><strong>月之暗面 Moonshot</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 5 处，最新 2026-10-24；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>智谱 Z.ai</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 319 处，最新 2026-09-10；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>阶跃星辰 StepFun</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>Mistral</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 96 处，最新 2026-11-05；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>European Commission Digital Strategy</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 15 处，最新 2026-11-20；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>UNESCO AI</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 15 处，最新 2026-11-20；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：Remote end closed connection without response</li><li><strong>OECD.AI</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 181 处，最新 2026-11-19；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>arXiv cs.AI / cs.LG / cs.CL</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，可达；条目由主线程另行核验；入口或日期已取得，原文仍待核对。 最后一小时：HTTP Error 400: Bad Request</li><li><strong>Hugging Face Daily Papers</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>OpenReview</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>GitHub Trending（日榜 + Python 日榜）</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>36氪 AI 频道（逐篇核验原创与转载）</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>国家网信办·网信发布（AI 相关）</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 20 处，最新 2026-11-20；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>字节跳动 Seed·博客与论文</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>MiniMax·News &amp; Updates</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>Databricks Research</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 13 处，最新 2026-10-20；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li></ul><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
+<details class="paper-observation source-catalog" id="source-catalog"><summary class="label">资讯源 <span class="source-catalog-count">27 条</span></summary><div class="content"><h3 class="source-catalog-heading">新闻资讯 · 22 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/" target="_blank" rel="noopener">Gemini 替人打电话，难在听懂店员的半句话<span class="source-catalog-original">How Google Duplex evolved to also call businesses for you in Gemini</span></a><span class="source-catalog-name">Google Research</span></li><li><a href="https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/" target="_blank" rel="noopener">演员授权自己的脸，在短剧里扮演授权的自己<span class="source-catalog-original">Is selling an AI version of your face to this microdrama startup the future of Hollywood?</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/" target="_blank" rel="noopener">短信里的 AI 助手，区别在于它能替你做到哪一步<span class="source-catalog-original">Here are the top AI agents that can live in your text messages</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/" target="_blank" rel="noopener">自建模型续聊时，哪些计算可以接着用<span class="source-catalog-original">Cut self-hosted LLM cost and latency with the distributed KV caching agent skill</span></a><span class="source-catalog-name">AWS AI Blog</span></li><li><a href="https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/" target="_blank" rel="noopener">AWS Quick 把团队月报拆成可检查的步骤<span class="source-catalog-original">New in AWS Quick: More capable flows, an updated web experience, and agents that work together</span></a><span class="source-catalog-name">AWS AI Blog</span></li><li><a href="https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/" target="_blank" rel="noopener">报道分析英伟达的两种处境<span class="source-catalog-original">A tale of two Nvidias</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.theverge.com/tech/1039554/un-regulations-killer-robots" target="_blank" rel="noopener">联合国未就自主武器监管规则达成一致<span class="source-catalog-original">The UN fails to agree on rules regulating ‘killer robots’</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.theverge.com/podcast/1038701/anthropic-ipo-ai-safety-openai-nvidia-structure" target="_blank" rel="noopener">Anthropic 上市后如何承担安全研发成本？<span class="source-catalog-original">Can Anthropic afford to put safety first?</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.wired.com/story/brace-yourself-for-years-of-outage-chaos/" target="_blank" rel="noopener">技术服务中断为何可能持续<span class="source-catalog-original">The Outages Are Just Getting Started</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://www.qbitai.com/2026/11/511779.html" target="_blank" rel="noopener">GPT-6.2 Astra再次暴击具身模型：16项任务成功率较GPT-6 Astra翻倍</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.qbitai.com/2026/11/511570.html" target="_blank" rel="noopener">刚刚，DeepSeek V1作者创业项目曝光：开源Agent</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.qbitai.com/2026/11/511757.html" target="_blank" rel="noopener">姚顺雨和混元团队上Reddit答网友，Hy小模型已进路线图</a><span class="source-catalog-name">量子位</span></li><li><a href="https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/" target="_blank" rel="noopener">两份黎曼猜想证明主张引发讨论<span class="source-catalog-original">[AINews] Riemann Hypothesis proved...twice independently</span></a><span class="source-catalog-name">Latent Space</span></li><li><a href="https://www.wired.com/story/cops-are-being-extremely-corny-about-gta-vi/" target="_blank" rel="noopener">美国部分警方账号使用 AI 生成游戏风格内容<span class="source-catalog-original">Cops Are Pushing Extremely Corny ‘Grand Theft Auto 6’ Slop</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm/" target="_blank" rel="noopener">SageMaker HyperPod Slurm 新增集群扩展<span class="source-catalog-original">Introducing managed cluster extensions for observability and user management in Amazon SageMaker HyperPod Slurm</span></a><span class="source-catalog-name">AWS AI Blog</span></li><li><a href="https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/" target="_blank" rel="noopener">SageMaker HyperPod 推出跨区域推理入口<span class="source-catalog-original">Introducing Amazon SageMaker HyperPod Global Inference Gateway: One endpoint across Regions and clusters</span></a><span class="source-catalog-name">AWS AI Blog</span></li><li><a href="https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/" target="_blank" rel="noopener">Google 搜索首页加入 AI 聊天历史<span class="source-catalog-original">Google rolls out new search homepage with AI chat history and no search button</span></a><span class="source-catalog-name">Ars Technica</span></li><li><a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/" target="_blank" rel="noopener">研究跟踪 AI 供应链中的数据隐私风险<span class="source-catalog-original">Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.</span></a><span class="source-catalog-name">Ars Technica</span></li><li><a href="https://www.qbitai.com/2026/11/511740.html" target="_blank" rel="noopener">米哈游发了个VLA论文</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast" target="_blank" rel="noopener">播客回顾一周技术服务中断<span class="source-catalog-original">The week everything fell apart</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/" target="_blank" rel="noopener">六款面向家庭办公室的 AI 设备<span class="source-catalog-original">Six AI-powered gadgets that could make your home office smarter</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.qbitai.com/2026/11/511722.html" target="_blank" rel="noopener">美国AI音乐巨头进军视频生成，底层模型来自中国MiniMax</a><span class="source-catalog-name">量子位</span></li></ul><h3 class="source-catalog-heading">话语场 · 1 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://q.cxspace.com/talks/source-9efe654e1f038afd/" target="_blank" rel="noopener">Ahmad Osman 谈本地模型怎样选硬件和推理引擎<span class="source-catalog-original">What Runs Where? Local AI in Production — Ahmad Osman, Osmantic</span></a><span class="source-catalog-name">AI Engineer</span></li></ul><h3 class="source-catalog-heading">开源项目与版本更新 · 4 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://github.com/huggingface/transformers/releases/tag/v5.24.0" target="_blank" rel="noopener">Transformers 新版支持可以调整循环次数的模型<span class="source-catalog-original">Release v5.24.0</span></a><span class="source-catalog-name">huggingface/transformers</span></li><li><a href="https://github.com/BerriAI/litellm/releases/tag/v1.108.15" target="_blank" rel="noopener">BerriAI/litellm v1.108.15：更新长期支持版本<span class="source-catalog-original">1.108.15 (LTS)</span></a><span class="source-catalog-name">BerriAI/litellm</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12613" target="_blank" rel="noopener">ggml-org/llama.cpp b12613：调整 Windows 上 AMD 显卡的 Vulkan 计算路径<span class="source-catalog-original">b12613</span></a><span class="source-catalog-name">ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12612" target="_blank" rel="noopener">ggml-org/llama.cpp b12612：改善部分量化格式的 RDNA4 计算<span class="source-catalog-original">b12612</span></a><span class="source-catalog-name">ggml-org/llama.cpp</span></li></ul></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-11-21.html">上一期 · 11-21</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
