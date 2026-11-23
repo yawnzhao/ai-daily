@@ -6895,6 +6895,13 @@
       "status": "checked",
       "scope": "查询维护者发布记录与版本时间",
       "checked_at": "2026-11-24T06:03:24.543437+08:00"
+    },
+    {
+      "source": "micjm",
+      "url": "https://micjm.com/index.xml",
+      "status": "checked",
+      "scope": "核对窗口内4篇作者原文、订阅时间与近七期仓库",
+      "checked_at": "2026-11-24T07:24:48.501634+08:00"
     }
   ],
   "upstream_commit": "42bdc598e43f08b68814518bc83b3937477c3b4b",
@@ -7129,5 +7136,107 @@
   "paper_supplement_gaps": {
     "OpenReview": "公开 API 访问受限，会议入口未返回可核的新投稿条目",
     "HuggingFace": "上榜与论文首次公告分开记录"
-  }
+  },
+  "catalog_supplements": [
+    {
+      "reviewed_at": "2026-11-24T07:24:48.501634+08:00",
+      "reviewed": 7,
+      "queued_reviewed": 4,
+      "additional_reviewed": 3,
+      "added": 5,
+      "excluded": 2,
+      "reviews": [
+        {
+          "discovery_url": "https://twitter.com/ylecun/status/2124550037912920090",
+          "verified_primary_url": "https://x.com/ylecun/status/2124550037912920090",
+          "decision": "keep",
+          "published_at": "2026-11-22T17:06:15.000Z",
+          "reason": "作者对开放模型治理的个人观点；署名、挂靠回复及发布时间可核，仅按评论收录。",
+          "verification_scope": "平台原帖、署名与发布时间",
+          "evidence_urls": [
+            "https://publish.twitter.com/oembed?url=https://twitter.com/ylecun/status/2124550037912920090",
+            "https://cdn.syndication.twimg.com/tweet-result?id=2124550037912920090&lang=en&token=0"
+          ],
+          "reviewed_at": "2026-11-24T07:24:48.501634+08:00"
+        },
+        {
+          "discovery_url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+          "verified_primary_url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+          "decision": "exclude",
+          "published_at": "2026-11-20T01:27:15.000Z",
+          "reason": "模型文件在 11 月 20 日发布，11 月 22 日的评测更新早于窗口起点。窗口内仅简化技术报告链接，未发布新版模型。",
+          "verification_scope": "发布方页面及日期或版本记录",
+          "evidence_urls": [
+            "https://huggingface.co/api/models/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+            "https://huggingface.co/api/models/nari-labs/Qwen3.8-27B-NariQ-GGUF/commits/main"
+          ],
+          "reviewed_at": "2026-11-24T07:24:48.501634+08:00"
+        },
+        {
+          "discovery_url": "https://www.greptile.com/blog/trex-computer-use",
+          "verified_primary_url": "https://www.greptile.com/blog/trex-computer-use",
+          "decision": "exclude",
+          "published_at": "2026-11-19",
+          "reason": "发布方标注 11 月 19 日，早于本期目录窗口。",
+          "verification_scope": "发布方页面及日期或版本记录",
+          "evidence_urls": [
+            "https://www.greptile.com/blog/trex-computer-use"
+          ],
+          "reviewed_at": "2026-11-24T07:24:48.501634+08:00"
+        },
+        {
+          "discovery_url": "https://micjm.com/index.xml",
+          "verified_primary_url": "https://micjm.com/blog/do-chinese-models-overthink-compared-to-american-ones/",
+          "decision": "keep",
+          "published_at": "2026-11-23T00:00:00-06:00",
+          "reason": "作者对照同一对战环境下的词元输出与工具使用，仅收录为对该样本的分析。",
+          "verification_scope": "作者署名文章、正文与原始发布时点",
+          "evidence_urls": [
+            "https://micjm.com/blog/do-chinese-models-overthink-compared-to-american-ones/",
+            "https://micjm.com/index.xml"
+          ],
+          "reviewed_at": "2026-11-24T07:24:48.501634+08:00"
+        },
+        {
+          "discovery_url": "https://micjm.com/blog/yes-17m-lines-of-lean-is-a-lot/",
+          "verified_primary_url": "https://micjm.com/blog/yes-17m-lines-of-lean-is-a-lot/",
+          "decision": "keep",
+          "published_at": "2026-11-22T22:57:01-06:00",
+          "reason": "作者比较多个 Lean 项目的代码规模；此条是篇幅分析，不认定数学猜想已获证明。",
+          "verification_scope": "作者署名文章、正文与原始发布时点",
+          "evidence_urls": [
+            "https://micjm.com/blog/yes-17m-lines-of-lean-is-a-lot/",
+            "https://micjm.com/index.xml"
+          ],
+          "reviewed_at": "2026-11-24T07:24:48.501634+08:00"
+        },
+        {
+          "discovery_url": "https://micjm.com/index.xml",
+          "verified_primary_url": "https://micjm.com/blog/perplexity-intelligence-pretraining-corpus-mix/",
+          "decision": "keep",
+          "published_at": "2026-11-22T17:05:36-06:00",
+          "reason": "后续分析引用另一项目已公开的语料配比实验数据，补充此前个人实验，分别标注。",
+          "verification_scope": "作者署名文章、正文与原始发布时点",
+          "evidence_urls": [
+            "https://micjm.com/blog/perplexity-intelligence-pretraining-corpus-mix/",
+            "https://micjm.com/index.xml"
+          ],
+          "reviewed_at": "2026-11-24T07:24:48.501634+08:00"
+        },
+        {
+          "discovery_url": "https://micjm.com/index.xml",
+          "verified_primary_url": "https://micjm.com/blog/lowering-perplexity-without-scaling/",
+          "decision": "keep",
+          "published_at": "2026-11-22T13:58:44-06:00",
+          "reason": "正文提供作者独立的小模型对照实验，与此前收录的 OpenAI 评论属于不同材料。",
+          "verification_scope": "作者署名文章、正文与原始发布时点",
+          "evidence_urls": [
+            "https://micjm.com/blog/lowering-perplexity-without-scaling/",
+            "https://micjm.com/index.xml"
+          ],
+          "reviewed_at": "2026-11-24T07:24:48.501634+08:00"
+        }
+      ]
+    }
+  ]
 }
