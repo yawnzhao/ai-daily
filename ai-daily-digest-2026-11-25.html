@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-11-25 · Anthropic 股价跌破发行价，Tidal 将移除完全由 AI 生成的录音</title>
+<meta name="description" content="Anthropic 上市不到一周，美股周二收盘跌破 83 美元发行价。Tidal 为完全生成的录音设定下架日期。两组天文爱好者用 AI 找到值得复核的信号，ShellBench 则检验助手能否读懂一桌旧账单。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-25.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-11-25 · Anthropic 股价跌破发行价，Tidal 将移除完全由 AI 生成的录音">
+<meta property="og:description" content="Anthropic 上市不到一周，美股周二收盘跌破 83 美元发行价。Tidal 为完全生成的录音设定下架日期。两组天文爱好者用 AI 找到值得复核的信号，ShellBench 则检验助手能否读懂一桌旧账单。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-25.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-11-24.html">上一期 · 11-24</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-11-25">2026年11月25日 · 星期三 · 第 80 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">6</span>条资讯</div>
+    <div class="stat"><span class="num">1</span>篇论文</div>
+    <div class="stat"><span class="num">1</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年11月25日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">4 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">Anthropic 上市不到一周，美股周二收盘跌破 83 美元发行价。Tidal 为完全生成的录音设定下架日期。两组天文爱好者用 AI 找到值得复核的信号，ShellBench 则检验助手能否读懂一桌旧账单。</div></div><div class="news-item" id="anthropic-below-ipo"><div class="news-head"><span class="badge badge-model">产业与资本</span><h3>Anthropic 上市不到一周，股价收在 83 美元发行价以下</h3></div><p>11 月 24 日，美股收盘时，Anthropic 股价已跌破每股 83 美元的首次公开发行价。美联社收市报道确认了这一点。TechCrunch 较早报道，当天午间股价一度下探至约 76 美元。两个价格指向不同时间，76 美元是盘中报价。</p><p>发行人公告把这次波动的起点说得很清楚。Anthropic 的 A 类普通股 11 月 19 日开始在纳斯达克交易，代码 ANT，发行价为每股 83 美元。公司在发行中出售新股，部分原股东也出售了所持股份。上市后，投资者在市场上交易这些股票，成交价会变，发行时已经交割的款项不会随之重新结算。</p><p>对准备上市的 AI 公司而言，公开市场如今每天都会给出一个可供比较的价格。至于这一天的交易意味着客户订单或模型竞争力发生了什么变化，股价本身回答不了。</p><p><a href="https://apnews.com/article/6cc4e580290aadf304ee316d6d46dd81" target="_blank" rel="noopener">原文：美联社</a></p><p><a href="https://www.anthropic.com/news/ipo-close" target="_blank" rel="noopener">延伸阅读：Anthropic</a></p><p><a href="https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/" target="_blank" rel="noopener">延伸阅读：TechCrunch</a></p><div class="source">来源：<a href="https://apnews.com/article/6cc4e580290aadf304ee316d6d46dd81" target="_blank" rel="noopener">美联社</a> · 原始发布于 2026-11-24 · 对读美联社收市综述、发行人文件及 TechCrunch 午间原始报道，分别核验收盘状态、发行价与盘中价格</div></div><div class="news-item" id="planet-candidates"><div class="news-head"><span class="badge badge-model">科学研究</span><h3>两名天文爱好者用 AI 筛出候选行星，天文学家接手复核</h3></div><p>OpenAI 介绍了两组独立搜索。工程师 Kevin Bond 用 Codex 编写并调整程序，在开普勒望远镜约十万颗恒星的公开观测中寻找周期性变暗的信号。程序找回了一些已确认行星的信号。SETI Institute 的天文学家独立搜索后，也找到了 Bond 标出的两个候选信号。其中一颗恒星约每 13.8 天变暗一次，另一颗约每 4.8 天一次。研究人员还可以尝试测量恒星沿视线方向的轻微运动，查找行星引力留下的另一种证据。</p><p>Ethan Byrd 用 Astra 设计搜索并检查约一千九百万颗恒星的观测数据。两项搜索分别广泛寻找行星候选，以及聚焦恒星周围的宜居带。他已把一个候选目标交给参与 NASA 凌日系外行星巡天卫星任务的研究人员，等待进一步分析。恒星互相遮挡、望远镜仪器受温度影响，也可能造成亮度下降。下一次变暗是否如期发生、用其他测量方法能否解释成同一颗行星，才决定这些目标能走多远。</p><p><a href="https://openai.com/index/searching-for-distant-planets-with-astra" target="_blank" rel="noopener">原文：OpenAI</a></p><div class="source">来源：<a href="https://openai.com/index/searching-for-distant-planets-with-astra" target="_blank" rel="noopener">OpenAI</a> · 原始发布于 2026-11-24 · OpenAI 案例中两组独立搜索、已知信号回收与待复核目标，未将候选计为已确认行星</div></div><div class="news-item" id="tidal-recording-policy"><div class="news-head"><span class="badge badge-model">音乐平台</span><h3>Tidal 将于 12 月 9 日起拒收并移除完全由 AI 生成的录音</h3></div><p>Tidal 在支持页写明，12 月 9 日开始，平台将拒收并移除完全由 AI 生成的录音。在此之前，现行办法包括标记和取消这类录音的版税分配。平台对 TechCrunch 说明，人在创作或制作中借助 AI 工具的歌曲仍可接收。判断的对象是交付的录音，听众不能仅凭一段旋律倒推整首歌的制作过程。</p><p>平台表示，过去 90 天交给它的曲目中，超过四成被识别为 AI 生成。这个比例只描述近期送审的新曲，不能当成整个曲库的占比。Tidal 的支持页也保留了误判申诉入口，音乐人可提交材料要求复核。</p><p><a href="https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/" target="_blank" rel="noopener">原文：TechCrunch</a></p><p><a href="https://support.tidal.com/hc/en-us/articles/48031883413521-AI-Policy" target="_blank" rel="noopener">延伸阅读：Tidal 支持中心</a></p><div class="source">来源：<a href="https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/" target="_blank" rel="noopener">TechCrunch</a> · 原始发布于 2026-11-24 · 对读平台支持页的生效日期、现行版税和申诉规定，以及报道中近期送审量的分母</div></div><div class="news-item" id="shellbench-everyday"><div class="news-head"><span class="badge badge-model">智能体评测</span><h3>ShellBench 把旧邮件和收据放进同一道题，领先模型约完成六成任务</h3></div><p>OpenClaw 基金会等团队发布 ShellBench，让 AI 助手在有日历、收据、表格和邮件的模拟工作区里做事。研究团队从匿名使用记录中提炼任务模式，用 12 个模型和 5 种运行环境测试了 100 项任务。大部分题按评分细则验收，每个必需条件都满足才算整题完成。</p><p>按不同运行环境取平均，排名第一的模型完整完成了 62.5% 的任务。测试中的工作区也可能包含过时记录和容易混淆的账户。很多题需要助手说明哪份文件解决了冲突。例如，新邮件更正过一笔金额，助手既要找到它，也要让接手的人能查清依据。这个分数反映特定任务和验收条件。发布时，团队给出了方法与分项结果，完整论文仍待公布。</p><p><a href="https://openclaw.ai/blog/shellbench" target="_blank" rel="noopener">原文：OpenClaw 基金会</a></p><p><a href="https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/" target="_blank" rel="noopener">延伸阅读：TechCrunch</a></p><div class="source">来源：<a href="https://openclaw.ai/blog/shellbench" target="_blank" rel="noopener">OpenClaw 基金会</a> · 原始发布于 2026-11-24 · 发布方介绍的方法、完整完成率和证据溯源三个部分；完整研究论文待发表</div></div><div class="paper-also"><div class="paper-also-title">其他动态</div><div class="paper-also-item" id="pinterest-teen-controls"><span class="paper-also-num">01</span><div><strong>Pinterest 把青少年推荐里的 AI 内容调节放进家长控制页</strong><p>Pinterest 11 月 23 日公布新版家长控制页，TechCrunch 24 日报道了 AI 推荐设置。家长可调节青少年推荐中 AI 生成内容的数量，也可分别设置通知和视频自动播放。启用家长密码后，孩子要把限制调宽，需要家长同意。推荐设置适用于信息流，无法据此判断某一张图片的来源。</p><p><a href="https://techcrunch.com/2026/11/24/pinterest-will-now-let-parents-limit-the-ai-generated-content-their-teens-see/" target="_blank" rel="noopener">原文：TechCrunch</a></p><p><a href="https://newsroom.pinterest.com/news/helping-families-navigate-controls-for-teens-on-pinterest/" target="_blank" rel="noopener">延伸阅读：Pinterest 新闻中心</a></p><p>来源：<a href="https://techcrunch.com/2026/11/24/pinterest-will-now-let-parents-limit-the-ai-generated-content-their-teens-see/" target="_blank" rel="noopener">TechCrunch</a> · 原始发布于 2026-11-24 · 对读产品公告与次日独立报道，核对推荐量调节、通知、自动播放和密码适用范围</p></div></div><div class="paper-also-item" id="ifood-agent-results"><span class="paper-also-num">02</span><div><strong>iFood 给代码助手加了一张能验收的工单</strong><p>巴西外卖平台 iFood 在 OpenAI 发布的客户案例中介绍，团队把原先各自运行的维护工作接入内部平台，覆盖逾 1.5 万个代码仓库。任务可在后台执行，结束后由 Structured Outputs 按预设字段交回结果，也能明确记录失败。iFood 已将它用于检查和尝试修复依赖问题。结果格式统一后，接手者能分辨哪些任务做完、哪些还需工程师处理。</p><p><a href="https://openai.com/business/customer-stories/ifood" target="_blank" rel="noopener">原文：OpenAI</a></p><p>来源：<a href="https://openai.com/business/customer-stories/ifood" target="_blank" rel="noopener">OpenAI</a> · 原始发布于 2026-11-24 · 客户案例的后台执行与结果验收章节，数据来自企业，未实测内部平台</p></div></div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="noam-brown-poker"><div class="insight-banner"><div class="meta">原始发布于 2026-11-24</div><h3>扑克高手为什么改研究谈判？Noam Brown 聊到了对手会怎样出牌</h3></div><div class="insight-body"><p>红杉资本在扑克机器人比赛决赛现场发布对谈，主持人 Alfred Lin 请 OpenAI 研究员 Noam Brown 回顾从扑克到外交策略游戏 Diplomacy 的转折。按发布方节目说明，在扑克里研究合理策略，到了需要协商结盟的游戏，机器人还得估计真人实际上愿意配合谁。</p><p>原节目 04:37 进入这段经历，09:39 谈它如何改变 Brown 的研究方向，14:59 转到人在场时如何与模型合作，后续问答还谈到让新模型尝试编写扑克机器人的局限。话语场已收录节目索引和章节，尚无经核对的逐字稿。这里按发布方说明转述。</p><p><a href="https://q.cxspace.com/talks/source-018ba55170c0c2cd/" target="_blank" rel="noopener">原文：AI 话语场</a></p><p><a href="https://www.youtube.com/watch?v=tRaFbDFBl_A" target="_blank" rel="noopener">延伸阅读：YouTube</a></p><p>来源：<a href="https://q.cxspace.com/talks/source-018ba55170c0c2cd/" target="_blank" rel="noopener">AI 话语场</a> · 原始发布于 2026-11-24 · 核读红杉资本节目说明、04:37、09:39 和 14:59 三个章节标题及话语场具体页；未取直接引语</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇论文</span></div><div class="paper-item" id="intent-cocreation"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">一句“可以试试”算拍板吗？研究者比较了 198 篇人机共创论文</span></div><div class="paper-tags"><span class="paper-tag">论文研究</span><span class="paper-tag">11月23日提交 v1，列入11月24日 arXiv 公开清单</span><span class="paper-tag">v1 全文表 1、承诺程度分类与讨论，对照 198 篇论文的系统描述；未做产品间用户实验</span></div><div class="paper-body"><p>Ashwin Ram 等人分析了 11 个 SIGCHI 会议的 198 篇论文，提出六个观察意图的维度。全文专门讨论了意向的坚定程度。人可能已经说清想看什么，却还没决定是否采用。在作者整理的系统中，大多数没有单独表达这层差别，创作主意由谁提出也少有追踪。比如，想先看一张蓝底海报，与确认把印刷稿全部改蓝，表面上都提到了同一种颜色，后续动作却完全不同。</p><p>这是对已有系统的归纳。研究没有让 198 组用户实测海报工具，也没有给某个产品打分。预印本 v1 于 11 月 23 日提交，列入 11 月 24 日 arXiv 人机交互公开清单。</p><p><a href="https://arxiv.org/abs/2611.30793v1" target="_blank" rel="noopener">原文：arXiv</a></p><p><a href="https://arxiv.org/html/2611.30793v1" target="_blank" rel="noopener">延伸阅读：arXiv</a></p></div><a class="paper-link" href="https://arxiv.org/abs/2611.30793v1" target="_blank" rel="noopener">arXiv →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="llamacpp-cache-restore"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12675" target="_blank" rel="noopener">llama.cpp 恢复提示缓存时，先等读取成功再放掉原条目</a></span><span class="oss-license">MIT</span></div><p>本地模型推理项目 llama.cpp 的 b12675 版调整了服务器读取提示缓存的顺序。合并记录解释，主要部分可能恢复成功，辅助部分却失败；此时过早清理会让旧条目缺少数据。维护者把旧缓存条目保留到整个恢复成功以后。提示缓存保存前面一段输入已经完成的计算，后续请求可以复用。如果恢复没成功，旧条目仍在，服务可以保留这份可供再试的状态。项目采用 MIT 许可证。本次核对的是 11 月 24 日的维护者发布记录，未做速度或故障恢复测试。</p><p><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12675" target="_blank" rel="noopener">原文：llama.cpp 维护者</a></p><p><a href="https://github.com/ggml-org/llama.cpp/pull/32828" target="_blank" rel="noopener">延伸阅读：GitHub</a></p><p><a href="https://github.com/ggml-org/llama.cpp/blob/master/LICENSE" target="_blank" rel="noopener">延伸阅读：GitHub</a></p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 27/50 个来源完成检查</summary><div class="content"><p>新闻主窗口为北京时间 11 月 24 日 06:00 至 25 日 06:00，资讯目录从 23 日 18:00 起。论文分列投稿日期和公开清单日期。部分动态入口仅取得栏目或日期，无法确认完整的逐小时更新；社区提交时间不能替代原始发布时间。已核读的正文与仅有题录的目录条目分别标注。</p><p><strong>检查尚未完成的来源</strong>：下列状态表示检查缺口，不能据此认定近期无更新；“已完整检查且无新增”另行记录。</p><ul><li><strong>Anthropic News</strong>：已检查部分内容，覆盖或日期待核。05:00：补查发布方页面成功；记录入口与链接，完整文章级覆盖待核。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200, 200。</li><li><strong>Claude Blog</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>xAI</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 未取得。</li><li><strong>Qwen</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200, 200。</li><li><strong>通义实验室</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>DeepSeek</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200, 200, 200。</li><li><strong>月之暗面 Moonshot</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 5 处，最新 2026-10-24；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>智谱 Z.ai</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 325 处，最新 2026-11-23；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>阶跃星辰 StepFun</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>Mistral</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 96 处，最新 2026-11-05；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>European Commission Digital Strategy</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 15 处，最新 2026-11-24；窗口内 2 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>UNESCO AI</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 15 处，最新 2026-11-24；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：Remote end closed connection without response</li><li><strong>OECD.AI</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 203 处，最新 2027-01-15；窗口内 2 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>arXiv cs.AI / cs.LG / cs.CL</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，可达；条目由主线程另行核验；入口或日期已取得，原文仍待核对。 最后一小时：HTTP Error 400: Bad Request</li><li><strong>Hugging Face Daily Papers</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>OpenReview</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>GitHub Trending（日榜 + Python 日榜）</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>36氪 AI 频道（逐篇核验原创与转载）</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>国家网信办·网信发布（AI 相关）</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 20 处，最新 2026-11-20；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li><li><strong>字节跳动 Seed·博客与论文</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>MiniMax·News &amp; Updates</strong>：已检查部分内容，覆盖或日期待核。05:00：已检查网页／数据入口，需继续逐条核对原文日期。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。 浏览器入口复查 HTTP 200。</li><li><strong>Hacker News</strong>：已检查部分内容，覆盖或日期待核。05:00：feed HTTP 200，共 30 条，带日期 30 条，最新 2026-11-24T20:44:15+00:00；窗口内 25 条；入口或日期已取得，原文仍待核对。 最后一小时：按发布方订阅流的条目时间筛选最后一小时。</li><li><strong>Databricks Research</strong>：已检查部分内容，覆盖或日期待核。05:00：HTTP 200，页面日期 13 处，最新 2026-10-20；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 最后一小时：复查公开入口；网页仅到日或缺少结构化发布时间，不能确认逐小时覆盖。</li></ul><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
+<details class="paper-observation source-catalog" id="source-catalog"><summary class="label">资讯源 <span class="source-catalog-count">45 条</span></summary><div class="content"><h3 class="source-catalog-heading">新闻资讯 · 36 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://apnews.com/article/6cc4e580290aadf304ee316d6d46dd81" target="_blank" rel="noopener">Anthropic 上市不到一周，股价收在 83 美元发行价以下<span class="source-catalog-original">How major US stock indexes fared Tuesday 11/24/2026</span></a><span class="source-catalog-name">美联社</span></li><li><a href="https://openai.com/index/searching-for-distant-planets-with-astra" target="_blank" rel="noopener">两名天文爱好者用 AI 筛出候选行星，天文学家接手复核<span class="source-catalog-original">Searching for distant planets with Astra</span></a><span class="source-catalog-name">OpenAI News</span></li><li><a href="https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/" target="_blank" rel="noopener">Tidal 将于 12 月 9 日起拒收并移除完全由 AI 生成的录音<span class="source-catalog-original">Tidal to ban and remove millions of AI-generated tracks as AI slop inundates music streaming</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://openclaw.ai/blog/shellbench" target="_blank" rel="noopener">ShellBench 把旧邮件和收据放进同一道题，领先模型约完成六成任务<span class="source-catalog-original">Introducing ShellBench, the benchmark for real-world tasks</span></a><span class="source-catalog-name">OpenClaw 基金会</span></li><li><a href="https://techcrunch.com/2026/11/24/pinterest-will-now-let-parents-limit-the-ai-generated-content-their-teens-see/" target="_blank" rel="noopener">Pinterest 把青少年推荐里的 AI 内容调节放进家长控制页<span class="source-catalog-original">Pinterest will now let parents limit the AI-generated content their teens see</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://openai.com/business/customer-stories/ifood" target="_blank" rel="noopener">iFood 给代码助手加了一张能验收的工单<span class="source-catalog-original">How iFood scales coding agents across 15,000 repositories</span></a><span class="source-catalog-name">OpenAI News</span></li><li><a href="https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/" target="_blank" rel="noopener">Maple 融资 530 万美元开发隐私保护型 AI 产品<span class="source-catalog-original">Maple raises $5.3M to build AI products that protect your data, even from itself</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://arstechnica.com/ai/2026/11/whats-going-on-with-the-riemann-hypothesis/" target="_blank" rel="noopener">黎曼猜想研究迎来哪些新进展<span class="source-catalog-original">What&#x27;s going on with the Riemann hypothesis?</span></a><span class="source-catalog-name">Ars Technica</span></li><li><a href="https://www.theverge.com/entertainment/1041417/david-fincher-netflix-cliff-booth-ai-interpositive" target="_blank" rel="noopener">电影画面疑似使用 AI 引发争议<span class="source-catalog-original">David Fincher is being dragged for suspected use of AI in his latest film</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://www.wired.com/story/jensen-huang-apologizes-to-nvidia-employees-in-first-all-hands-since-his-return/" target="_blank" rel="noopener">《连线》报道黄仁勋复任后的首次员工大会<span class="source-catalog-original">Jensen Huang Apologizes to Nvidia Employees in First All-Hands Since His Return</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/" target="_blank" rel="noopener">Meta 将 Muse 助手接入 Instagram 私信<span class="source-catalog-original">Meta brings its Muse AI assistant directly into Instagram DMs</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://simonwillison.net/2026/Nov/24/astra-historical-mystery/" target="_blank" rel="noopener">作者记录用 Astra 调查一起历史谜题<span class="source-catalog-original">GPT 6.2 Astra Solves a Historical Mystery</span></a><span class="source-catalog-name">Simon Willison&#x27;s Weblog</span></li><li><a href="https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance" target="_blank" rel="noopener">在模拟环境训练微型机器人避障，再转移到真实环境<span class="source-catalog-original">Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton</span></a><span class="source-catalog-name">Hugging Face</span></li><li><a href="https://www.theverge.com/tech/1041222/jensen-huang-nvidia-scandal-deepfakes" target="_blank" rel="noopener">仿冒黄仁勋的 AI 视频在社交平台流传<span class="source-catalog-original">Jensen Huang deepfakes are the hot new AI slop</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://techcrunch.com/2026/11/24/why-a-crusoe-investor-is-betting-on-solar-and-batteries-to-power-future-ai-data-centers/" target="_blank" rel="noopener">一位 Crusoe 投资人谈太阳能、电池与数据中心供电<span class="source-catalog-original">Why a Crusoe investor is betting on solar and batteries to power future AI data centers</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features" target="_blank" rel="noopener">《纽约时报》提醒摄影师留意新版 Photoshop 的 AI 功能<span class="source-catalog-original">The New York Times warns photographers not to update Photoshop over AI features</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/" target="_blank" rel="noopener">谷歌介绍金州勇士队在运营与球迷体验中使用 Gemini<span class="source-catalog-original">How Gemini is changing the game for Golden State&#x27;s organization and fans.</span></a><span class="source-catalog-name">Google AI Blog</span></li><li><a href="https://www.wired.com/story/ai-agents-can-get-honeypotted-too-aw/" target="_blank" rel="noopener">Anthropic 研究如何观察智能体行为<span class="source-catalog-original">Anthropic Created a Honeypot to Lure AI Agents Into Misbehaving</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://techcrunch.com/2026/11/24/amazons-decart-acquisition-is-a-bet-on-using-software-to-narrow-the-gap-with-nvidia-in-the-ai-chip-race/" target="_blank" rel="noopener">亚马逊拟利用 Decart 技术缩小芯片效率差距<span class="source-catalog-original">Amazon’s Decart acquisition is a bet on using software to narrow the silicon gap with Nvidia</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://www.technologyreview.com/2026/11/24/1148091/raising-the-stakes-for-enterprise-networks-with-ai-modernization/" target="_blank" rel="noopener">企业网络引入 AI 的基础设施问题<span class="source-catalog-original">Raising the stakes for enterprise networks with AI modernization</span></a><span class="source-catalog-name">MIT Technology Review</span></li><li><a href="https://www.wired.com/story/dont-bring-up-ai-if-you-want-to-enjoy-your-thanksgiving/" target="_blank" rel="noopener">感恩节聚餐如何聊到人工智能<span class="source-catalog-original">Don’t Bring Up AI if You Want to Enjoy Your Thanksgiving</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://www.wired.com/story/ai-solved-maths-most-famous-problem/" target="_blank" rel="noopener">《连线》关注数学界怎样核对 AI 给出的证明<span class="source-catalog-original">AI Solved Math’s Most Famous Problem. Now Humans Are Struggling to Understand It</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://www.qbitai.com/2026/11/512362.html" target="_blank" rel="noopener">量子位报道端侧设备协同计算方案<span class="source-catalog-original">业界首提“端侧超节点”，让端侧AI组队计算：AI效率暴涨270%，不用换芯片或模型</span></a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.qbitai.com/2026/11/512354.html" target="_blank" rel="noopener">文心 5.5 Flash Preview 发布开源权重<span class="source-catalog-original">文心 5.5 Flash Preview正式开源，采用 Apache 2.0 协议</span></a><span class="source-catalog-name">量子位</span></li><li><a href="https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls/" target="_blank" rel="noopener">亚马逊介绍 Bedrock 企业访问与数据控制接口<span class="source-catalog-original">Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models</span></a><span class="source-catalog-name">AWS AI Blog</span></li><li><a href="https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/" target="_blank" rel="noopener">AI 行业通讯回顾预训练曲线与微软动态<span class="source-catalog-original">[AINews] Jensen Is Back! and OpenAI Shows Its Pretraining Curve, joined by Microsoft</span></a><span class="source-catalog-name">Latent Space</span></li><li><a href="https://simonwillison.net/2026/Nov/24/datasette-agent/" target="_blank" rel="noopener">Datasette Agent 发布 0.7a1 测试版<span class="source-catalog-original">datasette-agent 0.7a1</span></a><span class="source-catalog-name">Simon Willison&#x27;s Weblog</span></li><li><a href="https://www.qbitai.com/2026/11/512330.html" target="_blank" rel="noopener">OceanBase 发布 OceanLake 湖库一体平台<span class="source-catalog-original">蚂蚁OceanBase发布湖库一体AI数据平台OceanLake，核心引擎向全球开源</span></a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.qbitai.com/2026/11/512264.html" target="_blank" rel="noopener">量子位观察具身智能行业的通用化进展<span class="source-catalog-original">具身行业，终于等来了自己的通用智能时刻</span></a><span class="source-catalog-name">量子位</span></li><li><a href="https://openai.com/business/customer-stories/intentful-dots" target="_blank" rel="noopener">Intentful 用人工智能助手减轻团队事务负担<span class="source-catalog-original">How Intentful uses dots to make more time for growth</span></a><span class="source-catalog-name">OpenAI News</span></li><li><a href="https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/" target="_blank" rel="noopener">Supertake 获融资，拟将用户预测转为股票投资组合<span class="source-catalog-original">Supertake raises $20M to let AI agents turn your market predictions into stock portfolios</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://openai.com/index/introducing-shirudo" target="_blank" rel="noopener">OpenAI 与思科介绍企业防护工具 Shirudo<span class="source-catalog-original">OpenAI and Cisco introduce Shirudo</span></a><span class="source-catalog-name">OpenAI News</span></li><li><a href="https://www.microsoft.com/en-us/education/blog/2026/11/how-higher-education-leaders-can-turn-institutional-intelligence-into-impact/" target="_blank" rel="noopener">微软提出评估高校人工智能试点的三个问题<span class="source-catalog-original">3 questions that can help universities turn AI experiments into results</span></a><span class="source-catalog-name">Microsoft AI</span></li><li><a href="https://techcommunity.microsoft.com/blog/microsoft-discovery-blog/three-things-you-should-know-about-microsoft-discovery/4574970" target="_blank" rel="noopener">微软介绍研究人员怎样利用失败的实验结果<span class="source-catalog-original">How Microsoft Discovery helps scientists learn from failure and find new possibilities</span></a><span class="source-catalog-name">Microsoft AI</span></li><li><a href="https://techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return/" target="_blank" rel="noopener">媒体报道特朗普曾与英伟达董事会通话<span class="source-catalog-original">Trump reportedly called into Nvidia board meeting to advocate for Huang’s return</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://techcrunch.com/2026/11/23/trump-endorses-jensen-huangs-return-to-nvidia-says-us-has-no-evidence-of-wrongdoing/" target="_blank" rel="noopener">特朗普公开支持黄仁勋复任<span class="source-catalog-original">Trump endorses Jensen Huang’s return to Nvidia, says US has no evidence of wrongdoing</span></a><span class="source-catalog-name">TechCrunch</span></li></ul><h3 class="source-catalog-heading">话语场 · 1 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://q.cxspace.com/talks/source-018ba55170c0c2cd/" target="_blank" rel="noopener">扑克高手为什么改研究谈判？Noam Brown 聊到了对手会怎样出牌<span class="source-catalog-original">OpenAI’s Noam Brown on Teaching AI to Think Before Acting (Live at No Limit Finals)</span></a><span class="source-catalog-name">红杉资本</span></li></ul><h3 class="source-catalog-heading">论文速递 · 1 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://arxiv.org/abs/2611.30793v1" target="_blank" rel="noopener">一句“可以试试”算拍板吗？研究者比较了 198 篇人机共创论文<span class="source-catalog-original">How Systems Treat Intent: A Faceted Taxonomy of Intent for Human-AI Co-Creation</span></a><span class="source-catalog-name">arXiv</span></li></ul><h3 class="source-catalog-heading">开源项目与版本更新 · 7 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12675" target="_blank" rel="noopener">llama.cpp 恢复提示缓存时，先等读取成功再放掉原条目<span class="source-catalog-original">llama.cpp b12675</span></a><span class="source-catalog-name">ggml-org/llama.cpp</span></li><li><a href="https://github.com/openai/openai-python/releases/tag/v3.59.0" target="_blank" rel="noopener">openai/openai-python v3.59.0：发布新版 Python SDK<span class="source-catalog-original">v3.59.0</span></a><span class="source-catalog-name">openai/openai-python</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12681" target="_blank" rel="noopener">ggml-org/llama.cpp b12681：为 Vulkan 的状态空间扫描增加支持<span class="source-catalog-original">b12681</span></a><span class="source-catalog-name">ggml-org/llama.cpp</span></li><li><a href="https://github.com/ggml-org/llama.cpp/releases/tag/b12680" target="_blank" rel="noopener">ggml-org/llama.cpp b12680：修复 OpenCL 计算中的偏移<span class="source-catalog-original">b12680</span></a><span class="source-catalog-name">ggml-org/llama.cpp</span></li><li><a href="https://github.com/huggingface/transformers/releases/tag/v5.24.1" target="_blank" rel="noopener">huggingface/transformers v5.24.1：修复 vLLM 及分布式相关问题<span class="source-catalog-original">Patch release v5.24.1</span></a><span class="source-catalog-name">huggingface/transformers</span></li><li><a href="https://github.com/unslothai/unsloth/releases/tag/v0.1.924-beta" target="_blank" rel="noopener">unslothai/unsloth v0.1.924-beta：更新 Inkling 微调支持<span class="source-catalog-original">Inkling finetuning + perf fixes</span></a><span class="source-catalog-name">unslothai/unsloth</span></li><li><a href="https://github.com/ollama/ollama/releases/tag/v0.40.18" target="_blank" rel="noopener">ollama/ollama v0.40.18：合并 Metal 上的残差混合计算<span class="source-catalog-original">v0.40.18</span></a><span class="source-catalog-name">ollama/ollama</span></li></ul></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-11-24.html">上一期 · 11-24</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
