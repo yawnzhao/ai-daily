@@ -41,7 +41,9 @@ def source(item):
 # From this issue on, link-only lines get readable labels and topics must be short tags.
 TIDY_LINKS_FROM = '2026-11-10'
 TOPIC_MAX_CHARS = 8
-LINK_HOSTS = {'newsroom.pinterest.com': 'Pinterest 新闻中心', 'support.tidal.com': 'Tidal 支持中心',
+LINK_HOSTS = {'oag.ca.gov': '加州司法部长办公室', 'doj.state.or.us': '俄勒冈州司法厅',
+              'governor.ny.gov': '纽约州州长办公室', 'x.com': 'X',
+              'newsroom.pinterest.com': 'Pinterest 新闻中心', 'support.tidal.com': 'Tidal 支持中心',
               'youtube.com': 'YouTube', 'techcrunch.com': 'TechCrunch', 'theverge.com': 'The Verge', 'wired.com': 'WIRED',
               'technologyreview.com': '《麻省理工科技评论》', 'aws.amazon.com': 'AWS 博客',
               'arxiv.org': 'arXiv', 'github.com': 'GitHub', 'qbitai.com': '量子位', '36kr.com': '36氪',
