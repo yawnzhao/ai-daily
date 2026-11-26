@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-11-27 · Meta 的 Muse 进入英国，金融监管机构想先联合测试；OpenAI 称矩阵乘法指数恰为 9/4</title>
+<meta name="description" content="Meta 的个人智能体 Muse 在英国上线前，金融行为监管局提出联合测试，Meta 没有接受。美国各地的信息公开办公室收到越来越多 AI 起草或批量发出的申请。OpenAI 公开一份数学预印本，称矩阵乘法指数恰好是 9/4。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-27.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-11-27 · Meta 的 Muse 进入英国，金融监管机构想先联合测试；OpenAI 称矩阵乘法指数恰为 9/4">
+<meta property="og:description" content="Meta 的个人智能体 Muse 在英国上线前，金融行为监管局提出联合测试，Meta 没有接受。美国各地的信息公开办公室收到越来越多 AI 起草或批量发出的申请。OpenAI 公开一份数学预印本，称矩阵乘法指数恰好是 9/4。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-27.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-11-26.html">上一期 · 11-26</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-11-27">2026年11月27日 · 星期五 · 第 82 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">5</span>条资讯</div>
+    <div class="stat"><span class="num">1</span>篇论文</div>
+    <div class="stat"><span class="num">1</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年11月27日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">3 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">Meta 的个人智能体 Muse 在英国上线前，金融行为监管局提出联合测试，Meta 没有接受。美国各地的信息公开办公室收到越来越多 AI 起草或批量发出的申请。OpenAI 公开一份数学预印本，称矩阵乘法指数恰好是 9/4。</div></div><div class="news-item" id="meta-muse-uk-fca"><div class="news-head"><span class="badge badge-model">政策与治理</span><h3>Muse 进入英国前，金融监管机构提出联合测试，Meta 没有接受</h3></div><p>据《连线》11 月 26 日报道，英国金融行为监管局（FCA）创新负责人 Colin Payne 说，上周监管局建议与 Meta 在其监管沙盒里联合测试个人智能体 Muse，Meta 没有接受。Payne 说，监管局特别想弄清智能体怎样替用户付款，如果智能体自主行动，监管局希望确保它符合消费者利益；Sainsbury&#x27;s、Marks &amp; Spencer、Ocado、Debenhams Group 和 Currys 等英国零售商表示，一直在和 Meta 合作，方便 Muse 访问自家网站。</p><p>Payne 也提到，这类测试通常要先和公司沟通很长时间，再用几周到几个月规划，而 Meta 上个月才告知监管局自己的计划。Meta 发言人对《连线》表示，公司一直与相关监管机构建设性沟通。报道称，Muse 自 9 月推出以来，北美已有超过 1000 万用户完成设置。英国竞争与市场管理局已要求 Meta 调整面向英国消费者的条款，写明提供 Muse 时须尽到“合理技能与谨慎”；条款同时承认，输出可能不准确，操作也可能没有按预期完成。英国数据保护监管机构 ICO 则强调，用户要能理解并控制 Muse 怎样使用个人数据。</p><p>另据 The Verge 11 月 25 日转述《财富》的报道，亚马逊曾与 Meta 商谈是否允许 Muse 在其商城购物，讨论涉及智能体推荐什么商品，以及对亚马逊广告收入的影响；亚马逊此前也拦下了 Perplexity 的购物智能体。</p><p><a href="https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/" target="_blank" rel="noopener">原文：《连线》</a></p><p><a href="https://www.theverge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions" target="_blank" rel="noopener">延伸阅读：The Verge</a></p><div class="source">来源：<a href="https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/" target="_blank" rel="noopener">《连线》</a> · 发布于 2026-11-26 · 核读《连线》全文：FCA 联合测试建议、零售商合作、北美用户数、CMA 条款与 ICO 表态；亚马逊商谈为 The Verge 转述《财富》报道，未读《财富》原文</div></div><div class="news-item" id="foia-ai-requests"><div class="news-head"><span class="badge badge-model">政策与治理</span><h3>AI 起草的申请越来越长，美国信息公开办公室忙不过来</h3></div><p>《麻省理工科技评论》11 月 25 日刊文，梳理美国各地政府信息公开申请的变化。一边是销售数据公司：多家获风险投资的创业公司累计融资超过 1 亿美元，向成千上万个机构批量申请采购记录，再用 AI 整理成卖给政府时用的“信号”。另一边，普通人也能用 AI 起草申请。佛罗里达大学的 David Cuillier 用 AI 检测工具检查美国教育部 7 月的申请记录，认为至少 29% 的申请全部或部分由 AI 撰写，这些申请平均长一倍，83% 要求列出一长串记录。</p><p>处理申请的办公室人手没有同步增加。宾夕法尼亚州公开记录办公室受理的申诉，从 2021 年约 3000 件增至今年预计 6000 件。各州立法开始回应：加州 9 月签署的法律规定 AI 系统不属于“公众成员”，但个人仍可按普通人的数量和频率使用 AI；印第安纳州 7 月 1 日生效的法律允许机构拒绝疑似抓取数据的申请。文章引述的受访者担心，为限制批量申请定的规则，最后也会落到记者、研究人员和移民律师身上。</p><p><a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener">原文：《麻省理工科技评论》</a></p><div class="source">来源：<a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener">《麻省理工科技评论》</a> · 发布于 2026-11-25，48 小时内补漏 · 核读全文：创业公司融资、教育部申请记录检测、宾州申诉数量、加州与印第安纳州立法；文中数字为受访者与文章引述，未逐一回查原始统计</div></div><div class="news-item" id="cloudflare-search-for-agents"><div class="news-head"><span class="badge badge-model">智能体</span><h3>Cloudflare 把站内搜索做成开关，让智能体不必逐页抓取</h3></div><p>Cloudflare 于 11 月 25 日推出 Search for Agents。网站管理员在控制台为自己的域名打开开关后，服务会自动创建 AI Search 实例、抓取并索引站内内容，并在网站自己的域名下提供搜索接口。智能体不必逐页抓取，可以直接用关键词或自然语言提问，结果以 Markdown 返回。</p><p>为了让智能体知道这个入口，服务会在站点每个页面加入说明搜索接口位置和用法的元信息。这项功能对包括免费套餐在内的所有客户开放，免费套餐有用量限制。外部智能体能否调用，仍受网站自己的机器人管理、AI 抓取控制和防火墙设置约束。</p><p><a href="https://blog.cloudflare.com/search-for-agents/" target="_blank" rel="noopener">原文：Cloudflare</a></p><div class="source">来源：<a href="https://blog.cloudflare.com/search-for-agents/" target="_blank" rel="noopener">Cloudflare</a> · 发布于 2026-11-25，48 小时内补漏 · 核读官方博客：开启方式、索引与搜索接口、页面元信息、套餐范围与站点安全设置约束；未实测</div></div><div class="paper-also"><div class="paper-also-title">其他动态</div><div class="paper-also-item" id="google-social-reasoning-eval"><span class="paper-also-num">01</span><div><strong>用户只讲了一面之词，AI 助手能看出同事的真实动机吗？</strong><p>谷歌研究院 11 月 25 日介绍了一套评估 AI 助手社交推理的方法。研究者先在多智能体模拟里设定一个带有隐藏动机的角色，让它与其他角色互动，其中一个角色代表用户；随后由“用户”向被测助手讲述经过，请它推断那个角色的动机。动机在模拟开始时就已设定，因此答案可以核对。</p><p>研究者在文章中报告，信息经过用户的主观转述后，模型的社交推理明显变难；模型容易受用户叙述方式影响，得出正确判断需要的细节比人更多，也没有充分利用追问。文中举的例子是，用户描述的同事明明在帮忙，被测模型仍给出了针对这位同事的严厉建议。</p><p><a href="https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/" target="_blank" rel="noopener">原文：谷歌研究院</a></p><p>来源：<a href="https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/" target="_blank" rel="noopener">谷歌研究院</a> · 发布于 2026-11-25，48 小时内补漏 · 核读研究博客的评估框架与研究者报告的定性发现；未读论文全文，正文不引用数字</p></div></div><div class="paper-also-item" id="hf-agent-swarms-series"><span class="paper-also-num">02</span><div><strong>Hugging Face 开写多智能体系列：同样的预算，四个智能体能赢一个吗？</strong><p>11 月 26 日，Hugging Face 发布系列文章的第一篇，讲怎样搭建、训练和评估多智能体系统。作者把要检验的问题放在开头：智能体之间互相沟通，是真的有帮助，还是只是多花了算力？四个智能体各试一次，至少一个答对的机会自然更高，但成本也是四倍，所以作者主张在相同预算下比较。</p><p>第一个示例让四个智能体共用一个语言模型，做一个容易核对答案的简单任务；按文章说明，在 Hugging Face Jobs 上用两张 H200 运行约五小时，花费约 50 美元。系列后续每篇会提出一个问题，搭一个小系统，并给出可复现的示例。</p><p><a href="https://huggingface.co/blog/training-swarms" target="_blank" rel="noopener">原文：Hugging Face</a></p><p>来源：<a href="https://huggingface.co/blog/training-swarms" target="_blank" rel="noopener">Hugging Face</a> · 发布于 2026-11-26 · 核读系列首篇的问题设定、预算对比思路与第一个示例的规模和成本；未运行示例</p></div></div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="lance-martin-fermat-lean"><div class="insight-banner"><div class="meta">原节目发布于 2026-11-25</div><h3>Lance Martin：一千个智能体怎样分工，把费马大定理的证明写进 Lean</h3></div><div class="insight-body"><p>Lance Martin 是 Anthropic 工程师，在 AI Engineer 发布的这场演讲里介绍怎样协调多个智能体完成数学证明的形式化。AI Engineer 是面向 AI 工程师、创业者和技术架构师的技术会议系列，以大会演讲和实践工作坊为主，关注模型和工具怎样用进真实的软件系统。</p><p>按发布方 11 月 25 日的节目说明，演讲讲的是把已有的费马大定理证明写成 Lean 能逐步检查的形式，一千个智能体怎样分工：从团队用到的 Git 和数据库讲起，介绍负责协调的智能体怎样创建任务表、其他智能体怎样重新分配工作；后半场转向记忆，讨论哪些记录值得留给下一轮工作。和本期 OpenAI 的预印本放在一起听，可以多问一句：机器能逐行检查证明以后，人还要花多少功夫，才能弄懂一份证明为什么成立？</p><p><a href="https://q.cxspace.com/talks/source-b9e3768ed4478c8a/" target="_blank" rel="noopener">原文：AI 话语场</a></p><p><a href="https://www.youtube.com/watch?v=wrfbI5eyLAI" target="_blank" rel="noopener">延伸阅读：YouTube</a></p><p>来源：<a href="https://q.cxspace.com/talks/source-b9e3768ed4478c8a/" target="_blank" rel="noopener">AI 话语场</a> · 原节目发布于 2026-11-25 · 仅核对 q.cxspace.com 已上线的仅索引页与原发布方节目说明；未观看原片，无字幕</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇论文</span></div><div class="paper-item" id="openai-matrix-exponent-nine-fourths"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">OpenAI 称矩阵乘法指数恰为 9/4，下界与 10 月的上界对上了</span></div><div class="paper-tags"><span class="paper-tag">研究进展</span><span class="paper-tag">11 月 24 日版，GitHub 提交于 2026-11-25T00:04:41Z，48 小时内补漏</span><span class="paper-tag">核对预印本第 1 页摘要、第 1 节定理 1.1、推论 1.2 与形式算术电路定义，仓库 README 的 Lean 形式化范围及提交时间；未核读证明正文，未独立检查 Lean 代码</span></div><div class="paper-body"><p>OpenAI 在 GitHub 数学仓库发布一份 11 月 24 日版预印本，题为《矩阵乘法指数是四分之九》，提交记录时间为北京时间 11 月 25 日 08:04。论文主张，在任意域上，方阵乘法的指数恰好是 9/4。上界此前已有：OpenAI 10 月给出复数域上的结果，Amanov、van den Berg 和 Zuiddam 推广到任意域。这份预印本补的是与之相等的下界：对每个 n≥2，用形式算术电路计算两个 n×n 矩阵的乘积，即使线性运算不计成本，也至少需要 n 的 9/4 次方的一半个乘法或除法门。</p><p>结论的适用范围写在定义里：论文使用的是形式算术电路，输出须与乘积在有理函数意义上恒等。仓库说明写明，配套的 Lean 形式化证明覆盖的是不含除法的电路、在任意域上计算形式多项式恒等式的情形。理论计算机科学家 Scott Aaronson 在博客中写道，自己目前的工作假设是，除非出现相反信息，直接来自 OpenAI 或 Anthropic 的证明是正确的；对于网上有关 AI 实验室已能破解现行密码体系的传闻，他表示在看到细节前不愿传播未经核实的说法。</p><p><a href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md" target="_blank" rel="noopener">原文：OpenAI</a></p><p><a href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf" target="_blank" rel="noopener">延伸阅读：GitHub</a></p><p><a href="https://scottaaronson.blog/?p=10379" target="_blank" rel="noopener">延伸阅读：Scott Aaronson 博客</a></p></div><a class="paper-link" href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md" target="_blank" rel="noopener">OpenAI →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="llamacpp-amd-benchmark-dashboard"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://huggingface.co/blog/ggml-org/llamacpp-amd-bench" target="_blank" rel="noopener">AMD 显卡跑本地模型，有了每周更新的公开测速表</a></span><span class="oss-license">MIT（llama.cpp 仓库）</span></div><p>llama.cpp 团队 11 月 26 日在 Hugging Face 上线一个基准测试看板，记录本地推理在 AMD Ryzen 和 Radeon 硬件上的速度。目前可选的硬件是 Radeon 8060S 和 Radeon AI Pro R9700S。看板展示两项以每秒词元数计的测试：一次处理 512 个输入词元，和连续生成 128 个词元；看板可以按版本追踪这两项成绩的变化，另有一页显示上下文变长时生成速度怎样变化。</p><p>测试对象是通过 llama-install.sh 分发的预编译版本，公开的工作流每周运行一次，用 llama-bench 分别在开启和关闭 Flash Attention 时各测 10 次。模型目前包括 Inkling 2 Mini、Qwen、Gemma、gpt-oss 和 LFM 等，原始结果放在 Hugging Face 的公开存储桶里，开发者可以下载后与自己机器上的结果对照。</p><p><a href="https://huggingface.co/blog/ggml-org/llamacpp-amd-bench" target="_blank" rel="noopener">原文：llama.cpp 团队</a></p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 26/50 个来源完成检查</summary><div class="content"><p>新闻窗口为北京时间 11 月 26 日 06:00 至 27 日 06:00，资讯目录从 25 日 18:00 起。正文中 Cloudflare、谷歌研究院、《麻省理工科技评论》和 OpenAI 预印本四条发布于 11 月 25 日，属于 48 小时内补漏，按原始日期标注。话语场保留演讲原始发布日期。部分来源只能核到栏目页面或日期：Ars Technica 返回 403；OpenReview 遇浏览器验证页未扫描；TechCrunch、404 Media 只取到作者页；Anthropic、arXiv、GitHub Trending 只核到入口。未确定原始发布时间的线索保留待核，正常返回的页面也未一律计为完整覆盖。</p><p><strong>检查尚未完成的来源</strong>：下列状态表示检查缺口，不能据此认定近期无更新；“已完整检查且无新增”另行记录。</p><ul><li><strong>Anthropic News</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 265 处，最新 2026-11-26；窗口内 2 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。；06:00 准备阶段复查新闻列表：最近一条为 2026-11-20 IPO 交割公告，窗口内无新文章（页面日期为列表页标注日期）</li><li><strong>Claude Blog</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 32 处，最新 2026-11-24；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>通义实验室</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 2 处，最新 2026-11-26；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>DeepSeek</strong>：已检查部分内容，覆盖或日期待核。内置浏览器：API Change Log 最新 2026-11-13，窗口内 0 条；additional_urls（官网产品与官方项目发布）本次未逐个核对，整源 partial。</li><li><strong>月之暗面 Moonshot</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 5 处，最新 2026-10-24；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>智谱 Z.ai</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 325 处，最新 2026-11-23；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>阶跃星辰 StepFun</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目</li><li><strong>Mistral</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 96 处，最新 2026-11-05；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>European Commission Digital Strategy</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 15 处，最新 2026-11-25；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>UNESCO AI</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 15 处，最新 2026-11-26；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>OECD.AI</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 203 处，最新 2027-01-15；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>arXiv cs.AI / cs.LG / cs.CL</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验；入口或日期已取得，原文仍待核对。</li><li><strong>Hugging Face Daily Papers</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验；入口或日期已取得，原文仍待核对。</li><li><strong>OpenReview</strong>：已检查部分内容，覆盖或日期待核。内置浏览器：首页只见 Active Venues / Open for Submissions 列表（无投稿时间）；打开 venue TMLR 时跳到 “Verifying your browser” 验证页，未绕过；未扫描任何 venue 的投稿时间范围，整源 partial。</li><li><strong>GitHub Trending（日榜 + Python 日榜）</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验；入口或日期已取得，原文仍待核对。</li><li><strong>36氪 AI 频道（逐篇核验原创与转载）</strong>：已检查部分内容，覆盖或日期待核。内置浏览器：AI 频道首屏 26 篇（剔除活动推广 1 篇），相对时间 8–18 小时前，按检查时刻折算为近似小时；首屏只覆盖窗口后半段，未加载更多，绝对时间与 original/relay 未回文章页核对，整源 partial。</li><li><strong>国家网信办·网信发布（AI 相关）</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 20 处，最新 2026-11-20；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>字节跳动 Seed·博客与论文</strong>：已检查部分内容，覆盖或日期待核。内置浏览器：research 页 public_papers 最新 2026-10-25（Recycler），博客卡片为推荐区最新 2026-08-05；/zh/blog 列表页 404，无法证明全站完整更新流，窗口内未见新条目，整源 partial。</li><li><strong>MiniMax·News &amp; Updates</strong>：已检查部分内容，覆盖或日期待核。内置浏览器：News 首卡 &#x27;MiniMax Speech 2.8&#x27;（标 NEW，卡片无日期，待回文章页核对），其余卡片最新 2026-09-11；未核模型导航页，整源 partial。</li><li><strong>TechCrunch</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 35 处，最新 2026-11-26；窗口内 9 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>Ars Technica</strong>：访问或抓取失败。HTTPError: HTTP Error 403: Forbidden</li><li><strong>MIT Technology Review</strong>：已检查部分内容，覆盖或日期待核。内置浏览器：AI 栏目列表延伸到窗口起点之前（下一条 2026-11-23），窗口内 1 篇（URL 日期 2026-11-25，粒度到天）；列表覆盖完整，正文作者与精确时间未核，记 partial。</li><li><strong>404 Media</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 41 处，最新 2026-11-26；窗口内 9 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>Databricks Research</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 13 处，最新 2026-10-20；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li></ul><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
+<details class="paper-observation source-catalog" id="source-catalog"><summary class="label">资讯源 <span class="source-catalog-count">40 条</span></summary><div class="content"><h3 class="source-catalog-heading">新闻资讯 · 34 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/" target="_blank" rel="noopener">Muse 进入英国前，金融监管机构提出联合测试，Meta 没有接受<span class="source-catalog-original">Meta Refused to Share Muse for Testing, UK Financial Watchdog Complains</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener">AI 起草的申请越来越长，美国信息公开办公室忙不过来<span class="source-catalog-original">AI is straining America’s open records systems</span></a><span class="source-catalog-name">MIT Technology Review</span></li><li><a href="https://blog.cloudflare.com/search-for-agents/" target="_blank" rel="noopener">Cloudflare 把站内搜索做成开关，让智能体不必逐页抓取<span class="source-catalog-original">Introducing Search for Agents</span></a><span class="source-catalog-name">Cloudflare</span></li><li><a href="https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/" target="_blank" rel="noopener">用户只讲了一面之词，AI 助手能看出同事的真实动机吗？<span class="source-catalog-original">Verifiable Social Reasoning for LLM Assistants</span></a><span class="source-catalog-name">Google Research</span></li><li><a href="https://huggingface.co/blog/training-swarms" target="_blank" rel="noopener">Hugging Face 开写多智能体系列：同样的预算，四个智能体能赢一个吗？<span class="source-catalog-original">Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems</span></a><span class="source-catalog-name">Hugging Face</span></li><li><a href="https://www.qbitai.com/2026/11/513021.html" target="_blank" rel="noopener">381个AI直播冲刺证明P=NP！把GitHub干崩了</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4086477958031752" target="_blank" rel="noopener">字节押注的机器人“手”闯关IPO，大寰已八轮融资加身</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086453904091784" target="_blank" rel="noopener">2027年或迎洗牌，创业公司要找到生态位</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086496959638149" target="_blank" rel="noopener">具身智能生态大集结：喧嚣、内卷与自救</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086486991022473" target="_blank" rel="noopener">Neocloud的好日子到头了？</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086511715596168" target="_blank" rel="noopener">IREN：有电没单、有地缺钱，矿场变云难在哪？</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086518226925440" target="_blank" rel="noopener">传RSA已被OpenAI与Anthropic攻破，互联网加密要变天了？</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.qbitai.com/2026/11/512981.html" target="_blank" rel="noopener">AI 3D界的“X光”来了！一图直出巴洛克雕塑，3D打印开箱即用</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4086442905660035" target="_blank" rel="noopener">4.1万行AI代码塞进Linux内核，Linus一顿怒斥：“告诉你的AI助手，先把自己的事情做好”</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086472267033219" target="_blank" rel="noopener">Personal Agent是注意力之外的生意</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.qbitai.com/2026/11/512972.html" target="_blank" rel="noopener">90 秒自动换装补能，具微科技“潘多拉”支撑机器人无人化值守</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4086372097206921" target="_blank" rel="noopener">GPT-6 Astra或已发现大一统理论？斯坦福物理论文引热议</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086400100706693" target="_blank" rel="noopener">一款AI心理产品，靠「挽回前任挑战」活了下来</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086346072517257" target="_blank" rel="noopener">谷歌推出面向Agent的命令行工具gemini-api</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086339490064774" target="_blank" rel="noopener">破解AI时代的智力产能过剩</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086291346205316" target="_blank" rel="noopener">又一顶级华人研究员离职，人效比只有Anthropic一半，OpenAI后院起火</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.qbitai.com/2026/11/512916.html" target="_blank" rel="noopener">顶尖商用级AI视频每秒只要5毛！中国开源新势力拿下全球第一</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4086154043009413" target="_blank" rel="noopener">OBSBOT寻影发布三款新品，加速AI影像自动化落地｜最前线</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://simonwillison.net/2026/Nov/26/hn-50651685/" target="_blank" rel="noopener">评论：《纽约时报》提醒摄影师不要因 AI 功能更新 Photoshop<span class="source-catalog-original">The New York Times warns photographers not to update Photoshop over AI features</span></a><span class="source-catalog-name">Simon Willison&#x27;s Weblog</span></li><li><a href="https://www.36kr.com/p/4086059854845828" target="_blank" rel="noopener">OpenAI和Anthropic的最强AI，他们自己都不敢放出来</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.36kr.com/p/4086048701721220" target="_blank" rel="noopener">GPT-6.2正式接班，OpenAI官宣淘汰GPT-5.6</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.qbitai.com/2026/11/512897.html" target="_blank" rel="noopener">任少卿带着世界模型3.0来了！蔚来智驾训练提效5倍，座舱也用上强化学习</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.qbitai.com/2026/11/512840.html" target="_blank" rel="noopener">沈向洋刚讲了好多AI非共识啊</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4085998943410051" target="_blank" rel="noopener">解密奥斯汀208号展位的“幽灵事件”：OpenAI亲手解散机器人团队，机器人行业却要变天？</a><span class="source-catalog-name">36氪 AI 频道（逐篇核验原创与转载）</span></li><li><a href="https://www.qbitai.com/2026/11/512828.html" target="_blank" rel="noopener">AI影视高地正在北影海淀一带崛起，「一人制片厂」基建搭好了</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.qbitai.com/2026/11/512819.html" target="_blank" rel="noopener">刚刚，黎曼猜想证明代码暴砍了99.5%！只剩7.6万行</a><span class="source-catalog-name">量子位</span></li><li><a href="https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/" target="_blank" rel="noopener">[AINews] 数学证明出现的速度快过我们读完的速度<span class="source-catalog-original">[AINews] Math Proofs Are Landing Faster Than We Can Read Them</span></a><span class="source-catalog-name">Latent Space</span></li><li><a href="https://www.theverge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions" target="_blank" rel="noopener">报道：亚马逊正商谈解除对 Muse AI 购物的封锁<span class="source-catalog-original">Amazon is reportedly in talks to end Muse AI shopping block</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://scottaaronson.blog/?p=10379" target="_blank" rel="noopener">Scott Aaronson：正在发生之事的量级<span class="source-catalog-original">Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening</span></a><span class="source-catalog-name">Hacker News</span></li></ul><h3 class="source-catalog-heading">话语场 · 2 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://q.cxspace.com/talks/source-b9e3768ed4478c8a/" target="_blank" rel="noopener">Lance Martin：一千个智能体怎样分工，把费马大定理的证明写进 Lean<span class="source-catalog-original">1,000 Claude Agents Formalized Fermat&#x27;s Last Theorem — Lance Martin, Anthropic</span></a><span class="source-catalog-name">AI话语场</span></li><li><a href="https://latent.space/p/the_revolution_vs_the_renaissance_thariq_shihipar_openai/" target="_blank" rel="noopener">革命与文艺复兴——Thariq Shihipar，OpenAI<span class="source-catalog-original">The Revolution vs The Renaissance — Thariq Shihipar, OpenAI</span></a><span class="source-catalog-name">Latent Space</span></li></ul><h3 class="source-catalog-heading">论文速递 · 2 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md" target="_blank" rel="noopener">OpenAI 称矩阵乘法指数恰为 9/4，下界与 10 月的上界对上了<span class="source-catalog-original">The matrix multiplication exponent is nine fourths</span></a><span class="source-catalog-name">OpenAI</span></li><li><a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026/README.md" target="_blank" rel="noopener">有限傅里叶变换的对数指数<span class="source-catalog-original">The logarithmic exponent of finite Fourier transforms</span></a><span class="source-catalog-name">OpenAI</span></li></ul><h3 class="source-catalog-heading">开源项目与版本更新 · 2 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://huggingface.co/blog/ggml-org/llamacpp-amd-bench" target="_blank" rel="noopener">AMD 显卡跑本地模型，有了每周更新的公开测速表<span class="source-catalog-original">Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon</span></a><span class="source-catalog-name">Hugging Face</span></li><li><a href="https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin" target="_blank" rel="noopener">基于 Nemotron 3.5 Parse：开放数据、微调与更快推理<span class="source-catalog-original">Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference</span></a><span class="source-catalog-name">Hugging Face</span></li></ul></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-11-26.html">上一期 · 11-26</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>
