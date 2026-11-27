@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 日报 2026-11-28 · DeepSeek 在聊天框里给每轮对话算账；德国 Q.ANT 把光子处理器送进云数据中心试点</title>
+<meta name="description" content="DeepSeek 网页和 App 的回复下方出现单轮账单，列出 token 用量和金额，聊天仍然免费。德国 Q.ANT 的光子处理器进入云服务商 IONOS 的设施试点，公司称模拟可省电四到五倍，真实硬件尚未证明。安卓的 AI 自制小组件开始向 Pixel 推送，评测发现不少只是 Gemini 的快捷入口。">
+<link rel="canonical" href="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-28.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 日报 2026-11-28 · DeepSeek 在聊天框里给每轮对话算账；德国 Q.ANT 把光子处理器送进云数据中心试点">
+<meta property="og:description" content="DeepSeek 网页和 App 的回复下方出现单轮账单，列出 token 用量和金额，聊天仍然免费。德国 Q.ANT 的光子处理器进入云服务商 IONOS 的设施试点，公司称模拟可省电四到五倍，真实硬件尚未证明。安卓的 AI 自制小组件开始向 Pixel 推送，评测发现不少只是 Gemini 的快捷入口。">
+<meta property="og:url" content="https://yawnzhao.github.io/ai-daily/ai-daily-digest-2026-11-28.html">
+<meta property="og:site_name" content="AI 日报">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-size='17' font-family='-apple-system,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AI 日报" href="https://yawnzhao.github.io/ai-daily/feed.xml">
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --card-hover: #fafafc;
+    --border: #e5e5ea;
+    --accent: #e8794c;
+    --accent-dim: #d26a3c;
+    --accent-text: #c2410c;
+    --text: #1a1a1f;
+    --text-dim: #4a4a54;
+    --text-muted: #6e6e78;
+    --tag-bg: #f0f0f5;
+    --green: #16a34a;
+    --blue: #2563eb;
+    --red: #dc2626;
+    --yellow: #d97706;
+    --purple: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+
+  .issue-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 28px; font-size: 14px; }
+  .issue-nav a { color: var(--accent-text); text-decoration: none; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 6px 14px; }
+  .issue-nav a:hover { border-color: var(--accent-dim); }
+  .issue-nav .spacer { margin-left: auto; }
+  .issue-nav-bottom { margin: 36px 0 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .play-btn:focus-visible, .progress-bar:focus-visible, .issue-nav a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .header .logo { font-size: 14px; letter-spacing: 4px; color: var(--accent-text); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .header .date { font-size: 15px; color: var(--text-dim); }
+  .header .stats { display: flex; justify-content: center; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .header .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+  .header .stat .num { color: var(--accent-text); font-weight: 700; font-size: 16px; }
+
+  .section { margin-bottom: 48px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header .icon { font-size: 22px; }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .tag { font-size: 12px; color: var(--text-muted); margin-left: auto; background: var(--tag-bg); padding: 3px 10px; border-radius: 4px; }
+
+  .focus-box { background: linear-gradient(135deg, rgba(232,121,76,0.12) 0%, rgba(232,121,76,0.03) 100%); border: 1px solid rgba(232,121,76,0.25); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+  .focus-box .label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .focus-box .content { font-size: 15px; line-height: 1.8; color: var(--text); }
+
+  .news-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; transition: background 0.2s, border-color 0.2s; }
+  .news-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .news-item .news-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .news-item .badge { flex-shrink: 0; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; margin-top: 4px; }
+  .badge-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+  .badge-model { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .badge-money { background: rgba(74,222,128,0.15); color: var(--green); }
+  .badge-safety { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .badge-policy { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .badge-infra { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+
+  .news-item h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+  .news-item p { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-top: 4px; }
+  .news-item .source { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+  .news-item a { color: var(--accent-text); text-decoration: none; }
+  .news-item a:hover { text-decoration: underline; }
+
+  .insight-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .insight-card .insight-banner { background: linear-gradient(135deg, #fff7f2 0%, #fff 100%); padding: 24px 28px; border-bottom: 1px solid var(--border); }
+  .insight-card .insight-banner .meta { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .insight-card .insight-banner h3 { font-size: 19px; font-weight: 700; line-height: 1.5; }
+  .insight-card .insight-body { padding: 24px 28px; }
+  .insight-card .insight-body p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 16px; }
+  .insight-card .insight-body strong { color: var(--text); font-weight: 600; }
+  .insight-card .key-points { list-style: none; padding: 0; margin: 16px 0; }
+  .insight-card .key-points li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .insight-card .key-points li::before { content: '\25B8'; position: absolute; left: 0; color: var(--accent-text); }
+
+  .oneliner { background: rgba(232,121,76,0.08); border-left: 3px solid var(--accent); padding: 14px 20px; border-radius: 0 8px 8px 0; margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.6; }
+
+  .paper-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; transition: background 0.2s, border-color 0.2s; }
+  .paper-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .paper-item .paper-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .paper-item .paper-num { flex-shrink: 0; font-size: 18px; font-weight: 800; color: var(--accent-text); min-width: 28px; }
+  .paper-item .paper-title { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .paper-item .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .paper-item .paper-tag { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 2px 8px; border-radius: 3px; }
+  .paper-item .paper-body { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin-bottom: 12px; }
+  .paper-item .paper-body strong { color: var(--text); font-weight: 600; }
+  .paper-item .paper-takeaways { list-style: none; padding: 0; margin: 0 0 12px 0; border-left: 2px solid rgba(232,121,76,0.3); padding-left: 16px; }
+  .paper-item .paper-takeaways li { font-size: 13px; color: var(--text-dim); line-height: 1.7; padding: 3px 0; }
+  .paper-item .paper-link { font-size: 12px; color: var(--accent-text); text-decoration: none; }
+  .paper-item .paper-link:hover { text-decoration: underline; }
+  .paper-also { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-top: 16px; }
+  .paper-also .paper-also-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .paper-also .paper-also-item { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .paper-also .paper-also-item:last-child { border-bottom: none; }
+  .paper-also .paper-also-num { color: var(--accent-text); font-weight: 700; flex-shrink: 0; }
+  .paper-also .paper-also-item a { color: var(--blue); text-decoration: none; font-size: 12px; }
+  .paper-also .paper-also-item a:hover { text-decoration: underline; }
+  .paper-observation { background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(37,99,235,0.02) 100%); border: 1px solid rgba(37,99,235,0.15); border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .paper-observation .label { font-size: 12px; color: var(--blue); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .paper-observation .content { font-size: 14px; line-height: 1.8; color: var(--text-dim); }
+  .paper-observation .content strong { color: var(--text); }
+
+  .oss-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 14px; transition: background 0.2s, border-color 0.2s; }
+  .oss-item:hover { background: var(--card-hover); border-color: var(--accent-dim); }
+  .oss-rank { flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-muted); }
+  .oss-rank.top { background: rgba(232,121,76,0.15); color: var(--accent-text); }
+  .oss-content { flex: 1; min-width: 0; }
+  .oss-content .oss-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .oss-content .oss-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .oss-content .oss-name a { color: var(--blue); text-decoration: none; }
+  .oss-content .oss-name a:hover { text-decoration: underline; }
+  .oss-stars { font-size: 12px; color: var(--yellow); font-weight: 600; }
+  .oss-license { font-size: 11px; color: var(--text-muted); background: var(--tag-bg); padding: 1px 6px; border-radius: 3px; }
+  .oss-content p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  .audio-player { background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .audio-player .play-btn { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%); border: none; color: #fff; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(232,121,76,0.3); }
+  .audio-player .play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(232,121,76,0.45); }
+  .audio-player .play-btn:active { transform: scale(0.95); }
+  .audio-player .play-info { flex: 1; min-width: 200px; }
+  .audio-player .play-label { font-size: 12px; color: var(--accent-text); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .audio-player .play-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .audio-player .play-meta { font-size: 13px; color: var(--text-muted); }
+  .audio-player .progress-row { flex: 1 1 100%; display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .audio-player .current-time, .audio-player .duration-time { font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px; text-align: center; }
+  .audio-player .progress-bar { flex: 1; height: 6px; background: var(--tag-bg); border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+  .audio-player .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 100%); border-radius: 3px; transition: width 0.1s linear; }
+  .audio-player audio { display: none; }
+
+  @media (max-width: 640px) {
+    body { padding: 16px 14px 40px; }
+    .header h1 { font-size: 24px; }
+    .news-item, .oss-item { padding: 14px 16px; }
+    .insight-card .insight-banner, .insight-card .insight-body { padding: 18px 20px; }
+  }
+  /* Collapsed source catalog. */
+  .source-catalog > summary { cursor: pointer; }
+  .source-catalog > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 5px; }
+  .source-catalog-count { font-weight: 400; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+  .source-catalog-list { list-style: none; padding: 0; margin: 8px 0 0; }
+  .source-catalog-list li { display: grid; grid-template-columns: minmax(0, 1fr) 144px; align-items: start; gap: 20px; padding: 13px 0; border-top: 1px solid var(--border); }
+  .source-catalog-list a { color: var(--text); line-height: 1.6; text-decoration: none; overflow-wrap: anywhere; }
+  .source-catalog-list a:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+  .source-catalog-list a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .source-catalog-name { color: var(--text-muted); text-align: right; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .source-catalog-list li { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 0; }
+    .source-catalog-name { text-align: left; }
+  }
+  .source-catalog-original { display: block; margin-top: 4px; font-size: 12px; line-height: 1.55; color: var(--text-muted, #6b7280); }
+</style>
+</head>
+<body>
+
+<nav class="issue-nav" aria-label="日报导航" data-nav="top"><a href="index.html">← 全部日报</a><span class="spacer"></span><a href="ai-daily-digest-2026-11-27.html">上一期 · 11-27</a></nav>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="logo">AI Daily Digest</div>
+  <h1>AI 日报</h1>
+  <div class="date"><time datetime="2026-11-28">2026年11月28日 · 星期六 · 第 83 期</time></div>
+  <div class="stats">
+    <div class="stat"><span class="num">4</span>个板块</div>
+    <div class="stat"><span class="num">6</span>条资讯</div>
+    <div class="stat"><span class="num">1</span>篇论文</div>
+    <div class="stat"><span class="num">1</span>个开源项目</div>
+    <div class="stat">覆盖过去 <span class="num">24</span> 小时</div>
+  </div>
+</header>
+
+<!-- ===== Audio Player ===== -->
+<div class="audio-player"><div class="play-info"><div class="play-label">语音简报</div><div class="play-title">AI 日报 · 2026年11月28日</div><div class="play-meta">语音版制作中 · <a href="https://www.xiaoyuzhoufm.com/podcast/6aa034c1002d4e51bf4b4f31" target="_blank" rel="noopener">前往小宇宙节目页</a></div></div></div>
+<script>var AUDIO_SRC = "";</script>
+
+<main id="main">
+
+<!-- 四个板块的结构见任意一期已发布页面；类名保持一致，不要新增自定义样式。
+     每日精选：.section > .section-header + .focus-box + .news-item*
+     行业洞见：.section > .insight-card > .insight-banner + .insight-body（内含 .focus-box、p、.key-points、.oneliner）
+     论文速递：.section > .paper-item*
+     开源解读：.section > .oss-item* + .oneliner
+     所有外链写成 <a href="https://..." target="_blank" rel="noopener">。 -->
+<div class="section" id="featured"><div class="section-header"><span class="icon">📰</span><h2>每日精选</h2><span class="tag">3 条核心资讯</span></div><div class="focus-box"><div class="label">今日焦点</div><div class="content">DeepSeek 网页和 App 的回复下方出现单轮账单，列出 token 用量和金额，聊天仍然免费。德国 Q.ANT 的光子处理器进入云服务商 IONOS 的设施试点，公司称模拟可省电四到五倍，真实硬件尚未证明。安卓的 AI 自制小组件开始向 Pixel 推送，评测发现不少只是 Gemini 的快捷入口。</div></div><div class="news-item" id="deepseek-chat-token-bill"><div class="news-head"><span class="badge badge-model">产品与商业化</span><h3>DeepSeek 在每条回复下面算账：用了多少 token、值多少钱，聊天仍然免费</h3></div><p>据量子位 11 月 27 日报道，DeepSeek 网页和 App 的回复下方新增一个形似一摞硬币的小图标。点开后能看到本轮消耗的额度，输入（区分缓存命中和未命中）与输出 token 的单价、用量和金额，最下方还有一个显示上下文占用的进度圈。报道称，目前账单只是展示，聊天依旧免费，DeepSeek 尚未公布收费方案。</p><p>量子位实测：开启深度思考后用粤语打一声招呼，这一来一回记为 0.000426 元；网页端一轮输入超过 1.3 万 token 的对话，账单约 0.0088 元。报道称，这套计价与 DeepSeek-V4.1-Flash 的 API 空闲时段价格对得上；按量子位的说法，以前只有 API 开发者接触得到的按量计费，被原封不动搬进了普通用户的聊天框。DeepSeek 官方价格页解释，token 是模型用来表示自然语言文本的最小单位，可以是一个词、一个数字或一个标点符号。按这份价格页，deepseek-flash 每百万 token 的价格在空闲时段为输入缓存命中 0.02 元、未命中 1 元、输出 4 元；北京时间工作日 9:00 至 12:00、14:00 至 18:00 为高峰时段，价格翻倍。报道还提到，11 月 16 日“DeepSeek 使用额度已达上限”登上热搜：免费聊天开始设每日额度，单次文字输入上限压缩到约 4 万字，超过 72 小时不活跃的长对话无法继续，系统提示给出的理由是算力不足。</p><p><a href="https://www.qbitai.com/2026/11/513305.html" target="_blank" rel="noopener">原文：量子位</a></p><p><a href="https://api-docs.deepseek.com/zh-cn/quick_start/pricing" target="_blank" rel="noopener">延伸阅读：DeepSeek</a></p><div class="source">来源：<a href="https://www.qbitai.com/2026/11/513305.html" target="_blank" rel="noopener">量子位</a> · 发布于 2026-11-27 15:29（北京时间） · 核读量子位全文：账单图标与字段、实测金额、与 V4.1-Flash 空闲价对应、11 月 16 日限额；DeepSeek 官方价格页核对 deepseek-flash 单价与高峰时段；DeepSeek 未发布相关公告，账单功能未独立实测</div></div><div class="news-item" id="qant-photonic-coprocessor"><div class="news-head"><span class="badge badge-model">算力与能源</span><h3>德国 Q.ANT 把光子处理器送进云数据中心试点，定位是给 GPU 打下手</h3></div><p>《连线》11 月 27 日刊出对德国公司 Q.ANT 创始人兼首席执行官 Michael Förtsch 的访谈。文章开头写到，AI 实验室和云服务商正在斯堪的纳维亚等可再生能源便宜的地方建数据中心，但物流、关键部件短缺和反数据中心抗议都在拖后腿；Q.ANT 这类硬件创业公司换了个方向，想从芯片本身压低能耗。普通 GPU 靠电子搬运和处理数据，光子处理器用光波计算。Q.ANT 不打算取代 GPU，而是让两者并排工作：线性运算交给 GPU，复杂的非线性计算交给光子处理器。Förtsch 用圆打比方：光是波，对应正弦函数，只用直线去描述一个圆要无数个点，有了正弦函数，两个点就能描述。他称英伟达 H200 是一件艺术品，在 GPU 的主场很难与之竞争；在他看来，光子处理器在图像和视频的识别、分割与生成，以及机器人和物理 AI 上更有优势。他还说，今天的成本主要来自访问内存，完成一项任务需要的数据越少，系统就越高效，而他们能一步完成普通芯片要几千步才能完成的复杂计算。Q.ANT 最近把芯片部署到云服务商 IONOS 运营的设施里做试点，公司称已有 30 多个工程师团队在开发针对光子计算优化的模型。</p><p>省电是这家公司的主要卖点，但证据还停在模拟阶段。Förtsch 说，在模拟中，光子处理器与 CPU、GPU 配合，能耗可以降低四到五倍，真实硬件上还没有演示出来。他还说，现有的 C++ 或 Python 代码可以直接在他们的机器上运行，但只为 GPU 优化过的程序不会自动变快，需要做适配；芯片用 2000 年代的 90 纳米工艺就能生产，如果真有 10 万片的订单，他担心的是组装环节的供应商能否跟上。对于开发者和云服务商互相等待的“鸡和蛋”问题，他的回答是，公司正在造一只新的鸡，好让大家开始下蛋；至于五年后会不会直接挑战 GPU，他说有机会也不会退缩，但五年后的 AI 工作负载会是什么样，他也不知道。</p><p><a href="https://www.wired.com/story/a-new-breed-of-chip-runs-ai-models-using-waves-of-light/" target="_blank" rel="noopener">原文：《连线》</a></p><div class="source">来源：<a href="https://www.wired.com/story/a-new-breed-of-chip-runs-ai-models-using-waves-of-light/" target="_blank" rel="noopener">《连线》</a> · 发布于 2026-11-27 · 核读《连线》访谈全文：协处理器定位、IONOS 试点、30 多个团队、模拟能耗与真实硬件差距、软件适配、90 纳米工艺与供应链；能耗数字为公司自述的模拟结果</div></div><div class="news-item" id="android-create-my-widget"><div class="news-head"><span class="badge badge-model">产品与应用</span><h3>安卓的 AI 自制小组件上手：二十秒做一个，不少其实是 Gemini 的快捷入口</h3></div><p>The Verge 资深评测编辑 Allison Johnson 11 月 27 日发表上手体验。谷歌在春季的 I/O 大会上宣布了这项名为 Create My Widget 的功能，它属于安卓 Gemini Intelligence 功能的一部分，目前仍是测试版，本月早些时候才开始向 Pixel 手机推送。用户可以从模板开始，也可以直接描述想要的小组件。她在 Pixel 11 Pro 上做了一个每小时换一句《侏罗纪公园》台词的小组件，用了大约 20 秒，点一下会打开 Reddit 上的电影台词讨论区，她说背后看不出有什么软件上的魔法；还做了一个下雨时显示提示语的天气小组件。她想用小组件记录每天散步、攒出连续打卡，得到的却是一个写着“Log Walk”的按钮，点一下由 Gemini 把散步记进日历；Gemini 另外建议加一张按星期勾选的清单。</p><p>她发现，很多小组件本质上是 Gemini 的提示词快捷方式：点一下，主屏上调出 Gemini 界面，思考一会儿再给出结果。能做的类型也落在几类模板里：节日或日历事件倒计时、球队比分和下一场比赛时间；更开放的需求，要么从谷歌搜索结果里取，要么交给 Gemini 现想。她最想要的实时公交到站提醒没有做成：生成的小组件只是一块写着“Bus Arrivals”的方块，点开后 Gemini 给出的是一段关于班次频率的文字，而不是到站时间列表。她原本期待的是能按自己喜好定制的迷你应用，实际拿到的更像一刀切的功能。</p><p><a href="https://www.theverge.com/tech/1041801/android-intelligence-create-my-widget-gemini" target="_blank" rel="noopener">原文：The Verge</a></p><div class="source">来源：<a href="https://www.theverge.com/tech/1041801/android-intelligence-create-my-widget-gemini" target="_blank" rel="noopener">The Verge</a> · 发布于 2026-11-27 · 核读 The Verge 评测全文：功能来源与测试版状态、推送范围、作者自制小组件、模板类型与公交到站失败案例；谷歌官方说明未另行核读</div></div><div class="paper-also"><div class="paper-also-title">其他动态</div><div class="paper-also-item" id="correction-2026-11-27-foia-attribution"><span class="paper-also-num">01</span><div><strong>更正：第82期音频中一处归属</strong><p><strong>更正（2026-11-28）：</strong> 第82期音频介绍美国信息公开申请时，把“限制批量申请的规则可能落到记者、研究人员和移民律师头上”说成受访者的担心。这其实是《麻省理工科技评论》文章作者在结尾给出的判断，原文列举的是外州记者、学术研究人员和移民律师。第82期网页正文已在当日改正。</p><p><a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener">原文：《麻省理工科技评论》</a></p><p>来源：<a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener">《麻省理工科技评论》</a> · 更正：原刊2026-11-27第82期 · 《麻省理工科技评论》原文最后一段（2026-11-27 内置浏览器核读）：“the biggest risk is that rules built to limit bulk AI requests or sales-tech crawlers will land on everyone else: out-of-state reporters, academic researchers, immigration lawyers.” 为作者行文，未归于任何受访者；同段随后的 Rowe 引语讲的是另一层意思。</p></div></div><div class="paper-also-item" id="nvidia-southeast-asia-shipment-pause"><span class="paper-also-num">02</span><div><strong>据报道，英伟达让合作伙伴暂停向东南亚四国发运服务器</strong><p>TechCrunch 11 月 26 日转述《华尔街日报》的报道：英伟达已要求戴尔、超微等制造合作伙伴，暂停向马来西亚、新加坡、泰国和印度尼西亚发运服务器，期限未定，同时评估当地合作伙伴是否符合美国的出口要求。报道称，中国公司此前通过这些国家的数据中心远程使用英伟达芯片，美国商务部本月早些时候堵上了这个漏洞；智库 Institute for Progress 估计，这类远程数据中心约提供中国 AI 算力的 24%。</p><p><a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank" rel="noopener">原文：TechCrunch</a></p><p>来源：<a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank" rel="noopener">TechCrunch</a> · 发布于 2026-11-27 04:03（北京时间），48 小时内补漏；转述《华尔街日报》 · 核读 TechCrunch In Brief 全文；《华尔街日报》原报道未读，英伟达未见公开声明；IFP 的 24% 为 TechCrunch 转述 WSJ 的说法</p></div></div><div class="paper-also-item" id="aaronson-cryptanalysis-rumors"><span class="paper-also-num">03</span><div><strong>Scott Aaronson：实验室将公布一项理论密码分析突破，但不会马上威胁现有密码系统</strong><p>理论计算机科学家 Scott Aaronson 11 月 27 日在博客发文，以一段与财经通讯来电者的对话，回应“AI 实验室是否已经破解 RSA”的追问。他写道，自己掌握具体信息：实验室很快会发布一项理论密码分析上的重大突破，但它不会给目前部署的任何密码系统带来迫在眉睫的危险；至于其他会带来紧迫危险的传闻，他没有具体、可以据此行动的信息。他还解释，他所说本周早些时候得到证明的 VP≠VNP，是迈向证明 P≠NP 的一步，而 P≠NP 只是基于难题的密码安全的必要条件，不是充分条件。对话最后，来电者问读者该买哪些加密货币、该抛哪些，他回了一句“走开”。</p><p><a href="https://scottaaronson.blog/" target="_blank" rel="noopener">原文：Scott Aaronson 博客</a></p><p>来源：<a href="https://scottaaronson.blog/" target="_blank" rel="noopener">Scott Aaronson 博客</a> · 博文标注 2026-11-27 · 核读博客首页首篇 “Every call” 全文（对话体）；所称即将发布的突破无细节，未核实；ePrint 2026/3020 全文未读，未写入正文</p></div></div></div></div>
+<div class="section" id="insight"><div class="section-header"><span class="icon">🔍</span><h2>行业洞见</h2><span class="tag">深度分析</span></div><div class="insight-card" id="lixiang-lifeng-ai-service-cost"><div class="insight-banner"><div class="meta">原节目发布于 2026-10-01</div><h3>李翔、李丰：同一个问题追问几轮，服务成本为什么会变？</h3></div><div class="insight-body"><p>李丰创办峰瑞资本，记者、作家李翔与他共同主理中文播客《高能量》。这档节目里，李翔在人物访谈中请创业者还原产品和经营决策，节目也设有讨论产业与宏观经济的栏目。</p><p>在 10 月 1 日发布的这期宏观漫谈里，两人讨论模型进步为什么还没有带来同样快的应用普及，并把搜索和生成式 AI 的成本作比较，追问云端推理、端侧模型和付费方式怎样影响普通用户能获得的服务。按话语场对节目原音片段（00:18:40 至 00:19:02，依据自动字幕）的转述，李丰说，模型每次回答都要理解提问、计算并生成输出；围绕一个问题来回追问，模型还要处理前面的对话，服务同一个人，也会因为对话变长而增加计算成本。和今天 DeepSeek 聊天框里的账单对照着看，那个上下文占用进度圈，显示的正是这部分不断变长的对话。</p><p><a href="https://q.cxspace.com/talks/source-c4aff666bc6e1c84/" target="_blank" rel="noopener">原文：AI 话语场</a></p><p><a href="https://www.xiaoyuzhoufm.com/episode/6abdb921e742e36efcbd55a8" target="_blank" rel="noopener">延伸阅读：小宇宙</a></p><p>来源：<a href="https://q.cxspace.com/talks/source-c4aff666bc6e1c84/" target="_blank" rel="noopener">AI 话语场</a> · 原节目发布于 2026-10-01 · q.cxspace.com 已上线页面：发布方说明与 00:18:40–00:19:02 自动字幕段的站内转述；原片未全程听校</p></div></div><div class="insight-card" id="jiyu-ai-chip-software-ecosystem"><div class="insight-banner"><div class="meta">原节目发布于 2024-06-21</div><h3>季宇：新的 AI 芯片要进数据中心，先得跨过软件生态这道门槛</h3></div><div class="insight-body"><p>季宇以 Mackler 为笔名讨论计算机体系结构。他本科在清华大学学物理，之后研究计算机体系结构并获得博士学位，曾在华为工作，后来创办行云集成电路，关注 AI 推理的成本和硬件架构。这期《高能量》访谈于 2024 年 6 月 21 日发布，由李丰主持。</p><p>按发布方的节目说明，季宇与李丰回顾英伟达如何融入计算机产业，讨论 CUDA 与开发者工具的作用，以及新芯片架构在实际部署中要跨过哪些门槛。放到今天听：Q.ANT 说只为 GPU 优化过的代码不会自动变快，Hugging Face 工程师花了五天才让视频模型在 Trainium3 上跑快，可以把这两件事当作这道门槛的近例，再回头听两年前的讨论。</p><p><a href="https://q.cxspace.com/talks/source-b4a1c56bd7c0ea5e/" target="_blank" rel="noopener">原文：AI 话语场</a></p><p><a href="https://www.xiaoyuzhoufm.com/episode/66756ec0c26e396a366c3ef8" target="_blank" rel="noopener">延伸阅读：小宇宙</a></p><p>来源：<a href="https://q.cxspace.com/talks/source-b4a1c56bd7c0ea5e/" target="_blank" rel="noopener">AI 话语场</a> · 原节目发布于 2024-06-21 · q.cxspace.com 已上线仅索引页与发布方节目说明；未听原片，无逐字稿</p></div></div></div>
+<div class="section" id="papers"><div class="section-header"><span class="icon">📄</span><h2>论文速递</h2><span class="tag">1 篇论文</span></div><div class="paper-item" id="green-ai-quantized-inference-energy"><div class="paper-head"><span class="paper-num">01</span><span class="paper-title">关联论文回顾：大模型压成 int8 能省多少电？长输入、短输出时最明显</span></div><div class="paper-tags"><span class="paper-tag">研究进展</span><span class="paper-tag">关联论文回顾：arXiv v1 提交于 2026-10-13，硕士学位论文</span><span class="paper-tag">arXiv HTML v1 全文：第 5.1 节实验设置、第 5.2 节能效结果文字、第 6 节结论；图 5.1–5.7 的具体数值未读，倍数未写入正文</span></div><div class="paper-body"><p>滑铁卢大学 Petar Basta 的硕士论文于 10 月 13 日提交到 arXiv，系统测量只量化权重的大模型推理能省多少电。作者在 PyTorch 和 Hugging Face Transformers 上测试 OLMo 1B、Llama 2 7B、Phi 3.5 Mini、Qwen 2.5 7B 和 14B，任务覆盖 MNLI、MMLU、HumanEval 和 GSM8K，比较七个库的十种训练后量化方案，GPU 包括 A100、H100、RTX A6000 和 L4。对照基线是未压缩的 FP32 全精度模型；作者刻意不用 vLLM 等专门推理引擎，以免把推理框架的优化算到量化头上。</p><p>按论文第 5.2 节，在 A6000 上测试的三个模型里，EETQ int8 和 Bitsandbytes int8 这类带融合内核的 int8 方案能效提升最稳定；结论部分写明，int8 方案的准确率与全精度基线相差在 2.5% 以内。4 位方案的收益在不同任务间不稳定，作者归因于现有硬件对 4 位运算缺少原生加速。作者认为最新颖的发现是：量化在“长输入、短输出”的任务上相对全精度最省电，因为处理提示词的预填充阶段是大矩阵乘法，能摊薄反量化的开销；逐个生成词元的阶段运算小，固定开销占比就高了。批量越大，节能幅度略有提高，但提升不大。另一个工程结论是，GPU 静态功耗高，缩短运行时间往往比压低瞬时功率更省电，延迟可以作为能耗的可靠代理。</p><p>为何今天读：Q.ANT 用“省电”介绍光子协处理器，DeepSeek 的账单把缓存命中和未命中的输入分开计价。这篇论文提醒，省多少要看任务的输入输出长度、对照基线和软件栈；文中的节能倍数，都是相对 FP32 基线测得的。</p><p><a href="https://arxiv.org/abs/2610.17531" target="_blank" rel="noopener">原文：arXiv</a></p></div><a class="paper-link" href="https://arxiv.org/abs/2610.17531" target="_blank" rel="noopener">arXiv →</a></div></div>
+<div class="section" id="opensource"><div class="section-header"><span class="icon">⭐</span><h2>开源解读</h2><span class="tag">1 个仓库</span></div><div class="focus-box"><div class="label">阅读说明</div><div class="content">依据官方仓库说明整理，未进行部署实测。本期作为工具发现，不表示项目在当日首次发布。</div></div><div class="oss-item" id="hf-trainium3-ltx-video"><div class="oss-rank top">1</div><div class="oss-content"><div class="oss-head"><span class="oss-name"><a href="https://huggingface.co/blog/video-trainium3" target="_blank" rel="noopener">在 Trainium3 上生成带声音的短片：最后五天，把出片时间从五分多钟压到二十多秒</a></span><span class="oss-license">未声明（GitHub 同名仓库 dacorvo/video-generation）</span></div><p>Hugging Face 的 David Corvoysier 等人 11 月 27 日发文。通过与 AWS 的合作，团队拿到一台 Trainium3 机器（trn3.48xlarge，64 个 NeuronCore）试用一个月，大部分时间用来测试和适配 Hugging Face 的模型；最后五天，作者用 Lightricks 的 LTX-2.5 试了视频生成，这个模型能同时生成画面和声音。</p><p>输入是一份“电影”文件：按镜头列出名称和提示词，像一张分镜表；镜头之间可以用前一镜的最后几帧或后一镜的开头几帧衔接，让主角前后保持一致。作者借用动画的“关键帧优先”做法：先反复生成整部短片的高潮镜头，满意后，前面的镜头以它的开头几帧收尾，后面的镜头从它的最后几帧接着拍。示例短片里，高潮是冰山翻转、浪头把睡在浮冰上的海豹浇透，下一镜是湿漉漉的海豹抖掉水、趴回浮冰。生成全部交给 diffusers 的三个流水线，组片部分只有约 160 行 Python，代码放在 dacorvo/video-generation。模型开箱无法在单个 NeuronCore 上运行，第一次跑通时生成一段 10 秒短片约要 5 分 20 秒，其中 NeuronCore 真正在计算的只有约 45 秒；五天后，在半台机器上、模型加载完成后，生成一段 2048×1024、10 秒带声音的短片只要 22 到 23 秒。作者拿 LTX 官方 API 作对照，LTX 称其生成 10 秒 1080p 短片需要 23.7 秒；作者说没有找到可比的 CUDA 实测数据。</p><p><a href="https://huggingface.co/blog/video-trainium3" target="_blank" rel="noopener">原文：Hugging Face</a></p></div></div></div>
+<details class="paper-observation" id="coverage"><summary class="label">采集说明 · 采集不完整 · 27/50 个来源完成检查</summary><div class="content"><p>新闻窗口为北京时间 11 月 27 日 06:00 至 28 日 06:00，资讯目录从 26 日 18:00 起。英伟达暂停发货一条发布于北京时间 27 日 04:03，属于 48 小时内补漏；论文栏目为 Paper-Radar 关联论文回顾，按原始提交日期标注；话语场保留节目原始发布日期。部分来源只能核到栏目页面或日期：Ars Technica 返回 403，DeepMind 和 UNESCO 本轮重采失败、沿用 05:37 初采结果；OpenReview 未扫描；字节跳动 Seed 首卡无日期；arXiv、GitHub Trending 只核到入口；36 氪时间为相对时间折算。浙江大学团队在密码学预印本库发布的离散对数算法论文，全文页面需要人机验证，未能核读，只列入资讯目录。未确定原始发布时间的线索保留待核，正常返回的页面也未一律计为完整覆盖。</p><p><strong>检查尚未完成的来源</strong>：下列状态表示检查缺口，不能据此认定近期无更新；“已完整检查且无新增”另行记录。</p><ul><li><strong>Anthropic News</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 265 处，最新 2026-11-27；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 06:00 复核：内置浏览器打开 /news，页头“November 27, 2026”为当天日期显示，不是文章；可见卡片最新 2026-11-09；窗口内未见新文章，列表未翻全，保持 partial。</li><li><strong>Claude Blog</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 32 处，最新 2026-11-24；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>通义实验室</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 2 处，最新 2026-11-27；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>DeepSeek</strong>：已检查部分内容，覆盖或日期待核。API Change Log 最新 2026-11-13，窗口内 0 条；价格页核对 deepseek-flash 计价（用于正文）；additional_urls（官网产品与 GitHub 组织）本次未逐个核对，整源 partial。</li><li><strong>月之暗面 Moonshot</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 5 处，最新 2026-10-24；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>智谱 Z.ai</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 325 处，最新 2026-11-23；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>阶跃星辰 StepFun</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面上提取不到日期，无法判断窗口内有无新条目</li><li><strong>Mistral</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 96 处，最新 2026-11-05；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>European Commission Digital Strategy</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 15 处，最新 2026-11-27；窗口内 1 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>UNESCO AI</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 16 处，最新 2026-12-05；窗口内 2 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 06:00 重采失败（RemoteDisconnected: Remote end closed connection without res），沿用 05:37 初采结果。</li><li><strong>OECD.AI</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 203 处，最新 2027-01-15；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>arXiv cs.AI / cs.LG / cs.CL</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验；入口或日期已取得，原文仍待核对。</li><li><strong>Hugging Face Daily Papers</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验；入口或日期已取得，原文仍待核对。</li><li><strong>OpenReview</strong>：已检查部分内容，覆盖或日期待核。本轮未打开具体 venue 扫描（脚本遇验证页，准备阶段时间优先给正文核读）；整源 partial，不能记无更新。</li><li><strong>GitHub Trending（日榜 + Python 日榜）</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，可达；条目由主线程另行核验；入口或日期已取得，原文仍待核对。</li><li><strong>36氪 AI 频道（逐篇核验原创与转载）</strong>：已检查部分内容，覆盖或日期待核。内置浏览器：AI 频道首屏 30 篇，相对时间 9–19 小时前，按检查时刻折算近似小时（约 2026-11-27T03:00Z–13:00Z，均在目录窗口内）；未加载更多，原创/转载与绝对时间未回文章页核对，整源 partial。</li><li><strong>国家网信办·网信发布（AI 相关）</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 20 处，最新 2026-11-27；窗口内 2 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li><li><strong>字节跳动 Seed·博客与论文</strong>：已检查部分内容，覆盖或日期待核。内置浏览器渲染 /en/research：首卡 Introducing Seedream 5.5 无日期；其余带日期博客最新 2026-08-05，Publications 最新 2026-10-25；窗口内无带日期条目，首卡日期待核，记 partial。</li><li><strong>MiniMax·News &amp; Updates</strong>：已检查部分内容，覆盖或日期待核。内置浏览器渲染 minimax.io/news：首卡 MiniMax Speech 2.8 无日期（前日同），其余带日期卡片最新 2026-09-11；未见新卡片，无日期首卡待核，记 partial。</li><li><strong>TechCrunch</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 35 处，最新 2026-11-26；窗口内 2 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 06:00 补抓文章级链接并读 article:published_time。</li><li><strong>Ars Technica</strong>：访问或抓取失败。HTTPError: HTTP Error 403: Forbidden</li><li><strong>404 Media</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 41 处，最新 2026-11-26；窗口内 3 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。 06:00 补抓首页文章级链接：11-26 条目为非 AI 内容（评测、节日、游戏、海鸟追踪船只），AI 相关文章最新 2026-11-25T15:14Z（目录窗口前）。</li><li><strong>Databricks Research</strong>：已检查部分内容，覆盖或日期待核。HTTP 200，页面日期 13 处，最新 2026-10-20；窗口内 0 条（按日期匹配，粒度到天）；入口或日期已取得，原文仍待核对。</li></ul><p>来源核验不等于独立实测；论文阅读范围按各条说明，未复现。</p></div></details>
+<details class="paper-observation source-catalog" id="source-catalog"><summary class="label">资讯源 <span class="source-catalog-count">43 条</span></summary><div class="content"><h3 class="source-catalog-heading">新闻资讯 · 37 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://www.qbitai.com/2026/11/513305.html" target="_blank" rel="noopener">DeepSeek 在每条回复下面算账：用了多少 token、值多少钱，聊天仍然免费<span class="source-catalog-original">DeepSeek APP突然更新账单，网友：要收费了？</span></a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.wired.com/story/a-new-breed-of-chip-runs-ai-models-using-waves-of-light/" target="_blank" rel="noopener">德国 Q.ANT 把光子处理器送进云数据中心试点，定位是给 GPU 打下手<span class="source-catalog-original">A New Breed of Chip Runs AI Models Using Waves of Light</span></a><span class="source-catalog-name">WIRED</span></li><li><a href="https://www.theverge.com/tech/1041801/android-intelligence-create-my-widget-gemini" target="_blank" rel="noopener">安卓的 AI 自制小组件上手：二十秒做一个，不少其实是 Gemini 的快捷入口<span class="source-catalog-original">Android’s DIY widgets are a bit of vibe-coding fun</span></a><span class="source-catalog-name">The Verge</span></li><li><a href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank" rel="noopener">据报道，英伟达让合作伙伴暂停向东南亚四国发运服务器<span class="source-catalog-original">Nvidia hits pause on chip shipments to Southeast Asia</span></a><span class="source-catalog-name">TechCrunch</span></li><li><a href="https://scottaaronson.blog/" target="_blank" rel="noopener">Scott Aaronson：实验室将公布一项理论密码分析突破，但不会马上威胁现有密码系统<span class="source-catalog-original">Every call</span></a><span class="source-catalog-name">Shtetl-Optimized</span></li><li><a href="https://www.qbitai.com/2026/11/513352.html" target="_blank" rel="noopener">人形机器人开发者集合！众擎开放大小脑，10亿产业级生态支持计划也来了</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4087869747624579" target="_blank" rel="noopener">AI 办公没有“提效”</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087901307353735" target="_blank" rel="noopener">大神Karpathy又整活，Claude 7小时把真实美国搬进《文明》</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087950256568704" target="_blank" rel="noopener">老板花钱让员工用AI，结果自己先崩溃了：邮件、报告全靠AI生成，有人因此被直接开除</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087959362648452" target="_blank" rel="noopener">AI巨头被曝藏着密码学“核弹”，量子计算大牛Scott Aaronson博客刷屏</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087875673356934" target="_blank" rel="noopener">具身智能还在等突破，VC已经换赛道了</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087846166821249" target="_blank" rel="noopener">四类主体的分化不是同一起点上的领先落后，而是四种生意模式的并立。</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.qbitai.com/2026/11/513346.html" target="_blank" rel="noopener">全国首批首家！商汤大装置获Token工厂智算能力最高评级</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4087846437705350" target="_blank" rel="noopener">Claude开始抢苹果的生意了</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087817299573129" target="_blank" rel="noopener">AI发现物理学“大一统理论”？斯坦福学者联手GPT-6 Astra，提出量子引力新框架</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087817655138690" target="_blank" rel="noopener">11月下旬，OpenAI、Anthropic和两家公司的员工先后提出放慢AI，限制对象分别是预训练、自我改进和模型发布，影响分别落在训练集群订单、模型迭代速度和模型公司收入上。</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087815894030217" target="_blank" rel="noopener">Claude、GPT、Gemini、Grok各进一个村，两个死光了</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087714364619138" target="_blank" rel="noopener">大厂的应届生名额，正在先让给 AI 预算</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087716529027463" target="_blank" rel="noopener">DeepSeek限流背后：AI时代，正在终结互联网的免费逻辑</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087750298244745" target="_blank" rel="noopener">13家人形机器人企业商业化与IPO进展盘点</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087682369157762" target="_blank" rel="noopener">“笑死，谷歌亲自教你怎么蒸馏 Gemini”</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087586916268680" target="_blank" rel="noopener">AI人物看多了，真人变得“不好看”了？</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087629686445953" target="_blank" rel="noopener">AI收入进入财报之后，大厂并没有迎来一场轻松的庆功宴。</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.qbitai.com/2026/11/513227.html" target="_blank" rel="noopener">刚刚，首个带跨任务空间记忆的原生基模开源！机器人端侧就能跑</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.qbitai.com/2026/11/513211.html" target="_blank" rel="noopener">蚂蚁灵波发布LingBot-Map 2.0，模型自己修正“空间记忆”，把地图画更准</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4087432362628738" target="_blank" rel="noopener">智能家居厂商正在争夺家电的日常调度权。空调能制冷，灯能照亮房间，家里已经有一批每天都要用的机器。</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087449994181000" target="_blank" rel="noopener">Claude Code 灵魂人物，开始反思 Vibe Coding 的未来了</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087446522362500" target="_blank" rel="noopener">马斯克，送出1200亿</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087456845970050" target="_blank" rel="noopener">大模型无法击穿的，才是具身智能真正壁垒</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087453646420361" target="_blank" rel="noopener">Anthropic拆穿AI假遗忘，46万神经元动几十个，黑客知识就复活</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.qbitai.com/2026/11/513155.html" target="_blank" rel="noopener">腾讯混元发布 Hy3D 3.6：高模表面更整洁、结构更清晰、刻画更细腻</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.qbitai.com/2026/11/513125.html" target="_blank" rel="noopener">具身公司抱团回应：通用大模型跨维打击？没那么简单</a><span class="source-catalog-name">量子位</span></li><li><a href="https://www.36kr.com/p/4087405673879432" target="_blank" rel="noopener">双十一散场，AI硬件挤进大众购物车为什么反而更难做了？</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087397781198468" target="_blank" rel="noopener">资深影视人预测：它未来或会自主生成一切短剧</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087355247540614" target="_blank" rel="noopener">Gemini 4 Carbon点亮8颗太阳，70年几何悬案告破，只用6页神级证明</a><span class="source-catalog-name">36氪</span></li><li><a href="https://www.36kr.com/p/4087373831371141" target="_blank" rel="noopener">大模型涌入药物研发：闭环、物理卡点和押注验证</a><span class="source-catalog-name">36氪</span></li><li><a href="https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/" target="_blank" rel="noopener">《GTA 6》说明效率并非美德（借 Anthropic 上市谈 AI 效率）<span class="source-catalog-original">Grand Theft Auto VI proves why efficiency isn’t a virtue</span></a><span class="source-catalog-name">TechCrunch</span></li></ul><h3 class="source-catalog-heading">话语场 · 3 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://q.cxspace.com/talks/source-c4aff666bc6e1c84/" target="_blank" rel="noopener">李翔、李丰：同一个问题追问几轮，服务成本为什么会变？<span class="source-catalog-original">Vol.236 宏观漫谈111｜中美元首会谈、AI发展边界与全球资金的“蓄水池”逻辑</span></a><span class="source-catalog-name">AI 话语场</span></li><li><a href="https://q.cxspace.com/talks/source-b4a1c56bd7c0ea5e/" target="_blank" rel="noopener">季宇：新的 AI 芯片要进数据中心，先得跨过软件生态这道门槛<span class="source-catalog-original">Vol.116 产业观察18｜如何成为下一个英伟达：与Mackler季宇聊AI芯片的突围之路</span></a><span class="source-catalog-name">AI 话语场</span></li><li><a href="https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/" target="_blank" rel="noopener">Clay 怎样搭建市场推广智能体：对话 AI 负责人 Jeff Barg<span class="source-catalog-original">How Clay Builds GTM Agents — Jeff Barg, Head of AI</span></a><span class="source-catalog-name">Latent Space</span></li></ul><h3 class="source-catalog-heading">论文速递 · 2 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://arxiv.org/abs/2610.17531" target="_blank" rel="noopener">关联论文回顾：大模型压成 int8 能省多少电？长输入、短输出时最明显<span class="source-catalog-original">Towards Green AI: Evaluating Energy Efficiency for Quantized LLM Inference</span></a><span class="source-catalog-name">arXiv</span></li><li><a href="https://eprint.iacr.org/2026/3020" target="_blank" rel="noopener">离散对数问题的确定性次指数时间算法<span class="source-catalog-original">A Deterministic Subexponential-time Algorithm for the Discrete Logarithm Problem</span></a><span class="source-catalog-name">IACR ePrint</span></li></ul><h3 class="source-catalog-heading">开源项目与版本更新 · 1 条</h3><ul class="source-catalog-list" aria-label="资讯标题与来源"><li><a href="https://huggingface.co/blog/video-trainium3" target="_blank" rel="noopener">在 Trainium3 上生成带声音的短片：最后五天，把出片时间从五分多钟压到二十多秒<span class="source-catalog-original">Taking Trainium3 to the Track: Generating Videos with LTX-2.5</span></a><span class="source-catalog-name">Hugging Face</span></li></ul></div></details>
+
+</main>
+
+<nav class="issue-nav issue-nav-bottom" aria-label="日报导航" data-nav="bottom"><a href="ai-daily-digest-2026-11-27.html">上一期 · 11-27</a><span class="spacer"></span><a href="index.html">全部日报 →</a></nav>
+
+</body>
+</html>

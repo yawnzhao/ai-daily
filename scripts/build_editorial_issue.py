@@ -49,7 +49,7 @@ LINK_HOSTS = {'oag.ca.gov': '加州司法部长办公室', 'doj.state.or.us': '�
               'arxiv.org': 'arXiv', 'github.com': 'GitHub', 'qbitai.com': '量子位', '36kr.com': '36氪',
               'q.cxspace.com': 'AI话语场', 'latent.space': 'Latent Space', 'arstechnica.com': 'Ars Technica',
               'anthropic.com': 'Anthropic', 'claude.com': 'Claude',
-              'cbsnews.com': 'CBS News', 'blog.google': 'Google 博客', 'nvidianews.nvidia.com': 'NVIDIA Newsroom', 'antigravity.google': 'Google Antigravity 博客', 'huggingface.co': 'Hugging Face', 'scottaaronson.blog': 'Scott Aaronson 博客'}
+              'cbsnews.com': 'CBS News', 'blog.google': 'Google 博客', 'nvidianews.nvidia.com': 'NVIDIA Newsroom', 'antigravity.google': 'Google Antigravity 博客', 'huggingface.co': 'Hugging Face', 'scottaaronson.blog': 'Scott Aaronson 博客', 'deepseek.com': 'DeepSeek', 'xiaoyuzhoufm.com': '小宇宙'}
 
 
 def link_label(url):
